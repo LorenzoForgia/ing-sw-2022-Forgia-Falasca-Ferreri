@@ -6,7 +6,7 @@ public enum Color {
     Color(int intcolor) {
         this.intcolor = intcolor;
     }
-    int getIndex(){
+     public int getIndex(){
         return intcolor;
     }
 
