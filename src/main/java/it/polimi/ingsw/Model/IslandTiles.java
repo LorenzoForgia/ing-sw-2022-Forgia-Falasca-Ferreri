@@ -7,15 +7,17 @@ public class IslandTiles implements Location {
     private boolean MotherNature;
     private int size;
     private boolean NoEntryTiles;
+    private boolean Tower;
+    private ColorTower ColTower;
     ArrayList<Color> StudentsInIsland = new ArrayList<>();
 
-    public IslandTiles(int numberID, boolean motherNature, int size, boolean noEntryTiles) {
+    public IslandTiles(int numberID, boolean motherNature, int size, boolean noEntryTiles, boolean tower) {
         NumberID = numberID;
         MotherNature = motherNature;
         this.size = size;
         NoEntryTiles = noEntryTiles;
+        Tower = tower;
     }
-
 
     public void putMotherNature() {
         MotherNature = true;
@@ -25,10 +27,10 @@ public class IslandTiles implements Location {
         this.size = size;
     }
 
-    public void putNET() throws IllegalMoveException{
-        if (NoEntryTiles == false) {
-            NoEntryTiles= true;
-        }else {
+    public void putNET() throws IllegalMoveException {
+        if (!NoEntryTiles) {
+            NoEntryTiles = true;
+        } else {
             throw new IllegalMoveException();
         }
     }
@@ -48,6 +50,23 @@ public class IslandTiles implements Location {
     public int getNumberID() {
         return NumberID;
     }
+
+    public ColorTower getColTower() {
+        return ColTower;
+    }
+
+    public void setColTower(ColorTower colTower) {
+        ColTower = colTower;
+    }
+
+    public void putTower(ColorTower c) {
+        if (!Tower) {
+            Tower = true;
+        } else {
+            setColTower(c);
+        }
+    }
+
 
     public ArrayList<Color> getStudentsInIsland() {
         return StudentsInIsland;
@@ -80,5 +99,7 @@ public class IslandTiles implements Location {
     public Color GetStudent(int n){
        return StudentsInIsland.get(n);
     }
+
+
 
 }

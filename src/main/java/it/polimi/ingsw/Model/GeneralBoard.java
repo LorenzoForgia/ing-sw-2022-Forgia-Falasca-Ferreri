@@ -5,8 +5,10 @@ import java.util.*;
     public class GeneralBoard {
     private int Coins;
     private int NoEntryTiles;
+    List<CloudTiles> Clouds = new ArrayList<>();
     List<IslandTiles> Islands = new ArrayList<>();
-    private IslandTiles Island1, Island2;
+    List<SchoolBoard> AllBoards = new ArrayList<>();
+
 
     public GeneralBoard(int coins, int noEntryTiles) {
         Coins = coins;
@@ -15,10 +17,27 @@ import java.util.*;
     /* create twelve island for the beginning of the game  */
     public void CreateTwelveIslands() {
         for (int i = 0; i < 12; i++) {
-            Islands.add(i, new IslandTiles(i, false, 1, false));
+            Islands.add(i, new IslandTiles(i, false, 1, false, false));
         }
     }
 
+    /* create n clouds for the beginning of the game  */
+    public void CreateClouds( int n){
+        for(int i=0; i<n; i++){
+            Clouds.add(i, new CloudTiles(i));
+        }
+    }
+
+    /* create n schoolboard for the beginning of the game  */
+    public void CreateSchoolBoards( int n){
+            for(int i=0; i<n; i++){
+                AllBoards.add(i, new SchoolBoard());
+            }
+        }
+
+    public CloudTiles getCloud(int i){
+        return Clouds.get(i);
+    }
     public void addCoin(){
         Coins = Coins + 1;
     }
@@ -36,33 +55,23 @@ import java.util.*;
         }
 
     public void SetNewGroup(IslandTiles I1, IslandTiles I2 ){
-        /*cerco I1 e I2 nella mia lista*/
-        for(int i=0; i < Islands.size(); i++){
-            if (I1.equals(Islands.get(i))){
-                Island1=I1;
-            }
-            if (I2.equals(Islands.get(i))) {
-                Island2 = I2;
-            }
-        }
-        /* trasferisco gli studenti dell'isola 2 nell'isola 1*/
-        for(int i=0; i < Island2.getStudentsInIsland().size(); i++){
-            Island1.PutStudent(Island2.GetStudent(i));
+     /* put I2 students in I1*/
+        for(int i=0; i < I2.getStudentsInIsland().size(); i++){
+            I1.PutStudent(I2.GetStudent(i));
         }
 
-        /* setto la nuova size nell'isola I1 */
+        /* change I1 size */
+        I1.setSize(I1.getSize() + I2.getSize());
 
-        Island1.setSize(Island1.getSize() + Island2.getSize());
-        /* se c'è madre natura nell'siola 2 la metto nell'isola 1*/
-        if(Island2.isMotherNature()){
-            Island1.putMotherNature();
+        /* if MN is in I2, then put MN in I1*/
+        if(I2.isMotherNature()){
+            I1.putMotherNature();
         }
-        /* se c'è NET nell'isola 2 la metto nell'isola 1, devo gestire l'eccezione/
-      /*  if(Island2.isNoEntryTiles()){
-
-            Island1.putNET();
-        }*/
-        /* cancello l'isola 2 dalla lista*/
+        /* If NET is in I2, then put it in I1*/
+      if(!CheckifCanChangeNET(I1, I2)){
+          addNET();
+      }
+        /* remove I2 from List*/
 
         for(int i=0; i < Islands.size(); i++){
             if (I2.equals(Islands.get(i))) {
@@ -76,5 +85,15 @@ import java.util.*;
         return Islands.size();
     }
 
+    /* manage the exception*/
+    private boolean CheckifCanChangeNET(IslandTiles I1, IslandTiles I2){
+        if(I2.isNoEntryTiles()){
+            try{ I1.putNET();
+            } catch (IllegalMoveException c){
+                return false;
+            }
+        }
+        return true;
+    }
 
 }
