@@ -25,8 +25,12 @@ public class IslandTiles implements Location {
         this.size = size;
     }
 
-    public void putNoEntryTiles() {
-        NoEntryTiles = true;
+    public void putNET() throws IllegalMoveException{
+        if (NoEntryTiles == false) {
+            NoEntryTiles= true;
+        }else {
+            throw new IllegalMoveException();
+        }
     }
 
     public boolean isMotherNature() {
@@ -43,6 +47,14 @@ public class IslandTiles implements Location {
 
     public int getNumberID() {
         return NumberID;
+    }
+
+    public ArrayList<Color> getStudentsInIsland() {
+        return StudentsInIsland;
+    }
+
+    public void setStudentsInIsland(ArrayList<Color> studentsInIsland) {
+        StudentsInIsland = studentsInIsland;
     }
 
     public void removeNM() throws IllegalMoveException{
@@ -63,6 +75,10 @@ public class IslandTiles implements Location {
 
     public void PutStudent(Color c){
         StudentsInIsland.add(c);
+    }
+
+    public Color GetStudent(int n){
+       return StudentsInIsland.get(n);
     }
 
 }
