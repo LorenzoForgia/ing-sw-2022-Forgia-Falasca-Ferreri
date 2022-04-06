@@ -14,7 +14,7 @@ import java.util.*;
         Coins = coins;
         NoEntryTiles = noEntryTiles;
     }
-    /* create twelve island for the beginning of the game  */
+    /* create twelve islands for the beginning of the game  */
     public void CreateTwelveIslands() {
         for (int i = 0; i < 12; i++) {
             Islands.add(i, new IslandTiles(i, false, 1, false, false));
@@ -28,7 +28,7 @@ import java.util.*;
         }
     }
 
-    /* create n schoolboard for the beginning of the game  */
+    /* create n schoolboards for the beginning of the game  */
     public void CreateSchoolBoards( int n){
             for(int i=0; i<n; i++){
                 AllBoards.add(i, new SchoolBoard());

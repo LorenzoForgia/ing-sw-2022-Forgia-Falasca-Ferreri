@@ -100,6 +100,13 @@ public class IslandTiles implements Location {
        return StudentsInIsland.get(n);
     }
 
-
-
+    public int CountInfluence(Color c){
+        int count=0;
+        for(int i=0; i < StudentsInIsland.size(); i++){
+            if( StudentsInIsland.get(i).equals(c)){
+                count= count+1;
+            }
+        }
+        return count;
+    }
 }
