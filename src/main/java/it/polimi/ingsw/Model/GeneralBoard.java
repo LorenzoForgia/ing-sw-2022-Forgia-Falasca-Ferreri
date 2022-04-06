@@ -54,7 +54,8 @@ import java.util.*;
             NoEntryTiles = NoEntryTiles - 1;
         }
 
-    public void SetNewGroup(IslandTiles I1, IslandTiles I2 ){
+    private void SetNewGroup(IslandTiles I1, IslandTiles I2 ){
+        boolean flag = false;
      /* put I2 students in I1*/
         for(int i=0; i < I2.getStudentsInIsland().size(); i++){
             I1.PutStudent(I2.GetStudent(i));
@@ -73,9 +74,10 @@ import java.util.*;
       }
         /* remove I2 from List*/
 
-        for(int i=0; i < Islands.size(); i++){
+        for(int i=0; i < Islands.size() || flag ; i++){
             if (I2.equals(Islands.get(i))) {
                 Islands.remove(i);
+                flag = true;
             }
         }
 
@@ -95,5 +97,52 @@ import java.util.*;
         }
         return true;
     }
+    public IslandTiles moveMotherNature(IslandTiles I, int n){
 
+        int j = 0;
+        j= Islands.indexOf(I);
+
+        /* tolgo madre natura da quell'isola, gestisci l'eccezione*/
+        /*Islands.get(j).removeNM();*/
+
+        /* trovo la nuova isola raggiunta */
+        while( n>0  ){
+            if(j<= Islands.size()){
+                j++;
+            }else{
+                j=0;
+            }
+            n= n-1;
+        }
+
+        /*metti madre natura sulla nuova isola*/
+        Islands.get(j).putMotherNature();
+
+        return Islands.get(j);
+    }
+    /* vede se bisogna raggruppare delle isole*/
+    public void CheckNearTower(IslandTiles I){
+        int j=0;
+        int k=0;
+        j=Islands.indexOf(I);
+
+        if(j == Islands.size()){
+            k=0;
+        }else{
+            k=j+1;
+        }
+        if(Islands.get(j).getColTower() == Islands.get(k).getColTower()) {
+            SetNewGroup(Islands.get(j),Islands.get(k));
+        }
+
+        if(j == 0){
+            k= Islands.size();
+        }else{
+            k=j-1;
+        }
+        if(Islands.get(j).getColTower() == Islands.get(k).getColTower()) {
+            SetNewGroup(Islands.get(j),Islands.get(k));
+        }
+
+    }
 }
