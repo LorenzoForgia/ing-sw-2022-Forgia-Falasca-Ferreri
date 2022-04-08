@@ -12,11 +12,15 @@ import java.util.*;
     List<SchoolBoard> AllBoards = new ArrayList<>();
 
 
-    public GeneralBoard(int coins, int noEntryTiles) {
-        Coins = coins;
-        NoEntryTiles = noEntryTiles;
-    }
-    /* create twelve islands for the beginning of the game  */
+    public GeneralBoard(int coins) {
+            Coins = coins;
+        }
+
+    public void setNoEntryTiles(int noEntryTiles) {
+            NoEntryTiles = noEntryTiles;
+        }
+
+        /* create twelve islands for the beginning of the game  */
     public void CreateTwelveIslands() {
         for (int i = 0; i < 12; i++) {
             Islands.add(i, new IslandTiles(i, false, 1, false, false));
@@ -30,7 +34,7 @@ import java.util.*;
         }
     }
 
-    /* create n schoolboards for the beginning of the game  */
+    /* create n SchoolBoards for the beginning of the game  */
     public void CreateSchoolBoards( int n) {
         if (n == 2 || n == 4) {
             for (int i = 0; i < n; i++) {

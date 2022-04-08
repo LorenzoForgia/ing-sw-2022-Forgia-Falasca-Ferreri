@@ -15,6 +15,11 @@ public class Player {
         MyDeck = myDeck;
     }
 
+    /* remove used Card from MyDeck*/
+    public void usedCard( CardAssistant c){
+        getMyDeck().RemoveCard(c);
+    }
+
     public String getNickName() {
         return NickName;
     }
