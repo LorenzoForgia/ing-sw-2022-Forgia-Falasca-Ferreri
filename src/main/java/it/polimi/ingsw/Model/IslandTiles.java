@@ -2,6 +2,7 @@ package it.polimi.ingsw.Model;
 
 import java.util.*;
 
+/*@author Luigia Falasca*/
 public class IslandTiles implements Location {
     private int NumberID;
     private boolean MotherNature;
@@ -80,14 +81,10 @@ public class IslandTiles implements Location {
         StudentsInIsland = studentsInIsland;
     }
 
-    public void removeNM() throws IllegalMoveException{
-        if (MotherNature) {
-            MotherNature = false;
-        }else {
-            throw new IllegalMoveException();
+    public void removeNM(){
+        MotherNature= false;
         }
 
-    }
     public void removeNET() throws IllegalMoveException{
         if (NoEntryTiles) {
             NoEntryTiles= false;

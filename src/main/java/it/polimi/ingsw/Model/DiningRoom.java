@@ -5,17 +5,24 @@ import java.util.ArrayList;
 public class DiningRoom {
     private ArrayList<ArrayList<Color>> DiningRoom=new ArrayList<ArrayList<Color>>();
 
-    /*public void PutStudent(Color s){     putting student s in the dining room
-        DiningRoom.add(s);
+    public DiningRoom(ArrayList<ArrayList<Color>> diningRoom) {
+        DiningRoom = diningRoom;
     }
-    public void RemoveStudent(Color s) {     removing student s from the dining room
-        DiningRoom.remove(s);
+    public void PutStudent(Color s){     /*putting student s in the dining room*/
+        DiningRoom.get(s.getIndex()).add(s);
     }
-    public int GetNumberStudent(){       getting number of students in the dining room
+    public void RemoveStudent(Color s) {     /*removing student s from the dining room*/
+        DiningRoom.get(s.getIndex()).remove(s);
+    }
+    public int GetNumberStudent(){       /*getting number of students in the dining room*/
         return DiningRoom.size();
     }
-    public boolean GetCoin(){
-
-    }*/
+    public boolean GetCoin(Color s){     /* expert game: if student's place is the third, sixth or ninth the student has to get a coin*/
+         if(DiningRoom.get(s.getIndex()).indexOf(s)==3 || DiningRoom.get(s.getIndex()).indexOf(s)==6 || DiningRoom.get(s.getIndex()).indexOf(s)==9 ){
+             return true;
+         }else{
+             return false;
+         }
+    }
 
 }

@@ -4,8 +4,9 @@ import java.util.*;
 public class SchoolBoard {
     private int NumberId;
     private int Student;
+    private ColorTower colorTower;
     private List<Color> Entrance= new ArrayList<Color>();
-    /*private DiningRoom= new DiningRoom();*/
+    private DiningRoom diningRoom;
     private List<Color> ProfessorTable= new ArrayList<Color>();
     private List<ColorTower> TowerRoom= new ArrayList<ColorTower>();
 
@@ -19,13 +20,11 @@ public class SchoolBoard {
     public void PutProfessor(Color p){    /* putting professor p in the professor table*/
         ProfessorTable.add(p);
     }
-    public boolean ExistProfessor(Color p) {         /*saying if there is the professor p on the professor table or not*/
-        if (ProfessorTable.get(p.getIndex()) != null) {
-            return true;
-        } else {
-            return false;
-        }
+
+    public List<Color> getProfessorTable() {  /* getting professor table to calculate influence*/
+        return ProfessorTable;
     }
+
     public void RemoveProfessor(Color p){      /*removing professor p from the professor table*/
         ProfessorTable.remove(p);
     }
@@ -35,6 +34,14 @@ public class SchoolBoard {
     public void PutTower(ColorTower t){      /*putting tower t in the tower room*/
         TowerRoom.add(t);
     }
+    public ColorTower ColorTower(){      /* color towers in the school board*/
+        return colorTower;
+    }
+
+    public void setColorTower(ColorTower colorTower) {  /* set color tower in the school board*/
+        this.colorTower = colorTower;
+    }
+
     public void PutStudent(Color s){     /*putting student s in the entrance*/
         Entrance.add(s);
     }
