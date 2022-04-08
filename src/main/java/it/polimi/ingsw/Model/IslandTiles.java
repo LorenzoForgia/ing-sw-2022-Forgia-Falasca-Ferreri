@@ -59,6 +59,10 @@ public class IslandTiles implements Location {
         ColTower = colTower;
     }
 
+    public boolean isTower() {
+        return Tower;
+    }
+
     public void putTower(ColorTower c) {
         if (!Tower) {
             Tower = true;
