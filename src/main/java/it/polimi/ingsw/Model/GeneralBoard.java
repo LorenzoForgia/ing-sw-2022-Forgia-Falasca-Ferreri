@@ -2,6 +2,8 @@ package it.polimi.ingsw.Model;
 
 import java.util.*;
 
+/*@author Luigia Falasca*/
+
     public class GeneralBoard {
     private int Coins;
     private int NoEntryTiles;
@@ -29,11 +31,18 @@ import java.util.*;
     }
 
     /* create n schoolboards for the beginning of the game  */
-    public void CreateSchoolBoards( int n){
-            for(int i=0; i<n; i++){
-                AllBoards.add(i, new SchoolBoard(i, 3));
+    public void CreateSchoolBoards( int n) {
+        if (n == 2 || n == 4) {
+            for (int i = 0; i < n; i++) {
+                AllBoards.add(i, new SchoolBoard(i, 7));
             }
         }
+        if (n == 3) {
+            for (int i = 0; i < n; i++) {
+                AllBoards.add(i, new SchoolBoard(i, 9));
+            }
+        }
+    }
 
     public CloudTiles getCloud(int i){
         return Clouds.get(i);
@@ -102,11 +111,11 @@ import java.util.*;
         int j = 0;
         j= Islands.indexOf(I);
 
-        /* tolgo madre natura da quell'isola, gestisci l'eccezione*/
-        /*Islands.get(j).removeNM();*/
+        /* remove MN from I*/
+        Islands.get(j).removeNM();
 
-        /* trovo la nuova isola raggiunta */
-        while( n>0  ){
+        /* get the new island*/
+        while( n > 0  ){
             if(j<= Islands.size()){
                 j++;
             }else{
@@ -115,12 +124,12 @@ import java.util.*;
             n= n-1;
         }
 
-        /*metti madre natura sulla nuova isola*/
+        /*put MN on the new Island*/
         Islands.get(j).putMotherNature();
 
         return Islands.get(j);
     }
-    /* vede se bisogna raggruppare delle isole*/
+    /* Check if there are near towers of the same color and create new group of islands*/
     public void CheckNearTower(IslandTiles I) {
         int j = 0;
         int k = 0;
