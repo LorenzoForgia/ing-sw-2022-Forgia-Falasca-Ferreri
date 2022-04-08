@@ -31,7 +31,7 @@ import java.util.*;
     /* create n schoolboards for the beginning of the game  */
     public void CreateSchoolBoards( int n){
             for(int i=0; i<n; i++){
-                AllBoards.add(i, new SchoolBoard());
+                AllBoards.add(i, new SchoolBoard(i, 3));
             }
         }
 
