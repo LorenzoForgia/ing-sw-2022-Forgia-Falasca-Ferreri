@@ -20,6 +20,4 @@ public class CharacterCard  {
     public int getCost(){       /*card's cost*/
         return Coins+CountUse;
     }
-
-  
 }
