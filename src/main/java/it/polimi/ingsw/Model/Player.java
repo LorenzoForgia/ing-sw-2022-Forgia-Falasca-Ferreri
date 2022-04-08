@@ -6,11 +6,13 @@ public class Player {
     private String NickName;
     private int NumberCoins;
     private SchoolBoard MySchoolBoard;
+    private DeckCardAssistant MyDeck;
 
-    public Player(String nickName, int numberCoins, SchoolBoard mySchoolBoard) {
+    public Player(String nickName, int numberCoins, SchoolBoard mySchoolBoard, DeckCardAssistant myDeck) {
         NickName = nickName;
         NumberCoins = numberCoins;
         MySchoolBoard = mySchoolBoard;
+        MyDeck = myDeck;
     }
 
     public String getNickName() {
@@ -20,6 +22,11 @@ public class Player {
     public int getNumberCoins() {
         return NumberCoins;
     }
+
+    public DeckCardAssistant getMyDeck() {
+        return MyDeck;
+    }
+
 
     public SchoolBoard getMySchoolBoard() {
         return MySchoolBoard;
