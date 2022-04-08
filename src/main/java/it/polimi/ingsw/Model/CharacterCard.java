@@ -21,7 +21,7 @@ public class CharacterCard  {
         return Coins+CountUse;
     }
 
-    public void setCountUse(int countUse) {
-        CountUse = countUse;
+    public void setCountUse() {     /*card is used so the cost++ */
+        CountUse = CountUse +1;
     }
 }
