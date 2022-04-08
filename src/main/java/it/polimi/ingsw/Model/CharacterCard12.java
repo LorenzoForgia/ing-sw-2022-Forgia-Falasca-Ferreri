@@ -5,8 +5,11 @@ public class CharacterCard12 extends CharacterCard{
         super(name, coins, countUse);
     }
     public void useEffect12(Color c,Player[] players){
-        for(int i=0;i<players.length;i++){
-            for(int j=0; j<players[i].getMySchoolBoard().getDiningRoom().GetNumberStudent(c);j++){
+        for(int i=0,limit=3;i<players.length;i++,limit=3){
+            if(players[i].getMySchoolBoard().getDiningRoom().GetNumberStudent(c)<3){
+                limit=players[i].getMySchoolBoard().getDiningRoom().GetNumberStudent(c);
+            }
+            for(int j=0; j<limit;j++){
                 players[i].getMySchoolBoard().getDiningRoom().RemoveStudent(c);
             }
         }
