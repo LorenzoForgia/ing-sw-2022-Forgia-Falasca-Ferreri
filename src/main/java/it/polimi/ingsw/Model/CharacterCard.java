@@ -1,6 +1,6 @@
 package it.polimi.ingsw.Model;
 
-public class CharacterCard {
+public class CharacterCard  {
     private int Name;
     private int Coins;
     private int CountUse;
@@ -20,7 +20,6 @@ public class CharacterCard {
     public int getCost(){       /*card's cost*/
         return Coins+CountUse;
     }
-    public void setCountUse() {     /*the card is used so the cost++ */
-        CountUse = CountUse +1;
-    }
+
+  
 }
