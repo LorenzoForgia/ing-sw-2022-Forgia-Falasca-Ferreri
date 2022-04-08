@@ -37,6 +37,11 @@ public class SchoolBoard {
     public ColorTower ColorTower(){      /* color towers in the school board*/
         return colorTower;
     }
+
+    public void setColorTower(ColorTower colorTower) {  /* set color tower in the school board*/
+        this.colorTower = colorTower;
+    }
+
     public void PutStudent(Color s){     /*putting student s in the entrance*/
         Entrance.add(s);
     }

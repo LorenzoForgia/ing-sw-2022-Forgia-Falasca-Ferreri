@@ -8,7 +8,6 @@ public class DiningRoom {
     public DiningRoom(ArrayList<ArrayList<Color>> diningRoom) {
         DiningRoom = diningRoom;
     }
-
     public void PutStudent(Color s){     /*putting student s in the dining room*/
         DiningRoom.get(s.getIndex()).add(s);
     }
