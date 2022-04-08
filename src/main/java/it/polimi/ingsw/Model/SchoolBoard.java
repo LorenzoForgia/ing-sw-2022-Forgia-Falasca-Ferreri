@@ -42,8 +42,16 @@ public class SchoolBoard {
         this.colorTower = colorTower;
     }
 
-    public void PutStudent(Color s){     /*putting student s in the entrance*/
-        Entrance.add(s);
+    public void PutStudent(int NumPlayers, Bag bag){     /*putting students in the entrance from the bag*/
+        if(NumPlayers==3){
+            for(int i=0;i<9;i++){       /* case 3 players*/
+                this.Entrance.add(bag.CatchStudent());
+            }
+        }else{
+            for(int i=0;i<7;i++){      /*case 2 or 4 players*/
+                this.Entrance.add(bag.CatchStudent());
+            }
+        }
     }
     public void RemoveStudent(Color s){     /*removing student s from the entrance*/
         Entrance.remove(s);
