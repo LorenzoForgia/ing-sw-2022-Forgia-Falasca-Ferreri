@@ -19,9 +19,9 @@ public class CharacterCard7 extends CharacterCard{
 
     public void useEffect7( List<Color> sCard, List<Color> sEntrance, SchoolBoard SB){
         for(int i = 0; i < sEntrance.size(); i++ ){
-            StudentsInCard.add(sEntrance.get(i));
             SB.RemoveStudent(sEntrance.get(i));
             StudentsInCard.remove(sCard.get(i));
+            StudentsInCard.add(sEntrance.get(i));
             SB.AddStudent(sCard.get(i));
         }
 
