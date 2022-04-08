@@ -121,28 +121,33 @@ import java.util.*;
         return Islands.get(j);
     }
     /* vede se bisogna raggruppare delle isole*/
-    public void CheckNearTower(IslandTiles I){
-        int j=0;
-        int k=0;
-        j=Islands.indexOf(I);
+    public void CheckNearTower(IslandTiles I) {
+        int j = 0;
+        int k = 0;
+        j = Islands.indexOf(I);
 
-        if(j == Islands.size()){
-            k=0;
-        }else{
-            k=j+1;
+        if (j == Islands.size()) {
+            k = 0;
+        } else {
+            k = j + 1;
         }
-        if(Islands.get(j).getColTower() == Islands.get(k).getColTower()) {
-            SetNewGroup(Islands.get(j),Islands.get(k));
-        }
-
-        if(j == 0){
-            k= Islands.size();
-        }else{
-            k=j-1;
-        }
-        if(Islands.get(j).getColTower() == Islands.get(k).getColTower()) {
-            SetNewGroup(Islands.get(j),Islands.get(k));
+        if (Islands.get(k).isTower()) {
+            if (Islands.get(j).getColTower() == Islands.get(k).getColTower()) {
+                SetNewGroup(Islands.get(j), Islands.get(k));
+            }
         }
 
+        if (j == 0) {
+            k = Islands.size();
+        } else {
+            k = j - 1;
+        }
+
+        if (Islands.get(k).isTower()) {
+            if (Islands.get(j).getColTower() == Islands.get(k).getColTower()) {
+                SetNewGroup(Islands.get(j), Islands.get(k));
+            }
+
+        }
     }
 }
