@@ -1,6 +1,6 @@
 package it.polimi.ingsw.Model;
 
-public class CharacterCard {
+public class CharacterCard implements Effect {
     private int Name;
     private int Coins;
     private int CountUse;
@@ -20,4 +20,7 @@ public class CharacterCard {
     public int getCost(){       /*card's cost*/
         return Coins+CountUse;
     }
+
+    @Override
+    public void UseEffect(){}
 }
