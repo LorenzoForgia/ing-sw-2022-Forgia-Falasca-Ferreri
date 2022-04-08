@@ -59,4 +59,7 @@ public class SchoolBoard {
     public int GetNumberStudent(){       /*getting number of students in the entrance*/
         return Entrance.size();
     }
+    public void AddStudent(Color s){     /* add student s in the entrance*/
+        Entrance.add(s);
+    }
 }
