@@ -9,9 +9,9 @@ public class SchoolBoard {
     private List<Color> ProfessorTable= new ArrayList<Color>();
     private List<ColorTower> TowerRoom= new ArrayList<ColorTower>();
 
-    public SchoolBoard(){
-        NumberId=0;
-        Student=0;
+    public SchoolBoard(int numberId, int student){
+        NumberId=numberId;
+        Student=student;
     }
     public void GetId(int id){      /* giving an id to the school_board*/
         NumberId=id;
