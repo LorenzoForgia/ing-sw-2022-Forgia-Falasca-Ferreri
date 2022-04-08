@@ -62,4 +62,8 @@ public class SchoolBoard {
     public void AddStudent(Color s){     /* add student s in the entrance*/
         Entrance.add(s);
     }
+
+    public DiningRoom getDiningRoom() {
+        return this.diningRoom;
+    }
 }
