@@ -2,7 +2,7 @@ package it.polimi.ingsw.Model;
 import java.util.*;
 import java.util.ArrayList;
 
-public class DiningRoom {
+public class DiningRoom implements Location{
     private ArrayList<ArrayList<Color>> DiningRoom=new ArrayList<ArrayList<Color>>();
 
     public DiningRoom(ArrayList<ArrayList<Color>> diningRoom) {
