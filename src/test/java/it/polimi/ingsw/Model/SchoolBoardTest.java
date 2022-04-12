@@ -16,7 +16,7 @@ class SchoolBoardTest {
         SchoolBoard s= new SchoolBoard(1, 7);
         s.PutProfessor(Color.Red);
         s.RemoveProfessor(Color.Red);
-        assertNull(s.getProfessorTable());
+        assertEquals(0,s.getProfessorTable().size());
     }
     @Test
     public void RemoveProfessorTest2() {
