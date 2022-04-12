@@ -12,7 +12,7 @@ public class SchoolBoard {
 
     public SchoolBoard(int numberId, int student){
         NumberId=numberId;
-        Student=student;
+        Student= student;
     }
     public void GetId(int id){      /* giving an id to the school_board*/
         NumberId=id;
@@ -20,14 +20,13 @@ public class SchoolBoard {
     public void PutProfessor(Color p){    /* putting professor p in the professor table*/
         ProfessorTable.add(p);
     }
-
     public List<Color> getProfessorTable() {  /* getting professor table to calculate influence*/
         return ProfessorTable;
     }
-
     public void RemoveProfessor(Color p){      /*removing professor p from the professor table*/
         ProfessorTable.remove(p);
     }
+    /*towerroom è da settare nel controller*/
     public int GetNumberTower(){     /*getting number of towers in the tower room*/
         return TowerRoom.size() ;
     }
@@ -62,7 +61,6 @@ public class SchoolBoard {
     public void AddStudent(Color s){     /* add student s in the entrance*/
         Entrance.add(s);
     }
-
     public DiningRoom getDiningRoom() {
         return this.diningRoom;
     }
