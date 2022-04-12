@@ -32,4 +32,17 @@ public class Bag {
         this.students.add(stud);
     }
 
+    /** method to check Bag is empty(called by Controller) **/
+    public boolean BagIsEmpty(){
+        if(this.students.size()==0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    /** only for test**/
+    public List<Color> getStudents() {
+        return students;
+    }
 }
