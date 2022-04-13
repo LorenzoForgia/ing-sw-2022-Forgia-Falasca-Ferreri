@@ -19,6 +19,9 @@ import java.util.*;
     public void setNoEntryTiles(int noEntryTiles) {
             NoEntryTiles = noEntryTiles;
         }
+    public int getNET(){
+        return NoEntryTiles;
+        }
 
         /* create twelve islands for the beginning of the game  */
     public void CreateTwelveIslands() {
@@ -27,12 +30,20 @@ import java.util.*;
         }
     }
 
+    public List<IslandTiles> GetIslands(){
+        return Islands;
+    }
+
     /* create n clouds for the beginning of the game  */
     public void CreateClouds( int n){
         for(int i=0; i<n; i++){
             Clouds.add(i, new CloudTiles(i));
         }
     }
+
+    public List<CloudTiles> getClouds(){
+        return Clouds;
+        }
 
     /* create n SchoolBoards for the beginning of the game  */
     public void CreateSchoolBoards( int n) {
@@ -48,15 +59,20 @@ import java.util.*;
         }
     }
 
-    public CloudTiles getCloud(int i){
-        return Clouds.get(i);
-    }
-    public void addCoin(){
-        Coins = Coins + 1;
+    public List<SchoolBoard> getSchoolBoard(){
+        return AllBoards;
     }
 
-    public void removeCoin(){
-            Coins = Coins - 1;
+    public void addCoin(int n){
+        Coins = Coins +  n;
+    }
+
+    public void removeCoin( int n){
+            Coins = Coins - n;
+        }
+
+    public int getCoin(){
+        return Coins;
         }
 
     public void addNET(){
@@ -88,7 +104,7 @@ import java.util.*;
         /* remove I2 from List*/
 
         for(int i=0; i < Islands.size() || flag ; i++){
-            if (I2.equals(Islands.get(i))) {
+            if (I2.getNumberID() == Islands.get(i).getNumberID()) {
                 Islands.remove(i);
                 flag = true;
             }
@@ -120,7 +136,7 @@ import java.util.*;
 
         /* get the new island*/
         while( n > 0  ){
-            if(j<= Islands.size()){
+            if(j< Islands.size()-1){
                 j++;
             }else{
                 j=0;
@@ -139,19 +155,19 @@ import java.util.*;
         int k = 0;
         j = Islands.indexOf(I);
 
-        if (j == Islands.size()) {
+        if (j == Islands.size()-1) {
             k = 0;
         } else {
             k = j + 1;
         }
         if (Islands.get(k).isTower()) {
-            if (Islands.get(j).getColTower() == Islands.get(k).getColTower()) {
+            if (Islands.get(j).getColTower().equals(Islands.get(k).getColTower())) {
                 SetNewGroup(Islands.get(j), Islands.get(k));
             }
         }
 
         if (j == 0) {
-            k = Islands.size();
+            k = Islands.size()-1;
         } else {
             k = j - 1;
         }
