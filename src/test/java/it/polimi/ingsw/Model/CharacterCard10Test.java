@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class CharacterCard10Test {
    @Test
     void testEffectchangeStudents(){
+       
         CharacterCard10 c10=new CharacterCard10(10,1,1);
         List<Color> entrancestud= new ArrayList<Color>();
         List<Color> diningstud= new ArrayList<Color>();
