@@ -4,7 +4,7 @@ import java.util.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CharacterCard10Test {
-/**   @Test
+   @Test
     void testEffectchangeStudents(){
         CharacterCard10 c10=new CharacterCard10(10,1,1);
         List<Color> entrancestud= new ArrayList<Color>();
@@ -20,7 +20,7 @@ class CharacterCard10Test {
         diningstud.add(Color.Yellow);
         diningstud.add(Color.Green);
         c10.EffectchangeStudents(entrancestud,diningstud,s);
-        assertEquals(2,s.getDiningRoom().GetNumberStudent());
+       assertEquals(2,s.getDiningRoom().GetNumberStudent());
         assertEquals(1,s.getDiningRoom().GetNumberStudent(Color.Red));
         assertEquals(1,s.getDiningRoom().GetNumberStudent(Color.Blue));
         assertEquals(3,s.GetNumberStudent());
@@ -29,6 +29,6 @@ class CharacterCard10Test {
         assertEquals(1,s.GetNumberStudent(Color.Pink));
     }
 
-**/
+
 
 }

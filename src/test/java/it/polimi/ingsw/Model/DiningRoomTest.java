@@ -5,11 +5,22 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class DiningRoomTest {
-    /*@Test
+    @Test
+    public void GetNumberStudentTest(){
+        DiningRoom d= new DiningRoom();
+        assertEquals(0,d.GetNumberStudent());
+        d.PutStudent(Color.Green);
+        d.PutStudent(Color.Green);
+        d.PutStudent(Color.Red);
+        assertEquals(3,d.GetNumberStudent());
+        assertEquals(2,d.GetNumberStudent(Color.Green));
+        assertEquals(1,d.GetNumberStudent(Color.Red));
+    }
+    @Test
     public void PutStudentTest(){
         DiningRoom d= new DiningRoom();
         d.PutStudent(Color.Red);
-        assertEquals(1,d.GetNumberStudent());
+        assertEquals(1,d.GetNumberStudent(Color.Red));
     }
     @Test
     public void PutStudentTest2() {
@@ -30,10 +41,12 @@ class DiningRoomTest {
         int i=0;
         d.PutStudent(Color.Red);
         d.PutStudent(Color.Blue);
-        i=d.GetNumberStudent();
+        assertEquals(1,d.GetNumberStudent(Color.Red));
+        assertEquals(1,d.GetNumberStudent(Color.Blue));
         d.RemoveStudent(Color.Red);
-        assertEquals(i-1, d.GetNumberStudent());
+        assertEquals(0, d.GetNumberStudent(Color.Red));
     }
+    /*
     @Test
     public void GetCoinTest(){
         DiningRoom d = new DiningRoom();
@@ -74,6 +87,6 @@ class DiningRoomTest {
         d.PutStudent(Color.Red);
         d.PutStudent(Color.Red);
         assertFalse(d.GetCoin(Color.Red));
-    }*/
-
+    }
+   */
 }
