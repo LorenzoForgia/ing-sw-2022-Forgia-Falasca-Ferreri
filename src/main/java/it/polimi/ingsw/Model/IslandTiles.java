@@ -56,7 +56,7 @@ public class IslandTiles implements Location {
         return ColTower;
     }
 
-    public void setColTower(ColorTower colTower) {
+    private void setColTower(ColorTower colTower) {
         ColTower = colTower;
     }
 
@@ -67,9 +67,8 @@ public class IslandTiles implements Location {
     public void putTower(ColorTower c) {
         if (!Tower) {
             Tower = true;
-        } else {
-            setColTower(c);
         }
+        setColTower(c);
     }
 
 
