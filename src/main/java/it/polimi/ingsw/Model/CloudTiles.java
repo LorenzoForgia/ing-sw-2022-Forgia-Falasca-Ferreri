@@ -15,6 +15,8 @@ public class CloudTiles {
     public int getNumid() {
         return this.Numid;
     }
+
+
    /** method used to take students from cloudtiles**/
     public List<Color> CatchStudent() {
         List<Color> studentstoreturn=stud;
@@ -31,5 +33,10 @@ public class CloudTiles {
         for(int i=0;i<numstudents;i++){
             this.stud.add(bag.CatchStudent());
         }
+    }
+
+    /** only for the tests**/
+    public List<Color> getStud() {
+        return stud;
     }
 }

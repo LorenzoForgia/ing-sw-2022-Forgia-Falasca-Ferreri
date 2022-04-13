@@ -64,4 +64,16 @@ public class SchoolBoard {
     public DiningRoom getDiningRoom() {
         return this.diningRoom;
     }
+
+
+    /**the next method is only for tests**/
+    public int GetNumberStudent(Color c){
+        int countercolorstud=0;
+        for(int i=0;i<Entrance.size();i++){
+            if(Entrance.get(i).equals(c)){
+                countercolorstud++;
+            }
+        }
+        return countercolorstud;
+    }
 }
