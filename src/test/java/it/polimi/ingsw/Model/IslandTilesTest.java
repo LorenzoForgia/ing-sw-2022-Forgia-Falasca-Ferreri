@@ -1,22 +1,36 @@
 package it.polimi.ingsw.Model;
 
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class IslandTilesTest {
+
+    IslandTiles Island = null;
+    @BeforeEach
+    public void setUp(){
+        Island = new IslandTiles(1, false, 1, false, false);
+    }
+
+    @AfterEach
+    public void tearDown(){
+        Island = null;
+    }
+
     @Test
     public void testPutMN() {
-        IslandTiles Island = new IslandTiles(1, false, 1, false, false);
         Island.putMotherNature();
         assertTrue(Island.isMotherNature());
     }
 
     @Test
     public void testPutNET() {
-        IslandTiles Island = new IslandTiles(1, false, 1, false, false);
+
         try {
             Island.putNET();
             assertTrue(Island.isNoEntryTiles());
@@ -26,26 +40,37 @@ class IslandTilesTest {
     }
 
     @Test
-    public void testPutNet2() {
-        IslandTiles Island = new IslandTiles(1, false, 1, true, false);
+    public void testPutNET2() {
         try {
             Island.putNET();
-            fail();
         } catch (IllegalMoveException e) {
-            assertTrue(Island.isNoEntryTiles());
+            fail();
         }
+
+           boolean thrown = false;
+           try {
+               Island.putNET();
+           }catch( IllegalMoveException e){
+               thrown= true;
+        }
+        assertTrue(thrown);
     }
 
     @Test
     public void testRemoveMN() {
-        IslandTiles Island = new IslandTiles(1, true, 1, false, false);
+        Island.putMotherNature();
         Island.removeNM();
         assertFalse(Island.isMotherNature());
     }
 
     @Test
     public void testRemoveNET() {
-        IslandTiles Island = new IslandTiles(1, false, 1, true, false);
+        try {
+            Island.putNET();
+        } catch (IllegalMoveException e) {
+            fail();
+        }
+
         try {
             Island.removeNET();
             assertFalse(Island.isNoEntryTiles());
@@ -56,34 +81,29 @@ class IslandTilesTest {
 
     @Test
     public void testRemoveNET2() {
-        IslandTiles Island = new IslandTiles(1, false, 1, true, false);
+        boolean thrown = false;
         try {
             Island.removeNET();
-            fail();
+
         } catch (IllegalMoveException e) {
-            assertTrue(Island.isNoEntryTiles());
+            thrown = true;
         }
+        assertTrue(thrown);
     }
 
 
-    @Test
-    public void testGetSize() {
-        IslandTiles Island = new IslandTiles(1, false, 1, false, false);
-        assertEquals(1, Island.getSize());
-    }
 
 
     @Test
-    public void tesSetColor() {
-        IslandTiles Island = new IslandTiles(1, false, 1, false, true);
-        Island.setColTower(ColorTower.Black);
+    public void tesPutTower() {
+        Island.putTower(ColorTower.Black);
+        assertTrue(Island.isTower());
         assertEquals(ColorTower.Black, Island.getColTower());
     }
 
 
     @Test
     public void tesSetStudent() {
-        IslandTiles Island = new IslandTiles(1, false, 1, false, false);
         ArrayList<Color> Students = new ArrayList<>();
         Students.add(Color.Blue);
         Students.add(Color.Pink);
@@ -97,5 +117,21 @@ class IslandTilesTest {
         assertArrayEquals(Students.toArray(), Island.getStudentsInIsland().toArray());
     }
 
+    @Test
+    public void testCountInfluence(){
+        int count;
+        ArrayList<Color> Students = new ArrayList<>();
+        Students.add(Color.Blue);
+        Students.add(Color.Pink);
+        Students.add(Color.Yellow);
+        Students.add(Color.Green);
+        Students.add(Color.Blue);
+        Students.add(Color.Red);
+        Students.add(Color.Yellow);
+        Island.setStudentsInIsland(Students);
+
+        count=Island.CountInfluence(Color.Yellow);
+        assertEquals(2, count);
+    }
 }
 
