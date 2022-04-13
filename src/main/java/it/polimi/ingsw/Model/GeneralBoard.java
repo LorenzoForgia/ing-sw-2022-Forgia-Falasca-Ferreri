@@ -104,7 +104,7 @@ import java.util.*;
         /* remove I2 from List*/
 
         for(int i=0; i < Islands.size() || flag ; i++){
-            if (I2.equals(Islands.get(i))) {
+            if (I2.getNumberID() == Islands.get(i).getNumberID()) {
                 Islands.remove(i);
                 flag = true;
             }
@@ -136,7 +136,7 @@ import java.util.*;
 
         /* get the new island*/
         while( n > 0  ){
-            if(j< Islands.size()){
+            if(j< Islands.size()-1){
                 j++;
             }else{
                 j=0;
@@ -161,7 +161,7 @@ import java.util.*;
             k = j + 1;
         }
         if (Islands.get(k).isTower()) {
-            if (Islands.get(j).getColTower() == Islands.get(k).getColTower()) {
+            if (Islands.get(j).getColTower().equals(Islands.get(k).getColTower())) {
                 SetNewGroup(Islands.get(j), Islands.get(k));
             }
         }

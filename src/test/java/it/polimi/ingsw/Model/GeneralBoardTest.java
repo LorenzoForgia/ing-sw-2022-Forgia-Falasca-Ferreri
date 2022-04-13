@@ -21,34 +21,30 @@ class GeneralBoardTest {
 
     @Test
     public void testCreateTwelveIsland(){
-        boolean notnull = false;
         GB.CreateTwelveIslands();
-        if(GB.GetIslands().get(0) != null && GB.GetIslands().get(1) != null && GB.GetIslands().get(2) != null && GB.GetIslands().get(3) != null && GB.GetIslands().get(4) != null &&GB.GetIslands().get(5) != null && GB.GetIslands().get(6) != null && GB.GetIslands().get(7) != null && GB.GetIslands().get(8) != null && GB.GetIslands().get(9) != null && GB.GetIslands().get(10) != null && GB.GetIslands().get(11) != null ){
-            notnull= true;
-        }
-        assertTrue(notnull);
+
+        assertEquals(12, GB.GetIslands().size());
     }
 
     @Test
     public void testCreateClouds(){
-        boolean notnull = false;
         GB.CreateClouds(2);
-        if(GB.getClouds().get(0)!= null && GB.getClouds().get(1)!= null){
-            notnull = true;
-        }
-
-        assertTrue(notnull);
+        assertEquals(2, GB.getClouds().size());
 
     }
 
     @Test
     public void testCreateSchoolBoard(){
-        boolean notnull = false;
+
         GB.CreateSchoolBoards(2);
-        if(GB.getSchoolBoard().get(0)!= null && GB.getSchoolBoard().get(1)!= null){
-            notnull = true;
-        }
-        assertTrue(notnull);
+        assertEquals(2, GB.getSchoolBoard().size());
+    }
+
+    @Test
+    public void testCreateSchoolBoard2(){
+
+        GB.CreateSchoolBoards(3);
+        assertEquals(3, GB.getSchoolBoard().size());
     }
 
     @Test
@@ -88,19 +84,29 @@ class GeneralBoardTest {
         assertEquals(12, number);
     }
 
-    @Test
+   @Test
     public void testMoveMotherNature() {
         GB.CreateTwelveIslands();
         GB.GetIslands().get(1).putMotherNature();
-        IslandTiles IslandF = new IslandTiles(3,true,1,false,false);
         IslandTiles Island2;
         Island2=GB.moveMotherNature(GB.GetIslands().get(1),2);
         assertFalse(GB.GetIslands().get(1).isMotherNature());
-        assertEquals(IslandF, Island2 );
-
+        assertEquals(3, Island2.getNumberID());
+       assertTrue( Island2.isMotherNature());
     }
 
     @Test
+    public void testMoveMotherNature2() {
+        GB.CreateTwelveIslands();
+        GB.GetIslands().get(11).putMotherNature();
+        IslandTiles Island2;
+        Island2=GB.moveMotherNature(GB.GetIslands().get(11),2);
+        assertFalse(GB.GetIslands().get(11).isMotherNature());
+        assertEquals(1, Island2.getNumberID());
+        assertTrue( Island2.isMotherNature());
+    }
+
+ /*   @Test
     public void testCheckNearTower(){
         GB.CreateTwelveIslands();
         GB.GetIslands().get(0).putTower(ColorTower.Black);
@@ -110,7 +116,7 @@ class GeneralBoardTest {
         assertEquals(10, GB.CheckNumberOfGroup());
     }
 
-    @Test
+@Test
     public void testCheckNearTower2(){
         GB.CreateTwelveIslands();
         GB.GetIslands().get(0).putTower(ColorTower.Black);
@@ -149,4 +155,6 @@ class GeneralBoardTest {
         GB.CheckNearTower(GB.GetIslands().get(0));
         assertEquals(12, GB.CheckNumberOfGroup());
     }
+
+  */
 }
