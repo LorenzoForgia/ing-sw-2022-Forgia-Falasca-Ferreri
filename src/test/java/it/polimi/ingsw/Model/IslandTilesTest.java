@@ -131,7 +131,7 @@ class IslandTilesTest {
         Island.setStudentsInIsland(Students);
 
         count=Island.CountInfluence(Color.Yellow);
-        assertEquals(count, 2);
+        assertEquals(2, count);
     }
 }
 
