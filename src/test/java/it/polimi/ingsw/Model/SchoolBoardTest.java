@@ -99,5 +99,6 @@ class SchoolBoardTest {
         s.AddStudent(Color.Red);
         assertEquals(i+1, s.GetNumberStudent());
     }
+    /*getDiningRoom non saprei come implementare il test, dà sempre errore*/
 
 }

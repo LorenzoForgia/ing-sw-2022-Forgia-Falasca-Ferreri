@@ -5,9 +5,7 @@ import java.util.ArrayList;
 public class DiningRoom implements Location{
     private ArrayList<ArrayList<Color>> DiningRoom=new ArrayList<ArrayList<Color>>();
 
-    public DiningRoom(ArrayList<ArrayList<Color>> diningRoom) {
-        DiningRoom = diningRoom;
-    }
+    public DiningRoom() {}
     public void PutStudent(Color s){     /*putting student s in the dining room*/
         DiningRoom.get(s.getIndex()).add(s);
     }

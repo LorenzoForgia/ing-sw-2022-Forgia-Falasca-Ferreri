@@ -6,7 +6,7 @@ public class SchoolBoard {
     private int Student;
     private ColorTower colorTower;
     private List<Color> Entrance= new ArrayList<Color>();
-    private DiningRoom diningRoom;
+    private DiningRoom diningRoom= new DiningRoom();
     private List<Color> ProfessorTable= new ArrayList<Color>();
     private List<ColorTower> TowerRoom= new ArrayList<ColorTower>();
 
