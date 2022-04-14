@@ -15,12 +15,13 @@ public class CharacterCard1 extends CharacterCard {
             this.choosenStudent.add(bag.CatchStudent());
         }
     }
-
+    public ArrayList<Color> GetchoosenStudent(){    /*method only for tests*/
+        return choosenStudent;
+    }
     public void PutOnIsland(IslandTiles i, Color c) {      /* player choose student from the card and island and put him on the island*/
         i.PutStudent(c);
     }
-
-    public void AddStudFromBag(Bag bag) {         /*add a student draw from the bag on tne card*/
+    public void AddStudFromBag(Bag bag){         /*add a student draw from the bag on tne card*/
         this.choosenStudent.add(bag.CatchStudent());
     }
 }

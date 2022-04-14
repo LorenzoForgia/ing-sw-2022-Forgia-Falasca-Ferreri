@@ -6,7 +6,6 @@ public class CharacterCard4 extends CharacterCard{
     }
 
     public int AddTwoMvntMN(CardAssistant a){     /* player can move nature mother two more position*/
-        return a.getMovementMN() +2;
+        return a.getMovementMN()+2;
     }
-
 }
