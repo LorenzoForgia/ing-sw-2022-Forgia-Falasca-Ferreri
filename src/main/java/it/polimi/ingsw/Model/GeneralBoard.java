@@ -83,7 +83,7 @@ import java.util.*;
             NoEntryTiles = NoEntryTiles - 1;
         }
 
-    private void SetNewGroup(IslandTiles I1, IslandTiles I2 ){
+    public void SetNewGroup(IslandTiles I1, IslandTiles I2 ){
         boolean flag = false;
      /* put I2 students in I1*/
         for(int i=0; i < I2.getStudentsInIsland().size(); i++){
@@ -102,8 +102,7 @@ import java.util.*;
           addNET();
       }
         /* remove I2 from List*/
-
-        for(int i=0; i < Islands.size() || flag ; i++){
+        for(int i=0; i < Islands.size() && flag==false ; i++){
             if (I2.getNumberID() == Islands.get(i).getNumberID()) {
                 Islands.remove(i);
                 flag = true;

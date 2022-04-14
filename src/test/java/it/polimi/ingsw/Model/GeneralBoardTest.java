@@ -105,6 +105,33 @@ class GeneralBoardTest {
         assertEquals(1, Island2.getNumberID());
         assertTrue( Island2.isMotherNature());
     }
+    @Test
+    public void testSetNewGroup(){
+        IslandTiles i1=new IslandTiles(1,false,1,false,false);
+        IslandTiles i2=new IslandTiles(2,true,1,false,false);
+        i1.PutStudent(Color.Red);
+        i1.PutStudent(Color.Blue);
+        i1.PutStudent(Color.Red);
+        i2.PutStudent(Color.Blue);
+        GB.SetNewGroup(i1, i2);
+        assertEquals(2, i1.getSize());
+        assertEquals(4,i1.getStudentsInIsland().size());
+        assertTrue(i1.isMotherNature());
+        assertFalse(i1.isNoEntryTiles());
+    }
+    @Test
+    public void testSetNewGroup2(){
+        int i;
+        GB.CreateTwelveIslands();
+        GB.GetIslands().get(0).PutStudent(Color.Green);
+        GB.GetIslands().get(0).PutStudent(Color.Green);
+        GB.GetIslands().get(0).PutStudent(Color.Blue);
+        GB.GetIslands().get(1).PutStudent(Color.Blue);
+        i=GB.GetIslands().size();
+        GB.SetNewGroup(GB.GetIslands().get(0), GB.GetIslands().get(1));
+        assertEquals(4,GB.GetIslands().get(0).getStudentsInIsland().size());
+        assertEquals(11, GB.GetIslands().size());
+    }
 
  /*   @Test
     public void testCheckNearTower(){

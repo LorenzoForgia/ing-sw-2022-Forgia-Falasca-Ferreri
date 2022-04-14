@@ -133,5 +133,13 @@ class IslandTilesTest {
         count=Island.CountInfluence(Color.Yellow);
         assertEquals(2, count);
     }
+    @Test
+    public void testPutStudent(){
+        Island.PutStudent(Color.Green);
+        Island.PutStudent(Color.Yellow);
+        assertEquals(2, Island.getStudentsInIsland().size());
+        assertEquals(Color.Yellow, Island.GetStudent(1));
+    }
+
 }
 
