@@ -17,10 +17,10 @@ public class CharacterCard11 extends CharacterCard{
             if(students.get(i).equals(c)){
                 sb.getDiningRoom().PutStudent(students.get(i));
                 students.remove(i);
+                students.add(b.CatchStudent());
                 flag=1;
             }
         }
-        students.add(b.CatchStudent());
     }
 
     public List<Color> getStudents() {  /** only for test**/
