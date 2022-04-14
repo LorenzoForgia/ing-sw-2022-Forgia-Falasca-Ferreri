@@ -46,7 +46,7 @@ class DiningRoomTest {
         d.RemoveStudent(Color.Red);
         assertEquals(0, d.GetNumberStudent(Color.Red));
     }
-    /*
+
     @Test
     public void GetCoinTest(){
         DiningRoom d = new DiningRoom();
@@ -85,8 +85,7 @@ class DiningRoomTest {
         DiningRoom d = new DiningRoom();
         d.PutStudent(Color.Red);
         d.PutStudent(Color.Red);
-        d.PutStudent(Color.Red);
         assertFalse(d.GetCoin(Color.Red));
     }
-   */
+
 }

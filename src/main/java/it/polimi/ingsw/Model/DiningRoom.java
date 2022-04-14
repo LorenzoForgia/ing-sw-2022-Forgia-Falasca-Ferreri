@@ -27,12 +27,12 @@ public class DiningRoom implements Location{
         return DiningRoom.get(c.getIndex()).size();
     }
 
-/*    public boolean GetCoin(Color s){     /* expert game: if student's place is the third, sixth or ninth the student has to get a coin*/
- /*       if(DiningRoom.get(s.getIndex()).indexOf(s)==3 || DiningRoom.get(s.getIndex()).indexOf(s)==6 || DiningRoom.get(s.getIndex()).indexOf(s)==9 ){
+    public boolean GetCoin(Color s){     /* expert game: if student's place is the third, sixth or ninth the student has to get a coin*/
+        if(DiningRoom.get(s.getIndex()).size()==3 || DiningRoom.get(s.getIndex()).size()==6 || DiningRoom.get(s.getIndex()).size()==9 ){
             return true;
         }else{
             return false;
         }
     }
-*/
+
 }
