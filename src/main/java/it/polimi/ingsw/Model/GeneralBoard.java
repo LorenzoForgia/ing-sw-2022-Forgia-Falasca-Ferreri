@@ -10,12 +10,20 @@ import java.util.*;
     List<CloudTiles> Clouds = new ArrayList<>();
     List<IslandTiles> Islands = new ArrayList<>();
     List<SchoolBoard> AllBoards = new ArrayList<>();
+    List <CharacterCard> ChoosenCards = new ArrayList<>();
 
 
     public GeneralBoard(int coins) {
             Coins = coins;
         }
 
+    public void setChoosenCards(CharacterCard c){
+        ChoosenCards.add(c);
+    }
+
+    public List <CharacterCard>  getChoosenCard(){
+        return ChoosenCards;
+    }
     public void setNoEntryTiles(int noEntryTiles) {
             NoEntryTiles = noEntryTiles;
         }
