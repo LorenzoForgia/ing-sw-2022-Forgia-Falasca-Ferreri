@@ -23,4 +23,7 @@ public class CharacterCard11 extends CharacterCard{
         students.add(b.CatchStudent());
     }
 
+    public List<Color> getStudents() {  /** only for test**/
+        return students;
+    }
 }
