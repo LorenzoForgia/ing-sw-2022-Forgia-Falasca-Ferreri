@@ -10,12 +10,20 @@ import java.util.*;
     List<CloudTiles> Clouds = new ArrayList<>();
     List<IslandTiles> Islands = new ArrayList<>();
     List<SchoolBoard> AllBoards = new ArrayList<>();
+    List <CharacterCard> ChoosenCards = new ArrayList<>();
 
 
     public GeneralBoard(int coins) {
             Coins = coins;
         }
 
+    public void setChoosenCards(CharacterCard c){
+        ChoosenCards.add(c);
+    }
+
+    public List <CharacterCard>  getChoosenCard(){
+        return ChoosenCards;
+    }
     public void setNoEntryTiles(int noEntryTiles) {
             NoEntryTiles = noEntryTiles;
         }
@@ -83,7 +91,7 @@ import java.util.*;
             NoEntryTiles = NoEntryTiles - 1;
         }
 
-    public void SetNewGroup(IslandTiles I1, IslandTiles I2 ){
+    private void SetNewGroup(IslandTiles I1, IslandTiles I2 ){
         boolean flag = false;
      /* put I2 students in I1*/
         for(int i=0; i < I2.getStudentsInIsland().size(); i++){
@@ -164,6 +172,8 @@ import java.util.*;
                 SetNewGroup(Islands.get(j), Islands.get(k));
             }
         }
+
+        j= Islands.indexOf(I);
 
         if (j == 0) {
             k = Islands.size()-1;
