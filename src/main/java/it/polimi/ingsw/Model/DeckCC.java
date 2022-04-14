@@ -7,7 +7,7 @@ import java.util.Random;
 public class DeckCC {
     private ArrayList<CharacterCard> characterCards= new ArrayList<CharacterCard>();
 
-    public  DeckCC() {
+    public DeckCC() {
       characterCards.add(new CharacterCard(1,1,0 ));
       characterCards.add(new CharacterCard(2,2,0 ));
       characterCards.add(new CharacterCard(3,3,0 ));
@@ -27,5 +27,9 @@ public class DeckCC {
         CharacterCard draftedcard = this.characterCards.get(draftedindex);
         this.characterCards.remove(draftedindex);
         return draftedcard;
+    }
+
+    public ArrayList<CharacterCard> getCharacterCards() {  /**only for test**/
+        return characterCards;
     }
 }
