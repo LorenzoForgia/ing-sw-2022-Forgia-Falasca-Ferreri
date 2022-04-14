@@ -65,6 +65,10 @@ public class SchoolBoard {
         return this.diningRoom;
     }
 
+    public List<Color> getEntrance(){
+        return Entrance;
+    }
+
 
     /**the next method is only for tests**/
     public int GetNumberStudent(Color c){

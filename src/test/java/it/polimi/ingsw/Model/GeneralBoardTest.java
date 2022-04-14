@@ -150,7 +150,7 @@ class GeneralBoardTest {
     public void testCheckNearTower4(){
         GB.CreateTwelveIslands();
         try{
-            GB.GetIslands().get(1).putNET();
+            GB.GetIslands().get(0).putNET();
         }catch(IllegalMoveException e){
             fail();
         }
@@ -185,7 +185,7 @@ class GeneralBoardTest {
         assertEquals(12, GB.CheckNumberOfGroup());
     }
 
-/*
+
     @Test
     public void testSetChoosenCard(){
         DeckCC DC= new DeckCC();
@@ -194,5 +194,5 @@ class GeneralBoardTest {
         GB.setChoosenCards(c);
         assertEquals(1, GB.getChoosenCard().size());
     }
-    */
+
 }
