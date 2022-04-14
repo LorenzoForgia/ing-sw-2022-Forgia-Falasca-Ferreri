@@ -7,7 +7,7 @@ import java.util.Random;
 public class DeckCC {
     private ArrayList<CharacterCard> characterCards= new ArrayList<CharacterCard>();
 
-    public void DeckCC() {
+    public  DeckCC() {
       characterCards.add(new CharacterCard(1,1,0 ));
       characterCards.add(new CharacterCard(2,2,0 ));
       characterCards.add(new CharacterCard(3,3,0 ));
