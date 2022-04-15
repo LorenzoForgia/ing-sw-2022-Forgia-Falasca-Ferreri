@@ -6,7 +6,7 @@ import it.polimi.ingsw.Model.Player;
 
 public class GameEndState {
     public boolean CheckEndGameImmediately(Player p, GeneralBoard g) {
-        if (p.getMySchoolBoard().GetNumberTower() == 0){
+        if (p.getMySchoolBoard().getNumberOfTower() == 0){
             return true;
         } else if(g.GetIslands().size() == 3){
             return true;
