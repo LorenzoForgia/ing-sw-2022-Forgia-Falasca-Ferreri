@@ -8,7 +8,7 @@ public class GameEndState {
     public boolean CheckEndGameImmediately(Player p, GeneralBoard g) {
         if (p.getMySchoolBoard().getNumberOfTower() == 0){
             return true;
-        } else if(g.GetIslands().size() == 3){
+        } else if(g.GetIslands().size() <= 3){
             return true;
         }else{return false;}
     }
