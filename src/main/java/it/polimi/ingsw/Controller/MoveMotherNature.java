@@ -1,11 +1,10 @@
 package it.polimi.ingsw.Controller;
 
 import it.polimi.ingsw.Model.*;
-import jdk.dynalink.linker.support.CompositeTypeBasedGuardingDynamicLinker;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.XMLFormatter;
+
 
 public class MoveMotherNature {
     IslandTiles I1;
@@ -21,21 +20,39 @@ public class MoveMotherNature {
         I1 = GB.moveMotherNature(I1, n);
     }
 
-    private int influenceTot(List<Color> student, IslandTiles I, ColorTower ct ){
-        int influence=0;
+    private int influenceTot(List<Color> student, IslandTiles I, ColorTower ct, boolean usedCard , CharacterCard card ) {
+        int influence = 0;
         int influenceT = 0;
-        if(I.isTower()){
-            colorT= I.getColTower();
-            if(I.getColTower().equals(ct)){
-                influenceT = 1 * I.getSize();
+        CharacterCard6 c6;
+        CharacterCard8 c8;
+        if (!I.isNoEntryTiles()) {                     /*Effect5*/
+            if (I.isTower()) {
+                colorT = I.getColTower();
+                if (I.getColTower().equals(ct)) {
+                    influenceT = 1 * I.getSize();
+                }
+            }
+            for (int i = 0; i < student.size(); i++) {
+                influence = influence + I.CountInfluence(student.get(i)) + influenceT;
             }
         }
-        for(int i =0 ; i < student.size(); i++){
-            influence= influence +I.CountInfluence(student.get(i)) + influenceT;
+
+        if(usedCard) {
+            if (card.getName() == 6) {     /*Effect6*/
+                c6 = (CharacterCard6) card;
+                influence = c6.useEffect6(I, influence);
+                card.setCountUse();
+                ;
+            }else if(card.getName() == 8){                /*Effect8*/
+                c8 = (CharacterCard8) card;
+                influence = c8.useEffect8(I, influence);
+                card.setCountUse();
+            }else if(card.getName() == 9){                 /*Effect9*/
+
+            }
         }
         return influence;
     }
-
     private ArrayList<ArrayList<Color>> GetSquadIf4Players(GeneralBoard GB){
         ColorTower ct;
         boolean flag = true;
@@ -77,7 +94,7 @@ public class MoveMotherNature {
     }
 
 
-    public boolean CheckIfIslandGetControlled(int numberPlayer, GeneralBoard GB){
+    public boolean CheckIfIslandGetControlled(int numberPlayer, GeneralBoard GB, boolean usedCard, CharacterCard c){
         ArrayList<Integer> listInfluence = new ArrayList<>();
         ArrayList<ArrayList<Color>> listProfessor;
         boolean flag = false;
@@ -91,7 +108,7 @@ public class MoveMotherNature {
         }
 
         for(int i=0; i< listProfessor.size(); i++) {
-            listInfluence.add(i, influenceTot(listProfessor.get(i), I1, colorTowerList.get(i)));
+            listInfluence.add(i, influenceTot(listProfessor.get(i), I1, colorTowerList.get(i), usedCard, c));
         }
 
         for(int i=0; i< listInfluence.size(); i++){
