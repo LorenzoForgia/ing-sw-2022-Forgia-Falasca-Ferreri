@@ -33,6 +33,9 @@ public class SchoolBoard {
     public void PutTower(ColorTower t){      /*putting tower t in the tower room*/
         TowerRoom.add(t);
     }
+    public void RemoveTower(ColorTower t){
+        TowerRoom.remove(t);
+    }
     public ColorTower ColorTower(){      /* color towers in the school board*/
         return colorTower;
     }
