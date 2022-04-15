@@ -3,17 +3,15 @@ import it.polimi.ingsw.Model.*;
 
 import java.util.*;
 public class Setup {
-    /** DA FINIRE **/
-    public List<ColorTower> getTowers(ColorTower ct){
-        List<ColorTower> towers=new ArrayList<>();
-        int limit=8;
-        if(ct.equals(ColorTower.Grey)){
-           limit=6;
+
+    public void SetTowers(int numPlayers,List<SchoolBoard> sbperteam){ /**in case of 4 players sb must be only 2 sb of different squad**/
+        int countTowers=8;
+        if(numPlayers==3){
+           countTowers=6;
         }
-        for(int i=0;i<limit;i++){
-            towers.add(ct);
+        for(int i=0;i<countTowers;i++) {
+            sbperteam.get(i).PutTower();
         }
-        return towers;
     }
 
 
@@ -29,17 +27,8 @@ public class Setup {
         }
     }
 
-    public List<IslandTiles> CreateIslandTiles(int MNposition){
-        List<IslandTiles> it =new ArrayList<IslandTiles>();
-        Boolean MotherNature=false;
-        for(int i=0;i<12;i++){
-            if(i==MNposition){
-                MotherNature=true;
-            }
-              it.add(new IslandTiles(i,MotherNature,1,false,false));
-              MotherNature=false;
-        }
-        return it;
+    public void SetMNto1Island(int MNposition,GeneralBoard gb){
+        gb.GetIslands().get(MNposition).putMotherNature();
     }
     public void SetupStudentsInIslands(Bag b,int MNposition,List<IslandTiles> is){
         int starter=MNposition;
@@ -53,13 +42,8 @@ public class Setup {
             }
         }
     }
-    public List<CloudTiles> CreateCloudTiles(int numPlayers){
-        List<CloudTiles> c=new ArrayList<CloudTiles>();
-        for(int i=0;i<numPlayers;i++){
-            c.add(new CloudTiles(i));
-        }
-        return c;
-    }
+
+
 
      public GeneralBoard getGeneralboard(ChooseSettingGame sg){
          if(sg.isModExpert()){
@@ -69,19 +53,9 @@ public class Setup {
          }
      }
 
+     /**character card nel main **/
+      
 
 
 
-   /**public List<ColorTower> setupTowers(ChooseSettingGame sg){
-
-   }**/
- /*  public void SetGame(ChooseSettingGame settingsgame, List<SchoolBoard> sb, List<ColorTower> ColorTow){
-      if(settingsgame.getNumPlayers()==2){
-          for(int i=0;i<2;i++){
-              ColorTower ct=ColorTow.get(i);
-              sb.get(i).setColorTower(ct);
-
-          }
-      }
-   }*/
 }
