@@ -45,8 +45,8 @@ public class Setup {
 
 
 
-     public GeneralBoard getGeneralboard(ChooseSettingGame sg){
-         if(sg.isModExpert()){
+     public GeneralBoard getGeneralboard(Boolean modExpert){
+         if(modExpert){
              return new GeneralBoard(20);
          }else{
              return new GeneralBoard(0);
@@ -54,7 +54,7 @@ public class Setup {
      }
 
      /**character card nel main **/
-      
+
 
 
 
