@@ -3,8 +3,7 @@ import it.polimi.ingsw.Model.*;
 
 import java.util.*;
 public class Setup {
-
-   /** forse non serve
+    /** DA FINIRE **/
     public List<ColorTower> getTowers(ColorTower ct){
         List<ColorTower> towers=new ArrayList<>();
         int limit=8;
@@ -15,14 +14,14 @@ public class Setup {
             towers.add(ct);
         }
         return towers;
-    }**/
+    }
 
 
     public Bag CreateBag(){
         Bag b=new Bag();
         return b;
     }
-    public void SetBag(Bag b,int numsetbag){    /** setStudents in 2 phases**/
+    public void SetBag(Bag b,int numsetbag){    /** setStudents in 2 phases:between 1 and 2 phase there's SetupStudentsInIslands**/
         if(numsetbag==1) {
             b.setStudents(10);
         }else{
@@ -45,7 +44,7 @@ public class Setup {
     public void SetupStudentsInIslands(Bag b,int MNposition,List<IslandTiles> is){
         int starter=MNposition;
         int infrontofMN=(MNposition+6)%12;
-        if(starter==11){
+        if(MNposition==11){
             starter=0;
         }
         for(int i=0;i<12;i++){
@@ -54,7 +53,13 @@ public class Setup {
             }
         }
     }
-
+    public List<CloudTiles> CreateCloudTiles(int numPlayers){
+        List<CloudTiles> c=new ArrayList<CloudTiles>();
+        for(int i=0;i<numPlayers;i++){
+            c.add(new CloudTiles(i));
+        }
+        return c;
+    }
 
      public GeneralBoard getGeneralboard(ChooseSettingGame sg){
          if(sg.isModExpert()){
