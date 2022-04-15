@@ -136,28 +136,31 @@ public class MoveMotherNature {
             if (!colorT.equals(ct)) {
                 for(int i =0; i < SBWhitTower.size() && notFound; i++){
                    if(SBWhitTower.get(i).ColorTower().equals(ct)){
-                       SBWhitTower.get(i).PutTower(ct);
+                       SBWhitTower.get(i).PutTower();
                        notFound = false;
                    }
                 }
                 notFound = true;
                 for(int i =0; i < SBWhitTower.size() && notFound; i++){
                     if(SBWhitTower.get(i).ColorTower().equals(ct)){
-                        SBWhitTower.get(i).RemoveTower(colorT);
+                        SBWhitTower.get(i).RemoveTower();
                         notFound = false;
+
                     }
                 }
             I1.putTower(colorT);
+            GB.CheckNearTower(I1);
             }
         }else{
             notFound = true;
             for(int i =0; i < SBWhitTower.size() && notFound; i++) {
                 if (SBWhitTower.get(i).ColorTower().equals(ct)) {
-                    SBWhitTower.get(i).RemoveTower(colorT);
+                    SBWhitTower.get(i).RemoveTower();
                     notFound = false;
                 }
             }
             I1.putTower(colorT);
+            GB.CheckNearTower(I1);
         }
 
     }

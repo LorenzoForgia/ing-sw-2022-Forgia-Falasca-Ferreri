@@ -8,7 +8,7 @@ public class SchoolBoard {
     private List<Color> Entrance= new ArrayList<Color>();
     private DiningRoom diningRoom= new DiningRoom();
     private List<Color> ProfessorTable= new ArrayList<Color>();
-    private List<ColorTower> TowerRoom= new ArrayList<ColorTower>();
+    private int NumberOfTower =0;
 
     public SchoolBoard(int numberId, int student){
         NumberId=numberId;
@@ -26,18 +26,24 @@ public class SchoolBoard {
     public void RemoveProfessor(Color p){      /*removing professor p from the professor table*/
         ProfessorTable.remove(p);
     }
-    /*towerroom è da settare nel controller*/
-    public int GetNumberTower(){     /*getting number of towers in the tower room*/
-        return TowerRoom.size() ;
+
+
+    public void PutTower(){      /*putting  one tower in the tower room*/
+        NumberOfTower = NumberOfTower +1;
     }
-    public void PutTower(ColorTower t){      /*putting tower t in the tower room*/
-        TowerRoom.add(t);
-    }
-    public void RemoveTower(ColorTower t){
-        TowerRoom.remove(t);
+    public void RemoveTower(){
+        NumberOfTower = NumberOfTower -1;
     }
     public ColorTower ColorTower(){      /* color towers in the school board*/
         return colorTower;
+    }
+
+    public void setNumberOfTower(int numberOfTower) {
+        NumberOfTower = numberOfTower;
+    }
+
+    public int getNumberOfTower() {
+        return NumberOfTower;
     }
 
     public void setColorTower(ColorTower colorTower) {  /* set color tower in the school board*/
