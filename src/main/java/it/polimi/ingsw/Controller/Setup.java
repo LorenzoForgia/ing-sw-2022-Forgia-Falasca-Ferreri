@@ -9,8 +9,10 @@ public class Setup {
         if(numPlayers==3){
            countTowers=6;
         }
-        for(int i=0;i<countTowers;i++) {
-            sbperteam.get(i).PutTower();
+        for(int i=0;i<sbperteam.size();i++){
+            for(int j=0;j<countTowers;j++) {
+                sbperteam.get(i).PutTower();
+            }
         }
     }
 
@@ -31,26 +33,34 @@ public class Setup {
         gb.GetIslands().get(MNposition).putMotherNature();
     }
     public void SetupStudentsInIslands(Bag b,int MNposition,List<IslandTiles> is){
-        int starter=MNposition;
+        int counter=MNposition+1;
         int infrontofMN=(MNposition+6)%12;
         if(MNposition==11){
-            starter=0;
+            counter=0;
         }
-        for(int i=0;i<12;i++){
-            if(i!=MNposition && i!=infrontofMN){
-                is.get(i).PutStudent(b.CatchStudent());
+        for(int i=0;i<12;i++,counter++){
+            if(counter!=MNposition && counter!=infrontofMN){
+                is.get(counter).PutStudent(b.CatchStudent());
+            }
+            if(counter==11){
+                counter=-1;
             }
         }
     }
 
 
 
-     public GeneralBoard getGeneralboard(Boolean modExpert){
-         if(modExpert){
-             return new GeneralBoard(20);
+     public GeneralBoard CreateGeneralboard(Boolean modExpert,int numPlayers){
+        GeneralBoard gb;
+        if(modExpert){
+             gb= new GeneralBoard(20);
          }else{
-             return new GeneralBoard(0);
+             gb=new GeneralBoard(0);
          }
+        gb.CreateTwelveIslands();
+        gb.CreateClouds(numPlayers);
+        gb.CreateSchoolBoards(numPlayers);
+        return gb;
      }
 
      /**character card nel main **/

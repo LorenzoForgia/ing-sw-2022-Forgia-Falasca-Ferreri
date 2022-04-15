@@ -77,7 +77,7 @@ public class IslandTiles implements Location {
     }
 
     public void setStudentsInIsland(ArrayList<Color> studentsInIsland) {
-        StudentsInIsland = studentsInIsland;
+        StudentsInIsland = studentsInIsland; /** NON SERVE**/
     }
 
     public void removeNM(){
