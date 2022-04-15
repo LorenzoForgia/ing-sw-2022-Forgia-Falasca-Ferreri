@@ -136,14 +136,18 @@ public class MoveMotherNature {
             if (!colorT.equals(ct)) {
                 for(int i =0; i < SBWhitTower.size() && notFound; i++){
                    if(SBWhitTower.get(i).ColorTower().equals(ct)){
-                       SBWhitTower.get(i).PutTower();
+                       for(int j= 0;  j< I1.getSize(); j ++){
+                           SBWhitTower.get(i).PutTower();
+                       }
                        notFound = false;
                    }
                 }
                 notFound = true;
                 for(int i =0; i < SBWhitTower.size() && notFound; i++){
                     if(SBWhitTower.get(i).ColorTower().equals(ct)){
-                        SBWhitTower.get(i).RemoveTower();
+                        for(int j= 0;  j< I1.getSize(); j ++){
+                            SBWhitTower.get(i).RemoveTower();
+                        }
                         notFound = false;
 
                     }
