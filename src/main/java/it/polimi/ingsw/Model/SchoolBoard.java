@@ -14,8 +14,8 @@ public class SchoolBoard {
         NumberId=numberId;
         Student= student;
     }
-    public void GetId(int id){      /* giving an id to the school_board*/
-        NumberId=id;
+    public int GetId(){      /* giving an id to the school_board*/
+        return NumberId;
     }
     public void PutProfessor(Color p){    /* putting professor p in the professor table*/
         ProfessorTable.add(p);

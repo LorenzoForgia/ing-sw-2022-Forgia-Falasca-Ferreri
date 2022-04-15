@@ -5,6 +5,8 @@ package it.polimi.ingsw.Model;
 public class Player {
     private String NickName;
     private int NumberCoins;
+    private int Turn=0;
+    private int NumMovNM=0;
     private SchoolBoard MySchoolBoard;
     private DeckCardAssistant MyDeck;
 
@@ -55,5 +57,21 @@ public class Player {
 
     public void ChooseSquad( ColorTower t){
         MySchoolBoard.setColorTower(t);
+    }
+    public void SetNumTurn(){
+        Turn=Turn+1;
+    }
+    public int GetNumTurn(){
+        return Turn;
+    }
+    public void ResetTurn(){Turn=0;}
+    public void SetNumMovNM(int n){
+        NumMovNM=n;
+    }
+    public int GetNumMovNM(){
+        return NumMovNM;
+    }
+    public void ResetNumMovNM(){
+        NumMovNM=0;
     }
 }
