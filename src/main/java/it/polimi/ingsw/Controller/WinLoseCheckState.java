@@ -10,19 +10,19 @@ public class WinLoseCheckState {
     public boolean CheckIfWinWithTower(Player p, GeneralBoard g){
         int w=0,b=0,gr=0;
         for(int i=0;i<g.GetIslands().size();i++){
-            if(g.GetIslands().get(i).getColTower()== ColorTower.Black){
+            if(g.GetIslands().get(i).getColTower().equals(ColorTower.Black)){
                 b=b+g.GetIslands().get(i).getSize();
-            }else if(g.GetIslands().get(i).getColTower()== ColorTower.White){
+            }else if(g.GetIslands().get(i).getColTower().equals(ColorTower.White)){
                 w=w+g.GetIslands().get(i).getSize();
-            }else if(g.GetIslands().get(i).getColTower()== ColorTower.Grey){
+            }else if(g.GetIslands().get(i).getColTower().equals(ColorTower.Grey)){
                 gr=gr+g.GetIslands().get(i).getSize();
             }
         }
-        if(b>w && b>gr && p.getMySchoolBoard().ColorTower()==ColorTower.Black){
+        if(b>w && b>gr && p.getMySchoolBoard().ColorTower().equals(ColorTower.Black)){
             return true;
-        }else if(w>b && w>gr && p.getMySchoolBoard().ColorTower()==ColorTower.White){
+        }else if(w>b && w>gr && p.getMySchoolBoard().ColorTower().equals(ColorTower.White)){
             return true;
-        }else if(gr>w && gr>b && p.getMySchoolBoard().ColorTower()==ColorTower.Grey){
+        }else if(gr>w && gr>b && p.getMySchoolBoard().ColorTower().equals(ColorTower.Grey)){
             return true;
         }else {return false;}
     }
