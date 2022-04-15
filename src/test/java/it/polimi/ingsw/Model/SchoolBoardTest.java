@@ -40,9 +40,9 @@ class SchoolBoardTest {
     public void PutTowerTest() {
         SchoolBoard s = new SchoolBoard(1, 7);
         int i = 0;
-        i = s.GetNumberTower();
-        s.PutTower(ColorTower.Black);
-        assertEquals(i + 1, s.GetNumberTower());
+        i = s.getNumberOfTower();
+        s.PutTower();
+        assertEquals(i + 1, s.getNumberOfTower());
     }
     @Test
     public void ColorTowerTest(){
