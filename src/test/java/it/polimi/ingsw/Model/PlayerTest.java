@@ -5,6 +5,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class PlayerTest {
@@ -58,7 +60,21 @@ class PlayerTest {
     @Test
     public void testChooseSquad(){
         player.ChooseSquad(ColorTower.Black);
-        assertEquals( ColorTower.Black, player.getMySchoolBoard().ColorTower());
+        assertEquals( ColorTower.Black, player.GetSquad());
     }
 
+    @Test
+    public void testUseCardAssistant(){
+        boolean flag = true;
+        List<CardAssistant> deckCardAssistant;
+        player.usedCard(CardAssistant.Cinque);
+        deckCardAssistant = player.getMyDeck().GetDeck();
+        for(int i =0; i< deckCardAssistant.size() && flag; i++){
+            if(deckCardAssistant.get(i).equals(CardAssistant.Cinque)){
+                flag = false;
+            }
+        }
+
+        assertTrue(flag);
+    }
 }
