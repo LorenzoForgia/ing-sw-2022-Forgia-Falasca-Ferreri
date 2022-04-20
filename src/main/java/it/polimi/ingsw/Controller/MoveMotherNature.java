@@ -27,14 +27,14 @@ public class MoveMotherNature {
         CharacterCard8 c8;
         if (!I.isNoEntryTiles()) {                     /*Effect5*/
             if (I.isTower()) {
-                colorT = I.getColTower();
-                if (I.getColTower().equals(ct)) {
-                    influenceT = 1 * I.getSize();
+                if (ct.equals(I.getColTower())) {
+                    influenceT = I.getSize();
                 }
             }
             for (int i = 0; i < student.size(); i++) {
-                influence = influence + I.CountInfluence(student.get(i)) + influenceT;
+                influence = influence + I.CountInfluence(student.get(i));
             }
+            influence = influence + influenceT;
         }
 
         if(usedCard) {
@@ -56,14 +56,18 @@ public class MoveMotherNature {
     private ArrayList<ArrayList<Color>> GetSquadIf4Players(GeneralBoard GB){
         ColorTower ct;
         boolean flag = true;
-        List<SchoolBoard> lSB =GB.getSchoolBoard();
+        List<SchoolBoard> lSB =new ArrayList<>();
         ArrayList<ArrayList<Color>> listProfessor = new ArrayList<>(2);
+
+        for(int i =0; i < GB.getSchoolBoard().size(); i++) {
+            lSB.add(i, GB.getSchoolBoard().get(i));
+        }
 
         for(int i=0; i< 2; i ++){
             listProfessor.add(new ArrayList<>());
         }
 
-        for(int i=0; i < lSB.size(); i ++){
+        for(int i=0; i < 2; i ++){
             ct= lSB.get(i).ColorTower();
             listProfessor.get(i).addAll(lSB.get(i).getProfessorTable());
             colorTowerList.add(i,lSB.get(i).ColorTower());
@@ -111,18 +115,14 @@ public class MoveMotherNature {
             listInfluence.add(i, influenceTot(listProfessor.get(i), I1, colorTowerList.get(i), usedCard, c));
         }
 
-        for(int i=0; i< listInfluence.size(); i++){
-            max= listInfluence.get(i);
-            ct = colorTowerList.get(i);
-            for(int j=0; j < listInfluence.size(); j++){
-                if(listInfluence.get(j)> max){
-                    max = listInfluence.get(j);
-                    ct = colorTowerList.get(j);
-                    flag = true;
-                }else if(listInfluence.get(j)== max){
-                    ct = colorT;
-                    flag = false;
-                }
+        for(int j=0; j < listInfluence.size(); j++){
+            if(listInfluence.get(j)> max){
+                 max = listInfluence.get(j);
+                 ct = colorTowerList.get(j);
+                 flag = true;
+            }else if(listInfluence.get(j)== max){
+                  ct = colorT;
+                  flag = false;
             }
         }
         colorT = ct;
@@ -130,9 +130,10 @@ public class MoveMotherNature {
     }
 
     public void GetRightTowerOnIsland(GeneralBoard GB, List<SchoolBoard> SBWhitTower){
-        ColorTower ct = I1.getColTower();
+        ColorTower ct;
         boolean notFound = true;
         if(I1.isTower()) {
+            ct = I1.getColTower();
             if (!colorT.equals(ct)) {
                 for(int i =0; i < SBWhitTower.size() && notFound; i++){
                    if(SBWhitTower.get(i).ColorTower().equals(ct)){
@@ -144,7 +145,7 @@ public class MoveMotherNature {
                 }
                 notFound = true;
                 for(int i =0; i < SBWhitTower.size() && notFound; i++){
-                    if(SBWhitTower.get(i).ColorTower().equals(ct)){
+                    if(SBWhitTower.get(i).ColorTower().equals(colorT)){
                         for(int j= 0;  j< I1.getSize(); j ++){
                             SBWhitTower.get(i).RemoveTower();
                         }
@@ -158,7 +159,7 @@ public class MoveMotherNature {
         }else{
             notFound = true;
             for(int i =0; i < SBWhitTower.size() && notFound; i++) {
-                if (SBWhitTower.get(i).ColorTower().equals(ct)) {
+                if (SBWhitTower.get(i).ColorTower().equals(colorT)) {
                     SBWhitTower.get(i).RemoveTower();
                     notFound = false;
                 }
