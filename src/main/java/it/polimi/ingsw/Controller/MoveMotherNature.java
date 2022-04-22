@@ -116,6 +116,7 @@ public class MoveMotherNature {
             ct= lSB.get(i).ColorTower();
             listProfessor.get(i).addAll(lSB.get(i).getProfessorTable());
             colorTowerList.add(i,lSB.get(i).ColorTower());
+            flag = true;
             for( int j= i + 1; j <lSB.size() && flag; j++){
                 if(ct.equals(lSB.get(j).ColorTower())){
                     listProfessor.get(i).addAll(lSB.get(j).getProfessorTable());
