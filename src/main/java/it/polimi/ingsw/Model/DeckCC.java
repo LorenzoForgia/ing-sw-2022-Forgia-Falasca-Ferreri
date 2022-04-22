@@ -8,18 +8,18 @@ public class DeckCC {
     private ArrayList<CharacterCard> characterCards= new ArrayList<CharacterCard>();
 
     public DeckCC() {
-      characterCards.add(new CharacterCard(1,1,0 ));
-      characterCards.add(new CharacterCard(2,2,0 ));
-      characterCards.add(new CharacterCard(3,3,0 ));
-      characterCards.add(new CharacterCard(4,1,0 ));
-      characterCards.add(new CharacterCard(5,2,0 ));
-      characterCards.add(new CharacterCard(6,3,0 ));
-      characterCards.add(new CharacterCard(7,1,0 ));
-      characterCards.add(new CharacterCard(8,2,0 ));
-      characterCards.add(new CharacterCard(9,3,0 ));
-      characterCards.add(new CharacterCard(10,1,0 ));
-      characterCards.add(new CharacterCard(11,2,0 ));
-      characterCards.add(new CharacterCard(12,3,0 ));
+      characterCards.add(new CharacterCard1(1,1,0 ));
+      characterCards.add(new CharacterCard2(2,2,0 ));
+      characterCards.add(new CharacterCard3(3,3,0 ));
+      characterCards.add(new CharacterCard4(4,1,0 ));
+      characterCards.add(new CharacterCard5(5,2,0 ));
+      characterCards.add(new CharacterCard6(6,3,0 ));
+      characterCards.add(new CharacterCard7(7,1,0 ));
+      characterCards.add(new CharacterCard8(8,2,0 ));
+      characterCards.add(new CharacterCard9(9,3,0 ));
+      characterCards.add(new CharacterCard10(10,1,0 ));
+      characterCards.add(new CharacterCard11(11,2,0 ));
+      characterCards.add(new CharacterCard12(12,3,0 ));
     }
     public CharacterCard DrawCard(){
         Random random = new Random();
