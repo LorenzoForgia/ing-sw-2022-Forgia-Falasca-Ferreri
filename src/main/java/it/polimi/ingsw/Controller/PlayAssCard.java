@@ -12,7 +12,9 @@ public class PlayAssCard {
         for (int i = 0; i < numplayer; i++) {
             if (p.getMySchoolBoard().GetId() == i) {
                 cards.add(a);
+                p.setCA(a);
                 p.getMyDeck().RemoveCard(a);
+
             }
         }
     }

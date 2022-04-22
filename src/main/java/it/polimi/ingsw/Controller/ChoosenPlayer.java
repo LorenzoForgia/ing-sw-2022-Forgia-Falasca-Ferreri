@@ -17,12 +17,5 @@ public class ChoosenPlayer {
             }
         }
     }
-    public void NumMovNM(ArrayList<CardAssistant> a, Player p){
-        for(int i=0;i<a.size();i++){
-            if(p.getMySchoolBoard().GetId()==i){
-                p.SetNumMovNM(a.get(i).getMovementMN());
-            }
-        }
-    }
 }
 

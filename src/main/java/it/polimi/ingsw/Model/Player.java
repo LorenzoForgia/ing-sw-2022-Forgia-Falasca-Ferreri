@@ -6,9 +6,9 @@ public class Player {
     private String NickName;
     private int NumberCoins;
     private int Turn=0;
-    private int NumMovNM=0;
     private SchoolBoard MySchoolBoard;
     private DeckCardAssistant MyDeck;
+    private CardAssistant CA;
 
     public Player(String nickName, int numberCoins, SchoolBoard mySchoolBoard, DeckCardAssistant myDeck) {
         NickName = nickName;
@@ -65,13 +65,12 @@ public class Player {
         return Turn;
     }
     public void ResetTurn(){Turn=0;}
-    public void SetNumMovNM(int n){
-        NumMovNM=n;
+
+    public void setCA(CardAssistant CA) {
+        this.CA = CA;
     }
-    public int GetNumMovNM(){
-        return NumMovNM;
-    }
-    public void ResetNumMovNM(){
-        NumMovNM=0;
+
+    public CardAssistant getCA() {
+        return CA;
     }
 }
