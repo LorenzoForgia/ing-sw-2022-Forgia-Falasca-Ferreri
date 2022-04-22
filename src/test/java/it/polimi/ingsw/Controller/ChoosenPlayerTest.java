@@ -61,15 +61,12 @@ class ChoosenPlayerTest {
         pl.ChooseTurnPlayer(p.GetAssCardPlayed(), player1);
         pl.ChooseTurnPlayer(p.GetAssCardPlayed(), player2);
         pl.ChooseTurnPlayer(p.GetAssCardPlayed(), player3);
-        pl.NumMovNM(p.GetAssCardPlayed(), player1);
-        pl.NumMovNM(p.GetAssCardPlayed(), player2);
-        pl.NumMovNM(p.GetAssCardPlayed(), player3);
         assertEquals(0, player1.GetNumTurn());
         assertEquals(1, player2.GetNumTurn());
         assertEquals(2,player3.GetNumTurn());
-        assertEquals(1, player1.GetNumMovNM());
-        assertEquals(1, player2.GetNumMovNM());
-        assertEquals(2, player3.GetNumMovNM());
+        assertEquals(1, player1.getCA().getMovementMN());
+        assertEquals(1, player2.getCA().getMovementMN());
+        assertEquals(2, player3.getCA().getMovementMN());
     }
 
 }
