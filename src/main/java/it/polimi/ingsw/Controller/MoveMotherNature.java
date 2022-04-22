@@ -40,7 +40,7 @@ public class MoveMotherNature {
     }
 
     /*Overload*/
-    private int influenceTot(List<Color> student, IslandTiles I, ColorTower ct, CharacterCard card ) {
+    private int influenceTot(List<Color> student, IslandTiles I, ColorTower ct, CharacterCard card, SchoolBoard SbPlayer) {
         int influence = 0;
         int influenceT = 0;
         if (!I.isNoEntryTiles()) {                     /*Effect5*/
@@ -53,23 +53,25 @@ public class MoveMotherNature {
                 influence = influence + I.CountInfluence(student.get(i));
             }
             influence = influence + influenceT;
-        }
-
 
             if (card.getName() == 6) {     /*Effect6*/
-                influence=((CharacterCard6) card).useEffect6(I, influence);
-                card.setCountUse();
+                if(ct.equals(I.getColTower())) {
+                    influence = ((CharacterCard6) card).useEffect6(I, influence);
+                    card.setCountUse();
+                }
 
-            } else if (card.getName() == 8) {                /*Effect8*/
-               influence= ((CharacterCard8) card).useEffect8(I, influence);
-                card.setCountUse();
+            } else if (card.getName() == 8) {/*Effect8*/
+                if(SbPlayer.ColorTower().equals(ct)) {
+                    influence = ((CharacterCard8) card).useEffect8(I, influence);
+                    card.setCountUse();
+                }
             }
-
+        }
         return influence;
     }
 
     /*Overload*/
-    private int influenceTot(List<Color> student, IslandTiles I, ColorTower ct, CharacterCard card , Color c) {
+    private int influenceTot(List<Color> professor, IslandTiles I, ColorTower ct, CharacterCard card , Color c) {
         int influence = 0;
         int influenceT = 0;
         if (!I.isNoEntryTiles()) {                     /*Effect5*/
@@ -78,16 +80,18 @@ public class MoveMotherNature {
                     influenceT = I.getSize();
                 }
             }
-            for (int i = 0; i < student.size(); i++) {
-                influence = influence + I.CountInfluence(student.get(i));
+            for (int i = 0; i < professor.size(); i++) {
+                if (!c.equals(professor.get(i))) {    /*Effect9*/
+                    influence = influence + I.CountInfluence(professor.get(i));
+                }else{
+                    card.setCountUse();
+                }
             }
+
             influence = influence + influenceT;
+
+
         }
-
-         /*Effect9*/
-        influence=((CharacterCard9) card).ColorNoEffect(I, c,influence);
-        card.setCountUse();
-
         return influence;
     }
 
@@ -168,7 +172,7 @@ public class MoveMotherNature {
     }
 
     /*Overload*/
-    public boolean CheckIfIslandGetControlled(int numberPlayer, GeneralBoard GB, IslandTiles I, CharacterCard c){
+    public boolean CheckIfIslandGetControlled(int numberPlayer, GeneralBoard GB, IslandTiles I, CharacterCard c, SchoolBoard SbPlayer){
         ArrayList<Integer> listInfluence = new ArrayList<>();
         ArrayList<ArrayList<Color>> listProfessor;
         boolean flag = false;
@@ -182,7 +186,7 @@ public class MoveMotherNature {
         }
 
         for(int i=0; i< listProfessor.size(); i++) {
-            listInfluence.add(i, influenceTot(listProfessor.get(i), I, colorTowerList.get(i), c));
+            listInfluence.add(i, influenceTot(listProfessor.get(i), I, colorTowerList.get(i), c, SbPlayer));
         }
 
         for(int j=0; j < listInfluence.size(); j++){
