@@ -138,6 +138,60 @@ class MoveMotherNatureTest {
         assertFalse(flag);
     }
 
+    @Test
+    public void testIfIslandCanGetControlled9() {   /*uso carta effetto 9, ccon torre sull'isola*/
+        boolean flag;
+        IslandTiles IT = new IslandTiles(1, true, 1, false, false);
+        GeneralBoard GB = new GeneralBoard(0);
+        CharacterCard9 c9 = new CharacterCard9(9,2,0);
+        IT.PutStudent(Color.Red);
+        IT.PutStudent(Color.Red);
+        IT.PutStudent(Color.Green);
+        IT.PutStudent(Color.Blue);
+        IT.PutStudent(Color.Blue);
+        IT.PutStudent(Color.Yellow);
+        IT.putTower(ColorTower.White);
+        MMN.SetIslandWithMotherNature(IT);
+        GB.CreateSchoolBoards(2);
+        GB.getSchoolBoard().get(0).setColorTower(ColorTower.Black);
+        GB.getSchoolBoard().get(1).setColorTower(ColorTower.White);
+        GB.getSchoolBoard().get(0).PutProfessor(Color.Blue);
+        GB.getSchoolBoard().get(0).PutProfessor(Color.Red);
+        GB.getSchoolBoard().get(1).PutProfessor(Color.Green);
+        GB.getSchoolBoard().get(1).PutProfessor(Color.Yellow);
+        flag = MMN.CheckIfIslandGetControlled(2, GB, IT, c9,Color.Red);
+        assertTrue(flag);
+    }
+
+    @Test
+    public void testIfIslandCanGetControlled8() {   /*Caso in cui c'era dominanza ma cancellata dalla carta effetto 9, con 4 giocatori*/
+        boolean flag;
+        IslandTiles IT = new IslandTiles(1, true, 1, false, false);
+        GeneralBoard GB = new GeneralBoard(0);
+        CharacterCard9 c9 = new CharacterCard9(9,2,0);
+        IT.PutStudent(Color.Pink);
+        IT.PutStudent(Color.Red);
+        IT.PutStudent(Color.Red);
+        IT.PutStudent(Color.Green);
+        IT.PutStudent(Color.Blue);
+        IT.PutStudent(Color.Blue);
+        IT.PutStudent(Color.Yellow);
+        IT.PutStudent(Color.Yellow);
+        MMN.SetIslandWithMotherNature(IT);
+        GB.CreateSchoolBoards(4);
+        GB.getSchoolBoard().get(0).setColorTower(ColorTower.Black);
+        GB.getSchoolBoard().get(1).setColorTower(ColorTower.White);
+        GB.getSchoolBoard().get(2).setColorTower(ColorTower.Black);
+        GB.getSchoolBoard().get(3).setColorTower(ColorTower.White);
+        GB.getSchoolBoard().get(0).PutProfessor(Color.Pink);
+        GB.getSchoolBoard().get(2).PutProfessor(Color.Blue);
+        GB.getSchoolBoard().get(2).PutProfessor(Color.Red);
+        GB.getSchoolBoard().get(3).PutProfessor(Color.Green);
+        GB.getSchoolBoard().get(3).PutProfessor(Color.Yellow);
+        flag = MMN.CheckIfIslandGetControlled(4, GB, IT, c9,Color.Red);
+        assertFalse(flag);
+    }
+
 
     @Test
     public void testIfIslandCanGetControlled5() {   /*Caso in cui c'era dominanza ma cancellata dalla carta effetto 8*/
@@ -212,6 +266,7 @@ class MoveMotherNatureTest {
         flag = MMN.CheckIfIslandGetControlled(2, GB, IT, c6,GB.getSchoolBoard().get(1));
         assertTrue(flag);
     }
+
 
     @Test
     public void testGetRightTowerOnIsland() {    /*Caso in cui c'è una dominanza, non ci sono torri nell'isola e viene dominata dal nero*/
