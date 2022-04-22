@@ -25,7 +25,7 @@ class MoveMotherNatureTest {
 
     @Test
     public void testIfIslandCanGetControlled() {
-        boolean flag = false;
+        boolean flag;
         IslandTiles IT = new IslandTiles(1, true, 1, false, false);
         GeneralBoard GB = new GeneralBoard(0);
         IT.PutStudent(Color.Red);
@@ -42,13 +42,13 @@ class MoveMotherNatureTest {
         GB.getSchoolBoard().get(0).PutProfessor(Color.Red);
         GB.getSchoolBoard().get(1).PutProfessor(Color.Green);
         GB.getSchoolBoard().get(1).PutProfessor(Color.Yellow);
-        flag = MMN.CheckIfIslandGetControlled(2, GB, false, null);
+        flag = MMN.CheckIfIslandGetControlled(2, GB, IT);
         assertTrue(flag);
     }
 
     @Test
     public void testIfIslandCanGetControlled2() {
-        boolean flag = false;
+        boolean flag;
         IslandTiles IT = new IslandTiles(1, true, 1, false, false);
         GeneralBoard GB = new GeneralBoard(0);
         IT.putTower(ColorTower.Grey);
@@ -67,13 +67,13 @@ class MoveMotherNatureTest {
         GB.getSchoolBoard().get(0).PutProfessor(Color.Yellow);
         GB.getSchoolBoard().get(1).PutProfessor(Color.Green);
         GB.getSchoolBoard().get(1).PutProfessor(Color.Red);
-        flag = MMN.CheckIfIslandGetControlled(3, GB, false, null);
+        flag = MMN.CheckIfIslandGetControlled(3, GB, IT);
         assertFalse(flag);
     }
 
     @Test
     public void testGetRightTowerOnIsland() {
-        boolean flag = false;
+        boolean flag;
         IslandTiles IT;
         GeneralBoard GB = new GeneralBoard(0);
         GB.CreateTwelveIslands();
@@ -97,9 +97,9 @@ class MoveMotherNatureTest {
         GB.getSchoolBoard().get(1).PutProfessor(Color.Yellow);
         schoolBoardList.add(0, GB.getSchoolBoard().get(0));
         schoolBoardList.add(1, GB.getSchoolBoard().get(1));
-        flag = MMN.CheckIfIslandGetControlled(2, GB, false, null);
+        flag = MMN.CheckIfIslandGetControlled(2, GB, IT);
         assertTrue(flag);
-        MMN.GetRightTowerOnIsland(GB, schoolBoardList);
+        MMN.GetRightTowerOnIsland(GB, IT,schoolBoardList);
         assertEquals(ColorTower.Black, IT.getColTower());
         assertEquals(7, GB.getSchoolBoard().get(0).getNumberOfTower());
     }
@@ -107,7 +107,7 @@ class MoveMotherNatureTest {
 
     @Test
     public void testGetRightTowerOnIsland2() {
-        boolean flag = false;
+        boolean flag;
         IslandTiles IT;
         GeneralBoard GB = new GeneralBoard(0);
         GB.CreateTwelveIslands();
@@ -132,16 +132,16 @@ class MoveMotherNatureTest {
         GB.getSchoolBoard().get(1).PutProfessor(Color.Yellow);
         schoolBoardList.add(0, GB.getSchoolBoard().get(0));
         schoolBoardList.add(1, GB.getSchoolBoard().get(1));
-        flag = MMN.CheckIfIslandGetControlled(2, GB, false, null);
+        flag = MMN.CheckIfIslandGetControlled(2, GB, IT);
         assertTrue(flag);
-        MMN.GetRightTowerOnIsland(GB, schoolBoardList);
+        MMN.GetRightTowerOnIsland(GB, IT, schoolBoardList);
         assertEquals(ColorTower.Black, IT.getColTower());
         assertEquals(8, GB.getSchoolBoard().get(0).getNumberOfTower());
     }
 
     @Test
     public void testGetRightTowerOnIsland3() {
-        boolean flag = false;
+        boolean flag;
         IslandTiles IT;
         GeneralBoard GB = new GeneralBoard(0);
         GB.CreateTwelveIslands();
@@ -166,9 +166,9 @@ class MoveMotherNatureTest {
         GB.getSchoolBoard().get(1).PutProfessor(Color.Yellow);
         schoolBoardList.add(0, GB.getSchoolBoard().get(0));
         schoolBoardList.add(1, GB.getSchoolBoard().get(1));
-        flag = MMN.CheckIfIslandGetControlled(2, GB, false, null);
+        flag = MMN.CheckIfIslandGetControlled(2, GB,  IT);
         assertTrue(flag);
-        MMN.GetRightTowerOnIsland(GB, schoolBoardList);
+        MMN.GetRightTowerOnIsland(GB, IT, schoolBoardList);
         assertEquals(ColorTower.Black, IT.getColTower());
         assertEquals(7, GB.getSchoolBoard().get(0).getNumberOfTower());
         assertEquals(9, GB.getSchoolBoard().get(1).getNumberOfTower());
@@ -176,7 +176,7 @@ class MoveMotherNatureTest {
 
     @Test
     public void testGetRightTowerOnIsland4() {
-        boolean flag = false;
+        boolean flag;
         IslandTiles IT;
         GeneralBoard GB = new GeneralBoard(0);
         GB.CreateTwelveIslands();
@@ -203,9 +203,9 @@ class MoveMotherNatureTest {
         GB.getSchoolBoard().get(3).PutProfessor(Color.Yellow);
         schoolBoardList.add(0, GB.getSchoolBoard().get(0));
         schoolBoardList.add(1, GB.getSchoolBoard().get(1));
-        flag = MMN.CheckIfIslandGetControlled(4, GB, false, null);
+        flag = MMN.CheckIfIslandGetControlled(4, GB, IT);
         assertTrue(flag);
-        MMN.GetRightTowerOnIsland(GB, schoolBoardList);
+        MMN.GetRightTowerOnIsland(GB,IT, schoolBoardList);
         assertEquals(ColorTower.Black, IT.getColTower());
         assertEquals(7, GB.getSchoolBoard().get(0).getNumberOfTower());
         assertEquals(9, GB.getSchoolBoard().get(1).getNumberOfTower());
@@ -213,7 +213,7 @@ class MoveMotherNatureTest {
 
     @Test
     public void testGetRightTowerOnIsland5() {
-        boolean flag = false;
+        boolean flag;
         IslandTiles IT;
         GeneralBoard GB = new GeneralBoard(0);
         GB.CreateTwelveIslands();
@@ -240,9 +240,9 @@ class MoveMotherNatureTest {
         GB.getSchoolBoard().get(3).PutProfessor(Color.Yellow);
         schoolBoardList.add(0, GB.getSchoolBoard().get(0));
         schoolBoardList.add(1, GB.getSchoolBoard().get(2));
-        flag = MMN.CheckIfIslandGetControlled(4, GB, false, null);
+        flag = MMN.CheckIfIslandGetControlled(4, GB, IT);
         assertTrue(flag);
-        MMN.GetRightTowerOnIsland(GB, schoolBoardList);
+        MMN.GetRightTowerOnIsland(GB,IT, schoolBoardList);
         assertEquals(ColorTower.Black, IT.getColTower());
         assertEquals(7, GB.getSchoolBoard().get(0).getNumberOfTower());
         assertEquals(8, GB.getSchoolBoard().get(2).getNumberOfTower());
