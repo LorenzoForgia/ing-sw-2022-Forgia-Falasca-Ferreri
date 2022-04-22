@@ -170,7 +170,6 @@ class MoveMotherNatureTest {
         GeneralBoard GB = new GeneralBoard(0);
         CharacterCard8 c8 = new CharacterCard8(8,2,0);
         IT.PutStudent(Color.Red);
-        IT.PutStudent(Color.Red);
         IT.PutStudent(Color.Green);
         IT.PutStudent(Color.Blue);
         IT.PutStudent(Color.Blue);
@@ -186,6 +185,7 @@ class MoveMotherNatureTest {
         GB.getSchoolBoard().get(1).PutProfessor(Color.Green);
         GB.getSchoolBoard().get(3).PutProfessor(Color.Yellow);
         flag = MMN.CheckIfIslandGetControlled(4, GB, IT, c8,GB.getSchoolBoard().get(1));
+        assertEquals(MMN.GetColorTower(), ColorTower.Black);
         assertFalse(flag);
     }
     @Test

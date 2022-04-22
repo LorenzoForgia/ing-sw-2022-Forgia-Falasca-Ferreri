@@ -12,6 +12,9 @@ public class MoveMotherNature {
     List<ColorTower> colorTowerList = new ArrayList<>();
 
 
+    public ColorTower GetColorTower(){
+        return colorT;
+    }
     public void SetIslandWithMotherNature(IslandTiles I){
         I1 = I;
     }
