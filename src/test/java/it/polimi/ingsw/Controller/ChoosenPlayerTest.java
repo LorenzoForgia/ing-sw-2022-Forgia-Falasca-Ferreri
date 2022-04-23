@@ -25,9 +25,9 @@ class ChoosenPlayerTest {
 
     @BeforeEach
     public void setUp(){
-        SB1 = new SchoolBoard(0, 7);
-        SB2 = new SchoolBoard(1, 7);
-        SB3 = new SchoolBoard(2, 7);
+        SB1 = new SchoolBoard(0, 9);
+        SB2 = new SchoolBoard(1, 9);
+        SB3 = new SchoolBoard(2, 9);
         DCA1 = new DeckCardAssistant();
         DCA2 = new DeckCardAssistant();
         DCA3 = new DeckCardAssistant();

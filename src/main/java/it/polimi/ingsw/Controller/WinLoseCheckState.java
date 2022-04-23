@@ -10,11 +10,11 @@ public class WinLoseCheckState {
     public boolean CheckIfWinWithTower(Player p, GeneralBoard g){
         int w=0,b=0,gr=0;
         for(int i=0;i<g.GetIslands().size();i++){
-            if(g.GetIslands().get(i).getColTower().equals(ColorTower.Black)){
+            if( g.GetIslands().get(i).isTower() && g.GetIslands().get(i).getColTower().equals(ColorTower.Black)){
                 b=b+g.GetIslands().get(i).getSize();
-            }else if(g.GetIslands().get(i).getColTower().equals(ColorTower.White)){
+            }else if(g.GetIslands().get(i).isTower() && g.GetIslands().get(i).getColTower().equals(ColorTower.White)){
                 w=w+g.GetIslands().get(i).getSize();
-            }else if(g.GetIslands().get(i).getColTower().equals(ColorTower.Grey)){
+            }else if(g.GetIslands().get(i).isTower() && g.GetIslands().get(i).getColTower().equals(ColorTower.Grey)){
                 gr=gr+g.GetIslands().get(i).getSize();
             }
         }
@@ -27,24 +27,23 @@ public class WinLoseCheckState {
         }else {return false;}
     }
     public boolean CheckIfWinWithProfessor(Player p, GeneralBoard g){
-        ArrayList<Integer> prof= null;
+        ArrayList<Integer> prof= new ArrayList<Integer>();
         int k=1;
         for(int i=0;i<g.getSchoolBoard().size();i++){
             prof.add(g.getSchoolBoard().get(i).getProfessorTable().size());
         }
         for(int i=0;i<prof.size();i++){
-            for(int j=0;j<prof.size() && i!=j;j++){
-                if(p.getMySchoolBoard().GetId()==i && prof.get(i)>prof.get(j)){
+            for(int j=0;p.getMySchoolBoard().GetId()==i && j<prof.size();j++){
+                if(prof.get(i)>prof.get(j)){
                     k++;
                 }
             }
         }
-        if(k== prof.size()){return true;}
+        if(prof.size()==k){return true;}
         else{return false;}
     }
     public boolean CheckIfWin(Player p, GeneralBoard g){
         if(CheckIfWinWithTower(p,g) || CheckIfWinWithProfessor(p,g)){
             return true;
-        }else{return false;}
-    }
+        }else{return false;}}
 }
