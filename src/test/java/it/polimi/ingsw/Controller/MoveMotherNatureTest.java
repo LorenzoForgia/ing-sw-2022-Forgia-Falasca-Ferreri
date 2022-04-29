@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MoveMotherNatureTest {
     MoveMotherNature MMN = null;
-/*
+
     @BeforeEach
     public void setUp() {
         MMN = new MoveMotherNature();
@@ -49,10 +49,27 @@ class MoveMotherNatureTest {
         GB.CreateSchoolBoards(2);
         GB.getSchoolBoard().get(0).setColorTower(ColorTower.Black);
         GB.getSchoolBoard().get(1).setColorTower(ColorTower.White);
-        GB.getSchoolBoard().get(0).PutProfessor(Color.Blue);
-        GB.getSchoolBoard().get(0).PutProfessor(Color.Red);
-        GB.getSchoolBoard().get(1).PutProfessor(Color.Green);
-        GB.getSchoolBoard().get(1).PutProfessor(Color.Yellow);
+
+        try{
+            GB.getSchoolBoard().get(0).PutProfessor(Color.Blue);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try{
+            GB.getSchoolBoard().get(0).PutProfessor(Color.Red);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try{
+            GB.getSchoolBoard().get(1).PutProfessor(Color.Green);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try{
+            GB.getSchoolBoard().get(1).PutProfessor(Color.Yellow);
+        }catch (IllegalMoveException e){
+            fail();
+        }
         flag = MMN.CheckIfIslandGetControlled(2, GB, IT);
         assertTrue(flag);
     }
@@ -77,10 +94,27 @@ class MoveMotherNatureTest {
         GB.CreateSchoolBoards(2);
         GB.getSchoolBoard().get(0).setColorTower(ColorTower.Black);
         GB.getSchoolBoard().get(1).setColorTower(ColorTower.White);
-        GB.getSchoolBoard().get(0).PutProfessor(Color.Blue);
-        GB.getSchoolBoard().get(0).PutProfessor(Color.Red);
-        GB.getSchoolBoard().get(1).PutProfessor(Color.Green);
-        GB.getSchoolBoard().get(1).PutProfessor(Color.Yellow);
+
+        try{
+            GB.getSchoolBoard().get(0).PutProfessor(Color.Blue);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try{
+            GB.getSchoolBoard().get(0).PutProfessor(Color.Red);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try{
+            GB.getSchoolBoard().get(1).PutProfessor(Color.Green);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try{
+            GB.getSchoolBoard().get(1).PutProfessor(Color.Yellow);
+        }catch (IllegalMoveException e){
+            fail();
+        }
         flag = MMN.CheckIfIslandGetControlled(2, GB, IT);
         assertFalse(flag);
     }
@@ -102,10 +136,27 @@ class MoveMotherNatureTest {
         GB.getSchoolBoard().get(0).setColorTower(ColorTower.Black);
         GB.getSchoolBoard().get(1).setColorTower(ColorTower.White);
         GB.getSchoolBoard().get(2).setColorTower(ColorTower.Grey);
-        GB.getSchoolBoard().get(0).PutProfessor(Color.Blue);
-        GB.getSchoolBoard().get(0).PutProfessor(Color.Yellow);
-        GB.getSchoolBoard().get(1).PutProfessor(Color.Green);
-        GB.getSchoolBoard().get(1).PutProfessor(Color.Red);
+
+        try{
+            GB.getSchoolBoard().get(0).PutProfessor(Color.Blue);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try{
+            GB.getSchoolBoard().get(1).PutProfessor(Color.Red);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try{
+            GB.getSchoolBoard().get(0).PutProfessor(Color.Green);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try{
+            GB.getSchoolBoard().get(1).PutProfessor(Color.Yellow);
+        }catch (IllegalMoveException e){
+            fail();
+        }
         flag = MMN.CheckIfIslandGetControlled(3, GB, IT);
         assertFalse(flag);
     }
@@ -126,10 +177,27 @@ class MoveMotherNatureTest {
         GB.CreateSchoolBoards(2);
         GB.getSchoolBoard().get(0).setColorTower(ColorTower.Black);
         GB.getSchoolBoard().get(1).setColorTower(ColorTower.White);
-        GB.getSchoolBoard().get(0).PutProfessor(Color.Blue);
-        GB.getSchoolBoard().get(0).PutProfessor(Color.Red);
-        GB.getSchoolBoard().get(1).PutProfessor(Color.Green);
-        GB.getSchoolBoard().get(1).PutProfessor(Color.Yellow);
+
+        try{
+            GB.getSchoolBoard().get(0).PutProfessor(Color.Blue);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try{
+            GB.getSchoolBoard().get(0).PutProfessor(Color.Red);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try{
+            GB.getSchoolBoard().get(1).PutProfessor(Color.Green);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try{
+            GB.getSchoolBoard().get(1).PutProfessor(Color.Yellow);
+        }catch (IllegalMoveException e){
+            fail();
+        }
         flag = MMN.CheckIfIslandGetControlled(2, GB, IT, c9,Color.Red);
         assertFalse(flag);
     }
@@ -151,10 +219,27 @@ class MoveMotherNatureTest {
         GB.CreateSchoolBoards(2);
         GB.getSchoolBoard().get(0).setColorTower(ColorTower.Black);
         GB.getSchoolBoard().get(1).setColorTower(ColorTower.White);
-        GB.getSchoolBoard().get(0).PutProfessor(Color.Blue);
-        GB.getSchoolBoard().get(0).PutProfessor(Color.Red);
-        GB.getSchoolBoard().get(1).PutProfessor(Color.Green);
-        GB.getSchoolBoard().get(1).PutProfessor(Color.Yellow);
+
+        try{
+            GB.getSchoolBoard().get(0).PutProfessor(Color.Blue);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try{
+            GB.getSchoolBoard().get(0).PutProfessor(Color.Red);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try{
+            GB.getSchoolBoard().get(1).PutProfessor(Color.Green);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try{
+            GB.getSchoolBoard().get(1).PutProfessor(Color.Yellow);
+        }catch (IllegalMoveException e){
+            fail();
+        }
         flag = MMN.CheckIfIslandGetControlled(2, GB, IT, c9,Color.Red);
         assertTrue(flag);
     }
@@ -179,11 +264,32 @@ class MoveMotherNatureTest {
         GB.getSchoolBoard().get(1).setColorTower(ColorTower.White);
         GB.getSchoolBoard().get(2).setColorTower(ColorTower.Black);
         GB.getSchoolBoard().get(3).setColorTower(ColorTower.White);
-        GB.getSchoolBoard().get(0).PutProfessor(Color.Pink);
-        GB.getSchoolBoard().get(2).PutProfessor(Color.Blue);
-        GB.getSchoolBoard().get(2).PutProfessor(Color.Red);
-        GB.getSchoolBoard().get(3).PutProfessor(Color.Green);
-        GB.getSchoolBoard().get(3).PutProfessor(Color.Yellow);
+
+        try{
+            GB.getSchoolBoard().get(0).PutProfessor(Color.Pink);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try{
+            GB.getSchoolBoard().get(2).PutProfessor(Color.Blue);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try{
+            GB.getSchoolBoard().get(2).PutProfessor(Color.Red);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try{
+            GB.getSchoolBoard().get(3).PutProfessor(Color.Green);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try{
+            GB.getSchoolBoard().get(3).PutProfessor(Color.Yellow);
+        }catch (IllegalMoveException e){
+            fail();
+        }
         flag = MMN.CheckIfIslandGetControlled(4, GB, IT, c9,Color.Red);
         assertFalse(flag);
     }
@@ -205,10 +311,27 @@ class MoveMotherNatureTest {
         GB.CreateSchoolBoards(2);
         GB.getSchoolBoard().get(0).setColorTower(ColorTower.Black);
         GB.getSchoolBoard().get(1).setColorTower(ColorTower.White);
-        GB.getSchoolBoard().get(0).PutProfessor(Color.Blue);
-        GB.getSchoolBoard().get(0).PutProfessor(Color.Red);
-        GB.getSchoolBoard().get(1).PutProfessor(Color.Green);
-        GB.getSchoolBoard().get(1).PutProfessor(Color.Yellow);
+
+        try{
+            GB.getSchoolBoard().get(0).PutProfessor(Color.Blue);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try{
+            GB.getSchoolBoard().get(0).PutProfessor(Color.Red);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try{
+            GB.getSchoolBoard().get(1).PutProfessor(Color.Green);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try{
+            GB.getSchoolBoard().get(1).PutProfessor(Color.Yellow);
+        }catch (IllegalMoveException e){
+            fail();
+        }
         flag = MMN.CheckIfIslandGetControlled(2, GB, IT, c8,GB.getSchoolBoard().get(1));
         assertFalse(flag);
     }
@@ -231,10 +354,27 @@ class MoveMotherNatureTest {
         GB.getSchoolBoard().get(1).setColorTower(ColorTower.White);
         GB.getSchoolBoard().get(2).setColorTower(ColorTower.Black);
         GB.getSchoolBoard().get(3).setColorTower(ColorTower.White);
-        GB.getSchoolBoard().get(0).PutProfessor(Color.Blue);
-        GB.getSchoolBoard().get(2).PutProfessor(Color.Red);
-        GB.getSchoolBoard().get(1).PutProfessor(Color.Green);
-        GB.getSchoolBoard().get(3).PutProfessor(Color.Yellow);
+
+        try{
+            GB.getSchoolBoard().get(0).PutProfessor(Color.Blue);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try{
+            GB.getSchoolBoard().get(2).PutProfessor(Color.Red);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try{
+            GB.getSchoolBoard().get(1).PutProfessor(Color.Green);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try{
+            GB.getSchoolBoard().get(3).PutProfessor(Color.Yellow);
+        }catch (IllegalMoveException e){
+            fail();
+        }
         flag = MMN.CheckIfIslandGetControlled(4, GB, IT, c8,GB.getSchoolBoard().get(1));
         assertFalse(flag);
     }
@@ -255,10 +395,27 @@ class MoveMotherNatureTest {
         GB.CreateSchoolBoards(2);
         GB.getSchoolBoard().get(0).setColorTower(ColorTower.Black);
         GB.getSchoolBoard().get(1).setColorTower(ColorTower.White);
-        GB.getSchoolBoard().get(0).PutProfessor(Color.Blue);
-        GB.getSchoolBoard().get(0).PutProfessor(Color.Red);
-        GB.getSchoolBoard().get(1).PutProfessor(Color.Green);
-        GB.getSchoolBoard().get(1).PutProfessor(Color.Yellow);
+
+        try{
+            GB.getSchoolBoard().get(0).PutProfessor(Color.Blue);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try{
+            GB.getSchoolBoard().get(0).PutProfessor(Color.Red);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try{
+            GB.getSchoolBoard().get(1).PutProfessor(Color.Green);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try{
+            GB.getSchoolBoard().get(1).PutProfessor(Color.Yellow);
+        }catch (IllegalMoveException e){
+            fail();
+        }
         flag = MMN.CheckIfIslandGetControlled(2, GB, IT, c6,GB.getSchoolBoard().get(1));
         assertTrue(flag);
     }
@@ -284,10 +441,27 @@ class MoveMotherNatureTest {
         GB.getSchoolBoard().get(1).setColorTower(ColorTower.White);
         GB.getSchoolBoard().get(0).setNumberOfTower(8);
         GB.getSchoolBoard().get(1).setNumberOfTower(8);
-        GB.getSchoolBoard().get(0).PutProfessor(Color.Blue);
-        GB.getSchoolBoard().get(0).PutProfessor(Color.Red);
-        GB.getSchoolBoard().get(1).PutProfessor(Color.Green);
-        GB.getSchoolBoard().get(1).PutProfessor(Color.Yellow);
+        try{
+            GB.getSchoolBoard().get(0).PutProfessor(Color.Blue);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try{
+            GB.getSchoolBoard().get(0).PutProfessor(Color.Red);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try{
+            GB.getSchoolBoard().get(1).PutProfessor(Color.Green);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try{
+            GB.getSchoolBoard().get(1).PutProfessor(Color.Yellow);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+
         schoolBoardList.add(0, GB.getSchoolBoard().get(0));
         schoolBoardList.add(1, GB.getSchoolBoard().get(1));
         flag = MMN.CheckIfIslandGetControlled(2, GB, IT);
@@ -319,10 +493,27 @@ class MoveMotherNatureTest {
         GB.getSchoolBoard().get(1).setColorTower(ColorTower.White);
         GB.getSchoolBoard().get(0).setNumberOfTower(8);
         GB.getSchoolBoard().get(1).setNumberOfTower(8);
-        GB.getSchoolBoard().get(0).PutProfessor(Color.Blue);
-        GB.getSchoolBoard().get(0).PutProfessor(Color.Red);
-        GB.getSchoolBoard().get(1).PutProfessor(Color.Green);
-        GB.getSchoolBoard().get(1).PutProfessor(Color.Yellow);
+
+        try{
+            GB.getSchoolBoard().get(0).PutProfessor(Color.Blue);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try{
+            GB.getSchoolBoard().get(0).PutProfessor(Color.Red);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try{
+            GB.getSchoolBoard().get(1).PutProfessor(Color.Green);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try{
+            GB.getSchoolBoard().get(1).PutProfessor(Color.Yellow);
+        }catch (IllegalMoveException e){
+            fail();
+        }
         schoolBoardList.add(0, GB.getSchoolBoard().get(0));
         schoolBoardList.add(1, GB.getSchoolBoard().get(1));
         flag = MMN.CheckIfIslandGetControlled(2, GB, IT);
@@ -353,10 +544,26 @@ class MoveMotherNatureTest {
         GB.getSchoolBoard().get(1).setColorTower(ColorTower.White);
         GB.getSchoolBoard().get(0).setNumberOfTower(8);
         GB.getSchoolBoard().get(1).setNumberOfTower(8);
-        GB.getSchoolBoard().get(0).PutProfessor(Color.Blue);
-        GB.getSchoolBoard().get(0).PutProfessor(Color.Red);
-        GB.getSchoolBoard().get(1).PutProfessor(Color.Green);
-        GB.getSchoolBoard().get(1).PutProfessor(Color.Yellow);
+        try{
+            GB.getSchoolBoard().get(0).PutProfessor(Color.Blue);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try{
+            GB.getSchoolBoard().get(0).PutProfessor(Color.Red);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try{
+            GB.getSchoolBoard().get(1).PutProfessor(Color.Green);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try{
+            GB.getSchoolBoard().get(1).PutProfessor(Color.Yellow);
+        }catch (IllegalMoveException e){
+            fail();
+        }
         schoolBoardList.add(0, GB.getSchoolBoard().get(0));
         schoolBoardList.add(1, GB.getSchoolBoard().get(1));
         flag = MMN.CheckIfIslandGetControlled(2, GB,  IT);
@@ -390,10 +597,27 @@ class MoveMotherNatureTest {
         GB.getSchoolBoard().get(3).setColorTower(ColorTower.White);
         GB.getSchoolBoard().get(0).setNumberOfTower(8);
         GB.getSchoolBoard().get(1).setNumberOfTower(8);
-        GB.getSchoolBoard().get(0).PutProfessor(Color.Blue);
-        GB.getSchoolBoard().get(2).PutProfessor(Color.Red);
-        GB.getSchoolBoard().get(1).PutProfessor(Color.Green);
-        GB.getSchoolBoard().get(3).PutProfessor(Color.Yellow);
+
+        try{
+            GB.getSchoolBoard().get(0).PutProfessor(Color.Blue);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try{
+            GB.getSchoolBoard().get(2).PutProfessor(Color.Red);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try{
+            GB.getSchoolBoard().get(1).PutProfessor(Color.Green);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try{
+            GB.getSchoolBoard().get(3).PutProfessor(Color.Yellow);
+        }catch (IllegalMoveException e){
+            fail();
+        }
         schoolBoardList.add(0, GB.getSchoolBoard().get(0));
         schoolBoardList.add(1, GB.getSchoolBoard().get(1));
         flag = MMN.CheckIfIslandGetControlled(4, GB, IT);
@@ -427,10 +651,26 @@ class MoveMotherNatureTest {
         GB.getSchoolBoard().get(3).setColorTower(ColorTower.White);
         GB.getSchoolBoard().get(0).setNumberOfTower(8);
         GB.getSchoolBoard().get(2).setNumberOfTower(7);
-        GB.getSchoolBoard().get(0).PutProfessor(Color.Blue);
-        GB.getSchoolBoard().get(1).PutProfessor(Color.Red);
-        GB.getSchoolBoard().get(2).PutProfessor(Color.Green);
-        GB.getSchoolBoard().get(3).PutProfessor(Color.Yellow);
+        try{
+            GB.getSchoolBoard().get(0).PutProfessor(Color.Blue);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try{
+            GB.getSchoolBoard().get(1).PutProfessor(Color.Red);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try{
+            GB.getSchoolBoard().get(2).PutProfessor(Color.Green);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try{
+            GB.getSchoolBoard().get(3).PutProfessor(Color.Yellow);
+        }catch (IllegalMoveException e){
+            fail();
+        }
         schoolBoardList.add(0, GB.getSchoolBoard().get(0));
         schoolBoardList.add(1, GB.getSchoolBoard().get(2));
         flag = MMN.CheckIfIslandGetControlled(4, GB, IT);
@@ -440,5 +680,5 @@ class MoveMotherNatureTest {
         assertEquals(7, GB.getSchoolBoard().get(0).getNumberOfTower());
         assertEquals(8, GB.getSchoolBoard().get(2).getNumberOfTower());
     }
-*/
+
 }
