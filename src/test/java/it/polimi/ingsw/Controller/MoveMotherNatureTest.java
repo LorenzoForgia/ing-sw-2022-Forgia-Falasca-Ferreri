@@ -37,7 +37,7 @@ class MoveMotherNatureTest {
     @Test
     public void testIfIslandCanGetControlled() {   /*Caso in cui c'è una dominanza*/
         boolean flag;
-        IslandTiles IT = new IslandTiles(1, true, 1, false, false);
+        IslandTiles IT = new IslandTiles(1, true, 1, false, 0,false);
         GeneralBoard GB = new GeneralBoard(0);
         IT.PutStudent(Color.Red);
         IT.PutStudent(Color.Red);
@@ -62,7 +62,7 @@ class MoveMotherNatureTest {
     @Test
     public void testIfIslandCanGetControlled3() {   /*Usato Effetto NoEnryTiles*/
         boolean flag;
-        IslandTiles IT = new IslandTiles(1, true, 1, false, false);
+        IslandTiles IT = new IslandTiles(1, true, 1, false, 0,false);
         GeneralBoard GB = new GeneralBoard(0);
         IT.PutStudent(Color.Red);
         IT.PutStudent(Color.Red);
@@ -71,11 +71,7 @@ class MoveMotherNatureTest {
         IT.PutStudent(Color.Blue);
         IT.PutStudent(Color.Yellow);
 
-        try{
-        IT.putNET();}
-        catch (IllegalMoveException e){
-             fail();
-        }
+        IT.putNET();
         MMN.SetIslandWithMotherNature(IT);
 
         GB.CreateSchoolBoards(2);
@@ -92,7 +88,7 @@ class MoveMotherNatureTest {
     @Test
     public void testIfIslandCanGetControlled2() {    /*Caso in cui non c'è una dominanza*/
         boolean flag;
-        IslandTiles IT = new IslandTiles(1, true, 1, false, false);
+        IslandTiles IT = new IslandTiles(1, true, 1, false, 0,false);
         GeneralBoard GB = new GeneralBoard(0);
         IT.putTower(ColorTower.Grey);
         IT.PutStudent(Color.Red);
@@ -117,7 +113,7 @@ class MoveMotherNatureTest {
     @Test
     public void testIfIslandCanGetControlled4() {   /*Caso in cui c'era dominanza ma cancellata dalla carta effetto 9*/
         boolean flag;
-        IslandTiles IT = new IslandTiles(1, true, 1, false, false);
+        IslandTiles IT = new IslandTiles(1, true, 1, false, 0,false);
         GeneralBoard GB = new GeneralBoard(0);
         CharacterCard9 c9 = new CharacterCard9(9,2,0);
         IT.PutStudent(Color.Red);
@@ -141,7 +137,7 @@ class MoveMotherNatureTest {
     @Test
     public void testIfIslandCanGetControlled9() {   /*uso carta effetto 9, ccon torre sull'isola*/
         boolean flag;
-        IslandTiles IT = new IslandTiles(1, true, 1, false, false);
+        IslandTiles IT = new IslandTiles(1, true, 1, false, 0,false);
         GeneralBoard GB = new GeneralBoard(0);
         CharacterCard9 c9 = new CharacterCard9(9,2,0);
         IT.PutStudent(Color.Red);
@@ -166,7 +162,7 @@ class MoveMotherNatureTest {
     @Test
     public void testIfIslandCanGetControlled8() {   /*Caso in cui c'era dominanza ma cancellata dalla carta effetto 9, con 4 giocatori*/
         boolean flag;
-        IslandTiles IT = new IslandTiles(1, true, 1, false, false);
+        IslandTiles IT = new IslandTiles(1, true, 1, false, 0,false);
         GeneralBoard GB = new GeneralBoard(0);
         CharacterCard9 c9 = new CharacterCard9(9,2,0);
         IT.PutStudent(Color.Pink);
@@ -196,7 +192,7 @@ class MoveMotherNatureTest {
     @Test
     public void testIfIslandCanGetControlled5() {   /*Caso in cui c'era dominanza ma cancellata dalla carta effetto 8*/
         boolean flag;
-        IslandTiles IT = new IslandTiles(1, true, 1, false, false);
+        IslandTiles IT = new IslandTiles(1, true, 1, false,0, false);
         GeneralBoard GB = new GeneralBoard(0);
         CharacterCard8 c8 = new CharacterCard8(8,2,0);
         IT.PutStudent(Color.Red);
@@ -220,7 +216,7 @@ class MoveMotherNatureTest {
     @Test
     public void testIfIslandCanGetControlled7() {   /*Caso in cui c'era dominanza ma cancellata dalla carta effetto 8, con 4 giocatori*/
         boolean flag;
-        IslandTiles IT = new IslandTiles(1, true, 1, false, false);
+        IslandTiles IT = new IslandTiles(1, true, 1, false, 0,false);
         GeneralBoard GB = new GeneralBoard(0);
         CharacterCard8 c8 = new CharacterCard8(8,2,0);
         IT.PutStudent(Color.Red);
@@ -245,7 +241,7 @@ class MoveMotherNatureTest {
     @Test
     public void testIfIslandCanGetControlled6() {   /*Caso in cui non c'era dominanza ma creata dalla carta effetto 6*/
         boolean flag;
-        IslandTiles IT = new IslandTiles(1, true, 2, false, false);
+        IslandTiles IT = new IslandTiles(1, true, 2, false, 0,false);
         GeneralBoard GB = new GeneralBoard(0);
         CharacterCard6 c6 = new CharacterCard6(6,2,0);
         IT.putTower(ColorTower.White);

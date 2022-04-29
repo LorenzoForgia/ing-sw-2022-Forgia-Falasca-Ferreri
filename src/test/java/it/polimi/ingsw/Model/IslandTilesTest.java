@@ -5,8 +5,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 
-import java.util.ArrayList;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class IslandTilesTest {
@@ -14,7 +12,7 @@ class IslandTilesTest {
     IslandTiles Island = null;
     @BeforeEach
     public void setUp(){
-        Island = new IslandTiles(1, false, 1, false, false);
+        Island = new IslandTiles(1, false, 1, false, 0, false);
     }
 
     @AfterEach
@@ -31,30 +29,12 @@ class IslandTilesTest {
     @Test
     public void testPutNET() {
 
-        try {
-            Island.putNET();
-            assertTrue(Island.isNoEntryTiles());
-        } catch (IllegalMoveException e) {
-            fail();
-        }
+        Island.putNET();
+        assertTrue(Island.isNoEntryTiles());
+        assertEquals(1, Island.getNumberOfNet());
+
     }
 
-    @Test
-    public void testPutNET2() {
-        try {
-            Island.putNET();
-        } catch (IllegalMoveException e) {
-            fail();
-        }
-
-           boolean thrown = false;
-           try {
-               Island.putNET();
-           }catch( IllegalMoveException e){
-               thrown= true;
-        }
-        assertTrue(thrown);
-    }
 
     @Test
     public void testRemoveMN() {
@@ -65,32 +45,13 @@ class IslandTilesTest {
 
     @Test
     public void testRemoveNET() {
-        try {
             Island.putNET();
-        } catch (IllegalMoveException e) {
-            fail();
-        }
-
-        try {
-            Island.removeNET();
-            assertFalse(Island.isNoEntryTiles());
-        } catch (IllegalMoveException e) {
-            fail();
-        }
-    }
-
-    @Test
-    public void testRemoveNET2() {
-        boolean thrown = false;
-        try {
             Island.removeNET();
 
-        } catch (IllegalMoveException e) {
-            thrown = true;
-        }
-        assertTrue(thrown);
-    }
+        assertFalse(Island.isNoEntryTiles());
+        assertEquals(0, Island.getNumberOfNet());
 
+    }
 
 
 
@@ -104,34 +65,20 @@ class IslandTilesTest {
 
     @Test
     public void tesSetStudent() {
-        ArrayList<Color> Students = new ArrayList<>();
-        Students.add(Color.Blue);
-        Students.add(Color.Pink);
-        Students.add(Color.Yellow);
-        Students.add(Color.Green);
-        Students.add(Color.Blue);
-        Students.add(Color.Red);
-        Students.add(Color.Yellow);
+        Island.PutStudent(Color.Blue);
+        Island.PutStudent(Color.Pink);
 
-        Island.setStudentsInIsland(Students);
-        assertArrayEquals(Students.toArray(), Island.getStudentsInIsland().toArray());
+        assertEquals(2 , Island.getStudentsInIsland().size());
     }
 
     @Test
     public void testCountInfluence(){
         int count;
-        ArrayList<Color> Students = new ArrayList<>();
-        Students.add(Color.Blue);
-        Students.add(Color.Pink);
-        Students.add(Color.Yellow);
-        Students.add(Color.Green);
-        Students.add(Color.Blue);
-        Students.add(Color.Red);
-        Students.add(Color.Yellow);
-        Island.setStudentsInIsland(Students);
+        Island.PutStudent(Color.Blue);
+        Island.PutStudent(Color.Pink);
 
-        count=Island.CountInfluence(Color.Yellow);
-        assertEquals(2, count);
+        count=Island.CountInfluence(Color.Blue);
+        assertEquals(1, count);
     }
     @Test
     public void testPutStudent(){

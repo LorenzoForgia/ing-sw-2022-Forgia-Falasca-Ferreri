@@ -27,7 +27,7 @@ class CharacterCard1Test {
     }
     @Test
     public void PutonislandTest(){
-        IslandTiles i= new IslandTiles(1,false,1,false,false);
+        IslandTiles i= new IslandTiles(1,false,1,false,0,false);
         c1.PutOnIsland(i,Color.Yellow);
         assertEquals(Color.Yellow, i.getStudentsInIsland().get(0));
         assertEquals(1,i.getStudentsInIsland().size());

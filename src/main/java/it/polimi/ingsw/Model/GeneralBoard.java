@@ -107,8 +107,7 @@ import java.util.*;
         }
         /* If NET is in I2, then put it in I1*/
       if(I2.isNoEntryTiles()){
-          I1.putNET();
-          I1.setNumberOfNet(I1.getNumberOfNet() + I2.getNumberOfNet());
+          I1.putNET(I2.getNumberOfNet());
       }
         /* remove I2 from List*/
         for(int i=0; i < Islands.size() && flag==false ; i++){

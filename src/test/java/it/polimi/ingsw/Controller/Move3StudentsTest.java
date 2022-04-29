@@ -19,7 +19,7 @@ class Move3StudentsTest {
     public void setUp(){
         SB = new SchoolBoard(1, 7);
         player = new Player( "player1" , 1, SB, DCA);
-        i= new IslandTiles(1, false, 1, false, false);
+        i= new IslandTiles(1, false, 1, false, 0,false);
         m= new Move3Students();
         b= new Bag();
         b.setStudents(50);

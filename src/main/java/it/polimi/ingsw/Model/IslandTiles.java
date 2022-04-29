@@ -34,6 +34,14 @@ public class IslandTiles implements Location {
         if(!NoEntryTiles){
             NoEntryTiles = true;
         }
+        NumberOfNet = getNumberOfNet() +1;
+    }
+
+    public void putNET( int n) {
+        if(!NoEntryTiles){
+            NoEntryTiles = true;
+        }
+        NumberOfNet = getNumberOfNet() +n;
     }
 
     public int getNumberOfNet() {

@@ -21,17 +21,11 @@ class CharacterCard5Test {
 
     @Test
     public void testUseEffect5(){
-        boolean flag;
-        IslandTiles I= new IslandTiles( 1, false, 1, false, false);
-           flag= CC5.useEffect5(I);
-           assertFalse(flag);
+        IslandTiles I= new IslandTiles( 1, false, 1, false, 0,false);
+        CC5.useEffect5(I);
+           assertTrue(I.isNoEntryTiles());
+           assertEquals(1, I.getNumberOfNet());
     }
 
-    @Test
-    public void testUseEffect52(){
-        boolean flag;
-        IslandTiles I= new IslandTiles( 1, false, 1, true, false);
-        flag= CC5.useEffect5(I);
-        assertTrue(flag);
-    }
+
 }

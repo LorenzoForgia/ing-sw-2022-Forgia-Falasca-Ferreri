@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class CharacterCard9Test {
     @Test
     public void testColorNoEffect1(){
-        IslandTiles i=new IslandTiles(1,false,1,false,false);
+        IslandTiles i=new IslandTiles(1,false,1,false,0,false);
         i.PutStudent(Color.Red);
         i.PutStudent(Color.Blue);
         i.PutStudent(Color.Yellow);
@@ -16,7 +16,7 @@ class CharacterCard9Test {
     }
     @Test
     public void testColorNoEffect2(){
-        IslandTiles i=new IslandTiles(1,false,1,true,false);
+        IslandTiles i=new IslandTiles(1,false,1,true,0,false);
         i.PutStudent(Color.Red);
         i.PutStudent(Color.Blue);
         i.PutStudent(Color.Yellow);

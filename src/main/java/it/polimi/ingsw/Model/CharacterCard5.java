@@ -8,13 +8,8 @@ public class CharacterCard5 extends CharacterCard {
         super(name, coins, countUse);
     }
 
-    public boolean useEffect5(IslandTiles IT) {
-        boolean thrown= false;
-        try {
-            IT.putNET();
-        } catch (IllegalMoveException e) {
-              thrown= true;
-        }
-        return thrown;
+    public void useEffect5(IslandTiles IT) {
+
+        IT.putNET();
     }
 }

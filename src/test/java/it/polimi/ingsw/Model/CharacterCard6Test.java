@@ -21,7 +21,7 @@ class CharacterCard6Test {
 
     @Test
     public void testUseEffect6(){
-        IslandTiles I= new IslandTiles( 1, true, 2, false, true);
+        IslandTiles I= new IslandTiles( 1, true, 2, false, 0,true);
         int influence = 8;
         int newInfluence;
         newInfluence= CC6.useEffect6(I,influence);
@@ -30,7 +30,7 @@ class CharacterCard6Test {
 
     @Test
     public void testUseEffect62(){
-        IslandTiles I= new IslandTiles( 1, true, 1, false, false);
+        IslandTiles I= new IslandTiles( 1, true, 1, false, 0,false);
         int influence = 8;
         int newInfluence;
         newInfluence= CC6.useEffect6(I,influence);
