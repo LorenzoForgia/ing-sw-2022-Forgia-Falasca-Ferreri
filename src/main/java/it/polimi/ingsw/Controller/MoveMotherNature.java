@@ -168,6 +168,10 @@ public class MoveMotherNature {
                 flag = false;
             }
         }
+
+        if(I.isNoEntryTiles()){
+            I.removeNET();
+        }
         colorT = ct;
         return flag;
     }
