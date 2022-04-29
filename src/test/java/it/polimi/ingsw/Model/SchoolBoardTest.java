@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class SchoolBoardTest {
-   /* @Test
+    @Test
     public void PutProfessorTest(){
         SchoolBoard s= new SchoolBoard(1, 7);
         try {
@@ -18,7 +18,11 @@ class SchoolBoardTest {
     @Test
     public void RemoveProfessorTest(){
         SchoolBoard s= new SchoolBoard(1, 7);
-        s.PutProfessor(Color.Red);
+        try {
+            s.PutProfessor(Color.Red);
+        }catch(IllegalMoveException e){
+            fail();
+        }
         s.RemoveProfessor(Color.Red);
         assertEquals(0,s.getProfessorTable().size());
     }
@@ -26,8 +30,13 @@ class SchoolBoardTest {
     public void RemoveProfessorTest2() {
         SchoolBoard s = new SchoolBoard(1, 7);
         int i=0;
-        s.PutProfessor(Color.Red);
-        s.PutProfessor(Color.Blue);
+        try {
+            s.PutProfessor(Color.Red);
+            s.PutProfessor(Color.Blue);
+        }catch(IllegalMoveException e){
+            fail();
+        }
+
         i=s.getProfessorTable().size();
         s.RemoveProfessor(Color.Red);
         assertEquals(i-1, s.getProfessorTable().size());
@@ -35,8 +44,12 @@ class SchoolBoardTest {
     @Test
     public void RemoveProfessorTest3() {
         SchoolBoard s = new SchoolBoard(1, 7);
-        s.PutProfessor(Color.Red);
-        s.PutProfessor(Color.Blue);
+        try {
+            s.PutProfessor(Color.Red);
+            s.PutProfessor(Color.Blue);
+        }catch(IllegalMoveException e){
+            fail();
+        }
         s.RemoveProfessor(Color.Red);
         assertEquals(Color.Blue, s.getProfessorTable().get(0));
     }
@@ -102,7 +115,7 @@ class SchoolBoardTest {
         i= s.GetNumberStudent();
         s.AddStudent(Color.Red);
         assertEquals(i+1, s.GetNumberStudent());
-    } */
+    } 
 
 
 }

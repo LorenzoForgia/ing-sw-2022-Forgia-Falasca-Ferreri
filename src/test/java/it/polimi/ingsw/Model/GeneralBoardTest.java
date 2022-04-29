@@ -144,26 +144,19 @@ class GeneralBoardTest {
         assertEquals(10, GB.CheckNumberOfGroup());
     }
 
-  /*  @Test
-    public void testCheckNearTower4(){
+   @Test
+     public void testCheckNearTower4(){
         GB.CreateTwelveIslands();
-        try{
-            GB.GetIslands().get(0).putNET();
-        }catch(IllegalMoveException e){
-            fail();
-        }
-        try{
-            GB.GetIslands().get(11).putNET();
-        }catch(IllegalMoveException e){
-            fail();
-        }
+        GB.GetIslands().get(0).putNET();
+        GB.GetIslands().get(11).putNET();
+
 
         GB.GetIslands().get(0).putTower(ColorTower.Black);
         GB.GetIslands().get(1).putTower(ColorTower.White);
         GB.GetIslands().get(11).putTower(ColorTower.Black);
         GB.CheckNearTower(GB.GetIslands().get(0));
         assertEquals(11, GB.CheckNumberOfGroup());
-    } */
+    }
 
     @Test
     public void testCheckNearTower5(){
