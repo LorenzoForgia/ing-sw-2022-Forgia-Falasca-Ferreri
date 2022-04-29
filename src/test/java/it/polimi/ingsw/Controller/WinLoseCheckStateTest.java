@@ -103,11 +103,16 @@ class WinLoseCheckStateTest {
     }
     @Test
     public void testCheckWinProf(){
-       g.getSchoolBoard().get(0).PutProfessor(Color.Red);
-       g.getSchoolBoard().get(0).PutProfessor(Color.Green);
-       g.getSchoolBoard().get(0).PutProfessor(Color.Pink);
-       g.getSchoolBoard().get(1).PutProfessor(Color.Blue);
-       g.getSchoolBoard().get(0).PutProfessor(Color.Yellow);
+      try {
+          g.getSchoolBoard().get(0).PutProfessor(Color.Red);
+          g.getSchoolBoard().get(0).PutProfessor(Color.Green);
+          g.getSchoolBoard().get(0).PutProfessor(Color.Pink);
+          g.getSchoolBoard().get(1).PutProfessor(Color.Blue);
+          g.getSchoolBoard().get(0).PutProfessor(Color.Yellow);
+      }catch (IllegalMoveException e){
+          fail();
+      }
+       
        assertTrue(w.CheckIfWinWithProfessor(p1, g));
        assertFalse(w.CheckIfWinWithProfessor(p2, g));
        assertFalse(w.CheckIfWinWithProfessor(p3, g));

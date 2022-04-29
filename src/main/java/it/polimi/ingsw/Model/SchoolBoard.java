@@ -17,9 +17,14 @@ public class SchoolBoard {
     public int GetId(){      /* giving an id to the school_board*/
         return NumberId;
     }
-    public void PutProfessor(Color p){    /* putting professor p in the professor table*/
-        ProfessorTable.add(p);
+    public void PutProfessor(Color p) throws  IllegalMoveException{    /* putting professor p in the professor table*/
+        for(int i =0; i < ProfessorTable.size(); i ++){
+            if(p.equals(ProfessorTable.get(i))){
+                throw new IllegalMoveException();
+            }
+        }ProfessorTable.add(p);
     }
+
     public List<Color> getProfessorTable() {  /* getting professor table to calculate influence*/
         return ProfessorTable;
     }

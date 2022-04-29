@@ -23,6 +23,9 @@ public class DiningRoom implements Location{
         return numberStudentTOT;
     }
 
+    public int GetNumberStudent(int i){       /*getting number of students in the dining room of one color*/
+        return DiningRoom.get(i).size();
+    }
     public int GetNumberStudent(Color c){       /*getting number of students in the dining room of one color*/
         return DiningRoom.get(c.getIndex()).size();
     }
