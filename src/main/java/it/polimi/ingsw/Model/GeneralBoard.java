@@ -34,7 +34,7 @@ import java.util.*;
         /* create twelve islands for the beginning of the game  */
     public void CreateTwelveIslands() {
         for (int i = 0; i < 12; i++) {
-            Islands.add(i, new IslandTiles(i, false, 1, false, false));
+            Islands.add(i, new IslandTiles(i, false, 1, false, 0,false));
         }
     }
 
@@ -106,8 +106,9 @@ import java.util.*;
             I1.putMotherNature();
         }
         /* If NET is in I2, then put it in I1*/
-      if(!CheckifCanChangeNET(I1, I2)){
-          addNET();
+      if(I2.isNoEntryTiles()){
+          I1.putNET();
+          I1.setNumberOfNet(I1.getNumberOfNet() + I2.getNumberOfNet());
       }
         /* remove I2 from List*/
         for(int i=0; i < Islands.size() && flag==false ; i++){
@@ -123,16 +124,7 @@ import java.util.*;
         return Islands.size();
     }
 
-    /* manage the exception*/
-    private boolean CheckifCanChangeNET(IslandTiles I1, IslandTiles I2){
-        if(I2.isNoEntryTiles()){
-            try{ I1.putNET();
-            } catch (IllegalMoveException c){
-                return false;
-            }
-        }
-        return true;
-    }
+
     public IslandTiles moveMotherNature(IslandTiles I, int n){
 
         int j = 0;

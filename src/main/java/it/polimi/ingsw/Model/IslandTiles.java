@@ -8,16 +8,18 @@ public class IslandTiles implements Location {
     private boolean MotherNature;
     private int size;
     private boolean NoEntryTiles;
+    private int NumberOfNet;
     private boolean Tower;
     private ColorTower ColTower;
     ArrayList<Color> StudentsInIsland = new ArrayList<>();
 
-    public IslandTiles(int numberID, boolean motherNature, int size, boolean noEntryTiles, boolean tower) {
+    public IslandTiles(int numberID, boolean motherNature, int size, boolean noEntryTiles, int numberOfNet, boolean tower) {
         NumberID = numberID;
         MotherNature = motherNature;
         this.size = size;
         NoEntryTiles = noEntryTiles;
         Tower = tower;
+        NumberOfNet = numberOfNet;
     }
 
     public void putMotherNature() {
@@ -28,12 +30,18 @@ public class IslandTiles implements Location {
         this.size = size;
     }
 
-    public void putNET() throws IllegalMoveException {
-        if (!NoEntryTiles) {
+    public void putNET() {
+        if(!NoEntryTiles){
             NoEntryTiles = true;
-        } else {
-            throw new IllegalMoveException();
         }
+    }
+
+    public int getNumberOfNet() {
+        return NumberOfNet;
+    }
+
+    public void setNumberOfNet(int numberOfNet) {
+        NumberOfNet = numberOfNet;
     }
 
     public boolean isMotherNature() {
@@ -76,19 +84,14 @@ public class IslandTiles implements Location {
         return StudentsInIsland;
     }
 
-    public void setStudentsInIsland(ArrayList<Color> studentsInIsland) {
-        StudentsInIsland = studentsInIsland; /** NON SERVE**/
-    }
-
     public void removeNM(){
         MotherNature= false;
         }
 
-    public void removeNET() throws IllegalMoveException{
-        if (NoEntryTiles) {
-            NoEntryTiles= false;
-        }else {
-            throw new IllegalMoveException();
+    public void removeNET(){
+        NumberOfNet = NumberOfNet -1;
+        if(NumberOfNet == 0){
+            NoEntryTiles = false;
         }
     }
 
