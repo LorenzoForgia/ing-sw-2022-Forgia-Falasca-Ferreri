@@ -46,37 +46,4 @@ class Move3StudentsTest {
         assertEquals(4, player.getMySchoolBoard().GetNumberStudent());
     }
 
-
-    @Test
-    public void testRightProfessorTable(){
-       GeneralBoard Gb= new GeneralBoard(0);
-       Gb.CreateSchoolBoards(2);
-       Gb.getSchoolBoard().get(0).getDiningRoom().PutStudent(Color.Red);
-       Gb.getSchoolBoard().get(0).getDiningRoom().PutStudent(Color.Red);
-       try {
-           Gb.getSchoolBoard().get(0).PutProfessor(Color.Red);
-       }catch (IllegalMoveException e){
-           fail();
-       }
-       m.RightProfessorTable(Gb, 2);
-
-       assertEquals(1,Gb.getSchoolBoard().get(0).getProfessorTable().size());
-    }
-
-    @Test
-    public void testRightProfessorTable2(){
-        GeneralBoard Gb= new GeneralBoard(0);
-        Gb.CreateSchoolBoards(2);
-        Gb.getSchoolBoard().get(0).getDiningRoom().PutStudent(Color.Red);
-        Gb.getSchoolBoard().get(0).getDiningRoom().PutStudent(Color.Red);
-        Gb.getSchoolBoard().get(0).getDiningRoom().PutStudent(Color.Pink);
-        try {
-            Gb.getSchoolBoard().get(0).PutProfessor(Color.Red);
-        }catch (IllegalMoveException e){
-            fail();
-        }
-        m.RightProfessorTable(Gb, 2);
-
-        assertEquals(2,Gb.getSchoolBoard().get(0).getProfessorTable().size());
-    }
 }
