@@ -17,7 +17,7 @@ public class GameController {
     private PlayAssCard playAssCard = new PlayAssCard();
     private List<Player> players;
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {*/
         /* Richiesta modalità gioco
         chooseSettingGame= new ChooseSettingGame();
         Metodi di SetUp
@@ -35,8 +35,8 @@ public class GameController {
         se true uscire dal loop, altrimenti ricominciare
         se usciti dal loop winlosecheckstate
 
-        */
-    }
+
+    }*/
 }
 
 
