@@ -7,10 +7,9 @@ import java.io.IOException;
 
 public class ReturnIfCharacterCardMsg extends CommandMsg{
     Boolean f;
-    Player p;
-    public ReturnIfCharacterCardMsg(Boolean f, Player p) {
+
+    public ReturnIfCharacterCardMsg(Boolean f) {
         this.f = f;
-        this.p = p;
     }
     @Override
     public void processMessage(ClientHandler clientHandler) throws IOException {
@@ -19,3 +18,4 @@ public class ReturnIfCharacterCardMsg extends CommandMsg{
         clientHandler.sendAnswerMessage(answerMsg);
     }
 }
+

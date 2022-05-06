@@ -12,15 +12,14 @@ import java.io.IOException;
  */
 /*public class PlayAssCardMsg extends CommandMsg {
     CardAssistant a;
-    Player p;*/
+    */
 
     /**
      * Create a new message with the assistant card.
      */
 
-    /*public PlayAssCardMsg(CardAssistant a, Player p) {
+    /*public PlayAssCardMsg(CardAssistant a) {
         this.a = a;
-        this.p = p;
     }*/
 
     /*@Override
