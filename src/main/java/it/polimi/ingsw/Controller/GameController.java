@@ -141,6 +141,17 @@ public class GameController {
         }
     }
 
+    public void NickNameAvailable(String name)throws IllegalMoveException{
+        boolean flag= true;
+        for(int i=0; i < gameModel.getPlayers().size() && flag; i ++){
+            if(name.equals(getPlayers().get(i).getNickName())){
+                flag=false;
+            }
+        }
+        if(flag){
+            throw new IllegalMoveException();
+        }
+    }
 
 }
 

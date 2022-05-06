@@ -1,8 +1,20 @@
 package it.polimi.ingsw.Model;
 
+import java.util.List;
+
 public class GameModel {
     private GeneralBoard gb;
     private Bag b;
+    private List<Player> players;
+
+    public List<Player> getPlayers() {
+        return players;
+    }
+
+    public void addPlayer(Player p) {
+        players.add(p);
+    }
+
     public GeneralBoard getGeneralBoard() {
         return gb;
     }
