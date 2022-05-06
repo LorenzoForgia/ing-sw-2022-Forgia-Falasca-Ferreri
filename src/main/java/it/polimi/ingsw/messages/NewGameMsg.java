@@ -10,9 +10,14 @@ import java.io.IOException;
 
 public class NewGameMsg extends CommandMsg
 {
+  private int numPlayers;
+  private boolean modExpert;
+  public NewGameMsg(int numPlayers,boolean modExpert){
+
+  }
   @Override
   public void processMessage(ClientHandler clientHandler) throws IOException
   {
-    clientHandler.getGame().newGame();
+    clientHandler.getGame().newGame(this.numPlayers,this.modExpert);
   }
 }

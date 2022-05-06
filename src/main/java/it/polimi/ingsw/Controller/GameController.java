@@ -1,5 +1,6 @@
 package it.polimi.ingsw.Controller;
 
+import it.polimi.ingsw.Model.GameModel;
 import it.polimi.ingsw.Model.Player;
 
 import java.util.List;
@@ -16,6 +17,7 @@ public class GameController {
     private WinLoseCheckState winLoseCheckState = new WinLoseCheckState();
     private PlayAssCard playAssCard = new PlayAssCard();
     private List<Player> players;
+    private GameModel gameModel=new GameModel();
 
     public AddStudentsOnClouds getAddStudentsOnClouds() {
         return addStudentsOnClouds;
@@ -103,8 +105,9 @@ public class GameController {
     public void setPlayers(List<Player> players) {
         this.players = players;
     }
-    public void newGame(){
-
+    public void newGame(int numofPlayers,boolean modexpert){
+        this.gameModel.setGeneralBoard(setup.CreateGeneralboard(modexpert,numofPlayers));
+        this.gameModel.setBag(setup.CreateBag());
     }
 }
 
