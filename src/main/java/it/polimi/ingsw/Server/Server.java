@@ -1,5 +1,7 @@
 package it.polimi.ingsw.Server;
 
+import it.polimi.ingsw.Controller.GameController;
+
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -30,6 +32,7 @@ public class Server
         int socketPort = Integer.parseInt(scanner.nextLine());
 
         ServerSocket socket;
+        GameController gamecontroller=new GameController();
         try {
             socket = new ServerSocket(socketPort);
         } catch (IOException e) {
@@ -43,7 +46,7 @@ public class Server
                 /* accepts connections; for every connection we accept,
                  * create a new Thread executing a ClientHandler */
                 Socket client = socket.accept();
-                ClientHandler clientHandler = new ClientHandler(client);
+                ClientHandler clientHandler = new ClientHandler(client,gamecontroller);
                 Thread thread = new Thread(clientHandler, "server_" + client.getInetAddress());
                 thread.start();
             } catch (IOException e) {
