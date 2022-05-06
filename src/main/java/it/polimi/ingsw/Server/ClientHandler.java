@@ -30,7 +30,7 @@ public class ClientHandler implements Runnable
     private Socket client;
     private ObjectOutputStream output;
     private ObjectInputStream input;
-    /*   private Mastermind game;                             */
+    private GameController game;
 
 
     /**
@@ -42,7 +42,7 @@ public class ClientHandler implements Runnable
     ClientHandler(Socket client)
     {
         this.client = client;
-   /*     this.game = new Mastermind();*/
+        this.game = new GameController();
     }
 
 
@@ -101,10 +101,10 @@ public class ClientHandler implements Runnable
      * The game instance associated with this client.
      * @return The game instance.
      */
-  /*public GameController getGame()
+    public GameController getGame()
     {
         return game;
-    }*/
+    }
 
 
     /**
