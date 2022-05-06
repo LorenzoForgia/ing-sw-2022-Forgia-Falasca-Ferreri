@@ -6,11 +6,12 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.concurrent.atomic.AtomicBoolean;
+import it.polimi.ingsw.messages.*;
 
 /**
  * A class that represents the server inside the client.
  */
-/*
+
 public class ServerHandler implements Runnable
 {
     private Socket server;
@@ -25,7 +26,7 @@ public class ServerHandler implements Runnable
      * a server.
      * @param server The socket connection to the server.
      */
-/*
+
     ServerHandler(Socket server, Client owner)
     {
         this.server = server;
@@ -36,7 +37,7 @@ public class ServerHandler implements Runnable
     /**
      * Connects to the server and runs the event loop.
      */
-/*
+
     @Override
     public void run()
     {
@@ -67,28 +68,28 @@ public class ServerHandler implements Runnable
      * them in the order they are received.
      * @throws IOException If a communication error occurs.
      */
-/*
+
     private void handleClientConnection() throws IOException
     {
         try {
             boolean stop = false;
             while (!stop) {
                 /* read commands from the server and process them */
-/*
+
                 try {
                     Object next = input.readObject();
                     AnswerMsg command = (AnswerMsg)next;
                     command.processMessage(this);
                 } catch (IOException e) {
                     /* Check if we were interrupted because another thread has asked us to stop */
-/*
+
                     if (shouldStop.get()) {
                         /* Yes, exit the loop gracefully */
-/*
+
                         stop = true;
                     } else {
                         /* No, rethrow the exception */
-/*
+
                         throw e;
                     }
                 }
@@ -98,12 +99,12 @@ public class ServerHandler implements Runnable
         }
     }
 
-*/
+
     /**
      * The game instance associated with this client.
      * @return The game instance.
      */
-    /*
+
     public Client getClient()
     {
         return owner;
@@ -114,7 +115,7 @@ public class ServerHandler implements Runnable
      * Sends a message to the server.
      * @param commandMsg The message to be sent.
      */
-/*
+
     public void sendCommandMessage(CommandMsg commandMsg)
     {
         try {
@@ -129,7 +130,7 @@ public class ServerHandler implements Runnable
     /**
      * Requires the run() method to stop as soon as possible.
      */
-/*
+
     public void stop()
     {
         shouldStop.set(true);
@@ -137,4 +138,4 @@ public class ServerHandler implements Runnable
             server.shutdownInput();
         } catch (IOException e) { }
     }
-}*/
+}

@@ -1,12 +1,13 @@
 package it.polimi.ingsw.messages;
 
-
-/*
+import it.polimi.ingsw.Client.*;
+import java.io.IOException;
+import java.util.UUID;
 
 /**
  * A message representing an answer to a command.
  */
-/*
+
 public abstract class AnswerMsg extends NetworkMessage
 {
   UUID parentIdentifier;
@@ -16,7 +17,7 @@ public abstract class AnswerMsg extends NetworkMessage
    * Initializes the answer message.
    * @param parent The CommandMsg being answered.
    */
-/*
+
   public AnswerMsg(CommandMsg parent)
   {
     this.parentIdentifier = parent.getIdentifier();
@@ -27,7 +28,7 @@ public abstract class AnswerMsg extends NetworkMessage
    * Returns the identifier of the message being answered.
    * @return The UUID of the answered message.
    */
-/*
+
   public UUID getParentIdentifier()
   {
     return parentIdentifier;
@@ -37,6 +38,6 @@ public abstract class AnswerMsg extends NetworkMessage
   /**
    * Method invoked in the client to process the message.
    */
-/*
+
   public abstract void processMessage(ServerHandler serverHandler) throws IOException;
-}*/
+}
