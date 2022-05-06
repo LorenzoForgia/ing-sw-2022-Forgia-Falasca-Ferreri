@@ -153,6 +153,12 @@ public class GameController {
         }
     }
 
+    public void CheckCloud(CloudTiles c)throws IllegalMoveException{
+        if(c.getStud().size()==0){
+            throw new IllegalMoveException();
+        }
+    }
+
 }
 
 
