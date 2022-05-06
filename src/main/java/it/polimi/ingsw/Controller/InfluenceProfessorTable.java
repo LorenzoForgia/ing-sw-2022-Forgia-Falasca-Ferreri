@@ -1,7 +1,7 @@
 package it.polimi.ingsw.Controller;
 import it.polimi.ingsw.Model.*;
 
-
+/*@author Luigia Falasca*/
 
 public class InfluenceProfessorTable {
 
