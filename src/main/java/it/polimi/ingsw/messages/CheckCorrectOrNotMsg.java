@@ -19,7 +19,7 @@ public class CheckCorrectOrNotMsg extends AnswerMsg{
 
 
     /**
-     * Create a new CheckAssCardMsg.
+     * Create a new CheckCorrectOrNotMsg.
      * @param parent The CommandMsg being answered.
      * @param s Status is correct or incorrect.
      */
