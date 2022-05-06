@@ -128,6 +128,19 @@ public class GameController {
 
     }
 
+    public void CheckColor(Color c, Player p) throws IllegalMoveException{
+        boolean flag= true;
+        for(int i=0; i < p.getMySchoolBoard().getEntrance().size() && flag; i++){
+            if(c.equals(p.getMySchoolBoard().getEntrance().get(i))){
+                flag = false;
+            }
+        }
+
+        if(flag){
+            throw new IllegalMoveException();
+        }
+    }
+
 
 }
 

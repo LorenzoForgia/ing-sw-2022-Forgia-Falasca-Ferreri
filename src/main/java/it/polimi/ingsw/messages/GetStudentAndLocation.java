@@ -23,12 +23,12 @@ public class GetStudentAndLocation extends CommandMsg {
         AnswIfAllowed answerMsg;
         GameController game = clientHandler.getGame();
 
-
-        if (true /*game.CheckColor(c, p)*/) {
+        try{
+            game.CheckColor(c, p);
             answerMsg = new AnswIfAllowed(this, AnswIfAllowed.Status.VALID);
-        } else {
-            answerMsg = new AnswIfAllowed(this, AnswIfAllowed.Status.INVALID);
+        }catch(IllegalMoveException e){
 
+            answerMsg = new AnswIfAllowed(this, AnswIfAllowed.Status.INVALID);
         }
 
         clientHandler.sendAnswerMessage(answerMsg);

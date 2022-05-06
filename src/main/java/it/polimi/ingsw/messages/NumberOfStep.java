@@ -30,12 +30,9 @@ public class NumberOfStep extends CommandMsg{
         answerMsg = new AnswIfAllowed(this, AnswIfAllowed.Status.INVALID);
     }
 
-
    clientHandler.sendAnswerMessage(answerMsg);
   }
 
 
-    public int getSteps() {
-        return Steps;
-    }
+
 }
