@@ -39,10 +39,10 @@ public class ClientHandler implements Runnable
      * @param client The socket connection to the client.
      */
 
-    ClientHandler(Socket client)
+    ClientHandler(Socket client,GameController gamecontroller)
     {
         this.client = client;
-        this.game = new GameController();
+        this.game = gamecontroller;
     }
 
 
