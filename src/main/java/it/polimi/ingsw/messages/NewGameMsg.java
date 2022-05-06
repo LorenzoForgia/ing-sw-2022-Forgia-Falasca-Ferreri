@@ -10,14 +10,18 @@ import java.io.IOException;
 
 public class NewGameMsg extends CommandMsg
 {
+
   private int numPlayers;
   private boolean modExpert;
   public NewGameMsg(int numPlayers,boolean modExpert){
+    this.numPlayers=numPlayers;
+    this.modExpert=modExpert;
 
   }
   @Override
   public void processMessage(ClientHandler clientHandler) throws IOException
   {
     clientHandler.getGame().newGame(this.numPlayers,this.modExpert);
+    clientHandler.sendAnswerMessage(new BooleanCheckMsg(this,BooleanCheckMsg.Status.OK));
   }
 }
