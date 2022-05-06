@@ -17,6 +17,8 @@ public class GameController {
     private PlayAssCard playAssCard = new PlayAssCard();
     private List<Player> players;
 
+
+
     /*public static void main(String[] args) {*/
         /* Richiesta modalità gioco
         chooseSettingGame= new ChooseSettingGame();

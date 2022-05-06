@@ -101,7 +101,7 @@ public class ClientHandler implements Runnable
      * The game instance associated with this client.
      * @return The game instance.
      */
-  /*  public Mastermind getGame()
+  /*public GameController getGame()
     {
         return game;
     }*/
