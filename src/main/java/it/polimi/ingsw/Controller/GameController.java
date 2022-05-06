@@ -17,26 +17,95 @@ public class GameController {
     private PlayAssCard playAssCard = new PlayAssCard();
     private List<Player> players;
 
-    /*public static void main(String[] args) {*/
-        /* Richiesta modalità gioco
-        chooseSettingGame= new ChooseSettingGame();
-        Metodi di SetUp
-        Creazione giocatori con i rispettivi nickname
-        Inizia un ciclo con un flag dato dal Game End State
-        AddStudentOnCloud
-        Scegli un giocatore random che sceglierà la carta assistente
-        prendi tutte le carte assistenti dagli altri giocatori
-        chiama play ass card
-        inizia il turno del primo giocatore tramite un ciclo for (choosenPlayer)
-        Scelta location da parte del player
-        Move3student
-        MoveMotherNature
-        CheckEndGameState
-        se true uscire dal loop, altrimenti ricominciare
-        se usciti dal loop winlosecheckstate
+    public AddStudentsOnClouds getAddStudentsOnClouds() {
+        return addStudentsOnClouds;
+    }
 
+    public void setAddStudentsOnClouds(AddStudentsOnClouds addStudentsOnClouds) {
+        this.addStudentsOnClouds = addStudentsOnClouds;
+    }
+    public ChooseCloudTiles getChooseCloudTiles() {
+        return chooseCloudTiles;
+    }
 
-    }*/
+    public void setChooseCloudTiles(ChooseCloudTiles chooseCloudTiles) {
+        this.chooseCloudTiles = chooseCloudTiles;
+    }
+
+    public ChoosenPlayer getChoosenPlayer() {
+        return choosenPlayer;
+    }
+
+    public void setChoosenPlayer(ChoosenPlayer choosenPlayer) {
+        this.choosenPlayer = choosenPlayer;
+    }
+
+    public ChooseSettingGame getChooseSettingGame() {
+        return chooseSettingGame;
+    }
+
+    public void setChooseSettingGame(ChooseSettingGame chooseSettingGame) {
+        this.chooseSettingGame = chooseSettingGame;
+    }
+
+    public GameEndState getGameEndState() {
+        return gameEndState;
+    }
+
+    public void setGameEndState(GameEndState gameEndState) {
+        this.gameEndState = gameEndState;
+    }
+
+    public Move3Students getMove3Students() {
+        return move3Students;
+    }
+
+    public void setMove3Students(Move3Students move3Students) {
+        this.move3Students = move3Students;
+    }
+
+    public Setup getSetup() {
+        return setup;
+    }
+
+    public void setSetup(Setup setup) {
+        this.setup = setup;
+    }
+
+    public MoveMotherNature getMoveMotherNature() {
+        return moveMotherNature;
+    }
+
+    public void setMoveMotherNature(MoveMotherNature moveMotherNature) {
+        this.moveMotherNature = moveMotherNature;
+    }
+
+    public WinLoseCheckState getWinLoseCheckState() {
+        return winLoseCheckState;
+    }
+
+    public void setWinLoseCheckState(WinLoseCheckState winLoseCheckState) {
+        this.winLoseCheckState = winLoseCheckState;
+    }
+
+    public PlayAssCard getPlayAssCard() {
+        return playAssCard;
+    }
+
+    public void setPlayAssCard(PlayAssCard playAssCard) {
+        this.playAssCard = playAssCard;
+    }
+
+    public List<Player> getPlayers() {
+        return players;
+    }
+
+    public void setPlayers(List<Player> players) {
+        this.players = players;
+    }
+    public void newGame(){
+
+    }
 }
 
 
