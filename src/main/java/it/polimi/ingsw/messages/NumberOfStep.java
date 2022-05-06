@@ -11,14 +11,14 @@ public class NumberOfStep extends CommandMsg{
     private Player player;
     private CharacterCard CC;
 
-    public NumberOfStep(int steps, Player player, CharacterCard cc) throws IOException {
+    public NumberOfStep(int steps, Player player, CharacterCard cc) {
         Steps = steps;
         this.player = player;
         CC= cc;
     }
 
     @Override
-    public void processMessage(ClientHandler clientHandler)
+    public void processMessage(ClientHandler clientHandler) throws IOException
     {
         AnswIfAllowed answerMsg;
         GameController game = clientHandler.getGame();
@@ -31,7 +31,11 @@ public class NumberOfStep extends CommandMsg{
 
     }
 
-   /* clientHandler.sendAnswerMessage(answerMsg);*/
+   clientHandler.sendAnswerMessage(answerMsg);
   }
 
+
+    public int getSteps() {
+        return Steps;
+    }
 }
