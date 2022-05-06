@@ -23,13 +23,13 @@ public class NumberOfStep extends CommandMsg{
         AnswIfAllowed answerMsg;
         GameController game = clientHandler.getGame();
 
-
-    if (true /*game.CheckNumberOfSteps(Steps, player, CC)*/) {
-      answerMsg = new AnswIfAllowed(this, AnswIfAllowed.Status.VALID);
-    } else {
+    try{
+        game.CheckNumberOfSteps(Steps, player, CC);
+        answerMsg = new AnswIfAllowed(this, AnswIfAllowed.Status.VALID);
+    }catch(IllegalMoveException e){
         answerMsg = new AnswIfAllowed(this, AnswIfAllowed.Status.INVALID);
-
     }
+
 
    clientHandler.sendAnswerMessage(answerMsg);
   }

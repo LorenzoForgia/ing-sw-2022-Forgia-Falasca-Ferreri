@@ -1,7 +1,6 @@
 package it.polimi.ingsw.Controller;
 
-import it.polimi.ingsw.Model.GameModel;
-import it.polimi.ingsw.Model.Player;
+import it.polimi.ingsw.Model.*;
 
 import java.util.List;
 
@@ -109,6 +108,27 @@ public class GameController {
         this.gameModel.setGeneralBoard(setup.CreateGeneralboard(modexpert,numofPlayers));
         this.gameModel.setBag(setup.CreateBag());
     }
+
+    public void CheckNumberOfSteps(int n, Player p, CharacterCard c) throws IllegalMoveException {
+        int move=0;
+        if(c != null){
+            if(c.getName()==4){
+                move = ((CharacterCard4)c).AddTwoMvntMN(p.getCA());
+
+            }else{
+                move = p.getCA().getMovementMN();
+            }
+        }else{
+            move = p.getCA().getMovementMN();
+        }
+
+        if(move < n){
+            throw  new IllegalMoveException();
+        }
+
+    }
+
+
 }
 
 
