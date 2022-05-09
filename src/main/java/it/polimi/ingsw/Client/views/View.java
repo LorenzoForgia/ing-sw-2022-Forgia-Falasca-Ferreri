@@ -1,12 +1,12 @@
 package it.polimi.ingsw.Client.views;
 
-/*
 
+import it.polimi.ingsw.Client.Client;
 
 /**
  * Abstract representation of a command line interface view.
  */
-/*
+
 public abstract class View implements Runnable
 {
   private Client owner;
@@ -17,7 +17,7 @@ public abstract class View implements Runnable
    * Set the parent object of the view.
    * @param owner The parent object
    */
-/*
+
   public void setOwner(Client owner)
   {
     this.owner = owner;
@@ -28,7 +28,7 @@ public abstract class View implements Runnable
    * The parent object of the view.
    * @return The parent object.
    */
-/*
+
   public Client getOwner()
   {
     return owner;
@@ -41,7 +41,7 @@ public abstract class View implements Runnable
    * @implNote This method shall exit as soon as possible after stopInteraction()
    * is called (from another thread).
    */
-/*
+
   abstract public void run();
 
 
@@ -49,7 +49,7 @@ public abstract class View implements Runnable
    * Checks if stopInteraction() has been called at least once.
    * @return If the interaction shall be stopped.
    */
-/*
+
   synchronized protected boolean shouldStopInteraction()
   {
     return stopInteraction;
@@ -60,11 +60,10 @@ public abstract class View implements Runnable
    * Sets a flag that informs the run() method to terminate as soon
    * as possible.
    */
-/*
+
   public synchronized void stopInteraction()
   {
     stopInteraction = true;
     notifyAll();
   }
 }
-*/
