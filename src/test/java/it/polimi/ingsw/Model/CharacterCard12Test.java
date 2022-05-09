@@ -14,10 +14,22 @@ class CharacterCard12Test {
        DeckCardAssistant d2=new DeckCardAssistant();
        DeckCardAssistant d3=new DeckCardAssistant();
        DeckCardAssistant d4=new DeckCardAssistant();
-       Player p1=new Player("A",10,s1,d1);
-       Player p2=new Player("B",10,s2,d2);
-       Player p3=new Player("C",10,s3,d3);
-       Player p4=new Player("D",10,s4,d4);
+       Player p1=new Player("A");
+       p1.setMySchoolBoard(s1);
+       p1.setNumberCoins(10);
+       p1.setMyDeck(d1);
+      Player p2=new Player("B");
+      p2.setMySchoolBoard(s2);
+      p2.setNumberCoins(10);
+      p2.setMyDeck(d2);
+      Player p3=new Player("C");
+      p3.setMySchoolBoard(s3);
+      p3.setNumberCoins(10);
+      p3.setMyDeck(d2);
+       Player p4=new Player("D");
+      p4.setMySchoolBoard(s4);
+      p4.setNumberCoins(10);
+      p4.setMyDeck(d4);
        s1.getDiningRoom().PutStudent(Color.Red);       /** Player1 has 1 Red students **/
        s1.getDiningRoom().PutStudent(Color.Green);
        s2.getDiningRoom().PutStudent(Color.Red);       /** Player2 has 2 Red students **/
