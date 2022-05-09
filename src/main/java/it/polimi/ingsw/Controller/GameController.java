@@ -221,7 +221,7 @@ public class GameController {
     }
 
     public void CheckNumOfPlayer(int n) throws IllegalArgumentException {
-        if(n<=0 || n> 4){
+        if(n<2 || n> 4){
             throw new IllegalArgumentException();
         }
     }
