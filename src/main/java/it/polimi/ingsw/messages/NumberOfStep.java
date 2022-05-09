@@ -1,6 +1,7 @@
 package it.polimi.ingsw.messages;
 
 import it.polimi.ingsw.Controller.*;
+import it.polimi.ingsw.Exception.IllegalNumberOfStepException;
 import it.polimi.ingsw.Model.*;
 import it.polimi.ingsw.Server.*;
 
@@ -23,16 +24,17 @@ public class NumberOfStep extends CommandMsg{
         AnswIfAllowed answerMsg;
         GameController game = clientHandler.getGame();
 
-    try{
-        game.CheckNumberOfSteps(Steps, player, CC);
-        answerMsg = new AnswIfAllowed(this, AnswIfAllowed.Status.VALID);
-    }catch(IllegalMoveException e){
-        answerMsg = new AnswIfAllowed(this, AnswIfAllowed.Status.INVALID);
-    }
+        try {
+            game.CheckNumberOfSteps(Steps, player, CC);
+            answerMsg = new AnswIfAllowed(this, AnswIfAllowed.Status.VALID);
+        } catch (IllegalNumberOfStepException e) {
+            answerMsg = new AnswIfAllowed(this, AnswIfAllowed.Status.INVALID);
+        }
 
    clientHandler.sendAnswerMessage(answerMsg);
   }
 
-
-
+    public int getSteps() {
+        return Steps;
+    }
 }

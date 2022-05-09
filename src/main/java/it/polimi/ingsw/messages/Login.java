@@ -1,6 +1,7 @@
 package it.polimi.ingsw.messages;
 
 import it.polimi.ingsw.Controller.GameController;
+import it.polimi.ingsw.Exception.IllegalNickNameException;
 import it.polimi.ingsw.Model.IllegalMoveException;
 import it.polimi.ingsw.Server.ClientHandler;
 
@@ -22,7 +23,7 @@ public class Login extends CommandMsg {
         try{
             game.NickNameAvailable(name);
             answerMsg = new AnswIfAllowed(this, AnswIfAllowed.Status.VALID);
-        }catch(IllegalMoveException e){
+        }catch(IllegalNickNameException e){
             answerMsg = new AnswIfAllowed(this, AnswIfAllowed.Status.INVALID);
         }
 
