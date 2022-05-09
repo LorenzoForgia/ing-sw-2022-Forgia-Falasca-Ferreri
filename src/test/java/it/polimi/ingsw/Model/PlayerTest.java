@@ -18,7 +18,10 @@ class PlayerTest {
     public void setUp(){
     SB = new SchoolBoard(1, 7);
     DCA = new DeckCardAssistant();
-    player = new Player( "player1" , 1, SB, DCA);
+    player = new Player( "player1" );
+    player.setMyDeck(DCA);
+    player.setNumberCoins(1);
+    player.setMySchoolBoard(SB);
     }
 
     @AfterEach

@@ -10,15 +10,22 @@ public class Player {
     private DeckCardAssistant MyDeck;
     private CardAssistant CA;
 
-    public Player(String nickName, int numberCoins, SchoolBoard mySchoolBoard, DeckCardAssistant myDeck) {
-        NickName = nickName;
-        NumberCoins = numberCoins;
-        MySchoolBoard = mySchoolBoard;
-        MyDeck = myDeck;
-    }
 
     public Player(String nickName) {
         NickName = nickName;
+    }
+
+    public void setNumberCoins(int numberCoins) {
+        NumberCoins = numberCoins;
+    }
+
+
+    public void setMySchoolBoard(SchoolBoard mySchoolBoard) {
+        MySchoolBoard = mySchoolBoard;
+    }
+
+    public void setMyDeck(DeckCardAssistant myDeck) {
+        MyDeck = myDeck;
     }
 
     /* remove used Card from MyDeck*/
