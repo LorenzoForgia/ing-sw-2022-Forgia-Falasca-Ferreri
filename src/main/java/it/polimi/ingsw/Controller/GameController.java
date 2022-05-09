@@ -18,6 +18,11 @@ public class GameController {
     private WinLoseCheckState winLoseCheckState = new WinLoseCheckState();
     private PlayAssCard playAssCard = new PlayAssCard();
     private List<Player> players;
+
+    public GameModel getGameModel() {
+        return gameModel;
+    }
+
     private GameModel gameModel=new GameModel();
 
     public AddStudentsOnClouds getAddStudentsOnClouds() {
