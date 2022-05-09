@@ -27,9 +27,13 @@ public class NewGameMsg extends CommandMsg
     BooleanCheckMsg answerMsg;
     GameController game = clientHandler.getGame();
 
-    game.newGame(this.numPlayers, this.modExpert);
-    answerMsg = new BooleanCheckMsg(this,BooleanCheckMsg.Status.OK);
-
+    try {
+      game.CheckNumOfPlayer(numPlayers);
+      answerMsg = new BooleanCheckMsg(this,BooleanCheckMsg.Status.OK);
+      game.newGame(numPlayers,modExpert);
+    } catch (IllegalArgumentException e) {
+      answerMsg = new BooleanCheckMsg(this,BooleanCheckMsg.Status.KO);
+    }
 
     clientHandler.sendAnswerMessage(answerMsg);
 
