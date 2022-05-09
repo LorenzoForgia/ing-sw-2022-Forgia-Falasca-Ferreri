@@ -1,5 +1,9 @@
 package it.polimi.ingsw.Client;
 
+import it.polimi.ingsw.Client.views.IdleView;
+import it.polimi.ingsw.Client.views.TitleView;
+import it.polimi.ingsw.Client.views.View;
+
 import java.io.*;
 import java.net.Socket;
 import java.util.*;
@@ -12,8 +16,8 @@ public class Client implements Runnable
 {
     private ServerHandler serverHandler;
     private boolean shallTerminate;
- /*   private View nextView;
-    private View currentView;*/
+    private View nextView;
+    private View currentView;
 
 
     public static void main(String[] args)
@@ -52,7 +56,7 @@ public class Client implements Runnable
 
         /* Run the state machine handling the views */
 
-     /*   nextView = new NextNumberView();*/
+        nextView = new TitleView();
         runViewStateMachine();
 
         /* We are going to stop the application, so ask the server thread
@@ -86,7 +90,7 @@ public class Client implements Runnable
     private void runViewStateMachine()
     {
         boolean stop;
-/*
+
         synchronized (this) {
             stop = shallTerminate;
             currentView = nextView;
@@ -105,7 +109,7 @@ public class Client implements Runnable
                 nextView = null;
             }
         }
-        */
+
 
     }
 
@@ -115,11 +119,11 @@ public class Client implements Runnable
      * @param newView The view to transition to.
      */
 
-  /*  public synchronized void transitionToView(View newView)
+    public synchronized void transitionToView(View newView)
     {
         this.nextView = newView;
         currentView.stopInteraction();
-    }*/
+    }
 
 
     /**
