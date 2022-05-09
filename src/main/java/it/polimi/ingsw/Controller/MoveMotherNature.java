@@ -7,9 +7,9 @@ import java.util.List;
 
 /*@author Luigia Falasca*/
 public class MoveMotherNature {
-    IslandTiles I1;
-    ColorTower colorT;
-    List<ColorTower> colorTowerList = new ArrayList<>();
+    private IslandTiles I1;
+    private ColorTower colorT;
+    private List<ColorTower> colorTowerList = new ArrayList<>();
 
 
     public void SetIslandWithMotherNature(IslandTiles I){
@@ -20,6 +20,9 @@ public class MoveMotherNature {
         I1 = GB.moveMotherNature(I1, n);
     }
 
+    public IslandTiles getI1() {
+        return I1;
+    }
 
     private int influenceTot(List<Color> student, IslandTiles I, ColorTower ct) {
         int influence = 0;

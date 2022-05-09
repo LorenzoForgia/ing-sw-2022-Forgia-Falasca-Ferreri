@@ -1,6 +1,10 @@
 package it.polimi.ingsw.Controller;
 
+import it.polimi.ingsw.Exception.CloudEmptyException;
+import it.polimi.ingsw.Exception.IllegalNickNameException;
+import it.polimi.ingsw.Exception.IllegalNumberOfStepException;
 import it.polimi.ingsw.Model.*;
+import it.polimi.ingsw.messages.AnswIfAllowed;
 
 import java.util.List;
 
@@ -109,7 +113,7 @@ public class GameController {
         this.gameModel.setBag(setup.CreateBag());
     }
 
-    public void CheckNumberOfSteps(int n, Player p, CharacterCard c) throws IllegalMoveException {
+    public void CheckNumberOfSteps(int n, Player p, CharacterCard c) throws IllegalNumberOfStepException {
         int move=0;
         if(c != null){
             if(c.getName()==4){
@@ -122,8 +126,14 @@ public class GameController {
             move = p.getCA().getMovementMN();
         }
 
-        if(move < n){
-            throw  new IllegalMoveException();
+        if(move < n || move<=0 ){
+            throw  new IllegalNumberOfStepException();
+        }else{
+            moveMotherNature.MoveMN(gameModel.getGeneralBoard(), n);
+            if(moveMotherNature.CheckIfIslandGetControlled(gameModel.getPlayers().size(),gameModel.getGeneralBoard(), moveMotherNature.getI1())){
+                /*moveMotherNature.GetRightTowerOnIsland(gameModel.getGeneralBoard(), moveMotherNature.getI1(),setup.);*/
+            }
+
         }
 
     }
@@ -141,21 +151,40 @@ public class GameController {
         }
     }
 
-    public void NickNameAvailable(String name)throws IllegalMoveException{
+    public void NickNameAvailable(String name)throws IllegalNickNameException{
         boolean flag= true;
-        for(int i=0; i < gameModel.getPlayers().size() && flag; i ++){
-            if(name.equals(getPlayers().get(i).getNickName())){
-                flag=false;
+        if(name== null){
+            throw new IllegalNickNameException();
+        }else {
+            for (int i = 0; i < gameModel.getPlayers().size() && flag; i++) {
+                if (name.equals(getPlayers().get(i).getNickName())) {
+                    flag = false;
+                }
             }
-        }
-        if(flag){
-            throw new IllegalMoveException();
+            if (flag) {
+                throw new IllegalNickNameException();
+            } else {
+                gameModel.getPlayers().add(new Player(name));
+            }
         }
     }
 
-    public void CheckCloud(CloudTiles c)throws IllegalMoveException{
-        if(c.getStud().size()==0){
-            throw new IllegalMoveException();
+    private boolean CloudInList( CloudTiles c){
+        boolean flag = false;
+        for(int i =0; i < gameModel.getGeneralBoard().getClouds().size(); i++){
+            if(c.equals(gameModel.getGeneralBoard().getClouds().get(i))){
+                flag=true;
+            }
+        }
+
+        return flag;
+    }
+
+    public void CheckCloud(CloudTiles c, Player player)throws CloudEmptyException {
+        if( !CloudInList(c) || c.getStud().size()==0 || c.getStud() == null ){
+            throw new CloudEmptyException();
+        }else{
+            chooseCloudTiles.ChoosenCloud(player, c);
         }
     }
 
