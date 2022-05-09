@@ -1,6 +1,7 @@
 package it.polimi.ingsw.messages;
 
 import it.polimi.ingsw.Client.ServerHandler;
+import it.polimi.ingsw.Client.views.PrintAnswerView;
 
 public class AnswIfAllowed extends AnswerMsg {
 
@@ -21,7 +22,7 @@ public class AnswIfAllowed extends AnswerMsg {
     @Override
     public void processMessage(ServerHandler serverHandler)
     {
-
+        serverHandler.getClient().transitionToView(new PrintAnswerView(this));
     }
 
     public Status getMoveStatus() {

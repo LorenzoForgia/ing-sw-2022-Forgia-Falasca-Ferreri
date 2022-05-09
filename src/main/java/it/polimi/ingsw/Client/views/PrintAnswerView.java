@@ -2,6 +2,10 @@ package it.polimi.ingsw.Client.views;
 
 
 import it.polimi.ingsw.messages.AnswIfAllowed;
+import it.polimi.ingsw.messages.AskIfGameCreated;
+import it.polimi.ingsw.messages.Login;
+
+import java.util.Scanner;
 
 /**
  * View that handles displaying the results of the valid nickname
@@ -28,24 +32,28 @@ public class PrintAnswerView extends View
 
   @Override
   public void run()
-  {}} /*
-    View nextView = new NextNumberView();
+  {
+    /*View nextView = new NextNumberView();*/
+    Scanner scanner = new Scanner(System.in);
 
     AnswIfAllowed.Status moveStatus = answerMsg.getMoveStatus();
      if (moveStatus == AnswIfAllowed.Status.INVALID) {
-      System.out.println("Nickname già utilizzato! Inserisci uno nuovo!");
-    } else {
-      System.out.println("Loggato correttamente!");
+        System.out.println("Nickname già utilizzato! Inserisci un nuovo nickname!");
+        String nickname = (scanner.nextLine());
+        Login login=new Login(nickname);
+        getOwner().getServerHandler().sendCommandMessage(login);
+     } else {
+        System.out.println("Loggato correttamente!");
       /* answer if a game is already created*/
-    /*
-      getOwner().getServerHandler().sendCommandMessage(new AskIfGameCreated());
 
-        getOwner().terminate();
-        nextView = null;
+        getOwner().getServerHandler().sendCommandMessage(new AskIfGameCreated());
 
-    }
+        /*getOwner().terminate();
+        nextView = null;*/
 
-    if (nextView != null)
-      getOwner().transitionToView(nextView);
+      }
+
+    /*if (nextView != null)
+      getOwner().transitionToView(nextView);*/
   }
-}*/
+}

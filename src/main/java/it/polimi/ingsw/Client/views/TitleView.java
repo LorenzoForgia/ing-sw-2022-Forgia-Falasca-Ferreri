@@ -18,13 +18,13 @@ public class TitleView extends View {
   {
     Scanner scanner = new Scanner(System.in);
 
+
     System.out.println("Welcome to:\n");
     System.out.println("Eriantys");
     System.out.println("Inserisci il tuo nickname:");
     String nickname = (scanner.nextLine());
     Login login=new Login(nickname);
     getOwner().getServerHandler().sendCommandMessage(login);
-    
   }
 
 }
