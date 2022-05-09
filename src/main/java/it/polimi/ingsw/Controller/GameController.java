@@ -157,10 +157,14 @@ public class GameController {
         if(name== null){
             throw new IllegalNickNameException();
         }else {
-            for (int i = 0; i < gameModel.getPlayers().size() && flag; i++) {
-                if (name.equals(getPlayers().get(i).getNickName())) {
-                    flag = false;
+            if(gameModel.getPlayers()!= null) {
+                for (int i = 0; i < gameModel.getPlayers().size() && flag; i++) {
+                    if (name.equals(getPlayers().get(i).getNickName())) {
+                        flag = false;
+                    }
                 }
+            }else{
+                flag = false;
             }
             if (flag) {
                 throw new IllegalNickNameException(name);

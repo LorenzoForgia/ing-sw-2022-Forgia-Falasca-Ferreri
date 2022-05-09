@@ -21,6 +21,7 @@ public class NewGameMsg extends CommandMsg
   @Override
   public void processMessage(ClientHandler clientHandler) throws IOException
   {
+
     clientHandler.getGame().newGame(this.numPlayers,this.modExpert);
     clientHandler.sendAnswerMessage(new BooleanCheckMsg(this,BooleanCheckMsg.Status.OK));
   }
