@@ -31,9 +31,18 @@ class ChoosenPlayerTest {
         DCA1 = new DeckCardAssistant();
         DCA2 = new DeckCardAssistant();
         DCA3 = new DeckCardAssistant();
-        player1 = new Player( "player1" , 1, SB1, DCA1);
-        player2 = new Player( "player2" , 1, SB2, DCA2);
-        player3 = new Player( "player3" , 1, SB3, DCA3);
+        Player p1=new Player("A");
+        p1.setMySchoolBoard(SB1);
+        p1.setNumberCoins(1);
+        p1.setMyDeck(DCA1);
+        Player p2=new Player("B");
+        p2.setMySchoolBoard(SB2);
+        p2.setNumberCoins(1);
+        p2.setMyDeck(DCA2);
+        Player p3=new Player("C");
+        p3.setMySchoolBoard(SB3);
+        p3.setNumberCoins(1);
+        p3.setMyDeck(DCA3);
         p= new PlayAssCard();
         pl= new ChoosenPlayer();
     }

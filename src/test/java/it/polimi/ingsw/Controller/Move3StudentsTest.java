@@ -18,7 +18,10 @@ class Move3StudentsTest {
     @BeforeEach
     public void setUp(){
         SB = new SchoolBoard(1, 7);
-        player = new Player( "player1" , 1, SB, DCA);
+        player = new Player( "player1");
+        player.setNumberCoins(1);
+        player.setMySchoolBoard(SB);
+        player.setMyDeck(DCA);
         i= new IslandTiles(1, false, 1, false, 0,false);
         m= new Move3Students();
         b= new Bag();
