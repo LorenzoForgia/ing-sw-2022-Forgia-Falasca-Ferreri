@@ -60,13 +60,13 @@ public class MoveMotherNature {
             if (card.getName() == 6) {     /*Effect6*/
                 if(ct.equals(I.getColTower())) {
                     influence = ((CharacterCard6) card).useEffect6(I, influence);
-                    card.setCountUse();
+
                 }
 
             } else if (card.getName() == 8) {/*Effect8*/
                 if(SbPlayer.ColorTower().equals(ct)) {
                     influence = ((CharacterCard8) card).useEffect8(I, influence);
-                    card.setCountUse();
+
                 }
             }
         }
@@ -86,8 +86,6 @@ public class MoveMotherNature {
             for (int i = 0; i < professor.size(); i++) {
                 if (!c.equals(professor.get(i))) {    /*Effect9*/
                     influence = influence + I.CountInfluence(professor.get(i));
-                }else{
-                    card.setCountUse();
                 }
             }
 
