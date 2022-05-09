@@ -226,7 +226,14 @@ public class GameController {
         }
     }
 
-
+    public void CheckIfEnoughMoney(Player p, CharacterCard c) throws NotEnoughCoinException{
+        if(c.getCost()> p.getNumberCoins()){
+            throw new NotEnoughCoinException(p.getNumberCoins(),c);
+        }else{
+            p.setNumberCoins(p.getNumberCoins()-c.getCost());
+            c.getCountUse();
+        }
+    }
 }
 
 
