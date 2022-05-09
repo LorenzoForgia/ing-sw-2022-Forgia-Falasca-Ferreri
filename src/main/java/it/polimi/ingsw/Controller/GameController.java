@@ -1,8 +1,6 @@
 package it.polimi.ingsw.Controller;
 
-import it.polimi.ingsw.Exception.CloudEmptyException;
-import it.polimi.ingsw.Exception.IllegalNickNameException;
-import it.polimi.ingsw.Exception.IllegalNumberOfStepException;
+import it.polimi.ingsw.Exception.*;
 import it.polimi.ingsw.Model.*;
 import it.polimi.ingsw.messages.AnswIfAllowed;
 
@@ -118,7 +116,6 @@ public class GameController {
         if(c != null){
             if(c.getName()==4){
                 move = ((CharacterCard4)c).AddTwoMvntMN(p.getCA());
-
             }else{
                 move = p.getCA().getMovementMN();
             }
@@ -126,20 +123,19 @@ public class GameController {
             move = p.getCA().getMovementMN();
         }
 
-        if(move < n || move<=0 ){
-            throw  new IllegalNumberOfStepException();
+        if( n > move|| n<=0 ){
+            throw  new IllegalNumberOfStepException(n);
         }else{
             moveMotherNature.MoveMN(gameModel.getGeneralBoard(), n);
-            if(moveMotherNature.CheckIfIslandGetControlled(gameModel.getPlayers().size(),gameModel.getGeneralBoard(), moveMotherNature.getI1())){
-                /*moveMotherNature.GetRightTowerOnIsland(gameModel.getGeneralBoard(), moveMotherNature.getI1(),setup.);*/
-            }
-
         }
 
     }
 
-    public void CheckColor(Color c, Player p) throws IllegalMoveException{
+    public void CheckColor(Color c, Player p) throws ColorNoInEntranceException {
         boolean flag= true;
+        if(c == null){
+            throw new ColorNoInEntranceException(c);
+        }
         for(int i=0; i < p.getMySchoolBoard().getEntrance().size() && flag; i++){
             if(c.equals(p.getMySchoolBoard().getEntrance().get(i))){
                 flag = false;
@@ -147,7 +143,7 @@ public class GameController {
         }
 
         if(flag){
-            throw new IllegalMoveException();
+            throw new ColorNoInEntranceException(c);
         }
     }
 
@@ -162,7 +158,7 @@ public class GameController {
                 }
             }
             if (flag) {
-                throw new IllegalNickNameException();
+                throw new IllegalNickNameException(name);
             } else {
                 gameModel.getPlayers().add(new Player(name));
             }
@@ -182,10 +178,28 @@ public class GameController {
 
     public void CheckCloud(CloudTiles c, Player player)throws CloudEmptyException {
         if( !CloudInList(c) || c.getStud().size()==0 || c.getStud() == null ){
-            throw new CloudEmptyException();
+            throw new CloudEmptyException(c);
         }else{
             chooseCloudTiles.ChoosenCloud(player, c);
         }
+    }
+
+
+    public void CardAssistantInDeck(CardAssistant cardAssistant, Player p) throws CardAssistantNotInDeckException {
+        boolean flag = true;
+
+        for(int i =0; i < p.getMyDeck().GetDeck().size() && flag; i ++){
+            if(p.getMyDeck().GetDeck().get(i).equals(cardAssistant)){
+                flag = false;
+            }
+        }
+
+        if (flag) {
+            throw new CardAssistantNotInDeckException(cardAssistant);
+        }else{
+            playAssCard.GetAssCard(p,cardAssistant, gameModel.getPlayers().size());
+        }
+
     }
 
 }

@@ -1,6 +1,7 @@
 package it.polimi.ingsw.messages;
 
 import it.polimi.ingsw.Controller.*;
+import it.polimi.ingsw.Exception.ColorNoInEntranceException;
 import it.polimi.ingsw.Model.*;
 import it.polimi.ingsw.Server.*;
 
@@ -26,7 +27,7 @@ public class GetStudentAndLocation extends CommandMsg {
         try{
             game.CheckColor(c, p);
             answerMsg = new AnswIfAllowed(this, AnswIfAllowed.Status.VALID);
-        }catch(IllegalMoveException e){
+        }catch(ColorNoInEntranceException e){
 
             answerMsg = new AnswIfAllowed(this, AnswIfAllowed.Status.INVALID);
         }
