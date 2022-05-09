@@ -157,14 +157,11 @@ public class GameController {
         if(name== null){
             throw new IllegalNickNameException();
         }else {
-            if(gameModel.getPlayers()!= null) {
                 for (int i = 0; i < gameModel.getPlayers().size() && flag; i++) {
                     if (name.equals(getPlayers().get(i).getNickName())) {
                         flag = false;
                     }
                 }
-            }else{
-                flag = false;
             }
             if (flag) {
                 throw new IllegalNickNameException(name);
@@ -172,7 +169,7 @@ public class GameController {
                 gameModel.getPlayers().add(new Player(name));
             }
         }
-    }
+
 
     private boolean CloudInList( CloudTiles c){
         boolean flag = false;
