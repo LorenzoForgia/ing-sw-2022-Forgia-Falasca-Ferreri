@@ -17,9 +17,9 @@ public class AskIfGameCreated extends CommandMsg{
 
 
             if(game.getGameModel()==null){
-                answerMsg = new AnsGameCreatedMsg(this,AnswIfAllowed.Status.VALID);
+                answerMsg = new AnsGameCreatedMsg(this,AnsGameCreatedMsg.Status.VALID);
             }else {
-                answerMsg = new AnsGameCreatedMsg(this, AnswIfAllowed.Status.INVALID);
+                answerMsg = new AnsGameCreatedMsg(this, AnsGameCreatedMsg.Status.INVALID);
             }
         clientHandler.sendAnswerMessage(answerMsg);
     }

@@ -11,8 +11,8 @@ public class AnsGameCreatedMsg extends AnswerMsg{
         VALID
     }
 
-    AnswIfAllowed.Status MoveStatus;
-    public AnsGameCreatedMsg(CommandMsg parent, AnswIfAllowed.Status MoveStatus)
+    AnsGameCreatedMsg.Status MoveStatus;
+    public AnsGameCreatedMsg(CommandMsg parent, AnsGameCreatedMsg.Status MoveStatus)
     {
         super(parent);
         this.MoveStatus = MoveStatus;
@@ -25,7 +25,7 @@ public class AnsGameCreatedMsg extends AnswerMsg{
         serverHandler.getClient().transitionToView(new LobbyView(this));
     }
 
-    public AnswIfAllowed.Status getMoveStatus() {
+    public AnsGameCreatedMsg.Status getMoveStatus() {
         return MoveStatus;
     }
 }

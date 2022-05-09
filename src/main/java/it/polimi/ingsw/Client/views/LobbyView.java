@@ -1,22 +1,14 @@
 package it.polimi.ingsw.Client.views;
 
-import it.polimi.ingsw.messages.AnsGameCreatedMsg;
-import it.polimi.ingsw.messages.AnswIfAllowed;
-import it.polimi.ingsw.messages.AskIfGameCreated;
-import it.polimi.ingsw.messages.Login;
+import it.polimi.ingsw.messages.*;
 
 import java.util.Scanner;
 
 public class LobbyView extends View{
-    /** The answer message containing the data from the server */
+    /** The view of the lobby */
 
     private AnsGameCreatedMsg answerMsg;
 
-
-    /**
-     * Initialize with an answer from the server.
-     * @param answerMsg The answer message.
-     */
 
     public LobbyView(AnsGameCreatedMsg answerMsg)
     {
@@ -29,6 +21,22 @@ public class LobbyView extends View{
     {
 
         System.out.println("LOBBY");
+        Scanner scanner = new Scanner(System.in);
+        AnsGameCreatedMsg.Status moveStatus = answerMsg.getMoveStatus();
+        if(moveStatus==AnsGameCreatedMsg.Status.VALID) {
+            System.out.println("Creazone Partita");
+            System.out.println("Inserire numero di giocatori:");
+            int numplayers = Integer.parseInt(scanner.nextLine());
+            System.out.println("Modalità esperta?");
+            boolean modexp = Boolean.parseBoolean(scanner.nextLine());
+            NewGameMsg newgame = new NewGameMsg(numplayers, modexp);
+            getOwner().getServerHandler().sendCommandMessage(newgame);
+        }else{
+            System.out.println("Ti stai unendo a una partita:");
+
+
+
+        }
 
     }
 }
