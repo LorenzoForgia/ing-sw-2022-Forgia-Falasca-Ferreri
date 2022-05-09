@@ -18,13 +18,11 @@ public class GameController {
     private MoveMotherNature moveMotherNature = new MoveMotherNature();
     private WinLoseCheckState winLoseCheckState = new WinLoseCheckState();
     private PlayAssCard playAssCard = new PlayAssCard();
-    private List<Player> players;
+    private GameModel gameModel=new GameModel();
 
     public GameModel getGameModel() {
         return gameModel;
     }
-
-    private GameModel gameModel=new GameModel();
 
     public AddStudentsOnClouds getAddStudentsOnClouds() {
         return addStudentsOnClouds;
@@ -105,13 +103,7 @@ public class GameController {
         this.playAssCard = playAssCard;
     }
 
-    public List<Player> getPlayers() {
-        return players;
-    }
 
-    public void setPlayers(List<Player> players) {
-        this.players = players;
-    }
     public void newGame(int numofPlayers,boolean modexpert){
         this.gameModel.setGeneralBoard(setup.CreateGeneralboard(modexpert,numofPlayers));
         this.gameModel.setBag(setup.CreateBag());
@@ -159,7 +151,7 @@ public class GameController {
             throw new IllegalNickNameException();
         }else {
                 for (int i = 0; i < gameModel.getPlayers().size() && flag; i++) {
-                    if (name.equals(getPlayers().get(i).getNickName())) {
+                    if (name.equals(gameModel.getPlayers().get(i).getNickName())) {
                         flag = false;
                     }
                 }
