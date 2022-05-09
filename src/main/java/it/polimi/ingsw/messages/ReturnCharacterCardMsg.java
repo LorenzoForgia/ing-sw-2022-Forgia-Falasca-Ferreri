@@ -24,9 +24,17 @@ public class ReturnCharacterCardMsg extends CommandMsg{
 
         try{
             game.CharacterCardInTable(c);
-            answerMsg = new AnswIfAllowed(this, AnswIfAllowed.Status.VALID);
+
+            try{
+                game.CheckIfEnoughMoney(player,c);
+                answerMsg = new AnswIfAllowed(this, AnswIfAllowed.Status.VALID);
+
+            }catch(NotEnoughCoinException e){
+                answerMsg = new AnswIfAllowed(this, AnswIfAllowed.Status.INVALID);
+            }
         }catch(CharacterCardNotInTableException e){
             answerMsg = new AnswIfAllowed(this, AnswIfAllowed.Status.INVALID);
+
         }
 
         clientHandler.sendAnswerMessage(answerMsg);
