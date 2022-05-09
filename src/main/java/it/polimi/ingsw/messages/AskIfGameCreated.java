@@ -16,7 +16,7 @@ public class AskIfGameCreated extends CommandMsg{
         GameController game = clientHandler.getGame();
 
 
-            if(game.getGameModel()==null){
+            if(game.getGameModel().getPlayers().size()==1){
                 answerMsg = new AnsGameCreatedMsg(this,AnsGameCreatedMsg.Status.VALID);
             }else {
                 answerMsg = new AnsGameCreatedMsg(this, AnsGameCreatedMsg.Status.INVALID);

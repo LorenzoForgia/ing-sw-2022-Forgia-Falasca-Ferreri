@@ -22,5 +22,7 @@ public class GameCreatedView extends View{
     public void run() {
 
         System.out.println("Game created");
+
+
     }
 }

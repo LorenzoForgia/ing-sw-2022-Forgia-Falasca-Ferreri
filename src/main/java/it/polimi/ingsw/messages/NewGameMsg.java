@@ -31,6 +31,7 @@ public class NewGameMsg extends CommandMsg
       game.CheckNumOfPlayer(numPlayers);
       answerMsg = new BooleanCheckMsg(this,BooleanCheckMsg.Status.OK);
       game.newGame(numPlayers,modExpert);
+
     } catch (IllegalArgumentException e) {
       answerMsg = new BooleanCheckMsg(this,BooleanCheckMsg.Status.KO);
     }
