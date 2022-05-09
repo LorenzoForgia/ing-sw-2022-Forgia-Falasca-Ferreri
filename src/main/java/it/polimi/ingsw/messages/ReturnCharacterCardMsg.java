@@ -1,24 +1,35 @@
 package it.polimi.ingsw.messages;
 
+import it.polimi.ingsw.Controller.GameController;
+import it.polimi.ingsw.Exception.*;
 import it.polimi.ingsw.Model.CharacterCard;
+import it.polimi.ingsw.Model.Player;
+import it.polimi.ingsw.Server.ClientHandler;
 
-/*public class ReturnCharacterCardMsg extends CommandMsg{
+import java.io.IOException;
+
+public class ReturnCharacterCardMsg extends CommandMsg{
     CharacterCard c;
+    Player player;
 
-    public ReturnCharacterCardMsg(CharacterCard c){
+    public ReturnCharacterCardMsg(CharacterCard c, Player p){
         this.c = c;
-    }*/
-
-    /*@Override
-    public void processMessage(ClientHandler clientHandler) throws IOException {
-        GameController g = ClientHandler.GetGame();
-        CheckCorrectOrNotMsg AnswerMsg;
-        if (g.CheckCharacterCard()) {
-            AnswerMsg = new CheckCorrectOrNotMsg(this, CheckCorrectOrNotMsg.Status.CORRECT);
-        } else {
-            AnswerMsg = new CheckCorrectOrNotMsg(this, CheckCorrectOrNotMsg.Status.INCORRECT);
-        }
-        clientHandler.sendAnswerMessage(AnswerMsg);
+        player = p;
     }
 
-}*/
+    @Override
+    public void processMessage(ClientHandler clientHandler) throws IOException {
+        AnswIfAllowed answerMsg;
+        GameController game = clientHandler.getGame();
+
+        try{
+            game.CharacterCardInTable(c);
+            answerMsg = new AnswIfAllowed(this, AnswIfAllowed.Status.VALID);
+        }catch(CharacterCardNotInTableException e){
+            answerMsg = new AnswIfAllowed(this, AnswIfAllowed.Status.INVALID);
+        }
+
+        clientHandler.sendAnswerMessage(answerMsg);
+    }
+
+}

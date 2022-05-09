@@ -187,6 +187,9 @@ public class GameController {
 
     public void CardAssistantInDeck(CardAssistant cardAssistant, Player p) throws CardAssistantNotInDeckException {
         boolean flag = true;
+        if(cardAssistant == null){
+            throw new CardAssistantNotInDeckException(cardAssistant);
+        }
 
         for(int i =0; i < p.getMyDeck().GetDeck().size() && flag; i ++){
             if(p.getMyDeck().GetDeck().get(i).equals(cardAssistant)){
@@ -200,6 +203,22 @@ public class GameController {
             playAssCard.GetAssCard(p,cardAssistant, gameModel.getPlayers().size());
         }
 
+    }
+
+    public void CharacterCardInTable(CharacterCard characterCard) throws CharacterCardNotInTableException{
+        boolean flag = true;
+        if(characterCard == null){
+            throw new CharacterCardNotInTableException(characterCard);
+        }
+        for(int i=0; i < gameModel.getGeneralBoard().getChoosenCard().size() && flag; i ++) {
+            if(gameModel.getGeneralBoard().getChoosenCard().get(i).equals(characterCard)){
+                flag= false;
+            }
+        }
+
+        if(flag){
+            throw new CharacterCardNotInTableException(characterCard);
+        }
     }
 
 }
