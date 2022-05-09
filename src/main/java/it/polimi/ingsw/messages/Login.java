@@ -20,7 +20,7 @@ public class Login extends CommandMsg {
         AnswIfAllowed answerMsg;
         GameController game = clientHandler.getGame();
 
-        try{
+        try {
             game.NickNameAvailable(name);
             answerMsg = new AnswIfAllowed(this, AnswIfAllowed.Status.VALID);
         }catch(IllegalNickNameException e){

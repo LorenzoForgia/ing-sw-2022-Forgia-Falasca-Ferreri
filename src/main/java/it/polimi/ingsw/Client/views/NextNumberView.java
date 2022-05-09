@@ -1,13 +1,13 @@
 package it.polimi.ingsw.Client.views;
 
 
-
+import java.util.Scanner;
 
 /**
  * View that handles asking a user the next guess.
  */
-/*
-public class NextNumberView extends View
+
+/*public class NextNumberView extends View
 {
   @Override
   public void run()
