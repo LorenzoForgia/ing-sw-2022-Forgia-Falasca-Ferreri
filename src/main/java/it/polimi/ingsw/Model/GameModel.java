@@ -1,11 +1,12 @@
 package it.polimi.ingsw.Model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GameModel {
     private GeneralBoard gb;
     private Bag b;
-    private List<Player> players;
+    private List<Player> players = new ArrayList<>();
 
     public List<Player> getPlayers() {
         return players;
