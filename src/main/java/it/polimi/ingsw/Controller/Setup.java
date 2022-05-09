@@ -3,8 +3,33 @@ import it.polimi.ingsw.Model.*;
 
 import java.util.*;
 public class Setup {
+    private List<SchoolBoard> SBWithTowers = new ArrayList<>();
 
-    public void SetTowers(int numPlayers,List<SchoolBoard> sbperteam){ /**in case of 4 players sb must be only 2 sb of different squad**/
+    public List<SchoolBoard> ChooseSchoolBoardWithTowers(GeneralBoard GB, int numOfPlayer){
+        boolean squadBlack = true;
+        boolean squadWhite= true;
+        if(numOfPlayer == 4){
+           for(int i=0; i< GB.getSchoolBoard().size() && (squadBlack || squadWhite); i++ ) {
+            if (GB.getSchoolBoard().get(i).ColorTower().equals(ColorTower.Black)) {
+                SBWithTowers.add(GB.getSchoolBoard().get(i));
+                squadBlack= false;
+             }
+            if(GB.getSchoolBoard().get(i).ColorTower().equals(ColorTower.White)){
+                SBWithTowers.add(GB.getSchoolBoard().get(i));
+                squadWhite= false;
+               }
+           }
+        }else{
+            SBWithTowers = GB.getSchoolBoard();
+        }
+        return SBWithTowers;
+    }
+
+    public List<SchoolBoard> getSBWithTowers() {
+        return SBWithTowers;
+    }
+
+    public void SetTowers(int numPlayers, List<SchoolBoard> sbperteam){ /**in case of 4 players sb must be only 2 sb of different squad**/
         int countTowers=8;
         if(numPlayers==3){
            countTowers=6;
