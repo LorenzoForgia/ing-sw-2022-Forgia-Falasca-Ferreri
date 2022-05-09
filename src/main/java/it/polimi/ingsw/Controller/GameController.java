@@ -163,7 +163,7 @@ public class GameController {
                     }
                 }
             }
-            if (flag) {
+            if (!flag) {
                 throw new IllegalNickNameException(name);
             } else {
                 gameModel.getPlayers().add(new Player(name));
