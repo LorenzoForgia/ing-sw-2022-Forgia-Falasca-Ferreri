@@ -1,6 +1,7 @@
 package it.polimi.ingsw.Controller;
 
 import it.polimi.ingsw.Exception.*;
+import it.polimi.ingsw.Exception.IllegalArgumentException;
 import it.polimi.ingsw.Model.*;
 import it.polimi.ingsw.messages.AnswIfAllowed;
 
@@ -226,6 +227,13 @@ public class GameController {
             throw new CharacterCardNotInTableException(characterCard);
         }
     }
+
+    public void CheckNumOfPlayer(int n) throws IllegalArgumentException {
+        if(n<=0 || n> 4){
+            throw new IllegalArgumentException();
+        }
+    }
+
 
 }
 

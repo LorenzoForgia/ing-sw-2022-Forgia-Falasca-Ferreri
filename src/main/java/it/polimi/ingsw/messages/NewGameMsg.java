@@ -1,4 +1,7 @@
 package it.polimi.ingsw.messages;
+import it.polimi.ingsw.Controller.GameController;
+import it.polimi.ingsw.Exception.IllegalArgumentException;
+import it.polimi.ingsw.Exception.IllegalNumberOfStepException;
 import it.polimi.ingsw.Server.*;
 
 import java.io.IOException;
@@ -21,8 +24,17 @@ public class NewGameMsg extends CommandMsg
   @Override
   public void processMessage(ClientHandler clientHandler) throws IOException
   {
+    BooleanCheckMsg answerMsg;
+    GameController game = clientHandler.getGame();
 
-    clientHandler.getGame().newGame(this.numPlayers,this.modExpert);
-    clientHandler.sendAnswerMessage(new BooleanCheckMsg(this,BooleanCheckMsg.Status.OK));
+    try {
+      game.CheckNumOfPlayer(numPlayers);
+      answerMsg = new BooleanCheckMsg(this,BooleanCheckMsg.Status.OK);
+    } catch (IllegalArgumentException e) {
+      answerMsg = new BooleanCheckMsg(this,BooleanCheckMsg.Status.KO);
+    }
+
+    clientHandler.sendAnswerMessage(answerMsg);
+
   }
 }

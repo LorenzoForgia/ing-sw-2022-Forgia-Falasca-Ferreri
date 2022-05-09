@@ -7,6 +7,7 @@ public class BooleanCheckMsg extends AnswerMsg{
     public enum Status
     {
         OK,
+        KO
     }
 
     BooleanCheckMsg.Status MoveStatus;
