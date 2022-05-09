@@ -12,14 +12,14 @@ public class AskIfGameCreated extends CommandMsg{
     @Override
     public void processMessage(ClientHandler clientHandler) throws IOException
     {
-        AnswIfAllowed answerMsg;
+        AnsGameCreatedMsg answerMsg;
         GameController game = clientHandler.getGame();
 
 
             if(game.getGameModel()==null){
-                answerMsg = new AnswIfAllowed(this,AnswIfAllowed.Status.VALID);
+                answerMsg = new AnsGameCreatedMsg(this,AnswIfAllowed.Status.VALID);
             }else {
-                answerMsg = new AnswIfAllowed(this, AnswIfAllowed.Status.INVALID);
+                answerMsg = new AnsGameCreatedMsg(this, AnswIfAllowed.Status.INVALID);
             }
         clientHandler.sendAnswerMessage(answerMsg);
     }
