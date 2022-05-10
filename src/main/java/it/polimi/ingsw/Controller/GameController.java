@@ -267,6 +267,7 @@ public class GameController {
             for(int i =0; i < gameModel.getPlayers().size() && flag1 ; i ++ ){
                 if((gameModel.getPlayers().get(i).equals(p))){
                     gameModel.getPlayers().get(i).getMySchoolBoard().setColorTower(ct);
+                    flag1 = false;
                 }
             }
         }
