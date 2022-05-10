@@ -2,6 +2,7 @@ package it.polimi.ingsw.Client.views;
 
 import it.polimi.ingsw.messages.AnsGameCreatedMsg;
 import it.polimi.ingsw.messages.BooleanCheckMsg;
+import it.polimi.ingsw.messages.GameStartedMsg;
 import it.polimi.ingsw.messages.NewGameMsg;
 
 import java.util.Scanner;
@@ -25,6 +26,8 @@ public class GameCreatedView extends View{
         BooleanCheckMsg.Status moveStatus = answerMsg.getMoveStatus();
         if(moveStatus==BooleanCheckMsg.Status.OK){
            System.out.println("Game created");
+            GameStartedMsg gameStartedMsg= new GameStartedMsg();
+            getOwner().getServerHandler().sendCommandMessage(gameStartedMsg);
 
 
 

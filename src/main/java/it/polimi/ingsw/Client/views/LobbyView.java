@@ -33,6 +33,9 @@ public class LobbyView extends View{
             getOwner().getServerHandler().sendCommandMessage(newgame);
         }else{
             System.out.println("Ti stai unendo a una partita:");
+            GameStartedMsg gameStartedMsg= new GameStartedMsg();
+            getOwner().getServerHandler().sendCommandMessage(gameStartedMsg);
+
 
 
 
