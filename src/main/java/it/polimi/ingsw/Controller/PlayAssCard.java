@@ -23,5 +23,16 @@ public class PlayAssCard {
         return cards;
     }
 
+    boolean CheckIfLast(Player p) {
+        boolean flag = true;
+        for (int i = 0; i < p.getMyDeck().GetDeck().size() && flag; i++) {
+            for(int j=0; j< cards.size() && flag ; j++){
+                if(!p.getMyDeck().GetDeck().get(i).equals(cards.get(i))){
+                    flag = false;
+                }
+            }
+        }
+        return  flag;
+    }
 
 }

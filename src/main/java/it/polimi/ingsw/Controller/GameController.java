@@ -186,11 +186,8 @@ public class GameController {
     }
 
 
-    public void CardAssistantInDeck(CardAssistant cardAssistant, Player p) throws CardAssistantNotInDeckException {
+    public void CardAssistantInDeck(CardAssistant cardAssistant, Player p) throws CardAssistantNotAvailableException{
         boolean flag = true;
-        if(cardAssistant == null){
-            throw new CardAssistantNotInDeckException(cardAssistant);
-        }
 
         for(int i =0; i < p.getMyDeck().GetDeck().size() && flag; i ++){
             if(p.getMyDeck().GetDeck().get(i).equals(cardAssistant)){
@@ -198,10 +195,19 @@ public class GameController {
             }
         }
 
+        for(int i=0; i < playAssCard.GetAssCardPlayed().size() && !flag; i++){
+            if(cardAssistant.equals(playAssCard.GetAssCardPlayed().get(i))){
+                if(!playAssCard.CheckIfLast(p)){
+                    flag = true;
+                }
+            }
+        }
+
         if (flag) {
-            throw new CardAssistantNotInDeckException(cardAssistant);
+            throw new CardAssistantNotAvailableException(cardAssistant);
         }else{
             playAssCard.GetAssCard(p,cardAssistant, gameModel.getPlayers().size());
+
         }
 
     }

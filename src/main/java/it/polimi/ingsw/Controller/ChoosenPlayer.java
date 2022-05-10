@@ -12,18 +12,17 @@ public class ChoosenPlayer {
 
     public void ChooseTurnPlayer(ArrayList<CardAssistant> c, Player p){
         for(int i=0;i<c.size();i++){
-            for(int j=0;j<c.size();j++){
-                if(c.get(i).getCardValue()>c.get(j).getCardValue()){
-                    if(p.getMySchoolBoard().GetId()==i){
+            for(int j=0;j<c.size();j++) {
+                if (c.get(i).getCardValue() > c.get(j).getCardValue()) {
+                    if (p.getMySchoolBoard().GetId() == i) {
                         p.SetNumTurn();
                     }
                 }
             }
         }
-    }
+     }
 
     public void ChooseTurnPlayer(List<Player> players){
-        int count =0;
         int k;
         k=firstPlayer.getMySchoolBoard().GetId();
         for(int i=0; i< players.size(); i ++){

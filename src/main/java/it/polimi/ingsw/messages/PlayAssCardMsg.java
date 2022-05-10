@@ -1,8 +1,8 @@
 package it.polimi.ingsw.messages;
 
 import it.polimi.ingsw.Controller.GameController;
-import it.polimi.ingsw.Exception.CardAssistantNotInDeckException;
-import it.polimi.ingsw.Exception.ColorNoInEntranceException;
+import it.polimi.ingsw.Exception.CardAssistantNotAvailableException;
+
 import it.polimi.ingsw.Model.CardAssistant;
 import it.polimi.ingsw.Model.Player;
 import it.polimi.ingsw.Server.ClientHandler;
@@ -33,7 +33,7 @@ public class PlayAssCardMsg extends CommandMsg {
         try{
             game.CardAssistantInDeck(a,player);
             answerMsg = new AnswIfAllowed(this, AnswIfAllowed.Status.VALID);
-        }catch(CardAssistantNotInDeckException e){
+        }catch(CardAssistantNotAvailableException e){
             answerMsg = new AnswIfAllowed(this, AnswIfAllowed.Status.INVALID);
         }
 
