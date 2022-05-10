@@ -4,7 +4,7 @@ import it.polimi.ingsw.Model.*;
 
 public class CardAssistantNotInDeckException extends Exception {
     public CardAssistantNotInDeckException() {
-        super("Color not in Entrance");
+        super("The card is not in your deck");
     }
 
     public CardAssistantNotInDeckException(CardAssistant c) {

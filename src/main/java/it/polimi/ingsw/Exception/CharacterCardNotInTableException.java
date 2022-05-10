@@ -4,11 +4,11 @@ import it.polimi.ingsw.Model.CharacterCard;
 
 public class CharacterCardNotInTableException extends Exception {
     public CharacterCardNotInTableException() {
-        super("Color not in Entrance");
+        super("The card is not in table");
     }
 
     public CharacterCardNotInTableException(CharacterCard c) {
-        super(" Card number " + c.getName() + "is not in your Deck");
+        super(" Card number " + c.getName() + "is not in table");
     }
 
 }
