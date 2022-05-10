@@ -27,6 +27,10 @@ import java.net.Socket;
 
 public class ClientHandler implements Runnable
 {
+    public Socket getClient() {
+        return client;
+    }
+
     private Socket client;
     private ObjectOutputStream output;
     private ObjectInputStream input;
