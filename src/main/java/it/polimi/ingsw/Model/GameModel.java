@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GameModel {
+
+    private Boolean modExpert;
+    private int numplayers;
     private GeneralBoard gb;
     private Bag b;
     private List<Player> players = new ArrayList<>();
@@ -31,7 +34,21 @@ public class GameModel {
     public void setBag(Bag b) {
         this.b = b;
     }
+    public Boolean getModExpert() {
+        return modExpert;
+    }
+    public int getNumplayers() {
+        return numplayers;
+    }
+    public void setModExpert(Boolean modExpert) {
+        this.modExpert = modExpert;
+    }
 
+
+
+    public void setNumplayers(int numplayers) {
+        this.numplayers = numplayers;
+    }
 
 
 }
