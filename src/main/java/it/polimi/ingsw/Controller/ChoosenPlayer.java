@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ChoosenPlayer {
-    private List<Player> orderPlayers;
+    private List<Player> orderPlayers = new ArrayList<>();
     private Player firstPlayer;
 
     public void ChooseTurnPlayer(ArrayList<CardAssistant> c, Player p){
@@ -22,11 +22,32 @@ public class ChoosenPlayer {
         }
      }
 
+    public void ChooseTurnPlayer(Player p, int n){
+        if(orderPlayers.size()==0){
+            orderPlayers.add(p);
+        }
+    }
+
     public void ChooseTurnPlayer(List<Player> players){
+        for(int i=0;i<players.size();i++) {
+            for(int j=0;j<players.size();j++) {
+                if (players.get(i).getCA().getCardValue() > players.get(j).getCA().getCardValue() ){
+                    players.get(i).SetNumTurn();
+                }else if(players.get(i).getCA().getCardValue() == players.get(j).getCA().getCardValue() && i!= j){
+                    if(players.get(i).getTurnToPlayCardAssistant()>players.get(j).getTurnToPlayCardAssistant()){
+                        players.get(i).SetNumTurn();
+                    }
+                }
+            }
+        }
+    }
+
+
+    public void ChooseTurnPlayerForCardAssistant(List<Player> players){
         int k;
         k=firstPlayer.getMySchoolBoard().GetId();
         for(int i=0; i< players.size(); i ++){
-            players.get(k).SetNumTurn(i);
+            players.get(k).SetNumTurnCardAssistant(i);
             if(k== players.size() -1){
                 k=0;
             }else{
@@ -40,7 +61,6 @@ public class ChoosenPlayer {
     }
 
     public void GetOrderPlayers(List<Player> players){
-        orderPlayers = new ArrayList<Player>();
         for(int i =0; i < players.size(); i ++ ){
             orderPlayers.add(players.get(i).GetNumTurn(), players.get(i));
         }

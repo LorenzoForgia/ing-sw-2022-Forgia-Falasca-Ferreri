@@ -6,6 +6,7 @@ public class Player {
     private String NickName;
     private int NumberCoins;
     private int Turn=0;
+    private int turnToPlayCardAssistant=0;
     private SchoolBoard MySchoolBoard;
     private DeckCardAssistant MyDeck;
     private CardAssistant CA;
@@ -18,6 +19,7 @@ public class Player {
     public void setNumberCoins(int numberCoins) {
         NumberCoins = numberCoins;
     }
+
 
 
     public void setMySchoolBoard(SchoolBoard mySchoolBoard) {
@@ -62,6 +64,10 @@ public class Player {
         }
     }
 
+    public int getTurnToPlayCardAssistant() {
+        return turnToPlayCardAssistant;
+    }
+
     public ColorTower GetSquad(){
         return MySchoolBoard.ColorTower();
     }
@@ -75,14 +81,15 @@ public class Player {
     public int GetNumTurn(){
         return Turn;
     }
-    public void ResetTurn(){Turn=0;}
+    public void ResetTurn(){Turn=0;
+    turnToPlayCardAssistant =0;}
 
     public void setCA(CardAssistant CA) {
         this.CA = CA;
     }
 
-    public void SetNumTurn(int n){
-        Turn = n;
+    public void SetNumTurnCardAssistant(int n){
+        turnToPlayCardAssistant = n;
     }
 
     public CardAssistant getCA() {
