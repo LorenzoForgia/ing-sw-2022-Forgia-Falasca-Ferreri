@@ -22,6 +22,24 @@ public class ChoosenPlayer {
         }
     }
 
+    public void ChooseTurnPlayer(List<Player> players){
+        int count =0;
+        int k;
+        k=firstPlayer.getMySchoolBoard().GetId();
+        for(int i=0; i< players.size(); i ++){
+            players.get(k).SetNumTurn(i);
+            if(k== players.size() -1){
+                k=0;
+            }else{
+                k=k+1;
+            }
+        }
+    }
+
+    public void setFirstPlayer(Player firstPlayer) {
+        this.firstPlayer = firstPlayer;
+    }
+
     public void GetOrderPlayers(List<Player> players){
         orderPlayers = new ArrayList<Player>();
         for(int i =0; i < players.size(); i ++ ){
@@ -33,6 +51,7 @@ public class ChoosenPlayer {
     public Player GetPlayerTurn(){
         Player p;
         p= orderPlayers.get(0);
+        p.ResetTurn();
         orderPlayers.remove(0);
         return p;
     }

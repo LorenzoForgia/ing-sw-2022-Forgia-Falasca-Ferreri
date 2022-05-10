@@ -81,6 +81,10 @@ public class Player {
         this.CA = CA;
     }
 
+    public void SetNumTurn(int n){
+        Turn = n;
+    }
+
     public CardAssistant getCA() {
         return CA;
     }
