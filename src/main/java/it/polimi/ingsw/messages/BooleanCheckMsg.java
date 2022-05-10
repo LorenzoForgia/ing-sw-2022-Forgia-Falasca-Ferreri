@@ -4,6 +4,7 @@ import it.polimi.ingsw.Client.ServerHandler;
 import it.polimi.ingsw.Client.views.GameCreatedView;
 
 public class BooleanCheckMsg extends AnswerMsg{
+    BooleanCheckMsg.Status MoveStatus;
 
     public enum Status
     {
@@ -11,7 +12,7 @@ public class BooleanCheckMsg extends AnswerMsg{
         KO
     }
 
-    BooleanCheckMsg.Status MoveStatus;
+
     public BooleanCheckMsg(CommandMsg parent, BooleanCheckMsg.Status MoveStatus)
     {
         super(parent);
@@ -22,5 +23,8 @@ public class BooleanCheckMsg extends AnswerMsg{
     public void processMessage(ServerHandler serverHandler)
     {
         serverHandler.getClient().transitionToView(new GameCreatedView(this));
+    }
+    public BooleanCheckMsg.Status getMoveStatus() {
+        return MoveStatus;
     }
 }

@@ -21,8 +21,22 @@ public class GameCreatedView extends View{
     @Override
     public void run() {
 
-        System.out.println("Game created");
+        Scanner scanner = new Scanner(System.in);
+        BooleanCheckMsg.Status moveStatus = answerMsg.getMoveStatus();
+        if(moveStatus==BooleanCheckMsg.Status.OK){
+           System.out.println("Game created");
 
 
-    }
+
+        }else{
+            System.out.println("Errore inserimento! Riprova");
+            System.out.println("Inserire numero di giocatori: da 2 a 4 giocatori");
+            int numplayers = Integer.parseInt(scanner.nextLine());
+            System.out.println("Modalità esperta? true o false");
+            boolean modexp = Boolean.parseBoolean(scanner.nextLine());
+            NewGameMsg newgame = new NewGameMsg(numplayers, modexp);
+            getOwner().getServerHandler().sendCommandMessage(newgame);
+        }
+
+        }
 }

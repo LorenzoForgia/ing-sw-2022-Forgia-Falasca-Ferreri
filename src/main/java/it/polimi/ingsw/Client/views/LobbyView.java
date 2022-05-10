@@ -25,9 +25,9 @@ public class LobbyView extends View{
         AnsGameCreatedMsg.Status moveStatus = answerMsg.getMoveStatus();
         if(moveStatus==AnsGameCreatedMsg.Status.VALID) {
             System.out.println("Creazone Partita");
-            System.out.println("Inserire numero di giocatori:");
+            System.out.println("Inserire numero di giocatori: da 2 a 4 giocatori");
             int numplayers = Integer.parseInt(scanner.nextLine());
-            System.out.println("Modalità esperta?");
+            System.out.println("Modalità esperta? true o false");
             boolean modexp = Boolean.parseBoolean(scanner.nextLine());
             NewGameMsg newgame = new NewGameMsg(numplayers, modexp);
             getOwner().getServerHandler().sendCommandMessage(newgame);

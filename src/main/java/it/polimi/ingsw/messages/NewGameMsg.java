@@ -28,7 +28,7 @@ public class NewGameMsg extends CommandMsg
     GameController game = clientHandler.getGame();
 
     try {
-      game.CheckNumOfPlayer(numPlayers);
+      game.CheckNumOfPlayer(numPlayers); /*aggiugnere check modexp*/
       answerMsg = new BooleanCheckMsg(this,BooleanCheckMsg.Status.OK);
       game.newGame(numPlayers,modExpert);
 
