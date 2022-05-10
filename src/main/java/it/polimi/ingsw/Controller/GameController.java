@@ -107,6 +107,8 @@ public class GameController {
     public void newGame(int numofPlayers,boolean modexpert){
         this.gameModel.setGeneralBoard(setup.CreateGeneralboard(modexpert,numofPlayers));
         this.gameModel.setBag(setup.CreateBag());
+        gameModel.setNumplayers(numofPlayers);
+        gameModel.setModExpert(modexpert);
     }
 
     public void CheckNumberOfSteps(int n, Player p, CharacterCard c) throws IllegalNumberOfStepException {
@@ -272,6 +274,14 @@ public class GameController {
             }
         }
 
+    }
+
+    public boolean CheckIfAllLogin(){
+        if(gameModel.getPlayers().size()== gameModel.getNumplayers()){
+            return true;
+        }else{
+            return false;
+        }
     }
 }
 
