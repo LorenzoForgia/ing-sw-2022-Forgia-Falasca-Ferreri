@@ -1,0 +1,19 @@
+# Peer-Review 2: Protocollo di Comunicazione
+
+## Foderà Simone, Giornetta Michele, Guida Damiano
+
+### Pros
+
+Having messages for acknowledgment and error is an elegant solution to better control the flow of communications. In particular, this allows the client to always know what the next message should be, thus simplifying the logic in the client.
+
+### Cons
+
+- What the connect message's arguments represent is not clear, especially the URL field.
+- During the login conversation, after the LoginSuccess message is not clear how the client should know if to wait to receive a JoinGame or to send a "NewGame" message. This could be resolved by adding a parameter to the LoginSuccess that notifies the client if they are the first to connect.
+- Your implementation forbids the player to play a character between student moves, although, as far as we can see, nothing in the ruleset explicitly forbids this.
+- We noticed that the ReturnCharacterCard message may need more information to properly play the character (for example the rogue asks for a specific student color to be played).
+
+### Suggestion
+
+- We suggest adding parameters to the error messages to better specify what went wrong.
+- We suggest having a more coherent and clear naming convention.
