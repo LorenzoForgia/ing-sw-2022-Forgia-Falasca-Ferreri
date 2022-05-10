@@ -278,6 +278,15 @@ public class GameController {
 
     public boolean CheckIfAllLogin(){
         if(gameModel.getPlayers().size()== gameModel.getNumplayers()){
+            for(int i=0; i<gameModel.getNumplayers(); i ++ ){
+                gameModel.getPlayers().get(i).setMyDeck(new DeckCardAssistant());
+                gameModel.getPlayers().get(i).setMySchoolBoard(gameModel.getGeneralBoard().getSchoolBoard().get(i));
+                if(gameModel.getModExpert()){
+                        gameModel.getPlayers().get(i).setNumberCoins(1);
+                }else{
+                        gameModel.getPlayers().get(i).setNumberCoins(0);
+                    }
+            }
             return true;
         }else{
             return false;
