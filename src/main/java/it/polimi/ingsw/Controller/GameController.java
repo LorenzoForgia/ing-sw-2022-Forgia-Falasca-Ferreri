@@ -234,6 +234,45 @@ public class GameController {
             c.getCountUse();
         }
     }
+
+    public void CheckColorOfTower(ColorTower ct, Player p) throws ColorTowerNotCorrectException{
+        boolean flag = true;
+        boolean flag1= true;
+        int count =0;
+        if(gameModel.getPlayers().size()<4 &&  gameModel.getPlayers().size()>1) {
+            for (int i = 0; i < gameModel.getPlayers().size() && flag; i++) {
+                if (gameModel.getPlayers().get(i).getMySchoolBoard().ColorTower() != null && !(gameModel.getPlayers().get(i).equals(p))) {
+                    if (gameModel.getPlayers().get(i).getMySchoolBoard().ColorTower().equals(ct)) {
+                        flag = false;
+                    }
+                }
+            }
+        }else {
+
+            for (int i = 0; i < gameModel.getPlayers().size(); i++) {
+                if (gameModel.getPlayers().get(i).getMySchoolBoard().ColorTower() != null && !(gameModel.getPlayers().get(i).equals(p))) {
+                    if (gameModel.getPlayers().get(i).getMySchoolBoard().ColorTower().equals(ct)) {
+                        count = count +1;
+                    }
+                }
+            }
+
+            if(count>1){
+                flag= false;
+            }
+        }
+        if(!flag){
+            throw new ColorTowerNotCorrectException();
+        }else{
+            for(int i =0; i < gameModel.getPlayers().size() && flag1 ; i ++ ){
+                if((gameModel.getPlayers().get(i).equals(p))){
+                    gameModel.getPlayers().get(i).getMySchoolBoard().setColorTower(ct);
+                    flag1 = false;
+                }
+            }
+        }
+
+    }
 }
 
 
