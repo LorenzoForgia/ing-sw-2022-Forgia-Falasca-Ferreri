@@ -4,6 +4,7 @@ import it.polimi.ingsw.Model.CardAssistant;
 import it.polimi.ingsw.Model.Player;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class PlayAssCard {
     private ArrayList<CardAssistant> cards = new ArrayList<CardAssistant>();
@@ -21,4 +22,6 @@ public class PlayAssCard {
     public ArrayList<CardAssistant> GetAssCardPlayed(){
         return cards;
     }
+
+
 }

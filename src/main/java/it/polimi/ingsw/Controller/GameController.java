@@ -292,6 +292,25 @@ public class GameController {
             return false;
         }
     }
+
+    public boolean CheckIfAllPlayedCardAssistant(){
+        for(int i=0; i<gameModel.getPlayers().size(); i ++ ){
+            if(gameModel.getPlayers().get(i).getCA()== null){
+                return false;
+            }
+        }
+        for(int i=0; i<gameModel.getPlayers().size(); i ++ ){
+            choosenPlayer.ChooseTurnPlayer(playAssCard.GetAssCardPlayed(), gameModel.getPlayers().get(i));
+        }
+        choosenPlayer.GetOrderPlayers(gameModel.getPlayers());
+        return true;
+    }
+
+    public Player ReturnPlayerTurn(){
+        return choosenPlayer.GetPlayerTurn();
+    }
+
+
 }
 
 
