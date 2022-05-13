@@ -150,6 +150,8 @@ public class GameController {
         setup.ChooseSchoolBoardWithTowers(gameModel.getGeneralBoard(),numofPlayers);
         setup.SetTowers(numofPlayers,setup.getSBWithTowers());
         setup.SetBag(gameModel.getBag(),1);
+        moveMotherNature.SetIslandWithMotherNature(gameModel.getGeneralBoard());
+        SetMotherNatureFirstTurn(moveMotherNature.getI1());
     }
 
     /** if everyone is login, this method will create for each player the AssistantCard's Deck, it will
@@ -184,11 +186,11 @@ public class GameController {
         choosenPlayer.ChooseTurnPlayerForCardAssistant(gameModel.getPlayers());
     }
 
-    /** the first player decides where to put MotherNature; this method sets motherNature, sets 120 students in the bag
+    /** Randomly the methods put MotherNature in island; this method sets motherNature, sets 120 students in the bag
      * put students in the Clouds, put the students in the Entrance of the schoolBoard
      * **/
 
-    public void SetMotherNatureFirstTurn(IslandTiles I){
+    private void SetMotherNatureFirstTurn(IslandTiles I){
         moveMotherNature.SetIslandWithMotherNature(I);
         setup.SetMNto1Island(I.getNumberID(),gameModel.getGeneralBoard());
         setup.SetupStudentsInIslands(gameModel.getBag(),I.getNumberID(),gameModel.getGeneralBoard().GetIslands());
@@ -332,9 +334,8 @@ public class GameController {
         }
     }
 
-   /* public boolean EndOfPlayerTurn(){
 
-    }*/
+
     /**Check if all played their turn and put students in cloud and reset the CharacterCard if the game is not ended
      * **/
     public boolean ResetTheTurnForNewRoundWhenAllPlayed(){
