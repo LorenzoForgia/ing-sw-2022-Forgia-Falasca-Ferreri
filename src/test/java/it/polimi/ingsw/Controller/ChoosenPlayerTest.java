@@ -1,6 +1,5 @@
 package it.polimi.ingsw.Controller;
 
-import it.polimi.ingsw.Model.CardAssistant;
 import it.polimi.ingsw.Model.DeckCardAssistant;
 import it.polimi.ingsw.Model.Player;
 import it.polimi.ingsw.Model.SchoolBoard;
@@ -58,18 +57,18 @@ class ChoosenPlayerTest {
 
     @AfterEach
     public void tearDown() {
-        Player p1 = null;
-        Player p2 = null;
-        Player p3 = null;
-        SchoolBoard SB1 = null;
-        SchoolBoard SB2 = null;
-        SchoolBoard SB3 = null;
-        DeckCardAssistant DCA1 = null;
-        DeckCardAssistant DCA2 = null;
-        DeckCardAssistant DCA3 = null;
+        p1 = null;
+        p2 = null;
+        p3 = null;
+        SB1 = null;
+        SB2 = null;
+        SB3 = null;
+        DCA1 = null;
+        DCA2 = null;
+        DCA3 = null;
         p = null;
         pl = null;
-        List<Player> players = null;
+        players = null;
     }
 
     @Test
@@ -80,5 +79,27 @@ class ChoosenPlayerTest {
         assertEquals(p2, pl.GetPlayerTurn());
         assertEquals(p3, pl.GetPlayerTurn());
     }
+
+    @Test
+    public void testChoosenTurnPlayerForCardAssistant2(){
+        pl.setFirstPlayer(p3);
+        pl.ChooseTurnPlayerForCardAssistant(players);
+        assertEquals(0,p3.getTurnToPlayCardAssistant());
+        assertEquals(1,p1.getTurnToPlayCardAssistant());
+        assertEquals(2,p2.getTurnToPlayCardAssistant());
+        /*assertEquals(p3, pl.GetPlayerTurn());
+        assertEquals(p1, pl.GetPlayerTurn());
+        assertEquals(p2, pl.GetPlayerTurn());*/
+    }
+
+    @Test
+    public void testChoosenTurnPlayerForCardAssistant3(){
+        pl.setFirstPlayer(p2);
+        pl.ChooseTurnPlayerForCardAssistant(players);
+        assertEquals(p2, pl.GetPlayerTurn());
+        assertEquals(p3, pl.GetPlayerTurn());
+        assertEquals(p1, pl.GetPlayerTurn());
+    }
+
 
 }

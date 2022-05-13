@@ -25,6 +25,11 @@ public class ChoosenPlayer {
                 }
             }
         }
+        for(int i =0; i < players.size(); i ++ ){
+            orderPlayers.add(players.get(i).GetNumTurn(), players.get(i));
+        }
+        firstPlayer = orderPlayers.get(0);
+
     }
 
     /** Set the turn before the players play the cardAssistant **/
@@ -39,9 +44,7 @@ public class ChoosenPlayer {
                 k=k+1;
             }
         }
-        for(int i =0; i < players.size(); i ++ ){
-            orderPlayers.add(players.get(i).getTurnToPlayCardAssistant(), players.get(i));
-        }
+        GetOrderOfPlayersForCardAssistant(players);
     }
 
 
@@ -51,19 +54,28 @@ public class ChoosenPlayer {
     }
 
     /** Get the order of the players after the turn is set **/
-    public void GetOrderPlayers(List<Player> players){
+    private void GetOrderPlayers(List<Player> players){
+        for(int i =0; i < players.size(); i ++ ){
+            orderPlayers.add(players.get(i));
+        }
+
         for(int i =0; i < players.size(); i ++ ){
             orderPlayers.add(players.get(i).GetNumTurn(), players.get(i));
         }
         firstPlayer = orderPlayers.get(0);
     }
 
-    public void GetOrderPlayersForCardAssistant(List<Player> players){
+    private void GetOrderOfPlayersForCardAssistant(List<Player> players){
+        for(int i =0; i < players.size(); i ++ ){
+            orderPlayers.add(players.get(i));
+        }
+
         for(int i =0; i < players.size(); i ++ ){
             orderPlayers.add(players.get(i).getTurnToPlayCardAssistant(), players.get(i));
         }
-
     }
+
+
 
     /**  Show the player who has to play **/
     public Player GetPlayerTurn(){
