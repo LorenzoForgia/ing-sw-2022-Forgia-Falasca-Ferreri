@@ -106,10 +106,13 @@ public class GameController {
 
 
     public void newGame(int numofPlayers,boolean modexpert){
-        this.gameModel.setGeneralBoard(setup.CreateGeneralboard(modexpert,numofPlayers));
-        this.gameModel.setBag(setup.CreateBag());
+        gameModel.setGeneralBoard(setup.CreateGeneralboard(modexpert,numofPlayers));
+        gameModel.setBag(setup.CreateBag());
         gameModel.setNumplayers(numofPlayers);
         gameModel.setModExpert(modexpert);
+        setup.ChooseSchoolBoardWithTowers(gameModel.getGeneralBoard(),numofPlayers);
+        setup.SetTowers(numofPlayers,setup.getSBWithTowers());
+        setup.SetBag(gameModel.getBag(),1);
     }
 
     public void CheckNumberOfSteps(int n, Player p, CharacterCard c) throws IllegalNumberOfStepException {
@@ -300,7 +303,7 @@ public class GameController {
         }
     }
 
-    /*
+
     public boolean CheckIfAllPlayedCardAssistant(){
         for(int i=0; i<gameModel.getPlayers().size(); i ++ ){
             if(gameModel.getPlayers().get(i).getCA()== null){
@@ -308,12 +311,12 @@ public class GameController {
             }
         }
         for(int i=0; i<gameModel.getPlayers().size(); i ++ ){
-            choosenPlayer.ChooseTurnPlayer(playAssCard.GetAssCardPlayed(), gameModel.getPlayers().get(i));
+            choosenPlayer.ChooseTurnPlayer(gameModel.getPlayers());
         }
-        choosenPlayer.GetOrderPlayers(gameModel.getPlayers());
         return true;
     }
-*/
+
+
     public Player ReturnPlayerTurn(){
         return choosenPlayer.GetPlayerTurn();
     }
@@ -323,8 +326,14 @@ public class GameController {
         int draftedindex = random.nextInt(this.getGameModel().getPlayers().size());
         Player p = this.getGameModel().getPlayers().get(draftedindex);
         this.getChoosenPlayer().setFirstPlayer(p);
+        choosenPlayer.ChooseTurnPlayerForCardAssistant(gameModel.getPlayers());
     }
 
+    public void SetMotherNatureFirstTurn(IslandTiles I){
+        moveMotherNature.SetIslandWithMotherNature(I);
+        setup.SetupStudentsInIslands(gameModel.getBag(),I.getNumberID(),gameModel.getGeneralBoard().GetIslands());
+        setup.SetBag(gameModel.getBag(),0);
+    }
 
 }
 
