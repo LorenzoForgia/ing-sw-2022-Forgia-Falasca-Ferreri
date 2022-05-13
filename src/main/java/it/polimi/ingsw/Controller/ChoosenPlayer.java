@@ -25,9 +25,7 @@ public class ChoosenPlayer {
                 }
             }
         }
-        for(int i =0; i < players.size(); i ++ ){
-            orderPlayers.add(players.get(i).GetNumTurn(), players.get(i));
-        }
+        GetOrderPlayers(players);
         firstPlayer = orderPlayers.get(0);
 
     }
@@ -60,7 +58,7 @@ public class ChoosenPlayer {
         }
 
         for(int i =0; i < players.size(); i ++ ){
-            orderPlayers.add(players.get(i).GetNumTurn(), players.get(i));
+            orderPlayers.set(players.get(i).GetNumTurn(), players.get(i));
         }
         firstPlayer = orderPlayers.get(0);
     }
@@ -71,7 +69,7 @@ public class ChoosenPlayer {
         }
 
         for(int i =0; i < players.size(); i ++ ){
-            orderPlayers.add(players.get(i).getTurnToPlayCardAssistant(), players.get(i));
+            orderPlayers.set(players.get(i).getTurnToPlayCardAssistant(), players.get(i));
         }
     }
 
