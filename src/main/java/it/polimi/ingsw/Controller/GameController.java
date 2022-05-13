@@ -20,10 +20,14 @@ public class GameController {
     private WinLoseCheckState winLoseCheckState = new WinLoseCheckState();
     private PlayAssCard playAssCard = new PlayAssCard();
     private GameModel gameModel=new GameModel();
+    private Boolean setFirstTurn=true;
 
     public GameModel getGameModel() {
         return gameModel;
     }
+
+    public Boolean getSetFirstTurn(){return setFirstTurn;}
+    public void setSetFirstTurn(boolean setFirstTurn){this.setFirstTurn=setFirstTurn;}
 
     public AddStudentsOnClouds getAddStudentsOnClouds() {
         return addStudentsOnClouds;

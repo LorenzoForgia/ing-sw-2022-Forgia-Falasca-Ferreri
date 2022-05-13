@@ -136,7 +136,7 @@ public class Client implements Runnable
             /* Signal to the view handler loop that it should exit. */
 
             shallTerminate = true;
-           /* currentView.stopInteraction();*/
+            currentView.stopInteraction();
         }
     }
 }

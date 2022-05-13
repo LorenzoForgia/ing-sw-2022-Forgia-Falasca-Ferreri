@@ -11,24 +11,19 @@ public class FirstPlayerTurnMsg extends CommandMsg {
     public void processMessage(ClientHandler clientHandler) throws IOException {
         AnsFirstPlayerTurnMsg answerMsg;
         GameController game = clientHandler.getGame();
-        game.SetFirstPlayerTurn();
-        game.getChoosenPlayer().ChooseTurnPlayerForCardAssistant(game.getGameModel().getPlayers());
+        String name;
         synchronized (game) {
-            Boolean flag = game.getChoosenPlayer().EndOfAllTurn();
-            while (!flag) {
-                try {
-                    Player p = game.getChoosenPlayer().GetPlayerTurn();
-                    answerMsg = new AnsFirstPlayerTurnMsg(this, p);
-                    clientHandler.sendAnswerMessage(answerMsg);
-                    game.wait();
-                    flag = game.getChoosenPlayer().EndOfAllTurn();
-
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                game.notifyAll();
+            if (game.getSetFirstTurn()) {
+                game.SetFirstPlayerTurn();
+                game.getChoosenPlayer().ChooseTurnPlayerForCardAssistant(game.getGameModel().getPlayers());
+                game.setSetFirstTurn(false);
             }
 
+            if(game.getChoosenPlayer().EndOfAllTurn()==false) {
+                name = game.getChoosenPlayer().GetPlayerTurn().getNickName();
+                answerMsg = new AnsFirstPlayerTurnMsg(this, name);
+                clientHandler.sendAnswerMessage(answerMsg);
+            }
         }
     }
 }

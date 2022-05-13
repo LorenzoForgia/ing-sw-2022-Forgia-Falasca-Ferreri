@@ -9,17 +9,20 @@ import it.polimi.ingsw.Model.Player;
 import java.util.ArrayList;
 
 public class AnsFirstPlayerTurnMsg extends AnswerMsg{
-    private Player p;
+    private String name;
 
-    public AnsFirstPlayerTurnMsg(CommandMsg parent, Player p)
+    public AnsFirstPlayerTurnMsg(CommandMsg parent, String name)
     {
         super(parent);
-        this.p = p;
+        this.name = name;
     }
 
     @Override
     public void processMessage(ServerHandler serverHandler)
     {
         serverHandler.getClient().transitionToView(new FirstPlayerTurnView(this));
+    }
+    public String GetPlayer(){
+        return name;
     }
 }
