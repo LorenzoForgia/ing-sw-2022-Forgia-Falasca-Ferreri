@@ -299,6 +299,7 @@ public class GameController {
         }
     }
 
+    /*
     public boolean CheckIfAllPlayedCardAssistant(){
         for(int i=0; i<gameModel.getPlayers().size(); i ++ ){
             if(gameModel.getPlayers().get(i).getCA()== null){
@@ -311,7 +312,7 @@ public class GameController {
         choosenPlayer.GetOrderPlayers(gameModel.getPlayers());
         return true;
     }
-
+*/
     public Player ReturnPlayerTurn(){
         return choosenPlayer.GetPlayerTurn();
     }

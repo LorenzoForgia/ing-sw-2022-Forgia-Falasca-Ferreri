@@ -10,24 +10,9 @@ public class ChoosenPlayer {
     private List<Player> orderPlayers = new ArrayList<>();
     private Player firstPlayer;
 
-    public void ChooseTurnPlayer(ArrayList<CardAssistant> c, Player p){
-        for(int i=0;i<c.size();i++){
-            for(int j=0;j<c.size();j++) {
-                if (c.get(i).getCardValue() > c.get(j).getCardValue()) {
-                    if (p.getMySchoolBoard().GetId() == i) {
-                        p.SetNumTurn();
-                    }
-                }
-            }
-        }
-     }
 
-    public void ChooseTurnPlayer(Player p, int n){
-        if(orderPlayers.size()==0){
-            orderPlayers.add(p);
-        }
-    }
 
+    /** Set the turn after the players played the cardAssistant **/
     public void ChooseTurnPlayer(List<Player> players){
         for(int i=0;i<players.size();i++) {
             for(int j=0;j<players.size();j++) {
@@ -42,7 +27,7 @@ public class ChoosenPlayer {
         }
     }
 
-
+    /** Set the turn before the players play the cardAssistant **/
     public void ChooseTurnPlayerForCardAssistant(List<Player> players){
         int k;
         k=firstPlayer.getMySchoolBoard().GetId();
@@ -54,12 +39,18 @@ public class ChoosenPlayer {
                 k=k+1;
             }
         }
+        for(int i =0; i < players.size(); i ++ ){
+            orderPlayers.add(players.get(i).getTurnToPlayCardAssistant(), players.get(i));
+        }
     }
 
+
+    /** Saves the first player at the beginning of the game **/
     public void setFirstPlayer(Player firstPlayer) {
         this.firstPlayer = firstPlayer;
     }
 
+    /** Get the order of the players after the turn is set **/
     public void GetOrderPlayers(List<Player> players){
         for(int i =0; i < players.size(); i ++ ){
             orderPlayers.add(players.get(i).GetNumTurn(), players.get(i));
@@ -67,6 +58,14 @@ public class ChoosenPlayer {
         firstPlayer = orderPlayers.get(0);
     }
 
+    public void GetOrderPlayersForCardAssistant(List<Player> players){
+        for(int i =0; i < players.size(); i ++ ){
+            orderPlayers.add(players.get(i).getTurnToPlayCardAssistant(), players.get(i));
+        }
+
+    }
+
+    /**  Show the player who has to play **/
     public Player GetPlayerTurn(){
         Player p;
         p= orderPlayers.get(0);
@@ -75,6 +74,7 @@ public class ChoosenPlayer {
         return p;
     }
 
+    /**  Check if all players played their own turn **/
     public boolean EndOfAllTurn(){
         if(orderPlayers.size()== 0){
 

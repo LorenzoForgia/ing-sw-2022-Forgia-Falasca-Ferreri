@@ -82,7 +82,7 @@ public class Player {
         return Turn;
     }
     public void ResetTurn(){Turn=0;
-    turnToPlayCardAssistant =0;}
+    }
 
     public void setCA(CardAssistant CA) {
         this.CA = CA;

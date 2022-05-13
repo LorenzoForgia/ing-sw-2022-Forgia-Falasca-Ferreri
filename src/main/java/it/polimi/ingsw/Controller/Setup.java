@@ -77,14 +77,19 @@ public class Setup {
 
      public GeneralBoard CreateGeneralboard(Boolean modExpert,int numPlayers){
         GeneralBoard gb;
+        DeckCC DC= new DeckCC();
         if(modExpert){
              gb= new GeneralBoard(20);
+             for(int i=0; i < 3; i++){
+                 gb.getChoosenCard().add(DC.DrawCard());
+             }
          }else{
              gb=new GeneralBoard(0);
          }
         gb.CreateTwelveIslands();
         gb.CreateClouds(numPlayers);
         gb.CreateSchoolBoards(numPlayers);
+
         return gb;
      }
 

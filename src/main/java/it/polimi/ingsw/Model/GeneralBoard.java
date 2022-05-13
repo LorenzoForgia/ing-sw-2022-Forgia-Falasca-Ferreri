@@ -59,11 +59,21 @@ import java.util.*;
             for (int i = 0; i < n; i++) {
                 AllBoards.add(i, new SchoolBoard(i, 7));
             }
+            AllBoards.get(0).setColorTower(ColorTower.Black);
+            AllBoards.get(1).setColorTower(ColorTower.White);
+            if(n==4){
+                AllBoards.get(2).setColorTower(ColorTower.Black);
+                AllBoards.get(3).setColorTower(ColorTower.White);
+            }
+
         }
         if (n == 3) {
             for (int i = 0; i < n; i++) {
                 AllBoards.add(i, new SchoolBoard(i, 9));
             }
+            AllBoards.get(0).setColorTower(ColorTower.Black);
+            AllBoards.get(1).setColorTower(ColorTower.White);
+            AllBoards.get(2).setColorTower(ColorTower.Grey);
         }
     }
 
