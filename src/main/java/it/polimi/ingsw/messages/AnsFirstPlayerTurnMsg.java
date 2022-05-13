@@ -11,8 +11,7 @@ import java.util.ArrayList;
 public class AnsFirstPlayerTurnMsg extends AnswerMsg{
     private String name;
 
-    public AnsFirstPlayerTurnMsg(CommandMsg parent, String name)
-    {
+    public AnsFirstPlayerTurnMsg(CommandMsg parent, String name){
         super(parent);
         this.name = name;
     }

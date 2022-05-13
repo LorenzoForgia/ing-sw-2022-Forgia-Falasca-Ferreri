@@ -9,6 +9,7 @@ import java.util.List;
 public class ChoosenPlayer {
     private List<Player> orderPlayers = new ArrayList<>();
     private Player firstPlayer;
+    private List<Player> PlayersforCA = new ArrayList<>();
 
 
 
@@ -81,6 +82,7 @@ public class ChoosenPlayer {
         p= orderPlayers.get(0);
         p.ResetTurn();
         orderPlayers.remove(0);
+        PlayersforCA.add(p);
         return p;
     }
 
@@ -93,5 +95,6 @@ public class ChoosenPlayer {
             return false;
         }
     }
+    public List<Player> getPlayersforCA(){return PlayersforCA;}
 }
 

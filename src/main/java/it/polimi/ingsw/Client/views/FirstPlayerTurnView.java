@@ -25,7 +25,7 @@ public class FirstPlayerTurnView extends View{
         String ans = (scanner.nextLine());
         if (ans.equals("si") ) {
             System.out.println("Gioca una carta assistente!");
-            String c = (scanner.nextLine());
+            CardAssistant c = CardAssistant.valueOf(scanner.nextLine());
             TurnDecidedMsg turnDecidedMsg= new TurnDecidedMsg(c);
             getOwner().getServerHandler().sendCommandMessage(turnDecidedMsg);
         }else{

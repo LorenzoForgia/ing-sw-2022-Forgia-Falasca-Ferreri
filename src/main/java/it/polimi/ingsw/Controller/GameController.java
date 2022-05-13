@@ -21,7 +21,10 @@ public class GameController {
     private PlayAssCard playAssCard = new PlayAssCard();
     private GameModel gameModel=new GameModel();
     private InfluenceProfessorTable influenceProfessorTable = new InfluenceProfessorTable();
+    private boolean SetFirstTurn = false;
 
+    public boolean getSetFirstTurn(){return SetFirstTurn;}
+    public void setSetFirstTurn(boolean setFirstTurn){this.SetFirstTurn=setFirstTurn;}
     public GameModel getGameModel() {
         return gameModel;
     }
