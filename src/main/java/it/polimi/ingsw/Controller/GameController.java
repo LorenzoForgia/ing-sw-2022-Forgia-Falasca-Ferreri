@@ -333,6 +333,7 @@ public class GameController {
 
     public void SetMotherNatureFirstTurn(IslandTiles I){
         moveMotherNature.SetIslandWithMotherNature(I);
+        setup.SetMNto1Island(I.getNumberID(),gameModel.getGeneralBoard());
         setup.SetupStudentsInIslands(gameModel.getBag(),I.getNumberID(),gameModel.getGeneralBoard().GetIslands());
         setup.SetBag(gameModel.getBag(),0);
         addStudentsOnClouds.RestartTurn(gameModel.getGeneralBoard(), gameModel.getBag(),gameModel.getNumplayers());

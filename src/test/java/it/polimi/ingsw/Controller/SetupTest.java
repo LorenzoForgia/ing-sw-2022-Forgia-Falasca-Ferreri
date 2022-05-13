@@ -69,4 +69,38 @@ class SetupTest {
         s.SetBag(b,2);
         assertEquals(120,b.getStudents().size());
     }
+
+    @Test
+    public void testChooseSchoolBoardWithTowers(){
+        Setup s=new Setup();
+
+        GeneralBoard gb=s.CreateGeneralboard(false,4);
+        gb.getSchoolBoard().get(0).setColorTower(ColorTower.Black);
+        gb.getSchoolBoard().get(1).setColorTower(ColorTower.White);
+        gb.getSchoolBoard().get(2).setColorTower(ColorTower.Black);
+        gb.getSchoolBoard().get(3).setColorTower(ColorTower.White);
+        s.ChooseSchoolBoardWithTowers(gb,4);
+       assertTrue(s.getSBWithTowers().contains( gb.getSchoolBoard().get(1)));
+        assertTrue(s.getSBWithTowers().contains( gb.getSchoolBoard().get(0)));
+        assertFalse(s.getSBWithTowers().contains( gb.getSchoolBoard().get(2)));
+        assertFalse(s.getSBWithTowers().contains( gb.getSchoolBoard().get(3)));
+
+    }
+
+    @Test
+    public void testChooseSchoolBoardWithTowers2(){
+        Setup s=new Setup();
+
+        GeneralBoard gb=s.CreateGeneralboard(false,3);
+        gb.getSchoolBoard().get(0).setColorTower(ColorTower.Black);
+        gb.getSchoolBoard().get(1).setColorTower(ColorTower.White);
+        gb.getSchoolBoard().get(2).setColorTower(ColorTower.Grey);
+        s.ChooseSchoolBoardWithTowers(gb,3);
+        assertTrue(s.getSBWithTowers().contains( gb.getSchoolBoard().get(1)));
+        assertTrue(s.getSBWithTowers().contains( gb.getSchoolBoard().get(0)));
+        assertTrue(s.getSBWithTowers().contains( gb.getSchoolBoard().get(2)));
+
+
+    }
+
 }
