@@ -25,7 +25,7 @@ public class ChoosenPlayer {
                 }
             }
         }
-        /*GetOrderPlayers(players);*/
+        GetOrderPlayers(players);
 
 
     }
