@@ -22,10 +22,10 @@ public class GameStartedMsg extends CommandMsg{
             Boolean flag=game.CheckIfAllLogin();
             while(!flag){
                 try{
-                    System.out.println("mi addormento");
+
                     game.wait();
                     flag=game.CheckIfAllLogin();
-                    System.out.println("mi sveglio");
+
                 }catch (InterruptedException e){
                     e.printStackTrace();
                 }
