@@ -133,4 +133,26 @@ class ChoosenPlayerTest {
 
 
 
+    @Test
+    public void testChoosenTurnPlayer2(){
+        pl.setFirstPlayer(p1);
+        pl.ChooseTurnPlayerForCardAssistant(players);
+        assertEquals(p1, pl.GetPlayerTurn());
+        assertEquals(p2, pl.GetPlayerTurn());
+        assertEquals(p3, pl.GetPlayerTurn());
+        p.GetAssCard(p1, CardAssistant.Quattro, players.size());
+        p.GetAssCard(p2, CardAssistant.Quattro, players.size());
+        p.GetAssCard(p3, CardAssistant.Cinque, players.size());
+        pl.ChooseTurnPlayer(players);
+        assertEquals(0, p1.GetNumTurn());
+        assertEquals(1, p2.GetNumTurn() );
+        assertEquals(2, p3.GetNumTurn());
+        assertEquals(p1, pl.GetPlayerTurn());
+        assertEquals(p2, pl.GetPlayerTurn());
+        assertEquals(p3, pl.GetPlayerTurn());
+
+    }
+
+
+
 }
