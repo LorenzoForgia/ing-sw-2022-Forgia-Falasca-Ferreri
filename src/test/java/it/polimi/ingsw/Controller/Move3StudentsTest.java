@@ -16,37 +16,35 @@ class Move3StudentsTest {
     Bag b= null;
 
     @BeforeEach
-    public void setUp(){
-        SB = new SchoolBoard(1, 7);
-        player = new Player( "player1");
-        player.setNumberCoins(1);
-        player.setMySchoolBoard(SB);
-        player.setMyDeck(DCA);
-        i= new IslandTiles(1, false, 1, false, 0,false);
+    public void setUp() {
         m= new Move3Students();
+        player = new Player("A");
+        SB= new SchoolBoard(0,7);
+        player.setMySchoolBoard(SB);
         b= new Bag();
-        b.setStudents(50);
-        SB.PutStudent(2,b);
+        b.setStudents(120);
+        SB.AddStudent(Color.Red);
+        SB.AddStudent(Color.Blue);
+        i = new IslandTiles(1,false,1,false,0,false);
     }
 
     @AfterEach
     public void tearDown() {
-        player = null;
-        SB = null;
-        i= null;
-        DeckCardAssistant DCA = null;
         m= null;
-        b= null;
     }
 
     @Test
-    public void testMove3Student(){
-        m.ChooseIsland(player.getMySchoolBoard().getEntrance().get(0), i,player);
-        m.ChooseIsland(player.getMySchoolBoard().getEntrance().get(0),i, player);
-        m.ChooseDiningRoom(player.getMySchoolBoard().getEntrance().get(0), player);
-        assertEquals(2, i.getStudentsInIsland().size());
-        assertEquals(1, player.getMySchoolBoard().getDiningRoom().GetNumberStudent());
-        assertEquals(4, player.getMySchoolBoard().GetNumberStudent());
+    public void testMoveMotherNature() {
+       m.ChooseLocation(Color.Blue,i, player);
+       assertTrue(i.getStudentsInIsland().contains(Color.Blue));
+       assertFalse(SB.getEntrance().contains(Color.Blue));
     }
 
+    @Test
+    public void testMoveMotherNature2() {
+        m.ChooseLocation(Color.Blue,SB.getDiningRoom(), player);
+        assertFalse(i.getStudentsInIsland().contains(Color.Blue));
+        assertFalse(SB.getEntrance().contains(Color.Blue));
+        assertEquals(1,SB.getDiningRoom().GetNumberStudent(Color.Blue));
+    }
 }

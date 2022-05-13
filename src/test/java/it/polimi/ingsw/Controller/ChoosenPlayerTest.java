@@ -112,9 +112,9 @@ class ChoosenPlayerTest {
         assertEquals(p2, pl.GetPlayerTurn());
         assertEquals(p3, pl.GetPlayerTurn());
         assertEquals(p1, pl.GetPlayerTurn());
-        p.GetAssCard(p2, CardAssistant.Due, players.size());
-        p.GetAssCard(p1, CardAssistant.Tre, players.size());
-        p.GetAssCard(p3, CardAssistant.Uno, players.size());
+        p.GetAssCard(p2, CardAssistant.Due);
+        p.GetAssCard(p1, CardAssistant.Tre);
+        p.GetAssCard(p3, CardAssistant.Uno);
         assertEquals(CardAssistant.Uno, p3.getCA());
         assertEquals(CardAssistant.Due, p2.getCA());
         assertEquals(CardAssistant.Tre, p1.getCA());
@@ -140,9 +140,9 @@ class ChoosenPlayerTest {
         assertEquals(p1, pl.GetPlayerTurn());
         assertEquals(p2, pl.GetPlayerTurn());
         assertEquals(p3, pl.GetPlayerTurn());
-        p.GetAssCard(p1, CardAssistant.Quattro, players.size());
-        p.GetAssCard(p2, CardAssistant.Quattro, players.size());
-        p.GetAssCard(p3, CardAssistant.Cinque, players.size());
+        p.GetAssCard(p1, CardAssistant.Quattro);
+        p.GetAssCard(p2, CardAssistant.Quattro);
+        p.GetAssCard(p3, CardAssistant.Cinque);
         pl.ChooseTurnPlayer(players);
         assertEquals(0, p1.GetNumTurn());
         assertEquals(1, p2.GetNumTurn() );

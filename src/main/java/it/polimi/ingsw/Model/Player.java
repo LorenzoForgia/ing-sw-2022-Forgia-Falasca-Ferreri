@@ -10,6 +10,7 @@ public class Player {
     private SchoolBoard MySchoolBoard;
     private DeckCardAssistant MyDeck;
     private CardAssistant CA;
+    private CharacterCard CC;
 
 
     public Player(String nickName) {
@@ -20,7 +21,13 @@ public class Player {
         NumberCoins = numberCoins;
     }
 
+    public CharacterCard getCC() {
+        return CC;
+    }
 
+    public void setCC(CharacterCard CC) {
+        this.CC = CC;
+    }
 
     public void setMySchoolBoard(SchoolBoard mySchoolBoard) {
         MySchoolBoard = mySchoolBoard;

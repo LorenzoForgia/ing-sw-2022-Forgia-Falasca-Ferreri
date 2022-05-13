@@ -93,7 +93,7 @@ public class Setup {
         return gb;
      }
 
-     /**character card nel main **/
+
 
 
 

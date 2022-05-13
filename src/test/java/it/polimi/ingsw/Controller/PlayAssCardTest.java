@@ -61,9 +61,9 @@ class PlayAssCardTest {
 
     @Test
     public void testPlayCard(){
-        p.GetAssCard(p1, CardAssistant.Uno, 3);
-        p.GetAssCard(p2, CardAssistant.Due, 3);
-        p.GetAssCard(p3, CardAssistant.Tre, 3);
+        p.GetAssCard(p1, CardAssistant.Uno);
+        p.GetAssCard(p2, CardAssistant.Due);
+        p.GetAssCard(p3, CardAssistant.Tre);
         assertEquals(3, p.GetAssCardPlayed().size());
         assertEquals(9, p1.getMyDeck().GetDeck().size());
         assertEquals(9, p2.getMyDeck().GetDeck().size());
@@ -73,4 +73,27 @@ class PlayAssCardTest {
         assertEquals(CardAssistant.Tre, p3.getCA());
     }
 
+    @Test
+    public void testIfLast(){
+        p.GetAssCard(p1, CardAssistant.Uno);
+        p.GetAssCard(p2, CardAssistant.Due);
+        assertFalse(p.CheckIfLast(p3));
+    }
+
+    @Test
+    public void testIfLast2(){
+        p.GetAssCard(p1, CardAssistant.Uno);
+        p.GetAssCard(p2, CardAssistant.Due);
+        p3.getMyDeck().RemoveCard(CardAssistant.Tre);
+        p3.getMyDeck().RemoveCard(CardAssistant.Quattro);
+        p3.getMyDeck().RemoveCard(CardAssistant.Cinque);
+        p3.getMyDeck().RemoveCard(CardAssistant.Sei);
+        p3.getMyDeck().RemoveCard(CardAssistant.Sette);
+        p3.getMyDeck().RemoveCard(CardAssistant.Otto);
+        p3.getMyDeck().RemoveCard(CardAssistant.Nove);
+        p3.getMyDeck().RemoveCard(CardAssistant.Dieci);
+
+        assertTrue(p.CheckIfLast(p3));
+
+    }
 }
