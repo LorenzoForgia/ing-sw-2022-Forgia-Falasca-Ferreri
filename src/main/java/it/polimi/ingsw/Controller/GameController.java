@@ -183,7 +183,7 @@ public class GameController {
         choosenPlayer.ChooseTurnPlayerForCardAssistant(gameModel.getPlayers());
     }
 
-    /** the first player decides where to put MotherNature; this method sets motherNature, sets 120 students in the bag
+    /** Randomly the methods put MotherNature in island; this method sets motherNature, sets 120 students in the bag
      * put students in the Clouds, put the students in the Entrance of the schoolBoard
      * **/
 
