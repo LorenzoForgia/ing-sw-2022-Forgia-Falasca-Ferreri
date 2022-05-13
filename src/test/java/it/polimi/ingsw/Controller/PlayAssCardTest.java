@@ -11,9 +11,9 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PlayAssCardTest {
-    Player player1 = null;
-    Player player2 = null;
-    Player player3 = null;
+    Player p1 = null;
+    Player p2 = null;
+    Player p3 = null;
     SchoolBoard SB1 = null;
     SchoolBoard SB2 = null;
     SchoolBoard SB3 = null;
@@ -30,15 +30,15 @@ class PlayAssCardTest {
         DCA1 = new DeckCardAssistant();
         DCA2 = new DeckCardAssistant();
         DCA3 = new DeckCardAssistant();
-        Player p1=new Player("A");
+        p1=new Player("A");
         p1.setMySchoolBoard(SB1);
         p1.setNumberCoins(1);
         p1.setMyDeck(DCA1);
-        Player p2=new Player("B");
+        p2=new Player("B");
         p2.setMySchoolBoard(SB2);
         p2.setNumberCoins(1);
         p2.setMyDeck(DCA2);
-        Player p3=new Player("C");
+        p3=new Player("C");
         p3.setMySchoolBoard(SB3);
         p3.setNumberCoins(1);
         p3.setMyDeck(DCA3);
@@ -47,27 +47,30 @@ class PlayAssCardTest {
 
     @AfterEach
     public void tearDown() {
-        Player player1 = null;
-        Player player2 = null;
-        Player player3 = null;
-        SchoolBoard SB1 = null;
-        SchoolBoard SB2 = null;
-        SchoolBoard SB3 = null;
-        DeckCardAssistant DCA1 = null;
-        DeckCardAssistant DCA2 = null;
-        DeckCardAssistant DCA3 = null;
+        p1 = null;
+        p2 = null;
+        p3 = null;
+        SB1 = null;
+        SB2 = null;
+        SB3 = null;
+        DCA1 = null;
+        DCA2 = null;
+        DCA3 = null;
         p= null;
     }
 
     @Test
     public void testPlayCard(){
-        p.GetAssCard(player1, CardAssistant.Uno, 3);
-        p.GetAssCard(player2, CardAssistant.Due, 3);
-        p.GetAssCard(player3, CardAssistant.Tre, 3);
+        p.GetAssCard(p1, CardAssistant.Uno, 3);
+        p.GetAssCard(p2, CardAssistant.Due, 3);
+        p.GetAssCard(p3, CardAssistant.Tre, 3);
         assertEquals(3, p.GetAssCardPlayed().size());
-        assertEquals(9, player1.getMyDeck().GetDeck().size());
-        assertEquals(9, player2.getMyDeck().GetDeck().size());
-        assertEquals(9, player3.getMyDeck().GetDeck().size());
+        assertEquals(9, p1.getMyDeck().GetDeck().size());
+        assertEquals(9, p2.getMyDeck().GetDeck().size());
+        assertEquals(9, p3.getMyDeck().GetDeck().size());
+        assertEquals(CardAssistant.Uno, p1.getCA());
+        assertEquals(CardAssistant.Due, p2.getCA());
+        assertEquals(CardAssistant.Tre, p3.getCA());
     }
 
 }

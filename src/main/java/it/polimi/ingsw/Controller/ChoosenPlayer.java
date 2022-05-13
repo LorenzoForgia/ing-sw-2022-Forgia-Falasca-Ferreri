@@ -25,8 +25,8 @@ public class ChoosenPlayer {
                 }
             }
         }
-        GetOrderPlayers(players);
-        firstPlayer = orderPlayers.get(0);
+        /*GetOrderPlayers(players);*/
+
 
     }
 
