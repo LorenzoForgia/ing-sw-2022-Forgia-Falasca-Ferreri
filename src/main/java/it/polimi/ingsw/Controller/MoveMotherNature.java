@@ -4,6 +4,7 @@ import it.polimi.ingsw.Model.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /*@author Luigia Falasca*/
 public class MoveMotherNature {
@@ -11,6 +12,11 @@ public class MoveMotherNature {
     private ColorTower colorT;
     private List<ColorTower> colorTowerList = new ArrayList<>();
 
+    public void SetIslandWithMotherNature(GeneralBoard gb){
+        Random random = new Random();
+        int draftedindex = random.nextInt(12);
+        I1=gb.GetIslands().get(draftedindex);
+    }
 
     public void SetIslandWithMotherNature(IslandTiles I){
         I1 = I;
