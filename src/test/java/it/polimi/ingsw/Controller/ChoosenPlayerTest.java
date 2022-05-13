@@ -118,9 +118,38 @@ class ChoosenPlayerTest {
         assertEquals(CardAssistant.Uno, p3.getCA());
         assertEquals(CardAssistant.Due, p2.getCA());
         assertEquals(CardAssistant.Tre, p1.getCA());
-        assertEquals(0, p3.GetNumTurn());
+        pl.ChooseTurnPlayer(players);
+        assertEquals(1, p3.getCA().getCardValue());
+        assertEquals(2, p2.getCA().getCardValue());
+        assertEquals(3, p1.getCA().getCardValue());
+       assertEquals(0, p3.GetNumTurn());
         assertEquals(1, p2.GetNumTurn() );
         assertEquals(2, p1.GetNumTurn());
+        assertEquals(p3, pl.GetPlayerTurn());
+        assertEquals(p2, pl.GetPlayerTurn());
+        assertEquals(p1, pl.GetPlayerTurn());
+
+    }
+
+
+
+    @Test
+    public void testChoosenTurnPlayer2(){
+        pl.setFirstPlayer(p1);
+        pl.ChooseTurnPlayerForCardAssistant(players);
+        assertEquals(p1, pl.GetPlayerTurn());
+        assertEquals(p2, pl.GetPlayerTurn());
+        assertEquals(p3, pl.GetPlayerTurn());
+        p.GetAssCard(p1, CardAssistant.Quattro, players.size());
+        p.GetAssCard(p2, CardAssistant.Quattro, players.size());
+        p.GetAssCard(p3, CardAssistant.Cinque, players.size());
+        pl.ChooseTurnPlayer(players);
+        assertEquals(0, p1.GetNumTurn());
+        assertEquals(1, p2.GetNumTurn() );
+        assertEquals(2, p3.GetNumTurn());
+        assertEquals(p1, pl.GetPlayerTurn());
+        assertEquals(p2, pl.GetPlayerTurn());
+        assertEquals(p3, pl.GetPlayerTurn());
 
     }
 
