@@ -9,7 +9,7 @@ import java.util.List;
 public class PlayAssCard {
     private ArrayList<CardAssistant> cards = new ArrayList<CardAssistant>();
 
-    public void GetAssCard(Player p, CardAssistant a, int numplayer) {
+    public void GetAssCard(Player p, CardAssistant a) {
                 cards.add(a);
                 p.setCA(a);
                 p.getMyDeck().RemoveCard(a);

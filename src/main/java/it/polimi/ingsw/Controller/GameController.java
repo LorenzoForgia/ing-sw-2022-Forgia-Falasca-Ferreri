@@ -136,19 +136,23 @@ public class GameController {
     }
 
     public void CheckColor(Color c, Player p) throws ColorNoInEntranceException {
-        boolean flag= true;
-        if(c == null){
+        boolean flag = true;
+        if (c == null) {
             throw new ColorNoInEntranceException(c);
         }
-        for(int i=0; i < p.getMySchoolBoard().getEntrance().size() && flag; i++){
-            if(c.equals(p.getMySchoolBoard().getEntrance().get(i))){
+        for (int i = 0; i < p.getMySchoolBoard().getEntrance().size() && flag; i++) {
+            if (c.equals(p.getMySchoolBoard().getEntrance().get(i))) {
                 flag = false;
             }
         }
 
-        if(flag){
+        if (flag) {
             throw new ColorNoInEntranceException(c);
         }
+    }
+
+    public void PutStudentInTheRightLocation(Color c, Player p, Location location){
+        move3Students.ChooseLocation(c, location, p);
     }
 
     public void NickNameAvailable(String name)throws IllegalNickNameException{
@@ -210,7 +214,7 @@ public class GameController {
         if (flag) {
             throw new CardAssistantNotAvailableException(cardAssistant);
         }else{
-            playAssCard.GetAssCard(p,cardAssistant, gameModel.getPlayers().size());
+            playAssCard.GetAssCard(p,cardAssistant);
 
         }
 
@@ -333,6 +337,10 @@ public class GameController {
         moveMotherNature.SetIslandWithMotherNature(I);
         setup.SetupStudentsInIslands(gameModel.getBag(),I.getNumberID(),gameModel.getGeneralBoard().GetIslands());
         setup.SetBag(gameModel.getBag(),0);
+        addStudentsOnClouds.RestartTurn(gameModel.getGeneralBoard(), gameModel.getBag(),gameModel.getNumplayers());
+        for(int i=0; i <gameModel.getNumplayers(); i++ ){
+            gameModel.getGeneralBoard().getSchoolBoard().get(i).PutStudent(gameModel.getNumplayers(),gameModel.getBag());
+        }
     }
 
 }

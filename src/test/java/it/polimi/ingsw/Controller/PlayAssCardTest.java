@@ -61,9 +61,9 @@ class PlayAssCardTest {
 
     @Test
     public void testPlayCard(){
-        p.GetAssCard(p1, CardAssistant.Uno, 3);
-        p.GetAssCard(p2, CardAssistant.Due, 3);
-        p.GetAssCard(p3, CardAssistant.Tre, 3);
+        p.GetAssCard(p1, CardAssistant.Uno);
+        p.GetAssCard(p2, CardAssistant.Due);
+        p.GetAssCard(p3, CardAssistant.Tre);
         assertEquals(3, p.GetAssCardPlayed().size());
         assertEquals(9, p1.getMyDeck().GetDeck().size());
         assertEquals(9, p2.getMyDeck().GetDeck().size());

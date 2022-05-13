@@ -97,6 +97,5 @@ public class InfluenceProfessorTable {
             }
         }
 
-        c.setCountUse();
     }
 }

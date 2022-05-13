@@ -33,15 +33,15 @@ class WinLoseCheckStateTest {
         SB1.setColorTower(ColorTower.Black);
         SB2.setColorTower(ColorTower.White);
         SB3.setColorTower(ColorTower.Grey);
-        Player p1=new Player("A");
+        p1=new Player("A");
         p1.setMySchoolBoard(SB1);
         p1.setNumberCoins(1);
         p1.setMyDeck(DCA1);
-        Player p2=new Player("B");
+        p2=new Player("B");
         p2.setMySchoolBoard(SB2);
         p2.setNumberCoins(1);
         p2.setMyDeck(DCA2);
-        Player p3=new Player("C");
+        p3=new Player("C");
         p3.setMySchoolBoard(SB3);
         p3.setNumberCoins(1);
         p3.setMyDeck(DCA3);
