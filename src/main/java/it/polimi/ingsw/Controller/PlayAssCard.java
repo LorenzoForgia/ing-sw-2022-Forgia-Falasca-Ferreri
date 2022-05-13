@@ -21,14 +21,17 @@ public class PlayAssCard {
 
     boolean CheckIfLast(Player p) {
         boolean flag = true;
-        for (int i = 0; i < p.getMyDeck().GetDeck().size() && flag; i++) {
-            for(int j=0; j< cards.size() && flag ; j++){
-                if(!p.getMyDeck().GetDeck().get(i).equals(cards.get(i))){
-                    flag = false;
-                }
+        List<CardAssistant> cards2 = new ArrayList<>();
+        cards2.addAll(p.getMyDeck().GetDeck());
+        for(int i=0; i < cards.size() && flag ; i ++){
+            if(cards2.contains(cards.get(i))) {
+                cards2.remove(cards.get(i));
+            }
+            if(cards2.size()==0){
+                flag = false;
             }
         }
-        return  flag;
+        return  (!flag);
     }
 
 }

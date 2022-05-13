@@ -151,9 +151,7 @@ public class GameController {
         }
     }
 
-    public void PutStudentInTheRightLocation(Color c, Player p, Location location){
-        move3Students.ChooseLocation(c, location, p);
-    }
+
 
     public void NickNameAvailable(String name)throws IllegalNickNameException{
         boolean flag= true;
@@ -341,6 +339,7 @@ public class GameController {
         for(int i=0; i <gameModel.getNumplayers(); i++ ){
             gameModel.getGeneralBoard().getSchoolBoard().get(i).PutStudent(gameModel.getNumplayers(),gameModel.getBag());
         }
+        addStudentsOnClouds.RestartTurn(gameModel.getGeneralBoard(),gameModel.getBag(), gameModel.getNumplayers());
     }
 
 }
