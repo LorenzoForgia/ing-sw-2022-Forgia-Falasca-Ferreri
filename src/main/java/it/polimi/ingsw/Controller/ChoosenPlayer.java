@@ -18,14 +18,14 @@ public class ChoosenPlayer {
             for(int j=0;j<players.size();j++) {
                 if (players.get(i).getCA().getCardValue() > players.get(j).getCA().getCardValue() ){
                     players.get(i).SetNumTurn();
-                }else if(players.get(i).getCA().getCardValue() == players.get(j).getCA().getCardValue() && i!= j){
+                }else if(players.get(i).getCA().getCardValue() == players.get(j).getCA().getCardValue() && i!=j){
                     if(players.get(i).getTurnToPlayCardAssistant()>players.get(j).getTurnToPlayCardAssistant()){
                         players.get(i).SetNumTurn();
                     }
                 }
             }
         }
-        /*GetOrderPlayers(players);*/
+        GetOrderPlayers(players);
 
 
     }

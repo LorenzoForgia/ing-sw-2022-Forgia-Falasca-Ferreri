@@ -118,9 +118,9 @@ class ChoosenPlayerTest {
         assertEquals(CardAssistant.Uno, p3.getCA());
         assertEquals(CardAssistant.Due, p2.getCA());
         assertEquals(CardAssistant.Tre, p1.getCA());
-       /* assertEquals(0, p3.GetNumTurn());
+        assertEquals(0, p3.GetNumTurn());
         assertEquals(1, p2.GetNumTurn() );
-        assertEquals(2, p1.GetNumTurn());*/
+        assertEquals(2, p1.GetNumTurn());
 
     }
 

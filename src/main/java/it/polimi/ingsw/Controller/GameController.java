@@ -6,6 +6,7 @@ import it.polimi.ingsw.Model.*;
 import it.polimi.ingsw.messages.AnswIfAllowed;
 
 import java.util.List;
+import java.util.Random;
 
 public class GameController {
     private AddStudentsOnClouds addStudentsOnClouds = new AddStudentsOnClouds();
@@ -315,6 +316,13 @@ public class GameController {
 */
     public Player ReturnPlayerTurn(){
         return choosenPlayer.GetPlayerTurn();
+    }
+
+    public void SetFirstPlayerTurn(){
+        Random random = new Random();
+        int draftedindex = random.nextInt(this.getGameModel().getPlayers().size());
+        Player p = this.getGameModel().getPlayers().get(draftedindex);
+        this.getChoosenPlayer().setFirstPlayer(p);
     }
 
 
