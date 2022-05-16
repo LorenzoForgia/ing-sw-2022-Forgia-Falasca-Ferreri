@@ -31,6 +31,7 @@ public class ChoosenPlayer {
 
     }
 
+
     /**
      * Set the turn before the players play the cardAssistant
      **/
@@ -68,6 +69,7 @@ public class ChoosenPlayer {
             orderPlayers.set(players.get(i).GetNumTurn(), players.get(i));
         }
         firstPlayer = orderPlayers.get(0);
+        numPlayerTurn =0;
     }
 
     private void GetOrderOfPlayersForCardAssistant(List<Player> players) {
@@ -78,6 +80,7 @@ public class ChoosenPlayer {
         for (int i = 0; i < players.size(); i++) {
             orderPlayers.set(players.get(i).getTurnToPlayCardAssistant(), players.get(i));
         }
+        numPlayerTurn =0;
     }
 
     public void incrementTurn() {
@@ -100,7 +103,6 @@ public class ChoosenPlayer {
      **/
     public boolean EndOfAllTurn() {
         if (numPlayerTurn == orderPlayers.size()) {
-            numPlayerTurn = 0;
             return true;
         } else {
             return false;

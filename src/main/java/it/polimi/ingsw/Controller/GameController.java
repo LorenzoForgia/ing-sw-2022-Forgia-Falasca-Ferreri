@@ -22,7 +22,6 @@ public class GameController {
     private GameModel gameModel=new GameModel();
     private InfluenceProfessorTable influenceProfessorTable = new InfluenceProfessorTable();
     private boolean SetFirstTurn = false;
-    private boolean NotifyLastRound= false;
 
     public boolean getSetFirstTurn(){return SetFirstTurn;}
     public void setSetFirstTurn(boolean setFirstTurn){this.SetFirstTurn=setFirstTurn;}
@@ -227,7 +226,6 @@ public class GameController {
             playAssCard.GetAssCard(p,cardAssistant);
             choosenPlayer.incrementTurn();
             gameEndState.CheckEndGameRoundEndedForCardAssistant(p);
-            NotifyLastRound = gameEndState.isFlagNotImmediately();
 
         }
 
@@ -315,9 +313,13 @@ public class GameController {
             throw  new IllegalNumberOfStepException(n);
         }else{
             moveMotherNature.MoveMN(gameModel.getGeneralBoard(), n);
+            if(moveMotherNature.CheckIfIslandGetControlled(gameModel.getNumplayers(), gameModel.getGeneralBoard(), moveMotherNature.getI1())){
+                moveMotherNature.GetRightTowerOnIsland(gameModel.getGeneralBoard(), moveMotherNature.getI1(), setup.getSBWithTowers());
+                gameEndState.CheckEndGameImmediately(p, gameModel.getGeneralBoard());
+            }
         }
-
     }
+
 
 
     private boolean CloudInList( CloudTiles c){
@@ -336,6 +338,7 @@ public class GameController {
             throw new CloudEmptyException(c);
         }else{
             chooseCloudTiles.ChoosenCloud(player, c);
+            choosenPlayer.incrementTurn();
         }
     }
 
@@ -349,9 +352,6 @@ public class GameController {
             if (!gameEndState.isFlagImmediately() && !gameEndState.isFlagNotImmediately()) {
                 addStudentsOnClouds.RestartTurn(gameModel.getGeneralBoard(), gameModel.getBag(), gameModel.getNumplayers());
                 gameEndState.CheckEndGameRoundEndedForBag(gameModel.getBag());
-                if(!NotifyLastRound){
-                    NotifyLastRound = gameEndState.isFlagNotImmediately();
-                }
                 if (gameModel.getModExpert()) {
                     for (int i = 0; i < gameModel.getNumplayers(); i++) {
                         gameModel.getPlayers().get(i).setCC(null);
