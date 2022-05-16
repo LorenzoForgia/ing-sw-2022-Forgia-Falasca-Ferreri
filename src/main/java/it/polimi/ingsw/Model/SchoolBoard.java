@@ -5,9 +5,9 @@ public class SchoolBoard {
     private int NumberId;
     private int Student;
     private ColorTower colorTower;
-    private List<Color> Entrance= new ArrayList<Color>();
+    private ArrayList<Color> Entrance= new ArrayList<Color>();
     private DiningRoom diningRoom= new DiningRoom();
-    private List<Color> ProfessorTable= new ArrayList<Color>();
+    private ArrayList<Color> ProfessorTable= new ArrayList<Color>();
     private int NumberOfTower =0;
 
     public SchoolBoard(int numberId, int student){
@@ -25,7 +25,7 @@ public class SchoolBoard {
         }ProfessorTable.add(p);
     }
 
-    public List<Color> getProfessorTable() {  /* getting professor table to calculate influence*/
+    public ArrayList<Color> getProfessorTable() {  /* getting professor table to calculate influence*/
         return ProfessorTable;
     }
     public void RemoveProfessor(Color p){      /*removing professor p from the professor table*/
@@ -79,7 +79,7 @@ public class SchoolBoard {
         return this.diningRoom;
     }
 
-    public List<Color> getEntrance(){
+    public ArrayList<Color> getEntrance(){
         return Entrance;
     }
 

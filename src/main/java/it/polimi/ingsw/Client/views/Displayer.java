@@ -1,6 +1,8 @@
 package it.polimi.ingsw.Client.views;
 
 import it.polimi.ingsw.Model.Color;
+import it.polimi.ingsw.Model.ColorTower;
+import it.polimi.ingsw.Model.IslandTiles;
 import it.polimi.ingsw.Model.SchoolBoard;
 
 import java.util.ArrayList;
@@ -18,7 +20,7 @@ public class Displayer {
         );
     }
 
-     public void displaySchoolBoard(ArrayList<Color> e, ArrayList<ArrayList<Color>> diningroom, ArrayList<Color> prof, int ntorri, Color ct){
+     public void displaySchoolBoard(ArrayList<Color> e, ArrayList<ArrayList<Color>> diningroom, ArrayList<Color> prof, int ntorri, ColorTower ct){
         ArrayList<Color> p=new ArrayList<>();
         p.add(Color.Green);
         p.add(Color.Red);
@@ -173,18 +175,58 @@ public class Displayer {
     }
 
 
-
-
-
-
-
-
-  /*  public void displayAllSchoolboard(ArrayList<SchoolBoard> s){
+   public void displayAllSchoolboard(ArrayList<SchoolBoard> s){
         for(int i=0;i<s.size();i++){
+            System.out.println("Schoolboard del giocatore:"+i);
             this.displaySchoolBoard(s.get(i).getEntrance(),s.get(i).getDiningRoom().getDiningRoom(),s.get(i).getProfessorTable(),s.get(i).getNumberOfTower(),s.get(i).ColorTower());
         }
 
-    }*/
+    }
+
+    public void showIsland(IslandTiles i){
+        System.out.print("|");
+        if(i.isMotherNature()){
+            System.out.print(Color.Yellow+"M"+" ");
+        }
+        System.out.print(Color.Green+""+i.getNumberStudentsbyColor(Color.Green)+" ");
+        System.out.print(Color.Red+""+i.getNumberStudentsbyColor(Color.Red)+" ");
+        System.out.print(Color.Yellow+""+i.getNumberStudentsbyColor(Color.Yellow)+" ");
+        System.out.print(Color.Pink+""+i.getNumberStudentsbyColor(Color.Pink)+" ");
+        System.out.print(Color.Blue+""+i.getNumberStudentsbyColor(Color.Blue)+Color.Reset+"|");
+        System.out.print(ColorTower.White+""+i.isTower()+" ");
+        System.out.print(ColorTower.Grey+""+i.isTower()+" ");
+        System.out.print(ColorTower.Black+""+i.isTower()+Color.Reset+"|  ");
+
+    }
+    public void showAllIsland(ArrayList<IslandTiles> isl){
+        for(int i=0;i<4;i++){
+            System.out.print("Isola n°"+i+"            ");
+        }
+        System.out.println("");
+        for(int i=0;i<4;i++){
+            this.showIsland(isl.get(i));
+            System.out.print(" ");
+        }
+        System.out.print("\n");
+        for(int i=4;i<8;i++){
+            System.out.print("Isola n°"+i+"            ");
+        }
+        System.out.println("");
+        for(int i=4;i<8;i++){
+            this.showIsland(isl.get(i));
+            System.out.print(" ");
+        }
+        System.out.print("\n");
+        for(int i=8;i<12;i++){
+            System.out.print("Isola n°"+i+"            ");
+        }
+        System.out.println("");
+        for(int i=8;i<12;i++){
+            this.showIsland(isl.get(i));
+            System.out.print(" ");
+        }
+        System.out.print("\n");
+    }
 
 
 }

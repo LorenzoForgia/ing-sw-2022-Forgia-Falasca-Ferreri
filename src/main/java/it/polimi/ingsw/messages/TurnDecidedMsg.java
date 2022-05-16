@@ -46,10 +46,10 @@ public class TurnDecidedMsg extends CommandMsg{
                     e.printStackTrace();
                 }
             }
+            game.notifyAll();
             for (int i = 0; i < game.getChoosenPlayer().getOrderPlayers().size(); i++) {
                 nickname.add(game.getChoosenPlayer().getOrderPlayers().get(i).getNickName());
             }
-            game.notifyAll();
             answerMsg = new AnsTurnDecidedMsg(this, nickname);
             clientHandler.sendAnswerMessage(answerMsg);
         }

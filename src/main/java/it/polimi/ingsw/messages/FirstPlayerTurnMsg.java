@@ -17,22 +17,18 @@ public class FirstPlayerTurnMsg extends CommandMsg {
                 game.SetFirstPlayerTurn();
                 game.setSetFirstTurn(true);
             }
-            System.out.println("tra poco dormo");
             if(!game.getChoosenPlayer().EndOfAllTurn()) {
                 name = game.getChoosenPlayer().GetPlayerTurn().getNickName();
                 try{
                     while(!clientHandler.getNickname().equals(name)) {
-                        System.out.println("dormo "+clientHandler.getNickname() + " "+ name );
                         game.wait();
                         name = game.getChoosenPlayer().GetPlayerTurn().getNickName();
-                        System.out.println("dormo "+clientHandler.getNickname() + " "+ name );
                     }
                 }catch (InterruptedException e){
                     e.printStackTrace();
                 }
 
                 answerMsg = new AnsFirstPlayerTurnMsg(this, name);
-                System.out.println("mi sveglio");
                 clientHandler.sendAnswerMessage(answerMsg);
             }
         }
