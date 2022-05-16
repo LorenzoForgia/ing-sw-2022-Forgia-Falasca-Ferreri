@@ -44,7 +44,7 @@ class DisplayerTest {
 
         ArrayList<Color> prof=new ArrayList<>();
         p.displayLogo();
-        p.displaySchoolBoard(entrance,DiningRoom,prof,9,Color.Gray);
+        p.displaySchoolBoard(entrance,DiningRoom,prof,9,Color.Red);
     }
 
 }
