@@ -236,15 +236,16 @@ public class GameController {
     /** Check if all players had played the card assistant
      * **/
     public boolean CheckIfAllPlayedCardAssistant(){
+        boolean flag= true;
         for(int i=0; i<gameModel.getPlayers().size(); i ++ ){
             if(gameModel.getPlayers().get(i).getCA()== null){
-                return false;
+                flag= false;
             }
         }
-        for(int i=0; i<gameModel.getPlayers().size(); i ++ ){
+        /*for(int i=0; i<gameModel.getPlayers().size(); i ++ ){
             choosenPlayer.ChooseTurnPlayer(gameModel.getPlayers());
-        }
-        return true;
+        }*/
+        return flag;
     }
 
     /** Check if the student that the player wants to move is in his Entrance or not; if it's not it will
