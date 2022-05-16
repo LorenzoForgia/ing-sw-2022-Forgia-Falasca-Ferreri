@@ -10,7 +10,7 @@ public class ChoosenPlayer {
     private List<Player> orderPlayers = new ArrayList<>();
     private Player firstPlayer;
     private List<Player> PlayersforCA = new ArrayList<>();
-
+    private int numPlayerTurn =0;
 
 
     /** Set the turn after the players played the cardAssistant **/
@@ -79,22 +79,24 @@ public class ChoosenPlayer {
     /**  Show the player who has to play **/
     public Player GetPlayerTurn(){
         Player p;
-        p= orderPlayers.get(0);
+        p= orderPlayers.get(numPlayerTurn);
         p.ResetTurn();
-        orderPlayers.remove(0);
+        numPlayerTurn++;
         PlayersforCA.add(p);
         return p;
     }
 
     /**  Check if all players played their own turn **/
     public boolean EndOfAllTurn(){
-        if(orderPlayers.size()== 0){
+        if(numPlayerTurn == orderPlayers.size()){
 
             return true;
         }else{
             return false;
         }
     }
+
+
     public List<Player> getPlayersforCA(){return PlayersforCA;}
 }
 
