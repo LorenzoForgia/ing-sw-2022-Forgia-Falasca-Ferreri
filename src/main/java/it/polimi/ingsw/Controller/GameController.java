@@ -22,6 +22,7 @@ public class GameController {
     private GameModel gameModel=new GameModel();
     private InfluenceProfessorTable influenceProfessorTable = new InfluenceProfessorTable();
     private boolean SetFirstTurn = false;
+    private boolean NotifyLastRound= false;
 
     public boolean getSetFirstTurn(){return SetFirstTurn;}
     public void setSetFirstTurn(boolean setFirstTurn){this.SetFirstTurn=setFirstTurn;}
@@ -224,6 +225,9 @@ public class GameController {
             throw new CardAssistantNotAvailableException(cardAssistant);
         }else{
             playAssCard.GetAssCard(p,cardAssistant);
+            choosenPlayer.incrementTurn();
+            gameEndState.CheckEndGameRoundEndedForCardAssistant(p);
+            NotifyLastRound = gameEndState.isFlagNotImmediately();
 
         }
 
@@ -340,8 +344,13 @@ public class GameController {
      * **/
     public boolean ResetTheTurnForNewRoundWhenAllPlayed(){
         if(choosenPlayer.EndOfAllTurn()) {
-            if (!gameEndState.flagImmediately && !gameEndState.isFlagNotImmediately()) {
+            gameEndState.CheckEndGameRoundEndedForBag(gameModel.getBag());
+            if (!gameEndState.isFlagImmediately() && !gameEndState.isFlagNotImmediately()) {
                 addStudentsOnClouds.RestartTurn(gameModel.getGeneralBoard(), gameModel.getBag(), gameModel.getNumplayers());
+                gameEndState.CheckEndGameRoundEndedForBag(gameModel.getBag());
+                if(!NotifyLastRound){
+                    NotifyLastRound = gameEndState.isFlagNotImmediately();
+                }
                 if (gameModel.getModExpert()) {
                     for (int i = 0; i < gameModel.getNumplayers(); i++) {
                         gameModel.getPlayers().get(i).setCC(null);
@@ -382,7 +391,7 @@ public class GameController {
     }
 
     /** Check if the player has enough money to play the character card. If he has them, then
-     * the card is saved in Player, the count use is set and the money are gioven to the
+     * the card is saved in Player, the count use is set and the money are given to the
      * general board
      * */
     public void CheckIfEnoughMoney(Player p, CharacterCard c) throws NotEnoughCoinException{
