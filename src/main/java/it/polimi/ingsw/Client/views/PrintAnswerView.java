@@ -43,10 +43,9 @@ public class PrintAnswerView extends View
         Login login=new Login(nickname);
         getOwner().getServerHandler().sendCommandMessage(login);
      } else {
-        System.out.println("Loggato correttamente!");
+         System.out.println("Loggato correttamente!");
       /* answer if a game is already created*/
-
-        getOwner().getServerHandler().sendCommandMessage(new AskIfGameCreated());
+         getOwner().getServerHandler().sendCommandMessage(new AskIfGameCreated());
 
         /*getOwner().terminate();
         nextView = null;*/

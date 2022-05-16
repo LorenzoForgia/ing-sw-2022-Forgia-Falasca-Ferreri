@@ -21,16 +21,9 @@ public class FirstPlayerTurnView extends View{
     @Override
     public void run() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Sei il giocatore " + answerMsg.GetPlayer() + "? si/no");
-        String ans = (scanner.nextLine());
-        if (ans.equals("si") ) {
-            System.out.println("Gioca una carta assistente!");
-            CardAssistant c = CardAssistant.valueOf(scanner.nextLine());
-            TurnDecidedMsg turnDecidedMsg= new TurnDecidedMsg(c);
-            getOwner().getServerHandler().sendCommandMessage(turnDecidedMsg);
-        }else{
-            FirstPlayerTurnMsg firstPlayerTurnMsg = new FirstPlayerTurnMsg();
-            getOwner().getServerHandler().sendCommandMessage(firstPlayerTurnMsg);
-        }
+        System.out.println(answerMsg.GetPlayer() + " Gioca una carta assistente!");
+        CardAssistant c = CardAssistant.valueOf(scanner.nextLine());
+        TurnDecidedMsg turnDecidedMsg= new TurnDecidedMsg(c);
+        getOwner().getServerHandler().sendCommandMessage(turnDecidedMsg);
     }
 }

@@ -108,5 +108,6 @@ public class ChoosenPlayer {
             return false;
         }
     }
+    public List<Player> getOrderPlayers(){return orderPlayers;}
 }
 

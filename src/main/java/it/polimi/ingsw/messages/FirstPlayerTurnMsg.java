@@ -13,15 +13,24 @@ public class FirstPlayerTurnMsg extends CommandMsg {
         GameController game = clientHandler.getGame();
         String name;
         synchronized (game) {
-            if (game.getSetFirstTurn()) {
+            if (!game.getSetFirstTurn()) {
                 game.SetFirstPlayerTurn();
-                game.getChoosenPlayer().ChooseTurnPlayerForCardAssistant(game.getGameModel().getPlayers());
-                game.setSetFirstTurn(false);
+                game.setSetFirstTurn(true);
             }
-
-            if(game.getChoosenPlayer().EndOfAllTurn()==false) {
+            System.out.println("tra poco dormo");
+            if(!game.getChoosenPlayer().EndOfAllTurn()) {
                 name = game.getChoosenPlayer().GetPlayerTurn().getNickName();
+                try{
+                    while(!clientHandler.getNickname().equals(name)) {
+                        System.out.println("dormo "+clientHandler.getNickname() + " "+ name );
+                        game.wait();
+                    }
+                }catch (InterruptedException e){
+                    e.printStackTrace();
+                }
+                game.notifyAll();
                 answerMsg = new AnsFirstPlayerTurnMsg(this, name);
+                System.out.println("mi sveglio");
                 clientHandler.sendAnswerMessage(answerMsg);
             }
         }

@@ -22,11 +22,11 @@ public class Login extends CommandMsg {
 
         try {
             game.NickNameAvailable(name);
+            clientHandler.setNickname(name);
             answerMsg = new AnswIfAllowed(this, AnswIfAllowed.Status.VALID);
         }catch(IllegalNickNameException e){
             answerMsg = new AnswIfAllowed(this, AnswIfAllowed.Status.INVALID);
         }
-
         clientHandler.sendAnswerMessage(answerMsg);
     }
 
