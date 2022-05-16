@@ -19,6 +19,8 @@ public class GameStartedView extends View{
 
     @Override
     public void run() {
+        Displayer d=new Displayer();
+        d.displayLogo();
         System.out.println("Il gioco inizia:");
         System.out.println("I giocatori sono:");
         for(int i=0; i< answerMsg.getNickname().size(); i++){
