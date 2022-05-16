@@ -1,6 +1,7 @@
 package it.polimi.ingsw.Client.views;
 
 import it.polimi.ingsw.Model.Color;
+import it.polimi.ingsw.Model.ColorTower;
 import it.polimi.ingsw.Model.SchoolBoard;
 
 import java.util.ArrayList;
@@ -18,7 +19,7 @@ public class Displayer {
         );
     }
 
-     public void displaySchoolBoard(ArrayList<Color> e, ArrayList<ArrayList<Color>> diningroom, ArrayList<Color> prof, int ntorri, Color ct){
+     public void displaySchoolBoard(ArrayList<Color> e, ArrayList<ArrayList<Color>> diningroom, ArrayList<Color> prof, int ntorri, ColorTower ct){
         ArrayList<Color> p=new ArrayList<>();
         p.add(Color.Green);
         p.add(Color.Red);
@@ -179,12 +180,13 @@ public class Displayer {
 
 
 
-  /*  public void displayAllSchoolboard(ArrayList<SchoolBoard> s){
+   public void displayAllSchoolboard(ArrayList<SchoolBoard> s){
         for(int i=0;i<s.size();i++){
+            System.out.println("Schoolboard del giocatore:"+i);
             this.displaySchoolBoard(s.get(i).getEntrance(),s.get(i).getDiningRoom().getDiningRoom(),s.get(i).getProfessorTable(),s.get(i).getNumberOfTower(),s.get(i).ColorTower());
         }
 
-    }*/
+    }
 
 
 }

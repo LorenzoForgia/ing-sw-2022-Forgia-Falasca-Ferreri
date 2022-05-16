@@ -3,11 +3,15 @@ import java.util.*;
 import java.util.ArrayList;
 
 public class DiningRoom implements Location{
+
     private ArrayList<ArrayList<Color>> DiningRoom=new ArrayList<ArrayList<Color>>(5);
     public DiningRoom(){
         for(int i=0;i<5;i++){
             DiningRoom.add(new ArrayList<>());
         }
+    }
+    public ArrayList<ArrayList<Color>> getDiningRoom() {
+        return DiningRoom;
     }
     public void PutStudent(Color s){     /*putting student s in the dining room*/
         DiningRoom.get(s.getIndex()).add(s);

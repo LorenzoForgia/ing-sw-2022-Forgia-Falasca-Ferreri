@@ -1,6 +1,8 @@
 package it.polimi.ingsw.Client.views;
 
 import it.polimi.ingsw.Model.Color;
+import it.polimi.ingsw.Model.ColorTower;
+import it.polimi.ingsw.Model.SchoolBoard;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -43,8 +45,20 @@ class DisplayerTest {
         }
 
         ArrayList<Color> prof=new ArrayList<>();
+        ArrayList<SchoolBoard> sc=new ArrayList<>();
         p.displayLogo();
-        p.displaySchoolBoard(entrance,DiningRoom,prof,9,Color.Red);
+        p.displaySchoolBoard(entrance,DiningRoom,prof,9, ColorTower.Black);
+        SchoolBoard s1=new SchoolBoard(0,2);
+        s1.getEntrance().add(Color.Red);
+        s1.getEntrance().add(Color.Blue);
+        s1.getDiningRoom().PutStudent(Color.Blue);
+        s1.getDiningRoom().PutStudent(Color.Red);
+        s1.getProfessorTable().add(Color.Green);
+        s1.getProfessorTable().add(Color.Yellow);
+        s1.setColorTower(ColorTower.White);
+        s1.setNumberOfTower(4);
+        sc.add(s1);
+        p.displayAllSchoolboard(sc);
     }
 
 }
