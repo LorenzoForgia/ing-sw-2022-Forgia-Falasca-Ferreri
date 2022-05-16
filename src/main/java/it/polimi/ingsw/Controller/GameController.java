@@ -335,6 +335,7 @@ public class GameController {
             throw new CloudEmptyException(c);
         }else{
             chooseCloudTiles.ChoosenCloud(player, c);
+            choosenPlayer.incrementTurn();
         }
     }
 
