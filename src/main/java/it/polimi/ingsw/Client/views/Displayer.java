@@ -1,6 +1,7 @@
 package it.polimi.ingsw.Client.views;
 
 import it.polimi.ingsw.Model.Color;
+import it.polimi.ingsw.Model.SchoolBoard;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -177,10 +178,13 @@ public class Displayer {
 
 
 
+/*
+    public void displayAllSchoolboard(ArrayList<SchoolBoard> s){
+        for(int i=0;i<s.size();i++){
+            this.displaySchoolBoard(s.get(i).getEntrance(),s.get(i).getDiningRoom(),s.get(i).getProfessorTable(),s.get(i).getNumberOfTower(),s.get(i).ColorTower());
+        }
 
-    public void displayAllSchoolboard(){
-
-    }
+    }*/
 
 
 }
