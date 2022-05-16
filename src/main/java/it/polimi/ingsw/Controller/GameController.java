@@ -240,9 +240,9 @@ public class GameController {
                 flag= false;
             }
         }
-        /*for(int i=0; i<gameModel.getPlayers().size(); i ++ ){
+        if(flag){
             choosenPlayer.ChooseTurnPlayer(gameModel.getPlayers());
-        }*/
+        }
         return flag;
     }
 

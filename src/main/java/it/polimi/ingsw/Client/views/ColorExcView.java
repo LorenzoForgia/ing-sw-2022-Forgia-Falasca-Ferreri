@@ -1,35 +1,25 @@
 package it.polimi.ingsw.Client.views;
 
+import it.polimi.ingsw.Model.CardAssistant;
 import it.polimi.ingsw.Model.Color;
-import it.polimi.ingsw.messages.AnsTurnDecidedMsg;
+import it.polimi.ingsw.messages.AnsColorExcMsg;
+import it.polimi.ingsw.messages.AnsMoveStudent1Msg;
 import it.polimi.ingsw.messages.MoveStudent1Msg;
+import it.polimi.ingsw.messages.TurnDecidedMsg;
 
 import java.util.Scanner;
 
-public class TurnDecidedView extends View{
-    private AnsTurnDecidedMsg answerMsg;
-
-
-    public TurnDecidedView(AnsTurnDecidedMsg answerMsg)
+public class ColorExcView extends View {
+    AnsColorExcMsg answerMsg;
+    public ColorExcView(AnsColorExcMsg answerMsg)
     {
         this.answerMsg = answerMsg;
     }
-
-
     @Override
     public void run() {
-        Scanner scanner= new Scanner(System.in);
-        int isl;
-        System.out.println("L'ordine dei giocatori nel round è:");
-        for(int i=0; i< answerMsg.getNickname().size(); i++){
-            System.out.println(answerMsg.getNickname().get(i));
-        }
-        System.out.println("Ha inizio la fase d'azione!");
-
-        /**stampa school board**/
-
-
-        System.out.println("Scegli il colore dello studente che vuoi spostare");
+        int isl=0;
+        System.out.println("Scelta non consentita! Scegli di nuovo il colore di uno studente:");
+        Scanner scanner = new Scanner(System.in);
         Color student= Color.valueOf(scanner.nextLine());
         System.out.println("Vuoi spostarlo nella sala a su un'isola? sala/isola");
         String ris= scanner.nextLine();
