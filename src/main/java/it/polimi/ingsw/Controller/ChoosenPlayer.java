@@ -96,5 +96,6 @@ public class ChoosenPlayer {
         }
     }
     public List<Player> getPlayersforCA(){return PlayersforCA;}
+    public List<Player> getOrderPlayers(){return orderPlayers;}
 }
 
