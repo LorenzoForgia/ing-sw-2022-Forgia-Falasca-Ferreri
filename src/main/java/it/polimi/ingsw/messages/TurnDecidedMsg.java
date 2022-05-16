@@ -31,6 +31,7 @@ public class TurnDecidedMsg extends CommandMsg{
             }
             try{
                 game.CardAssistantInDeck(c, game.getChoosenPlayer().GetPlayerTurn());
+                game.notifyAll();
             }catch(CardAssistantNotAvailableException e){
                 String name= game.getChoosenPlayer().GetPlayerTurn().getNickName();
                 AnsFirstPlayerTurnMsg answMsg = new AnsFirstPlayerTurnMsg(this, name);
