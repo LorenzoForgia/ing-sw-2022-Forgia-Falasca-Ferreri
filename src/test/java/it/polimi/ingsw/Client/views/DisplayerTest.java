@@ -2,6 +2,7 @@ package it.polimi.ingsw.Client.views;
 
 import it.polimi.ingsw.Model.Color;
 import it.polimi.ingsw.Model.ColorTower;
+import it.polimi.ingsw.Model.IslandTiles;
 import it.polimi.ingsw.Model.SchoolBoard;
 import org.junit.jupiter.api.Test;
 
@@ -58,7 +59,19 @@ class DisplayerTest {
         s1.setColorTower(ColorTower.White);
         s1.setNumberOfTower(4);
         sc.add(s1);
+        SchoolBoard s2=new SchoolBoard(0,2);
+        s2.getEntrance().add(Color.Red);
+        s2.getEntrance().add(Color.Blue);
+        s2.getDiningRoom().PutStudent(Color.Blue);
+        s2.getDiningRoom().PutStudent(Color.Red);
+        s2.getProfessorTable().add(Color.Green);
+        s2.getProfessorTable().add(Color.Pink);
+        s2.setColorTower(ColorTower.Black);
+        s2.setNumberOfTower(8);
+        sc.add(s2);
         p.displayAllSchoolboard(sc);
+        IslandTiles i1=new IslandTiles(0,true,3,false,3,true);
+
     }
 
 }

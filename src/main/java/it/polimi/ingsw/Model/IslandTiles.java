@@ -92,6 +92,16 @@ public class IslandTiles implements Location {
         return StudentsInIsland;
     }
 
+    public int getNumberStudentsbyColor(Color c){
+        int counter=0;
+        for(int i=0;i<getStudentsInIsland().size();i++){
+            if(this.getStudentsInIsland().get(i).equals(c)) {
+                counter++;
+            }
+        }
+        return counter;
+    }
+
     public void removeNM(){
         MotherNature= false;
         }
