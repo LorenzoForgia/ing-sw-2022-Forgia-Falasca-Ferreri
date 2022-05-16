@@ -1,6 +1,5 @@
 package it.polimi.ingsw.Controller;
 
-import it.polimi.ingsw.Model.CardAssistant;
 import it.polimi.ingsw.Model.Player;
 
 import java.util.ArrayList;
@@ -89,7 +88,7 @@ public class ChoosenPlayer {
     /**  Check if all players played their own turn **/
     public boolean EndOfAllTurn(){
         if(numPlayerTurn == orderPlayers.size()){
-
+            numPlayerTurn =0;
             return true;
         }else{
             return false;
