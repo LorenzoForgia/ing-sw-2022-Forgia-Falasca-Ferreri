@@ -35,6 +35,7 @@ public class ClientHandler implements Runnable
     private ObjectOutputStream output;
     private ObjectInputStream input;
     private GameController game;
+    private String nickname;
 
 
     /**
@@ -121,4 +122,6 @@ public class ClientHandler implements Runnable
     {
         output.writeObject((Object)answerMsg);
     }
+    public String getNickname(){return nickname;}
+    public void setNickname(String nickname){this.nickname= nickname;}
 }

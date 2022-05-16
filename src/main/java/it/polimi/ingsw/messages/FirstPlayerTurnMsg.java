@@ -15,13 +15,22 @@ public class FirstPlayerTurnMsg extends CommandMsg {
         synchronized (game) {
             if (!game.getSetFirstTurn()) {
                 game.SetFirstPlayerTurn();
-                game.getChoosenPlayer().ChooseTurnPlayerForCardAssistant(game.getGameModel().getPlayers());
                 game.setSetFirstTurn(true);
             }
-
+            System.out.println("tra poco dormo");
             if(!game.getChoosenPlayer().EndOfAllTurn()) {
                 name = game.getChoosenPlayer().GetPlayerTurn().getNickName();
+                try{
+                    while(!clientHandler.getNickname().equals(name)) {
+                        System.out.println("dormo "+clientHandler.getNickname() + " "+ name );
+                        game.wait();
+                    }
+                }catch (InterruptedException e){
+                    e.printStackTrace();
+                }
+                game.notifyAll();
                 answerMsg = new AnsFirstPlayerTurnMsg(this, name);
+                System.out.println("mi sveglio");
                 clientHandler.sendAnswerMessage(answerMsg);
             }
         }

@@ -22,14 +22,20 @@ public class TurnDecidedMsg extends CommandMsg{
         synchronized (game){
             Boolean flag=game.CheckIfAllPlayedCardAssistant();
             try{
-                game.CardAssistantInDeck(c, game.getChoosenPlayer().getPlayersforCA().get(0));
+                while(!clientHandler.getNickname().equals(game.getChoosenPlayer().GetPlayerTurn().getNickName())) {
+                    System.out.println("dormo "+clientHandler.getNickname());
+                    game.wait();
+                }
+            }catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            try{
+                game.CardAssistantInDeck(c, game.getChoosenPlayer().GetPlayerTurn());
             }catch(CardAssistantNotAvailableException e){
-                String name= game.getChoosenPlayer().getPlayersforCA().get(0).getNickName();
+                String name= game.getChoosenPlayer().GetPlayerTurn().getNickName();
                 AnsFirstPlayerTurnMsg answMsg = new AnsFirstPlayerTurnMsg(this, name);
                 clientHandler.sendAnswerMessage(answMsg);
             }
-            game.getPlayAssCard().GetAssCard(game.getChoosenPlayer().getPlayersforCA().get(0), c);
-            game.getChoosenPlayer().getPlayersforCA().remove(0);
             while(!flag){
                 try{
                     game.wait();

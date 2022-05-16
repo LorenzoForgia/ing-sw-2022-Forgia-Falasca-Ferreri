@@ -20,6 +20,7 @@ public class Client implements Runnable
     private View currentView;
 
 
+
     public static void main(String[] args)
     {
         /* Instantiate a new Client. The main thread will become the
@@ -139,4 +140,5 @@ public class Client implements Runnable
             currentView.stopInteraction();
         }
     }
+
 }
