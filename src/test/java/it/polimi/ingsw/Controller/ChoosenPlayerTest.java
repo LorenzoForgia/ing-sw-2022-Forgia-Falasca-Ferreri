@@ -112,6 +112,7 @@ class ChoosenPlayerTest {
         assertEquals(p2, pl.GetPlayerTurn());
         assertEquals(p3, pl.GetPlayerTurn());
         assertEquals(p1, pl.GetPlayerTurn());
+        pl.EndOfAllTurn();
         p.GetAssCard(p2, CardAssistant.Due);
         p.GetAssCard(p1, CardAssistant.Tre);
         p.GetAssCard(p3, CardAssistant.Uno);
@@ -140,6 +141,7 @@ class ChoosenPlayerTest {
         assertEquals(p1, pl.GetPlayerTurn());
         assertEquals(p2, pl.GetPlayerTurn());
         assertEquals(p3, pl.GetPlayerTurn());
+        pl.EndOfAllTurn();
         p.GetAssCard(p1, CardAssistant.Quattro);
         p.GetAssCard(p2, CardAssistant.Quattro);
         p.GetAssCard(p3, CardAssistant.Cinque);

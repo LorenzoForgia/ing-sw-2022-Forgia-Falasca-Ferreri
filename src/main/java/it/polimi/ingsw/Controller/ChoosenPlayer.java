@@ -82,6 +82,7 @@ public class ChoosenPlayer {
         p.ResetTurn();
         numPlayerTurn++;
         PlayersforCA.add(p);
+        EndOfAllTurn();
         return p;
     }
 
