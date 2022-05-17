@@ -29,6 +29,8 @@ public class CharacterCard11 extends CharacterCard{
 
     @Override
     public void UseEffect(Player p) {
+        p.setNameCharacterCard(11);
+        p.setUsedCharacterCard(true);
         int flag=0;
         for(int i=0;flag==0 && i< choosenStudent.size();i++){
             if(choosenStudent.get(i).equals(choosenColor)){

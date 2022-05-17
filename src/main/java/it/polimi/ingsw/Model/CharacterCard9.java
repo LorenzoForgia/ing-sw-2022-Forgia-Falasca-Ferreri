@@ -9,7 +9,8 @@ public class CharacterCard9  extends CharacterCard {
 
     @Override
     public void UseEffect(Player p) {
-
+        p.setNameCharacterCard(9);
+        p.setUsedCharacterCard(true);
     }
 
     @Override

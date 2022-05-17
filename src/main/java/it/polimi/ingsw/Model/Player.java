@@ -30,6 +30,22 @@ public class Player {
         this.CC = CC;
     }
 
+    public void setNameCharacterCard(int nameCharacterCard) {
+        this.nameCharacterCard = nameCharacterCard;
+    }
+
+    public void setUsedCharacterCard(boolean usedCharacterCard) {
+        this.usedCharacterCard = usedCharacterCard;
+    }
+
+    public int getNameCharacterCard() {
+        return nameCharacterCard;
+    }
+
+    public boolean isUsedCharacterCard() {
+        return usedCharacterCard;
+    }
+
     public void setMySchoolBoard(SchoolBoard mySchoolBoard) {
         MySchoolBoard = mySchoolBoard;
     }

@@ -21,6 +21,7 @@ public class CharacterCard5 extends CharacterCard{
     public void UseEffect(Player player) {
         I1.putNET();
         NET = NET -1;
+
     }
 
     public void setI1(IslandTiles i1) {
