@@ -25,7 +25,7 @@ public class MoveStudent1View extends View{
         for(int i=0; i<answerMsg.GetGB().getSchoolBoard().size();i++){
             schoolBoards.add(answerMsg.GetGB().getSchoolBoard().get(i));
         }
-        displayer.displayAllSchoolboard(schoolBoards);
+        displayer.displayAllSchoolboard(schoolBoards,answerMsg.GetPlayers());
         System.out.println("Scegli il colore dello studente che vuoi spostare");
         Color student= Color.valueOf(scanner.nextLine());
         System.out.println("Vuoi spostarlo nella sala a su un'isola? sala/isola");
