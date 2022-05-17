@@ -287,7 +287,7 @@ public class GameController {
             }
         }
         if(p.getCC()!= null){
-            if(p.getCC().getName()==2){
+            if(p.getCC().getName()==3){
                 influenceProfessorTable.RightProfessorTable(gameModel.getGeneralBoard(),gameModel.getNumplayers(),p.getCC(),p);
             }else{
                 influenceProfessorTable.RightProfessorTable(gameModel.getGeneralBoard(),gameModel.getNumplayers());

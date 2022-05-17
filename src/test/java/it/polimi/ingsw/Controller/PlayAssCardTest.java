@@ -96,4 +96,12 @@ class PlayAssCardTest {
         assertTrue(p.CheckIfLast(p3));
 
     }
+
+    @Test
+    public void testResetCardsPlayed(){
+        p.GetAssCard(p1, CardAssistant.Uno);
+        p.GetAssCard(p2, CardAssistant.Due);
+        p.ResetCardPlayed();
+        assertEquals(0,p.GetAssCardPlayed().size());
+    }
 }
