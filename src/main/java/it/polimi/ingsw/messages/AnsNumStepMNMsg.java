@@ -1,6 +1,7 @@
 package it.polimi.ingsw.messages;
 
 import it.polimi.ingsw.Client.ServerHandler;
+import it.polimi.ingsw.Client.views.AskForCloudView;
 import it.polimi.ingsw.Client.views.NumStepExcView;
 
 public class AnsNumStepMNMsg extends AnswerMsg{
@@ -13,7 +14,7 @@ public class AnsNumStepMNMsg extends AnswerMsg{
     @Override
     public void processMessage(ServerHandler serverHandler)
     {
-        /*serverHandler.getClient().transitionToView(new NumStepExcView(this));*/
+        serverHandler.getClient().transitionToView(new AskForCloudView(this));
     }
     public String GetPlayer(){
         return name;
