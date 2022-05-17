@@ -68,6 +68,8 @@ public class ChoosenPlayer {
        }
 
         for (int i = 0; i < players.size(); i++) {
+            System.out.println(players.size());
+            System.out.println("Sto shutdownando:"+players.get(i).GetNumTurn()+"  "+players.get(i));
             orderPlayers.set(players.get(i).GetNumTurn(), players.get(i));
         }
         firstPlayer = orderPlayers.get(0);
