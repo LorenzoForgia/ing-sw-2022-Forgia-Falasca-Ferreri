@@ -1,6 +1,7 @@
 package it.polimi.ingsw.messages;
 
 import it.polimi.ingsw.Controller.GameController;
+import it.polimi.ingsw.Model.GeneralBoard;
 import it.polimi.ingsw.Server.ClientHandler;
 
 import java.io.IOException;
@@ -13,6 +14,7 @@ public class AskCAMsg extends CommandMsg{
         AnsAskCAMsg answerMsg;
         GameController game = clientHandler.getGame();
         String nickname;
+        GeneralBoard generalBoard;
         synchronized (game) {
             Boolean flag = game.CheckIfAllPlayedCardAssistant();
             try {
@@ -24,7 +26,8 @@ public class AskCAMsg extends CommandMsg{
                 e.printStackTrace();
             }
             nickname= game.getChoosenPlayer().GetPlayerTurn().getNickName();
-            answerMsg = new AnsAskCAMsg(this, nickname);
+            generalBoard=game.getGameModel().getGeneralBoard();
+            answerMsg = new AnsAskCAMsg(this, nickname, generalBoard);
             clientHandler.sendAnswerMessage(answerMsg);
         }
     }
