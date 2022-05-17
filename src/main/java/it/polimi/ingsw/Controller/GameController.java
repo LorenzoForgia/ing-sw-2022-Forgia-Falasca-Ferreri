@@ -152,6 +152,15 @@ public class GameController {
         setup.SetBag(gameModel.getBag(),1);
         moveMotherNature.SetIslandWithMotherNature(gameModel.getGeneralBoard());
         SetMotherNatureFirstTurn(moveMotherNature.getI1());
+        if(modexpert){
+            for(int i=0; i < 3; i++){
+                gameModel.getGeneralBoard().getChoosenCard().get(i).SetCard(gameModel.getBag(),gameModel.getGeneralBoard());
+                if(gameModel.getGeneralBoard().getChoosenCard().get(i).getName()==3){
+                    ((CharacterCard3)gameModel.getGeneralBoard().getChoosenCard().get(i)).setNumOfPlayer(numofPlayers);
+                    ((CharacterCard3)gameModel.getGeneralBoard().getChoosenCard().get(i)).setSchoolBoardList(setup.getSBWithTowers());
+                }
+            }
+        }
     }
 
     /** if everyone is login, this method will create for each player the AssistantCard's Deck, it will
@@ -165,8 +174,16 @@ public class GameController {
                 if(gameModel.getModExpert()){
                     gameModel.getPlayers().get(i).setNumberCoins(1);
                     gameModel.getGeneralBoard().removeCoin(1);
+
                 }else{
                     gameModel.getPlayers().get(i).setNumberCoins(0);
+                }
+            }
+            if(gameModel.getModExpert()) {
+                for (int i = 0; i < 3; i++) {
+                    if (gameModel.getGeneralBoard().getChoosenCard().get(i).getName() == 12) {
+                        ((CharacterCard12) gameModel.getGeneralBoard().getChoosenCard().get(i)).setPlayers(gameModel.getPlayers());
+                    }
                 }
             }
             return true;
@@ -299,34 +316,20 @@ public class GameController {
 
     /** Check if the steps are allowed or not. If they are, it changes the position of MotherNature
      * **/
-    public void CheckNumberOfSteps(int n, Player p, CharacterCard c) throws IllegalNumberOfStepException {
-        int move=0;
-        if(c != null){
-            if(c.getName()==4){
-                move = ((CharacterCard4)c).AddTwoMvntMN(p.getCA());
-            }else{
-                move = p.getCA().getMovementMN();
-            }
-        }else{
-            move = p.getCA().getMovementMN();
-        }
-
-        if( n > move|| n<=0 ){
-            throw  new IllegalNumberOfStepException(n);
-        }else{
-            moveMotherNature.MoveMN(gameModel.getGeneralBoard(), n);
-            if(moveMotherNature.CheckIfIslandGetControlled(gameModel.getNumplayers(), gameModel.getGeneralBoard(), moveMotherNature.getI1())){
-                moveMotherNature.GetRightTowerOnIsland(gameModel.getGeneralBoard(), moveMotherNature.getI1(), setup.getSBWithTowers());
-                gameEndState.CheckEndGameImmediately(p, gameModel.getGeneralBoard());
-            }
-        }
-    }
 
     public void CheckNumberOfStepsMN(int n, Player p, CardAssistant a) throws IllegalNumberOfStepException {
         int move=0;
-        if(a != null){
-            move = p.getCA().getMovementMN();
-        }
+        if(p.isUsedCharacterCard()){
+            if(p.getNameCharacterCard()==4){
+                for(int i=0; i < 3; i++){
+                    if(gameModel.getGeneralBoard().getChoosenCard().get(i).getName()== 4){
+                        move = ((CharacterCard4)gameModel.getGeneralBoard().getChoosenCard().get(i)).AddTwoMvntMN(p.getCA());
+                    }
+                }
+            }
+            }else{
+                move = p.getCA().getMovementMN();
+            }
         if( n > move|| n<=0 ){
             throw  new IllegalNumberOfStepException(n);
         }else{

@@ -23,18 +23,20 @@ public class NumberOfStep extends CommandMsg{
     {
         AnswIfAllowed answerMsg;
         GameController game = clientHandler.getGame();
-
+/*
         try {
-            game.CheckNumberOfSteps(Steps, player, CC);
+          me.CheckNumberOfSteps(Steps, player, CC);
             answerMsg = new AnswIfAllowed(this, AnswIfAllowed.Status.VALID);
         } catch (IllegalNumberOfStepException e) {
             answerMsg = new AnswIfAllowed(this, AnswIfAllowed.Status.INVALID);
         }
+        */
 
-   clientHandler.sendAnswerMessage(answerMsg);
+  /* clientHandler.sendAnswerMessage(answerMsg);*/
   }
 
     public int getSteps() {
         return Steps;
     }
+
 }
