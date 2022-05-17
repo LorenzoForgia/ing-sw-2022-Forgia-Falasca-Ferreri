@@ -12,13 +12,13 @@ class DisplayerTest {
     public void testDisplayer(){
         Displayer p=new Displayer();
         ArrayList<Color> entrance=new ArrayList<>();
-        entrance.add(Color.Blue);
+
         entrance.add(Color.Pink);
         entrance.add(Color.Green);
         entrance.add(Color.Red);
         entrance.add(Color.Pink);
         entrance.add(Color.Green);
-        entrance.add(Color.Blue);
+
         entrance.add(Color.Red);
         entrance.add(Color.Red);
 
@@ -66,7 +66,8 @@ class DisplayerTest {
         s2.setColorTower(ColorTower.White);
         s2.setNumberOfTower(8);
         sc.add(s2);
-        /*p.displayAllSchoolboard(sc);*/
+
+        /*p.displayAllSchoolboard(sc)*/
         IslandTiles i1=new IslandTiles(0,true,3,false,3,true);
         p.displayAssistantCard(CardAssistant.Quattro);
         p.displayWallet(10);
