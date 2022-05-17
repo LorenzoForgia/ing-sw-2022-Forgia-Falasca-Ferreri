@@ -35,18 +35,19 @@ public class Client implements Runnable
     public void run()
     {
         Scanner scanner = new Scanner(System.in);
-
+       /* a fine implementazione
         System.out.println("IP address of server?");
         String ip = scanner.nextLine();
         System.out.println("Server port?");
-        int socketPort = Integer.parseInt(scanner.nextLine());
+        int socketPort = Integer.parseInt(scanner.nextLine());*/
 
         /* Open connection to the server and start a thread for handling
          * communication. */
 
         Socket server;
         try {
-            server = new Socket(ip, socketPort);
+            server = new Socket("127.0.0.1", 4567);
+            System.out.println("Connesso al Server: IP=127.0.0.1 , Port=4567");
         } catch (IOException e) {
             System.out.println("server unreachable");
             return;

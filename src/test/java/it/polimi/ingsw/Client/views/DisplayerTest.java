@@ -66,7 +66,7 @@ class DisplayerTest {
         s2.getDiningRoom().PutStudent(Color.Red);
         s2.getProfessorTable().add(Color.Green);
         s2.getProfessorTable().add(Color.Pink);
-        s2.setColorTower(ColorTower.Black);
+        s2.setColorTower(ColorTower.White);
         s2.setNumberOfTower(8);
         sc.add(s2);
         p.displayAllSchoolboard(sc);
