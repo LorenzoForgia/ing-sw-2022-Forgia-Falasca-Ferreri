@@ -1,10 +1,11 @@
 package it.polimi.ingsw.Model;
+import java.io.Serializable;
 import java.util.*;
 
 /**
  * @author Lorenzo Forgia
  */
-public class Bag {
+public class Bag implements Serializable {
     private List<Color> students=new ArrayList<Color>();
 
 /** setStudents: in the beginning of game 10 students,then 120 **/

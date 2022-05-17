@@ -2,7 +2,9 @@ package it.polimi.ingsw.Model;
 
 /*@author Luigia Falasca*/
 
-public class Player {
+import java.io.Serializable;
+
+public class Player implements Serializable {
     private String NickName;
     private int NumberCoins;
     private int Turn=0;

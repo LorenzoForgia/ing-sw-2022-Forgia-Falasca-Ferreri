@@ -1,10 +1,11 @@
 package it.polimi.ingsw.Model;
+import java.io.Serializable;
 import java.util.*;
 
 /**
  * @author Lorenzo Forgia
  */
-public class CloudTiles {
+public class CloudTiles implements Serializable {
     private int Numid;
     private List<Color> stud=new ArrayList<>();
 

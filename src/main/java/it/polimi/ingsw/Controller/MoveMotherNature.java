@@ -47,8 +47,8 @@ public class MoveMotherNature {
 
         return influence;
     }
+/*/*Overload*/
 
-    /*Overload*/
     private int influenceTot(List<Color> student, IslandTiles I, ColorTower ct, CharacterCard card, SchoolBoard SbPlayer) {
         int influence = 0;
         int influenceT = 0;
@@ -65,13 +65,13 @@ public class MoveMotherNature {
 
             if (card.getName() == 6) {     /*Effect6*/
                 if(ct.equals(I.getColTower())) {
-                    influence = ((CharacterCard6) card).useEffect6(I, influence);
+                   /* influence = ((CharacterCard6) card).useEffect6(I, influence);*/
 
                 }
 
             } else if (card.getName() == 8) {/*Effect8*/
                 if(SbPlayer.ColorTower().equals(ct)) {
-                    influence = ((CharacterCard8) card).useEffect8(I, influence);
+                   /* influence = ((CharacterCard8) card).useEffect8(I, influence);*/
 
                 }
             }

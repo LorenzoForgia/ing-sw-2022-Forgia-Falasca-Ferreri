@@ -1,10 +1,12 @@
 package it.polimi.ingsw.Model;
 
+import java.io.Serializable;
 import java.util.*;
+import java.io.*;
 
 /*@author Luigia Falasca*/
 
-    public class GeneralBoard {
+    public class GeneralBoard implements Serializable {
     private int Coins;
     private int NoEntryTiles;
     List<CloudTiles> Clouds = new ArrayList<>();
