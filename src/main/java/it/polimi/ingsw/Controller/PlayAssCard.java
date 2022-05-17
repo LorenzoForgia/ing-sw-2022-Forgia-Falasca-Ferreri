@@ -19,6 +19,10 @@ public class PlayAssCard {
         return cards;
     }
 
+    public void ResetCardPlayed(){
+        cards= new ArrayList<>();
+    }
+
     boolean CheckIfLast(Player p) {
         boolean flag = true;
         List<CardAssistant> cards2 = new ArrayList<>();
