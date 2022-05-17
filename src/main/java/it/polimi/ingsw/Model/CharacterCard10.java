@@ -1,9 +1,20 @@
 package it.polimi.ingsw.Model;
 import java.util.*;
-public class CharacterCard10 extends CharacterCard{
+public class CharacterCard10 extends CharacterCard {
+
 
     public CharacterCard10(int name, int coins, int countUse) {
         super(name, coins, countUse);
+    }
+
+    @Override
+    public void UseEffect(Player p) {
+
+    }
+
+    @Override
+    public void SetCard(Bag b, GeneralBoard gb) {
+
     }
     public void EffectchangeStudents(List<Color> entrancestud,List<Color> diningstud,SchoolBoard sb){
       Color temp;

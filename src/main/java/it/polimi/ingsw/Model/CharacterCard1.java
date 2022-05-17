@@ -1,28 +1,50 @@
 package it.polimi.ingsw.Model;
 
 import java.util.ArrayList;
-import java.util.Random;
 
-public class CharacterCard1 extends CharacterCard {
+/** Set the card putting 4 students on it
+ * Move a student from this card to an Island
+ * The Player should choose the color to pick and the Island
+ * **/
+
+public class CharacterCard1 extends CharacterCard{
+
     private ArrayList<Color> choosenStudent = new ArrayList<Color>();
+    Color choosenColor;
+    IslandTiles Ichosen;
+    Bag bag;
 
     public CharacterCard1(int name, int coins, int countUse) {
         super(name, coins, countUse);
     }
 
-    public void DrawStudent(Bag bag) {              /*draw four student from the bag and putting them on the card*/
+    @Override
+    public void SetCard(Bag b, GeneralBoard gb) {
+        bag= b;
         for (int i = 0; i < 4; i++) {
             this.choosenStudent.add(bag.CatchStudent());
         }
     }
-    public ArrayList<Color> GetchoosenStudent(){    /*method only for tests*/
+
+    public ArrayList<Color> GetchoosenStudent(){
         return choosenStudent;
     }
-    public void PutOnIsland(IslandTiles i, Color c) {      /* player choose student from the card and island and put him on the island*/
-        i.PutStudent(c);
+
+
+    @Override
+    public void UseEffect(Player p) {
+        Ichosen.PutStudent(choosenColor);
+        if(!bag.BagIsEmpty()){
+            this.choosenStudent.add(bag.CatchStudent());
+        }
     }
-    public void AddStudFromBag(Bag bag){         /*add a student draw from the bag on tne card*/
-        this.choosenStudent.add(bag.CatchStudent());
+
+    public void setChoosenColor(Color choosenColor) {
+        this.choosenColor = choosenColor;
+    }
+
+    public void setIchosen(IslandTiles ichosen) {
+        Ichosen = ichosen;
     }
 }
 

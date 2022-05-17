@@ -1,6 +1,7 @@
 package it.polimi.ingsw.Controller;
 
 import it.polimi.ingsw.Exception.CardAssistantNotAvailableException;
+import it.polimi.ingsw.Exception.IllegalNickNameException;
 import it.polimi.ingsw.Model.*;
 import org.junit.jupiter.api.*;
 
@@ -169,6 +170,7 @@ class GameControllerTest {
         assertEquals(9, players.get(1).getMyDeck().GetDeck().size());
 
     }
+
 
 
 }

@@ -11,7 +11,8 @@ public class Player {
     private DeckCardAssistant MyDeck;
     private CardAssistant CA;
     private CharacterCard CC;
-
+    private int nameCharacterCard;
+    private boolean usedCharacterCard;
 
     public Player(String nickName) {
         NickName = nickName;
