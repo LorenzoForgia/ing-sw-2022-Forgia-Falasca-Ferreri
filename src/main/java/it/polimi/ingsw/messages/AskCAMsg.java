@@ -14,7 +14,6 @@ public class AskCAMsg extends CommandMsg{
         AnsAskCAMsg answerMsg;
         GameController game = clientHandler.getGame();
         String nickname;
-        GeneralBoard generalBoard;
         synchronized (game) {
             Boolean flag = game.CheckIfAllPlayedCardAssistant();
             try {
@@ -26,8 +25,7 @@ public class AskCAMsg extends CommandMsg{
                 e.printStackTrace();
             }
             nickname= game.getChoosenPlayer().GetPlayerTurn().getNickName();
-            generalBoard=game.getGameModel().getGeneralBoard();
-            answerMsg = new AnsAskCAMsg(this, nickname, generalBoard);
+            answerMsg = new AnsAskCAMsg(this, nickname, game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers());
             clientHandler.sendAnswerMessage(answerMsg);
         }
     }

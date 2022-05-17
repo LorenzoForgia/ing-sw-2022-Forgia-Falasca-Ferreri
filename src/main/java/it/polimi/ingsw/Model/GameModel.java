@@ -10,9 +10,9 @@ public class GameModel implements Serializable {
     private int numplayers;
     private GeneralBoard gb;
     private Bag b;
-    private List<Player> players = new ArrayList<>();
+    private ArrayList<Player> players = new ArrayList<>();
 
-    public List<Player> getPlayers() {
+    public ArrayList<Player> getPlayers() {
         return players;
     }
 

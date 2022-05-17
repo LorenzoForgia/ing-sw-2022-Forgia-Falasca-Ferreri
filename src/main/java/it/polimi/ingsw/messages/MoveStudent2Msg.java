@@ -41,7 +41,7 @@ public class MoveStudent2Msg extends CommandMsg{
                     }
                 }
             }
-            AnsMoveStudent2Msg ansMoveStudent2Msg= new AnsMoveStudent2Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName());
+            AnsMoveStudent2Msg ansMoveStudent2Msg= new AnsMoveStudent2Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers());
             clientHandler.sendAnswerMessage(ansMoveStudent2Msg);
         }
     }
