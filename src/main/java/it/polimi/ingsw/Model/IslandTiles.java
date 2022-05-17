@@ -1,9 +1,10 @@
 package it.polimi.ingsw.Model;
 
+import java.io.Serializable;
 import java.util.*;
 
 /*@author Luigia Falasca*/
-public class IslandTiles implements Location {
+public class IslandTiles implements Location, Serializable {
     private int NumberID;
     private boolean MotherNature;
     private int size;

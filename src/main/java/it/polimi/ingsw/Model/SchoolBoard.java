@@ -1,7 +1,8 @@
 package it.polimi.ingsw.Model;
+import java.io.Serializable;
 import java.util.*;
 
-public class SchoolBoard {
+public class SchoolBoard implements Serializable {
     private int NumberId;
     private int Student;
     private ColorTower colorTower;

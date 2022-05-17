@@ -1,5 +1,7 @@
 package it.polimi.ingsw.Model;
 
-public interface Location {
+import java.io.Serializable;
+
+public interface Location extends Serializable {
     public void PutStudent(Color c);
 }

@@ -2,9 +2,10 @@ package it.polimi.ingsw.Model;
 
 /*@author Luigia Falasca*/
 
+import java.io.Serializable;
 import java.util.*;
 
-public class DeckCardAssistant {
+public class DeckCardAssistant implements Serializable {
     List<CardAssistant> Cards = new ArrayList<>();
 
     public DeckCardAssistant(){
