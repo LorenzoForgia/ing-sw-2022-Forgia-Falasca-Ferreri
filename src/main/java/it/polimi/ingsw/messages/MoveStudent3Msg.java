@@ -27,6 +27,7 @@ public class MoveStudent3Msg extends CommandMsg{
                     clientHandler.sendAnswerMessage(ansColorExcMsg);
                 }
                 game.PutStudentInLocation(s, game.getChoosenPlayer().GetPlayerTurn().getMySchoolBoard().getDiningRoom(), game.getChoosenPlayer().GetPlayerTurn());
+                game.DiningRoomChosen(game.getChoosenPlayer().GetPlayerTurn(), s);
             } else {
                 try {
                     game.CheckColor(s, game.getChoosenPlayer().GetPlayerTurn());

@@ -19,13 +19,13 @@ public class MoveStudent1Msg extends CommandMsg{
     {
         GameController game = clientHandler.getGame();
         synchronized (game) {
-            try {
+            /*try {
                 while (!clientHandler.getNickname().equals(game.getChoosenPlayer().GetPlayerTurn().getNickName())) {
                     game.wait();
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();
-            }
+            }*/
 
             if (l == 12) {
                 try {
@@ -35,6 +35,7 @@ public class MoveStudent1Msg extends CommandMsg{
                     clientHandler.sendAnswerMessage(ansColorExcMsg);
                 }
                 game.PutStudentInLocation(s, game.getChoosenPlayer().GetPlayerTurn().getMySchoolBoard().getDiningRoom(), game.getChoosenPlayer().GetPlayerTurn());
+                game.DiningRoomChosen(game.getChoosenPlayer().GetPlayerTurn(), s);
             }else{
                 try {
                     game.CheckColor(s, game.getChoosenPlayer().GetPlayerTurn());
