@@ -61,9 +61,11 @@ public class ChoosenPlayer {
      * Get the order of the players after the turn is set
      **/
     private void GetOrderPlayers(List<Player> players) {
-        for (int i = 0; i < players.size(); i++) {
-            orderPlayers.add(players.get(i));
-        }
+       if(orderPlayers.size()==0){
+           for (int i = 0; i < players.size(); i++) {
+               orderPlayers.add(players.get(i));
+           }
+       }
 
         for (int i = 0; i < players.size(); i++) {
             orderPlayers.set(players.get(i).GetNumTurn(), players.get(i));
@@ -73,8 +75,10 @@ public class ChoosenPlayer {
     }
 
     private void GetOrderOfPlayersForCardAssistant(List<Player> players) {
-        for (int i = 0; i < players.size(); i++) {
-            orderPlayers.add(players.get(i));
+        if(orderPlayers.size()==0) {
+            for (int i = 0; i < players.size(); i++) {
+                orderPlayers.add(players.get(i));
+            }
         }
 
         for (int i = 0; i < players.size(); i++) {
