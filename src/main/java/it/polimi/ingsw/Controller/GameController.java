@@ -239,11 +239,13 @@ public class GameController {
             if(playAssCard.GetAssCardPlayed().size()==gameModel.getNumplayers()){
                 flag= true;
             }
-
-        if(flag){
-            choosenPlayer.ChooseTurnPlayer(gameModel.getPlayers());
-        }
+            if(flag && choosenPlayer.getNumPlayerTurn()==gameModel.getNumplayers()){
+                setOrder();
+            }
         return flag;
+    }
+    private void setOrder(){
+        choosenPlayer.ChooseTurnPlayer(gameModel.getPlayers());
     }
 
     /** Check if the student that the player wants to move is in his Entrance or not; if it's not it will
