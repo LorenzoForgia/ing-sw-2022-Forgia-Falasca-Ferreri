@@ -1,9 +1,6 @@
 package it.polimi.ingsw.Client.views;
 
-import it.polimi.ingsw.Model.Color;
-import it.polimi.ingsw.Model.ColorTower;
-import it.polimi.ingsw.Model.IslandTiles;
-import it.polimi.ingsw.Model.SchoolBoard;
+import it.polimi.ingsw.Model.*;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -71,7 +68,8 @@ class DisplayerTest {
         sc.add(s2);
         p.displayAllSchoolboard(sc);
         IslandTiles i1=new IslandTiles(0,true,3,false,3,true);
-
+        p.displayAssistantCard(CardAssistant.Quattro);
+        p.displayWallet(10);
     }
 
 }

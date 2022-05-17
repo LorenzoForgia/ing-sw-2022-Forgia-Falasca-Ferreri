@@ -1,9 +1,6 @@
 package it.polimi.ingsw.Client.views;
 
-import it.polimi.ingsw.Model.Color;
-import it.polimi.ingsw.Model.ColorTower;
-import it.polimi.ingsw.Model.IslandTiles;
-import it.polimi.ingsw.Model.SchoolBoard;
+import it.polimi.ingsw.Model.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -227,6 +224,16 @@ public class Displayer {
         }
         System.out.print("\n");
     }
+    public void displayAssistantCard(CardAssistant c){
+        System.out.println("CARTA ASSISTENTE:"+c.getCardValue());
+        System.out.println("|"+Color.Blue+"Valore:"+c.getCardValue()+" "+Color.Red+"Mov.MN:"+c.getMovementMN()+Color.Reset+"|");
+
+    }
+
+    public void displayWallet(int coin){
+        System.out.print("|");
+        System.out.println(Color.Yellow+"Monete spendibili:"+coin+Color.Reset+"|");
 
 
+    }
 }
