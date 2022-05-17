@@ -77,8 +77,11 @@ class ChoosenPlayerTest {
         pl.setFirstPlayer(p1);
         pl.ChooseTurnPlayerForCardAssistant(players);
         assertEquals(p1, pl.GetPlayerTurn());
+        pl.incrementTurn();
         assertEquals(p2, pl.GetPlayerTurn());
+        pl.incrementTurn();
         assertEquals(p3, pl.GetPlayerTurn());
+        pl.incrementTurn();
         assertTrue(pl.EndOfAllTurn());
     }
 
@@ -90,8 +93,12 @@ class ChoosenPlayerTest {
         assertEquals(1,p1.getTurnToPlayCardAssistant());
         assertEquals(2,p2.getTurnToPlayCardAssistant());
         assertEquals(p3, pl.GetPlayerTurn());
+        pl.incrementTurn();
         assertEquals(p1, pl.GetPlayerTurn());
+        pl.incrementTurn();
         assertEquals(p2, pl.GetPlayerTurn());
+        pl.incrementTurn();
+        assertEquals(3, pl.getOrderPlayers().size());
         assertTrue(pl.EndOfAllTurn());
     }
 
@@ -100,8 +107,11 @@ class ChoosenPlayerTest {
         pl.setFirstPlayer(p2);
         pl.ChooseTurnPlayerForCardAssistant(players);
         assertEquals(p2, pl.GetPlayerTurn());
+        pl.incrementTurn();
         assertEquals(p3, pl.GetPlayerTurn());
+        pl.incrementTurn();
         assertEquals(p1, pl.GetPlayerTurn());
+        pl.incrementTurn();
         assertTrue(pl.EndOfAllTurn());
     }
 
@@ -110,8 +120,11 @@ class ChoosenPlayerTest {
         pl.setFirstPlayer(p2);
         pl.ChooseTurnPlayerForCardAssistant(players);
         assertEquals(p2, pl.GetPlayerTurn());
+        pl.incrementTurn();
         assertEquals(p3, pl.GetPlayerTurn());
+        pl.incrementTurn();
         assertEquals(p1, pl.GetPlayerTurn());
+        pl.incrementTurn();
         pl.EndOfAllTurn();
         p.GetAssCard(p2, CardAssistant.Due);
         p.GetAssCard(p1, CardAssistant.Tre);
@@ -127,8 +140,12 @@ class ChoosenPlayerTest {
         assertEquals(1, p2.GetNumTurn() );
         assertEquals(2, p1.GetNumTurn());
         assertEquals(p3, pl.GetPlayerTurn());
+        pl.incrementTurn();
         assertEquals(p2, pl.GetPlayerTurn());
+        pl.incrementTurn();
+        assertFalse(pl.EndOfAllTurn());
         assertEquals(p1, pl.GetPlayerTurn());
+        pl.incrementTurn();
 
     }
 
@@ -139,9 +156,12 @@ class ChoosenPlayerTest {
         pl.setFirstPlayer(p1);
         pl.ChooseTurnPlayerForCardAssistant(players);
         assertEquals(p1, pl.GetPlayerTurn());
+        pl.incrementTurn();
         assertEquals(p2, pl.GetPlayerTurn());
+        pl.incrementTurn();
         assertEquals(p3, pl.GetPlayerTurn());
-        pl.EndOfAllTurn();
+        pl.incrementTurn();
+        assertTrue(pl.EndOfAllTurn());
         p.GetAssCard(p1, CardAssistant.Quattro);
         p.GetAssCard(p2, CardAssistant.Quattro);
         p.GetAssCard(p3, CardAssistant.Cinque);
@@ -150,9 +170,13 @@ class ChoosenPlayerTest {
         assertEquals(1, p2.GetNumTurn() );
         assertEquals(2, p3.GetNumTurn());
         assertEquals(p1, pl.GetPlayerTurn());
+        pl.incrementTurn();
         assertEquals(p2, pl.GetPlayerTurn());
+        pl.incrementTurn();
         assertEquals(p3, pl.GetPlayerTurn());
-
+        pl.incrementTurn();
+        assertEquals(3, pl.getOrderPlayers().size());
+        assertTrue(pl.EndOfAllTurn());
     }
 
 
