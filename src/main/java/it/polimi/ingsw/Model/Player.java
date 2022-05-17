@@ -2,7 +2,9 @@ package it.polimi.ingsw.Model;
 
 /*@author Luigia Falasca*/
 
-public class Player {
+import java.io.Serializable;
+
+public class Player implements Serializable {
     private String NickName;
     private int NumberCoins;
     private int Turn=0;
@@ -28,6 +30,22 @@ public class Player {
 
     public void setCC(CharacterCard CC) {
         this.CC = CC;
+    }
+
+    public void setNameCharacterCard(int nameCharacterCard) {
+        this.nameCharacterCard = nameCharacterCard;
+    }
+
+    public void setUsedCharacterCard(boolean usedCharacterCard) {
+        this.usedCharacterCard = usedCharacterCard;
+    }
+
+    public int getNameCharacterCard() {
+        return nameCharacterCard;
+    }
+
+    public boolean isUsedCharacterCard() {
+        return usedCharacterCard;
     }
 
     public void setMySchoolBoard(SchoolBoard mySchoolBoard) {

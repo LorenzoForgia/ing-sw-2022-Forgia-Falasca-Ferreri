@@ -31,6 +31,9 @@ public class ChoosenPlayer {
 
     }
 
+    public int getNumPlayerTurn() {
+        return numPlayerTurn;
+    }
 
     /**
      * Set the turn before the players play the cardAssistant

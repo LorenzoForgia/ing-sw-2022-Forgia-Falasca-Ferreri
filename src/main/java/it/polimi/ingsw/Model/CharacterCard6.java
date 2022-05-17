@@ -13,11 +13,13 @@ public class CharacterCard6 extends CharacterCard{
 
     @Override
     public void UseEffect(Player p) {
-
+        p.setNameCharacterCard(6);
+        p.setUsedCharacterCard(true);
     }
 
     @Override
     public void SetCard(Bag b, GeneralBoard gb) {
+
 
     }
 }

@@ -33,6 +33,8 @@ public class CharacterCard1 extends CharacterCard{
 
     @Override
     public void UseEffect(Player p) {
+        p.setUsedCharacterCard(true);
+        p.setNameCharacterCard(1);
         Ichosen.PutStudent(choosenColor);
         if(!bag.BagIsEmpty()){
             this.choosenStudent.add(bag.CatchStudent());

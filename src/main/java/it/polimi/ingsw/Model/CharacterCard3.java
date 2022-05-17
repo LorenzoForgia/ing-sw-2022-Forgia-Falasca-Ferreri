@@ -25,6 +25,8 @@ public class CharacterCard3 extends CharacterCard{
 
     @Override
     public void UseEffect(Player player) {
+        player.setNameCharacterCard(3);
+        player.setUsedCharacterCard(true);
         if(moveMotherNature.CheckIfIslandGetControlled(numOfPlayer,generalBoard, I1)){
             moveMotherNature.GetRightTowerOnIsland(generalBoard, I1, schoolBoardList);
         }

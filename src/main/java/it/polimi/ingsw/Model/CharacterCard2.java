@@ -13,7 +13,8 @@ public class CharacterCard2 extends CharacterCard {
 
     @Override
     public void UseEffect(Player p) {
-
+        p.setNameCharacterCard(2);
+        p.setUsedCharacterCard(true);
     }
 
     @Override

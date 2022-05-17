@@ -1,8 +1,9 @@
 package it.polimi.ingsw.Model;
+import java.io.Serializable;
 import java.util.*;
 import java.util.ArrayList;
 
-public class DiningRoom implements Location{
+public class DiningRoom implements Location, Serializable {
 
     private ArrayList<ArrayList<Color>> DiningRoom=new ArrayList<ArrayList<Color>>(5);
     public DiningRoom(){

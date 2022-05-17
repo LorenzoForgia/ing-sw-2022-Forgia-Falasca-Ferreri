@@ -1,10 +1,11 @@
 package it.polimi.ingsw.Model;
 
 import javax.lang.model.element.Name;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class DeckCC {
+public class DeckCC implements Serializable {
     private ArrayList<CharacterCard> characterCards= new ArrayList<CharacterCard>();
 
     public DeckCC() {

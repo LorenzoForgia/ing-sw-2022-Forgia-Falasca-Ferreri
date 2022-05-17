@@ -1,6 +1,8 @@
 package it.polimi.ingsw.Model;
 
-public enum Color {
+import java.io.Serializable;
+
+public enum Color implements Serializable {
     Green(0,"\u001B[32m"), Red(1,"\u001B[31m"), Yellow(2,"\u001B[93m"), Pink(3,"\u001B[35m"), Blue(4,"\u001B[34m");
     private final int intcolor;
     private String escape;

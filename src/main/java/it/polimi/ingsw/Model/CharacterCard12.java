@@ -17,6 +17,8 @@ public class CharacterCard12 extends CharacterCard{
 
     @Override
     public void UseEffect(Player p) {
+        p.setNameCharacterCard(12);
+        p.setUsedCharacterCard(true);
         for(int i=0,limit=3;i<players.size();i++,limit=3){
             if(players.get(i).getMySchoolBoard().getDiningRoom().GetNumberStudent(chosenColor)<3){
                 limit=players.get(i).getMySchoolBoard().getDiningRoom().GetNumberStudent(chosenColor);
