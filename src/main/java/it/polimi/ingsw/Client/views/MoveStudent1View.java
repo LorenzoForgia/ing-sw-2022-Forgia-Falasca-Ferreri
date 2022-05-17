@@ -1,10 +1,12 @@
 package it.polimi.ingsw.Client.views;
 
 import it.polimi.ingsw.Model.Color;
+import it.polimi.ingsw.Model.SchoolBoard;
 import it.polimi.ingsw.messages.AnsAskCAMsg;
 import it.polimi.ingsw.messages.AnsMoveStudent1Msg;
 import it.polimi.ingsw.messages.MoveStudent1Msg;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MoveStudent1View extends View{
@@ -16,9 +18,14 @@ public class MoveStudent1View extends View{
     @Override
     public void run() {
         Scanner scanner= new Scanner(System.in);
+        Displayer displayer= new Displayer();
+        ArrayList<SchoolBoard> schoolBoards= new ArrayList<SchoolBoard>();
         int isl;
         System.out.println(answerMsg.GetPlayer() + " è il tuo turno!");
-        /**stampa schoolboard**/
+        for(int i=0; i<answerMsg.GetGB().getSchoolBoard().size();i++){
+            schoolBoards.add(answerMsg.GetGB().getSchoolBoard().get(i));
+        }
+        displayer.displayAllSchoolboard(schoolBoards);
         System.out.println("Scegli il colore dello studente che vuoi spostare");
         Color student= Color.valueOf(scanner.nextLine());
         System.out.println("Vuoi spostarlo nella sala a su un'isola? sala/isola");
