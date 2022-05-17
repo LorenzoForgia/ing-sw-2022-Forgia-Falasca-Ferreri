@@ -234,12 +234,12 @@ public class GameController {
     /** Check if all players had played the card assistant
      * **/
     public boolean CheckIfAllPlayedCardAssistant(){
-        boolean flag= true;
-        for(int i=0; i<gameModel.getPlayers().size(); i ++ ){
-            if(gameModel.getPlayers().get(i).getCA()== null){
-                flag= false;
+        boolean flag= false;
+
+            if(playAssCard.GetAssCardPlayed().size()==gameModel.getNumplayers()){
+                flag= true;
             }
-        }
+
         if(flag){
             choosenPlayer.ChooseTurnPlayer(gameModel.getPlayers());
         }

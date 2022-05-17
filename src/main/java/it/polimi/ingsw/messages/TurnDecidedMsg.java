@@ -20,7 +20,10 @@ public class TurnDecidedMsg extends CommandMsg{
         GameController game = clientHandler.getGame();
         ArrayList<String> nickname = new ArrayList<String>();
         synchronized (game){
-            Boolean flag=game.CheckIfAllPlayedCardAssistant();
+            Boolean flag=true;
+            if(game.CheckIfAllPlayedCardAssistant() && flag) {
+                flag = false;
+            }
             try{
                 while(!clientHandler.getNickname().equals(game.getChoosenPlayer().GetPlayerTurn().getNickName())) {
                     System.out.println("dormo "+clientHandler.getNickname());
