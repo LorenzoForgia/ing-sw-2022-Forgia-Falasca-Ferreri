@@ -3,6 +3,7 @@ package it.polimi.ingsw.messages;
 import it.polimi.ingsw.Controller.GameController;
 import it.polimi.ingsw.Exception.CardAssistantNotAvailableException;
 import it.polimi.ingsw.Model.CardAssistant;
+import it.polimi.ingsw.Model.GeneralBoard;
 import it.polimi.ingsw.Server.ClientHandler;
 
 import java.io.IOException;
@@ -19,6 +20,7 @@ public class TurnDecidedMsg extends CommandMsg{
         AnsTurnDecidedMsg answerMsg;
         GameController game = clientHandler.getGame();
         ArrayList<String> nickname = new ArrayList<String>();
+
         synchronized (game){
             Boolean flag=game.CheckIfAllPlayedCardAssistant();
             try{
@@ -49,6 +51,7 @@ public class TurnDecidedMsg extends CommandMsg{
             for (int i = 0; i < game.getChoosenPlayer().getOrderPlayers().size(); i++) {
                 nickname.add(game.getChoosenPlayer().getOrderPlayers().get(i).getNickName());
             }
+
             answerMsg = new AnsTurnDecidedMsg(this, nickname);
             clientHandler.sendAnswerMessage(answerMsg);
         }
