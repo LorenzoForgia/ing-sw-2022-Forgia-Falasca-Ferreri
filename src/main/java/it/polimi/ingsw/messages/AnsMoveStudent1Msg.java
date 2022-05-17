@@ -6,6 +6,7 @@ import it.polimi.ingsw.Client.views.MoveStudent2View;
 public class AnsMoveStudent1Msg extends AnswerMsg{
     private String name;
 
+
     public AnsMoveStudent1Msg(CommandMsg parent, String name){
         super(parent);
         this.name = name;

@@ -27,7 +27,7 @@ public class AskCAMsg extends CommandMsg{
             }
             nickname= game.getChoosenPlayer().GetPlayerTurn().getNickName();
             generalBoard=game.getGameModel().getGeneralBoard();
-            answerMsg = new AnsAskCAMsg(this, nickname, generalBoard);
+            answerMsg = new AnsAskCAMsg(this, nickname, generalBoard, game.getGameModel().getPlayers());
             clientHandler.sendAnswerMessage(answerMsg);
         }
     }
