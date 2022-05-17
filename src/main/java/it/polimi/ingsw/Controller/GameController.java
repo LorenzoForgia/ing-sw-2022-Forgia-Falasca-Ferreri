@@ -347,7 +347,6 @@ public class GameController {
                 flag=true;
             }
         }
-
         return flag;
     }
 
