@@ -320,6 +320,22 @@ public class GameController {
         }
     }
 
+    public void CheckNumberOfStepsMN(int n, Player p, CardAssistant a) throws IllegalNumberOfStepException {
+        int move=0;
+        if(a != null){
+            move = p.getCA().getMovementMN();
+        }
+        if( n > move|| n<=0 ){
+            throw  new IllegalNumberOfStepException(n);
+        }else{
+            moveMotherNature.MoveMN(gameModel.getGeneralBoard(), n);
+            if(moveMotherNature.CheckIfIslandGetControlled(gameModel.getNumplayers(), gameModel.getGeneralBoard(), moveMotherNature.getI1())){
+                moveMotherNature.GetRightTowerOnIsland(gameModel.getGeneralBoard(), moveMotherNature.getI1(), setup.getSBWithTowers());
+                gameEndState.CheckEndGameImmediately(p, gameModel.getGeneralBoard());
+            }
+        }
+    }
+
 
 
     private boolean CloudInList( CloudTiles c){
