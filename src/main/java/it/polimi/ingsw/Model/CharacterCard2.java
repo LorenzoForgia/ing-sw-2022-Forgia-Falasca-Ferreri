@@ -2,7 +2,7 @@ package it.polimi.ingsw.Model;
 
 /** Take the control of the professor even if you have the same number of students in the dining room
  * The player doesn't have to choose anything
- * **/
+ * The real effect is implemented in game controller**/
 
 public class CharacterCard2 extends CharacterCard {
 

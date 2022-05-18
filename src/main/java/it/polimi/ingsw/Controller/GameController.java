@@ -303,9 +303,9 @@ public class GameController {
                 gameModel.getGeneralBoard().removeCoin(1);
             }
         }
-        if(p.getCC()!= null){
-            if(p.getCC().getName()==3){
-                influenceProfessorTable.RightProfessorTable(gameModel.getGeneralBoard(),gameModel.getNumplayers(),p.getCC(),p);
+        if(p.isUsedCharacterCard()){
+            if(p.getNameCharacterCard()==2){
+                influenceProfessorTable.RightProfessorTable(gameModel.getGeneralBoard(),gameModel.getNumplayers(),p);
             }else{
                 influenceProfessorTable.RightProfessorTable(gameModel.getGeneralBoard(),gameModel.getNumplayers());
             }
@@ -437,19 +437,19 @@ public class GameController {
         }
     }
 
-    /** Check if the player has enough money to play the character card. If he has them, then
-     * the card is saved in Player, the count use is set and the money are given to the
-     * general board
+    /** Check if the player has enough money to play the character card.
      * */
     public void CheckIfEnoughMoney(Player p, CharacterCard c) throws NotEnoughCoinException{
         if(c.getCost()> p.getNumberCoins()){
             throw new NotEnoughCoinException(p.getNumberCoins(),c);
-        }else{
-            p.setNumberCoins(p.getNumberCoins()-c.getCost());
-            c.getCountUse();
-            gameModel.getGeneralBoard().addCoin(c.getCost());
-            p.setNameCharacterCard(c.getName());
         }
+    }
+
+    public void UseEffectOfCharacterCard(Player p, CharacterCard c){
+          c.UseEffect(p);
+          p.setNumberCoins(p.getNumberCoins()-c.getCost());
+          gameModel.getGeneralBoard().addCoin(c.getCost());
+          c.getCountUse();
     }
 
     public void CheckColorOfTower(ColorTower ct, Player p) throws ColorTowerNotCorrectException{

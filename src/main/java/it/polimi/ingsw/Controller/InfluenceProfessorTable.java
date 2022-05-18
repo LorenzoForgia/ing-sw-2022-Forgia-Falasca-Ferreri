@@ -62,7 +62,7 @@ public class InfluenceProfessorTable {
     }
 
     /*Professor Table with the effect of CharacterCard2*/
-    public void RightProfessorTable(GeneralBoard GB, int numPlayer, CharacterCard c, Player playerUseEffect) {
+    public void RightProfessorTable(GeneralBoard GB, int numPlayer, Player playerUseEffect) {
         int max;
         int schoolBoardWithInfluence=0;
         boolean isInfluence = false;

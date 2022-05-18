@@ -105,7 +105,7 @@ class InfluenceProfessorTableTest {
             fail();
         }
         GB.getSchoolBoard().get(1).getDiningRoom().PutStudent(Color.Pink);
-        IPT.RightProfessorTable(GB, 2, new CharacterCard2(2, 2,0), p2);
+        IPT.RightProfessorTable(GB, 2, p2);
         assertFalse(GB.getSchoolBoard().get(0).getProfessorTable().contains(Color.Blue) );
         assertFalse(GB.getSchoolBoard().get(0).getProfessorTable().contains(Color.Red) );
         assertFalse(GB.getSchoolBoard().get(0).getProfessorTable().contains(Color.Pink) );

@@ -12,7 +12,6 @@ public class Player implements Serializable {
     private SchoolBoard MySchoolBoard;
     private DeckCardAssistant MyDeck;
     private CardAssistant CA;
-    private CharacterCard CC;
     private int nameCharacterCard;
     private boolean usedCharacterCard = false;
 
@@ -24,13 +23,6 @@ public class Player implements Serializable {
         NumberCoins = numberCoins;
     }
 
-    public CharacterCard getCC() {
-        return CC;
-    }
-
-    public void setCC(CharacterCard CC) {
-        this.CC = CC;
-    }
 
     public void setNameCharacterCard(int nameCharacterCard) {
         this.nameCharacterCard = nameCharacterCard;

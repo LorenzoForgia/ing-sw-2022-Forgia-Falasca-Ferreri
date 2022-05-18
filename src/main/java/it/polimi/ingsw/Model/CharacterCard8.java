@@ -2,6 +2,10 @@ package it.polimi.ingsw.Model;
 
 /*@author Luigia Falasca*/
 
+/** Add two points at the influence
+ * The real effect is implemented in MoveMotherNature
+ * **/
+
 public class CharacterCard8 extends CharacterCard {
 
 

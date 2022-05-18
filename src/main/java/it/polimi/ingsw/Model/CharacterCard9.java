@@ -1,5 +1,9 @@
 package it.polimi.ingsw.Model;
 /** @author Lorenzo Forgia **/
+
+/** The chosen Color doesn't count for the influence
+ * The real effect is implemented in MoveMotherNature
+ * **/
 public class CharacterCard9  extends CharacterCard {
 
 
