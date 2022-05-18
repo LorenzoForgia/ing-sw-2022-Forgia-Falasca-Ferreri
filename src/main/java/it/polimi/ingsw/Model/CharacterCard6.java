@@ -19,7 +19,6 @@ public class CharacterCard6 extends CharacterCard{
 
     @Override
     public void SetCard(Bag b, GeneralBoard gb) {
-
-
     }
+
 }

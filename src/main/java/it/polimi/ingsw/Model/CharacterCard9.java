@@ -6,6 +6,7 @@ public class CharacterCard9  extends CharacterCard {
     public CharacterCard9(int name, int coins, int countUse) {
         super(name, coins, countUse);
     }
+    private Color chosenColor;
 
     @Override
     public void UseEffect(Player p) {
@@ -17,12 +18,12 @@ public class CharacterCard9  extends CharacterCard {
     public void SetCard(Bag b, GeneralBoard gb) {
 
     }
-    public int ColorNoEffect(IslandTiles island,Color c,int influencetot){
-        int newinfluence=0;
-        if(!island.isNoEntryTiles()){
-            newinfluence= influencetot-island.CountInfluence(c);
-        }
-        return newinfluence;
+
+    public Color getChosenColor() {
+        return chosenColor;
     }
 
+    public void setChosenColor(Color chosenColor) {
+        this.chosenColor = chosenColor;
+    }
 }

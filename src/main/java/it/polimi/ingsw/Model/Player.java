@@ -14,7 +14,7 @@ public class Player implements Serializable {
     private CardAssistant CA;
     private CharacterCard CC;
     private int nameCharacterCard;
-    private boolean usedCharacterCard;
+    private boolean usedCharacterCard = false;
 
     public Player(String nickName) {
         NickName = nickName;

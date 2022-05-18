@@ -300,7 +300,6 @@ class MoveMotherNatureTest {
         boolean flag;
         IslandTiles IT = new IslandTiles(1, true, 1, false,0, false);
         GeneralBoard GB = new GeneralBoard(0);
-        CharacterCard8 c8 = new CharacterCard8(8,2,0);
         IT.PutStudent(Color.Red);
         IT.PutStudent(Color.Red);
         IT.PutStudent(Color.Green);
@@ -332,7 +331,7 @@ class MoveMotherNatureTest {
         }catch (IllegalMoveException e){
             fail();
         }
-        flag = MMN.CheckIfIslandGetControlled(2, GB, IT, c8,GB.getSchoolBoard().get(1));
+        flag = MMN.CheckIfIslandGetControlled(2, GB, IT, 8,GB.getSchoolBoard().get(1));
         assertFalse(flag);
     }
 
@@ -341,7 +340,6 @@ class MoveMotherNatureTest {
         boolean flag;
         IslandTiles IT = new IslandTiles(1, true, 1, false, 0,false);
         GeneralBoard GB = new GeneralBoard(0);
-        CharacterCard8 c8 = new CharacterCard8(8,2,0);
         IT.PutStudent(Color.Red);
         IT.PutStudent(Color.Red);
         IT.PutStudent(Color.Green);
@@ -375,7 +373,7 @@ class MoveMotherNatureTest {
         }catch (IllegalMoveException e){
             fail();
         }
-        flag = MMN.CheckIfIslandGetControlled(4, GB, IT, c8,GB.getSchoolBoard().get(1));
+        flag = MMN.CheckIfIslandGetControlled(4, GB, IT, 8,GB.getSchoolBoard().get(1));
         assertFalse(flag);
     }
     @Test
@@ -416,7 +414,7 @@ class MoveMotherNatureTest {
         }catch (IllegalMoveException e){
             fail();
         }
-        flag = MMN.CheckIfIslandGetControlled(2, GB, IT, c6,GB.getSchoolBoard().get(1));
+        flag = MMN.CheckIfIslandGetControlled(2, GB, IT, 8,GB.getSchoolBoard().get(1));
         assertTrue(flag);
     }
 

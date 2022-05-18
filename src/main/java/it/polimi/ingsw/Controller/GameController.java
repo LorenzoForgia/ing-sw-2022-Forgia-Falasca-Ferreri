@@ -317,7 +317,7 @@ public class GameController {
     /** Check if the steps are allowed or not. If they are, it changes the position of MotherNature
      * **/
 
-    public void CheckNumberOfStepsMN(int n, Player p, CardAssistant a) throws IllegalNumberOfStepException {
+    public void CheckNumberOfStepsMN(int n, Player p) throws IllegalNumberOfStepException {
         int move=0;
         if(p.isUsedCharacterCard()){
             if(p.getNameCharacterCard()==4){
@@ -332,11 +332,33 @@ public class GameController {
             }
         if( n > move|| n<=0 ){
             throw  new IllegalNumberOfStepException(n);
-        }else{
+        }else {
             moveMotherNature.MoveMN(gameModel.getGeneralBoard(), n);
-            if(moveMotherNature.CheckIfIslandGetControlled(gameModel.getNumplayers(), gameModel.getGeneralBoard(), moveMotherNature.getI1())){
-                moveMotherNature.GetRightTowerOnIsland(gameModel.getGeneralBoard(), moveMotherNature.getI1(), setup.getSBWithTowers());
-                gameEndState.CheckEndGameImmediately(p, gameModel.getGeneralBoard());
+            if (p.isUsedCharacterCard()) {
+                if(p.getNameCharacterCard() == 6 || p.getNameCharacterCard() ==8){
+                    if (moveMotherNature.CheckIfIslandGetControlled(gameModel.getNumplayers(), gameModel.getGeneralBoard(), moveMotherNature.getI1(),p.getNameCharacterCard(),p.getMySchoolBoard())){
+                        moveMotherNature.GetRightTowerOnIsland(gameModel.getGeneralBoard(), moveMotherNature.getI1(), setup.getSBWithTowers());
+                        gameEndState.CheckEndGameImmediately(p, gameModel.getGeneralBoard());
+                    }
+                }
+                if(p.getNameCharacterCard() == 9){
+                    boolean flag = true;
+                    for(int i=0; i < 3 && flag; i++){
+                        if(gameModel.getGeneralBoard().getChoosenCard().get(i).getName()==9){
+                            flag = false;
+                            if (moveMotherNature.CheckIfIslandGetControlled(gameModel.getNumplayers(), gameModel.getGeneralBoard(), moveMotherNature.getI1(), 9,((CharacterCard9)gameModel.getGeneralBoard().getChoosenCard().get(i)).getChosenColor())){
+                                moveMotherNature.GetRightTowerOnIsland(gameModel.getGeneralBoard(), moveMotherNature.getI1(), setup.getSBWithTowers());
+                                gameEndState.CheckEndGameImmediately(p, gameModel.getGeneralBoard());
+                            }
+                        }
+                    }
+                }
+
+            } else {
+                if (moveMotherNature.CheckIfIslandGetControlled(gameModel.getNumplayers(), gameModel.getGeneralBoard(), moveMotherNature.getI1())) {
+                    moveMotherNature.GetRightTowerOnIsland(gameModel.getGeneralBoard(), moveMotherNature.getI1(), setup.getSBWithTowers());
+                    gameEndState.CheckEndGameImmediately(p, gameModel.getGeneralBoard());
+                }
             }
         }
     }
@@ -364,17 +386,21 @@ public class GameController {
 
 
 
-    /**Check if all played their turn and put students in cloud and reset the CharacterCard if the game is not ended
+    /**Check if all played their turn and put students in cloud, reset the CharacterCard if the game is not ended,
+     * reset the turn for the new game, reset the card Assistant played
      * **/
     public boolean ResetTheTurnForNewRoundWhenAllPlayed(){
         if(choosenPlayer.EndOfAllTurn()) {
             gameEndState.CheckEndGameRoundEndedForBag(gameModel.getBag());
-            if (!gameEndState.isFlagImmediately() && !gameEndState.isFlagNotImmediately()) {
+            if (!gameEndState.isFlagImmediately() && !gameEndState.isFlagNotImmediately() && choosenPlayer.getNumPlayerTurn()==gameModel.getNumplayers()) {
                 addStudentsOnClouds.RestartTurn(gameModel.getGeneralBoard(), gameModel.getBag(), gameModel.getNumplayers());
                 gameEndState.CheckEndGameRoundEndedForBag(gameModel.getBag());
+                playAssCard.ResetCardPlayed();
+                choosenPlayer.ChooseTurnPlayerForCardAssistant(gameModel.getPlayers());
                 if (gameModel.getModExpert()) {
                     for (int i = 0; i < gameModel.getNumplayers(); i++) {
-                        gameModel.getPlayers().get(i).setCC(null);
+                        gameModel.getPlayers().get(i).setUsedCharacterCard(false);
+                        gameModel.getPlayers().get(i).setNameCharacterCard(13);
                     }
                 }
             }
@@ -406,7 +432,7 @@ public class GameController {
     /** Check if the player has already used a Character Card in the same turn
      * */
     public void CheckIfPlayerCanPlayCharacterCard(Player p) throws  PlayerAlreadyUsedCharacterCard{
-        if(p.getCC()!= null){
+        if(p.isUsedCharacterCard()){
             throw new PlayerAlreadyUsedCharacterCard();
         }
     }
@@ -422,7 +448,7 @@ public class GameController {
             p.setNumberCoins(p.getNumberCoins()-c.getCost());
             c.getCountUse();
             gameModel.getGeneralBoard().addCoin(c.getCost());
-            p.setCC(c);
+            p.setNameCharacterCard(c.getName());
         }
     }
 

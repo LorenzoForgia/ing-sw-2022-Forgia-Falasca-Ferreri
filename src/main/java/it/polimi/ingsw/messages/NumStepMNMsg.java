@@ -20,7 +20,7 @@ public class NumStepMNMsg extends CommandMsg{
 
         synchronized (game){
             try {
-                game.CheckNumberOfStepsMN(step, game.getChoosenPlayer().GetPlayerTurn(), game.getChoosenPlayer().GetPlayerTurn().getCA());
+                game.CheckNumberOfStepsMN(step, game.getChoosenPlayer().GetPlayerTurn());
             }catch (IllegalNumberOfStepException e){
                 AnsNumStepExcMsg ansNumStepExcMsg= new AnsNumStepExcMsg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName());
                 clientHandler.sendAnswerMessage(ansNumStepExcMsg);
