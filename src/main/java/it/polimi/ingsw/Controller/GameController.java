@@ -303,12 +303,8 @@ public class GameController {
                 gameModel.getGeneralBoard().removeCoin(1);
             }
         }
-        if(p.isUsedCharacterCard()){
-            if(p.getNameCharacterCard()==2){
-                influenceProfessorTable.RightProfessorTable(gameModel.getGeneralBoard(),gameModel.getNumplayers(),p);
-            }else{
-                influenceProfessorTable.RightProfessorTable(gameModel.getGeneralBoard(),gameModel.getNumplayers());
-            }
+        if(p.isUsedCharacterCard() && p.getNameCharacterCard()==2 ){
+            influenceProfessorTable.RightProfessorTable(gameModel.getGeneralBoard(),gameModel.getNumplayers(),p);
         }else{
             influenceProfessorTable.RightProfessorTable(gameModel.getGeneralBoard(),gameModel.getNumplayers());
         }
@@ -334,14 +330,12 @@ public class GameController {
             throw  new IllegalNumberOfStepException(n);
         }else {
             moveMotherNature.MoveMN(gameModel.getGeneralBoard(), n);
-            if (p.isUsedCharacterCard()) {
-                if(p.getNameCharacterCard() == 6 || p.getNameCharacterCard() ==8){
+            if (p.isUsedCharacterCard() && (p.getNameCharacterCard() == 6 || p.getNameCharacterCard() ==8)) {
                     if (moveMotherNature.CheckIfIslandGetControlled(gameModel.getNumplayers(), gameModel.getGeneralBoard(), moveMotherNature.getI1(),p.getNameCharacterCard(),p.getMySchoolBoard())){
                         moveMotherNature.GetRightTowerOnIsland(gameModel.getGeneralBoard(), moveMotherNature.getI1(), setup.getSBWithTowers());
                         gameEndState.CheckEndGameImmediately(p, gameModel.getGeneralBoard());
                     }
-                }
-                if(p.getNameCharacterCard() == 9){
+                }else if(p.isUsedCharacterCard() && p.getNameCharacterCard() == 9){
                     boolean flag = true;
                     for(int i=0; i < 3 && flag; i++){
                         if(gameModel.getGeneralBoard().getChoosenCard().get(i).getName()==9){
@@ -352,9 +346,7 @@ public class GameController {
                             }
                         }
                     }
-                }
-
-            } else {
+                } else {
                 if (moveMotherNature.CheckIfIslandGetControlled(gameModel.getNumplayers(), gameModel.getGeneralBoard(), moveMotherNature.getI1())) {
                     moveMotherNature.GetRightTowerOnIsland(gameModel.getGeneralBoard(), moveMotherNature.getI1(), setup.getSBWithTowers());
                     gameEndState.CheckEndGameImmediately(p, gameModel.getGeneralBoard());
