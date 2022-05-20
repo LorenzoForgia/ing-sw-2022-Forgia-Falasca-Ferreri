@@ -50,6 +50,7 @@ public class ChoosenPlayer {
             }
         }
         GetOrderOfPlayersForCardAssistant(players);
+        numPlayerTurn =0;
     }
 
 
