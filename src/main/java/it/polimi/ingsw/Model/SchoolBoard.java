@@ -38,7 +38,9 @@ public class SchoolBoard implements Serializable {
         NumberOfTower = NumberOfTower +1;
     }
     public void RemoveTower(){
-        NumberOfTower = NumberOfTower -1;
+        if(NumberOfTower>0) {
+            NumberOfTower = NumberOfTower - 1;
+        }
     }
     public ColorTower ColorTower(){      /* color towers in the school board*/
         return colorTower;
