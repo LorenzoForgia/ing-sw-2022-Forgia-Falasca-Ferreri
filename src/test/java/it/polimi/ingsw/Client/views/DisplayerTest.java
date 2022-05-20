@@ -69,6 +69,7 @@ class DisplayerTest {
 
         /*p.displayAllSchoolboard(sc)*/
         IslandTiles i1=new IslandTiles(0,true,3,false,3,true);
+        i1.putTower(ColorTower.Black);
         p.displayAssistantCard(CardAssistant.Quattro);
         p.showIsland(i1);
         p.displayWallet(10);

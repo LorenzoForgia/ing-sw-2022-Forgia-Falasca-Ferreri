@@ -231,9 +231,22 @@ public class Displayer {
         System.out.print(Color.Yellow+""+i.getNumberStudentsbyColor(Color.Yellow)+" ");
         System.out.print(Color.Pink+""+i.getNumberStudentsbyColor(Color.Pink)+" ");
         System.out.print(Color.Blue+""+i.getNumberStudentsbyColor(Color.Blue)+Color.Reset+"|");
-        System.out.print(ColorTower.White+""+i.isTower()+" ");
-        System.out.print(ColorTower.Grey+""+i.isTower()+" ");
-        System.out.print(ColorTower.Black+""+i.isTower()+Color.Reset+"|  ");
+        if(ColorTower.White.equals(i.getColTower())) {
+            System.out.print(ColorTower.White + "" + i.getSize() + " ");
+        }else{
+            System.out.print(ColorTower.White + "" + "0" + " ");
+        }
+
+        if(ColorTower.Grey.equals(i.getColTower())) {
+            System.out.print(ColorTower.Grey + "" + i.getSize() + " ");
+        }else{
+            System.out.print(ColorTower.Grey + "" + "0" + " ");
+        }
+        if(ColorTower.Black.equals(i.getColTower())) {
+            System.out.print(ColorTower.Black + "" + i.getSize() + Color.Reset+"|  ");
+        }else{
+            System.out.print(ColorTower.Black + "" + "0" + Color.Reset+"|  ");
+        }
 
     }
     public void showAllIsland(ArrayList<IslandTiles> isl){
