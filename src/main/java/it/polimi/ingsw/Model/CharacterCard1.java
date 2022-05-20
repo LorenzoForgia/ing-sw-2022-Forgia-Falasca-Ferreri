@@ -20,9 +20,11 @@ public class CharacterCard1 extends CharacterCard{
 
     @Override
     public void SetCard(Bag b, GeneralBoard gb) {
-        bag= b;
-        for (int i = 0; i < 4; i++) {
-            this.choosenStudent.add(bag.CatchStudent());
+        bag = b;
+        if (!bag.BagIsEmpty()) {
+            for (int i = 0; i < 4; i++) {
+                this.choosenStudent.add(bag.CatchStudent());
+            }
         }
     }
 
