@@ -36,7 +36,7 @@ public class WinLoseCheckState {
 
         for(int i=0; i< SbWithSchoolBoard.size(); i++){
             if(SbWithSchoolBoard.get(i).getNumberOfTower()< min){
-                colorWinning.clear();
+                colorWinning= new ArrayList<>();
                 colorWinning.add(SbWithSchoolBoard.get(i).ColorTower());
                 min = SbWithSchoolBoard.get(i).getNumberOfTower();
             }else if(SbWithSchoolBoard.get(i).getNumberOfTower()== min){
@@ -51,7 +51,7 @@ public class WinLoseCheckState {
         for(int i=0; i< players.size(); i++ ){
             for(int j=0; j < colorWinning.size(); j++){
                 if(players.get(i).getMySchoolBoard().ColorTower().equals(colorWinning.get(j))){
-                    playersVictory.set(players.get(i).getMySchoolBoard().GetId(),true);
+                    playersVictory.set(i,true);
                 }
             }
         }
@@ -68,7 +68,7 @@ public class WinLoseCheckState {
                 for (int j = 0; j < players.size(); j++) {
                     if (players.get(j).getMySchoolBoard().ColorTower().equals(colorWinning.get(i))){
                         if(players.get(j).getMySchoolBoard().getProfessorTable().size()>max){
-                            colorTowers.clear();
+                            colorTowers = new ArrayList<>();
                             colorTowers.add(colorWinning.get(i));
                             max= players.get(j).getMySchoolBoard().getProfessorTable().size();
                         }else if(players.get(j).getMySchoolBoard().getProfessorTable().size()==max){
@@ -77,8 +77,6 @@ public class WinLoseCheckState {
                     }
                 }
             }
-            colorWinning.clear();
-            colorWinning.addAll(colorTowers);
         }else{
             for (int j = 0; j < players.size(); j++) {
                 if(players.get(j).getMySchoolBoard().ColorTower().equals(ColorTower.Black)){
@@ -90,15 +88,15 @@ public class WinLoseCheckState {
             }
 
             if(ProfessorTableBlack.size()>ProfessorTableWhite.size()){
-                colorWinning.clear();
-                colorWinning.add(ColorTower.Black);
+                colorTowers.add(ColorTower.Black);
             }else if(ProfessorTableBlack.size()<ProfessorTableWhite.size()){
-                colorWinning.clear();
-                colorWinning.add(ColorTower.White);
+                colorTowers.add(ColorTower.White);
+            }else{
+                colorTowers= colorWinning;
             }
         }
 
-        return colorWinning;
+        return colorTowers;
     }
 
     public boolean CheckIfWinWithProfessor(Player p, GeneralBoard g){

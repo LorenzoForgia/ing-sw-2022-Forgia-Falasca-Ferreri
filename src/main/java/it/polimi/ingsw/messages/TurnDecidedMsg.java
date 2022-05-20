@@ -33,26 +33,27 @@ public class TurnDecidedMsg extends CommandMsg{
             try{
                 game.CardAssistantInDeck(c, game.getChoosenPlayer().GetPlayerTurn());
                 game.notifyAll();
+                while(!flag){
+                    try{
+                        System.out.println("TURNDCDMSG mi addormento"+clientHandler.getNickname());
+                        game.wait();
+                        System.out.println("TURNDCDMSG mi sveglio"+clientHandler.getNickname());
+                        flag=game.CheckIfAllPlayedCardAssistant();
+                    }catch (InterruptedException e){
+                        e.printStackTrace();
+                    }
+                }
+                for (int i = 0; i < game.getChoosenPlayer().getOrderPlayers().size(); i++) {
+                    nickname.add(game.getChoosenPlayer().getOrderPlayers().get(i).getNickName());
+                }
+                answerMsg = new AnsTurnDecidedMsg(this, nickname);
+                clientHandler.sendAnswerMessage(answerMsg);
+                game.notifyAll();
             }catch(CardAssistantNotAvailableException e){
                 String name= game.getChoosenPlayer().GetPlayerTurn().getNickName();
                 AnsFirstPlayerTurnMsg answMsg = new AnsFirstPlayerTurnMsg(this, name);
                 clientHandler.sendAnswerMessage(answMsg);
             }
-            while(!flag){
-                try{
-                    game.wait();
-                    flag=game.CheckIfAllPlayedCardAssistant();
-                }catch (InterruptedException e){
-                    e.printStackTrace();
-                }
-            }
-            game.notifyAll();
-            for (int i = 0; i < game.getChoosenPlayer().getOrderPlayers().size(); i++) {
-                nickname.add(game.getChoosenPlayer().getOrderPlayers().get(i).getNickName());
-            }
-
-            answerMsg = new AnsTurnDecidedMsg(this, nickname);
-            clientHandler.sendAnswerMessage(answerMsg);
         }
     }
 }

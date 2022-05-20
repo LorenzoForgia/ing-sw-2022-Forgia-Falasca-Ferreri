@@ -396,16 +396,18 @@ public class GameController {
      * **/
     public boolean ResetTheTurnForNewRoundWhenAllPlayed(){
         if(choosenPlayer.EndOfAllTurn()) {
-            gameEndState.CheckEndGameRoundEndedForBag(gameModel.getBag());
-            if (!gameEndState.isFlagImmediately() && !gameEndState.isFlagNotImmediately() && choosenPlayer.getNumPlayerTurn()==gameModel.getNumplayers()) {
-                addStudentsOnClouds.RestartTurn(gameModel.getGeneralBoard(), gameModel.getBag(), gameModel.getNumplayers());
+            if (choosenPlayer.getNumPlayerTurn() == gameModel.getNumplayers()) {
                 gameEndState.CheckEndGameRoundEndedForBag(gameModel.getBag());
-                playAssCard.ResetCardPlayed();
-                choosenPlayer.ChooseTurnPlayerForCardAssistant(gameModel.getPlayers());
-                if (gameModel.getModExpert()) {
-                    for (int i = 0; i < gameModel.getNumplayers(); i++) {
-                        gameModel.getPlayers().get(i).setUsedCharacterCard(false);
-                        gameModel.getPlayers().get(i).setNameCharacterCard(13);
+                if (!gameEndState.isFlagImmediately() && !gameEndState.isFlagNotImmediately() && choosenPlayer.getNumPlayerTurn() == gameModel.getNumplayers()) {
+                    addStudentsOnClouds.RestartTurn(gameModel.getGeneralBoard(), gameModel.getBag(), gameModel.getNumplayers());
+                    gameEndState.CheckEndGameRoundEndedForBag(gameModel.getBag());
+                    playAssCard.ResetCardPlayed();
+                    choosenPlayer.ChooseTurnPlayerForCardAssistant(gameModel.getPlayers());
+                    if (gameModel.getModExpert()) {
+                        for (int i = 0; i < gameModel.getNumplayers(); i++) {
+                            gameModel.getPlayers().get(i).setUsedCharacterCard(false);
+                            gameModel.getPlayers().get(i).setNameCharacterCard(13);
+                        }
                     }
                 }
             }

@@ -5,6 +5,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class WinLoseCheckStateTest {
@@ -45,6 +47,9 @@ class WinLoseCheckStateTest {
         p3.setMySchoolBoard(SB3);
         p3.setNumberCoins(1);
         p3.setMyDeck(DCA3);
+        SB1.setNumberOfTower(6);
+        SB2.setNumberOfTower(6);
+        SB3.setNumberOfTower(6);
         g.CreateSchoolBoards(3);
     }
 
@@ -129,10 +134,58 @@ class WinLoseCheckStateTest {
        assertFalse(w.CheckIfWin(p2, g));
        assertFalse(w.CheckIfWin(p3, g));
     }
-/*
+
     @Test
     public void testCheckWinner(){
-      p1.getMySchoolBoard().
+      p1.getMySchoolBoard().RemoveTower();
+      p2.getMySchoolBoard().RemoveTower();
+      p2.getMySchoolBoard().RemoveTower();
+      ArrayList<SchoolBoard> schoolBoards= new ArrayList<>();
+      ArrayList<Player> players = new ArrayList<>();
+      ArrayList<Boolean> winners;
+      schoolBoards.add(0,SB1);
+      schoolBoards.add(1,SB2);
+      schoolBoards.add(2,SB3);
+      players.add(0,p1);
+      players.add(1,p2);
+      players.add(2,p3);
+      winners= w.CheckWinner(players,schoolBoards);
+      assertFalse(winners.get(0));
+      assertFalse(winners.get(2));
+      assertTrue(winners.get(1));
     }
-    */
+
+
+    @Test
+    public void testCheckWinner2(){
+        p1.getMySchoolBoard().RemoveTower();
+        p2.getMySchoolBoard().RemoveTower();
+        p2.getMySchoolBoard().RemoveTower();
+        p3.getMySchoolBoard().RemoveTower();
+        p3.getMySchoolBoard().RemoveTower();
+        ArrayList<SchoolBoard> schoolBoards= new ArrayList<>();
+        ArrayList<Player> players = new ArrayList<>();
+        ArrayList<Boolean> winners;
+        schoolBoards.add(0,SB1);
+        schoolBoards.add(1,SB2);
+        schoolBoards.add(2,SB3);
+        players.add(0,p1);
+        players.add(1,p2);
+        players.add(2,p3);
+        try {
+            g.getSchoolBoard().get(2).PutProfessor(Color.Red);
+            g.getSchoolBoard().get(2).PutProfessor(Color.Green);
+            g.getSchoolBoard().get(0).PutProfessor(Color.Pink);
+            g.getSchoolBoard().get(0).PutProfessor(Color.Blue);
+            g.getSchoolBoard().get(0).PutProfessor(Color.Yellow);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        winners= w.CheckWinner(players,schoolBoards);
+
+        assertFalse(winners.get(0));
+        assertFalse(winners.get(1));
+        assertTrue(winners.get(2));
+    }
+
 }
