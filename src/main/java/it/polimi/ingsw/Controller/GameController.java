@@ -221,6 +221,9 @@ public class GameController {
     /**  Check if the player can play the card assistant
      * */
     public void CardAssistantInDeck(CardAssistant cardAssistant, Player p) throws CardAssistantNotAvailableException{
+        if(cardAssistant.equals(CardAssistant.Invalid)){
+            throw new CardAssistantNotAvailableException();
+        }
         boolean flag = true;
 
         for(int i =0; i < p.getMyDeck().GetDeck().size() && flag; i ++){

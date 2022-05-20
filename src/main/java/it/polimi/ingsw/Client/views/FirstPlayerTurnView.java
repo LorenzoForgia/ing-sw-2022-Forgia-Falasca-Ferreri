@@ -22,8 +22,17 @@ public class FirstPlayerTurnView extends View{
     public void run() {
         Scanner scanner = new Scanner(System.in);
         System.out.println(answerMsg.GetPlayer() + " Gioca una carta assistente!");
-        CardAssistant c = CardAssistant.valueOf(scanner.nextLine());
-        TurnDecidedMsg turnDecidedMsg= new TurnDecidedMsg(c);
+        String cc= scanner.nextLine();
+        CardAssistant [] ac=CardAssistant.values();
+        Boolean flag=false;
+        CardAssistant cardAssistant=CardAssistant.Invalid;
+        for(int i=0;i<10 && !flag;i++){
+            if(ac[i].getName().equals(cc)){
+                cardAssistant=ac[i];
+                flag=true;
+            }
+        }
+        TurnDecidedMsg turnDecidedMsg= new TurnDecidedMsg(cardAssistant);
         getOwner().getServerHandler().sendCommandMessage(turnDecidedMsg);
     }
 }
