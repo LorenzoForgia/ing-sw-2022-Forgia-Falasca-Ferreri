@@ -399,6 +399,7 @@ public class GameController {
      * **/
     public boolean ResetTheTurnForNewRoundWhenAllPlayed(){
         if(choosenPlayer.EndOfAllTurn()) {
+            System.out.println("dentro");
             if (choosenPlayer.getNumPlayerTurn() == gameModel.getNumplayers()) {
                 gameEndState.CheckEndGameRoundEndedForBag(gameModel.getBag());
                 if (!gameEndState.isFlagImmediately() && !gameEndState.isFlagNotImmediately() && choosenPlayer.getNumPlayerTurn() == gameModel.getNumplayers()) {
@@ -406,6 +407,7 @@ public class GameController {
                     gameEndState.CheckEndGameRoundEndedForBag(gameModel.getBag());
                     playAssCard.ResetCardPlayed();
                     choosenPlayer.ChooseTurnPlayerForCardAssistant(gameModel.getPlayers());
+                    System.out.println(choosenPlayer.getNumPlayerTurn());
                     if (gameModel.getModExpert()) {
                         for (int i = 0; i < gameModel.getNumplayers(); i++) {
                             gameModel.getPlayers().get(i).setUsedCharacterCard(false);
