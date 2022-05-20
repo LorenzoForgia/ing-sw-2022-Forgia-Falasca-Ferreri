@@ -31,8 +31,10 @@ public class CloudTiles implements Serializable {
         if(Numplayers==3){
             numstudents=4;
         }
-        for(int i=0;i<numstudents;i++){
-            this.stud.add(bag.CatchStudent());
+        for(int i=0;i<numstudents;i++) {
+            if (!bag.BagIsEmpty()) {
+                this.stud.add(bag.CatchStudent());
+            }
         }
     }
 
