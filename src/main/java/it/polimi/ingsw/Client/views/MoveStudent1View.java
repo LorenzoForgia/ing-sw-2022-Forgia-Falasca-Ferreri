@@ -26,8 +26,26 @@ public class MoveStudent1View extends View{
             schoolBoards.add(answerMsg.GetGB().getSchoolBoard().get(i));
         }
         displayer.displayAllSchoolboard(schoolBoards,answerMsg.GetPlayers());
-        System.out.println("Scegli il colore dello studente che vuoi spostare");
-        Color student= Color.valueOf(scanner.nextLine());
+        Boolean flag=false;
+        int count=0;
+        Color cdef=Color.Blue;
+        while(!flag) {
+            if(count==0) {
+                System.out.println("Scegli il colore dello studente che vuoi spostare");
+            }else{
+                System.out.println("Errore inserimento colore:Seleziona un colore valido");
+            }
+            String colorchosen = scanner.nextLine();
+            Color[] colors = Color.values();
+            for (int i = 0; i < 5 && !flag; i++) {
+                if (colors[i].getName().equals(colorchosen)) {
+                    cdef=colors[i];
+                    flag = true;
+                }
+            }
+            count++;
+        }
+        Color student= cdef;
         System.out.println("Vuoi spostarlo nella sala a su un'isola? sala/isola");
         String ris= scanner.nextLine();
         if(ris.equals("sala")){
