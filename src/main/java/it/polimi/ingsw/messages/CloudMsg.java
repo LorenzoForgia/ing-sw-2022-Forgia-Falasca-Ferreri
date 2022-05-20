@@ -28,7 +28,7 @@ public class CloudMsg extends CommandMsg{
             }
             try {
                 game.CheckCloud(cloudTiles, game.getChoosenPlayer().GetPlayerTurn());
-                AnsCloudMsg ansCloudMsg=new AnsCloudMsg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName());
+                AnsCloudMsg ansCloudMsg=new AnsCloudMsg(this);
                 clientHandler.sendAnswerMessage(ansCloudMsg);
             }catch (CloudEmptyException e){
                 AnsNumCloudExcMsg ansNumCloudExcMsg= new AnsNumCloudExcMsg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName());

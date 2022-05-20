@@ -99,6 +99,7 @@ public class ChoosenPlayer {
     public void incrementTurn() {
 
         numPlayerTurn++;
+        System.out.println(numPlayerTurn);
     }
 
     /**

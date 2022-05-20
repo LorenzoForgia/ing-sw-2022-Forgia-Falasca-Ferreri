@@ -22,7 +22,10 @@ public class GameController {
     private GameModel gameModel=new GameModel();
     private InfluenceProfessorTable influenceProfessorTable = new InfluenceProfessorTable();
     private boolean SetFirstTurn = false;
+    private boolean flagturn= false;
 
+    public boolean isFlagturn(){return flagturn;}
+    public void setFlagturn(boolean flagturn){this.flagturn=flagturn;}
     public boolean getSetFirstTurn(){return SetFirstTurn;}
     public void setSetFirstTurn(boolean setFirstTurn){this.SetFirstTurn=setFirstTurn;}
     public GameModel getGameModel() {
