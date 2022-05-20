@@ -378,6 +378,7 @@ public class GameController {
 
 
 
+
     /**Check if all played their turn and put students in cloud, reset the CharacterCard if the game is not ended,
      * reset the turn for the new game, reset the card Assistant played
      * **/
