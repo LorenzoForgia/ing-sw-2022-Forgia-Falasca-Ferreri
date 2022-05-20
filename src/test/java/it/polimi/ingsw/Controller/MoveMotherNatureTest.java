@@ -166,7 +166,6 @@ class MoveMotherNatureTest {
         boolean flag;
         IslandTiles IT = new IslandTiles(1, true, 1, false, 0,false);
         GeneralBoard GB = new GeneralBoard(0);
-        CharacterCard9 c9 = new CharacterCard9(9,2,0);
         IT.PutStudent(Color.Red);
         IT.PutStudent(Color.Red);
         IT.PutStudent(Color.Green);
@@ -198,7 +197,7 @@ class MoveMotherNatureTest {
         }catch (IllegalMoveException e){
             fail();
         }
-        flag = MMN.CheckIfIslandGetControlled(2, GB, IT, c9,Color.Red);
+        flag = MMN.CheckIfIslandGetControlled(2, GB, IT, 9,Color.Red);
         assertFalse(flag);
     }
 
@@ -207,7 +206,6 @@ class MoveMotherNatureTest {
         boolean flag;
         IslandTiles IT = new IslandTiles(1, true, 1, false, 0,false);
         GeneralBoard GB = new GeneralBoard(0);
-        CharacterCard9 c9 = new CharacterCard9(9,2,0);
         IT.PutStudent(Color.Red);
         IT.PutStudent(Color.Red);
         IT.PutStudent(Color.Green);
@@ -240,7 +238,7 @@ class MoveMotherNatureTest {
         }catch (IllegalMoveException e){
             fail();
         }
-        flag = MMN.CheckIfIslandGetControlled(2, GB, IT, c9,Color.Red);
+        flag = MMN.CheckIfIslandGetControlled(2, GB, IT, 9,Color.Red);
         assertTrue(flag);
     }
 
@@ -249,7 +247,6 @@ class MoveMotherNatureTest {
         boolean flag;
         IslandTiles IT = new IslandTiles(1, true, 1, false, 0,false);
         GeneralBoard GB = new GeneralBoard(0);
-        CharacterCard9 c9 = new CharacterCard9(9,2,0);
         IT.PutStudent(Color.Pink);
         IT.PutStudent(Color.Red);
         IT.PutStudent(Color.Red);
@@ -290,7 +287,7 @@ class MoveMotherNatureTest {
         }catch (IllegalMoveException e){
             fail();
         }
-        flag = MMN.CheckIfIslandGetControlled(4, GB, IT, c9,Color.Red);
+        flag = MMN.CheckIfIslandGetControlled(4, GB, IT, 9,Color.Red);
         assertFalse(flag);
     }
 
@@ -381,7 +378,6 @@ class MoveMotherNatureTest {
         boolean flag;
         IslandTiles IT = new IslandTiles(1, true, 2, false, 0,false);
         GeneralBoard GB = new GeneralBoard(0);
-        CharacterCard6 c6 = new CharacterCard6(6,2,0);
         IT.putTower(ColorTower.White);
         IT.PutStudent(Color.Red);
         IT.PutStudent(Color.Red);
@@ -414,7 +410,7 @@ class MoveMotherNatureTest {
         }catch (IllegalMoveException e){
             fail();
         }
-        flag = MMN.CheckIfIslandGetControlled(2, GB, IT, 8,GB.getSchoolBoard().get(1));
+        flag = MMN.CheckIfIslandGetControlled(2, GB, IT, 6,GB.getSchoolBoard().get(1));
         assertTrue(flag);
     }
 
