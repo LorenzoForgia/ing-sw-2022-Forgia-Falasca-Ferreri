@@ -22,27 +22,30 @@ public class MoveStudent3Msg extends CommandMsg{
             if (l == 12) {
                 try {
                     game.CheckColor(s, game.getChoosenPlayer().GetPlayerTurn());
+                    game.PutStudentInLocation(s, game.getChoosenPlayer().GetPlayerTurn().getMySchoolBoard().getDiningRoom(), game.getChoosenPlayer().GetPlayerTurn());
+                    game.DiningRoomChosen(game.getChoosenPlayer().GetPlayerTurn(), s);
                 } catch (ColorNoInEntranceException e) {
                     AnsColorExc3Msg ansColorExcMsg = new AnsColorExc3Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName());
                     clientHandler.sendAnswerMessage(ansColorExcMsg);
                 }
-                game.PutStudentInLocation(s, game.getChoosenPlayer().GetPlayerTurn().getMySchoolBoard().getDiningRoom(), game.getChoosenPlayer().GetPlayerTurn());
-                game.DiningRoomChosen(game.getChoosenPlayer().GetPlayerTurn(), s);
+
             } else {
                 try {
                     game.CheckColor(s, game.getChoosenPlayer().GetPlayerTurn());
+                    for (int i = 0; i < game.getGameModel().getGeneralBoard().GetIslands().size(); i++) {
+                        if (l == game.getGameModel().getGeneralBoard().GetIslands().get(i).getNumberID()) {
+                            game.PutStudentInLocation(s, game.getGameModel().getGeneralBoard().GetIslands().get(i), game.getChoosenPlayer().GetPlayerTurn());
+                        }
+                    }
+                    AnsMoveStudent3Msg ansMoveStudent3Msg = new AnsMoveStudent3Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers());
+                    clientHandler.sendAnswerMessage(ansMoveStudent3Msg);
                 } catch (ColorNoInEntranceException e) {
                     AnsColorExc3Msg ansColorExcMsg = new AnsColorExc3Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName());
                     clientHandler.sendAnswerMessage(ansColorExcMsg);
                 }
-                for (int i = 0; i < game.getGameModel().getGeneralBoard().GetIslands().size(); i++) {
-                    if (l == game.getGameModel().getGeneralBoard().GetIslands().get(i).getNumberID()) {
-                        game.PutStudentInLocation(s, game.getGameModel().getGeneralBoard().GetIslands().get(i), game.getChoosenPlayer().GetPlayerTurn());
-                    }
-                }
+
             }
-            AnsMoveStudent3Msg ansMoveStudent3Msg = new AnsMoveStudent3Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers());
-            clientHandler.sendAnswerMessage(ansMoveStudent3Msg);
+
         }
     }
 }
