@@ -180,6 +180,47 @@ public class Displayer {
 
     }
 
+    public void showCloudTiles(CloudTiles c){
+        System.out.println("Nuvola n°"+c.getNumid());
+        System.out.print("|");
+        int counter=0;
+        for(int i=0;i<c.getStud().size();i++){
+            if(c.getStud().get(i).equals(Color.Green)){
+                counter++;
+            }
+        }
+        System.out.print(Color.Green+""+counter+" ");
+        counter=0;
+        for(int i=0;i<c.getStud().size();i++){
+            if(c.getStud().get(i).equals(Color.Red)){
+                counter++;
+            }
+        }
+        System.out.print(Color.Red+""+counter+" ");
+        counter=0;
+        for(int i=0;i<c.getStud().size();i++){
+            if(c.getStud().get(i).equals(Color.Yellow)){
+                counter++;
+            }
+        }
+        System.out.print(Color.Yellow+""+counter+" ");
+        counter=0;
+        for(int i=0;i<c.getStud().size();i++){
+            if(c.getStud().get(i).equals(Color.Pink)){
+                counter++;
+            }
+        }
+        System.out.print(Color.Pink+""+counter+" ");
+        counter=0;
+        for(int i=0;i<c.getStud().size();i++){
+            if(c.getStud().get(i).equals(Color.Blue)){
+                counter++;
+            }
+        }
+        System.out.println(Color.Blue+""+counter+Color.Reset+"|");
+
+    }
+
     public void showIsland(IslandTiles i){
         System.out.print("|");
         if(i.isMotherNature()){
