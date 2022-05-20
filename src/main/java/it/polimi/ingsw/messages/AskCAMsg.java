@@ -18,15 +18,19 @@ public class AskCAMsg extends CommandMsg{
             Boolean flag = game.CheckIfAllPlayedCardAssistant();
             try {
                 while (!clientHandler.getNickname().equals(game.getChoosenPlayer().GetPlayerTurn().getNickName())) {
-                    System.out.println("dormo " + clientHandler.getNickname());
                     game.wait();
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            nickname= game.getChoosenPlayer().GetPlayerTurn().getNickName();
-            answerMsg = new AnsAskCAMsg(this, nickname, game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers());
-            clientHandler.sendAnswerMessage(answerMsg);
+            if(game.getGameEndState().CheckEndGameImmediately(game.getChoosenPlayer().GetPlayerTurn(), game.getGameModel().getGeneralBoard())){
+                AnsEndGameMsg ansEndGameMsg= new AnsEndGameMsg(this, game.showWinner());
+                clientHandler.sendAnswerMessage(ansEndGameMsg);
+            }else{
+                nickname= game.getChoosenPlayer().GetPlayerTurn().getNickName();
+                answerMsg = new AnsAskCAMsg(this, nickname, game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers());
+                clientHandler.sendAnswerMessage(answerMsg);
+            }
         }
     }
 }

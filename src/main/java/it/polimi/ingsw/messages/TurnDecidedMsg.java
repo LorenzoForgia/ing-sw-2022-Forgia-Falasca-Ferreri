@@ -25,7 +25,6 @@ public class TurnDecidedMsg extends CommandMsg{
             Boolean flag=game.CheckIfAllPlayedCardAssistant();
             try{
                 while(!clientHandler.getNickname().equals(game.getChoosenPlayer().GetPlayerTurn().getNickName())) {
-                    System.out.println("dormo "+clientHandler.getNickname());
                     game.wait();
                 }
             }catch (InterruptedException e) {

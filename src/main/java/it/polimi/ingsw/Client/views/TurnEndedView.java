@@ -16,5 +16,7 @@ public class TurnEndedView extends View{
     @Override
     public void run() {
         System.out.println("Il tuo turno è terminato!");
+        System.out.println("Aspetta che gli altri giocatori finiscano il loro turno");
+
     }
 }

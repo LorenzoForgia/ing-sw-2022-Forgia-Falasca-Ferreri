@@ -21,12 +21,18 @@ public class NumStepMNMsg extends CommandMsg{
         synchronized (game){
             try {
                 game.CheckNumberOfStepsMN(step, game.getChoosenPlayer().GetPlayerTurn());
+                if(game.getGameEndState().CheckEndGameImmediately(game.getChoosenPlayer().GetPlayerTurn(), game.getGameModel().getGeneralBoard())){
+                    game.notifyAll();
+                    AnsEndGameMsg ansEndGameMsg= new AnsEndGameMsg(this, game.showWinner());
+                    clientHandler.sendAnswerMessage(ansEndGameMsg);
+                }else{
+                    answerMsg= new AnsNumStepMNMsg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName());
+                    clientHandler.sendAnswerMessage(answerMsg);
+                }
             }catch (IllegalNumberOfStepException e){
                 AnsNumStepExcMsg ansNumStepExcMsg= new AnsNumStepExcMsg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName());
                 clientHandler.sendAnswerMessage(ansNumStepExcMsg);
             }
-            answerMsg= new AnsNumStepMNMsg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName());
-            clientHandler.sendAnswerMessage(answerMsg);
         }
     }
 }
