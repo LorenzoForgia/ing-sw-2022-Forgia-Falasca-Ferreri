@@ -2,7 +2,7 @@ package it.polimi.ingsw.Controller;
 
 import it.polimi.ingsw.Model.*;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class WinLoseCheckState {
     public boolean CheckIfWinWithTower(Player p, GeneralBoard g){
@@ -25,7 +25,7 @@ public class WinLoseCheckState {
         }else {return false;}
     }
 
-    public ArrayList<Boolean> CheckWinner(ArrayList<Player> players, ArrayList<SchoolBoard> SbWithSchoolBoard){
+    public ArrayList<Boolean> CheckWinner(ArrayList<Player> players, List<SchoolBoard> SbWithSchoolBoard){
         int min=9;
         ArrayList<ColorTower> colorWinning= new ArrayList<>();
         ArrayList<Boolean> playersVictory= new ArrayList<>();
@@ -51,12 +51,11 @@ public class WinLoseCheckState {
         for(int i=0; i< players.size(); i++ ){
             for(int j=0; j < colorWinning.size(); j++){
                 if(players.get(i).getMySchoolBoard().ColorTower().equals(colorWinning.get(j))){
-                    playersVictory.set(i,true);
+                    playersVictory.set(players.get(i).getMySchoolBoard().GetId(),true);
                 }
             }
         }
         return playersVictory;
-
     }
 
     private ArrayList<ColorTower> CheckProfessor(ArrayList<ColorTower> colorWinning, ArrayList<Player> players){

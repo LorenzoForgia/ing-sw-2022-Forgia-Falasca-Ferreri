@@ -129,4 +129,10 @@ class WinLoseCheckStateTest {
        assertFalse(w.CheckIfWin(p2, g));
        assertFalse(w.CheckIfWin(p3, g));
     }
+/*
+    @Test
+    public void testCheckWinner(){
+      p1.getMySchoolBoard().
+    }
+    */
 }

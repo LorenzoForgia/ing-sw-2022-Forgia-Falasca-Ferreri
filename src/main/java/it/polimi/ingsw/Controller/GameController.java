@@ -5,7 +5,7 @@ import it.polimi.ingsw.Exception.IllegalArgumentException;
 import it.polimi.ingsw.Model.*;
 import it.polimi.ingsw.messages.AnswIfAllowed;
 
-import java.util.List;
+import java.util.*;
 import java.util.Random;
 
 public class GameController {
@@ -376,7 +376,19 @@ public class GameController {
         }
     }
 
+   /** Return the name(s) of the player(s) who wins the game **/
+    public ArrayList<String> showWinner(){
+        ArrayList<Boolean> playerVictory = new ArrayList<>();
+        ArrayList<String> namePlayerVictory = new ArrayList<>();
+        playerVictory= winLoseCheckState.CheckWinner(gameModel.getPlayers(), setup.getSBWithTowers());
+        for(int i=0; i < playerVictory.size(); i++){
+            if(playerVictory.get(i)){
+                namePlayerVictory.add(gameModel.getPlayers().get(i).getNickName());
+            }
+        }
 
+        return namePlayerVictory;
+    }
 
 
     /**Check if all played their turn and put students in cloud, reset the CharacterCard if the game is not ended,
