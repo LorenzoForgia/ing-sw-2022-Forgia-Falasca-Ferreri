@@ -177,7 +177,7 @@ public class Displayer {
             System.out.println("Schoolboard del giocatore:"+pl.get(i).getNickName());
             this.displaySchoolBoard(s.get(i).getEntrance(),s.get(i).getDiningRoom().getDiningRoom(),s.get(i).getProfessorTable(),s.get(i).getNumberOfTower(),s.get(i).ColorTower());
         }
-
+       System.out.println();
     }
 
     public void showCloudTiles(CloudTiles c){
@@ -221,7 +221,15 @@ public class Displayer {
 
     }
 
+    public void showAllCloudTiles(ArrayList<CloudTiles> ct){
+        for(int i=0;i<ct.size();i++){
+            this.showCloudTiles(ct.get(i));
+        }
+        System.out.println();
+    }
+
     public void showIsland(IslandTiles i){
+
         System.out.print("|");
         if(i.isMotherNature()){
             System.out.print(Color.Yellow+"M"+" ");
@@ -247,47 +255,32 @@ public class Displayer {
         }else{
             System.out.print(ColorTower.Black + "" + "0" + Color.Reset+"|  ");
         }
-
+        System.out.println("Isola n°"+i.getNumberID());
     }
+
     public void showAllIsland(ArrayList<IslandTiles> isl){
-        for(int i=0;i<4;i++){
-            System.out.print("Isola n°"+i+"            ");
-        }
-        System.out.println("");
-        for(int i=0;i<4;i++){
+
+        for(int i=0;i<isl.size();i++){
             this.showIsland(isl.get(i));
-            System.out.print(" ");
         }
-        System.out.print("\n");
-        for(int i=4;i<8;i++){
-            System.out.print("Isola n°"+i+"            ");
-        }
-        System.out.println("");
-        for(int i=4;i<8;i++){
-            this.showIsland(isl.get(i));
-            System.out.print(" ");
-        }
-        System.out.print("\n");
-        for(int i=8;i<12;i++){
-            System.out.print("Isola n°"+i+"            ");
-        }
-        System.out.println("");
-        for(int i=8;i<12;i++){
-            this.showIsland(isl.get(i));
-            System.out.print(" ");
-        }
-        System.out.print("\n");
+        System.out.println();
+
     }
     public void displayAssistantCard(CardAssistant c){
         System.out.println("CARTA ASSISTENTE:"+c.getCardValue());
         System.out.println("|"+Color.Blue+"Valore:"+c.getCardValue()+" "+Color.Red+"Mov.MN:"+c.getMovementMN()+Color.Reset+"|");
 
     }
+    public void showAllAssistantCard(ArrayList<CardAssistant> ac){
+        for(int i=0;i<ac.size();i++){
+            this.displayAssistantCard(ac.get(i));
+        }
+        System.out.println();
+    }
 
     public void displayWallet(int coin){
         System.out.print("|");
         System.out.println(Color.Yellow+"Monete spendibili:"+coin+Color.Reset+"|");
-
-
+        System.out.println();
     }
 }
