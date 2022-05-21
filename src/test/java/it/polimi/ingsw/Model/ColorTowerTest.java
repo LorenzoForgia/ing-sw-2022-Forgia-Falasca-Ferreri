@@ -8,6 +8,8 @@ class ColorTowerTest {
     @Test
     public void getIndexTest(){
         assertEquals(0,ColorTower.Black.getIndex());
+        assertEquals("\u001B[30m",ColorTower.Black.getEscape());
+        ColorTower.Black.toString();
     }
 
 }
