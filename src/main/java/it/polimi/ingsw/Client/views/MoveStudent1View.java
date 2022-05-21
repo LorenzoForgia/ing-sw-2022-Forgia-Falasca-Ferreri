@@ -52,7 +52,7 @@ public class MoveStudent1View extends View{
             count++;
         }
         Color student= cdef;
-        System.out.println("Vuoi spostarlo nella sala a su un'isola? sala/isola");
+        System.out.println("Vuoi spostarlo nella sala o su un'isola? sala/isola");
         String ris= scanner.nextLine();
         if(ris.equals("sala")){
             isl=12;

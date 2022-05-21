@@ -2,7 +2,6 @@ package it.polimi.ingsw.messages;
 
 import it.polimi.ingsw.Client.ServerHandler;
 import it.polimi.ingsw.Client.views.ColorExc3View;
-import it.polimi.ingsw.Client.views.ColorExcView;
 
 public class AnsColorExc3Msg extends AnswerMsg{
     private String name;

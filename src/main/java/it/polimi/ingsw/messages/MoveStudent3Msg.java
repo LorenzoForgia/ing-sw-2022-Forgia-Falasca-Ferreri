@@ -2,6 +2,7 @@ package it.polimi.ingsw.messages;
 
 import it.polimi.ingsw.Controller.GameController;
 import it.polimi.ingsw.Exception.ColorNoInEntranceException;
+import it.polimi.ingsw.Exception.IslandNotInListException;
 import it.polimi.ingsw.Model.Color;
 import it.polimi.ingsw.Server.ClientHandler;
 
@@ -34,13 +35,14 @@ public class MoveStudent3Msg extends CommandMsg{
             } else {
                 try {
                     game.CheckColor(s, game.getChoosenPlayer().GetPlayerTurn());
-                    for (int i = 0; i < game.getGameModel().getGeneralBoard().GetIslands().size(); i++) {
-                        if (l == game.getGameModel().getGeneralBoard().GetIslands().get(i).getNumberID()) {
-                            game.PutStudentInLocation(s, game.getGameModel().getGeneralBoard().GetIslands().get(i), game.getChoosenPlayer().GetPlayerTurn());
-                        }
+                    try{
+                        game.IslandChosen(game.getChoosenPlayer().GetPlayerTurn(), l, s);
+                        AnsMoveStudent3Msg ansMoveStudent3Msg = new AnsMoveStudent3Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers());
+                        clientHandler.sendAnswerMessage(ansMoveStudent3Msg);
+                    }catch (IslandNotInListException e){
+                        AnsIslandExc3Msg ansIslandExc3Msg= new AnsIslandExc3Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName());
+                        clientHandler.sendAnswerMessage(ansIslandExc3Msg);
                     }
-                    AnsMoveStudent3Msg ansMoveStudent3Msg = new AnsMoveStudent3Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers());
-                    clientHandler.sendAnswerMessage(ansMoveStudent3Msg);
                 } catch (ColorNoInEntranceException e) {
                     AnsColorExc3Msg ansColorExcMsg = new AnsColorExc3Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName());
                     clientHandler.sendAnswerMessage(ansColorExcMsg);

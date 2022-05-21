@@ -2,8 +2,6 @@ package it.polimi.ingsw.Client.views;
 
 import it.polimi.ingsw.Model.Color;
 import it.polimi.ingsw.messages.AnsColorExc3Msg;
-import it.polimi.ingsw.messages.AnsColorExcMsg;
-import it.polimi.ingsw.messages.MoveStudent1Msg;
 import it.polimi.ingsw.messages.MoveStudent3Msg;
 
 import java.util.Scanner;

@@ -1,17 +1,14 @@
 package it.polimi.ingsw.Client.views;
 
-import it.polimi.ingsw.Model.CardAssistant;
 import it.polimi.ingsw.Model.Color;
-import it.polimi.ingsw.messages.AnsColorExcMsg;
-import it.polimi.ingsw.messages.AnsMoveStudent1Msg;
+import it.polimi.ingsw.messages.AnsColorExc1Msg;
 import it.polimi.ingsw.messages.MoveStudent1Msg;
-import it.polimi.ingsw.messages.TurnDecidedMsg;
 
 import java.util.Scanner;
 
-public class ColorExcView extends View {
-    AnsColorExcMsg answerMsg;
-    public ColorExcView(AnsColorExcMsg answerMsg)
+public class ColorExc1View extends View {
+    AnsColorExc1Msg answerMsg;
+    public ColorExc1View(AnsColorExc1Msg answerMsg)
     {
         this.answerMsg = answerMsg;
     }
