@@ -3,7 +3,6 @@ package it.polimi.ingsw.Controller;
 import it.polimi.ingsw.Exception.*;
 import it.polimi.ingsw.Exception.IllegalArgumentException;
 import it.polimi.ingsw.Model.*;
-import it.polimi.ingsw.messages.AnswIfAllowed;
 
 import java.util.*;
 import java.util.Random;

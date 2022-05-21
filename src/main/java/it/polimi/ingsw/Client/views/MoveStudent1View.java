@@ -1,6 +1,7 @@
 package it.polimi.ingsw.Client.views;
 
 import it.polimi.ingsw.Model.Color;
+import it.polimi.ingsw.Model.IslandTiles;
 import it.polimi.ingsw.Model.SchoolBoard;
 import it.polimi.ingsw.messages.AnsAskCAMsg;
 import it.polimi.ingsw.messages.AnsMoveStudent1Msg;
@@ -19,13 +20,18 @@ public class MoveStudent1View extends View{
     public void run() {
         Scanner scanner= new Scanner(System.in);
         Displayer displayer= new Displayer();
-        ArrayList<SchoolBoard> schoolBoards= new ArrayList<SchoolBoard>();
         int isl;
         System.out.println(answerMsg.GetPlayer() + " è il tuo turno!");
+        ArrayList<SchoolBoard> schoolBoards= new ArrayList<SchoolBoard>();
         for(int i=0; i<answerMsg.GetGB().getSchoolBoard().size();i++){
             schoolBoards.add(answerMsg.GetGB().getSchoolBoard().get(i));
         }
         displayer.displayAllSchoolboard(schoolBoards,answerMsg.GetPlayers());
+        ArrayList<IslandTiles> islandTiles=new ArrayList<>();
+        for(int i=0; i<answerMsg.GetGB().GetIslands().size();i++){
+            islandTiles.add(answerMsg.GetGB().GetIslands().get(i));
+        }
+        displayer.showAllIsland(islandTiles);
         Boolean flag=false;
         int count=0;
         Color cdef=Color.Blue;

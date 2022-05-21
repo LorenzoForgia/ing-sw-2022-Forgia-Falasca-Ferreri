@@ -3,13 +3,21 @@ package it.polimi.ingsw.messages;
 import it.polimi.ingsw.Client.ServerHandler;
 import it.polimi.ingsw.Client.views.AskForCloudView;
 import it.polimi.ingsw.Client.views.NumStepExcView;
+import it.polimi.ingsw.Model.CloudTiles;
+
+import java.util.ArrayList;
 
 public class AnsNumStepMNMsg extends AnswerMsg{
     private String name;
 
-    public AnsNumStepMNMsg(CommandMsg parent, String name){
+
+
+    private ArrayList<CloudTiles> cloudTiles;
+
+    public AnsNumStepMNMsg(CommandMsg parent, String name,ArrayList cloudTiles){
         super(parent);
         this.name = name;
+        this.cloudTiles=cloudTiles;
     }
     @Override
     public void processMessage(ServerHandler serverHandler)
@@ -18,5 +26,8 @@ public class AnsNumStepMNMsg extends AnswerMsg{
     }
     public String GetPlayer(){
         return name;
+    }
+    public ArrayList<CloudTiles> getCloudTiles() {
+        return cloudTiles;
     }
 }

@@ -18,7 +18,7 @@ public class CheckTurnEndedMsg extends CommandMsg{
             System.out.println("risveglio tutti");
 
             try {
-                while(!game.isFlagturn() && !game.getChoosenPlayer().EndOfAllTurn()){
+                while(!game.isFlagturn() && !game.getChoosenPlayer().EndOfAllTurn() && !game.getGameEndState().isFlagImmediately()){
                     System.out.println("mi addormento" + clientHandler.getNickname());
                     game.wait();
                 }

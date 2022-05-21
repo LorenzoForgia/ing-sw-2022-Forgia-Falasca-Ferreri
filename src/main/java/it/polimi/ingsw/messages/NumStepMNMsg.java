@@ -26,7 +26,7 @@ public class NumStepMNMsg extends CommandMsg{
                     AnsEndGameMsg ansEndGameMsg= new AnsEndGameMsg(this, game.showWinner());
                     clientHandler.sendAnswerMessage(ansEndGameMsg);
                 }else{
-                    answerMsg= new AnsNumStepMNMsg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName());
+                    answerMsg= new AnsNumStepMNMsg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(),game.getGameModel().getGeneralBoard().getClouds());
                     clientHandler.sendAnswerMessage(answerMsg);
                 }
             }catch (IllegalNumberOfStepException e){

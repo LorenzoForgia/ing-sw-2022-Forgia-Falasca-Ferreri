@@ -17,13 +17,13 @@ public class AskCAMsg extends CommandMsg{
         synchronized (game) {
             Boolean flag = game.CheckIfAllPlayedCardAssistant();
             try {
-                while (!clientHandler.getNickname().equals(game.getChoosenPlayer().GetPlayerTurn().getNickName())) {
+                while (!clientHandler.getNickname().equals(game.getChoosenPlayer().GetPlayerTurn().getNickName()) && !game.getGameEndState().isFlagImmediately()) {
                     game.wait();
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            if(game.getGameEndState().CheckEndGameImmediately(game.getChoosenPlayer().GetPlayerTurn(), game.getGameModel().getGeneralBoard())){
+            if(game.getGameEndState().isFlagImmediately()){
                 AnsEndGameMsg ansEndGameMsg= new AnsEndGameMsg(this, game.showWinner());
                 clientHandler.sendAnswerMessage(ansEndGameMsg);
             }else{
