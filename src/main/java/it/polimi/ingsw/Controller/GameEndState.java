@@ -16,15 +16,7 @@ public class GameEndState {
             return true;
         }else{return false;}
     }
-    public boolean CheckEndGameRoundEnded(Player p, GeneralBoard g, Bag b){
-        if(b.BagIsEmpty()){
-            flagNotImmediately = true;
-            return true;
-        }else if(p.getMyDeck().GetDeck().size()==0){
-            flagNotImmediately = true;
-            return true;
-        }else{return false;}
-    }
+
     public void CheckEndGameRoundEndedForBag( Bag b){
         if(b.BagIsEmpty()){
             flagNotImmediately = true;
