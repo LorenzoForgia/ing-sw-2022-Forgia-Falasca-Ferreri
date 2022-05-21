@@ -2,6 +2,7 @@ package it.polimi.ingsw.messages;
 
 import it.polimi.ingsw.Controller.GameController;
 import it.polimi.ingsw.Exception.ColorNoInEntranceException;
+import it.polimi.ingsw.Exception.IslandNotInListException;
 import it.polimi.ingsw.Model.Color;
 import it.polimi.ingsw.Server.ClientHandler;
 
@@ -35,25 +36,25 @@ public class MoveStudent1Msg extends CommandMsg{
                     AnsMoveStudent1Msg ansMoveStudent1Msg= new AnsMoveStudent1Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers());
                     clientHandler.sendAnswerMessage(ansMoveStudent1Msg);
                 } catch (ColorNoInEntranceException e) {
-                    AnsColorExcMsg ansColorExcMsg= new AnsColorExcMsg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName());
+                    AnsColorExc1Msg ansColorExcMsg= new AnsColorExc1Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName());
                     clientHandler.sendAnswerMessage(ansColorExcMsg);
                 }
 
             }else{
                 try {
                     game.CheckColor(s, game.getChoosenPlayer().GetPlayerTurn());
-                    for(int i=0; i< game.getGameModel().getGeneralBoard().GetIslands().size();i++){
-                        if(l==game.getGameModel().getGeneralBoard().GetIslands().get(i).getNumberID()){
-                            game.PutStudentInLocation(s, game.getGameModel().getGeneralBoard().GetIslands().get(i),game.getChoosenPlayer().GetPlayerTurn());
-                        }
+                    try{
+                        game.IslandChosen(game.getChoosenPlayer().GetPlayerTurn(), l, s);
+                        AnsMoveStudent1Msg ansMoveStudent1Msg= new AnsMoveStudent1Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers());
+                        clientHandler.sendAnswerMessage(ansMoveStudent1Msg);
+                    }catch (IslandNotInListException e){
+                        AnsIslandExc1Msg ansIslandExcMsg= new AnsIslandExc1Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName());
+                        clientHandler.sendAnswerMessage(ansIslandExcMsg);
                     }
-                    AnsMoveStudent1Msg ansMoveStudent1Msg= new AnsMoveStudent1Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers());
-                    clientHandler.sendAnswerMessage(ansMoveStudent1Msg);
                 } catch (ColorNoInEntranceException e) {
-                    AnsColorExcMsg ansColorExcMsg= new AnsColorExcMsg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName());
+                    AnsColorExc1Msg ansColorExcMsg= new AnsColorExc1Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName());
                     clientHandler.sendAnswerMessage(ansColorExcMsg);
                 }
-
             }
 
         }
