@@ -31,39 +31,11 @@ class PlayerTest {
         DCA = null;
     }
 
-    @Test
-    public void testRemoveCoin(){
-        try{
-            player.removeCoin(1);
-            assertEquals( 0, player.getNumberCoins());
-        }catch( IllegalMoveException e){
-            fail();
-        }
-    }
-
-    @Test
-    public void testRemoveCoin2(){
-        boolean thrown= false;
-        try{
-            player.removeCoin(2);
-
-        }catch( IllegalMoveException e){
-            thrown= true;
-        }
-
-        assertTrue(thrown);
-    }
 
     @Test
     public void testAddCoin(){
         player.AddCoin(3);
         assertEquals(4, player.getNumberCoins());
-    }
-
-    @Test
-    public void testChooseSquad(){
-        player.ChooseSquad(ColorTower.Black);
-        assertEquals( ColorTower.Black, player.GetSquad());
     }
 
     @Test
@@ -77,7 +49,6 @@ class PlayerTest {
                 flag = false;
             }
         }
-
         assertTrue(flag);
     }
 }

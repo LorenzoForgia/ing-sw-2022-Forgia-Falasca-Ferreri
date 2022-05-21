@@ -74,25 +74,10 @@ public class Player implements Serializable {
         NumberCoins = NumberCoins + n;
     }
 
-    public void removeCoin(int n) throws IllegalMoveException {
-        if (NumberCoins >= n) {
-            NumberCoins = NumberCoins - n;
-        } else {
-            throw new IllegalMoveException();
-        }
-    }
-
     public int getTurnToPlayCardAssistant() {
         return turnToPlayCardAssistant;
     }
 
-    public ColorTower GetSquad(){
-        return MySchoolBoard.ColorTower();
-    }
-
-    public void ChooseSquad( ColorTower t){
-        MySchoolBoard.setColorTower(t);
-    }
     public void SetNumTurn(){
         Turn=Turn+1;
     }

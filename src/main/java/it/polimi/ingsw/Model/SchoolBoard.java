@@ -85,16 +85,4 @@ public class SchoolBoard implements Serializable {
     public ArrayList<Color> getEntrance(){
         return Entrance;
     }
-
-
-    /**the next method is only for tests**/
-    public int GetNumberStudent(Color c){
-        int countercolorstud=0;
-        for(int i=0;i<Entrance.size();i++){
-            if(Entrance.get(i).equals(c)){
-                countercolorstud++;
-            }
-        }
-        return countercolorstud;
-    }
 }
