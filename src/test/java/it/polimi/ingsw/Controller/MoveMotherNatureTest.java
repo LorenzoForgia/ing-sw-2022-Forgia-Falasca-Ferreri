@@ -674,5 +674,23 @@ class MoveMotherNatureTest {
         assertEquals(7, GB.getSchoolBoard().get(0).getNumberOfTower());
         assertEquals(8, GB.getSchoolBoard().get(2).getNumberOfTower());
     }
-
+    @Test
+    public void testSetMotherNature() {
+        boolean flag=false;
+        boolean flag1= false;
+        GeneralBoard GB = new GeneralBoard(0);
+        GB.CreateTwelveIslands();
+        MMN.SetIslandWithMotherNature(GB);
+        for(int i =0; i <12; i++){
+           if(GB.GetIslands().get(i).isMotherNature()) {
+               if (!flag) {
+                   flag = true;
+               }else{
+                   flag1=true;
+               }
+           }
+        }
+        assertTrue(flag);
+        assertFalse(flag1);
+    }
 }

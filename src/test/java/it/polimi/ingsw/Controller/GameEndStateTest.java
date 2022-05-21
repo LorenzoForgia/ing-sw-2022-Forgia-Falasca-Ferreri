@@ -27,8 +27,8 @@ class GameEndStateTest {
           gb.getSchoolBoard().get(0).RemoveTower();
       }
       GameEndState GE=new GameEndState();
-      assertTrue(GE.CheckEndGameImmediately(p1,gb));
-      assertFalse(GE.CheckEndGameImmediately(p2,gb));
+      GE.CheckEndGameImmediately(p1,gb);
+      assertTrue(GE.isFlagImmediately());
   }
     @Test
     public void testCheckEndGameImmediately2(){ /** case  numIslands<=3  **/
@@ -50,8 +50,30 @@ class GameEndStateTest {
             gb.GetIslands().remove(0);
         }
         GameEndState GE=new GameEndState();
-        assertTrue(GE.CheckEndGameImmediately(p1,gb));
+        GE.CheckEndGameImmediately(p1,gb);
+        assertTrue(GE.isFlagImmediately());
     }
+    @Test
+    public void testCheckEndGameImmediately3(){ /** case  numIslands>3  **/
+        Setup s=new Setup();
+        GeneralBoard gb=s.CreateGeneralboard(false,2);
+        Player p1=new Player("A");
+        p1.setMyDeck(new DeckCardAssistant());
+        p1.setMySchoolBoard(gb.getSchoolBoard().get(0));
+        p1.setNumberCoins(1);
+        Player p2=new Player("B");
+        p2.setMyDeck(new DeckCardAssistant());
+        p2.setMySchoolBoard(gb.getSchoolBoard().get(1));
+        p2.setNumberCoins(1);
+        List<SchoolBoard> sb=new ArrayList<>();
+        sb.add(gb.getSchoolBoard().get(0));
+        sb.add(gb.getSchoolBoard().get(1));
+        s.SetTowers(2,sb);
+        GameEndState GE=new GameEndState();
+        GE.CheckEndGameImmediately(p1,gb);
+        assertFalse(GE.isFlagImmediately());
+    }
+
     @Test
     public void testCheckEndGameRoundEnded1(){ /** Bag is empty  **/
         Setup s=new Setup();
@@ -69,7 +91,9 @@ class GameEndStateTest {
         sb.add(gb.getSchoolBoard().get(0));
         sb.add(gb.getSchoolBoard().get(1));
         GameEndState GE=new GameEndState();
-        assertTrue(GE.CheckEndGameRoundEnded(p1,gb,b));
+        GE.CheckEndGameRoundEndedForBag(b);
+        assertTrue(GE.isFlagNotImmediately());
+
     }
     @Test
     public void testCheckEndGameRoundEnded2(){ /** deck size=0  **/
@@ -92,7 +116,8 @@ class GameEndStateTest {
             p1.getMyDeck().GetDeck().remove(0);
         }
         GameEndState GE=new GameEndState();
-        assertTrue(GE.CheckEndGameRoundEnded(p1,gb,b));
+        GE.CheckEndGameRoundEndedForCardAssistant(p1);
+        assertTrue(GE.isFlagNotImmediately());
     }
     @Test
     public void testCheckEndGameRoundEnded3(){ /** Bag is not empty **/
@@ -112,7 +137,8 @@ class GameEndStateTest {
         sb.add(gb.getSchoolBoard().get(1));
         b.setStudents(10);
         GameEndState GE=new GameEndState();
-        assertFalse(GE.CheckEndGameRoundEnded(p1,gb,b));
+        GE.CheckEndGameRoundEndedForBag(b);
+        assertFalse(GE.isFlagNotImmediately());
     }
     @Test
     public void testCheckEndGameRoundEnded4(){ /** myDeck size>0 **/
@@ -133,6 +159,7 @@ class GameEndStateTest {
         sb.add(gb.getSchoolBoard().get(1));
         GameEndState GE=new GameEndState();
         assertEquals(10,p1.getMyDeck().GetDeck().size());
-        assertFalse(GE.CheckEndGameRoundEnded(p1,gb,b));
+        GE.CheckEndGameRoundEndedForCardAssistant(p1);
+        assertFalse(GE.isFlagNotImmediately());
     }
 }

@@ -16,6 +16,11 @@ public class MoveMotherNature {
         Random random = new Random();
         int draftedindex = random.nextInt(12);
         I1=gb.GetIslands().get(draftedindex);
+        for(int i=0; i< gb.GetIslands().size(); i++){
+            if(I1.equals(gb.GetIslands().get(i))){
+                gb.GetIslands().get(i).putMotherNature();
+            }
+        }
     }
 
     public void SetIslandWithMotherNature(IslandTiles I){

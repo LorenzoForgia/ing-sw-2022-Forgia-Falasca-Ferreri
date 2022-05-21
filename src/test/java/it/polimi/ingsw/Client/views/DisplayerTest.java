@@ -69,12 +69,39 @@ class DisplayerTest {
 
         /*p.displayAllSchoolboard(sc)*/
         IslandTiles i1=new IslandTiles(0,true,3,false,3,true);
+        IslandTiles i2=new IslandTiles(1,true,3,false,3,true);
+        IslandTiles i3=new IslandTiles(2,true,3,false,3,true);
         i1.putTower(ColorTower.Black);
-        p.displayAssistantCard(CardAssistant.Quattro);
-        p.showIsland(i1);
+        i2.putTower(ColorTower.White);
+        i3.putTower(ColorTower.Grey);
+        ArrayList<IslandTiles> is=new ArrayList<>();
+        is.add(i1);
+        is.add(i2);
+        is.add(i3);
+        is.add(i1);
+        is.add(i2);
+
+        p.showAllIsland(is);
+
+        ArrayList<CardAssistant> ca=new ArrayList<>();
+        ca.add(CardAssistant.Uno);
+        ca.add(CardAssistant.Tre);
+        ca.add(CardAssistant.Due);
+        ca.add(CardAssistant.Sei);
+        ca.add(CardAssistant.Dieci);
+        p.showAllAssistantCard(ca);
         p.displayWallet(10);
-        CloudTiles c=new CloudTiles(0);
-        p.showCloudTiles(c);
+        ArrayList<CloudTiles> cloudTiles=new ArrayList<CloudTiles>();
+        CloudTiles c1=new CloudTiles(0);
+        CloudTiles c2=new CloudTiles(1);
+        CloudTiles c3=new CloudTiles(2);
+        CloudTiles c4=new CloudTiles(3);
+        cloudTiles.add(c1);
+        cloudTiles.add(c2);
+        cloudTiles.add(c3);
+        cloudTiles.add(c4);
+        p.showAllCloudTiles(cloudTiles);
+
     }
 
 }
