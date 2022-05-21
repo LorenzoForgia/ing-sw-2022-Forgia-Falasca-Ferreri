@@ -2,6 +2,7 @@ package it.polimi.ingsw.Client.views;
 
 import it.polimi.ingsw.Model.CardAssistant;
 import it.polimi.ingsw.Model.Color;
+import it.polimi.ingsw.Model.IslandTiles;
 import it.polimi.ingsw.Model.SchoolBoard;
 import it.polimi.ingsw.messages.AnsMoveStudent1Msg;
 import it.polimi.ingsw.messages.MoveStudent1Msg;
@@ -28,6 +29,11 @@ public class MoveStudent2View extends View{
             schoolBoards.add(answerMsg.GetGB().getSchoolBoard().get(i));
         }
         displayer.displayAllSchoolboard(schoolBoards,answerMsg.GetPlayers());
+        ArrayList<IslandTiles> islandTiles=new ArrayList<>();
+        for(int i=0; i<answerMsg.GetGB().GetIslands().size();i++){
+           islandTiles.add(answerMsg.GetGB().GetIslands().get(i));
+        }
+        displayer.showAllIsland(islandTiles);
         System.out.println(answerMsg.GetPlayer() + " scegli il secondo studente!");
         Boolean flag=false;
         int count=0;

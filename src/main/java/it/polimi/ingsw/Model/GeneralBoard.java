@@ -9,10 +9,10 @@ import java.io.*;
     public class GeneralBoard implements Serializable {
     private int Coins;
     private int NoEntryTiles;
-    List<CloudTiles> Clouds = new ArrayList<>();
-    List<IslandTiles> Islands = new ArrayList<>();
-    List<SchoolBoard> AllBoards = new ArrayList<>();
-    List <CharacterCard> ChoosenCards = new ArrayList<>();
+    ArrayList<CloudTiles> Clouds = new ArrayList<>();
+    ArrayList<IslandTiles> Islands = new ArrayList<>();
+    ArrayList<SchoolBoard> AllBoards = new ArrayList<>();
+    ArrayList<CharacterCard> ChoosenCards = new ArrayList<>();
 
 
     public GeneralBoard(int coins) {
@@ -23,7 +23,7 @@ import java.io.*;
         ChoosenCards.add(c);
     }
 
-    public List <CharacterCard>  getChoosenCard(){
+    public ArrayList <CharacterCard>  getChoosenCard(){
         return ChoosenCards;
     }
     public void setNoEntryTiles(int noEntryTiles) {
@@ -40,7 +40,7 @@ import java.io.*;
         }
     }
 
-    public List<IslandTiles> GetIslands(){
+    public ArrayList<IslandTiles> GetIslands(){
         return Islands;
     }
 
@@ -51,7 +51,7 @@ import java.io.*;
         }
     }
 
-    public List<CloudTiles> getClouds(){
+    public ArrayList<CloudTiles> getClouds(){
         return Clouds;
         }
 
@@ -79,7 +79,7 @@ import java.io.*;
         }
     }
 
-    public List<SchoolBoard> getSchoolBoard(){
+    public ArrayList<SchoolBoard> getSchoolBoard(){
         return AllBoards;
     }
 
