@@ -316,6 +316,22 @@ public class GameController {
         }
     }
 
+
+    public void IslandChosen(Player p, int n, Color c) throws IslandNotInListException{
+        boolean flag= true;
+
+        for(int i=0; i< gameModel.getGeneralBoard().GetIslands().size() && flag; i++){
+            if(n== gameModel.getGeneralBoard().GetIslands().get(i).getNumberID()){
+                PutStudentInLocation(c,gameModel.getGeneralBoard().GetIslands().get(i), p);
+                flag= false;
+            }
+        }
+
+        if(flag){
+            throw new IslandNotInListException(n);
+        }
+    }
+
     /** Check if the steps are allowed or not. If they are, it changes the position of MotherNature
      * **/
 
@@ -402,7 +418,6 @@ public class GameController {
      * **/
     public boolean ResetTheTurnForNewRoundWhenAllPlayed(){
         if(choosenPlayer.EndOfAllTurn()) {
-            System.out.println("dentro");
             if (choosenPlayer.getNumPlayerTurn() == gameModel.getNumplayers()) {
                 gameEndState.CheckEndGameRoundEndedForBag(gameModel.getBag());
                 if (!gameEndState.isFlagImmediately() && !gameEndState.isFlagNotImmediately() && choosenPlayer.getNumPlayerTurn() == gameModel.getNumplayers()) {
