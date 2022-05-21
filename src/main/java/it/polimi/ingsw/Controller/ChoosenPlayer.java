@@ -71,8 +71,6 @@ public class ChoosenPlayer {
        }
 
         for (int i = 0; i < players.size(); i++) {
-            System.out.println(players.size());
-            System.out.println("Sto shutdownando:"+players.get(i).GetNumTurn()+"  "+players.get(i));
             orderPlayers.set(players.get(i).GetNumTurn(), players.get(i));
         }
         firstPlayer = orderPlayers.get(0);
@@ -80,7 +78,7 @@ public class ChoosenPlayer {
     }
 
     private void GetOrderOfPlayersForCardAssistant(List<Player> players) {
-        numPlayerTurn =0;
+
         if(orderPlayers.size()==0) {
             for (int i = 0; i < players.size(); i++) {
                 orderPlayers.add(players.get(i));
@@ -88,12 +86,9 @@ public class ChoosenPlayer {
         }
 
         for (int i = 0; i < players.size(); i++) {
-            System.out.println(players.size());
-            System.out.println("Sto shutdownando:"+players.get(i).GetNumTurn()+"  "+players.get(i));
             orderPlayers.set(players.get(i).getTurnToPlayCardAssistant(), players.get(i));
-        }
-
-        System.out.println(numPlayerTurn);
+             }
+        numPlayerTurn =0;
     }
 
     public void incrementTurn() {
