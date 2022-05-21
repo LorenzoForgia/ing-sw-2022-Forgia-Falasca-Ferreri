@@ -1,7 +1,6 @@
 package it.polimi.ingsw.Client.views;
 
-import it.polimi.ingsw.Client.ServerHandler;
-import it.polimi.ingsw.messages.Login;
+import it.polimi.ingsw.messages.LoginMsg;
 
 import java.util.Scanner;
 
@@ -24,7 +23,7 @@ public class TitleView extends View {
     d.displayLogo();
     System.out.println("Inserisci il tuo nickname:");
     String nickname = (scanner.nextLine());
-    Login login=new Login(nickname);
+    LoginMsg login=new LoginMsg(nickname);
     getOwner().getServerHandler().sendCommandMessage(login);
   }
 

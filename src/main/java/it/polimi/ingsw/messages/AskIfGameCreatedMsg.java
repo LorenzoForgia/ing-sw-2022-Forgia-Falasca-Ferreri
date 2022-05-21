@@ -1,12 +1,11 @@
 package it.polimi.ingsw.messages;
 
 import it.polimi.ingsw.Controller.GameController;
-import it.polimi.ingsw.Model.IllegalMoveException;
 import it.polimi.ingsw.Server.ClientHandler;
 
 import java.io.IOException;
 
-public class AskIfGameCreated extends CommandMsg{
+public class AskIfGameCreatedMsg extends CommandMsg{
 
 
     @Override

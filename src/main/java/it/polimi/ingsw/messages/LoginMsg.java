@@ -2,30 +2,29 @@ package it.polimi.ingsw.messages;
 
 import it.polimi.ingsw.Controller.GameController;
 import it.polimi.ingsw.Exception.IllegalNickNameException;
-import it.polimi.ingsw.Model.IllegalMoveException;
 import it.polimi.ingsw.Server.ClientHandler;
 
 import java.io.IOException;
 
-public class Login extends CommandMsg {
+public class LoginMsg extends CommandMsg {
     private String name;
 
-    public Login(String name) {
+    public LoginMsg(String name) {
         this.name = name;
     }
 
     @Override
     public void processMessage(ClientHandler clientHandler) throws IOException
     {
-        AnswIfAllowed answerMsg;
+        AnswIfAllowedMsg answerMsg;
         GameController game = clientHandler.getGame();
 
         try {
             game.NickNameAvailable(name);
             clientHandler.setNickname(name);
-            answerMsg = new AnswIfAllowed(this, AnswIfAllowed.Status.VALID);
+            answerMsg = new AnswIfAllowedMsg(this, AnswIfAllowedMsg.Status.VALID);
         }catch(IllegalNickNameException e){
-            answerMsg = new AnswIfAllowed(this, AnswIfAllowed.Status.INVALID);
+            answerMsg = new AnswIfAllowedMsg(this, AnswIfAllowedMsg.Status.INVALID);
         }
         clientHandler.sendAnswerMessage(answerMsg);
     }

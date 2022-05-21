@@ -1,9 +1,9 @@
 package it.polimi.ingsw.Client.views;
 
 
-import it.polimi.ingsw.messages.AnswIfAllowed;
-import it.polimi.ingsw.messages.AskIfGameCreated;
-import it.polimi.ingsw.messages.Login;
+import it.polimi.ingsw.messages.AnswIfAllowedMsg;
+import it.polimi.ingsw.messages.AskIfGameCreatedMsg;
+import it.polimi.ingsw.messages.LoginMsg;
 
 import java.util.Scanner;
 
@@ -16,7 +16,7 @@ public class PrintAnswerView extends View
 {
   /** The answer message containing the data from the server */
 
-  private AnswIfAllowed answerMsg;
+  private AnswIfAllowedMsg answerMsg;
 
 
   /**
@@ -24,7 +24,7 @@ public class PrintAnswerView extends View
    * @param answerMsg The answer message.
    */
 
-  public PrintAnswerView(AnswIfAllowed answerMsg)
+  public PrintAnswerView(AnswIfAllowedMsg answerMsg)
   {
     this.answerMsg = answerMsg;
   }
@@ -36,16 +36,16 @@ public class PrintAnswerView extends View
     /*View nextView = new NextNumberView();*/
     Scanner scanner = new Scanner(System.in);
 
-    AnswIfAllowed.Status moveStatus = answerMsg.getMoveStatus();
-     if (moveStatus == AnswIfAllowed.Status.INVALID) {
+    AnswIfAllowedMsg.Status moveStatus = answerMsg.getMoveStatus();
+     if (moveStatus == AnswIfAllowedMsg.Status.INVALID) {
         System.out.println("Nickname già utilizzato! Inserisci un nuovo nickname!");
         String nickname = (scanner.nextLine());
-        Login login=new Login(nickname);
+        LoginMsg login=new LoginMsg(nickname);
         getOwner().getServerHandler().sendCommandMessage(login);
      } else {
          System.out.println("Loggato correttamente!");
       /* answer if a game is already created*/
-         getOwner().getServerHandler().sendCommandMessage(new AskIfGameCreated());
+         getOwner().getServerHandler().sendCommandMessage(new AskIfGameCreatedMsg());
 
         /*getOwner().terminate();
         nextView = null;*/
