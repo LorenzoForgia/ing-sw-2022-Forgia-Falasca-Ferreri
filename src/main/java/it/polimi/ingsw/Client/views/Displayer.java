@@ -267,9 +267,8 @@ public class Displayer {
 
     }
     public void displayAssistantCard(CardAssistant c){
-        System.out.println("CARTA ASSISTENTE:"+c.getCardValue());
-        System.out.println("|"+Color.Blue+"Valore:"+c.getCardValue()+" "+Color.Red+"Mov.MN:"+c.getMovementMN()+Color.Reset+"|");
-
+        System.out.print("|"+Color.Blue+"Valore:"+c.getCardValue()+" "+Color.Red+"Mov.MN:"+c.getMovementMN()+Color.Reset+"|  ");
+        System.out.println("CARTA ASSISTENTE:"+c.getName());
     }
     public void showAllAssistantCard(ArrayList<CardAssistant> ac){
         for(int i=0;i<ac.size();i++){

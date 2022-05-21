@@ -6,6 +6,7 @@ import it.polimi.ingsw.messages.AnsGameStartedMsg;
 import it.polimi.ingsw.messages.FirstPlayerTurnMsg;
 import it.polimi.ingsw.messages.TurnDecidedMsg;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FirstPlayerTurnView extends View{
@@ -20,6 +21,12 @@ public class FirstPlayerTurnView extends View{
 
     @Override
     public void run() {
+        Displayer d=new Displayer();
+        ArrayList<CardAssistant> ca=new ArrayList<>();
+        for(int i=0;i<answerMsg.getDca().GetDeck().size();i++){
+            ca.add(answerMsg.getDca().GetDeck().get(i));
+        }
+        d.showAllAssistantCard(ca);
         Scanner scanner = new Scanner(System.in);
         CardAssistant [] ac=CardAssistant.values();
         Boolean flag=false;

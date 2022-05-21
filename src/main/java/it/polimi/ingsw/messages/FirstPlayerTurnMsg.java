@@ -21,16 +21,16 @@ public class FirstPlayerTurnMsg extends CommandMsg {
                 name = game.getChoosenPlayer().GetPlayerTurn().getNickName();
                 try{
                     while(!clientHandler.getNickname().equals(name)) {
-                        System.out.println("FIRSTMSG mi addormento"+clientHandler.getNickname());
+
                         game.wait();
-                        System.out.println("FIRSTMSG mi sveglio"+clientHandler.getNickname());
+
                         name = game.getChoosenPlayer().GetPlayerTurn().getNickName();
                     }
                 }catch (InterruptedException e){
                     e.printStackTrace();
                 }
 
-                answerMsg = new AnsFirstPlayerTurnMsg(this, name);
+                answerMsg = new AnsFirstPlayerTurnMsg(this, name,game.getChoosenPlayer().GetPlayerTurn().getMyDeck());
                 clientHandler.sendAnswerMessage(answerMsg);
                 game.notifyAll();
             }
