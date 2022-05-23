@@ -40,17 +40,22 @@ public class CCMsg extends CommandMsg{
                         }else if(numcard==6){
 
                         }else if(numcard==7){
-
+                            AnsCC7Msg ansCC7Msg= new AnsCC7Msg(this);
+                            clientHandler.sendAnswerMessage(ansCC7Msg);
                         }else if(numcard==8){
 
                         }else if(numcard==9){
-
+                            AnsCC9Msg ansCC9Msg= new AnsCC9Msg(this);
+                            clientHandler.sendAnswerMessage(ansCC9Msg);
                         }else if(numcard==10){
-
+                            AnsCC10Msg ansCC10Msg= new AnsCC10Msg(this);
+                            clientHandler.sendAnswerMessage(ansCC10Msg);
                         }else if(numcard==11){
-
+                            AnsCC11Msg ansCC11Msg= new AnsCC11Msg(this);
+                            clientHandler.sendAnswerMessage(ansCC11Msg);
                         }else if(numcard==12){
-
+                            AnsCC12Msg ansCC12Msg= new AnsCC12Msg(this);
+                            clientHandler.sendAnswerMessage(ansCC12Msg);
                         }
                     }catch (NotEnoughCoinException e){
                         AnsNotEnoughCoinsExcMsg ansNotEnoughCoinsExcMsg= new AnsNotEnoughCoinsExcMsg(this);
@@ -64,13 +69,6 @@ public class CCMsg extends CommandMsg{
                 AnsCCNotInTableExcMsg answerMsg= new AnsCCNotInTableExcMsg(this);
                 clientHandler.sendAnswerMessage(answerMsg);
             }
-
-
-
-
-
-
-
         }
     }
 }

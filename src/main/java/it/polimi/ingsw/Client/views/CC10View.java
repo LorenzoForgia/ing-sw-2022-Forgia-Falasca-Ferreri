@@ -1,17 +1,14 @@
 package it.polimi.ingsw.Client.views;
 
 import it.polimi.ingsw.Model.Color;
-import it.polimi.ingsw.messages.AnsCC3Msg;
-import it.polimi.ingsw.messages.AnsCC7Msg;
-import it.polimi.ingsw.messages.CC3Msg;
-import it.polimi.ingsw.messages.CC7Msg;
+import it.polimi.ingsw.messages.*;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class CC7View extends View{
-    AnsCC7Msg answerMsg;
-    public CC7View(AnsCC7Msg answerMsg)
+public class CC10View extends View{
+    AnsCC10Msg answerMsg;
+    public CC10View(AnsCC10Msg answerMsg)
     {
         this.answerMsg = answerMsg;
     }
@@ -22,7 +19,7 @@ public class CC7View extends View{
         Boolean flag=false;
         int count=0;
         Color cdef=Color.Blue;
-        System.out.println("Quanti studenti vuoi prendere? ( max 3 studenti)");
+        System.out.println("Quanti studenti vuoi scambiare? ( max 2 studenti)");
         int numstud = Integer.parseInt(scanner.nextLine());
         for(int j=0; j<numstud;j++){
             while(!flag) {
@@ -45,7 +42,7 @@ public class CC7View extends View{
             flag=false;
             students.add(cdef);
         }
-        CC7Msg cc7Msg = new CC7Msg(students);
-        getOwner().getServerHandler().sendCommandMessage(cc7Msg);
+        CC10Msg cc10Msg = new CC10Msg(students);
+        getOwner().getServerHandler().sendCommandMessage(cc10Msg);
     }
 }
