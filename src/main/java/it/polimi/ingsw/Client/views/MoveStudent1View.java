@@ -1,10 +1,12 @@
 package it.polimi.ingsw.Client.views;
 
+import it.polimi.ingsw.Model.CharacterCard;
 import it.polimi.ingsw.Model.Color;
 import it.polimi.ingsw.Model.IslandTiles;
 import it.polimi.ingsw.Model.SchoolBoard;
 import it.polimi.ingsw.messages.AnsAskCAMsg;
 import it.polimi.ingsw.messages.AnsMoveStudent1Msg;
+import it.polimi.ingsw.messages.CCMsg;
 import it.polimi.ingsw.messages.MoveStudent1Msg;
 
 import java.util.ArrayList;
@@ -35,6 +37,14 @@ public class MoveStudent1View extends View{
         Boolean flag=false;
         int count=0;
         Color cdef=Color.Blue;
+        System.out.println("Vuoi giocare una carta personaggio? si/no");
+        String card= scanner.nextLine();
+        if(card.equals("si")){
+            System.out.println("Qual'è il numero della carta personaggio che vuoi giocare?");
+            int numcard=Integer.parseInt(scanner.nextLine());
+            CCMsg ccMsg= new CCMsg(numcard);
+            getOwner().getServerHandler().sendCommandMessage(ccMsg);
+        }
         while(!flag) {
             if(count==0) {
                 System.out.println("Scegli il colore dello studente che vuoi spostare");
