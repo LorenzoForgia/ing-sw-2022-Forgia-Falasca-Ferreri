@@ -496,6 +496,29 @@ public class GameController {
           c.getCountUse();
     }
 
+    public boolean SetCharacterCard1(CharacterCard c1, Color color, int n){
+        boolean notCorrectIsland= true;
+        boolean notCorrectColor= true;
+        for(int i=0; notCorrectIsland && i< gameModel.getGeneralBoard().GetIslands().size(); i++){
+            if(gameModel.getGeneralBoard().GetIslands().get(i).getNumberID()== n){
+                notCorrectIsland= false;
+                ((CharacterCard1)c1).setIchosen(gameModel.getGeneralBoard().GetIslands().get(i));
+            }
+        }
+        for(int i=0; notCorrectColor && i< ((CharacterCard1)c1).GetchoosenStudent().size(); i++){
+            if(((CharacterCard1)c1).GetchoosenStudent().get(i).equals(color)){
+                notCorrectColor= false;
+                ((CharacterCard1)c1).setChoosenColor(color);
+            }
+        }
+
+        if(notCorrectColor || notCorrectIsland){
+            return false;
+        }else{
+            return true;
+        }
+    }
+
 
     public CharacterCard getCharacterCardChosen() {
         return characterCardChosen;
