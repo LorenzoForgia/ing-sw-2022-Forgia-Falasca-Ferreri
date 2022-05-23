@@ -4,6 +4,7 @@ import it.polimi.ingsw.Exception.*;
 import it.polimi.ingsw.Exception.IllegalArgumentException;
 import it.polimi.ingsw.Model.*;
 
+import java.sql.Array;
 import java.util.*;
 import java.util.Random;
 
@@ -554,16 +555,25 @@ public class GameController {
     public boolean SetCharacterCard7(CharacterCard c7, ArrayList<Color> colorEntrance, ArrayList<Color> colorChosen, Player p){
         boolean notCorrectColorInEntrance= true;
         boolean notCorrectColorOnCard= true;
+        ArrayList<Color> checkColor = new ArrayList<>();
 
+        checkColor.addAll(((CharacterCard7) c7).getStudentOnCard());
         for(int i=0; notCorrectColorOnCard && i < colorChosen.size(); i++) {
-            if(!((CharacterCard7) c7).getStudentOnCard().contains(colorChosen.get(i))){
+
+            if(!checkColor.contains(colorChosen.get(i))){
                 notCorrectColorInEntrance= false;
+            }else{
+                checkColor.remove(colorChosen.get(i));
             }
         }
 
-        for(int i=0; notCorrectColorInEntrance && i < colorChosen.size(); i++) {
-            if(!p.getMySchoolBoard().getEntrance().contains(colorChosen.get(i))){
+        checkColor.clear();
+        checkColor.addAll(p.getMySchoolBoard().getEntrance());
+        for(int i=0; notCorrectColorInEntrance && i < colorEntrance.size(); i++) {
+            if(!checkColor.contains(colorEntrance.get(i))){
                 notCorrectColorInEntrance= false;
+            }else{
+                checkColor.remove(colorEntrance.get(i));
             }
         }
 
@@ -574,6 +584,48 @@ public class GameController {
             ((CharacterCard7) c7).setStudentOnEntrance(colorEntrance);
             return true;
         }
+    }
+
+    public boolean SetCharacterCard10(CharacterCard c10, ArrayList<Color> colorEntrance, ArrayList<Color> colorDiningRoom, Player p){
+        boolean notCorrectColorInEntrance= true;
+        boolean notCorrectColorInDiningRoom= true;
+        ArrayList<Color> checkColor = new ArrayList<>();
+        int[] colorInDiningRoom= new int[5];
+
+        for(int i=0; i<5; i++){
+            colorInDiningRoom[i]=p.getMySchoolBoard().getDiningRoom().GetNumberStudent(i);
+        }
+
+        for(int i=0; notCorrectColorInDiningRoom && i < colorDiningRoom.size(); i++) {
+            if(colorInDiningRoom[colorDiningRoom.get(i).getIndex()]==0){
+                notCorrectColorInEntrance= false;
+            }else{
+                colorInDiningRoom[colorDiningRoom.get(i).getIndex()]= colorInDiningRoom[colorDiningRoom.get(i).getIndex()]-1;
+            }
+        }
+
+
+        checkColor.addAll(p.getMySchoolBoard().getEntrance());
+        for(int i=0; notCorrectColorInEntrance && i < colorEntrance.size(); i++) {
+            if(!checkColor.contains(colorEntrance.get(i))){
+                notCorrectColorInEntrance= false;
+            }else{
+                checkColor.remove(colorEntrance.get(i));
+            }
+        }
+
+        if(notCorrectColorInEntrance || notCorrectColorInDiningRoom){
+            return false;
+        }else{
+            ((CharacterCard10) c10).setStudentOnDiningRoom(colorDiningRoom);
+            ((CharacterCard10) c10).setStudentOnEntrance(colorEntrance);
+            return true;
+        }
+    }
+
+    public boolean SetCharacterCard9(CharacterCard c9, Color color){
+        ((CharacterCard9)c9).setChosenColor(color);
+        return true;
     }
 
     public boolean SetCharacterCard12(CharacterCard c12, Color color){
