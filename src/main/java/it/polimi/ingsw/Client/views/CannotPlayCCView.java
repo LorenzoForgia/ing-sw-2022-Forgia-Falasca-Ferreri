@@ -12,5 +12,6 @@ public class CannotPlayCCView extends View{
     @Override
     public void run() {
         System.out.println(answerMsg.GetPlayer() +" non ti è consentito giocare una carta personaggio!");
+
     }
 }

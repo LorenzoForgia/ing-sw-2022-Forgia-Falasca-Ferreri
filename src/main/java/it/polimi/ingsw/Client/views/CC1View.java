@@ -36,7 +36,7 @@ public class CC1View extends View{
             count++;
         }
         Color student= cdef;
-        System.out.println("Scegli il numero dell'sola su cui vuoi mettere lo studente");
+        System.out.println("Scegli il numero dell'isola su cui vuoi mettere lo studente");
         int isl= Integer.parseInt(scanner.nextLine());
         CC1Msg cc1Msg= new CC1Msg(isl, student);
         getOwner().getServerHandler().sendCommandMessage(cc1Msg);

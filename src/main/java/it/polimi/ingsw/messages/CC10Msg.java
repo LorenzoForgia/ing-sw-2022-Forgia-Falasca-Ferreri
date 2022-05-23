@@ -8,17 +8,22 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class CC10Msg extends CommandMsg{
-    private ArrayList<Color> students=null;
+    private ArrayList<Color> entrancestud=null;
+    private ArrayList<Color> diningstud= null;
 
-    public CC10Msg(ArrayList<Color> students){
-        this.students=students;
+    public CC10Msg(ArrayList<Color> entrancestud, ArrayList<Color> diningstud){
+        this.entrancestud=entrancestud;
+        this.diningstud=diningstud;
     }
 
     @Override
     public void processMessage(ClientHandler clientHandler) throws IOException {
         GameController game = clientHandler.getGame();
         synchronized (game) {
-
+            game.SetCharacterCard10(game.getCharacterCardChosen(), entrancestud, diningstud, game.getChoosenPlayer().GetPlayerTurn());
+            game.UseEffectOfCharacterCard(game.getChoosenPlayer().GetPlayerTurn(), game.getCharacterCardChosen());
+            AnsMoveStudent1AfterCCMsg answerMsg = new AnsMoveStudent1AfterCCMsg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers());
+            clientHandler.sendAnswerMessage(answerMsg);
         }
     }
 }

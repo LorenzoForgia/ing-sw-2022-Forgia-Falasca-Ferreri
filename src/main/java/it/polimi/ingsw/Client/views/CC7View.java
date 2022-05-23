@@ -19,6 +19,7 @@ public class CC7View extends View{
     public void run() {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Color> students= null;
+        ArrayList<Color> entrancestud= null;
         Boolean flag=false;
         int count=0;
         Color cdef=Color.Blue;
@@ -27,7 +28,7 @@ public class CC7View extends View{
         for(int j=0; j<numstud;j++){
             while(!flag) {
                 if(count==0) {
-                    System.out.println("Scegli lo studente che vuoi scambiare");
+                    System.out.println("Scegli lo studente sulla carta che vuoi scambiare");
                 }else{
                     System.out.println("Colore dello studente invalido! Riprova");
                 }
@@ -45,7 +46,28 @@ public class CC7View extends View{
             flag=false;
             students.add(cdef);
         }
-        CC7Msg cc7Msg = new CC7Msg(students);
+        for(int j=0; j<numstud;j++){
+            while(!flag) {
+                if(count==0) {
+                    System.out.println("Scegli lo studente del tuo ingresso che vuoi scambiare");
+                }else{
+                    System.out.println("Colore dello studente invalido! Riprova");
+                }
+                String colorchosen = scanner.nextLine();
+                Color[] colors = Color.values();
+                for (int i = 0; i < 5 && !flag; i++) {
+                    if (colors[i].getName().equals(colorchosen)) {
+                        cdef=colors[i];
+                        flag = true;
+                    }
+                }
+                count++;
+            }
+            count=0;
+            flag=false;
+            entrancestud.add(cdef);
+        }
+        CC7Msg cc7Msg = new CC7Msg(students, entrancestud);
         getOwner().getServerHandler().sendCommandMessage(cc7Msg);
     }
 }

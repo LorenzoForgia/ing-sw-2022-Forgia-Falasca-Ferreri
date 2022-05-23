@@ -15,7 +15,8 @@ public class CC10View extends View{
     @Override
     public void run() {
         Scanner scanner = new Scanner(System.in);
-        ArrayList<Color> students= null;
+        ArrayList<Color> entrancestud= null;
+        ArrayList<Color> diningstud=null;
         Boolean flag=false;
         int count=0;
         Color cdef=Color.Blue;
@@ -24,7 +25,7 @@ public class CC10View extends View{
         for(int j=0; j<numstud;j++){
             while(!flag) {
                 if(count==0) {
-                    System.out.println("Scegli lo studente che vuoi scambiare");
+                    System.out.println("Scegli lo studente che vuoi scambiare dell'ingresso");
                 }else{
                     System.out.println("Colore dello studente invalido! Riprova");
                 }
@@ -40,9 +41,30 @@ public class CC10View extends View{
             }
             count=0;
             flag=false;
-            students.add(cdef);
+            entrancestud.add(cdef);
         }
-        CC10Msg cc10Msg = new CC10Msg(students);
+        for(int j=0; j<numstud;j++){
+            while(!flag) {
+                if(count==0) {
+                    System.out.println("Scegli lo studente che vuoi scambiare dell'ingresso");
+                }else{
+                    System.out.println("Colore dello studente invalido! Riprova");
+                }
+                String colorchosen = scanner.nextLine();
+                Color[] colors = Color.values();
+                for (int i = 0; i < 5 && !flag; i++) {
+                    if (colors[i].getName().equals(colorchosen)) {
+                        cdef=colors[i];
+                        flag = true;
+                    }
+                }
+                count++;
+            }
+            count=0;
+            flag=false;
+            diningstud.add(cdef);
+        }
+        CC10Msg cc10Msg = new CC10Msg(entrancestud, diningstud);
         getOwner().getServerHandler().sendCommandMessage(cc10Msg);
     }
 }

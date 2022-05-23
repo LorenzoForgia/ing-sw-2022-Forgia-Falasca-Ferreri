@@ -19,7 +19,10 @@ public class CC1Msg extends CommandMsg{
     public void processMessage(ClientHandler clientHandler) throws IOException {
         GameController game = clientHandler.getGame();
         synchronized (game) {
-
+            game.SetCharacterCard1(game.getCharacterCardChosen(), stud, isl);
+            game.UseEffectOfCharacterCard(game.getChoosenPlayer().GetPlayerTurn(), game.getCharacterCardChosen());
+            AnsMoveStudent1AfterCCMsg answerMsg = new AnsMoveStudent1AfterCCMsg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers());
+            clientHandler.sendAnswerMessage(answerMsg);
         }
     }
 }

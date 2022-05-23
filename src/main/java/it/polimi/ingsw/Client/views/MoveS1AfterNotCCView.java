@@ -1,20 +1,18 @@
 package it.polimi.ingsw.Client.views;
 
-import it.polimi.ingsw.Model.CharacterCard;
 import it.polimi.ingsw.Model.Color;
 import it.polimi.ingsw.Model.IslandTiles;
 import it.polimi.ingsw.Model.SchoolBoard;
 import it.polimi.ingsw.messages.AnsAskCAMsg;
-import it.polimi.ingsw.messages.AnsMoveStudent1Msg;
-import it.polimi.ingsw.messages.CCMsg;
+import it.polimi.ingsw.messages.AnsMoveS1AfterNotCCMsg;
 import it.polimi.ingsw.messages.MoveStudent1Msg;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class MoveStudent1View extends View{
-    AnsAskCAMsg answerMsg;
-    public MoveStudent1View(AnsAskCAMsg answerMsg)
+public class MoveS1AfterNotCCView extends View{
+    AnsMoveS1AfterNotCCMsg answerMsg;
+    public MoveS1AfterNotCCView(AnsMoveS1AfterNotCCMsg answerMsg)
     {
         this.answerMsg = answerMsg;
     }
@@ -23,7 +21,6 @@ public class MoveStudent1View extends View{
         Scanner scanner= new Scanner(System.in);
         Displayer displayer= new Displayer();
         int isl;
-        System.out.println(answerMsg.GetPlayer() + " è il tuo turno!");
         ArrayList<SchoolBoard> schoolBoards= new ArrayList<SchoolBoard>();
         for(int i=0; i<answerMsg.GetGB().getSchoolBoard().size();i++){
             schoolBoards.add(answerMsg.GetGB().getSchoolBoard().get(i));
@@ -39,7 +36,7 @@ public class MoveStudent1View extends View{
         Color cdef=Color.Blue;
         while(!flag) {
             if(count==0) {
-                System.out.println("Scegli il colore dello studente che vuoi spostare");
+                System.out.println("Ora scegli il colore dello studente che vuoi spostare");
             }else{
                 System.out.println("Errore inserimento colore:Seleziona un colore valido");
             }
