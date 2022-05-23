@@ -22,6 +22,7 @@ public class GameController {
     private InfluenceProfessorTable influenceProfessorTable = new InfluenceProfessorTable();
     private boolean SetFirstTurn = false;
     private boolean flagturn= false;
+    private CharacterCard characterCardChosen=null;
 
     public boolean isFlagturn(){return flagturn;}
     public void setFlagturn(boolean flagturn){this.flagturn=flagturn;}
@@ -440,19 +441,17 @@ public class GameController {
     /** Check if the CharacterCard is in GeneralBoard
      * **/
 
-    public void CharacterCardInTable(CharacterCard characterCard) throws CharacterCardNotInTableException{
+    public void CharacterCardInTable(int n) throws CharacterCardNotInTableException{
         boolean flag = true;
-        if(characterCard == null){
-            throw new CharacterCardNotInTableException(characterCard);
-        }
         for(int i=0; i < gameModel.getGeneralBoard().getChoosenCard().size() && flag; i ++) {
-            if(gameModel.getGeneralBoard().getChoosenCard().get(i).equals(characterCard)){
+            if(gameModel.getGeneralBoard().getChoosenCard().get(i).getName()==n){
                 flag= false;
+                characterCardChosen= gameModel.getGeneralBoard().getChoosenCard().get(i);
             }
         }
 
         if(flag){
-            throw new CharacterCardNotInTableException(characterCard);
+            throw new CharacterCardNotInTableException(characterCardChosen);
         }
     }
 
@@ -519,6 +518,8 @@ public class GameController {
         }
 
     }
+
+
 
     public Player ReturnPlayerTurn(){
         return choosenPlayer.GetPlayerTurn();
