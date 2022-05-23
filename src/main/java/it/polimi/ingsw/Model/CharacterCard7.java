@@ -10,7 +10,7 @@ import java.util.*;
 
 public class CharacterCard7 extends CharacterCard {
     private ArrayList<Color> studentOnCard = new ArrayList<Color>();
-    Bag bag;
+    private Bag bag;
     private ArrayList<Color> studentOnEntrance=new ArrayList<Color>();
     private ArrayList<Color> studentChoosen=new ArrayList<Color>();
 

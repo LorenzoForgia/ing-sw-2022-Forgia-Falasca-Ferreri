@@ -14,6 +14,7 @@ class CharacterCard7Test {
     GeneralBoard gb=null;
     Player player= null;
     SchoolBoard sb=null;
+
     @BeforeEach
     public void setUp(){
         CC7= new CharacterCard7(7,1,0);
@@ -38,6 +39,8 @@ class CharacterCard7Test {
         CC7 = null;
         b=null;
         gb= null;
+        sb= null;
+        player = null;
     }
 
     @Test
