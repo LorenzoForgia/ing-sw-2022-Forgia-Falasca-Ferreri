@@ -38,6 +38,18 @@ public class CharacterCard7 extends CharacterCard {
             studentOnCard.add(bag.CatchStudent());
         }
     }
+
+    public ArrayList<Color> getStudentOnCard() {
+        return studentOnCard;
+    }
+
+    public void setStudentOnEntrance(ArrayList<Color> studentOnEntrance) {
+        this.studentOnEntrance = studentOnEntrance;
+    }
+
+    public void setStudentChoosen(ArrayList<Color> studentChoosen) {
+        this.studentChoosen = studentChoosen;
+    }
 }
 
 

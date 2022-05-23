@@ -519,6 +519,69 @@ public class GameController {
         }
     }
 
+    public boolean SetCharacterCard3(CharacterCard c3, int n){
+        boolean notCorrectIsland= true;
+        for(int i=0; notCorrectIsland && i< gameModel.getGeneralBoard().GetIslands().size(); i++){
+            if(gameModel.getGeneralBoard().GetIslands().get(i).getNumberID()== n){
+                notCorrectIsland= false;
+                ((CharacterCard3)c3).setI1(gameModel.getGeneralBoard().GetIslands().get(i));
+            }
+        }
+
+        if(notCorrectIsland){
+            return false;
+        }else{
+            return true;
+        }
+    }
+
+    public boolean SetCharacterCard5(CharacterCard c5, int n){
+        boolean notCorrectIsland= true;
+        for(int i=0; notCorrectIsland && i< gameModel.getGeneralBoard().GetIslands().size(); i++){
+            if(gameModel.getGeneralBoard().GetIslands().get(i).getNumberID()== n){
+                notCorrectIsland= false;
+                ((CharacterCard5)c5).setI1(gameModel.getGeneralBoard().GetIslands().get(i));
+            }
+        }
+
+        if(notCorrectIsland){
+            return false;
+        }else{
+            return true;
+        }
+    }
+
+    public boolean SetCharacterCard7(CharacterCard c7, ArrayList<Color> colorEntrance, ArrayList<Color> colorChosen, Player p){
+        boolean notCorrectColorInEntrance= true;
+        boolean notCorrectColorOnCard= true;
+
+        for(int i=0; notCorrectColorOnCard && i < colorChosen.size(); i++) {
+            if(!((CharacterCard7) c7).getStudentOnCard().contains(colorChosen.get(i))){
+                notCorrectColorInEntrance= false;
+            }
+        }
+
+        for(int i=0; notCorrectColorInEntrance && i < colorChosen.size(); i++) {
+            if(!p.getMySchoolBoard().getEntrance().contains(colorChosen.get(i))){
+                notCorrectColorInEntrance= false;
+            }
+        }
+
+        if(notCorrectColorInEntrance || notCorrectColorOnCard){
+            return false;
+        }else{
+            ((CharacterCard7) c7).setStudentChoosen(colorChosen);
+            ((CharacterCard7) c7).setStudentOnEntrance(colorEntrance);
+            return true;
+        }
+    }
+
+    public boolean SetCharacterCard12(CharacterCard c12, Color color){
+        ((CharacterCard12)c12).setChosenColor(color);
+         return true;
+    }
+
+
 
     public CharacterCard getCharacterCardChosen() {
         return characterCardChosen;
