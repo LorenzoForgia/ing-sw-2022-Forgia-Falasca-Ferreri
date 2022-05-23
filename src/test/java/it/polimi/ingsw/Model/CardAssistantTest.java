@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class CardAssistantTest {
     @Test
     public void GetcardvalueTest(){
-        assertEquals(9,CardAssistant.Dieci.getCardValue());
+        assertEquals(10,CardAssistant.Dieci.getCardValue());
     }
     @Test
     public void GetmovementMNTest(){

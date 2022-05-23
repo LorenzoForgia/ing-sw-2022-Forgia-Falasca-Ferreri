@@ -32,11 +32,12 @@ class CharacterCard5Test {
     @Test
     public void testUseEffect(){
         CC5.SetCard(b,gb);
-        /*CC5.setI1();*/
+        CC5.setI1(gb.GetIslands().get(0));
         CC5.UseEffect(player);
         assertTrue(player.isUsedCharacterCard());
-        assertEquals(1,player.getNameCharacterCard());
-        assertEquals(1,gb.GetIslands().get(0).getStudentsInIsland().size());
+        assertEquals(5,player.getNameCharacterCard());
+        assertTrue(gb.GetIslands().get(0).isNoEntryTiles());
+        assertEquals(1,gb.GetIslands().get(0).getNumberOfNet());
     }
 
 
