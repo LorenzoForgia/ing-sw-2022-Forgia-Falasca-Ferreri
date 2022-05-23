@@ -7,8 +7,8 @@ import java.util.*;
  * **/
 public class CharacterCard11 extends CharacterCard{
     private ArrayList<Color> choosenStudent = new ArrayList<Color>();
-    Color choosenColor;
-    Bag bag;
+    private Color choosenColor;
+    private Bag bag;
 
     public CharacterCard11(int name, int coins, int countUse) {
         super(name, coins, countUse);

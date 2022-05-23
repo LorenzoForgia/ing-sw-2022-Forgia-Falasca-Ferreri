@@ -19,6 +19,8 @@ public class CharacterCard5 extends CharacterCard{
 
     @Override
     public void UseEffect(Player player) {
+        player.setNameCharacterCard(5);
+        player.setUsedCharacterCard(true);
         I1.putNET();
         NET = NET -1;
 

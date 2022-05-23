@@ -28,6 +28,7 @@ class CharacterCard4Test {
         CC4 = null;
         b=null;
         gb= null;
+        player= null;
     }
 
     @Test

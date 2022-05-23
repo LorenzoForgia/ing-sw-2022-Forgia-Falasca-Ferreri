@@ -21,22 +21,21 @@ class CharacterCard6Test {
         gb.CreateTwelveIslands();
         player= new Player("a");
     }
-/*
+
     @AfterEach
     public void tearDown(){
-        CC5 = null;
+        CC6 = null;
         b=null;
         gb= null;
+        player= null;
     }
 
     @Test
     public void testUseEffect(){
-        CC5.SetCard(b,gb);
-        CC5.setI1();
-        CC5.UseEffect(player);
+        CC6.SetCard(b,gb);
+        CC6.UseEffect(player);
         assertTrue(player.isUsedCharacterCard());
-        assertEquals(1,player.getNameCharacterCard());
-        assertEquals(1,gb.GetIslands().get(0).getStudentsInIsland().size());
+        assertEquals(6,player.getNameCharacterCard());
     }
-    */
+
 }
