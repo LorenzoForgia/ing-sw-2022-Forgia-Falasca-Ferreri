@@ -59,6 +59,7 @@ class CharacterCard10Test {
         assertEquals(1, sb.getDiningRoom().GetNumberStudent(Color.Blue));
         assertEquals(0, sb.getDiningRoom().GetNumberStudent(Color.Red));
         assertTrue(sb.getEntrance().contains(Color.Red));
+        assertEquals(3,sb.getEntrance().size());
     }
 
 }

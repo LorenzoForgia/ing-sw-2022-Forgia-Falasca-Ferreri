@@ -68,7 +68,6 @@ class CharacterCard12Test {
         CC12.setChosenColor(Color.Blue);
         CC12.setPlayers(players);
         CC12.UseEffect(player1);
-        CC12.UseEffect(player1);
         assertTrue(player1.isUsedCharacterCard());
         assertEquals(12,player1.getNameCharacterCard());
         assertEquals(1, sb1.getDiningRoom().GetNumberStudent(Color.Blue));

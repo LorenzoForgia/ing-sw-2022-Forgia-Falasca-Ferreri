@@ -25,7 +25,7 @@ public class CharacterCard7 extends CharacterCard {
         p.setUsedCharacterCard(true);
         for(int i=0; i< studentOnEntrance.size(); i++){
             studentOnCard.add(studentOnEntrance.get(i));
-            p.getMySchoolBoard().getEntrance().remove(studentOnEntrance.get(i));
+            p.getMySchoolBoard().RemoveStudent(studentOnEntrance.get(i));
             p.getMySchoolBoard().getEntrance().add(studentChoosen.get(i));
             studentOnCard.remove(studentChoosen.get(i));
         }

@@ -49,7 +49,6 @@ class CharacterCard7Test {
         ArrayList<Color> chosenColor2= new ArrayList<>();
         ArrayList<Color> chosenEntrance= new ArrayList<>();
         CC7.SetCard(b,gb);
-        CC7.setStudentOnEntrance(sb.getEntrance());
         chosenColor.add(CC7.getStudentOnCard().get(0));
         chosenColor.add(CC7.getStudentOnCard().get(1));
         chosenColor.add(CC7.getStudentOnCard().get(2));
@@ -58,11 +57,13 @@ class CharacterCard7Test {
         chosenColor.add(CC7.getStudentOnCard().get(5));
         chosenColor2.addAll(chosenColor);
         chosenEntrance.addAll(sb.getEntrance());
+        CC7.setStudentOnEntrance(chosenEntrance);
         CC7.setStudentChoosen(chosenColor);
         CC7.UseEffect(player);
         assertTrue(player.isUsedCharacterCard());
         assertEquals(7,player.getNameCharacterCard());
         assertTrue(CC7.getStudentOnCard().containsAll(chosenEntrance));
         assertTrue(sb.getEntrance().containsAll(chosenColor2));
+
     }
 }
