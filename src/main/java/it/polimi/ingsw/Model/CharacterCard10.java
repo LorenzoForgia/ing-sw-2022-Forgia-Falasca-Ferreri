@@ -30,4 +30,11 @@ public class CharacterCard10 extends CharacterCard {
 
     }
 
+    public void setStudentOnEntrance(ArrayList<Color> studentOnEntrance) {
+        this.studentOnEntrance = studentOnEntrance;
+    }
+
+    public void setStudentOnDiningRoom(ArrayList<Color> studentOnDiningRoom) {
+        this.studentOnDiningRoom = studentOnDiningRoom;
+    }
 }
