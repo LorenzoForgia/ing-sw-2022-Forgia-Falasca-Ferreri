@@ -24,7 +24,7 @@ public class GameController {
     private boolean SetFirstTurn = false;
     private boolean flagturn= false;
     private CharacterCard characterCardChosen=null;
-    private int countmodexpview=0;
+    private int countmodexpview=1;
 
     public void incrementview(){countmodexpview=countmodexpview+1;}
     public int getCountmodexpview(){return countmodexpview;}

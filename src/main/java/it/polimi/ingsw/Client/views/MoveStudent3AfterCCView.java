@@ -36,7 +36,7 @@ public class MoveStudent3AfterCCView extends View{
         Color cdef = Color.Blue;
         while (!flag) {
             if (count == 0) {
-                System.out.println("Ora scegli il colore dello studente che vuoi spostare");
+                System.out.println("Ora scegli il colore del terzo studente che vuoi spostare");
             } else {
                 System.out.println("Errore inserimento colore:Seleziona un colore valido");
             }

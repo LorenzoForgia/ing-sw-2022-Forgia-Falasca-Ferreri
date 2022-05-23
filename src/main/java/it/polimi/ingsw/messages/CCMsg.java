@@ -30,7 +30,6 @@ public class CCMsg extends CommandMsg{
                                 clientHandler.sendAnswerMessage(ansCC1Msg);
                             }else if(numcard==2){
                                 game.UseEffectOfCharacterCard(game.getChoosenPlayer().GetPlayerTurn(), game.getCharacterCardChosen());
-                                game.incrementview();
                                 AnsPlayAfterCCMsg answerMsg = new AnsPlayAfterCCMsg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers(), game.getCountmodexpview());
                                 clientHandler.sendAnswerMessage(answerMsg);
                             }else if(numcard==3){
@@ -38,7 +37,6 @@ public class CCMsg extends CommandMsg{
                                 clientHandler.sendAnswerMessage(ansCC3Msg);
                             }else if(numcard==4){
                                 game.UseEffectOfCharacterCard(game.getChoosenPlayer().GetPlayerTurn(), game.getCharacterCardChosen());
-                                game.incrementview();
                                 AnsPlayAfterCCMsg answerMsg = new AnsPlayAfterCCMsg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers(), game.getCountmodexpview());
                                 clientHandler.sendAnswerMessage(answerMsg);
                             }else if(numcard==5){
@@ -46,7 +44,6 @@ public class CCMsg extends CommandMsg{
                                 clientHandler.sendAnswerMessage(ansCC5Msg);
                             }else if(numcard==6){
                                 game.UseEffectOfCharacterCard(game.getChoosenPlayer().GetPlayerTurn(), game.getCharacterCardChosen());
-                                game.incrementview();
                                 AnsPlayAfterCCMsg answerMsg = new AnsPlayAfterCCMsg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers(), game.getCountmodexpview());
                                 clientHandler.sendAnswerMessage(answerMsg);
                             }else if(numcard==7){
@@ -54,7 +51,6 @@ public class CCMsg extends CommandMsg{
                                 clientHandler.sendAnswerMessage(ansCC7Msg);
                             }else if(numcard==8){
                                 game.UseEffectOfCharacterCard(game.getChoosenPlayer().GetPlayerTurn(), game.getCharacterCardChosen());
-                                game.incrementview();
                                 AnsPlayAfterCCMsg answerMsg = new AnsPlayAfterCCMsg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers(), game.getCountmodexpview());
                                 clientHandler.sendAnswerMessage(answerMsg);
                             }else if(numcard==9){

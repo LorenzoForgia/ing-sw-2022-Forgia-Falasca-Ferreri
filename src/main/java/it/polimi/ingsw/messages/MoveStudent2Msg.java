@@ -25,18 +25,19 @@ public class MoveStudent2Msg extends CommandMsg{
                     game.CheckColor(s, game.getChoosenPlayer().GetPlayerTurn());
                     game.PutStudentInLocation(s, game.getChoosenPlayer().GetPlayerTurn().getMySchoolBoard().getDiningRoom(), game.getChoosenPlayer().GetPlayerTurn());
                     game.DiningRoomChosen(game.getChoosenPlayer().GetPlayerTurn(), s);
+                    game.incrementview();
                     AnsMoveStudent2Msg ansMoveStudent2Msg= new AnsMoveStudent2Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers(), game.getGameModel().getModExpert());
                     clientHandler.sendAnswerMessage(ansMoveStudent2Msg);
                 } catch (ColorNoInEntranceException e) {
                     AnsColorExc2Msg ansColorExcMsg= new AnsColorExc2Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName());
                     clientHandler.sendAnswerMessage(ansColorExcMsg);
                 }
-
             }else{
                 try {
                     game.CheckColor(s, game.getChoosenPlayer().GetPlayerTurn());
                     try{
                         game.IslandChosen(game.getChoosenPlayer().GetPlayerTurn(), l, s);
+                        game.incrementview();
                         AnsMoveStudent2Msg ansMoveStudent2Msg= new AnsMoveStudent2Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers(), game.getGameModel().getModExpert());
                         clientHandler.sendAnswerMessage(ansMoveStudent2Msg);
                     }catch (IslandNotInListException e){

@@ -45,7 +45,7 @@ public class PlayCC2View extends View{
             Color cdef = Color.Blue;
             while (!flag) {
                 if (count == 0) {
-                    System.out.println("Scegli il colore dello studente che vuoi spostare");
+                    System.out.println("Scegli il colore del secondo studente che vuoi spostare");
                 } else {
                     System.out.println("Errore inserimento colore:Seleziona un colore valido");
                 }

@@ -33,6 +33,7 @@ public class MoveStudent1Msg extends CommandMsg{
                     game.CheckColor(s, game.getChoosenPlayer().GetPlayerTurn());
                     game.PutStudentInLocation(s, game.getChoosenPlayer().GetPlayerTurn().getMySchoolBoard().getDiningRoom(), game.getChoosenPlayer().GetPlayerTurn());
                     game.DiningRoomChosen(game.getChoosenPlayer().GetPlayerTurn(), s);
+                    game.incrementview();
                     AnsMoveStudent1Msg ansMoveStudent1Msg= new AnsMoveStudent1Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers(), game.getGameModel().getModExpert());
                     clientHandler.sendAnswerMessage(ansMoveStudent1Msg);
                 } catch (ColorNoInEntranceException e) {
@@ -45,6 +46,7 @@ public class MoveStudent1Msg extends CommandMsg{
                     game.CheckColor(s, game.getChoosenPlayer().GetPlayerTurn());
                     try{
                         game.IslandChosen(game.getChoosenPlayer().GetPlayerTurn(), l, s);
+                        game.incrementview();
                         AnsMoveStudent1Msg ansMoveStudent1Msg= new AnsMoveStudent1Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers(), game.getGameModel().getModExpert());
                         clientHandler.sendAnswerMessage(ansMoveStudent1Msg);
                     }catch (IslandNotInListException e){

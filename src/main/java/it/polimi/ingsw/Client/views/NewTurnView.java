@@ -16,7 +16,7 @@ public class NewTurnView extends View{
     }
     @Override
     public void run() {
-        System.out.println(answerMsg.GetPlayer() + " ha inizio un nuovo turno!");
+        System.out.println("Ha inizio un nuovo turno!");
         System.out.println(" Aspetta il tuo turno per giocare la carta assistente");
         NewOrderMsg newOrderMsg= new NewOrderMsg();
         getOwner().getServerHandler().sendCommandMessage(newOrderMsg);

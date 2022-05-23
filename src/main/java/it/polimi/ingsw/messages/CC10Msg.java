@@ -22,7 +22,6 @@ public class CC10Msg extends CommandMsg{
         synchronized (game) {
             game.SetCharacterCard10(game.getCharacterCardChosen(), entrancestud, diningstud, game.getChoosenPlayer().GetPlayerTurn());
             game.UseEffectOfCharacterCard(game.getChoosenPlayer().GetPlayerTurn(), game.getCharacterCardChosen());
-            game.incrementview();
             AnsPlayAfterCCMsg answerMsg = new AnsPlayAfterCCMsg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers(), game.getCountmodexpview());
             clientHandler.sendAnswerMessage(answerMsg);
         }
