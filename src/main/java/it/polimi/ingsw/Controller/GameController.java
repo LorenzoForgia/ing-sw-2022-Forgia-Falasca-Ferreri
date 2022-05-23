@@ -627,6 +627,22 @@ public class GameController {
         ((CharacterCard9)c9).setChosenColor(color);
         return true;
     }
+    public boolean SetCharacterCard11(CharacterCard c11, Color color){
+        boolean notCorrectColor= true;
+
+        for(int i=0; notCorrectColor && i< ((CharacterCard11)c11).GetchoosenStudent().size(); i++){
+            if(((CharacterCard1)c11).GetchoosenStudent().get(i).equals(color)){
+                notCorrectColor= false;
+                ((CharacterCard1)c11).setChoosenColor(color);
+            }
+        }
+
+        if(notCorrectColor){
+            return false;
+        }else{
+            return true;
+        }
+    }
 
     public boolean SetCharacterCard12(CharacterCard c12, Color color){
         ((CharacterCard12)c12).setChosenColor(color);
