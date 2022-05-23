@@ -29,22 +29,34 @@ public class CCMsg extends CommandMsg{
                                 AnsCC1Msg ansCC1Msg=new AnsCC1Msg(this);
                                 clientHandler.sendAnswerMessage(ansCC1Msg);
                             }else if(numcard==2){
-
+                                game.UseEffectOfCharacterCard(game.getChoosenPlayer().GetPlayerTurn(), game.getCharacterCardChosen());
+                                game.incrementview();
+                                AnsPlayAfterCCMsg answerMsg = new AnsPlayAfterCCMsg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers(), game.getCountmodexpview());
+                                clientHandler.sendAnswerMessage(answerMsg);
                             }else if(numcard==3){
                                 AnsCC3Msg ansCC3Msg= new AnsCC3Msg(this);
                                 clientHandler.sendAnswerMessage(ansCC3Msg);
                             }else if(numcard==4){
-
+                                game.UseEffectOfCharacterCard(game.getChoosenPlayer().GetPlayerTurn(), game.getCharacterCardChosen());
+                                game.incrementview();
+                                AnsPlayAfterCCMsg answerMsg = new AnsPlayAfterCCMsg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers(), game.getCountmodexpview());
+                                clientHandler.sendAnswerMessage(answerMsg);
                             }else if(numcard==5){
                                 AnsCC5Msg ansCC5Msg= new AnsCC5Msg(this);
                                 clientHandler.sendAnswerMessage(ansCC5Msg);
                             }else if(numcard==6){
-
+                                game.UseEffectOfCharacterCard(game.getChoosenPlayer().GetPlayerTurn(), game.getCharacterCardChosen());
+                                game.incrementview();
+                                AnsPlayAfterCCMsg answerMsg = new AnsPlayAfterCCMsg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers(), game.getCountmodexpview());
+                                clientHandler.sendAnswerMessage(answerMsg);
                             }else if(numcard==7){
                                 AnsCC7Msg ansCC7Msg= new AnsCC7Msg(this);
                                 clientHandler.sendAnswerMessage(ansCC7Msg);
                             }else if(numcard==8){
-
+                                game.UseEffectOfCharacterCard(game.getChoosenPlayer().GetPlayerTurn(), game.getCharacterCardChosen());
+                                game.incrementview();
+                                AnsPlayAfterCCMsg answerMsg = new AnsPlayAfterCCMsg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers(), game.getCountmodexpview());
+                                clientHandler.sendAnswerMessage(answerMsg);
                             }else if(numcard==9){
                                 AnsCC9Msg ansCC9Msg= new AnsCC9Msg(this);
                                 clientHandler.sendAnswerMessage(ansCC9Msg);

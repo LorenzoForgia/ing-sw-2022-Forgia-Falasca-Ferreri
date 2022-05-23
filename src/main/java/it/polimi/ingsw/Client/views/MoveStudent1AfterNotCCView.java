@@ -3,16 +3,15 @@ package it.polimi.ingsw.Client.views;
 import it.polimi.ingsw.Model.Color;
 import it.polimi.ingsw.Model.IslandTiles;
 import it.polimi.ingsw.Model.SchoolBoard;
-import it.polimi.ingsw.messages.AnsAskCAMsg;
-import it.polimi.ingsw.messages.AnsMoveS1AfterNotCCMsg;
+import it.polimi.ingsw.messages.AnsPlayAfterNotCCMsg;
 import it.polimi.ingsw.messages.MoveStudent1Msg;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class MoveS1AfterNotCCView extends View{
-    AnsMoveS1AfterNotCCMsg answerMsg;
-    public MoveS1AfterNotCCView(AnsMoveS1AfterNotCCMsg answerMsg)
+public class MoveStudent1AfterNotCCView extends View{
+    AnsPlayAfterNotCCMsg answerMsg;
+    public MoveStudent1AfterNotCCView(AnsPlayAfterNotCCMsg answerMsg)
     {
         this.answerMsg = answerMsg;
     }

@@ -33,7 +33,7 @@ public class MoveStudent1Msg extends CommandMsg{
                     game.CheckColor(s, game.getChoosenPlayer().GetPlayerTurn());
                     game.PutStudentInLocation(s, game.getChoosenPlayer().GetPlayerTurn().getMySchoolBoard().getDiningRoom(), game.getChoosenPlayer().GetPlayerTurn());
                     game.DiningRoomChosen(game.getChoosenPlayer().GetPlayerTurn(), s);
-                    AnsMoveStudent1Msg ansMoveStudent1Msg= new AnsMoveStudent1Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers());
+                    AnsMoveStudent1Msg ansMoveStudent1Msg= new AnsMoveStudent1Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers(), game.getGameModel().getModExpert());
                     clientHandler.sendAnswerMessage(ansMoveStudent1Msg);
                 } catch (ColorNoInEntranceException e) {
                     AnsColorExc1Msg ansColorExcMsg= new AnsColorExc1Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName());
@@ -45,7 +45,7 @@ public class MoveStudent1Msg extends CommandMsg{
                     game.CheckColor(s, game.getChoosenPlayer().GetPlayerTurn());
                     try{
                         game.IslandChosen(game.getChoosenPlayer().GetPlayerTurn(), l, s);
-                        AnsMoveStudent1Msg ansMoveStudent1Msg= new AnsMoveStudent1Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers());
+                        AnsMoveStudent1Msg ansMoveStudent1Msg= new AnsMoveStudent1Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers(), game.getGameModel().getModExpert());
                         clientHandler.sendAnswerMessage(ansMoveStudent1Msg);
                     }catch (IslandNotInListException e){
                         AnsIslandExc1Msg ansIslandExcMsg= new AnsIslandExc1Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName());

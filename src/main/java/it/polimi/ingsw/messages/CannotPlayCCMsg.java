@@ -1,6 +1,5 @@
 package it.polimi.ingsw.messages;
 
-import it.polimi.ingsw.Client.views.CannotPlayCCView;
 import it.polimi.ingsw.Controller.GameController;
 import it.polimi.ingsw.Server.ClientHandler;
 
@@ -14,7 +13,8 @@ public class CannotPlayCCMsg extends CommandMsg{
         GameController game = clientHandler.getGame();
 
         synchronized (game){
-            AnsMoveS1AfterNotCCMsg ansMoveS1AfterNotCCMsg= new AnsMoveS1AfterNotCCMsg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers());
+            game.incrementview();
+            AnsPlayAfterNotCCMsg ansMoveS1AfterNotCCMsg= new AnsPlayAfterNotCCMsg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers(), game.getCountmodexpview());
             clientHandler.sendAnswerMessage(ansMoveS1AfterNotCCMsg);
         }
     }
