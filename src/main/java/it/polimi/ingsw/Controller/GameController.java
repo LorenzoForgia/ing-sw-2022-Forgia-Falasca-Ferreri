@@ -466,6 +466,21 @@ public class GameController {
         }
     }
 
+    public boolean CheckIfShouldAskForCharacterCard(Player p){
+        boolean flag = true;
+        for(int i=0; i< gameModel.getGeneralBoard().getChoosenCard().size() && flag; i++){
+            if(p.getNumberCoins()>=gameModel.getGeneralBoard().getChoosenCard().get(i).getCost()){
+                flag= false;
+            }
+        }
+
+        if(flag || p.isUsedCharacterCard()){
+            return false;
+        }else{
+            return true;
+        }
+    }
+
     /** Check if the player has enough money to play the character card.
      * */
     public void CheckIfEnoughMoney(Player p, CharacterCard c) throws NotEnoughCoinException{

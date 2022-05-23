@@ -10,9 +10,9 @@ import java.util.ArrayList;
 public class CharacterCard1 extends CharacterCard{
 
     private ArrayList<Color> choosenStudent = new ArrayList<Color>();
-    Color choosenColor;
-    IslandTiles Ichosen;
-    Bag bag;
+    private Color choosenColor;
+    private IslandTiles Ichosen;
+    private Bag bag;
 
     public CharacterCard1(int name, int coins, int countUse) {
         super(name, coins, countUse);
@@ -21,8 +21,8 @@ public class CharacterCard1 extends CharacterCard{
     @Override
     public void SetCard(Bag b, GeneralBoard gb) {
         bag = b;
-        if (!bag.BagIsEmpty()) {
             for (int i = 0; i < 4; i++) {
+                if (!bag.BagIsEmpty()) {
                 this.choosenStudent.add(bag.CatchStudent());
             }
         }
@@ -38,6 +38,7 @@ public class CharacterCard1 extends CharacterCard{
         p.setUsedCharacterCard(true);
         p.setNameCharacterCard(1);
         Ichosen.PutStudent(choosenColor);
+        choosenStudent.remove(choosenColor);
         if(!bag.BagIsEmpty()){
             this.choosenStudent.add(bag.CatchStudent());
         }
