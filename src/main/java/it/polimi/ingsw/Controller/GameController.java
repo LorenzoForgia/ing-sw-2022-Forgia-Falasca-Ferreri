@@ -453,7 +453,7 @@ public class GameController {
         }
 
         if(flag){
-            throw new CharacterCardNotInTableException(characterCardChosen);
+            throw new CharacterCardNotInTableException();
         }
     }
 
