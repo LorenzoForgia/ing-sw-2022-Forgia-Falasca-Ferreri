@@ -551,13 +551,27 @@ public class GameController {
         }
     }
 
-    public boolean SetCharacterCard7(CharacterCard c7, ArrayList<Color> colorEntrance, ArrayList<Color> colorCards, Player p){
+    public boolean SetCharacterCard7(CharacterCard c7, ArrayList<Color> colorEntrance, ArrayList<Color> colorChosen, Player p){
         boolean notCorrectColorInEntrance= true;
         boolean notCorrectColorOnCard= true;
+
+        for(int i=0; notCorrectColorOnCard && i < colorChosen.size(); i++) {
+            if(!((CharacterCard7) c7).getStudentOnCard().contains(colorChosen.get(i))){
+                notCorrectColorInEntrance= false;
+            }
+        }
+
+        for(int i=0; notCorrectColorInEntrance && i < colorChosen.size(); i++) {
+            if(!p.getMySchoolBoard().getEntrance().contains(colorChosen.get(i))){
+                notCorrectColorInEntrance= false;
+            }
+        }
 
         if(notCorrectColorInEntrance || notCorrectColorOnCard){
             return false;
         }else{
+            ((CharacterCard7) c7).setStudentChoosen(colorChosen);
+            ((CharacterCard7) c7).setStudentOnEntrance(colorEntrance);
             return true;
         }
     }
