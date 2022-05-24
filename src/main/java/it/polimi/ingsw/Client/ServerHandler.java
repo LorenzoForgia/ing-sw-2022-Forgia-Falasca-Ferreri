@@ -61,7 +61,7 @@ public class ServerHandler implements Runnable
         }catch(SocketTimeoutException e){
             System.out.println("server " + server.getInetAddress() + " connection dropped,partita finita");
         }catch (IOException e) {
-            System.out.println("server " + server.getInetAddress() + " connection dropped");
+            System.out.println("server " + server.getInetAddress() + " connection dropped,partita finita");
         }
 
         try {

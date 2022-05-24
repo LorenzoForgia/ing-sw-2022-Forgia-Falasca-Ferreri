@@ -44,6 +44,7 @@ public class PingServer implements Runnable{
        PingSMSG ping=new PingSMSG(new PingCMSG());
        try {
            this.clientHandler.getOutput().writeObject((Object)ping);
+           this.clientHandler.getOutput().reset();
        } catch (IOException e) {
            System.out.println("IO exception");
        }

@@ -73,7 +73,8 @@ public class ClientHandler implements Runnable
         }catch(SocketTimeoutException e){
             System.out.println("client " + client.getInetAddress() + " connection dropped\nla partita è finita");
         }catch (IOException e) {
-            System.out.println("client " + client.getInetAddress() + " connection dropped");
+            System.out.println("client " + client.getInetAddress() + " connection dropped\n la partita è finita");
+
         }
 
         try {
