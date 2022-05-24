@@ -2,9 +2,11 @@ package it.polimi.ingsw.Model;
 
 /*@author Luigia Falasca*/
 
+import java.io.Serializable;
+
 /** There are 4 No Entry Tiles on this card
  * The player has to choose in which Island put the NET**/
-public class CharacterCard5 extends CharacterCard{
+public class CharacterCard5 extends CharacterCard implements Serializable {
     private int NET;
     private IslandTiles I1;
 

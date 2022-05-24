@@ -1,5 +1,6 @@
 package it.polimi.ingsw.Model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /** Set the card putting 4 students on it
@@ -7,7 +8,7 @@ import java.util.ArrayList;
  * The Player should choose the color to pick and the Island
  * **/
 
-public class CharacterCard1 extends CharacterCard{
+public class CharacterCard1 extends CharacterCard implements Serializable  {
 
     private ArrayList<Color> choosenStudent = new ArrayList<Color>();
     private Color choosenColor;
