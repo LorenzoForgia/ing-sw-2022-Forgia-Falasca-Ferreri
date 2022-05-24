@@ -31,6 +31,7 @@ public class PlayCC2View extends View{
             islandTiles.add(answerMsg.GetGB().GetIslands().get(i));
         }
         displayer.showAllIsland(islandTiles);
+        /**stampa charactercards**/
         System.out.println("Vuoi giocare una carta personaggio? si/no");
         String card = scanner.nextLine();
         if (card.equals("si")) {

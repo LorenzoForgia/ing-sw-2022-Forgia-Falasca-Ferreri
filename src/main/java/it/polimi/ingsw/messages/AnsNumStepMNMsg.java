@@ -4,14 +4,12 @@ import it.polimi.ingsw.Client.ServerHandler;
 import it.polimi.ingsw.Client.views.AskForCloudView;
 import it.polimi.ingsw.Client.views.NumStepExcView;
 import it.polimi.ingsw.Model.CloudTiles;
+import it.polimi.ingsw.Model.GeneralBoard;
 
 import java.util.ArrayList;
 
 public class AnsNumStepMNMsg extends AnswerMsg{
     private String name;
-
-
-
     private ArrayList<CloudTiles> cloudTiles;
 
     public AnsNumStepMNMsg(CommandMsg parent, String name,ArrayList cloudTiles){

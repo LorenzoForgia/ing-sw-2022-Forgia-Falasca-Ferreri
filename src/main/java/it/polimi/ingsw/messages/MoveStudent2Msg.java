@@ -26,7 +26,7 @@ public class MoveStudent2Msg extends CommandMsg{
                     game.PutStudentInLocation(s, game.getChoosenPlayer().GetPlayerTurn().getMySchoolBoard().getDiningRoom(), game.getChoosenPlayer().GetPlayerTurn());
                     game.DiningRoomChosen(game.getChoosenPlayer().GetPlayerTurn(), s);
                     game.incrementview();
-                    AnsMoveStudent2Msg ansMoveStudent2Msg= new AnsMoveStudent2Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers(), game.getGameModel().getModExpert());
+                    AnsMoveStudent2Msg ansMoveStudent2Msg= new AnsMoveStudent2Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers(), game.getGameModel().getGeneralBoard().getChoosenCard(), game.getGameModel().getModExpert());
                     clientHandler.sendAnswerMessage(ansMoveStudent2Msg);
                 } catch (ColorNoInEntranceException e) {
                     AnsColorExc2Msg ansColorExcMsg= new AnsColorExc2Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName());
@@ -38,7 +38,7 @@ public class MoveStudent2Msg extends CommandMsg{
                     try{
                         game.IslandChosen(game.getChoosenPlayer().GetPlayerTurn(), l, s);
                         game.incrementview();
-                        AnsMoveStudent2Msg ansMoveStudent2Msg= new AnsMoveStudent2Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers(), game.getGameModel().getModExpert());
+                        AnsMoveStudent2Msg ansMoveStudent2Msg= new AnsMoveStudent2Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers(), game.getGameModel().getGeneralBoard().getChoosenCard(), game.getGameModel().getModExpert());
                         clientHandler.sendAnswerMessage(ansMoveStudent2Msg);
                     }catch (IslandNotInListException e){
                         AnsIslandExc2Msg ansIslandExc2Msg= new AnsIslandExc2Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName());

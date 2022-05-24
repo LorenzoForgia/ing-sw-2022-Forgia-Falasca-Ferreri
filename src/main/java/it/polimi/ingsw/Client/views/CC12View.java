@@ -1,11 +1,14 @@
 package it.polimi.ingsw.Client.views;
 
 import it.polimi.ingsw.Model.Color;
+import it.polimi.ingsw.Model.IslandTiles;
+import it.polimi.ingsw.Model.SchoolBoard;
 import it.polimi.ingsw.messages.AnsCC11Msg;
 import it.polimi.ingsw.messages.AnsCC12Msg;
 import it.polimi.ingsw.messages.CC11Msg;
 import it.polimi.ingsw.messages.CC12Msg;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CC12View extends View{
@@ -20,6 +23,17 @@ public class CC12View extends View{
         Boolean flag = false;
         int count = 0;
         Color cdef = Color.Blue;
+        Displayer displayer= new Displayer();
+        ArrayList<SchoolBoard> schoolBoards= new ArrayList<SchoolBoard>();
+        for(int i=0; i<answerMsg.GetGB().getSchoolBoard().size();i++){
+            schoolBoards.add(answerMsg.GetGB().getSchoolBoard().get(i));
+        }
+        displayer.displayAllSchoolboard(schoolBoards,answerMsg.GetPlayers());
+        ArrayList<IslandTiles> islandTiles=new ArrayList<>();
+        for(int i=0; i<answerMsg.GetGB().GetIslands().size();i++){
+            islandTiles.add(answerMsg.GetGB().GetIslands().get(i));
+        }
+        displayer.showAllIsland(islandTiles);
         while (!flag) {
             if (count == 0) {
                 System.out.println("Scegli il colore di studente");

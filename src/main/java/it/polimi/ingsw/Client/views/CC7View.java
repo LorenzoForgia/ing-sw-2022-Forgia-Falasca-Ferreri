@@ -1,6 +1,8 @@
 package it.polimi.ingsw.Client.views;
 
 import it.polimi.ingsw.Model.Color;
+import it.polimi.ingsw.Model.IslandTiles;
+import it.polimi.ingsw.Model.SchoolBoard;
 import it.polimi.ingsw.messages.AnsCC3Msg;
 import it.polimi.ingsw.messages.AnsCC7Msg;
 import it.polimi.ingsw.messages.CC3Msg;
@@ -18,11 +20,23 @@ public class CC7View extends View{
     @Override
     public void run() {
         Scanner scanner = new Scanner(System.in);
-        ArrayList<Color> students= null;
-        ArrayList<Color> entrancestud= null;
+        ArrayList<Color> students= new ArrayList<Color>();
+        ArrayList<Color> entrancestud= new ArrayList<Color>();
         Boolean flag=false;
         int count=0;
         Color cdef=Color.Blue;
+        Displayer displayer= new Displayer();
+        ArrayList<SchoolBoard> schoolBoards= new ArrayList<SchoolBoard>();
+        for(int i=0; i<answerMsg.GetGB().getSchoolBoard().size();i++){
+            schoolBoards.add(answerMsg.GetGB().getSchoolBoard().get(i));
+        }
+        displayer.displayAllSchoolboard(schoolBoards,answerMsg.GetPlayers());
+        ArrayList<IslandTiles> islandTiles=new ArrayList<>();
+        for(int i=0; i<answerMsg.GetGB().GetIslands().size();i++){
+            islandTiles.add(answerMsg.GetGB().GetIslands().get(i));
+        }
+        displayer.showAllIsland(islandTiles);
+        /**stampa studenti sopra charactercard**/
         System.out.println("Quanti studenti vuoi prendere? ( max 3 studenti)");
         int numstud = Integer.parseInt(scanner.nextLine());
         for(int j=0; j<numstud;j++){

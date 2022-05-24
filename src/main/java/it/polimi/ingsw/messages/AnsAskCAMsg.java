@@ -4,6 +4,7 @@ import it.polimi.ingsw.Client.ServerHandler;
 
 import it.polimi.ingsw.Client.views.MoveStudent1View;
 import it.polimi.ingsw.Client.views.PlayCC1View;
+import it.polimi.ingsw.Model.CharacterCard;
 import it.polimi.ingsw.Model.GeneralBoard;
 import it.polimi.ingsw.Model.Player;
 
@@ -14,13 +15,15 @@ public class AnsAskCAMsg extends AnswerMsg{
     private String name;
     private GeneralBoard generalBoard;
     private ArrayList<Player> players= new ArrayList<Player>();
+    private ArrayList<CharacterCard> characterCards= new ArrayList<CharacterCard>();
     private boolean modexp;
 
-    public AnsAskCAMsg(CommandMsg parent, String name, GeneralBoard generalBoard,ArrayList<Player> players, boolean modexp ){
+    public AnsAskCAMsg(CommandMsg parent, String name, GeneralBoard generalBoard,ArrayList<Player> players, ArrayList<CharacterCard> characterCards, boolean modexp ){
         super(parent);
         this.name = name;
         this.generalBoard= generalBoard;
         this.players=players;
+        this.characterCards=characterCards;
         this.modexp=modexp;
     }
 
@@ -38,5 +41,7 @@ public class AnsAskCAMsg extends AnswerMsg{
     }
     public GeneralBoard GetGB(){return generalBoard;}
     public ArrayList<Player> GetPlayers(){return players;}
-    public boolean GetIsModexp(){return modexp;}
+    public ArrayList<CharacterCard> GetCharacterCards() {
+        return characterCards;
+    }
 }

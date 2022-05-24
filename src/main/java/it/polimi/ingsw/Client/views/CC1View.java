@@ -1,10 +1,13 @@
 package it.polimi.ingsw.Client.views;
 
 import it.polimi.ingsw.Model.Color;
+import it.polimi.ingsw.Model.IslandTiles;
+import it.polimi.ingsw.Model.SchoolBoard;
 import it.polimi.ingsw.messages.AnsCC1Msg;
 import it.polimi.ingsw.messages.AnsColorExc1Msg;
 import it.polimi.ingsw.messages.CC1Msg;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CC1View extends View{
@@ -16,6 +19,18 @@ public class CC1View extends View{
     @Override
     public void run() {
         Scanner scanner= new Scanner(System.in);
+        Displayer displayer= new Displayer();
+        ArrayList<SchoolBoard> schoolBoards= new ArrayList<SchoolBoard>();
+        for(int i=0; i<answerMsg.GetGB().getSchoolBoard().size();i++){
+            schoolBoards.add(answerMsg.GetGB().getSchoolBoard().get(i));
+        }
+        displayer.displayAllSchoolboard(schoolBoards,answerMsg.GetPlayers());
+        ArrayList<IslandTiles> islandTiles=new ArrayList<>();
+        for(int i=0; i<answerMsg.GetGB().GetIslands().size();i++){
+            islandTiles.add(answerMsg.GetGB().GetIslands().get(i));
+        }
+        displayer.showAllIsland(islandTiles);
+        /**stampa studenti sulla charactercard**/
         Boolean flag=false;
         int count=0;
         Color cdef=Color.Blue;
