@@ -26,7 +26,11 @@ public class GameController {
     private CharacterCard characterCardChosen=null;
     private int countmodexpview=1;
 
-    public void incrementview(){countmodexpview=countmodexpview+1;}
+    public void incrementview(){
+        if(countmodexpview<4){
+            countmodexpview=countmodexpview+1;
+        }
+    }
     public int getCountmodexpview(){return countmodexpview;}
     public boolean isFlagturn(){return flagturn;}
     public void setFlagturn(boolean flagturn){this.flagturn=flagturn;}
