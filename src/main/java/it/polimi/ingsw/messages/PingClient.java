@@ -6,6 +6,7 @@ import it.polimi.ingsw.Server.ClientHandler;
 import java.io.IOException;
 
 import static java.lang.Thread.sleep;
+/*
 
 public class PingClient implements Runnable {
     private ServerHandler serverHandler;
@@ -45,4 +46,4 @@ public class PingClient implements Runnable {
         this.serverHandler.getOutput().writeObject((Object)ping);
         this.serverHandler.getOutput().reset();
     }
-}
+}*/

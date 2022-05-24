@@ -24,10 +24,12 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
-import java.net.SocketTimeoutException;
 
 public class ClientHandler implements Runnable
 {
+    public Socket getClient() {
+        return client;
+    }
 
     private Socket client;
     private ObjectOutputStream output;
@@ -54,7 +56,8 @@ public class ClientHandler implements Runnable
      */
 
     @Override
-    public void run() {
+    public void run()
+    {
         try {
             output = new ObjectOutputStream(client.getOutputStream());
             input = new ObjectInputStream(client.getInputStream());
@@ -66,15 +69,9 @@ public class ClientHandler implements Runnable
         System.out.println("Connected to " + client.getInetAddress());
 
         try {
-            PingServer pingServer=new PingServer(this);
-            Thread t1 =new Thread(pingServer);
-            t1.start();
             handleClientConnection();
-        }catch(SocketTimeoutException e){
-            System.out.println("client " + client.getInetAddress() + " connection dropped\nla partita è finita");
-        }catch (IOException e) {
-            System.out.println("client " + client.getInetAddress() + " connection dropped\n la partita è finita");
-
+        } catch (IOException e) {
+            System.out.println("client " + client.getInetAddress() + " connection dropped");
         }
 
         try {
@@ -94,7 +91,7 @@ public class ClientHandler implements Runnable
         try {
             while (true) {
                 /* read commands from the client, process them, and send replies */
-                client.setSoTimeout(240000);
+
                 Object next = input.readObject();
                 CommandMsg command = (CommandMsg)next;
                 command.processMessage(this);
@@ -130,14 +127,4 @@ public class ClientHandler implements Runnable
     }
     public String getNickname(){return nickname;}
     public void setNickname(String nickname){this.nickname= nickname;}
-    public ObjectOutputStream getOutput() {
-        return output;
-    }
-
-    public ObjectInputStream getInput() {
-        return input;
-    }
-    public Socket getClient() {
-        return client;
-    }
 }

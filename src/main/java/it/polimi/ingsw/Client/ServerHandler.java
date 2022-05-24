@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
-import java.net.SocketTimeoutException;
 import java.util.concurrent.atomic.AtomicBoolean;
 import it.polimi.ingsw.messages.*;
 
@@ -15,8 +14,6 @@ import it.polimi.ingsw.messages.*;
 
 public class ServerHandler implements Runnable
 {
-
-
     private Socket server;
     private ObjectOutputStream output;
     private ObjectInputStream input;
@@ -54,14 +51,9 @@ public class ServerHandler implements Runnable
         }
 
         try {
-            PingClient pingClient=new PingClient(this);
-            Thread t1 =new Thread(pingClient);
-            t1.start();
             handleClientConnection();
-        }catch(SocketTimeoutException e){
-            System.out.println("server " + server.getInetAddress() + " connection dropped,partita finita");
-        }catch (IOException e) {
-            System.out.println("server " + server.getInetAddress() + " connection dropped,partita finita");
+        } catch (IOException e) {
+            System.out.println("server " + server.getInetAddress() + " connection dropped");
         }
 
         try {
@@ -85,7 +77,6 @@ public class ServerHandler implements Runnable
                 /* read commands from the server and process them */
 
                 try {
-                    server.setSoTimeout(240000);
                     Object next = input.readObject();
                     AnswerMsg command = (AnswerMsg)next;
                     command.processMessage(this);
@@ -148,13 +139,5 @@ public class ServerHandler implements Runnable
             server.shutdownInput();
         } catch (IOException e) { }
     }
-    public ObjectInputStream getInput() {
-        return input;
-    }
-    public ObjectOutputStream getOutput() {
-        return output;
-    }
-    public Socket getServer() {
-        return server;
-    }
+
 }

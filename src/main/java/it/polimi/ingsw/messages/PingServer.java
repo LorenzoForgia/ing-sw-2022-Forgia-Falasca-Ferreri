@@ -5,7 +5,7 @@ import it.polimi.ingsw.Server.ClientHandler;
 import java.io.*;
 
 import static java.lang.Thread.sleep;
-
+/*
 public class PingServer implements Runnable{
     public PingServer(ClientHandler clientHandler) {
         this.clientHandler = clientHandler;
@@ -46,4 +46,4 @@ public class PingServer implements Runnable{
        this.clientHandler.getOutput().reset();
 
    }
-}
+}*/
