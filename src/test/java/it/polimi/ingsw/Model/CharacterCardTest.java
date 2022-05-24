@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class CharacterCardTest {
     @Test
     public void CharactercardTest(){
-        CharacterCard c= new CharacterCard1(1,1,0);
+        CharacterCard c= new CharacterCard1(1,1,0,"");
         assertEquals(1,c.getName());
         assertEquals(0,c.getCountUse());
         assertEquals(1,c.getCost());

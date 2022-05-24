@@ -8,8 +8,8 @@ public class CharacterCard5 extends CharacterCard{
     private int NET;
     private IslandTiles I1;
 
-    public CharacterCard5(int name, int coins, int countUse) {
-        super(name, coins, countUse);
+    public CharacterCard5(int name, int coins, int countUse, String descriptionEffect) {
+        super(name, coins, countUse, descriptionEffect);
     }
 
     @Override

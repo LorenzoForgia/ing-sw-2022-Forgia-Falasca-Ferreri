@@ -14,8 +14,8 @@ public class CharacterCard3 extends CharacterCard{
     private int numOfPlayer;
     private List<SchoolBoard> schoolBoardList;
 
-    public CharacterCard3(int name, int coins, int countUse) {
-        super(name, coins, countUse);
+    public CharacterCard3(int name, int coins, int countUse, String descriptionEffect) {
+        super(name, coins, countUse, descriptionEffect);
     }
 
     @Override

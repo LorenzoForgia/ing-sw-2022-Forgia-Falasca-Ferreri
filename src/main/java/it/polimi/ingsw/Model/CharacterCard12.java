@@ -11,8 +11,8 @@ public class CharacterCard12 extends CharacterCard{
     private Bag bag;
     private Color chosenColor;
 
-    public CharacterCard12(int name, int coins, int countUse) {
-        super(name, coins, countUse);
+    public CharacterCard12(int name, int coins, int countUse, String descriptionEffect) {
+        super(name, coins, countUse, descriptionEffect);
     }
 
     @Override

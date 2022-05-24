@@ -14,10 +14,9 @@ public class CharacterCard7 extends CharacterCard {
     private ArrayList<Color> studentOnEntrance=new ArrayList<Color>();
     private ArrayList<Color> studentChoosen=new ArrayList<Color>();
 
-    public CharacterCard7(int name, int coins, int countUse) {
-        super(name, coins, countUse);
+    public CharacterCard7(int name, int coins, int countUse, String descriptionEffect) {
+        super(name, coins, countUse, descriptionEffect);
     }
-
 
     @Override
     public void UseEffect(Player p) {

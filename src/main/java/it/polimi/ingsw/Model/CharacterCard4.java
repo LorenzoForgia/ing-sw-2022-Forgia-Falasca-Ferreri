@@ -3,8 +3,8 @@ package it.polimi.ingsw.Model;
 /** Adds two movements to MotherNature
  * The player doesn't have to choose anything**/
 public class CharacterCard4 extends CharacterCard {
-    public CharacterCard4(int name, int coins, int countUse) {
-        super(name, coins, countUse);
+    public CharacterCard4(int name, int coins, int countUse, String descriptionEffect) {
+        super(name, coins, countUse, descriptionEffect);
     }
 
     @Override

@@ -6,11 +6,13 @@ import java.util.*;
 public class CharacterCard10 extends CharacterCard {
 
 
-    public CharacterCard10(int name, int coins, int countUse) {
-        super(name, coins, countUse);
-    }
+
     private ArrayList<Color> studentOnEntrance=new ArrayList<Color>();
     private ArrayList<Color> studentOnDiningRoom=new ArrayList<Color>();
+
+    public CharacterCard10(int name, int coins, int countUse, String descriptionEffect) {
+        super(name, coins, countUse, descriptionEffect);
+    }
 
     @Override
     public void UseEffect(Player p) {

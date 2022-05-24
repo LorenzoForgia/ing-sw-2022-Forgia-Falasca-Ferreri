@@ -17,7 +17,7 @@ class CharacterCard7Test {
 
     @BeforeEach
     public void setUp(){
-        CC7= new CharacterCard7(7,1,0);
+        CC7= new CharacterCard7(7,1,0,"");
         b= new Bag();
         b.setStudents(120);
         gb= new GeneralBoard(20);
