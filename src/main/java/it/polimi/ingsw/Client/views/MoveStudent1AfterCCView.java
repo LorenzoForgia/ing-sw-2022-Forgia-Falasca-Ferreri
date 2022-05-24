@@ -53,15 +53,23 @@ public class MoveStudent1AfterCCView extends View{
         Color student= cdef;
         System.out.println("Vuoi spostarlo nella sala o su un'isola? sala/isola");
         String ris= scanner.nextLine();
-        if(ris.equals("sala")){
-            isl=12;
-            MoveStudent1Msg moveStudentMsg= new MoveStudent1Msg(student, isl);
-            getOwner().getServerHandler().sendCommandMessage(moveStudentMsg);
-        }else{
-            System.out.println("Su quale isola vuoi spostarlo?");
-            isl=Integer.parseInt(scanner.nextLine());
-            MoveStudent1Msg moveStudentMsg= new MoveStudent1Msg(student, isl);
-            getOwner().getServerHandler().sendCommandMessage(moveStudentMsg);
+        flag=false;
+        while(!flag) {
+            if (ris.equals("sala")) {
+                isl = 12;
+                MoveStudent1Msg moveStudentMsg = new MoveStudent1Msg(student, isl);
+                getOwner().getServerHandler().sendCommandMessage(moveStudentMsg);
+                flag=true;
+            } else if(ris.equals("isola")){
+                System.out.println("Su quale isola vuoi spostarlo?");
+                isl = Integer.parseInt(scanner.nextLine());
+                MoveStudent1Msg moveStudentMsg = new MoveStudent1Msg(student, isl);
+                getOwner().getServerHandler().sendCommandMessage(moveStudentMsg);
+                flag=true;
+            } else{
+                System.out.println("Errore inserimento scelta,ripetere: Vuoi spostarlo nella sala o su un'isola? sala/isola");
+                ris= scanner.nextLine();
+            }
         }
     }
 }
