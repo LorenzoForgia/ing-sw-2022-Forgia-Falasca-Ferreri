@@ -1,5 +1,6 @@
 package it.polimi.ingsw.Model;
 
+import java.io.Serializable;
 import java.util.*;
 
 /*@author Luigia Falasca*/
@@ -8,7 +9,7 @@ import java.util.*;
  * students from your Entrance
  * **/
 
-public class CharacterCard7 extends CharacterCard {
+public class CharacterCard7 extends CharacterCard implements Serializable {
     private ArrayList<Color> studentOnCard = new ArrayList<Color>();
     private Bag bag;
     private ArrayList<Color> studentOnEntrance=new ArrayList<Color>();

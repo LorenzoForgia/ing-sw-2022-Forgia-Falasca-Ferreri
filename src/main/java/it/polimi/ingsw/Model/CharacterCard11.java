@@ -1,11 +1,12 @@
 package it.polimi.ingsw.Model;
+import java.io.Serializable;
 import java.util.*;
 
 /**Set the card putting 4 students on it
  * Move a student from this card to your DiningRoom
  * The Player should choose the color to pick
  * **/
-public class CharacterCard11 extends CharacterCard{
+public class CharacterCard11 extends CharacterCard implements Serializable {
     private ArrayList<Color> choosenStudent = new ArrayList<Color>();
     private Color choosenColor;
     private Bag bag;

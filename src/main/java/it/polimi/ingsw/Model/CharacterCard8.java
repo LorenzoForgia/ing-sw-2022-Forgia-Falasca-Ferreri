@@ -2,11 +2,13 @@ package it.polimi.ingsw.Model;
 
 /*@author Luigia Falasca*/
 
+import java.io.Serializable;
+
 /** Add two points at the influence
  * The real effect is implemented in MoveMotherNature
  * **/
 
-public class CharacterCard8 extends CharacterCard {
+public class CharacterCard8 extends CharacterCard implements Serializable {
 
 
     public CharacterCard8(int name, int coins, int countUse, String descriptionEffect) {

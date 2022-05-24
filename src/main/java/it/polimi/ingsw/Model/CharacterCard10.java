@@ -1,9 +1,10 @@
 package it.polimi.ingsw.Model;
+import java.io.Serializable;
 import java.util.*;
 
 /** Exchange up to 2 students between your Entrance and your DiningRoom
  * **/
-public class CharacterCard10 extends CharacterCard {
+public class CharacterCard10 extends CharacterCard implements Serializable {
 
 
 
