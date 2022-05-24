@@ -31,6 +31,7 @@ public class GameController {
             countmodexpview=countmodexpview+1;
         }
     }
+    public void resetcountmodexpview(){countmodexpview=0;}
     public int getCountmodexpview(){return countmodexpview;}
     public boolean isFlagturn(){return flagturn;}
     public void setFlagturn(boolean flagturn){this.flagturn=flagturn;}
