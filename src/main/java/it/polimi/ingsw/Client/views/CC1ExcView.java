@@ -32,6 +32,7 @@ public class CC1ExcView extends View{
         displayer.showAllIsland(islandTiles);
         /**stampa studenti sulla charactercard**/
         System.out.println("Scelta non valida! Riprova");
+        displayer.displayCharactercard(answerMsg.GetCharacterCard());
         Boolean flag=false;
         int count=0;
         Color cdef=Color.Blue;

@@ -35,6 +35,7 @@ public class CC11View extends View{
         }
         displayer.showAllIsland(islandTiles);
         /**stampa studenti sulla carta**/
+        displayer.displayCharactercard(answerMsg.GetCharacterCard());
         while (!flag) {
             if (count == 0) {
                 System.out.println("Scegli lo studente da mettere nella sala");

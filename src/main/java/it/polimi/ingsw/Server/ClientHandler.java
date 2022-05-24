@@ -96,8 +96,10 @@ public class ClientHandler implements Runnable
                 CommandMsg command = (CommandMsg)next;
                 command.processMessage(this);
             }
-        } catch (ClassNotFoundException | ClassCastException e) {
-            System.out.println("invalid stream from client");
+        } catch (ClassNotFoundException e) {
+            System.out.println("invalid stream from client:ClassNotFoundexc");
+        }catch(ClassCastException e){
+            System.out.println("invalid stream from client:ClassCastException");
         }
     }
 

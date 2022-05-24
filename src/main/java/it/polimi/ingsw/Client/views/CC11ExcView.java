@@ -34,6 +34,7 @@ public class CC11ExcView extends View{
         }
         displayer.showAllIsland(islandTiles);
         /**stampa studenti sulla carta**/
+        displayer.displayCharactercard(answerMsg.GetCharacterCard());
         System.out.println("Scelta non valida! Riprova");
         while (!flag) {
             if (count == 0) {

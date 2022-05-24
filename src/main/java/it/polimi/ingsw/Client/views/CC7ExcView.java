@@ -36,6 +36,7 @@ public class CC7ExcView extends View{
         }
         displayer.showAllIsland(islandTiles);
         /**stampa studenti sopra charactercard**/
+        displayer.displayCharactercard(answerMsg.GetCharacterCard());
         System.out.println("Scelte non valide! Riprova");
         System.out.println("Quanti studenti vuoi prendere? ( max 3 studenti)");
         int numstud = Integer.parseInt(scanner.nextLine());
