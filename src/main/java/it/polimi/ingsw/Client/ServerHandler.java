@@ -85,7 +85,7 @@ public class ServerHandler implements Runnable
                 /* read commands from the server and process them */
 
                 try {
-                    server.setSoTimeout(20000);
+                    server.setSoTimeout(240000);
                     Object next = input.readObject();
                     AnswerMsg command = (AnswerMsg)next;
                     command.processMessage(this);
