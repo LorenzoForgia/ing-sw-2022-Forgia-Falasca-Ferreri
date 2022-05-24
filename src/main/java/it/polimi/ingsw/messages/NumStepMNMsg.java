@@ -27,6 +27,7 @@ public class NumStepMNMsg extends CommandMsg{
                     AnsEndGameMsg ansEndGameMsg= new AnsEndGameMsg(this, game.showWinner());
                     clientHandler.sendAnswerMessage(ansEndGameMsg);
                 }else{
+                    game.resetcountmodexpview();
                     answerMsg= new AnsNumStepMNMsg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(),game.getGameModel().getGeneralBoard().getClouds());
                     clientHandler.sendAnswerMessage(answerMsg);
                 }

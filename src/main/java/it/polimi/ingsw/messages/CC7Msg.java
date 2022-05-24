@@ -20,10 +20,15 @@ public class CC7Msg extends CommandMsg{
     public void processMessage(ClientHandler clientHandler) throws IOException {
         GameController game = clientHandler.getGame();
         synchronized (game) {
-            game.SetCharacterCard7(game.getCharacterCardChosen(), entrancestud, students, game.getChoosenPlayer().GetPlayerTurn());
-            game.UseEffectOfCharacterCard(game.getChoosenPlayer().GetPlayerTurn(), game.getCharacterCardChosen());
-            AnsPlayAfterCCMsg answerMsg = new AnsPlayAfterCCMsg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers(), game.getCountmodexpview());
-            clientHandler.sendAnswerMessage(answerMsg);
+            if(game.SetCharacterCard7(game.getCharacterCardChosen(), entrancestud, students, game.getChoosenPlayer().GetPlayerTurn())){
+                game.UseEffectOfCharacterCard(game.getChoosenPlayer().GetPlayerTurn(), game.getCharacterCardChosen());
+                AnsPlayAfterCCMsg answerMsg = new AnsPlayAfterCCMsg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers(), game.getCountmodexpview());
+                clientHandler.sendAnswerMessage(answerMsg);
+            }else{
+                AnsCC7ExcMsg ansCC7ExcMsg= new AnsCC7ExcMsg(this, game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers(), game.getCharacterCardChosen());
+                clientHandler.sendAnswerMessage(ansCC7ExcMsg);
+            }
+
         }
     }
 }
