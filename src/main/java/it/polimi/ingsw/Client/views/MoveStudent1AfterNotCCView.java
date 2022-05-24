@@ -19,7 +19,7 @@ public class MoveStudent1AfterNotCCView extends View{
     public void run() {
         Scanner scanner= new Scanner(System.in);
         Displayer displayer= new Displayer();
-        int isl;
+        int isl=0;
         ArrayList<SchoolBoard> schoolBoards= new ArrayList<SchoolBoard>();
         for(int i=0; i<answerMsg.GetGB().getSchoolBoard().size();i++){
             schoolBoards.add(answerMsg.GetGB().getSchoolBoard().get(i));
@@ -61,7 +61,16 @@ public class MoveStudent1AfterNotCCView extends View{
                 flag=true;
             } else if(ris.equals("isola")){
                 System.out.println("Su quale isola vuoi spostarlo?");
-                isl = Integer.parseInt(scanner.nextLine());
+                Boolean ex=false;
+                while(!ex) {
+                    try {
+                        isl = Integer.parseInt(scanner.nextLine());
+                        ex=true;
+                    } catch (NumberFormatException e) {
+                        System.out.println("Errore: Su quale isola vuoi spostarlo");
+                        ex=false;
+                    }
+                }
                 MoveStudent1Msg moveStudentMsg = new MoveStudent1Msg(student, isl);
                 getOwner().getServerHandler().sendCommandMessage(moveStudentMsg);
                 flag=true;

@@ -20,7 +20,7 @@ public class MoveStudent2AfterCCView extends View{
     public void run() {
         Scanner scanner = new Scanner(System.in);
         Displayer displayer = new Displayer();
-        int isl;
+        int isl=0;
         System.out.println(answerMsg.GetPlayer() + " hai giocato la carta personaggio scelta!");
         ArrayList<SchoolBoard> schoolBoards = new ArrayList<SchoolBoard>();
         for (int i = 0; i < answerMsg.GetGB().getSchoolBoard().size(); i++) {
@@ -58,13 +58,22 @@ public class MoveStudent2AfterCCView extends View{
         while(!flag) {
             if (ris.equals("sala")) {
                 isl = 12;
-                MoveStudent1Msg moveStudentMsg = new MoveStudent1Msg(student, isl);
+                MoveStudent2Msg moveStudentMsg = new MoveStudent2Msg(student, isl);
                 getOwner().getServerHandler().sendCommandMessage(moveStudentMsg);
                 flag=true;
             } else if(ris.equals("isola")){
                 System.out.println("Su quale isola vuoi spostarlo?");
-                isl = Integer.parseInt(scanner.nextLine());
-                MoveStudent1Msg moveStudentMsg = new MoveStudent1Msg(student, isl);
+                Boolean ex=false;
+                while(!ex) {
+                    try {
+                        isl = Integer.parseInt(scanner.nextLine());
+                        ex=true;
+                    } catch (NumberFormatException e) {
+                        System.out.println("Errore: Su quale isola vuoi spostarlo");
+                        ex=false;
+                    }
+                }
+                MoveStudent2Msg moveStudentMsg = new MoveStudent2Msg(student, isl);
                 getOwner().getServerHandler().sendCommandMessage(moveStudentMsg);
                 flag=true;
             } else{
