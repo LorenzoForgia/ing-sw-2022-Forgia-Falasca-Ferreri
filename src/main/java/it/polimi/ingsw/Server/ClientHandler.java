@@ -93,7 +93,7 @@ public class ClientHandler implements Runnable
         try {
             while (true) {
                 /* read commands from the client, process them, and send replies */
-                client.setSoTimeout(15000);
+                client.setSoTimeout(20000);
                 Object next = input.readObject();
                 CommandMsg command = (CommandMsg)next;
                 command.processMessage(this);

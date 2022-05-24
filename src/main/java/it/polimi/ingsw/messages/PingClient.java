@@ -29,7 +29,7 @@ public class PingClient implements Runnable {
     {
         try {
             while (true) {
-                sleep(5000);
+                sleep(10000);
                 this.sendPing();
             }
 

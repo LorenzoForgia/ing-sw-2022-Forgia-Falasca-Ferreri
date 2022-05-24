@@ -28,7 +28,7 @@ public class PingServer implements Runnable{
         try {
             while (true) {
                 while (true) {
-                    sleep(5000);
+                    sleep(10000);
                     this.sendPing();
                 }
             }
