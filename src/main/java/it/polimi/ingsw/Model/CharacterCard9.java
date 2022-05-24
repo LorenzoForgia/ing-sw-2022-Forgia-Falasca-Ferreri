@@ -7,10 +7,12 @@ package it.polimi.ingsw.Model;
 public class CharacterCard9  extends CharacterCard {
 
 
-    public CharacterCard9(int name, int coins, int countUse) {
-        super(name, coins, countUse);
-    }
+
     private Color chosenColor;
+
+    public CharacterCard9(int name, int coins, int countUse, String descriptionEffect) {
+        super(name, coins, countUse, descriptionEffect);
+    }
 
     @Override
     public void UseEffect(Player p) {

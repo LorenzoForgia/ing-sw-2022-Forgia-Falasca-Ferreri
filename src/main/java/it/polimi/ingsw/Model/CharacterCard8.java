@@ -9,8 +9,8 @@ package it.polimi.ingsw.Model;
 public class CharacterCard8 extends CharacterCard {
 
 
-    public CharacterCard8(int name, int coins, int countUse) {
-        super(name, coins, countUse);
+    public CharacterCard8(int name, int coins, int countUse, String descriptionEffect) {
+        super(name, coins, countUse, descriptionEffect);
     }
 
     @Override

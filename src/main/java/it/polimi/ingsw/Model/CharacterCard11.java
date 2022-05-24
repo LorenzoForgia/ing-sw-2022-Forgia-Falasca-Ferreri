@@ -10,8 +10,8 @@ public class CharacterCard11 extends CharacterCard{
     private Color choosenColor;
     private Bag bag;
 
-    public CharacterCard11(int name, int coins, int countUse) {
-        super(name, coins, countUse);
+    public CharacterCard11(int name, int coins, int countUse, String descriptionEffect) {
+        super(name, coins, countUse, descriptionEffect);
     }
 
     @Override

@@ -101,7 +101,21 @@ class DisplayerTest {
         cloudTiles.add(c3);
         cloudTiles.add(c4);
         p.showAllCloudTiles(cloudTiles);
+        ArrayList<CharacterCard> characterCards= new ArrayList<CharacterCard>();
+        GeneralBoard gb=new GeneralBoard(20);
 
+        Bag b=new Bag();
+        b.setStudents(120);
+        CharacterCard c7=new CharacterCard7(7,1,0 ,"Puoi prendere fino a 3 studenti da questa carta e scambiarli con altrettanti studenti presenti nel tuo ingresso ");
+        c7.SetCard(b,gb);
+        CharacterCard c11=new CharacterCard11(11,2,0 ,"Prendi uno studente dalla carta e piazzalo nella tua sala.Poi pesca uno studente dal sacchetto e mettilo su questa carta");
+        c11.SetCard(b,gb);
+        characterCards.add(c7);
+        characterCards.add(new CharacterCard8(8,2,0 ,"in questo turno, durante il calcolo dell'influenza hai 2 punti di influenza addizionali"));
+        characterCards.add(new CharacterCard9(9,3,0 ,"Scegli un colore di studente, in questo turno,durante il calcolo dell'influenza quel colore non fornisce influenza"));
+        characterCards.add(new CharacterCard10(10,1,0 ,"puoi scambiare tra loro fino a 2 studenti prensenti nella tua sala e nel tuo ingresso"));
+        characterCards.add(c11);
+        p.displayAllcharactercard(characterCards);
     }
 
 }

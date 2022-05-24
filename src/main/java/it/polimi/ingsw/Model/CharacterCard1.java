@@ -14,8 +14,8 @@ public class CharacterCard1 extends CharacterCard{
     private IslandTiles Ichosen;
     private Bag bag;
 
-    public CharacterCard1(int name, int coins, int countUse) {
-        super(name, coins, countUse);
+    public CharacterCard1(int name, int coins, int countUse, String descriptionEffect) {
+        super(name, coins, countUse, descriptionEffect);
     }
 
     @Override

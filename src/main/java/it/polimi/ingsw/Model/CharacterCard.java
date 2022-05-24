@@ -4,13 +4,25 @@ import java.io.Serializable;
 
 public abstract class CharacterCard implements Serializable {
     private int Name;
+
+    public int getCoins() {
+        return Coins;
+    }
+
     private int Coins;
     private int CountUse;
 
-    public CharacterCard(int name, int coins, int countUse) {
+    public String getDescriptionEffect() {
+        return DescriptionEffect;
+    }
+
+    private String DescriptionEffect;
+
+    public CharacterCard(int name, int coins, int countUse,String descriptionEffect) {
         Name= name;
         Coins= coins;
         CountUse= countUse;
+        DescriptionEffect=descriptionEffect;
     }
 
 
