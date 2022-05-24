@@ -17,8 +17,17 @@ public class NumStepExcView extends View{
         Scanner scanner= new Scanner(System.in);
         int step;
         System.out.println("Numero passi invalido! Riprova");
-        step = Integer.parseInt(scanner.nextLine());
-        NumStepMNMsg numStepMNMsg= new NumStepMNMsg(step);
-        getOwner().getServerHandler().sendCommandMessage(numStepMNMsg);
+        Boolean ex=false;
+        while(!ex) {
+            try {
+                step = Integer.parseInt(scanner.nextLine());
+                ex = true;
+                NumStepMNMsg numStepMNMsg = new NumStepMNMsg(step);
+                getOwner().getServerHandler().sendCommandMessage(numStepMNMsg);
+            } catch (NumberFormatException e) {
+                System.out.println("Errore: Inserire numero corretto");
+                ex = false;
+            }
+        }
     }
 }
