@@ -32,16 +32,15 @@ public class PlayCC2View extends View{
         }
         displayer.showAllIsland(islandTiles);
         /**stampa charactercards**/
+        for(int i=0;i<answerMsg.GetPlayers().size();i++){
+            if(answerMsg.GetPlayers().get(i).getNickName().equals(answerMsg.GetPlayer())) {
+                displayer.displayWallet(answerMsg.GetPlayers().get(i).getNumberCoins());
+            }
+        }
+        displayer.displayAllcharactercard(answerMsg.GetCharacterCards());
         System.out.println("Vuoi giocare una carta personaggio? si/no");
         String card = scanner.nextLine();
         if (card.equals("si")) {
-            Displayer d=new Displayer();
-            for(int i=0;i<answerMsg.GetPlayers().size();i++){
-                if(answerMsg.GetPlayers().get(i).getNickName().equals(answerMsg.GetPlayer())) {
-                    d.displayWallet(answerMsg.GetPlayers().get(i).getNumberCoins());
-                }
-            }
-            d.displayAllcharactercard(answerMsg.GetCharacterCards());
             System.out.println("Qual'è il numero della carta personaggio che vuoi giocare?");
             int numcard = Integer.parseInt(scanner.nextLine());
             CCMsg ccMsg = new CCMsg(numcard);
