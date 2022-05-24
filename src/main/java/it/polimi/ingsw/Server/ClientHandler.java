@@ -121,6 +121,7 @@ public class ClientHandler implements Runnable
     public void sendAnswerMessage(AnswerMsg answerMsg) throws IOException
     {
         output.writeObject((Object)answerMsg);
+        output.reset();
     }
     public String getNickname(){return nickname;}
     public void setNickname(String nickname){this.nickname= nickname;}

@@ -15,8 +15,8 @@ public class CC10View extends View{
     @Override
     public void run() {
         Scanner scanner = new Scanner(System.in);
-        ArrayList<Color> entrancestud= null;
-        ArrayList<Color> diningstud=null;
+        ArrayList<Color> entrancestud= new ArrayList<>();
+        ArrayList<Color> diningstud=new ArrayList<>();
         Boolean flag=false;
         int count=0;
         Color cdef=Color.Blue;

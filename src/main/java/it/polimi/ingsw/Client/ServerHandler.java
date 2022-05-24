@@ -120,6 +120,7 @@ public class ServerHandler implements Runnable
     {
         try {
             output.writeObject(commandMsg);
+            output.reset();
         } catch (IOException e) {
             System.out.println("Communication error");
             owner.terminate();
