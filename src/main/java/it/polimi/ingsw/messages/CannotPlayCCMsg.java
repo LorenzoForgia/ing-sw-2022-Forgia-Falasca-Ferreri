@@ -13,7 +13,6 @@ public class CannotPlayCCMsg extends CommandMsg{
         GameController game = clientHandler.getGame();
 
         synchronized (game){
-            game.incrementview();
             AnsPlayAfterNotCCMsg ansMoveS1AfterNotCCMsg= new AnsPlayAfterNotCCMsg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers(), game.getCountmodexpview());
             clientHandler.sendAnswerMessage(ansMoveS1AfterNotCCMsg);
         }
