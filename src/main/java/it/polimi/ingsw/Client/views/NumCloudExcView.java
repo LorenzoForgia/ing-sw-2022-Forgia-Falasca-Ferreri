@@ -18,8 +18,17 @@ public class NumCloudExcView extends View{
         Scanner scanner= new Scanner(System.in);
         int cloud;
         System.out.println("Numero nuvola invalido! Riprova");
-        cloud = Integer.parseInt(scanner.nextLine());
-        CloudMsg cloudMsg= new CloudMsg(cloud);
-        getOwner().getServerHandler().sendCommandMessage(cloudMsg);
+        Boolean ex=false;
+        while(!ex) {
+            try {
+                cloud = Integer.parseInt(scanner.nextLine());
+                ex = true;
+                CloudMsg cloudMsg = new CloudMsg(cloud);
+                getOwner().getServerHandler().sendCommandMessage(cloudMsg);
+            } catch (NumberFormatException e) {
+                System.out.println("Errore: Inserire numero corretto");
+                ex = false;
+            }
+        }
     }
 }

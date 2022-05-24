@@ -31,8 +31,17 @@ public class AskforMNafterNotCCView extends View{
         displayer.showAllIsland(islandTiles);
         int step;
         System.out.println("Ora quanti passi di madre natura vuoi fare?");
-        step = Integer.parseInt(scanner.nextLine());
-        NumStepMNMsg numStepMNMsg = new NumStepMNMsg(step);
-        getOwner().getServerHandler().sendCommandMessage(numStepMNMsg);
+        Boolean ex=false;
+        while(!ex) {
+            try {
+                step = Integer.parseInt(scanner.nextLine());
+                ex = true;
+                NumStepMNMsg numStepMNMsg = new NumStepMNMsg(step);
+                getOwner().getServerHandler().sendCommandMessage(numStepMNMsg);
+            } catch (NumberFormatException e) {
+                System.out.println("Errore: Inserire numero corretto");
+                ex = false;
+            }
+        }
     }
 }
