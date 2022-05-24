@@ -4,7 +4,7 @@ import it.polimi.ingsw.Controller.GameController;
 import it.polimi.ingsw.Server.ClientHandler;
 
 import java.io.IOException;
-
+/*
 public class PingCMSG extends CommandMsg {
     public PingCMSG() {
     }
@@ -15,5 +15,5 @@ public class PingCMSG extends CommandMsg {
         answerMsg = new PingSMSG(this);
         clientHandler.sendAnswerMessage(answerMsg);
     }
-}
+}*/
 
