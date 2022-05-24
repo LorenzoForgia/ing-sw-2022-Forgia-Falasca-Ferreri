@@ -35,7 +35,7 @@ public class PingServer implements Runnable{
         }catch(ClassCastException e){
             System.out.println("invalid stream from client:ClassCastException");
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            System.out.println("Interrupted exception");
         }
 
     }
@@ -45,12 +45,12 @@ public class PingServer implements Runnable{
        try {
            this.clientHandler.getOutput().writeObject((Object)ping);
        } catch (IOException e) {
-           e.printStackTrace();
+           System.out.println("IO exception");
        }
        try {
            this.clientHandler.getOutput().reset();
        } catch (IOException e) {
-           e.printStackTrace();
+           System.out.println("IO exception");
        }
    }
 }

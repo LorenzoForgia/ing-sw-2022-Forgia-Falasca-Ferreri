@@ -36,7 +36,7 @@ public class PingClient implements Runnable {
         }catch(ClassCastException e){
             System.out.println("invalid stream from client:ClassCastException");
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            System.out.println("Interrupted exception");
         }
     }
     public void sendPing() throws IOException
