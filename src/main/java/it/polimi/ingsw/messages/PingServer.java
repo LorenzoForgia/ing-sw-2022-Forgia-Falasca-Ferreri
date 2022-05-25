@@ -5,7 +5,7 @@ import it.polimi.ingsw.Server.ClientHandler;
 import java.io.*;
 
 import static java.lang.Thread.sleep;
-/*
+
 public class PingServer implements Runnable{
     public PingServer(ClientHandler clientHandler) {
         this.clientHandler = clientHandler;
@@ -19,7 +19,7 @@ public class PingServer implements Runnable{
         try {
             handleClientDisconnection();
         } catch (IOException e) {
-            System.out.println("client " + this.clientHandler.getClient().getInetAddress() + " connection dropped");
+            System.out.println("IOexception partita finita" + this.clientHandler.getClient().getInetAddress() + " connection dropped");
         }
 
     }
@@ -27,10 +27,8 @@ public class PingServer implements Runnable{
     {
         try {
             while (true) {
-                while (true) {
-                    sleep(10000);
-                    this.sendPing();
-                }
+                sleep(7500);
+                this.sendPing();
             }
         }catch(ClassCastException e){
             System.out.println("invalid stream from client:ClassCastException");
@@ -46,4 +44,4 @@ public class PingServer implements Runnable{
        this.clientHandler.getOutput().reset();
 
    }
-}*/
+}

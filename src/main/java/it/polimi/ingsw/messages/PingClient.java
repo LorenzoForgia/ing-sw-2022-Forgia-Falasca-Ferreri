@@ -6,7 +6,7 @@ import it.polimi.ingsw.Server.ClientHandler;
 import java.io.IOException;
 
 import static java.lang.Thread.sleep;
-/*
+
 
 public class PingClient implements Runnable {
     private ServerHandler serverHandler;
@@ -22,7 +22,7 @@ public class PingClient implements Runnable {
         try {
             handleClientDisconnection();
         } catch (IOException e) {
-            System.out.println("client " + this.serverHandler.getServer().getInetAddress() + " connection dropped");
+            System.out.println("IO exception partita finita " + this.serverHandler.getServer().getInetAddress() + " connection dropped");
         }
 
     }
@@ -30,7 +30,7 @@ public class PingClient implements Runnable {
     {
         try {
             while (true) {
-                sleep(10000);
+                sleep(7500);
                 this.sendPing();
             }
 
@@ -46,4 +46,4 @@ public class PingClient implements Runnable {
         this.serverHandler.getOutput().writeObject((Object)ping);
         this.serverHandler.getOutput().reset();
     }
-}*/
+}

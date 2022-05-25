@@ -6,7 +6,7 @@ import it.polimi.ingsw.Model.GeneralBoard;
 import it.polimi.ingsw.Model.Player;
 
 import java.util.ArrayList;
-/*
+
 public class PingSMSG extends AnswerMsg{
     public PingSMSG(CommandMsg parent){
         super(parent);
@@ -18,4 +18,4 @@ public class PingSMSG extends AnswerMsg{
     {
     }
 
-}*/
+}
