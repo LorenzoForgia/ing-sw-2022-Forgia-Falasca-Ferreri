@@ -46,7 +46,7 @@ public class Client implements Runnable
 
         Socket server;
         try {
-            server = new Socket("127.0.0.1", 4567);
+            server = new Socket("192.168.168.32", 4567);
             System.out.println("Connesso al Server: IP=127.0.0.1 , Port=4567");
         } catch (IOException e) {
             System.out.println("server unreachable");

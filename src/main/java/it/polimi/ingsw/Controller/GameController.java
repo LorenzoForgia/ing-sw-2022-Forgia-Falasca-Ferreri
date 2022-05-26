@@ -363,7 +363,7 @@ public class GameController {
             if (p.isUsedCharacterCard() && (p.getNameCharacterCard() == 6 || p.getNameCharacterCard() ==8)) {
                     if (moveMotherNature.CheckIfIslandGetControlled(gameModel.getNumplayers(), gameModel.getGeneralBoard(), moveMotherNature.getI1(),p.getNameCharacterCard(),p.getMySchoolBoard())){
                         moveMotherNature.GetRightTowerOnIsland(gameModel.getGeneralBoard(), moveMotherNature.getI1(), setup.getSBWithTowers());
-                        gameEndState.CheckEndGameImmediately(p, gameModel.getGeneralBoard());
+                        gameEndState.CheckEndGameImmediately(p, gameModel.getGeneralBoard(),setup.getSBWithTowers(), gameModel.getNumplayers());
                     }
                 }else if(p.isUsedCharacterCard() && p.getNameCharacterCard() == 9){
                     boolean flag = true;
@@ -372,14 +372,14 @@ public class GameController {
                             flag = false;
                             if (moveMotherNature.CheckIfIslandGetControlled(gameModel.getNumplayers(), gameModel.getGeneralBoard(), moveMotherNature.getI1(), 9,((CharacterCard9)gameModel.getGeneralBoard().getChoosenCard().get(i)).getChosenColor())){
                                 moveMotherNature.GetRightTowerOnIsland(gameModel.getGeneralBoard(), moveMotherNature.getI1(), setup.getSBWithTowers());
-                                gameEndState.CheckEndGameImmediately(p, gameModel.getGeneralBoard());
+                                gameEndState.CheckEndGameImmediately(p, gameModel.getGeneralBoard(),setup.getSBWithTowers(), gameModel.getNumplayers());
                             }
                         }
                     }
                 } else {
                 if (moveMotherNature.CheckIfIslandGetControlled(gameModel.getNumplayers(), gameModel.getGeneralBoard(), moveMotherNature.getI1())) {
                     moveMotherNature.GetRightTowerOnIsland(gameModel.getGeneralBoard(), moveMotherNature.getI1(), setup.getSBWithTowers());
-                    gameEndState.CheckEndGameImmediately(p, gameModel.getGeneralBoard());
+                    gameEndState.CheckEndGameImmediately(p, gameModel.getGeneralBoard(),setup.getSBWithTowers(), gameModel.getNumplayers());
                 }
             }
         }
@@ -428,13 +428,14 @@ public class GameController {
         if(choosenPlayer.EndOfAllTurn()) {
             if (choosenPlayer.getNumPlayerTurn() == gameModel.getNumplayers()) {
                 gameEndState.CheckEndGameRoundEndedForBag(gameModel.getBag());
-                if (!gameEndState.isFlagImmediately() && !gameEndState.isFlagNotImmediately() && choosenPlayer.getNumPlayerTurn() == gameModel.getNumplayers()) {
+                if (!gameEndState.isFlagImmediately() && !gameEndState.isFlagNotImmediately()) {
                     addStudentsOnClouds.RestartTurn(gameModel.getGeneralBoard(), gameModel.getBag(), gameModel.getNumplayers());
                     gameEndState.CheckEndGameRoundEndedForBag(gameModel.getBag());
                     playAssCard.ResetCardPlayed();
                     choosenPlayer.ChooseTurnPlayerForCardAssistant(gameModel.getPlayers());
                     System.out.println(choosenPlayer.getNumPlayerTurn());
                     if (gameModel.getModExpert()) {
+                        influenceProfessorTable.RightProfessorTable(gameModel.getGeneralBoard(), gameModel.getNumplayers());
                         for (int i = 0; i < gameModel.getNumplayers(); i++) {
                             gameModel.getPlayers().get(i).setUsedCharacterCard(false);
                             gameModel.getPlayers().get(i).setNameCharacterCard(13);
@@ -499,6 +500,11 @@ public class GameController {
 
     public void UseEffectOfCharacterCard(Player p, CharacterCard c){
           c.UseEffect(p);
+          if(c.getName()==2){
+              influenceProfessorTable.RightProfessorTable(gameModel.getGeneralBoard(), gameModel.getNumplayers(),p);
+          }else{
+              influenceProfessorTable.RightProfessorTable(gameModel.getGeneralBoard(), gameModel.getNumplayers());
+          }
           p.setNumberCoins(p.getNumberCoins()-c.getCost());
           gameModel.getGeneralBoard().addCoin(c.getCost());
           c.getCountUse();
