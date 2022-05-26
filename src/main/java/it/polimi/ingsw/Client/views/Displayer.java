@@ -286,19 +286,19 @@ public class Displayer {
         System.out.println("|"+Color.Blue+"CARTA PERSONAGGIO:"+c.getName()+Color.Yellow+"  Costo:"+c.getCost()+Color.Green+"  Effetto:"+c.getDescriptionEffect()+Color.Reset+"|  ");
         if(c.getName()==1){
             for(int i=0;i<((CharacterCard1)c).GetchoosenStudent().size();i++){
-                System.out.print(((CharacterCard1)c).GetchoosenStudent().get(i).getEscape() + "● ");
+                System.out.print(((CharacterCard1)c).GetchoosenStudent().get(i).getEscape() + "● "+Color.Reset);
             }
             System.out.println();
         }
         if(c.getName()==7){
             for(int i=0;i<((CharacterCard7)c).getStudentOnCard().size();i++){
-                System.out.print(((CharacterCard7)c).getStudentOnCard().get(i).getEscape() + "● ");
+                System.out.print(((CharacterCard7)c).getStudentOnCard().get(i).getEscape() + "● "+Color.Reset);
             }
             System.out.println();
         }
         if(c.getName()==11){
             for(int i=0;i<((CharacterCard11)c).GetchoosenStudent().size();i++){
-                System.out.print(((CharacterCard11)c).GetchoosenStudent().get(i).getEscape() + "● ");
+                System.out.print(((CharacterCard11)c).GetchoosenStudent().get(i).getEscape() + "● "+Color.Reset);
             }
             System.out.println();
         }

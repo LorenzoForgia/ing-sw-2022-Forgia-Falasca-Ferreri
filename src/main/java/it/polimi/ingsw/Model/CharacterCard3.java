@@ -2,12 +2,13 @@ package it.polimi.ingsw.Model;
 
 import it.polimi.ingsw.Controller.*;
 
+import java.io.Serializable;
 import java.util.List;
 
 
 /** Resolve the island such as Mother Nature ended her movement there
  * The player has to choose the island **/
-public class CharacterCard3 extends CharacterCard{
+public class CharacterCard3 extends CharacterCard implements Serializable {
     private IslandTiles I1;
     private MoveMotherNature moveMotherNature = new MoveMotherNature();
     private GeneralBoard generalBoard;

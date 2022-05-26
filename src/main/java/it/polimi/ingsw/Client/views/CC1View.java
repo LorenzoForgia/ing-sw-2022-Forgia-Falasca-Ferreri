@@ -31,6 +31,7 @@ public class CC1View extends View{
         }
         displayer.showAllIsland(islandTiles);
         /**stampa studenti sulla charactercard**/
+        displayer.displayCharactercard(answerMsg.GetCharacterCard());
         Boolean flag=false;
         int count=0;
         Color cdef=Color.Blue;

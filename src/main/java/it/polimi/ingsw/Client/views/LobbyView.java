@@ -24,9 +24,19 @@ public class LobbyView extends View{
         Scanner scanner = new Scanner(System.in);
         AnsGameCreatedMsg.Status moveStatus = answerMsg.getMoveStatus();
         if(moveStatus==AnsGameCreatedMsg.Status.VALID) {
-            System.out.println("Creazone Partita");
+            System.out.println("Creazione Partita");
             System.out.println("Inserire numero di giocatori: da 2 a 4 giocatori");
-            int numplayers = Integer.parseInt(scanner.nextLine());
+            Boolean ex=false;
+            int numplayers=0;
+            while(!ex) {
+                try {
+                    numplayers = Integer.parseInt(scanner.nextLine());
+                    ex=true;
+                } catch (NumberFormatException e) {
+                    System.out.println("Errore: Inserire numero di giocatori: da 2 a 4 giocatori");
+                    ex=false;
+                }
+            }
             System.out.println("Modalità esperta? true o false");
             boolean modexp = Boolean.parseBoolean(scanner.nextLine());
             NewGameMsg newgame = new NewGameMsg(numplayers, modexp);

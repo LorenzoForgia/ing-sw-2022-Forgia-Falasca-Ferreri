@@ -17,10 +17,14 @@ public class CC11Msg extends CommandMsg{
     public void processMessage(ClientHandler clientHandler) throws IOException {
         GameController game = clientHandler.getGame();
         synchronized (game) {
-            game.SetCharacterCard11(game.getCharacterCardChosen(), color);
-            game.UseEffectOfCharacterCard(game.getChoosenPlayer().GetPlayerTurn(), game.getCharacterCardChosen());
-            AnsPlayAfterCCMsg answerMsg = new AnsPlayAfterCCMsg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers(), game.getCountmodexpview());
-            clientHandler.sendAnswerMessage(answerMsg);
+            if(game.SetCharacterCard11(game.getCharacterCardChosen(), color)){
+                game.UseEffectOfCharacterCard(game.getChoosenPlayer().GetPlayerTurn(), game.getCharacterCardChosen());
+                AnsPlayAfterCCMsg answerMsg = new AnsPlayAfterCCMsg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers(), game.getCountmodexpview());
+                clientHandler.sendAnswerMessage(answerMsg);
+            }else{
+                AnsCC11ExcMsg ansCC11ExcMsg= new AnsCC11ExcMsg(this, game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers(), game.getCharacterCardChosen());
+                clientHandler.sendAnswerMessage(ansCC11ExcMsg);
+            }
         }
     }
 }

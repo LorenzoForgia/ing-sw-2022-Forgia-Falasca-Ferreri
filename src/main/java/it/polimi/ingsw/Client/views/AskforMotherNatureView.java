@@ -1,5 +1,6 @@
 package it.polimi.ingsw.Client.views;
 
+import it.polimi.ingsw.Model.Color;
 import it.polimi.ingsw.Model.IslandTiles;
 import it.polimi.ingsw.Model.SchoolBoard;
 import it.polimi.ingsw.messages.AnsMoveStudent2Msg;
@@ -30,9 +31,18 @@ public class AskforMotherNatureView extends View{
         displayer.showAllIsland(islandTiles);
         Scanner scanner= new Scanner(System.in);
         int step;
+        Boolean ex=false;
         System.out.println("Quanti passi di madre natura vuoi fare?");
-        step = Integer.parseInt(scanner.nextLine());
-        NumStepMNMsg numStepMNMsg= new NumStepMNMsg(step);
-        getOwner().getServerHandler().sendCommandMessage(numStepMNMsg);
+        while(!ex) {
+            try {
+                step = Integer.parseInt(scanner.nextLine());
+                ex = true;
+                NumStepMNMsg numStepMNMsg= new NumStepMNMsg(step);
+                getOwner().getServerHandler().sendCommandMessage(numStepMNMsg);
+            } catch (NumberFormatException e) {
+                System.out.println("Errore: Inserire numero corretto");
+                ex = false;
+            }
+        }
     }
 }

@@ -32,6 +32,12 @@ public class PlayCC3View extends View{
         }
         displayer.showAllIsland(islandTiles);
         /**stampa Charactercards**/
+        for(int i=0;i<answerMsg.GetPlayers().size();i++){
+            if(answerMsg.GetPlayers().get(i).getNickName().equals(answerMsg.GetPlayer())) {
+                displayer.displayWallet(answerMsg.GetPlayers().get(i).getNumberCoins());
+            }
+        }
+        displayer.displayAllcharactercard(answerMsg.GetCharacterCards());
         System.out.println("Vuoi giocare una carta personaggio? si/no");
         String card = scanner.nextLine();
         if (card.equals("si")) {

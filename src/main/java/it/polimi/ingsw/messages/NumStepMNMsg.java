@@ -22,10 +22,12 @@ public class NumStepMNMsg extends CommandMsg{
             try {
                 game.CheckNumberOfStepsMN(step, game.getChoosenPlayer().GetPlayerTurn());
                 if(game.getGameEndState().CheckEndGameImmediately(game.getChoosenPlayer().GetPlayerTurn(), game.getGameModel().getGeneralBoard())){
+                    game.resetcountmodexpview();
                     game.notifyAll();
                     AnsEndGameMsg ansEndGameMsg= new AnsEndGameMsg(this, game.showWinner());
                     clientHandler.sendAnswerMessage(ansEndGameMsg);
                 }else{
+                    game.resetcountmodexpview();
                     answerMsg= new AnsNumStepMNMsg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(),game.getGameModel().getGeneralBoard().getClouds());
                     clientHandler.sendAnswerMessage(answerMsg);
                 }

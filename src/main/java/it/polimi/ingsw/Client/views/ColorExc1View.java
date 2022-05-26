@@ -20,15 +20,32 @@ public class ColorExc1View extends View {
         Color student= Color.valueOf(scanner.nextLine());
         System.out.println("Vuoi spostarlo nella sala a su un'isola? sala/isola");
         String ris= scanner.nextLine();
-        if(ris.equals("sala")){
-            isl=12;
-            MoveStudent1Msg moveStudentMsg= new MoveStudent1Msg(student, isl);
-            getOwner().getServerHandler().sendCommandMessage(moveStudentMsg);
-        }else{
-            System.out.println("Su quale isola vuoi spostarlo?");
-            isl=Integer.parseInt(scanner.nextLine());
-            MoveStudent1Msg moveStudentMsg= new MoveStudent1Msg(student, isl);
-            getOwner().getServerHandler().sendCommandMessage(moveStudentMsg);
+        Boolean flag=false;
+        while(!flag) {
+            if (ris.equals("sala")) {
+                isl = 12;
+                MoveStudent1Msg moveStudentMsg = new MoveStudent1Msg(student, isl);
+                getOwner().getServerHandler().sendCommandMessage(moveStudentMsg);
+                flag=true;
+            } else if(ris.equals("isola")){
+                System.out.println("Su quale isola vuoi spostarlo?");
+                Boolean ex=false;
+                while(!ex) {
+                    try {
+                        isl = Integer.parseInt(scanner.nextLine());
+                        ex=true;
+                    } catch (NumberFormatException e) {
+                        System.out.println("Errore: Su quale isola vuoi spostarlo");
+                        ex=false;
+                    }
+                }
+                MoveStudent1Msg moveStudentMsg = new MoveStudent1Msg(student, isl);
+                getOwner().getServerHandler().sendCommandMessage(moveStudentMsg);
+                flag=true;
+            } else{
+                System.out.println("Errore inserimento scelta,ripetere: Vuoi spostarlo nella sala o su un'isola? sala/isola");
+                ris= scanner.nextLine();
+            }
         }
     }
 }
