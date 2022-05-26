@@ -4,7 +4,6 @@ import it.polimi.ingsw.Exception.*;
 import it.polimi.ingsw.Exception.IllegalArgumentException;
 import it.polimi.ingsw.Model.*;
 
-import java.sql.Array;
 import java.util.*;
 import java.util.Random;
 
