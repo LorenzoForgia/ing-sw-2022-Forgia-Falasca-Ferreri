@@ -175,6 +175,7 @@ public class Displayer {
 
    public void displayAllSchoolboard(ArrayList<SchoolBoard> s,ArrayList<Player> pl){
         for(int i=0;i<s.size();i++){
+            System.out.println();
             System.out.println("Schoolboard del giocatore:"+pl.get(i).getNickName());
             this.displaySchoolBoard(s.get(i).getEntrance(),s.get(i).getDiningRoom().getDiningRoom(),s.get(i).getProfessorTable(),s.get(i).getNumberOfTower(),s.get(i).ColorTower());
         }
