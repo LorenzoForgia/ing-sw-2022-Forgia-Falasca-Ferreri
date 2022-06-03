@@ -24,6 +24,7 @@ public class Displayer {
         p.add(Color.Yellow);
         p.add(Color.Pink);
         p.add(Color.Blue);
+        System.out.println("Colore tue torri"+ct.getEscape()+" ●");
         for(int i=0,k=0,t=0;i<5;i++) {
              if(k<e.size()) {
                  System.out.print("|" + e.get(k)+ "● ");
