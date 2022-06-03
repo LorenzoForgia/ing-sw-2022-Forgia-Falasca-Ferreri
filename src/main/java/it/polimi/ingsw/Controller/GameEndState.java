@@ -11,15 +11,6 @@ public class GameEndState {
     private boolean flagImmediately = false;
     private boolean flagNotImmediately = false;
 
-    public boolean CheckEndGameImmediately(Player p, GeneralBoard g) {
-        if (p.getMySchoolBoard().getNumberOfTower() == 0){
-            flagImmediately  = true;
-            return true;
-        } else if(g.GetIslands().size() <= 3){
-            flagImmediately  = true;
-            return true;
-        }else{return false;}
-    }
 
     public boolean CheckEndGameImmediately(Player p, GeneralBoard g, List<SchoolBoard> SBWithTowers, int nPlayers) {
         boolean notFound= true;
