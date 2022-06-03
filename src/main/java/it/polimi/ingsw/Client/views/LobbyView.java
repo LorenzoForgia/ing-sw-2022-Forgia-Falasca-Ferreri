@@ -38,7 +38,23 @@ public class LobbyView extends View{
                 }
             }
             System.out.println("Modalità esperta? true o false");
-            boolean modexp = Boolean.parseBoolean(scanner.nextLine());
+            String modexpert=scanner.nextLine();
+            boolean flagfine=true;
+            while(flagfine){
+                if(modexpert.equals("true") || modexpert.equals("false")){
+                    flagfine=false;
+                }
+                if(flagfine){
+                    System.out.println("Errore: Inserire modalità esperta consetita: true/false");
+                    modexpert = scanner.nextLine();
+                }
+            }
+            boolean modexp ;
+            if(modexpert.equals("true")){
+                modexp=true;
+            }else{
+                modexp=false;
+            }
             NewGameMsg newgame = new NewGameMsg(numplayers, modexp);
             getOwner().getServerHandler().sendCommandMessage(newgame);
         }else{
