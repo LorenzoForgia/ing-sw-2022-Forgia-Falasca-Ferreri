@@ -21,7 +21,7 @@ public class NumStepMNMsg extends CommandMsg{
         synchronized (game){
             try {
                 game.CheckNumberOfStepsMN(step, game.getChoosenPlayer().GetPlayerTurn());
-                if(game.getGameEndState().CheckEndGameImmediately(game.getChoosenPlayer().GetPlayerTurn(), game.getGameModel().getGeneralBoard())){
+                if(game.getGameEndState().isFlagImmediately()){
                     game.resetcountmodexpview();
                     game.notifyAll();
                     AnsEndGameMsg ansEndGameMsg= new AnsEndGameMsg(this, game.showWinner());

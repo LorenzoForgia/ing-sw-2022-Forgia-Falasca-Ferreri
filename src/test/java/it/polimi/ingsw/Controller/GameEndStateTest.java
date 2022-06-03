@@ -27,9 +27,73 @@ class GameEndStateTest {
           gb.getSchoolBoard().get(0).RemoveTower();
       }
       GameEndState GE=new GameEndState();
-      GE.CheckEndGameImmediately(p1,gb);
+      GE.CheckEndGameImmediately(p1,gb, sb, 2);
       assertTrue(GE.isFlagImmediately());
   }
+    @Test
+    public void testCheckEndGameImmediately4(){ /** case  numTowers=0 for 1st player,player 3 is in the same squad of playe 1and 4 players **/
+        Setup s=new Setup();
+        GeneralBoard gb=s.CreateGeneralboard(false,4);
+        Player p1=new Player("A");
+        p1.setMyDeck(new DeckCardAssistant());
+        p1.setMySchoolBoard(gb.getSchoolBoard().get(0));
+        p1.setNumberCoins(1);
+        Player p2=new Player("B");
+        p2.setMyDeck(new DeckCardAssistant());
+        p2.setMySchoolBoard(gb.getSchoolBoard().get(1));
+        p2.setNumberCoins(1);
+        Player p3=new Player("A");
+        p3.setMyDeck(new DeckCardAssistant());
+        p3.setMySchoolBoard(gb.getSchoolBoard().get(0));
+        p3.setNumberCoins(1);
+        Player p4=new Player("B");
+        p4.setMyDeck(new DeckCardAssistant());
+        p4.setMySchoolBoard(gb.getSchoolBoard().get(1));
+        p4.setNumberCoins(1);
+        List<SchoolBoard> sb=new ArrayList<>();
+        sb.add(gb.getSchoolBoard().get(0));
+        sb.add(gb.getSchoolBoard().get(1));
+
+        s.SetTowers(4,sb);
+        for(int i=0;i<8;i++){
+            gb.getSchoolBoard().get(0).RemoveTower();
+        }
+        GameEndState GE=new GameEndState();
+        GE.CheckEndGameImmediately(p3,gb, sb, 4);
+        assertTrue(GE.isFlagImmediately());
+    }
+
+    @Test
+    public void testCheckEndGameImmediately5(){ /** case no winner 4 players **/
+        Setup s=new Setup();
+        GeneralBoard gb=s.CreateGeneralboard(false,4);
+        Player p1=new Player("A");
+        p1.setMyDeck(new DeckCardAssistant());
+        p1.setMySchoolBoard(gb.getSchoolBoard().get(0));
+        p1.setNumberCoins(1);
+        Player p2=new Player("B");
+        p2.setMyDeck(new DeckCardAssistant());
+        p2.setMySchoolBoard(gb.getSchoolBoard().get(1));
+        p2.setNumberCoins(1);
+        Player p3=new Player("A");
+        p3.setMyDeck(new DeckCardAssistant());
+        p3.setMySchoolBoard(gb.getSchoolBoard().get(0));
+        p3.setNumberCoins(1);
+        Player p4=new Player("B");
+        p4.setMyDeck(new DeckCardAssistant());
+        p4.setMySchoolBoard(gb.getSchoolBoard().get(1));
+        p4.setNumberCoins(1);
+        List<SchoolBoard> sb=new ArrayList<>();
+        sb.add(gb.getSchoolBoard().get(0));
+        sb.add(gb.getSchoolBoard().get(1));
+
+        s.SetTowers(4,sb);
+
+        GameEndState GE=new GameEndState();
+        GE.CheckEndGameImmediately(p3,gb, sb, 4);
+        assertFalse(GE.isFlagImmediately());
+    }
+
     @Test
     public void testCheckEndGameImmediately2(){ /** case  numIslands<=3  **/
         Setup s=new Setup();
@@ -50,7 +114,7 @@ class GameEndStateTest {
             gb.GetIslands().remove(0);
         }
         GameEndState GE=new GameEndState();
-        GE.CheckEndGameImmediately(p1,gb);
+        GE.CheckEndGameImmediately(p1,gb,sb, 2);
         assertTrue(GE.isFlagImmediately());
     }
     @Test
@@ -70,7 +134,7 @@ class GameEndStateTest {
         sb.add(gb.getSchoolBoard().get(1));
         s.SetTowers(2,sb);
         GameEndState GE=new GameEndState();
-        GE.CheckEndGameImmediately(p1,gb);
+        GE.CheckEndGameImmediately(p1,gb, sb, 2);
         assertFalse(GE.isFlagImmediately());
     }
 
