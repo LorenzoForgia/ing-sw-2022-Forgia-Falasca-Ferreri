@@ -508,6 +508,8 @@ public class GameController {
           p.setNumberCoins(p.getNumberCoins()-c.getCost());
           gameModel.getGeneralBoard().addCoin(c.getCost());
           c.getCountUse();
+          gameEndState.CheckEndGameImmediately(p,gameModel.getGeneralBoard(), setup.getSBWithTowers(), gameModel.getNumplayers());
+          gameEndState.CheckEndGameRoundEndedForBag(gameModel.getBag());
     }
 
     public boolean SetCharacterCard1(CharacterCard c1, Color color, int n){
