@@ -21,7 +21,7 @@ public class NewOrderMsg extends CommandMsg{
                 e.printStackTrace();
             }
             nickname= game.getChoosenPlayer().GetPlayerTurn().getNickName();
-            answerMsg = new AnsNewOrderMsg(this, nickname,game.getChoosenPlayer().GetPlayerTurn().getMyDeck());
+            answerMsg = new AnsNewOrderMsg(this, nickname,game.getChoosenPlayer().GetPlayerTurn().getMyDeck(),game.getGameModel().getGeneralBoard().getSchoolBoard(),game.getGameModel().getGeneralBoard().GetIslands(),game.getGameModel().getPlayers());
             clientHandler.sendAnswerMessage(answerMsg);
             game.notifyAll();
         }
