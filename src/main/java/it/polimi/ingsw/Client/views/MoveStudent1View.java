@@ -24,16 +24,8 @@ public class MoveStudent1View extends View{
         Displayer displayer= new Displayer();
         int isl=0;
         System.out.println(answerMsg.GetPlayer() + " è il tuo turno!");
-        ArrayList<SchoolBoard> schoolBoards= new ArrayList<SchoolBoard>();
-        for(int i=0; i<answerMsg.GetGB().getSchoolBoard().size();i++){
-            schoolBoards.add(answerMsg.GetGB().getSchoolBoard().get(i));
-        }
-        displayer.displayAllSchoolboard(schoolBoards,answerMsg.GetPlayers());
-        ArrayList<IslandTiles> islandTiles=new ArrayList<>();
-        for(int i=0; i<answerMsg.GetGB().GetIslands().size();i++){
-            islandTiles.add(answerMsg.GetGB().GetIslands().get(i));
-        }
-        displayer.showAllIsland(islandTiles);
+        displayer.displayAllSchoolboard(answerMsg.GetGB().getSchoolBoard(),answerMsg.GetPlayers());
+        displayer.showAllIsland(answerMsg.GetGB().GetIslands());
         Boolean flag=false;
         int count=0;
         Color cdef=Color.Blue;

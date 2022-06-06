@@ -18,11 +18,7 @@ public class CC3View extends View{
     public void run() {
         Scanner scanner = new Scanner(System.in);
         Displayer displayer= new Displayer();
-        ArrayList<IslandTiles> islandTiles=new ArrayList<>();
-        for(int i=0; i<answerMsg.GetGB().GetIslands().size();i++){
-            islandTiles.add(answerMsg.GetGB().GetIslands().get(i));
-        }
-        displayer.showAllIsland(islandTiles);
+        displayer.showAllIsland(answerMsg.GetGB().GetIslands());
         System.out.println("Scegli il numero dell'isola su cui vuoi calcolare la maggioranza");
         int isl = Integer.parseInt(scanner.nextLine());
         CC3Msg cc3Msg = new CC3Msg(isl);

@@ -23,16 +23,8 @@ public class CC11ExcView extends View{
         int count = 0;
         Color cdef = Color.Blue;
         Displayer displayer= new Displayer();
-        ArrayList<SchoolBoard> schoolBoards= new ArrayList<SchoolBoard>();
-        for(int i=0; i<answerMsg.GetGB().getSchoolBoard().size();i++){
-            schoolBoards.add(answerMsg.GetGB().getSchoolBoard().get(i));
-        }
-        displayer.displayAllSchoolboard(schoolBoards,answerMsg.GetPlayers());
-        ArrayList<IslandTiles> islandTiles=new ArrayList<>();
-        for(int i=0; i<answerMsg.GetGB().GetIslands().size();i++){
-            islandTiles.add(answerMsg.GetGB().GetIslands().get(i));
-        }
-        displayer.showAllIsland(islandTiles);
+        displayer.displayAllSchoolboard(answerMsg.GetGB().getSchoolBoard(),answerMsg.GetPlayers());
+        displayer.showAllIsland(answerMsg.GetGB().GetIslands());
         /**stampa studenti sulla carta**/
         displayer.displayCharactercard(answerMsg.GetCharacterCard());
         System.out.println("Scelta non valida! Riprova");

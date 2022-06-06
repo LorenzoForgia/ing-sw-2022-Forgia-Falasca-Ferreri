@@ -19,12 +19,8 @@ public class AskForCloudView extends View{
     }
     @Override
     public void run() {
-        ArrayList<CloudTiles> cl=new ArrayList<>();
-        for(int i=0;i<answerMsg.getCloudTiles().size();i++){
-            cl.add(answerMsg.getCloudTiles().get(i));
-        }
         Displayer d=new Displayer();
-        d.showAllCloudTiles(cl);
+        d.showAllCloudTiles(answerMsg.getCloudTiles());
         Scanner scanner= new Scanner(System.in);
         System.out.println("Scegli il numero della nuvola da cui vuoi prendere gli studenti");
         Boolean ex=false;
