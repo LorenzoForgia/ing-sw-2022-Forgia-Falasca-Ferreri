@@ -8,14 +8,14 @@ import it.polimi.ingsw.Model.Player;
 
 import java.util.ArrayList;
 
-public class AnsMoveStudent3Msg extends AnswerMsg{
+public class AnsMoveStudent4Msg extends AnswerMsg{
     private String name;
     private GeneralBoard generalBoard;
     private ArrayList<Player> players= new ArrayList<Player>();
     private ArrayList<CharacterCard> characterCards= new ArrayList<CharacterCard>();
     private boolean modexp;
 
-    public AnsMoveStudent3Msg(CommandMsg parent, String name, GeneralBoard generalBoard,ArrayList<Player> players, ArrayList<CharacterCard> characterCards, boolean modexp){
+    public AnsMoveStudent4Msg(CommandMsg parent, String name, GeneralBoard generalBoard,ArrayList<Player> players, ArrayList<CharacterCard> characterCards, boolean modexp){
         super(parent);
         this.name = name;
         this.generalBoard= generalBoard;
@@ -27,17 +27,9 @@ public class AnsMoveStudent3Msg extends AnswerMsg{
     public void processMessage(ServerHandler serverHandler)
     {
         if(modexp){
-            if(players.size()==3){
-                serverHandler.getClient().transitionToView(new PlayCC4Players3View(this));
-            }else{
-                serverHandler.getClient().transitionToView(new PlayCC4View(this));
-            }
+            serverHandler.getClient().transitionToView(new PlayCC5View(this));
         }else{
-            if(players.size()==3){
-                serverHandler.getClient().transitionToView(new MoveStudent4View(this));
-            }else{
-                serverHandler.getClient().transitionToView(new AskforMotherNatureView(this));
-            }
+            serverHandler.getClient().transitionToView(new AskForMN3PlayersView(this));
         }
 
     }

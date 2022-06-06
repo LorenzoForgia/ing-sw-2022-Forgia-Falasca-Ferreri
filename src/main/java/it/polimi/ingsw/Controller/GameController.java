@@ -26,11 +26,11 @@ public class GameController {
     private int countmodexpview=1;
 
     public void incrementview(){
-        if(countmodexpview<4){
+        if(countmodexpview<5){
             countmodexpview=countmodexpview+1;
         }
     }
-    public void resetcountmodexpview(){countmodexpview=0;}
+    public void resetcountmodexpview(){countmodexpview=1;}
     public int getCountmodexpview(){return countmodexpview;}
     public boolean isFlagturn(){return flagturn;}
     public void setFlagturn(boolean flagturn){this.flagturn=flagturn;}

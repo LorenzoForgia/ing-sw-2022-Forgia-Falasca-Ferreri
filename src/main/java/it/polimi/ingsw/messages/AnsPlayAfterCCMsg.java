@@ -1,10 +1,7 @@
 package it.polimi.ingsw.messages;
 
 import it.polimi.ingsw.Client.ServerHandler;
-import it.polimi.ingsw.Client.views.AskforMNafterCCView;
-import it.polimi.ingsw.Client.views.MoveStudent1AfterCCView;
-import it.polimi.ingsw.Client.views.MoveStudent2AfterCCView;
-import it.polimi.ingsw.Client.views.MoveStudent3AfterCCView;
+import it.polimi.ingsw.Client.views.*;
 import it.polimi.ingsw.Model.GeneralBoard;
 import it.polimi.ingsw.Model.Player;
 
@@ -33,7 +30,11 @@ public class AnsPlayAfterCCMsg extends AnswerMsg{
             serverHandler.getClient().transitionToView(new MoveStudent2AfterCCView(this));
         }else if(countmodexpview==3){
             serverHandler.getClient().transitionToView(new MoveStudent3AfterCCView(this));
-        }else if(countmodexpview==4){
+        }else if(players.size()!=3 && countmodexpview==4){
+            serverHandler.getClient().transitionToView(new AskforMNafterCCView(this));
+        }else if(players.size()==3 && countmodexpview==4){
+            serverHandler.getClient().transitionToView(new MoveStudent4AfterCCView(this));
+        }else if(countmodexpview==5){
             serverHandler.getClient().transitionToView(new AskforMNafterCCView(this));
         }
 
