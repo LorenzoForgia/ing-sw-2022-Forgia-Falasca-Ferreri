@@ -257,7 +257,9 @@ public class Displayer {
         }else{
             System.out.print(ColorTower.Black + "" + "0" + Color.Reset+"|  ");
         }
-        System.out.println("Isola n°"+i.getNumberID());
+        System.out.print(Color.Green+"Isola n°"+i.getNumberID()+Color.Reset);
+        System.out.println(Color.Red+"  Tessere Divieto:"+i.getNumberOfNet()+Color.Reset);
+
     }
 
     public void showAllIsland(ArrayList<IslandTiles> isl){
