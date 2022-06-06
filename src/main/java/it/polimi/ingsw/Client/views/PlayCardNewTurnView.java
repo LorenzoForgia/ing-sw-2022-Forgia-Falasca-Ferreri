@@ -1,6 +1,9 @@
 package it.polimi.ingsw.Client.views;
 
 import it.polimi.ingsw.Model.CardAssistant;
+import it.polimi.ingsw.Model.IslandTiles;
+import it.polimi.ingsw.Model.Player;
+import it.polimi.ingsw.Model.SchoolBoard;
 import it.polimi.ingsw.messages.AnsNewOrderMsg;
 import it.polimi.ingsw.messages.AnsNewTurnMsg;
 import it.polimi.ingsw.messages.TurnDecidedMsg;
@@ -17,6 +20,12 @@ public class PlayCardNewTurnView extends View{
     @Override
     public void run() {
         Displayer d=new Displayer();
+        d.displayAllSchoolboard(answerMsg.getSb(),answerMsg.getPl());
+        d.showAllIsland(answerMsg.getIs());
+        System.out.println("Le carte assistente giocate in questo turno dagli altri giocatori: ");
+        System.out.println("");
+        d.showAllAssistantCard(answerMsg.getCAplayed());
+        System.out.println("Le tue carte assistente rimanenti:");
         ArrayList<CardAssistant> ca=new ArrayList<>();
         for(int i=0;i<answerMsg.getDca().GetDeck().size();i++){
             ca.add(answerMsg.getDca().GetDeck().get(i));

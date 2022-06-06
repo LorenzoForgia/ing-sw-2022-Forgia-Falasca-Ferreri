@@ -117,4 +117,26 @@ class InfluenceProfessorTableTest {
         assertTrue(GB.getSchoolBoard().get(1).getProfessorTable().contains(Color.Yellow) );
         assertFalse(GB.getSchoolBoard().get(1).getProfessorTable().contains(Color.Green) );
     }
+    @Test
+    public void testRightProfessorTable5() {
+        GB.CreateSchoolBoards(2);
+        GB.getSchoolBoard().get(0).getDiningRoom().PutStudent(Color.Blue);
+        GB.getSchoolBoard().get(1).getDiningRoom().PutStudent(Color.Red);
+        try{
+            GB.getSchoolBoard().get(0).PutProfessor(Color.Pink);
+        }catch(IllegalMoveException e){
+            fail();
+        }
+        IPT.RightProfessorTable(GB, 2);
+        assertTrue(GB.getSchoolBoard().get(0).getProfessorTable().contains(Color.Blue) );
+        assertFalse(GB.getSchoolBoard().get(0).getProfessorTable().contains(Color.Red) );
+        assertFalse(GB.getSchoolBoard().get(0).getProfessorTable().contains(Color.Pink) );
+        assertFalse(GB.getSchoolBoard().get(0).getProfessorTable().contains(Color.Yellow) );
+        assertFalse(GB.getSchoolBoard().get(0).getProfessorTable().contains(Color.Green) );
+        assertTrue(GB.getSchoolBoard().get(1).getProfessorTable().contains(Color.Red) );
+        assertFalse(GB.getSchoolBoard().get(1).getProfessorTable().contains(Color.Blue) );
+        assertFalse(GB.getSchoolBoard().get(1).getProfessorTable().contains(Color.Pink) );
+        assertFalse(GB.getSchoolBoard().get(1).getProfessorTable().contains(Color.Yellow) );
+        assertFalse(GB.getSchoolBoard().get(1).getProfessorTable().contains(Color.Green) );
+    }
 }

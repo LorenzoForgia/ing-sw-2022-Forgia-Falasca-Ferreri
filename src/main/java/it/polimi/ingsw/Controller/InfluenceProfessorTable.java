@@ -32,6 +32,19 @@ public class InfluenceProfessorTable {
         }
     }
 
+    private void RemoveProfessorWhenNoStudentInDining(GeneralBoard GB, int numPlayer){
+
+        for(int i=0; i <5; i++){
+            for(int j=0; j< numPlayer; j++){
+                if(GB.getSchoolBoard().get(j).getProfessorTable().contains(GetRightColor(i))){
+                    if(GB.getSchoolBoard().get(j).getDiningRoom().GetNumberStudent(i)==0){
+                        GB.getSchoolBoard().get(j).getProfessorTable().remove(GetRightColor(i));
+                    }
+                }
+            }
+        }
+    }
+
 
     public void RightProfessorTable(GeneralBoard GB, int numPlayer) {
         int max;
@@ -59,6 +72,8 @@ public class InfluenceProfessorTable {
                 }
             }
         }
+
+        RemoveProfessorWhenNoStudentInDining(GB, numPlayer);
     }
 
     /*Professor Table with the effect of CharacterCard2*/
@@ -96,6 +111,6 @@ public class InfluenceProfessorTable {
                 }
             }
         }
-
+        RemoveProfessorWhenNoStudentInDining(GB, numPlayer);
     }
 }

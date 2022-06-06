@@ -345,15 +345,13 @@ public class GameController {
 
     public void CheckNumberOfStepsMN(int n, Player p) throws IllegalNumberOfStepException {
         int move=0;
-        if(p.isUsedCharacterCard()){
-            if(p.getNameCharacterCard()==4){
+        if(p.isUsedCharacterCard() && p.getNameCharacterCard()==4){
                 for(int i=0; i < 3; i++){
                     if(gameModel.getGeneralBoard().getChoosenCard().get(i).getName()== 4){
                         move = ((CharacterCard4)gameModel.getGeneralBoard().getChoosenCard().get(i)).AddTwoMvntMN(p.getCA());
                     }
                 }
-            }
-            }else{
+            } else{
                 move = p.getCA().getMovementMN();
             }
         if( n > move|| n<=0 ){
@@ -507,7 +505,7 @@ public class GameController {
           }
           p.setNumberCoins(p.getNumberCoins()-c.getCost());
           gameModel.getGeneralBoard().addCoin(c.getCost());
-          c.getCountUse();
+          c.setCountUse();
           gameEndState.CheckEndGameImmediately(p,gameModel.getGeneralBoard(), setup.getSBWithTowers(), gameModel.getNumplayers());
           gameEndState.CheckEndGameRoundEndedForBag(gameModel.getBag());
     }
@@ -576,7 +574,7 @@ public class GameController {
         for(int i=0; notCorrectColorOnCard && i < colorChosen.size(); i++) {
 
             if(!checkColor.contains(colorChosen.get(i))){
-                notCorrectColorInEntrance= false;
+                notCorrectColorOnCard= false;
             }else{
                 checkColor.remove(colorChosen.get(i));
             }
@@ -592,7 +590,7 @@ public class GameController {
             }
         }
 
-        if(notCorrectColorInEntrance || notCorrectColorOnCard){
+        if(!notCorrectColorInEntrance || !notCorrectColorOnCard){
             return false;
         }else{
             ((CharacterCard7) c7).setStudentChoosen(colorChosen);
@@ -613,7 +611,7 @@ public class GameController {
 
         for(int i=0; notCorrectColorInDiningRoom && i < colorDiningRoom.size(); i++) {
             if(colorInDiningRoom[colorDiningRoom.get(i).getIndex()]==0){
-                notCorrectColorInEntrance= false;
+                notCorrectColorInDiningRoom= false;
             }else{
                 colorInDiningRoom[colorDiningRoom.get(i).getIndex()]= colorInDiningRoom[colorDiningRoom.get(i).getIndex()]-1;
             }
@@ -629,7 +627,7 @@ public class GameController {
             }
         }
 
-        if(notCorrectColorInEntrance || notCorrectColorInDiningRoom){
+        if(!notCorrectColorInEntrance || !notCorrectColorInDiningRoom){
             return false;
         }else{
             ((CharacterCard10) c10).setStudentOnDiningRoom(colorDiningRoom);

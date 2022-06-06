@@ -21,16 +21,8 @@ public class PlayCC1View extends View{
         Scanner scanner = new Scanner(System.in);
         Displayer displayer = new Displayer();
         System.out.println(answerMsg.GetPlayer() + " è il tuo turno!");
-        ArrayList<SchoolBoard> schoolBoards = new ArrayList<SchoolBoard>();
-        for (int i = 0; i < answerMsg.GetGB().getSchoolBoard().size(); i++) {
-            schoolBoards.add(answerMsg.GetGB().getSchoolBoard().get(i));
-        }
-        displayer.displayAllSchoolboard(schoolBoards, answerMsg.GetPlayers());
-        ArrayList<IslandTiles> islandTiles = new ArrayList<>();
-        for (int i = 0; i < answerMsg.GetGB().GetIslands().size(); i++) {
-            islandTiles.add(answerMsg.GetGB().GetIslands().get(i));
-        }
-        displayer.showAllIsland(islandTiles);
+        displayer.displayAllSchoolboard(answerMsg.GetGB().getSchoolBoard(),answerMsg.GetPlayers());
+        displayer.showAllIsland(answerMsg.GetGB().GetIslands());
         for(int i=0;i<answerMsg.GetPlayers().size();i++){
             if(answerMsg.GetPlayers().get(i).getNickName().equals(answerMsg.GetPlayer())) {
                 displayer.displayWallet(answerMsg.GetPlayers().get(i).getNumberCoins());
