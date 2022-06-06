@@ -52,7 +52,7 @@ public class TurnDecidedMsg extends CommandMsg{
                 game.notifyAll();
             }catch(CardAssistantNotAvailableException e){
                 String name= game.getChoosenPlayer().GetPlayerTurn().getNickName();
-                AnsFirstPlayerTurnMsg answMsg = new AnsFirstPlayerTurnMsg(this, name,game.getChoosenPlayer().GetPlayerTurn().getMyDeck(),game.getGameModel().getGeneralBoard().getSchoolBoard(),game.getGameModel().getGeneralBoard().GetIslands(),game.getGameModel().getPlayers());
+                AnsFirstPlayerTurnMsg answMsg = new AnsFirstPlayerTurnMsg(this, name,game.getChoosenPlayer().GetPlayerTurn().getMyDeck(),game.getGameModel().getGeneralBoard().getSchoolBoard(),game.getGameModel().getGeneralBoard().GetIslands(),game.getGameModel().getPlayers(),game.getPlayAssCard().GetAssCardPlayed());
                 clientHandler.sendAnswerMessage(answMsg);
             }
         }

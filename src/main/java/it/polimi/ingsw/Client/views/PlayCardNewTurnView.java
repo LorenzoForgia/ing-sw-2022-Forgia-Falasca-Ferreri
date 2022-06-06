@@ -20,20 +20,12 @@ public class PlayCardNewTurnView extends View{
     @Override
     public void run() {
         Displayer d=new Displayer();
-        ArrayList<Player> pl=new ArrayList<>();
-        ArrayList<SchoolBoard> sb=new ArrayList<>();
-        ArrayList<IslandTiles> is=new ArrayList<>();
-        for(int i=0;i<answerMsg.getPl().size();i++){
-            pl.add(answerMsg.getPl().get(i));
-        }
-        for(int i=0;i<answerMsg.getSb().size();i++){
-            sb.add(answerMsg.getSb().get(i));
-        }
-        d.displayAllSchoolboard(sb,pl);
-        for(int i=0;i<answerMsg.getIs().size();i++){
-            is.add(answerMsg.getIs().get(i));
-        }
-        d.showAllIsland(is);
+        d.displayAllSchoolboard(answerMsg.getSb(),answerMsg.getPl());
+        d.showAllIsland(answerMsg.getIs());
+        System.out.println("Le carte assistente giocate in questo turno dagli altri giocatori: ");
+        System.out.println("");
+        d.showAllAssistantCard(answerMsg.getCAplayed());
+        System.out.println("Le tue carte assistente rimanenti:");
         ArrayList<CardAssistant> ca=new ArrayList<>();
         for(int i=0;i<answerMsg.getDca().GetDeck().size();i++){
             ca.add(answerMsg.getDca().GetDeck().get(i));

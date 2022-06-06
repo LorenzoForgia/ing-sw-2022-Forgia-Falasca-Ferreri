@@ -14,16 +14,19 @@ public class AnsFirstPlayerTurnMsg extends AnswerMsg{
     private ArrayList<SchoolBoard> sb=new ArrayList<>();
     private ArrayList<IslandTiles> is=new ArrayList<>();
     private ArrayList<Player> pl= new ArrayList<>();
+    private ArrayList<CardAssistant> CAplayed=new ArrayList<>();
 
 
 
-    public AnsFirstPlayerTurnMsg(CommandMsg parent, String name, DeckCardAssistant dca,ArrayList<SchoolBoard> sb,ArrayList<IslandTiles> is,ArrayList<Player> pl){
+
+    public AnsFirstPlayerTurnMsg(CommandMsg parent, String name, DeckCardAssistant dca, ArrayList<SchoolBoard> sb, ArrayList<IslandTiles> is, ArrayList<Player> pl, ArrayList<CardAssistant> CAplayed){
         super(parent);
         this.name = name;
         this.dca=dca;
         this.sb=sb;
         this.is=is;
         this.pl=pl;
+        this.CAplayed=CAplayed;
     }
 
     @Override
@@ -47,5 +50,8 @@ public class AnsFirstPlayerTurnMsg extends AnswerMsg{
     }
     public ArrayList<Player> getPl() {
         return pl;
+    }
+    public ArrayList<CardAssistant> getCAplayed() {
+        return CAplayed;
     }
 }
