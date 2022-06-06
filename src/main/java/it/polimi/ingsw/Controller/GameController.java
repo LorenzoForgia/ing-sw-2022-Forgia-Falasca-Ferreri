@@ -345,15 +345,13 @@ public class GameController {
 
     public void CheckNumberOfStepsMN(int n, Player p) throws IllegalNumberOfStepException {
         int move=0;
-        if(p.isUsedCharacterCard()){
-            if(p.getNameCharacterCard()==4){
+        if(p.isUsedCharacterCard() && p.getNameCharacterCard()==4){
                 for(int i=0; i < 3; i++){
                     if(gameModel.getGeneralBoard().getChoosenCard().get(i).getName()== 4){
                         move = ((CharacterCard4)gameModel.getGeneralBoard().getChoosenCard().get(i)).AddTwoMvntMN(p.getCA());
                     }
                 }
-            }
-            }else{
+            } else{
                 move = p.getCA().getMovementMN();
             }
         if( n > move|| n<=0 ){
@@ -507,7 +505,7 @@ public class GameController {
           }
           p.setNumberCoins(p.getNumberCoins()-c.getCost());
           gameModel.getGeneralBoard().addCoin(c.getCost());
-          c.getCountUse();
+          c.setCountUse();
           gameEndState.CheckEndGameImmediately(p,gameModel.getGeneralBoard(), setup.getSBWithTowers(), gameModel.getNumplayers());
           gameEndState.CheckEndGameRoundEndedForBag(gameModel.getBag());
     }
