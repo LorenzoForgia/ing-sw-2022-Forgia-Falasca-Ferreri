@@ -574,7 +574,7 @@ public class GameController {
         for(int i=0; notCorrectColorOnCard && i < colorChosen.size(); i++) {
 
             if(!checkColor.contains(colorChosen.get(i))){
-                notCorrectColorInEntrance= false;
+                notCorrectColorOnCard= false;
             }else{
                 checkColor.remove(colorChosen.get(i));
             }
@@ -590,7 +590,7 @@ public class GameController {
             }
         }
 
-        if(notCorrectColorInEntrance || notCorrectColorOnCard){
+        if(!notCorrectColorInEntrance || !notCorrectColorOnCard){
             return false;
         }else{
             ((CharacterCard7) c7).setStudentChoosen(colorChosen);
