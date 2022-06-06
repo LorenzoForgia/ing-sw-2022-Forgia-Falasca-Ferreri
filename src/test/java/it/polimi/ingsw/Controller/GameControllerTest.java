@@ -1,7 +1,6 @@
 package it.polimi.ingsw.Controller;
 
 import it.polimi.ingsw.Exception.CardAssistantNotAvailableException;
-import it.polimi.ingsw.Exception.IllegalNickNameException;
 import it.polimi.ingsw.Model.*;
 import org.junit.jupiter.api.*;
 
@@ -171,6 +170,40 @@ class GameControllerTest {
 
     }
 
+    @Test
+    public void testSetCharacterCard10() {
+        CharacterCard10 c10= new CharacterCard10(10,1,0,"");
+        SchoolBoard SB1 = new SchoolBoard(0, 7);
+        DeckCardAssistant DCA1 = new DeckCardAssistant();
+        Player p1 = new Player("A");
+        p1.setMySchoolBoard(SB1);
+        p1.setNumberCoins(1);
+        p1.setMyDeck(DCA1);
+        SB1.AddStudent(Color.Pink);
+        SB1.getDiningRoom().PutStudent(Color.Blue);
+        ArrayList<Color> colorEntrance= new ArrayList<>();
+        colorEntrance.add(Color.Pink);
+        ArrayList<Color> colorDiningRoom= new ArrayList<>();
+        colorDiningRoom.add(Color.Blue);
+        assertTrue(gameController.SetCharacterCard10(c10, colorEntrance, colorDiningRoom, p1));
+    }
+    @Test
+    public void testSetCharacterCard10noColorRight() {
+        CharacterCard10 c10= new CharacterCard10(10,1,0,"");
+        SchoolBoard SB1 = new SchoolBoard(0, 7);
+        DeckCardAssistant DCA1 = new DeckCardAssistant();
+        Player p1 = new Player("A");
+        p1.setMySchoolBoard(SB1);
+        p1.setNumberCoins(1);
+        p1.setMyDeck(DCA1);
+        SB1.AddStudent(Color.Pink);
+        SB1.getDiningRoom().PutStudent(Color.Blue);
+        ArrayList<Color> colorEntrance= new ArrayList<>();
+        colorEntrance.add(Color.Pink);
+        ArrayList<Color> colorDiningRoom= new ArrayList<>();
+        colorDiningRoom.add(Color.Green);
+        assertFalse(gameController.SetCharacterCard10(c10, colorEntrance, colorDiningRoom, p1));
+    }
 
 
 }

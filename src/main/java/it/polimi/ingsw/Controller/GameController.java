@@ -611,7 +611,7 @@ public class GameController {
 
         for(int i=0; notCorrectColorInDiningRoom && i < colorDiningRoom.size(); i++) {
             if(colorInDiningRoom[colorDiningRoom.get(i).getIndex()]==0){
-                notCorrectColorInEntrance= false;
+                notCorrectColorInDiningRoom= false;
             }else{
                 colorInDiningRoom[colorDiningRoom.get(i).getIndex()]= colorInDiningRoom[colorDiningRoom.get(i).getIndex()]-1;
             }
@@ -627,7 +627,7 @@ public class GameController {
             }
         }
 
-        if(notCorrectColorInEntrance || notCorrectColorInDiningRoom){
+        if(!notCorrectColorInEntrance || !notCorrectColorInDiningRoom){
             return false;
         }else{
             ((CharacterCard10) c10).setStudentOnDiningRoom(colorDiningRoom);
