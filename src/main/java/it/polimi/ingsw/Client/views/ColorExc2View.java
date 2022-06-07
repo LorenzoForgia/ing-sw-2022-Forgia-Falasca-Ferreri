@@ -21,7 +21,7 @@ public class ColorExc2View extends View{
         Color student= Color.valueOf(scanner.nextLine());
         System.out.println("Vuoi spostarlo nella sala a su un'isola? sala/isola");
         String ris= scanner.nextLine();
-        Boolean flag=false;
+        boolean flag=false;
         while(!flag) {
             if (ris.equals("sala")) {
                 isl = 12;
@@ -30,7 +30,7 @@ public class ColorExc2View extends View{
                 flag=true;
             } else if(ris.equals("isola")){
                 System.out.println("Su quale isola vuoi spostarlo?");
-                Boolean ex=false;
+                boolean ex=false;
                 while(!ex) {
                     try {
                         isl = Integer.parseInt(scanner.nextLine());

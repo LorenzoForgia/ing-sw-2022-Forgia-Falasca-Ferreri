@@ -19,7 +19,7 @@ public class IslandExc2View extends View{
         int isl = 0;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Scelta non consentita!");
-        Boolean flag = false;
+        boolean flag = false;
         int count = 0;
         Color cdef = Color.Blue;
         while (!flag) {
@@ -41,15 +41,32 @@ public class IslandExc2View extends View{
         Color student = cdef;
         System.out.println("Vuoi spostarlo nella sala o su un'isola? sala/isola");
         String ris = scanner.nextLine();
-        if (ris.equals("sala")) {
-            isl = 12;
-            MoveStudent2Msg moveStudent2Msg = new MoveStudent2Msg(student, isl);
-            getOwner().getServerHandler().sendCommandMessage(moveStudent2Msg);
-        } else {
-            System.out.println("Su quale isola vuoi spostarlo?");
-            isl = Integer.parseInt(scanner.nextLine());
-            MoveStudent2Msg moveStudent2Msg = new MoveStudent2Msg(student, isl);
-            getOwner().getServerHandler().sendCommandMessage(moveStudent2Msg);
+        flag=false;
+        while(!flag) {
+            if (ris.equals("sala")) {
+                isl = 12;
+                MoveStudent2Msg moveStudentMsg = new MoveStudent2Msg(student, isl);
+                getOwner().getServerHandler().sendCommandMessage(moveStudentMsg);
+                flag=true;
+            } else if(ris.equals("isola")){
+                System.out.println("Su quale isola vuoi spostarlo?");
+                boolean ex=false;
+                while(!ex) {
+                    try {
+                        isl = Integer.parseInt(scanner.nextLine());
+                        ex=true;
+                    } catch (NumberFormatException e) {
+                        System.out.println("Errore: Su quale isola vuoi spostarlo");
+                        ex=false;
+                    }
+                }
+                MoveStudent2Msg moveStudentMsg = new MoveStudent2Msg(student, isl);
+                getOwner().getServerHandler().sendCommandMessage(moveStudentMsg);
+                flag=true;
+            } else{
+                System.out.println("Errore inserimento scelta,ripetere: Vuoi spostarlo nella sala o su un'isola? sala/isola");
+                ris= scanner.nextLine();
+            }
         }
     }
 }

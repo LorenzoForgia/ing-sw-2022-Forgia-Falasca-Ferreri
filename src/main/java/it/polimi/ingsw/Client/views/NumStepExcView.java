@@ -17,7 +17,7 @@ public class NumStepExcView extends View{
         Scanner scanner= new Scanner(System.in);
         int step;
         System.out.println("Numero passi invalido! Riprova");
-        Boolean ex=false;
+        boolean ex=false;
         while(!ex) {
             try {
                 step = Integer.parseInt(scanner.nextLine());

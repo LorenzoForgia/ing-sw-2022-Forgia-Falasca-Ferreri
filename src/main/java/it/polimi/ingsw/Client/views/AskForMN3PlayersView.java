@@ -30,7 +30,7 @@ public class AskForMN3PlayersView extends View{
         displayer.showAllIsland(islandTiles);
         Scanner scanner= new Scanner(System.in);
         int step;
-        Boolean ex=false;
+        boolean ex=false;
         System.out.println("Quanti passi di madre natura vuoi fare?");
         while(!ex) {
             try {

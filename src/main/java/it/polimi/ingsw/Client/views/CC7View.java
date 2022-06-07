@@ -3,10 +3,7 @@ package it.polimi.ingsw.Client.views;
 import it.polimi.ingsw.Model.Color;
 import it.polimi.ingsw.Model.IslandTiles;
 import it.polimi.ingsw.Model.SchoolBoard;
-import it.polimi.ingsw.messages.AnsCC3Msg;
-import it.polimi.ingsw.messages.AnsCC7Msg;
-import it.polimi.ingsw.messages.CC3Msg;
-import it.polimi.ingsw.messages.CC7Msg;
+import it.polimi.ingsw.messages.*;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -22,8 +19,9 @@ public class CC7View extends View{
         Scanner scanner = new Scanner(System.in);
         ArrayList<Color> students= new ArrayList<Color>();
         ArrayList<Color> entrancestud= new ArrayList<Color>();
-        Boolean flag=false;
+        boolean flag=false;
         int count=0;
+        int numstud=0;
         Color cdef=Color.Blue;
         Displayer displayer= new Displayer();
         displayer.displayAllSchoolboard(answerMsg.GetGB().getSchoolBoard(),answerMsg.GetPlayers());
@@ -31,7 +29,16 @@ public class CC7View extends View{
         /**stampa studenti sopra charactercard**/
         displayer.displayCharactercard(answerMsg.GetCharacterCard());
         System.out.println("Quanti studenti vuoi prendere? ( max 3 studenti)");
-        int numstud = Integer.parseInt(scanner.nextLine());
+        boolean b=false;
+        while(!b) {
+            try {
+                numstud=Integer.parseInt(scanner.nextLine());
+                b = true;
+            } catch (NumberFormatException e) {
+                System.out.println("Errore: Inserire numero corretto");
+                b = false;
+            }
+        }
         for(int j=0; j<numstud;j++){
             while(!flag) {
                 if(count==0) {

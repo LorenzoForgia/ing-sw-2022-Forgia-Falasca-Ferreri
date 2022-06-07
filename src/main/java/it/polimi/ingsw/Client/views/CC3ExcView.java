@@ -21,8 +21,18 @@ public class CC3ExcView extends View{
         displayer.showAllIsland(answerMsg.GetGB().GetIslands());
         System.out.println("Scelta non valida! Riprova");
         System.out.println("Scegli il numero dell'isola su cui vuoi calcolare la maggioranza");
-        int isl = Integer.parseInt(scanner.nextLine());
-        CC3Msg cc3Msg = new CC3Msg(isl);
-        getOwner().getServerHandler().sendCommandMessage(cc3Msg);
+        int isl;
+        boolean b=false;
+        while(!b) {
+            try {
+                isl=Integer.parseInt(scanner.nextLine());
+                b = true;
+                CC3Msg cc3Msg = new CC3Msg(isl);
+                getOwner().getServerHandler().sendCommandMessage(cc3Msg);
+            } catch (NumberFormatException e) {
+                System.out.println("Errore: Inserire numero corretto");
+                b = false;
+            }
+        }
     }
 }

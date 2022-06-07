@@ -14,5 +14,6 @@ public class EndGameView extends View{
         System.out.println("Il gioco è terminato! I vincitori sono!");
         System.out.println("Rullo di tamburi.......................");
         System.out.println(answerMsg.getWinner());
+        getOwner().terminate();
     }
 }

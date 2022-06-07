@@ -33,7 +33,7 @@ public class PlayCardNewTurnView extends View{
         d.showAllAssistantCard(ca);
         Scanner scanner = new Scanner(System.in);
         CardAssistant [] ac=CardAssistant.values();
-        Boolean flag=false;
+        boolean flag=false;
         CardAssistant cardAssistant=CardAssistant.Invalid;
         int count=0;
         while(!flag) {

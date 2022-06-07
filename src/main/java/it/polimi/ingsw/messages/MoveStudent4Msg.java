@@ -26,8 +26,8 @@ public class MoveStudent4Msg extends CommandMsg{
                     game.PutStudentInLocation(s, game.getChoosenPlayer().GetPlayerTurn().getMySchoolBoard().getDiningRoom(), game.getChoosenPlayer().GetPlayerTurn());
                     game.DiningRoomChosen(game.getChoosenPlayer().GetPlayerTurn(), s);
                     game.incrementview();
-                    AnsMoveStudent4Msg ansMoveStudent3Msg = new AnsMoveStudent4Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers(), game.getGameModel().getGeneralBoard().getChoosenCard(), game.getGameModel().getModExpert());
-                    clientHandler.sendAnswerMessage(ansMoveStudent3Msg);
+                    AnsMoveStudent4Msg ansMoveStudent4Msg = new AnsMoveStudent4Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers(), game.getGameModel().getGeneralBoard().getChoosenCard(), game.getGameModel().getModExpert());
+                    clientHandler.sendAnswerMessage(ansMoveStudent4Msg);
                 } catch (ColorNoInEntranceException e) {
                     AnsColorExc4Msg ansColorExcMsg = new AnsColorExc4Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName());
                     clientHandler.sendAnswerMessage(ansColorExcMsg);
@@ -39,11 +39,11 @@ public class MoveStudent4Msg extends CommandMsg{
                     try{
                         game.IslandChosen(game.getChoosenPlayer().GetPlayerTurn(), l, s);
                         game.incrementview();
-                        AnsMoveStudent4Msg ansMoveStudent3Msg = new AnsMoveStudent4Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers(), game.getGameModel().getGeneralBoard().getChoosenCard(), game.getGameModel().getModExpert());
-                        clientHandler.sendAnswerMessage(ansMoveStudent3Msg);
+                        AnsMoveStudent4Msg ansMoveStudent4Msg = new AnsMoveStudent4Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers(), game.getGameModel().getGeneralBoard().getChoosenCard(), game.getGameModel().getModExpert());
+                        clientHandler.sendAnswerMessage(ansMoveStudent4Msg);
                     }catch (IslandNotInListException e){
-                        AnsIslandExc3Msg ansIslandExc3Msg= new AnsIslandExc3Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName());
-                        clientHandler.sendAnswerMessage(ansIslandExc3Msg);
+                        AnsIslandExc4Msg ansIslandExc4Msg= new AnsIslandExc4Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName());
+                        clientHandler.sendAnswerMessage(ansIslandExc4Msg);
                     }
                 } catch (ColorNoInEntranceException e) {
                     AnsColorExc4Msg ansColorExcMsg = new AnsColorExc4Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName());

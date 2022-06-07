@@ -39,17 +39,43 @@ public class PlayCC5View extends View{
         displayer.displayAllcharactercard(answerMsg.GetCharacterCards());
         System.out.println("Vuoi giocare una carta personaggio? si/no");
         String card = scanner.nextLine();
-        if (card.equals("si")) {
-            System.out.println("Qual'è il numero della carta personaggio che vuoi giocare?");
-            int numcard = Integer.parseInt(scanner.nextLine());
-            CCMsg ccMsg = new CCMsg(numcard);
-            getOwner().getServerHandler().sendCommandMessage(ccMsg);
-        } else {
-            int step;
-            System.out.println("Quanti passi di madre natura vuoi fare?");
-            step = Integer.parseInt(scanner.nextLine());
-            NumStepMNMsg numStepMNMsg= new NumStepMNMsg(step);
-            getOwner().getServerHandler().sendCommandMessage(numStepMNMsg);
+        boolean f=false;
+        while(!f) {
+            if (card.equals("si")) {
+                System.out.println("Qual'è il numero della carta personaggio che vuoi giocare?");
+                f=true;
+                boolean b=false;
+                while(!b) {
+                    try {
+                        int numcard=Integer.parseInt(scanner.nextLine());
+                        b = true;
+                        CCMsg ccMsg= new CCMsg(numcard);
+                        getOwner().getServerHandler().sendCommandMessage(ccMsg);
+                    } catch (NumberFormatException e) {
+                        System.out.println("Errore: Inserire numero corretto");
+                        b = false;
+                    }
+                }
+            } else if(card.equals("no")) {
+                int step;
+                f=true;
+                boolean ex=false;
+                System.out.println("Quanti passi di madre natura vuoi fare?");
+                while(!ex) {
+                    try {
+                        step = Integer.parseInt(scanner.nextLine());
+                        ex = true;
+                        NumStepMNMsg numStepMNMsg= new NumStepMNMsg(step);
+                        getOwner().getServerHandler().sendCommandMessage(numStepMNMsg);
+                    } catch (NumberFormatException e) {
+                        System.out.println("Errore: Inserire numero corretto");
+                        ex = false;
+                    }
+                }
+            }else{
+                System.out.println("Errore inserimento! Riprova");
+                card= scanner.nextLine();
+            }
         }
     }
 }
