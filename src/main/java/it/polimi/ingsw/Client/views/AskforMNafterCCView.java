@@ -18,13 +18,12 @@ public class AskforMNafterCCView extends View{
     public void run() {
         Scanner scanner = new Scanner(System.in);
         Displayer displayer = new Displayer();
-        int isl;
         System.out.println(answerMsg.GetPlayer() + " hai giocato la carta personaggio scelta!");
         displayer.displayAllSchoolboard(answerMsg.GetGB().getSchoolBoard(),answerMsg.GetPlayers());
         displayer.showAllIsland(answerMsg.GetGB().GetIslands());
         int step;
         System.out.println("Ora scegli quanti passi di madre natura vuoi fare?");
-        Boolean ex=false;
+        boolean ex=false;
         while(!ex) {
             try {
                 step = Integer.parseInt(scanner.nextLine());

@@ -1,33 +1,31 @@
 package it.polimi.ingsw.Client.views;
 
 import it.polimi.ingsw.Model.Color;
-import it.polimi.ingsw.Model.IslandTiles;
-import it.polimi.ingsw.Model.SchoolBoard;
-import it.polimi.ingsw.messages.AnsPlayAfterNotCCMsg;
-import it.polimi.ingsw.messages.MoveStudent1Msg;
-import it.polimi.ingsw.messages.MoveStudent2Msg;
+import it.polimi.ingsw.messages.AnsIslandExc3Msg;
+import it.polimi.ingsw.messages.AnsIslandExc4Msg;
+import it.polimi.ingsw.messages.MoveStudent3Msg;
+import it.polimi.ingsw.messages.MoveStudent4Msg;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
-public class MoveStudent2AfterNotCCView extends View{
-    AnsPlayAfterNotCCMsg answerMsg;
-    public MoveStudent2AfterNotCCView(AnsPlayAfterNotCCMsg answerMsg)
-    {
+public class IslandExc4View extends View{
+    AnsIslandExc4Msg answerMsg;
+
+    public IslandExc4View(AnsIslandExc4Msg answerMsg) {
         this.answerMsg = answerMsg;
     }
+
     @Override
     public void run() {
+        int isl = 0;
         Scanner scanner = new Scanner(System.in);
-        Displayer displayer = new Displayer();
-        displayer.displayAllSchoolboard(answerMsg.GetGB().getSchoolBoard(),answerMsg.GetPlayers());
-        displayer.showAllIsland(answerMsg.GetGB().GetIslands());
+        System.out.println("Scelta non consentita!");
         boolean flag = false;
         int count = 0;
         Color cdef = Color.Blue;
         while (!flag) {
             if (count == 0) {
-                System.out.println("Ora scegli il colore del secondo studente che vuoi spostare");
+                System.out.println("Scegli il colore dello studente che vuoi spostare");
             } else {
                 System.out.println("Errore inserimento colore:Seleziona un colore valido");
             }
@@ -45,11 +43,10 @@ public class MoveStudent2AfterNotCCView extends View{
         System.out.println("Vuoi spostarlo nella sala o su un'isola? sala/isola");
         String ris = scanner.nextLine();
         flag=false;
-        int isl=0;
         while(!flag) {
             if (ris.equals("sala")) {
                 isl = 12;
-                MoveStudent2Msg moveStudentMsg = new MoveStudent2Msg(student, isl);
+                MoveStudent4Msg moveStudentMsg = new MoveStudent4Msg(student, isl);
                 getOwner().getServerHandler().sendCommandMessage(moveStudentMsg);
                 flag=true;
             } else if(ris.equals("isola")){
@@ -64,7 +61,7 @@ public class MoveStudent2AfterNotCCView extends View{
                         ex=false;
                     }
                 }
-                MoveStudent2Msg moveStudentMsg = new MoveStudent2Msg(student, isl);
+                MoveStudent4Msg moveStudentMsg = new MoveStudent4Msg(student, isl);
                 getOwner().getServerHandler().sendCommandMessage(moveStudentMsg);
                 flag=true;
             } else{

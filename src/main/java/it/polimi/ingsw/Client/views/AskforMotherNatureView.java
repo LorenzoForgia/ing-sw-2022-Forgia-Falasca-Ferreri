@@ -23,7 +23,7 @@ public class AskforMotherNatureView extends View{
         displayer.showAllIsland(answerMsg.GetGB().GetIslands());
         Scanner scanner= new Scanner(System.in);
         int step;
-        Boolean ex=false;
+        boolean ex=false;
         System.out.println("Quanti passi di madre natura vuoi fare?");
         while(!ex) {
             try {

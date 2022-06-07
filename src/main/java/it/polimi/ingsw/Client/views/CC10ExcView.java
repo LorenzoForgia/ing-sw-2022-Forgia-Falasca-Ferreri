@@ -21,15 +21,25 @@ public class CC10ExcView extends View{
         Scanner scanner = new Scanner(System.in);
         ArrayList<Color> entrancestud= new ArrayList<>();
         ArrayList<Color> diningstud=new ArrayList<>();
-        Boolean flag=false;
+        boolean flag=false;
         int count=0;
+        int numstud=0;
         Color cdef=Color.Blue;
         Displayer displayer= new Displayer();
         displayer.displayAllSchoolboard(answerMsg.GetGB().getSchoolBoard(),answerMsg.GetPlayers());
         displayer.showAllIsland(answerMsg.GetGB().GetIslands());
         System.out.println("Scelte non valide! Riprova");
         System.out.println("Quanti studenti vuoi scambiare? ( max 2 studenti)");
-        int numstud = Integer.parseInt(scanner.nextLine());
+        boolean b=false;
+        while(!b) {
+            try {
+                numstud=Integer.parseInt(scanner.nextLine());
+                b = true;
+            } catch (NumberFormatException e) {
+                System.out.println("Errore: Inserire numero corretto");
+                b = false;
+            }
+        }
         for(int j=0; j<numstud;j++){
             while(!flag) {
                 if(count==0) {

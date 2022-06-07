@@ -16,8 +16,17 @@ public class PlayerAlrUsedCCExcView extends View{
     public void run() {
         Scanner scanner= new Scanner(System.in);
         System.out.println("Hai già usato questa carta! Riprova");
-        int numcard=Integer.parseInt(scanner.nextLine());
-        CCMsg ccMsg= new CCMsg(numcard);
-        getOwner().getServerHandler().sendCommandMessage(ccMsg);
+        boolean b=false;
+        while(!b) {
+            try {
+                int numcard=Integer.parseInt(scanner.nextLine());
+                b = true;
+                CCMsg ccMsg= new CCMsg(numcard);
+                getOwner().getServerHandler().sendCommandMessage(ccMsg);
+            } catch (NumberFormatException e) {
+                System.out.println("Errore: Inserire numero corretto");
+                b = false;
+            }
+        }
     }
 }

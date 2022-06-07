@@ -6,6 +6,7 @@ import it.polimi.ingsw.Model.SchoolBoard;
 import it.polimi.ingsw.messages.AnsCC1Msg;
 import it.polimi.ingsw.messages.AnsColorExc1Msg;
 import it.polimi.ingsw.messages.CC1Msg;
+import it.polimi.ingsw.messages.CC3Msg;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -24,7 +25,7 @@ public class CC1View extends View{
         displayer.showAllIsland(answerMsg.GetGB().GetIslands());
         /**stampa studenti sulla charactercard**/
         displayer.displayCharactercard(answerMsg.GetCharacterCard());
-        Boolean flag=false;
+        boolean flag=false;
         int count=0;
         Color cdef=Color.Blue;
         while(!flag) {
@@ -45,8 +46,18 @@ public class CC1View extends View{
         }
         Color student= cdef;
         System.out.println("Scegli il numero dell'isola su cui vuoi mettere lo studente");
-        int isl= Integer.parseInt(scanner.nextLine());
-        CC1Msg cc1Msg= new CC1Msg(isl, student);
-        getOwner().getServerHandler().sendCommandMessage(cc1Msg);
+        int isl;
+        boolean b=false;
+        while(!b) {
+            try {
+                isl=Integer.parseInt(scanner.nextLine());
+                b = true;
+                CC1Msg cc1Msg= new CC1Msg(isl, student);
+                getOwner().getServerHandler().sendCommandMessage(cc1Msg);
+            } catch (NumberFormatException e) {
+                System.out.println("Errore: Inserire numero corretto");
+                b = false;
+            }
+        }
     }
 }

@@ -18,7 +18,7 @@ public class NumCloudExcView extends View{
         Scanner scanner= new Scanner(System.in);
         int cloud;
         System.out.println("Numero nuvola invalido! Riprova");
-        Boolean ex=false;
+        boolean ex=false;
         while(!ex) {
             try {
                 cloud = Integer.parseInt(scanner.nextLine());

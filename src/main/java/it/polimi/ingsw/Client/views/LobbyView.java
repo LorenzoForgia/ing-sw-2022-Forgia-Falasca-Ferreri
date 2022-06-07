@@ -19,14 +19,13 @@ public class LobbyView extends View{
     @Override
     public void run()
     {
-
         System.out.println("LOBBY");
         Scanner scanner = new Scanner(System.in);
         AnsGameCreatedMsg.Status moveStatus = answerMsg.getMoveStatus();
         if(moveStatus==AnsGameCreatedMsg.Status.VALID) {
             System.out.println("Creazione Partita");
             System.out.println("Inserire numero di giocatori: da 2 a 4 giocatori");
-            Boolean ex=false;
+            boolean ex=false;
             int numplayers=0;
             while(!ex) {
                 try {
@@ -61,11 +60,6 @@ public class LobbyView extends View{
             System.out.println("Ti stai unendo a una partita:");
             GameStartedMsg gameStartedMsg= new GameStartedMsg();
             getOwner().getServerHandler().sendCommandMessage(gameStartedMsg);
-
-
-
-
         }
-
     }
 }

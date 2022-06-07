@@ -24,7 +24,7 @@ public class MoveStudent4AfterCCView extends View{
         System.out.println(answerMsg.GetPlayer() + " hai giocato la carta personaggio scelta!");
         displayer.displayAllSchoolboard(answerMsg.GetGB().getSchoolBoard(),answerMsg.GetPlayers());
         displayer.showAllIsland(answerMsg.GetGB().GetIslands());
-        Boolean flag = false;
+        boolean flag = false;
         int count = 0;
         Color cdef = Color.Blue;
         while (!flag) {
@@ -55,7 +55,7 @@ public class MoveStudent4AfterCCView extends View{
                 flag=true;
             } else if(ris.equals("isola")){
                 System.out.println("Su quale isola vuoi spostarlo?");
-                Boolean ex=false;
+                boolean ex=false;
                 while(!ex) {
                     try {
                         isl = Integer.parseInt(scanner.nextLine());

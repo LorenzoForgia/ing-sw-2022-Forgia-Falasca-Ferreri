@@ -32,7 +32,7 @@ public class GameCreatedView extends View{
         }else{
             System.out.println("Errore inserimento! Riprova");
             System.out.println("Inserire numero di giocatori: da 2 a 4 giocatori");
-            Boolean ex=false;
+            boolean ex=false;
             int numplayers=0;
             while(!ex) {
                 try {

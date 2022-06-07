@@ -20,7 +20,7 @@ public class CC11View extends View{
     @Override
     public void run() {
         Scanner scanner = new Scanner(System.in);
-        Boolean flag = false;
+        boolean flag = false;
         int count = 0;
         Color cdef = Color.Blue;
         Displayer displayer= new Displayer();
