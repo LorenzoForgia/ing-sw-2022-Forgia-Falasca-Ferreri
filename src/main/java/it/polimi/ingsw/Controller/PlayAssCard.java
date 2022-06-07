@@ -12,6 +12,9 @@ import java.util.List;
 public class PlayAssCard {
     private ArrayList<CardAssistant> cards = new ArrayList<CardAssistant>();
 
+    /** When AssistantCard is played, this method remove it from the deck,
+     * add in the list of played cards and saves it in Player Class
+     * **/
     public void GetAssCard(Player p, CardAssistant a) {
                 cards.add(a);
                 p.setCA(a);
@@ -26,6 +29,8 @@ public class PlayAssCard {
         cards= new ArrayList<>();
     }
 
+    /** Check if the player has no more CardAssistant to play thet are differ
+     * **/
     boolean CheckIfLast(Player p) {
         boolean flag = true;
         List<CardAssistant> cards2 = new ArrayList<>();
