@@ -7,11 +7,14 @@ import it.polimi.ingsw.Model.*;
 import java.util.*;
 import java.util.Random;
 
+/**
+ * @author Luigia Falasca
+ * **/
+
 public class GameController {
     private AddStudentsOnClouds addStudentsOnClouds = new AddStudentsOnClouds();
     private ChooseCloudTiles chooseCloudTiles = new ChooseCloudTiles();
     private ChoosenPlayer choosenPlayer = new ChoosenPlayer();
-    private ChooseSettingGame chooseSettingGame;
     private GameEndState gameEndState = new GameEndState();
     private Move3Students move3Students = new Move3Students();
     private Setup setup = new Setup();
@@ -40,20 +43,6 @@ public class GameController {
         return gameModel;
     }
 
-    public AddStudentsOnClouds getAddStudentsOnClouds() {
-        return addStudentsOnClouds;
-    }
-
-    public void setAddStudentsOnClouds(AddStudentsOnClouds addStudentsOnClouds) {
-        this.addStudentsOnClouds = addStudentsOnClouds;
-    }
-    public ChooseCloudTiles getChooseCloudTiles() {
-        return chooseCloudTiles;
-    }
-
-    public void setChooseCloudTiles(ChooseCloudTiles chooseCloudTiles) {
-        this.chooseCloudTiles = chooseCloudTiles;
-    }
 
     public ChoosenPlayer getChoosenPlayer() {
         return choosenPlayer;
@@ -63,28 +52,8 @@ public class GameController {
         this.choosenPlayer = choosenPlayer;
     }
 
-    public ChooseSettingGame getChooseSettingGame() {
-        return chooseSettingGame;
-    }
-
-    public void setChooseSettingGame(ChooseSettingGame chooseSettingGame) {
-        this.chooseSettingGame = chooseSettingGame;
-    }
-
     public GameEndState getGameEndState() {
         return gameEndState;
-    }
-
-    public void setGameEndState(GameEndState gameEndState) {
-        this.gameEndState = gameEndState;
-    }
-
-    public Move3Students getMove3Students() {
-        return move3Students;
-    }
-
-    public void setMove3Students(Move3Students move3Students) {
-        this.move3Students = move3Students;
     }
 
     public Setup getSetup() {
@@ -95,29 +64,10 @@ public class GameController {
         this.setup = setup;
     }
 
-    public MoveMotherNature getMoveMotherNature() {
-        return moveMotherNature;
-    }
-
-    public void setMoveMotherNature(MoveMotherNature moveMotherNature) {
-        this.moveMotherNature = moveMotherNature;
-    }
-
-    public WinLoseCheckState getWinLoseCheckState() {
-        return winLoseCheckState;
-    }
-
-    public void setWinLoseCheckState(WinLoseCheckState winLoseCheckState) {
-        this.winLoseCheckState = winLoseCheckState;
-    }
-
     public PlayAssCard getPlayAssCard() {
         return playAssCard;
     }
 
-    public void setPlayAssCard(PlayAssCard playAssCard) {
-        this.playAssCard = playAssCard;
-    }
 
     /** this method is called at the begging of the game; it checks if the name is available: if it
      * is not, then will throw an Exception, else will add the new player
@@ -473,6 +423,8 @@ public class GameController {
         }
     }
 
+    /** Check if the player can play a Character Card
+     * */
     public boolean CheckIfShouldAskForCharacterCard(Player p){
         boolean flag = true;
         for(int i=0; i< gameModel.getGeneralBoard().getChoosenCard().size() && flag; i++){
@@ -510,6 +462,9 @@ public class GameController {
           gameEndState.CheckEndGameRoundEndedForBag(gameModel.getBag());
     }
 
+    /** Set and check the choices of the player for CharacterCard1
+     * return false if the choices aren't correct, return true if are correct and set the attributes
+     * **/
     public boolean SetCharacterCard1(CharacterCard c1, Color color, int n){
         boolean notCorrectIsland= true;
         boolean notCorrectColor= true;
@@ -532,7 +487,9 @@ public class GameController {
             return true;
         }
     }
-
+    /** Set and check the choices of the player for CharacterCard3
+     * return false if the choices aren't correct, return true if are correct and set the attributes
+     * **/
     public boolean SetCharacterCard3(CharacterCard c3, int n){
         boolean notCorrectIsland= true;
         for(int i=0; notCorrectIsland && i< gameModel.getGeneralBoard().GetIslands().size(); i++){
@@ -549,6 +506,9 @@ public class GameController {
         }
     }
 
+    /** Set and check the choices of the player for CharacterCard5
+     * return false if the choices aren't correct, return true if are correct and set the attributes
+     * **/
     public boolean SetCharacterCard5(CharacterCard c5, int n){
         boolean notCorrectIsland= true;
         for(int i=0; notCorrectIsland && i< gameModel.getGeneralBoard().GetIslands().size(); i++){
@@ -564,7 +524,9 @@ public class GameController {
             return true;
         }
     }
-
+    /** Set and check the choices of the player for CharacterCard7
+     * return false if the choices aren't correct, return true if are correct and set the attributes
+     * **/
     public boolean SetCharacterCard7(CharacterCard c7, ArrayList<Color> colorEntrance, ArrayList<Color> colorChosen, Player p){
         boolean notCorrectColorInEntrance= true;
         boolean notCorrectColorOnCard= true;
@@ -598,7 +560,9 @@ public class GameController {
             return true;
         }
     }
-
+    /** Set and check the choices of the player for CharacterCard10
+     * return false if the choices aren't correct, return true if are correct and set the attributes
+     * **/
     public boolean SetCharacterCard10(CharacterCard c10, ArrayList<Color> colorEntrance, ArrayList<Color> colorDiningRoom, Player p){
         boolean notCorrectColorInEntrance= true;
         boolean notCorrectColorInDiningRoom= true;
@@ -635,11 +599,17 @@ public class GameController {
             return true;
         }
     }
-
+    /** Set and check the choices of the player for CharacterCard9
+     * return false if the choices aren't correct, return true if are correct and set the attributes
+     * **/
     public boolean SetCharacterCard9(CharacterCard c9, Color color){
         ((CharacterCard9)c9).setChosenColor(color);
         return true;
     }
+
+    /** Set and check the choices of the player for CharacterCard11
+     * return false if the choices aren't correct, return true if are correct and set the attributes
+     * **/
     public boolean SetCharacterCard11(CharacterCard c11, Color color){
         boolean notCorrectColor= true;
 
@@ -657,13 +627,16 @@ public class GameController {
         }
     }
 
+    /** Set and check the choices of the player for CharacterCard12
+     * return false if the choices aren't correct, return true if are correct and set the attributes
+     * **/
     public boolean SetCharacterCard12(CharacterCard c12, Color color){
         ((CharacterCard12)c12).setChosenColor(color);
          return true;
     }
 
-
-
+    /** Return CharacterCards in table
+     * **/
     public CharacterCard getCharacterCardChosen() {
         return characterCardChosen;
     }

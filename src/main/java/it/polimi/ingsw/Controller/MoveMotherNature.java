@@ -6,12 +6,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-/*@author Luigia Falasca*/
+/**
+ * @author Luigia Falasca
+ * **/
 public class MoveMotherNature {
     private IslandTiles I1;
     private ColorTower colorT;
     private List<ColorTower> colorTowerList = new ArrayList<>();
 
+
+/** Set randomly the Island where to put MotherNature at the beginning of the game
+ * **/
     public void SetIslandWithMotherNature(GeneralBoard gb){
         Random random = new Random();
         int draftedindex = random.nextInt(12);
@@ -23,18 +28,26 @@ public class MoveMotherNature {
         }
     }
 
+    /** Saves where is MotherNature
+     * **/
     public void SetIslandWithMotherNature(IslandTiles I){
         I1 = I;
     }
 
+    /** Move Mother and saves it in I1
+     * **/
     public void MoveMN(GeneralBoard GB, int n){
         I1 = GB.moveMotherNature(I1, n);
     }
 
+    /** Get the island with MotherNature
+     * **/
     public IslandTiles getI1() {
         return I1;
     }
 
+    /** Calculate the influence for the Island I
+     * **/
     private int influenceTot(List<Color> student, IslandTiles I, ColorTower ct) {
         int influence = 0;
         int influenceT = 0;
@@ -52,8 +65,10 @@ public class MoveMotherNature {
 
         return influence;
     }
-/*/*Overload*/
 
+     /**
+      * Overload, is used for Effect8 and Effect6
+      * **/
     private int influenceTot(List<Color> student, IslandTiles I, ColorTower ct, int nameCard, SchoolBoard SbPlayer) {
         int influence = 0;
         int influenceT = 0;
@@ -84,7 +99,9 @@ public class MoveMotherNature {
         return influence;
     }
 
-    /*Overload*/
+    /**
+     * Overload, is used for Effect9
+     * **/
     private int influenceTot(List<Color> professor, IslandTiles I, ColorTower ct, int nameCard , Color c) {
         int influence = 0;
         int influenceT = 0;
@@ -107,6 +124,8 @@ public class MoveMotherNature {
         return influence;
     }
 
+    /** Get 2 lists of professors (for white and black squad) when there are 4 players
+     * **/
     private ArrayList<ArrayList<Color>> GetSquadIf4Players(GeneralBoard GB){
         ColorTower ct;
         boolean flag = true;
@@ -137,6 +156,8 @@ public class MoveMotherNature {
         return listProfessor;
     }
 
+    /** Get 2 or 3 lists of professors when there are 2 or 3 players
+     * **/
     private ArrayList<ArrayList<Color>> GetArrayForInfluence(GeneralBoard GB, int n){
         List<SchoolBoard> lSB =GB.getSchoolBoard();
         ArrayList<ArrayList<Color>> listProfessor = new ArrayList<>(n);
@@ -152,7 +173,9 @@ public class MoveMotherNature {
         return listProfessor;
     }
 
-
+    /** Check if the Island is controlled, return true if it is and saves
+     * the color of the squad who controls the island
+     * **/
     public boolean CheckIfIslandGetControlled(int numberPlayer, GeneralBoard GB, IslandTiles I){
         ArrayList<Integer> listInfluence = new ArrayList<>();
         ArrayList<ArrayList<Color>> listProfessor;
@@ -188,7 +211,7 @@ public class MoveMotherNature {
         return flag;
     }
 
-    /*Overload*/
+    /**Overload, is used for effect 6 and 8**/
     public boolean CheckIfIslandGetControlled(int numberPlayer, GeneralBoard GB, IslandTiles I, int nameCard, SchoolBoard SbPlayer){
         ArrayList<Integer> listInfluence = new ArrayList<>();
         ArrayList<ArrayList<Color>> listProfessor;
@@ -221,7 +244,7 @@ public class MoveMotherNature {
     }
 
 
-    /*Overload*/
+    /**Overload, is used for Effect 9**/
 
     public boolean CheckIfIslandGetControlled(int numberPlayer, GeneralBoard GB, IslandTiles I, int nameCard, Color color){
         ArrayList<Integer> listInfluence = new ArrayList<>();
@@ -254,6 +277,9 @@ public class MoveMotherNature {
         return flag;
     }
 
+    /** If the island is controlled, put the tower on the island, removing it from SchoolBoard
+     * and, if there was before a tower, putting back on SchoolBoard it
+     * **/
     public void GetRightTowerOnIsland(GeneralBoard GB, IslandTiles I, List<SchoolBoard> SBWhitTower){
         ColorTower ct;
         boolean notFound = true;

@@ -4,8 +4,13 @@ import it.polimi.ingsw.Model.*;
 
 import java.util.*;
 
+/**
+ * @author Luigia Falasca and Federico Angelo Luigi Ferreri
+ * **/
 public class WinLoseCheckState {
 
+    /** Check the winner(s)
+     * **/
     public ArrayList<Boolean> CheckWinner(ArrayList<Player> players, List<SchoolBoard> SbWithSchoolBoard) {
         int min = 9;
         ArrayList<ColorTower> colorWinning = new ArrayList<>();
@@ -39,6 +44,9 @@ public class WinLoseCheckState {
         return playersVictory;
     }
 
+
+    /** Check the number of professors in case the towers left on the schoolBoards are equals
+     * **/
     private ArrayList<ColorTower> CheckProfessor(ArrayList<ColorTower> colorWinning, ArrayList<Player> players) {
         int max = 0;
         ArrayList<Color> ProfessorTableBlack = new ArrayList<>();

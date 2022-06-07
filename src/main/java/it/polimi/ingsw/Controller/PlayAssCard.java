@@ -6,6 +6,9 @@ import it.polimi.ingsw.Model.Player;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Luigia Falasca and Federico Angelo Luigi Ferreri
+ * **/
 public class PlayAssCard {
     private ArrayList<CardAssistant> cards = new ArrayList<CardAssistant>();
 

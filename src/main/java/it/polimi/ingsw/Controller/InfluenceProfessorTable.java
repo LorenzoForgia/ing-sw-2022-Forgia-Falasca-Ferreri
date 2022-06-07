@@ -1,11 +1,15 @@
 package it.polimi.ingsw.Controller;
 import it.polimi.ingsw.Model.*;
 
-/*@author Luigia Falasca*/
+/**
+ *  @author Luigia Falasca
+ *  **/
 
 public class InfluenceProfessorTable {
 
 
+    /** Return the color from the index
+     * **/
     private Color GetRightColor(int index ){
         if(index==0){
             return Color.Green;
@@ -20,6 +24,8 @@ public class InfluenceProfessorTable {
         }
     }
 
+    /** Remove the professor if it was placed in SchoolBoard
+     * **/
     private void RemoveProfessorFromTable(GeneralBoard gb, int numberOfPlayer, Color color){
         boolean notFound = true;
         for(int i=0; i< numberOfPlayer && notFound; i++){
@@ -32,6 +38,9 @@ public class InfluenceProfessorTable {
         }
     }
 
+    /** If the students in the dining room are zero but there is the professor,
+     * this methods remove the professor
+     * **/
     private void RemoveProfessorWhenNoStudentInDining(GeneralBoard GB, int numPlayer){
 
         for(int i=0; i <5; i++){
@@ -45,7 +54,8 @@ public class InfluenceProfessorTable {
         }
     }
 
-
+    /** Calculates who has the control of the professor
+     * **/
     public void RightProfessorTable(GeneralBoard GB, int numPlayer) {
         int max;
         int schoolBoardWithInfluence=0;
@@ -76,7 +86,7 @@ public class InfluenceProfessorTable {
         RemoveProfessorWhenNoStudentInDining(GB, numPlayer);
     }
 
-    /*Professor Table with the effect of CharacterCard2*/
+    /**Professor Table with the effect of CharacterCard2**/
     public void RightProfessorTable(GeneralBoard GB, int numPlayer, Player playerUseEffect) {
         int max;
         int schoolBoardWithInfluence=0;

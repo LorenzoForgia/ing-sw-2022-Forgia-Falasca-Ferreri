@@ -3,7 +3,13 @@ package it.polimi.ingsw.Controller;
 import it.polimi.ingsw.Model.Bag;
 import it.polimi.ingsw.Model.GeneralBoard;
 
+/**
+ * @author Federico Angelo Luigi Ferreri
+ * **/
+
 public class AddStudentsOnClouds {
+    /** If the bag is not empty, add the students on clouds after each turn
+     * **/
     public void RestartTurn(GeneralBoard g,Bag b, int numplayer) {
         if (!b.BagIsEmpty()) {
             if (numplayer == 2) {

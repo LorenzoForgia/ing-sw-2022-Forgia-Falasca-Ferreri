@@ -5,6 +5,9 @@ import it.polimi.ingsw.Model.Player;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Luigia Falasca and Federico Angelo Luigi Ferreri
+ * **/
 public class ChoosenPlayer {
     private List<Player> orderPlayers = new ArrayList<>();
     private Player firstPlayer;
@@ -30,7 +33,9 @@ public class ChoosenPlayer {
 
 
     }
-
+    /**
+     * Return the number of the player who has to play
+     **/
     public int getNumPlayerTurn() {
         return numPlayerTurn;
     }
@@ -77,6 +82,9 @@ public class ChoosenPlayer {
         numPlayerTurn =0;
     }
 
+    /**
+     * Get the right order of the players before playing CardAssistant
+     **/
     private void GetOrderOfPlayersForCardAssistant(List<Player> players) {
 
         if(orderPlayers.size()==0) {
