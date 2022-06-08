@@ -6,8 +6,9 @@ import java.io.Serializable;
 import java.util.List;
 
 
-/** Resolve the island such as Mother Nature ended her movement there
- * The player has to choose the island **/
+ /**
+  * @author Luigia Falasca and Federico Angelo Luigi Ferreri
+ * **/
 public class CharacterCard3 extends CharacterCard implements Serializable {
     private IslandTiles I1;
     private MoveMotherNature moveMotherNature = new MoveMotherNature();
@@ -24,6 +25,8 @@ public class CharacterCard3 extends CharacterCard implements Serializable {
         generalBoard = gb;
     }
 
+/** Resolve the island such as Mother Nature ended her movement there
+ * **/
     @Override
     public void UseEffect(Player player) {
         player.setNameCharacterCard(3);
@@ -32,7 +35,8 @@ public class CharacterCard3 extends CharacterCard implements Serializable {
             moveMotherNature.GetRightTowerOnIsland(generalBoard, I1, schoolBoardList);
         }
     }
-
+/** Set the chosen Island
+ * **/
     public void setI1(IslandTiles i1) {
         I1 = i1;
     }

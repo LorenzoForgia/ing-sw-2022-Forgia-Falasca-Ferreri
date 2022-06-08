@@ -4,6 +4,9 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Lorenzo Forgia
+ */
 public class GameModel implements Serializable {
 
     private Boolean modExpert;

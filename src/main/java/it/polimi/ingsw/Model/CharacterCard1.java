@@ -3,9 +3,9 @@ package it.polimi.ingsw.Model;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-/** Set the card putting 4 students on it
- * Move a student from this card to an Island
- * The Player should choose the color to pick and the Island
+
+/**
+ * @author Luigia Falasca and Federico Angelo Luigi Ferreri
  * **/
 
 public class CharacterCard1 extends CharacterCard implements Serializable  {
@@ -19,6 +19,8 @@ public class CharacterCard1 extends CharacterCard implements Serializable  {
         super(name, coins, countUse, descriptionEffect);
     }
 
+    /**Set the card putting 4 students on it
+     * **/
     @Override
     public void SetCard(Bag b, GeneralBoard gb) {
         bag = b;
@@ -29,11 +31,15 @@ public class CharacterCard1 extends CharacterCard implements Serializable  {
         }
     }
 
+     /** return the students on the card
+     * **/
     public ArrayList<Color> GetchoosenStudent(){
         return choosenStudent;
     }
 
-
+    /**
+     * Move a student from this card to an Island
+     * **/
     @Override
     public void UseEffect(Player p) {
         p.setUsedCharacterCard(true);
@@ -45,10 +51,14 @@ public class CharacterCard1 extends CharacterCard implements Serializable  {
         }
     }
 
+    /** Set the chosen student from the card
+     * **/
     public void setChoosenColor(Color choosenColor) {
         this.choosenColor = choosenColor;
     }
 
+    /** Set the chosen Island
+     * **/
     public void setIchosen(IslandTiles ichosen) {
         Ichosen = ichosen;
     }

@@ -1,6 +1,8 @@
 package it.polimi.ingsw.Model;
 
-/*@author Luigia Falasca*/
+/**
+ * @author Luigia Falasca
+ */
 
 import java.io.Serializable;
 

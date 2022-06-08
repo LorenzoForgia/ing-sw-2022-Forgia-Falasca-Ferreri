@@ -3,12 +3,10 @@ package it.polimi.ingsw.Model;
 import java.io.Serializable;
 import java.util.*;
 
-/*@author Luigia Falasca*/
 
-/** Take up to 3 students from this card and replace them with the same number of
- * students from your Entrance
+/**
+ * @author Luigia Falasca
  * **/
-
 public class CharacterCard7 extends CharacterCard implements Serializable {
     private ArrayList<Color> studentOnCard = new ArrayList<Color>();
     private Bag bag;
@@ -18,7 +16,9 @@ public class CharacterCard7 extends CharacterCard implements Serializable {
     public CharacterCard7(int name, int coins, int countUse, String descriptionEffect) {
         super(name, coins, countUse, descriptionEffect);
     }
-
+    /** Take up to 3 students from this card and replace them with the same number of
+     * students from player's Entrance
+     * **/
     @Override
     public void UseEffect(Player p) {
         p.setNameCharacterCard(7);
@@ -30,7 +30,8 @@ public class CharacterCard7 extends CharacterCard implements Serializable {
             studentOnCard.remove(studentChoosen.get(i));
         }
     }
-
+    /**Set the card putting 6 students on it
+     * **/
     @Override
     public void SetCard(Bag b, GeneralBoard gb) {
         bag= b;
@@ -38,15 +39,20 @@ public class CharacterCard7 extends CharacterCard implements Serializable {
             studentOnCard.add(bag.CatchStudent());
         }
     }
-
+    /** return the students on the card
+     * **/
     public ArrayList<Color> getStudentOnCard() {
         return studentOnCard;
     }
 
+    /** set the chosen students from the Entrance
+     * **/
     public void setStudentOnEntrance(ArrayList<Color> studentOnEntrance) {
         this.studentOnEntrance = studentOnEntrance;
     }
 
+    /** set the chosen students from the card
+     * **/
     public void setStudentChoosen(ArrayList<Color> studentChoosen) {
         this.studentChoosen = studentChoosen;
     }

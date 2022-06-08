@@ -2,6 +2,9 @@ package it.polimi.ingsw.Model;
 
 import java.io.Serializable;
 
+/**
+ * @author Lorenzo Forgia
+ */
 public enum ColorTower implements Serializable {
     Black(0,"\u001B[30m"), White(1,"\u001B[97m"), Grey(2,"\u001B[90m");
     private final int intTower;

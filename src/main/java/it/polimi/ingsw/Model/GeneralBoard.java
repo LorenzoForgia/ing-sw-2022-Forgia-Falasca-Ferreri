@@ -4,7 +4,9 @@ import java.io.Serializable;
 import java.util.*;
 import java.io.*;
 
-/*@author Luigia Falasca*/
+/**
+ * @author Luigia Falasca
+ */
 
     public class GeneralBoard implements Serializable {
     private int Coins;

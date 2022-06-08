@@ -1,11 +1,11 @@
 package it.polimi.ingsw.Model;
 
-/*@author Luigia Falasca*/
 
 import java.io.Serializable;
 
-/** There are 4 No Entry Tiles on this card
- * The player has to choose in which Island put the NET**/
+/**
+ * @author Luigia Falasca
+ * **/
 public class CharacterCard5 extends CharacterCard implements Serializable {
     private int NET;
     private IslandTiles I1;
@@ -13,11 +13,15 @@ public class CharacterCard5 extends CharacterCard implements Serializable {
     public CharacterCard5(int name, int coins, int countUse, String descriptionEffect) {
         super(name, coins, countUse, descriptionEffect);
     }
-
+/** There are 4 No Entry Tiles on this card
+ * **/
     @Override
     public void SetCard(Bag b, GeneralBoard gb) {
         NET = 4;
     }
+
+    /** Put the NET in the chosen Island
+     * **/
 
     @Override
     public void UseEffect(Player player) {
@@ -27,7 +31,8 @@ public class CharacterCard5 extends CharacterCard implements Serializable {
         NET = NET -1;
 
     }
-
+    /** Set the chosen Island
+     * **/
     public void setI1(IslandTiles i1) {
         I1 = i1;
     }

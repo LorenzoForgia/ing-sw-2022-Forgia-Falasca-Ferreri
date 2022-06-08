@@ -1,7 +1,9 @@
 package it.polimi.ingsw.Model;
 import java.io.Serializable;
 import java.util.*;
-
+/**
+ * @author Federico Angelo Luigi Ferreri
+ */
 public class SchoolBoard implements Serializable {
     private int NumberId;
     private int Student;

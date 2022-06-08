@@ -1,21 +1,20 @@
 package it.polimi.ingsw.Model;
-/** @author Lorenzo Forgia **/
+
 
 import java.io.Serializable;
 
-/** The chosen Color doesn't count for the influence
- * The real effect is implemented in MoveMotherNature
- * **/
+
+/** @author Lorenzo Forgia and Luigia Falasca **/
 public class CharacterCard9  extends CharacterCard implements Serializable {
-
-
 
     private Color chosenColor;
 
     public CharacterCard9(int name, int coins, int countUse, String descriptionEffect) {
         super(name, coins, countUse, descriptionEffect);
     }
-
+    /** The chosen Color doesn't count for the influence
+     * The real effect is implemented in MoveMotherNature
+     * **/
     @Override
     public void UseEffect(Player p) {
         p.setNameCharacterCard(9);

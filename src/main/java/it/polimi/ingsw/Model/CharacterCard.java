@@ -2,15 +2,18 @@ package it.polimi.ingsw.Model;
 
 import java.io.Serializable;
 
+/**
+ * @author Luigia Falasca and Federico Angelo Luigi Ferreri
+ * **/
+
 public abstract class CharacterCard implements Serializable {
     private int Name;
+    private int Coins;
+    private int CountUse;
 
     public int getCoins() {
         return Coins;
     }
-
-    private int Coins;
-    private int CountUse;
 
     public String getDescriptionEffect() {
         return DescriptionEffect;
@@ -25,7 +28,6 @@ public abstract class CharacterCard implements Serializable {
         DescriptionEffect=descriptionEffect;
     }
 
-
     public int getName(){      /* return the character's name*/
         return Name;
     }
@@ -39,7 +41,6 @@ public abstract class CharacterCard implements Serializable {
     public void setCountUse() {     /*card is used so the cost++ */
         CountUse = CountUse +1;
     }
-
     public abstract void SetCard(Bag b, GeneralBoard GB);
     public abstract void UseEffect(Player p);
 }

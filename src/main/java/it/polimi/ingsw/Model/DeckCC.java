@@ -5,6 +5,9 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Random;
 
+/**
+ * @author Federico Angelo Luigi Ferreri
+ */
 public class DeckCC implements Serializable {
     private ArrayList<CharacterCard> characterCards= new ArrayList<CharacterCard>();
 

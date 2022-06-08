@@ -29,7 +29,8 @@ public class PlayAssCard {
         cards= new ArrayList<>();
     }
 
-    /** Check if the player has no more CardAssistant to play thet are differ
+    /** Check if the player has left different Assistant cards form played Assistant cards
+     * return false if the player has them, true if the player doesn't have them
      * **/
     boolean CheckIfLast(Player p) {
         boolean flag = true;

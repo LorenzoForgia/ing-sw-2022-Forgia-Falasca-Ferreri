@@ -3,6 +3,9 @@ import java.io.Serializable;
 import java.util.*;
 import java.util.ArrayList;
 
+/**
+ * @author Federico Angelo Luigi Ferreri
+ */
 public class DiningRoom implements Location, Serializable {
 
     private ArrayList<ArrayList<Color>> DiningRoom=new ArrayList<ArrayList<Color>>(5);

@@ -3,10 +3,8 @@ package it.polimi.ingsw.Model;
 import java.io.Serializable;
 import java.util.List;
 
-/** Choose a color of student, everyone (including yourself) should
- * return three students in the bag from their Dining Room
- * The player should pick the color**/
 
+/** @author Lorenzo Forgia and Luigia Falasca **/
 public class CharacterCard12 extends CharacterCard implements Serializable {
     private List<Player> players;
     private Bag bag;
@@ -16,6 +14,9 @@ public class CharacterCard12 extends CharacterCard implements Serializable {
         super(name, coins, countUse, descriptionEffect);
     }
 
+    /** everyone (including the player who has used the effect)
+     * return three students in the bag from their Dining Room
+     **/
     @Override
     public void UseEffect(Player p) {
         p.setNameCharacterCard(12);
@@ -40,6 +41,8 @@ public class CharacterCard12 extends CharacterCard implements Serializable {
         this.players = players;
     }
 
+    /** Set the chosen color of student
+     * **/
     public void setChosenColor(Color chosenColor) {
 
         this.chosenColor = chosenColor;

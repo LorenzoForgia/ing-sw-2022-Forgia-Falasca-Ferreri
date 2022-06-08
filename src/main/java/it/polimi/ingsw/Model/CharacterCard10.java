@@ -2,11 +2,8 @@ package it.polimi.ingsw.Model;
 import java.io.Serializable;
 import java.util.*;
 
-/** Exchange up to 2 students between your Entrance and your DiningRoom
- * **/
+/** @author Lorenzo Forgia and Luigia Falasca **/
 public class CharacterCard10 extends CharacterCard implements Serializable {
-
-
 
     private ArrayList<Color> studentOnEntrance=new ArrayList<Color>();
     private ArrayList<Color> studentOnDiningRoom=new ArrayList<Color>();
@@ -15,6 +12,8 @@ public class CharacterCard10 extends CharacterCard implements Serializable {
         super(name, coins, countUse, descriptionEffect);
     }
 
+    /** Exchange up to 2 students between your Entrance and your DiningRoom
+     * **/
     @Override
     public void UseEffect(Player p) {
         p.setNameCharacterCard(10);
