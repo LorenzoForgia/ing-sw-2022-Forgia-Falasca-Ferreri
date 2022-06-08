@@ -33,6 +33,8 @@ public class IslandTiles implements Location, Serializable {
         this.size = size;
     }
 
+    /** Put the NoEntryTiles when used CharacterCard
+     * **/
     public void putNET() {
         if(!NoEntryTiles){
             NoEntryTiles = true;
@@ -40,6 +42,8 @@ public class IslandTiles implements Location, Serializable {
         NumberOfNet = getNumberOfNet() +1;
     }
 
+    /** Put the NoEntryTiles when 2 island unify
+     * **/
     public void putNET( int n) {
         if(!NoEntryTiles){
             NoEntryTiles = true;
@@ -95,20 +99,13 @@ public class IslandTiles implements Location, Serializable {
         return StudentsInIsland;
     }
 
-    public int getNumberStudentsbyColor(Color c){
-        int counter=0;
-        for(int i=0;i<getStudentsInIsland().size();i++){
-            if(this.getStudentsInIsland().get(i).equals(c)) {
-                counter++;
-            }
-        }
-        return counter;
-    }
 
     public void removeNM(){
         MotherNature= false;
         }
 
+        /** Remove the NoEntryTiles
+         * **/
     public void removeNET(){
         NumberOfNet = NumberOfNet -1;
         if(NumberOfNet == 0){
@@ -124,6 +121,8 @@ public class IslandTiles implements Location, Serializable {
        return StudentsInIsland.get(n);
     }
 
+    /** Count "Color" students in the Island
+     * **/
     public int CountInfluence(Color c){
         int count=0;
         for(int i=0; i < StudentsInIsland.size(); i++){

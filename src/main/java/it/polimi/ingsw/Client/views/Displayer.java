@@ -236,11 +236,11 @@ public class Displayer {
         if(i.isMotherNature()){
             System.out.print(Color.Yellow+"M"+" ");
         }
-        System.out.print(Color.Green+""+i.getNumberStudentsbyColor(Color.Green)+" ");
-        System.out.print(Color.Red+""+i.getNumberStudentsbyColor(Color.Red)+" ");
-        System.out.print(Color.Yellow+""+i.getNumberStudentsbyColor(Color.Yellow)+" ");
-        System.out.print(Color.Pink+""+i.getNumberStudentsbyColor(Color.Pink)+" ");
-        System.out.print(Color.Blue+""+i.getNumberStudentsbyColor(Color.Blue)+Color.Reset+"|");
+        System.out.print(Color.Green+""+i.CountInfluence(Color.Green)+" ");
+        System.out.print(Color.Red+""+i.CountInfluence(Color.Red)+" ");
+        System.out.print(Color.Yellow+""+i.CountInfluence(Color.Yellow)+" ");
+        System.out.print(Color.Pink+""+i.CountInfluence(Color.Pink)+" ");
+        System.out.print(Color.Blue+""+i.CountInfluence(Color.Blue)+Color.Reset+"|");
         if(ColorTower.White.equals(i.getColTower())) {
             System.out.print(ColorTower.White + "" + i.getSize() + " ");
         }else{
