@@ -8,11 +8,11 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="52.0" layoutY="167.0" text="Port:">
+      <Label layoutX="43.0" layoutY="121.0" text="Port:">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Label layoutX="34.0" layoutY="108.0" text="IP Server:">
+      <Label layoutX="43.0" layoutY="61.0" text="IP Server:">
          <font>
             <Font size="18.0" />
          </font></Label>
@@ -20,12 +20,7 @@
          <font>
             <Font size="14.0" />
          </font></Button>
-      <TextField fx:id="portBox" layoutX="131.0" layoutY="168.0" />
-      <TextField fx:id="ipServerBox" layoutX="131.0" layoutY="109.0" />
-      <Label layoutX="240.0" layoutY="35.0" text="Welcome!">
-         <font>
-            <Font size="27.0" />
-         </font>
-      </Label>
+      <TextField fx:id="portBox" layoutX="131.0" layoutY="122.0" />
+      <TextField fx:id="ipServerBox" layoutX="131.0" layoutY="62.0" />
    </children>
 </AnchorPane>

@@ -16,10 +16,15 @@
             <Font size="18.0" />
          </font></Label>
       <TextField layoutX="235.0" layoutY="343.0" />
-      <ImageView fitHeight="300.0" fitWidth="400.0" layoutX="160.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="248.0" fitWidth="245.0" layoutX="187.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Eriantys_scatolaFrontombra-600x600.png" />
          </image>
       </ImageView>
+      <Label layoutX="154.0" layoutY="29.0" text="Benvenuto, inserisci il tuo nickname! ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
