@@ -33,7 +33,6 @@ public class GameController {
             countmodexpview=countmodexpview+1;
         }
     }
-    public void decrementview(){countmodexpview=countmodexpview-1;}
     public void resetcountmodexpview(){countmodexpview=1;}
     public int getCountmodexpview(){return countmodexpview;}
     public boolean isFlagturn(){return flagturn;}
