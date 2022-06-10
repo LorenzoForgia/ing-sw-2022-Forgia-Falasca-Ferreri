@@ -14,19 +14,18 @@ import java.io.IOException;
 
 public class JavaFXMain extends Application {
 
-    public static void main(String[] args) {
-        launch(args);
-    }
 
     private Stage primaryStage;
 
-
+    public static void main(String[] args)
+    {
+        launch(args);
+    }
     @Override
     public void start(Stage primaryStage) throws Exception
     {
-        Group root = new Group();
-        Scene scene = new Scene(root);
-        primaryStage.setScene(scene);
+        this.primaryStage = primaryStage;
+        switchToLoginScene();
         primaryStage.show();
     }
 
@@ -44,6 +43,21 @@ public class JavaFXMain extends Application {
         Scene sc = new Scene(root);
         primaryStage.setScene(sc);
         primaryStage.setTitle("Login");
+        primaryStage.sizeToScene();
+    }
+
+    public void switchToConnectionScene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/LoginConnection.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("Connection");
         primaryStage.sizeToScene();
     }
 }
