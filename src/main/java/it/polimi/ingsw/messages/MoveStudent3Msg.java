@@ -29,6 +29,7 @@ public class MoveStudent3Msg extends CommandMsg{
                     AnsMoveStudent3Msg ansMoveStudent3Msg = new AnsMoveStudent3Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers(), game.getGameModel().getGeneralBoard().getChoosenCard(), game.getGameModel().getModExpert());
                     clientHandler.sendAnswerMessage(ansMoveStudent3Msg);
                 } catch (ColorNoInEntranceException e) {
+                    game.decrementview();
                     AnsColorExc3Msg ansColorExcMsg = new AnsColorExc3Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName());
                     clientHandler.sendAnswerMessage(ansColorExcMsg);
                 }
@@ -42,10 +43,12 @@ public class MoveStudent3Msg extends CommandMsg{
                         AnsMoveStudent3Msg ansMoveStudent3Msg = new AnsMoveStudent3Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers(), game.getGameModel().getGeneralBoard().getChoosenCard(), game.getGameModel().getModExpert());
                         clientHandler.sendAnswerMessage(ansMoveStudent3Msg);
                     }catch (IslandNotInListException e){
+                        game.decrementview();
                         AnsIslandExc3Msg ansIslandExc3Msg= new AnsIslandExc3Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName());
                         clientHandler.sendAnswerMessage(ansIslandExc3Msg);
                     }
                 } catch (ColorNoInEntranceException e) {
+                    game.decrementview();
                     AnsColorExc3Msg ansColorExcMsg = new AnsColorExc3Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName());
                     clientHandler.sendAnswerMessage(ansColorExcMsg);
                 }

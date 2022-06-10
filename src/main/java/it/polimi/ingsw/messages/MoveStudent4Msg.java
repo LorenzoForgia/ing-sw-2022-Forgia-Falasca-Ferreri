@@ -42,10 +42,12 @@ public class MoveStudent4Msg extends CommandMsg{
                         AnsMoveStudent4Msg ansMoveStudent4Msg = new AnsMoveStudent4Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getGeneralBoard(), game.getGameModel().getPlayers(), game.getGameModel().getGeneralBoard().getChoosenCard(), game.getGameModel().getModExpert());
                         clientHandler.sendAnswerMessage(ansMoveStudent4Msg);
                     }catch (IslandNotInListException e){
+                        game.decrementview();
                         AnsIslandExc4Msg ansIslandExc4Msg= new AnsIslandExc4Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName());
                         clientHandler.sendAnswerMessage(ansIslandExc4Msg);
                     }
                 } catch (ColorNoInEntranceException e) {
+                    game.decrementview();
                     AnsColorExc4Msg ansColorExcMsg = new AnsColorExc4Msg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName());
                     clientHandler.sendAnswerMessage(ansColorExcMsg);
                 }
