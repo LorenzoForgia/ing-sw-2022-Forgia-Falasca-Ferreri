@@ -60,4 +60,35 @@ public class JavaFXMain extends Application {
         primaryStage.setTitle("Connection");
         primaryStage.sizeToScene();
     }
+
+    public void switchToExpertModeScene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/ExpertModeScene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("Login");
+        primaryStage.sizeToScene();
+    }
+
+    public void switchToNumberOfPlayerScene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/NumberOfPlayerScene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("Login");
+        primaryStage.sizeToScene();
+    }
+
 }
