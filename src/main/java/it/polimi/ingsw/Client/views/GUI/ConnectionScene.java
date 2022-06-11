@@ -14,19 +14,18 @@ import java.net.Socket;
 
 public class ConnectionScene {
 
-    public TextField usernameBox;
-    public TextField serverIpBox;
-    public TextField serverPortBox;
+    public TextField ipServerBox;
+    public TextField portBox;
     public Button connectBtn;
 
 
 
     public void connectButtonClicked(ActionEvent event) {
 
-        String ip = serverIpBox.getText();
+        String ip = ipServerBox.getText();
         int port;
         try {
-            port = Integer.parseInt(serverPortBox.getText());
+            port = Integer.parseInt(portBox.getText());
         } catch (NumberFormatException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "The port number is not valid!", ButtonType.OK);
             alert.showAndWait();
@@ -43,8 +42,8 @@ public class ConnectionScene {
 
         ServerHandler serverHandler = new ServerHandler(server,JavaFXMain.getCurrentApplication().getClient() );
         Thread serverHandlerThread = new Thread(serverHandler, "server_" + server.getInetAddress().getHostAddress());
-       serverHandlerThread.start();
-
+        serverHandlerThread.start();
+        JavaFXMain.getCurrentApplication().switchToLoginScene();
 /*
         JavaFXMain.getCurrentApplication().setServerHandler(new ServerHandler(server, JavaFXMain.getCurrentApplication().getClient()));
         Thread serverHandlerThread = new Thread(JavaFXMain.getCurrentApplication().getServerHandler(), "server_" + server.getInetAddress().getHostAddress());
