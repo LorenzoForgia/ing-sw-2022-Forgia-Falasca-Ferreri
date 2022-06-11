@@ -30,7 +30,7 @@ public class ServerHandler implements Runnable
      * @param server The socket connection to the server.
      */
 
-    ServerHandler(Socket server, Client owner)
+    public ServerHandler(Socket server, Client owner)
     {
         this.server = server;
         this.owner = owner;

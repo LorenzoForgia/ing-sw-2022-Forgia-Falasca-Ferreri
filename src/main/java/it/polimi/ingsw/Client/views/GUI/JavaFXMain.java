@@ -1,5 +1,6 @@
 package it.polimi.ingsw.Client.views.GUI;
 
+import it.polimi.ingsw.Client.*;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -16,6 +17,8 @@ public class JavaFXMain extends Application {
 
 
     private Stage primaryStage;
+    private static JavaFXMain currentApplication;
+    private Client client;
 
     public static void main(String[] args)
     {
@@ -24,11 +27,38 @@ public class JavaFXMain extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception
     {
+        currentApplication = this;
         this.primaryStage = primaryStage;
-        switchToLoginScene();
+        client = new Client();
+       /*
+        primaryStage.setOnCloseRequest((event) -> {
+            if (serverHandler.isConnected())
+                serverHandler.closeConnection();
+        });*/
+        /*
+        this.serverHandler = new ServerHandler();
+        /*
+        this.serverHandler.setConnectionClosedObserver(() -> {
+            Platform.runLater(() -> {
+                if (primaryStage.isShowing()) {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION, "The connection was closed.", ButtonType.OK);
+                    alert.showAndWait();
+                    switchToLoginScene();
+                }
+            });
+        });*/
+        switchToConnectionScene();
         primaryStage.show();
     }
 
+    public static JavaFXMain getCurrentApplication() {
+        return currentApplication;
+    }
+
+
+    public Client getClient() {
+        return client;
+    }
 
 
     public void switchToLoginScene()
@@ -50,7 +80,7 @@ public class JavaFXMain extends Application {
     {
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("/LoginConnection.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/ConnectionScene.fxml"));
         } catch (IOException e) {
             e.printStackTrace();
             return;
