@@ -21,22 +21,22 @@ public class Client implements Runnable
     private View currentView;
 
 
-/**
+
     public static void main(String[] args)
     {
         /* Instantiate a new Client. The main thread will become the
          * thread where user interaction is handled. */
-/**
+
         Client client = new Client();
         client.run();
     }
-    **/
+    /**
     public static void main(String[] args)
     {
         JavaFXMain.main(args);}
+        **/
 
-
-    @Override
+@Override
     public void run()
     {
         Scanner scanner = new Scanner(System.in);
