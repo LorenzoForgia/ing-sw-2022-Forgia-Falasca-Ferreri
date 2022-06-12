@@ -44,30 +44,6 @@ public class ConnectionScene {
         Thread serverHandlerThread = new Thread(serverHandler, "server_" + server.getInetAddress().getHostAddress());
         serverHandlerThread.start();
         JavaFXMain.getCurrentApplication().switchToLoginScene();
-/*
-        JavaFXMain.getCurrentApplication().setServerHandler(new ServerHandler(server, JavaFXMain.getCurrentApplication().getClient()));
-        Thread serverHandlerThread = new Thread(JavaFXMain.getCurrentApplication().getServerHandler(), "server_" + server.getInetAddress().getHostAddress());
 
-
-/*
-        JavaFXMain app = JavaFXMain.getCurrentApplication();
-        ServerHandler sh = app.getServerHandler();
-        connectBtn.setDisable(true);
-        sh.setConnectionCompleteObserver((ok) -> {
-            Platform.runLater(() -> {
-                if (!ok) {
-
-                    Alert alert = new Alert(Alert.AlertType.ERROR, "Connection not successful...", ButtonType.OK);
-                    alert.showAndWait();
-                    connectBtn.setDisable(false);
-                } else {
-                    sh.sendMessage(new LoginMessage(usernameBox.getText()));
-                    sh.setConnectionCompleteObserver(null);
-                    app.switchToLoginScene();
-                }
-            });
-        });
-        app.getServerHandler().attemptConnection(ip, port);
-*/
     }
 }
