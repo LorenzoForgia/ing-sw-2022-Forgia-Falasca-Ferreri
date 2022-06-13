@@ -22,7 +22,8 @@ public class AnsGameCreatedMsg extends AnswerMsg{
     @Override
     public void processMessage(ServerHandler serverHandler)
     {
-        serverHandler.getClient().transitionToView(new LobbyView(this));
+        System.out.println("ok bro");
+       /** serverHandler.getClient().transitionToView(new LobbyView(this)); CLI NON CANCELLARE*/
     }
 
     public AnsGameCreatedMsg.Status getMoveStatus() {

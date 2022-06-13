@@ -2,6 +2,7 @@ package it.polimi.ingsw.Client.views.GUI;
 
 import it.polimi.ingsw.Client.*;
 import it.polimi.ingsw.Client.views.TitleView;
+import it.polimi.ingsw.messages.LoginMsg;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
@@ -41,6 +42,7 @@ public class ConnectionScene {
         }
 
         ServerHandler serverHandler = new ServerHandler(server,JavaFXMain.getCurrentApplication().getClient() );
+        JavaFXMain.getCurrentApplication().getClient().setServerHandler(serverHandler);
         Thread serverHandlerThread = new Thread(serverHandler, "server_" + server.getInetAddress().getHostAddress());
         serverHandlerThread.start();
         JavaFXMain.getCurrentApplication().switchToLoginScene();

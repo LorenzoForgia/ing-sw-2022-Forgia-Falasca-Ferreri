@@ -15,6 +15,8 @@ import java.util.*;
 
 public class Client implements Runnable
 {
+
+
     private ServerHandler serverHandler;
     private boolean shallTerminate;
     private View nextView;
@@ -145,6 +147,10 @@ public class Client implements Runnable
             shallTerminate = true;
             currentView.stopInteraction();
         }
+    }
+
+    public void setServerHandler(ServerHandler serverHandler) {
+        this.serverHandler = serverHandler;
     }
 
 }
