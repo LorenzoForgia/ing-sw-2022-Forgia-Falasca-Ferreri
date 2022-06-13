@@ -47,7 +47,7 @@ public class JavaFXMain extends Application {
                 }
             });
         });*/
-        switchToChoiceCharacterCardScene();
+        switchToIslandTitleScene();
         primaryStage.show();
     }
 
@@ -126,6 +126,21 @@ public class JavaFXMain extends Application {
         Parent root;
         try {
             root = FXMLLoader.load(getClass().getResource("/ChoiceCharacterCardScene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("CharacterCard");
+        primaryStage.sizeToScene();
+    }
+
+    public void switchToIslandTitleScene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/IslandTitlesScene.fxml"));
         } catch (IOException e) {
             e.printStackTrace();
             return;
