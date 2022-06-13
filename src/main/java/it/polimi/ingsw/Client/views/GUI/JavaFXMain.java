@@ -164,4 +164,32 @@ public class JavaFXMain extends Application {
         primaryStage.sizeToScene();
     }
 
+    public void switchToCardAssistantScene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/AssistantCardScene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("CharacterCard");
+        primaryStage.sizeToScene();
+    }
+    public void switchToShowPlayerScene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/ShowPlayerScene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("CharacterCard");
+        primaryStage.sizeToScene();
+    }
 }
