@@ -47,7 +47,7 @@ public class JavaFXMain extends Application {
                 }
             });
         });*/
-        switchToIslandTitleScene();
+        switchToConnectionScene();
         primaryStage.show();
     }
 
@@ -105,7 +105,20 @@ public class JavaFXMain extends Application {
         primaryStage.setTitle("Login");
         primaryStage.sizeToScene();
     }
-
+    public void switchToWaitingScene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/WaitingScene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("Login");
+        primaryStage.sizeToScene();
+    }
     public void switchToNumberOfPlayerScene()
     {
         Parent root;
