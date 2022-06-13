@@ -13,9 +13,7 @@ public class LoginScene extends View {
     private String testo;
     @Override
     public void run() {
-        Platform.runLater(() -> {
-            JavaFXMain.getCurrentApplication().switchToLoginScene();
-        });
+
     }
 
     public void loginButtonClicked(ActionEvent event){
@@ -25,7 +23,6 @@ public class LoginScene extends View {
             alert.showAndWait();
             return;
         }
-        JavaFXMain.getCurrentApplication().switchToNumberOfPlayerScene();
         testo=usernameBox.getText();
         LoginMsg login=new LoginMsg(testo);
         System.out.println(testo);

@@ -33,6 +33,9 @@ public class LoginSceneCheck extends View {
         } else {
             System.out.println("loggato correttamente");
             /* answer if a game is already created*/
+            Platform.runLater(() -> {
+                JavaFXMain.getCurrentApplication().switchToWaitingScene();
+            });
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(new AskIfGameCreatedMsg());
 
         /*getOwner().terminate();
@@ -48,10 +51,9 @@ public class LoginSceneCheck extends View {
             alert.showAndWait();
             return;
         }
-        JavaFXMain.getCurrentApplication().switchToNumberOfPlayerScene();
+        //JavaFXMain.getCurrentApplication().switchToNumberOfPlayerScene();
         testo=usernameBox.getText();
         LoginMsg login=new LoginMsg(testo);
-        System.out.println(testo);
         JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(login);
 
     }

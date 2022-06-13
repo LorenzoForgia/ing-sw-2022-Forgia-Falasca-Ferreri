@@ -1,6 +1,9 @@
 package it.polimi.ingsw.messages;
 
 import it.polimi.ingsw.Client.ServerHandler;
+import it.polimi.ingsw.Client.views.GUI.SettingGameScene;
+import it.polimi.ingsw.Client.views.GUI.SettingSceneView;
+import it.polimi.ingsw.Client.views.GUI.SettingSceneView;
 import it.polimi.ingsw.Client.views.LobbyView;
 import it.polimi.ingsw.Client.views.PrintAnswerView;
 
@@ -22,7 +25,8 @@ public class AnsGameCreatedMsg extends AnswerMsg{
     @Override
     public void processMessage(ServerHandler serverHandler)
     {
-        System.out.println("ok bro");
+        SettingSceneView s=new SettingSceneView(this);
+        s.run();
        /** serverHandler.getClient().transitionToView(new LobbyView(this)); CLI NON CANCELLARE*/
     }
 
