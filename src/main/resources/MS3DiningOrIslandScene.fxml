@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="250.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <TextField layoutX="61.0" layoutY="53.0" prefHeight="37.0" prefWidth="490.0" text="Vuoi spostare lo studente nella Sala o su un'Isola?">
+            <font>
+                <Font size="21.0" />
+            </font>
+        </TextField>
+        <Button fx:id="sala" layoutX="185.0" layoutY="139.0" mnemonicParsing="false" text="Sala">
+            <font>
+                <Font size="21.0" />
+            </font>
+        </Button>
+        <Button fx:id="isola" layoutX="347.0" layoutY="139.0" mnemonicParsing="false" text="Isola">
+            <font>
+                <Font size="21.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>
+
