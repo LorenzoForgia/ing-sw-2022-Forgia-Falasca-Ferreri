@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="636.0" prefWidth="833.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.Client.views.GUI.ChooseCloudScene">
+   <children>
+      <ImageView fx:id="cloud1" fitHeight="200.0" fitWidth="200.0" layoutX="125.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="cloud2" fitHeight="200.0" fitWidth="200.0" layoutX="540.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="cloud3" fitHeight="200.0" fitWidth="200.0" layoutX="125.0" layoutY="409.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="cloud4" fitHeight="200.0" fitWidth="200.0" layoutX="540.0" layoutY="409.0" pickOnBounds="true" preserveRatio="true" />
+      <Circle fx:id="student11" fill="WHITE" layoutX="181.0" layoutY="218.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fx:id="student12" fill="WHITE" layoutX="263.0" layoutY="218.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fx:id="student13" fill="WHITE" layoutX="181.0" layoutY="279.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fx:id="student14" fill="WHITE" layoutX="263.0" layoutY="279.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fx:id="student21" fill="WHITE" layoutX="591.0" layoutY="218.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fx:id="student22" fill="WHITE" layoutX="673.0" layoutY="218.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fx:id="student23" fill="WHITE" layoutX="591.0" layoutY="279.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fx:id="student24" fill="WHITE" layoutX="673.0" layoutY="279.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fx:id="student31" fill="WHITE" layoutX="181.0" layoutY="484.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fx:id="student32" fill="WHITE" layoutX="263.0" layoutY="484.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fx:id="student33" fill="WHITE" layoutX="181.0" layoutY="545.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fx:id="student34" fill="WHITE" layoutX="263.0" layoutY="545.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fx:id="student41" fill="WHITE" layoutX="591.0" layoutY="484.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fx:id="student42" fill="WHITE" layoutX="673.0" layoutY="484.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fx:id="student43" fill="WHITE" layoutX="591.0" layoutY="545.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fx:id="student44" fill="WHITE" layoutX="673.0" layoutY="545.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Label layoutX="213.0" layoutY="61.0" text="Scegli la tessera nuvola da cui prendere gli studenti">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
