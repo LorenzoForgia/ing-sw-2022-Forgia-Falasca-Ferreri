@@ -20,6 +20,9 @@ public class JavaFXMain extends Application {
     private static JavaFXMain currentApplication;
     private Client client;
 
+
+    private int nplayers;
+
     public static void main(String[] args)
     {
         launch(args);
@@ -47,7 +50,7 @@ public class JavaFXMain extends Application {
                 }
             });
         });*/
-        switchToCardAssistantScene();
+        switchToConnectionScene();
         primaryStage.show();
     }
 
@@ -193,18 +196,11 @@ public class JavaFXMain extends Application {
         primaryStage.sizeToScene();
     }
 
-    public void switchToSchoolBoardScene()
-    {
-        Parent root;
-        try {
-            root = FXMLLoader.load(getClass().getResource("/SchoolBoardScene.fxml"));
-        } catch (IOException e) {
-            e.printStackTrace();
-            return;
-        }
-        Scene sc = new Scene(root);
-        primaryStage.setScene(sc);
-        primaryStage.setTitle("Login");
-        primaryStage.sizeToScene();
+    public int getNplayers() {
+        return nplayers;
+    }
+
+    public void setNplayers(int nplayers) {
+        this.nplayers = nplayers;
     }
 }
