@@ -20,6 +20,9 @@ public class JavaFXMain extends Application {
     private static JavaFXMain currentApplication;
     private Client client;
 
+
+    private int nplayers;
+
     public static void main(String[] args)
     {
         launch(args);
@@ -191,5 +194,13 @@ public class JavaFXMain extends Application {
         primaryStage.setScene(sc);
         primaryStage.setTitle("CharacterCard");
         primaryStage.sizeToScene();
+    }
+
+    public int getNplayers() {
+        return nplayers;
+    }
+
+    public void setNplayers(int nplayers) {
+        this.nplayers = nplayers;
     }
 }
