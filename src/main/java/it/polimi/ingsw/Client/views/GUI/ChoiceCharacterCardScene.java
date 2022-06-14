@@ -1,5 +1,7 @@
 package it.polimi.ingsw.Client.views.GUI;
 
+import it.polimi.ingsw.Model.CardAssistant;
+import it.polimi.ingsw.Model.DeckCardAssistant;
 import javafx.application.Platform;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -10,9 +12,12 @@ public class ChoiceCharacterCardScene {
     public ImageView imageSecondCharacterCard;
     public ImageView imageThirdCharacterCard;
 
+
     public void initialize()
     {
-        Image firstCharacterCard = new Image("CarteTOT_front.jpg");
+
+         Image firstCharacterCard = new Image("CarteTOT_front.jpg");
+
         imageFirstCharacterCard.setImage(firstCharacterCard);
         Image secondCharacterCard = new Image("CarteTOT_front2.jpg");
         imageSecondCharacterCard.setImage(secondCharacterCard);

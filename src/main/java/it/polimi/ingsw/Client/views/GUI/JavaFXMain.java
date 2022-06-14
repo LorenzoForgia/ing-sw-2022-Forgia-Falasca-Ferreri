@@ -47,7 +47,7 @@ public class JavaFXMain extends Application {
                 }
             });
         });*/
-        switchToSchoolBoardScene();
+        switchToCardAssistantScene();
         primaryStage.show();
     }
 
