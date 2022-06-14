@@ -47,7 +47,7 @@ public class JavaFXMain extends Application {
                 }
             });
         });*/
-        switchToConnectionScene();
+        switchToSchoolBoardScene();
         primaryStage.show();
     }
 
@@ -105,7 +105,20 @@ public class JavaFXMain extends Application {
         primaryStage.setTitle("Login");
         primaryStage.sizeToScene();
     }
-
+    public void switchToWaitingScene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/WaitingScene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("Login");
+        primaryStage.sizeToScene();
+    }
     public void switchToNumberOfPlayerScene()
     {
         Parent root;
@@ -117,8 +130,81 @@ public class JavaFXMain extends Application {
         }
         Scene sc = new Scene(root);
         primaryStage.setScene(sc);
-        primaryStage.setTitle("Login");
+        primaryStage.setTitle("NumberOfPlayer");
         primaryStage.sizeToScene();
     }
 
+    public void switchToChoiceCharacterCardScene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/ChoiceCharacterCardScene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("CharacterCard");
+        primaryStage.sizeToScene();
+    }
+
+    public void switchToIslandTitleScene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/IslandTitlesScene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("CharacterCard");
+        primaryStage.sizeToScene();
+    }
+
+    public void switchToCardAssistantScene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/AssistantCardScene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("CharacterCard");
+        primaryStage.sizeToScene();
+    }
+    public void switchToShowPlayerScene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/ShowPlayerScene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("CharacterCard");
+        primaryStage.sizeToScene();
+    }
+
+    public void switchToSchoolBoardScene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/SchoolBoardScene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("Login");
+        primaryStage.sizeToScene();
+    }
 }

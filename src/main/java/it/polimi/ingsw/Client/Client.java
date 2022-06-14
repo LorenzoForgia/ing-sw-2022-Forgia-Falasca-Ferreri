@@ -15,18 +15,20 @@ import java.util.*;
 
 public class Client implements Runnable
 {
+
+
     private ServerHandler serverHandler;
     private boolean shallTerminate;
     private View nextView;
     private View currentView;
 
 
-/**
+    /**
     public static void main(String[] args)
     {
         /* Instantiate a new Client. The main thread will become the
          * thread where user interaction is handled. */
-/**
+    /**
         Client client = new Client();
         client.run();
     }
@@ -36,7 +38,7 @@ public class Client implements Runnable
         JavaFXMain.main(args);}
 
 
-    @Override
+@Override
     public void run()
     {
         Scanner scanner = new Scanner(System.in);
@@ -145,6 +147,10 @@ public class Client implements Runnable
             shallTerminate = true;
             currentView.stopInteraction();
         }
+    }
+
+    public void setServerHandler(ServerHandler serverHandler) {
+        this.serverHandler = serverHandler;
     }
 
 }

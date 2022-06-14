@@ -5,16 +5,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.Client.views.GUI.SettingGameScene">
    <children>
       <Label layoutX="189.0" layoutY="93.0" text="Scegli il numero di giocatori">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="TwoBotton" layoutX="120.0" layoutY="216.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="48.0" text="2" />
-      <Button fx:id="ThreeBotton" layoutX="276.0" layoutY="215.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="48.0" text="3" />
-      <Button fx:id="FourBotton" layoutX="425.0" layoutY="215.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="48.0" text="4" />
+      <Button fx:id="TwoBotton" layoutX="120.0" layoutY="216.0" mnemonicParsing="false" onAction="#number2OfPlayerButtonClicked" prefHeight="48.0" prefWidth="48.0" text="2" />
+      <Button fx:id="ThreeBotton" layoutX="276.0" layoutY="215.0" mnemonicParsing="false" onAction="#number3OfPlayerButtonClicked" prefHeight="48.0" prefWidth="48.0" text="3" />
+      <Button fx:id="FourBotton" layoutX="425.0" layoutY="215.0" mnemonicParsing="false" onAction="#number4OfPlayerButtonClicked" prefHeight="48.0" prefWidth="48.0" text="4" />
    </children>
 </AnchorPane>

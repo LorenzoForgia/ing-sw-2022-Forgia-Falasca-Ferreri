@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="657.0" prefWidth="927.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.Client.views.GUI.AssistantCardScene">
+   <children>
+      <ImageView fx:id="assistantCard1" fitHeight="200.0" fitWidth="150.0" layoutX="20.0" layoutY="115.0" onMouseClicked="#chosenCard1" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="assistantCard2" fitHeight="200.0" fitWidth="150.0" layoutX="195.0" layoutY="115.0" onMouseClicked="#chosenCard2" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="assistantCard3" fitHeight="200.0" fitWidth="150.0" layoutX="370.0" layoutY="115.0" onMouseClicked="#chosenCard3" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="assistantCard4" fitHeight="200.0" fitWidth="150.0" layoutX="545.0" layoutY="115.0" onMouseClicked="#chosenCard4" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="assistantCard5" fitHeight="200.0" fitWidth="150.0" layoutX="720.0" layoutY="115.0" onMouseClicked="#chosenCard5" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="assistantCard6" fitHeight="200.0" fitWidth="150.0" layoutX="20.0" layoutY="345.0" onMouseClicked="#chosenCard6" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="assistantCard7" fitHeight="200.0" fitWidth="150.0" layoutX="195.0" layoutY="345.0" onMouseClicked="#chosenCard7" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="assistantCard8" fitHeight="200.0" fitWidth="159.0" layoutX="370.0" layoutY="345.0" onMouseClicked="#chosenCard8" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="assistantCard9" fitHeight="200.0" fitWidth="150.0" layoutX="545.0" layoutY="345.0" onMouseClicked="#chosenCard9" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="assistantCard10" fitHeight="200.0" fitWidth="150.0" layoutX="720.0" layoutY="345.0" onMouseClicked="#chosenCard10" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="345.0" layoutY="30.0" prefHeight="34.0" prefWidth="258.0" text="Gioca una carta assistente!" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

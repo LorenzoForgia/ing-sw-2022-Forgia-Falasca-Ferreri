@@ -1,6 +1,9 @@
 package it.polimi.ingsw.messages;
 
 import it.polimi.ingsw.Client.ServerHandler;
+import it.polimi.ingsw.Client.views.GUI.JavaFXMain;
+import it.polimi.ingsw.Client.views.GUI.LoginScene;
+import it.polimi.ingsw.Client.views.GUI.LoginSceneCheck;
 import it.polimi.ingsw.Client.views.PrintAnswerView;
 
 public class AnswIfAllowedMsg extends AnswerMsg {
@@ -22,7 +25,10 @@ public class AnswIfAllowedMsg extends AnswerMsg {
     @Override
     public void processMessage(ServerHandler serverHandler)
     {
-        serverHandler.getClient().transitionToView(new PrintAnswerView(this));
+        LoginSceneCheck l=new LoginSceneCheck(this);
+        l.run();
+
+        /**serverHandler.getClient().transitionToView(new PrintAnswerView(this)); CLI NON CANCELLARE**/
     }
 
     public Status getMoveStatus() {
