@@ -156,7 +156,7 @@ public class JavaFXMain extends Application {
     {
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("/IslandTitlesScene.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/IslandTiles.fxml"));
         } catch (IOException e) {
             e.printStackTrace();
             return;

@@ -1,71 +1,780 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="590.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="680.0" prefWidth="1120.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fx:id="Island1" fitHeight="115.0" fitWidth="90.0" layoutX="37.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Island1" fitHeight="200.0" fitWidth="200.0" layoutX="60.0" layoutY="98.0" opacity="0.64" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@island1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="Island2" fitHeight="115.0" fitWidth="90.0" layoutX="135.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Island2" fitHeight="200.0" fitWidth="200.0" layoutX="252.0" layoutY="30.0" opacity="0.64" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@island1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="Island3" fitHeight="115.0" fitWidth="90.0" layoutX="246.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Island3" fitHeight="200.0" fitWidth="200.0" layoutX="465.0" layoutY="14.0" opacity="0.64" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@island1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="Island4" fitHeight="115.0" fitWidth="90.0" layoutX="360.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Island4" fitHeight="200.0" fitWidth="200.0" layoutX="667.0" layoutY="22.0" opacity="0.64" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@island1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="Island5" fitHeight="115.0" fitWidth="90.0" layoutX="450.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Island5" fitHeight="200.0" fitWidth="200.0" layoutX="867.0" layoutY="81.0" opacity="0.64" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@island1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="Island6" fitHeight="115.0" fitWidth="90.0" layoutX="487.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Island6" fitHeight="200.0" fitWidth="200.0" layoutX="931.0" layoutY="269.0" opacity="0.64" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@island1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="Island7" fitHeight="115.0" fitWidth="90.0" layoutX="450.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Island7" fitHeight="200.0" fitWidth="200.0" layoutX="907.0" layoutY="457.0" opacity="0.64" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@island1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="Island8" fitHeight="115.0" fitWidth="90.0" layoutX="360.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Island8" fitHeight="200.0" fitWidth="200.0" layoutX="711.0" layoutY="521.0" opacity="0.64" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@island1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="Island9" fitHeight="115.0" fitWidth="90.0" layoutX="246.0" layoutY="296.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Island9" fitHeight="200.0" fitWidth="200.0" layoutX="489.0" layoutY="545.0" opacity="0.64" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@island1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="Island10" fitHeight="115.0" fitWidth="90.0" layoutX="135.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Island10" fitHeight="200.0" fitWidth="200.0" layoutX="264.0" layoutY="545.0" opacity="0.64" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@island1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="Island11" fitHeight="115.0" fitWidth="90.0" layoutX="37.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Island11" fitHeight="200.0" fitWidth="200.0" layoutX="79.0" layoutY="477.0" opacity="0.64" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@island1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="Island12" fitHeight="115.0" fitWidth="90.0" layoutX="14.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Island12" fitHeight="200.0" fitWidth="200.0" layoutY="281.0" opacity="0.64" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@island1.png" />
          </image>
       </ImageView>
+      <ImageView fx:id="studentRed1" fitHeight="25.0" fitWidth="31.0" layoutX="144.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_red.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentYellow2" fitHeight="36.0" fitWidth="25.0" layoutX="303.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_yellow.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentRed2" fitHeight="25.0" fitWidth="31.0" layoutX="339.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_red.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentRed3" fitHeight="25.0" fitWidth="31.0" layoutX="553.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_red.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentRed4" fitHeight="25.0" fitWidth="31.0" layoutX="756.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_red.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentRed5" fitHeight="25.0" fitWidth="31.0" layoutX="957.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_red.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentRed6" fitHeight="25.0" fitWidth="31.0" layoutX="1021.0" layoutY="308.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_red.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentRed7" fitHeight="25.0" fitWidth="31.0" layoutX="1038.0" layoutY="547.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_red.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentRed8" fitHeight="25.0" fitWidth="31.0" layoutX="843.0" layoutY="613.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_red.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentRed9" fitHeight="25.0" fitWidth="31.0" layoutX="577.0" layoutY="575.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_red.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentRed10" fitHeight="25.0" fitWidth="31.0" layoutX="372.0" layoutY="586.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_red.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentRed11" fitHeight="25.0" fitWidth="31.0" layoutX="175.0" layoutY="509.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_red.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentRed12" fitHeight="25.0" fitWidth="31.0" layoutX="142.0" layoutY="383.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_red.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentYellow1" fitHeight="36.0" fitWidth="25.0" layoutX="109.0" layoutY="223.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_yellow.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentYellow3" fitHeight="36.0" fitWidth="25.0" layoutX="511.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_yellow.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentYellow4" fitHeight="36.0" fitWidth="25.0" layoutX="711.0" layoutY="144.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_yellow.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentYellow5" fitHeight="36.0" fitWidth="25.0" layoutX="914.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_yellow.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentYellow6" fitHeight="36.0" fitWidth="25.0" layoutX="980.0" layoutY="395.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_yellow.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentYellow7" fitHeight="36.0" fitWidth="25.0" layoutX="967.0" layoutY="574.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_yellow.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentYellow8" fitHeight="36.0" fitWidth="25.0" layoutX="768.0" layoutY="645.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_yellow.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentYellow9" fitHeight="36.0" fitWidth="25.0" layoutX="553.0" layoutY="664.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_yellow.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentYellow10" fitHeight="36.0" fitWidth="25.0" layoutX="316.0" layoutY="669.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_yellow.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentYellow11" fitHeight="36.0" fitWidth="25.0" layoutX="131.0" layoutY="597.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_yellow.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentYellow12" fitHeight="36.0" fitWidth="25.0" layoutX="55.0" layoutY="395.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_yellow.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentPink1" fitHeight="25.0" fitWidth="34.0" layoutX="155.0" layoutY="223.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_pink.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentPink2" fitHeight="25.0" fitWidth="34.0" layoutX="341.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_pink.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentPink3" fitHeight="25.0" fitWidth="34.0" layoutX="565.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_pink.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentPink4" fitHeight="25.0" fitWidth="34.0" layoutX="755.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_pink.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentPink5" fitHeight="25.0" fitWidth="34.0" layoutX="957.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_pink.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentPink6" fitHeight="25.0" fitWidth="34.0" layoutX="1021.0" layoutY="395.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_pink.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentPink7" fitHeight="25.0" fitWidth="34.0" layoutX="1007.0" layoutY="587.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_pink.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentPink8" fitHeight="25.0" fitWidth="34.0" layoutX="816.0" layoutY="652.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_pink.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentPink9" fitHeight="25.0" fitWidth="34.0" layoutX="611.0" layoutY="664.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_pink.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentPink10" fitHeight="25.0" fitWidth="34.0" layoutX="354.0" layoutY="676.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_pink.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentPink11" fitHeight="25.0" fitWidth="34.0" layoutX="168.0" layoutY="607.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_pink.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentPink12" fitHeight="25.0" fitWidth="34.0" layoutX="101.0" layoutY="395.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_pink.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentGreen1" fitHeight="25.0" fitWidth="25.0" layoutX="109.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_green.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentGreen2" fitHeight="25.0" fitWidth="25.0" layoutX="298.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_green.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentGreen3" fitHeight="25.0" fitWidth="25.0" layoutX="518.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_green.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentGreen4" fitHeight="25.0" fitWidth="25.0" layoutX="724.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_green.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentGreen5" fitHeight="25.0" fitWidth="25.0" layoutX="919.0" layoutY="122.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_green.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentGreen6" fitHeight="25.0" fitWidth="25.0" layoutX="981.0" layoutY="311.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_green.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentGreen7" fitHeight="25.0" fitWidth="25.0" layoutX="967.0" layoutY="496.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_green.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentGreen8" fitHeight="25.0" fitWidth="25.0" layoutX="767.0" layoutY="557.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_green.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentGreen9" fitHeight="25.0" fitWidth="25.0" layoutX="543.0" layoutY="586.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_green.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentGreen10" fitHeight="25.0" fitWidth="25.0" layoutX="328.0" layoutY="574.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_green.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentGreen11" fitHeight="25.0" fitWidth="25.0" layoutX="131.0" layoutY="509.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_green.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentGreen12" fitHeight="25.0" fitWidth="25.0" layoutX="60.0" layoutY="320.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_green.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentBlue1" fitHeight="44.0" fitWidth="25.0" layoutX="96.0" layoutY="185.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_blue.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentBlue2" fitHeight="44.0" fitWidth="25.0" layoutX="286.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_blue.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentBlue3" fitHeight="44.0" fitWidth="25.0" layoutX="505.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_blue.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentBlue4" fitHeight="44.0" fitWidth="25.0" layoutX="707.0" layoutY="108.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_blue.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentBlue5" fitHeight="44.0" fitWidth="25.0" layoutX="907.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_blue.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentBlue6" fitHeight="44.0" fitWidth="25.0" layoutX="969.0" layoutY="345.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_blue.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentBlue7" fitHeight="44.0" fitWidth="25.0" layoutX="955.0" layoutY="534.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_blue.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentBlue8" fitHeight="44.0" fitWidth="25.0" layoutX="755.0" layoutY="596.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_blue.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentBlue9" fitHeight="44.0" fitWidth="25.0" layoutX="531.0" layoutY="622.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_blue.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentBlue10" fitHeight="44.0" fitWidth="25.0" layoutX="298.0" layoutY="620.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_blue.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentBlue11" fitHeight="44.0" fitWidth="25.0" layoutX="118.0" layoutY="546.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_blue.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="studentBlue12" fitHeight="44.0" fitWidth="25.0" layoutX="47.0" layoutY="356.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@student_blue.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Tower1" fitHeight="45.0" fitWidth="35.0" layoutX="188.0" layoutY="193.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="Tower2" fitHeight="45.0" fitWidth="35.0" layoutX="373.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="Tower3" fitHeight="45.0" fitWidth="35.0" layoutX="585.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="Tower4" fitHeight="45.0" fitWidth="35.0" layoutX="785.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="Tower5" fitHeight="45.0" fitWidth="35.0" layoutX="989.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="Tower6" fitHeight="45.0" fitWidth="35.0" layoutX="1057.0" layoutY="328.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="Tower7" fitHeight="45.0" fitWidth="35.0" layoutX="997.0" layoutY="479.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="Tower8" fitHeight="45.0" fitWidth="35.0" layoutX="803.0" layoutY="552.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="Tower9" fitHeight="45.0" fitWidth="35.0" layoutX="606.0" layoutY="572.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="Tower10" fitHeight="45.0" fitWidth="35.0" layoutX="403.0" layoutY="606.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="Tower11" fitHeight="45.0" fitWidth="35.0" layoutX="206.0" layoutY="528.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="Tower12" fitHeight="45.0" fitWidth="35.0" layoutX="127.0" layoutY="339.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="motherNature1" fitHeight="54.0" fitWidth="35.0" layoutX="139.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="motherNature2" fitHeight="54.0" fitWidth="35.0" layoutX="324.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="motherNature3" fitHeight="54.0" fitWidth="35.0" layoutX="539.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="motherNature4" fitHeight="54.0" fitWidth="35.0" layoutX="738.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="motherNature5" fitHeight="54.0" fitWidth="35.0" layoutX="944.0" layoutY="158.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="motherNature6" fitHeight="54.0" fitWidth="35.0" layoutX="1013.0" layoutY="346.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="motherNature7" fitHeight="54.0" fitWidth="35.0" layoutX="989.0" layoutY="535.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="motherNature8" fitHeight="54.0" fitWidth="35.0" layoutX="794.0" layoutY="596.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="motherNature9" fitHeight="54.0" fitWidth="35.0" layoutX="578.0" layoutY="617.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="motherNature10" fitHeight="54.0" fitWidth="35.0" layoutX="347.0" layoutY="628.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="motherNature11" fitHeight="54.0" fitWidth="35.0" layoutX="158.0" layoutY="551.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="motherNature12" fitHeight="54.0" fitWidth="35.0" layoutX="83.0" layoutY="353.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="noEntryTiles1" fitHeight="42.0" fitWidth="35.0" layoutX="176.0" layoutY="146.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="noEntryTiles2" fitHeight="42.0" fitWidth="35.0" layoutX="373.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="noEntryTiles3" fitHeight="42.0" fitWidth="35.0" layoutX="588.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="noEntryTiles4" fitHeight="42.0" fitWidth="35.0" layoutX="786.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="noEntryTiles5" fitHeight="42.0" fitWidth="35.0" layoutX="995.0" layoutY="188.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="noEntryTiles6" fitHeight="42.0" fitWidth="35.0" layoutX="1057.0" layoutY="378.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="noEntryTiles7" fitHeight="42.0" fitWidth="35.0" layoutX="1029.0" layoutY="511.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="noEntryTiles8" fitHeight="42.0" fitWidth="35.0" layoutX="837.0" layoutY="572.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="noEntryTiles9" fitHeight="42.0" fitWidth="35.0" layoutX="618.0" layoutY="617.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="noEntryTiles10" fitHeight="42.0" fitWidth="35.0" layoutX="386.0" layoutY="653.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="noEntryTiles11" fitHeight="42.0" fitWidth="35.0" layoutX="202.0" layoutY="590.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="noEntryTiles12" fitHeight="42.0" fitWidth="35.0" layoutX="92.0" layoutY="311.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="size1" layoutX="216.0" layoutY="247.0" text="[1]" />
+      <Label fx:id="size2" layoutX="377.0" layoutY="206.0" text="[1]" />
+      <Label fx:id="size3" layoutX="549.0" layoutY="201.0" text="[1]" />
+      <Label fx:id="size4" layoutX="716.0" layoutY="192.0" text="[1]" />
+      <Label fx:id="size5" layoutX="903.0" layoutY="240.0" text="[1]" />
+      <Label fx:id="size6" layoutX="906.0" layoutY="369.0" text="[1]" />
+      <Label fx:id="size7" layoutX="936.0" layoutY="468.0" text="[1]" />
+      <Label fx:id="size8" layoutX="759.0" layoutY="523.0" text="[1]" />
+      <Label fx:id="size9" layoutX="567.0" layoutY="526.0" text="[1]" />
+      <Label fx:id="size10" layoutX="359.0" layoutY="542.0" text="[1]" />
+      <Label fx:id="size11" layoutX="234.0" layoutY="500.0" text="[1]" />
+      <Label fx:id="size12" layoutX="199.0" layoutY="360.0" text="[1]" />
+      <Label fx:id="numberStudentGreen1" layoutX="90.0" layoutY="142.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentGreen2" layoutX="279.0" layoutY="78.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentGreen3" layoutX="498.0" layoutY="60.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentGreen4" layoutX="700.0" layoutY="70.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentGreen5" layoutX="903.0" layoutY="127.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentGreen6" layoutX="962.0" layoutY="310.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentGreen7" layoutX="947.0" layoutY="499.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentGreen8" layoutX="748.0" layoutY="560.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentGreen9" layoutX="523.0" layoutY="587.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentGreen10" layoutX="303.0" layoutY="570.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentGreen11" layoutX="106.0" layoutY="509.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentGreen12" layoutX="40.0" layoutY="322.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentBlue1" layoutX="76.0" layoutY="191.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentBlue2" layoutX="264.0" layoutY="119.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentBlue3" layoutX="482.0" layoutY="97.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentBlue4" layoutX="682.0" layoutY="110.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentBlue5" layoutX="882.0" layoutY="168.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentBlue6" layoutX="943.0" layoutY="348.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentBlue7" layoutX="928.0" layoutY="541.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentBlue8" layoutX="724.0" layoutY="601.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentBlue9" layoutX="505.0" layoutY="625.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentBlue10" layoutX="271.0" layoutY="625.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentBlue11" layoutX="94.0" layoutY="552.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentBlue12" layoutX="25.0" layoutY="358.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentYellow1" layoutX="86.0" layoutY="230.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentYellow2" layoutX="278.0" layoutY="156.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentYellow3" layoutX="489.0" layoutY="140.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentYellow4" layoutX="689.0" layoutY="150.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentYellow5" layoutX="889.0" layoutY="208.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentYellow6" layoutX="954.0" layoutY="398.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentYellow7" layoutX="947.0" layoutY="578.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentYellow8" layoutX="742.0" layoutY="647.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentYellow9" layoutX="531.0" layoutY="671.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentYellow10" layoutX="296.0" layoutY="672.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentYellow11" layoutX="106.0" layoutY="600.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentYellow12" layoutX="25.0" layoutY="398.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentRed1" layoutX="147.0" layoutY="109.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentRed2" layoutX="344.0" layoutY="65.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentRed3" layoutX="558.0" layoutY="30.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentRed4" layoutX="761.0" layoutY="30.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentRed5" layoutX="960.0" layoutY="97.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentRed6" layoutX="1025.0" layoutY="281.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentRed7" layoutX="1067.0" layoutY="547.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentRed8" layoutX="875.0" layoutY="616.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentRed9" layoutX="581.0" layoutY="552.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentRed10" layoutX="377.0" layoutY="562.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentRed11" layoutX="180.0" layoutY="486.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentRed12" layoutX="173.0" layoutY="389.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentPink1" layoutX="159.0" layoutY="248.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentPink2" layoutX="350.0" layoutY="183.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentPink3" layoutX="570.0" layoutY="168.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentPink4" layoutX="761.0" layoutY="183.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentPink5" layoutX="962.0" layoutY="246.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentPink6" layoutX="1028.0" layoutY="424.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentPink7" layoutX="1012.0" layoutY="612.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentPink8" layoutX="821.0" layoutY="679.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentPink9" layoutX="633.0" layoutY="684.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentPink10" layoutX="359.0" layoutY="704.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentPink11" layoutX="173.0" layoutY="635.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberStudentPink12" layoutX="106.0" layoutY="424.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberTower1" layoutX="216.0" layoutY="204.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberTower2" layoutX="401.0" layoutY="78.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberTower3" layoutX="616.0" layoutY="70.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberTower4" layoutX="814.0" layoutY="85.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberTower5" layoutX="1016.0" layoutY="143.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberTower6" layoutX="1087.0" layoutY="337.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberTower7" layoutX="1027.0" layoutY="485.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberTower8" layoutX="828.0" layoutY="559.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberTower9" layoutX="634.0" layoutY="580.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberTower10" layoutX="431.0" layoutY="618.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberTower11" layoutX="234.0" layoutY="534.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberTower12" layoutX="159.0" layoutY="348.0" text="0x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
