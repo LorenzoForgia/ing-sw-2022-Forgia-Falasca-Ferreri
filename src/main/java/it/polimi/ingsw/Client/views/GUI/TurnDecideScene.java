@@ -1,9 +1,6 @@
 package it.polimi.ingsw.Client.views.GUI;
 
-import it.polimi.ingsw.messages.AnsGameStartedMsg;
-import it.polimi.ingsw.messages.AnsTurnDecidedMsg;
-import it.polimi.ingsw.messages.FirstPlayerTurnMsg;
-import it.polimi.ingsw.messages.TurnDecidedMsg;
+import it.polimi.ingsw.messages.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
@@ -33,7 +30,7 @@ public class TurnDecideScene {
                 player4.setText(answerMsg.getNickname().get(i));
             }
         }
-        //FirstPlayerTurnMsg firstPlayerTurnMsg = new FirstPlayerTurnMsg();
-        //JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(firstPlayerTurnMsg);*/
+        AskCAMsg a = new AskCAMsg();
+        JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(a);
     }
 }
