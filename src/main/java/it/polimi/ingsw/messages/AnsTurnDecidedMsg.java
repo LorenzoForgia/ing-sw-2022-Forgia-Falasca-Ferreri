@@ -1,6 +1,7 @@
 package it.polimi.ingsw.messages;
 
 import it.polimi.ingsw.Client.ServerHandler;
+import it.polimi.ingsw.Client.views.GUI.TurnDecideSceneView;
 import it.polimi.ingsw.Client.views.GameStartedView;
 import it.polimi.ingsw.Client.views.TurnDecidedView;
 
@@ -16,6 +17,8 @@ public class AnsTurnDecidedMsg extends AnswerMsg{
     @Override
     public void processMessage(ServerHandler serverHandler)
     {
+        TurnDecideSceneView t=new TurnDecideSceneView(this);
+        t.run();
         /**serverHandler.getClient().transitionToView(new TurnDecidedView(this));  CLI **/
     }
     public ArrayList<String> getNickname() {

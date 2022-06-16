@@ -196,6 +196,21 @@ public class JavaFXMain extends Application {
         primaryStage.sizeToScene();
     }
 
+    public void switchToTurnDecideScene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/TurnDecidedScene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("orderofPlayers");
+        primaryStage.sizeToScene();
+    }
+
     public int getNplayers() {
         return nplayers;
     }

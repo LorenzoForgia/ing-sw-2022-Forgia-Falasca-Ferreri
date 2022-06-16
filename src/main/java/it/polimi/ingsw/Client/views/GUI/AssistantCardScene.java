@@ -101,45 +101,53 @@ public class AssistantCardScene {
     public void chosenCard1(){
         TurnDecidedMsg turnDecidedMsg= new TurnDecidedMsg(CardAssistant.Uno);
         JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(turnDecidedMsg);
+        JavaFXMain.getCurrentApplication().switchToWaitingScene();
 
     }
     public void chosenCard2(){
         TurnDecidedMsg turnDecidedMsg= new TurnDecidedMsg(CardAssistant.Due);
         JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(turnDecidedMsg);
+        JavaFXMain.getCurrentApplication().switchToWaitingScene();
     }
     public void chosenCard3(){
         TurnDecidedMsg turnDecidedMsg= new TurnDecidedMsg(CardAssistant.Tre);
         JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(turnDecidedMsg);
-
+        JavaFXMain.getCurrentApplication().switchToWaitingScene();
     }
     public void chosenCard4(){
         TurnDecidedMsg turnDecidedMsg= new TurnDecidedMsg(CardAssistant.Quattro);
         JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(turnDecidedMsg);
-
+        JavaFXMain.getCurrentApplication().switchToWaitingScene();
     }
     public void chosenCard5(){
         TurnDecidedMsg turnDecidedMsg= new TurnDecidedMsg(CardAssistant.Cinque);
         JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(turnDecidedMsg);
+        JavaFXMain.getCurrentApplication().switchToWaitingScene();
     }
     public void chosenCard6(){
         TurnDecidedMsg turnDecidedMsg= new TurnDecidedMsg(CardAssistant.Sei);
         JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(turnDecidedMsg);
+        JavaFXMain.getCurrentApplication().switchToWaitingScene();
     }
     public void chosenCard7(){
         TurnDecidedMsg turnDecidedMsg= new TurnDecidedMsg(CardAssistant.Sette);
         JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(turnDecidedMsg);
+        JavaFXMain.getCurrentApplication().switchToWaitingScene();
     }
     public void chosenCard8(){
         TurnDecidedMsg turnDecidedMsg= new TurnDecidedMsg(CardAssistant.Otto);
         JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(turnDecidedMsg);
+        JavaFXMain.getCurrentApplication().switchToWaitingScene();
     }
     public void chosenCard9(){
         TurnDecidedMsg turnDecidedMsg= new TurnDecidedMsg(CardAssistant.Nove);
         JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(turnDecidedMsg);
+        JavaFXMain.getCurrentApplication().switchToWaitingScene();
     }
     public void chosenCard10(){
         TurnDecidedMsg turnDecidedMsg= new TurnDecidedMsg(CardAssistant.Uno);
         JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(turnDecidedMsg);
+        JavaFXMain.getCurrentApplication().switchToWaitingScene();
     }
 
 
