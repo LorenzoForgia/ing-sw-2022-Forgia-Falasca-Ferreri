@@ -6,64 +6,64 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="680.0" prefWidth="1120.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="680.0" prefWidth="1120.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.Client.views.GUI.IslandTilesScene">
    <children>
-      <ImageView fx:id="Island1" fitHeight="200.0" fitWidth="200.0" layoutX="60.0" layoutY="98.0" opacity="0.64" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Island1" fitHeight="200.0" fitWidth="200.0" layoutX="60.0" layoutY="98.0" onMouseClicked="#chosenIsland1" opacity="0.64" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@island1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="Island2" fitHeight="200.0" fitWidth="200.0" layoutX="252.0" layoutY="30.0" opacity="0.64" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Island2" fitHeight="200.0" fitWidth="200.0" layoutX="252.0" layoutY="30.0" onMouseClicked="#chosenIsland2" opacity="0.64" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@island1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="Island3" fitHeight="200.0" fitWidth="200.0" layoutX="465.0" layoutY="14.0" opacity="0.64" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Island3" fitHeight="200.0" fitWidth="200.0" layoutX="465.0" layoutY="14.0" onMouseClicked="#chosenIsland3" opacity="0.64" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@island1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="Island4" fitHeight="200.0" fitWidth="200.0" layoutX="667.0" layoutY="22.0" opacity="0.64" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Island4" fitHeight="200.0" fitWidth="200.0" layoutX="667.0" layoutY="22.0" onMouseClicked="#chosenIsland4" opacity="0.64" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@island1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="Island5" fitHeight="200.0" fitWidth="200.0" layoutX="867.0" layoutY="81.0" opacity="0.64" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Island5" fitHeight="200.0" fitWidth="200.0" layoutX="867.0" layoutY="81.0" onMouseClicked="#chosenIsland5" opacity="0.64" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@island1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="Island6" fitHeight="200.0" fitWidth="200.0" layoutX="931.0" layoutY="269.0" opacity="0.64" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Island6" fitHeight="200.0" fitWidth="200.0" layoutX="931.0" layoutY="269.0" onMouseClicked="#chosenIsland6" opacity="0.64" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@island1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="Island7" fitHeight="200.0" fitWidth="200.0" layoutX="907.0" layoutY="457.0" opacity="0.64" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Island7" fitHeight="200.0" fitWidth="200.0" layoutX="907.0" layoutY="457.0" onMouseClicked="#chosenIsland7" opacity="0.64" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@island1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="Island8" fitHeight="200.0" fitWidth="200.0" layoutX="711.0" layoutY="521.0" opacity="0.64" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Island8" fitHeight="200.0" fitWidth="200.0" layoutX="711.0" layoutY="521.0" onMouseClicked="#chosenIsland8" opacity="0.64" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@island1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="Island9" fitHeight="200.0" fitWidth="200.0" layoutX="489.0" layoutY="545.0" opacity="0.64" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Island9" fitHeight="200.0" fitWidth="200.0" layoutX="489.0" layoutY="545.0" onMouseClicked="#chosenIsland9" opacity="0.64" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@island1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="Island10" fitHeight="200.0" fitWidth="200.0" layoutX="264.0" layoutY="545.0" opacity="0.64" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Island10" fitHeight="200.0" fitWidth="200.0" layoutX="264.0" layoutY="545.0" onMouseClicked="#chosenIsland10" opacity="0.64" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@island1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="Island11" fitHeight="200.0" fitWidth="200.0" layoutX="79.0" layoutY="477.0" opacity="0.64" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Island11" fitHeight="200.0" fitWidth="200.0" layoutX="79.0" layoutY="477.0" onMouseClicked="#chosenIsland11" opacity="0.64" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@island1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="Island12" fitHeight="200.0" fitWidth="200.0" layoutY="281.0" opacity="0.64" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Island12" fitHeight="200.0" fitWidth="200.0" layoutY="281.0" onMouseClicked="#chosenIsland12" opacity="0.64" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@island1.png" />
          </image>

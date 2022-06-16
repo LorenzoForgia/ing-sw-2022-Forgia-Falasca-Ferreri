@@ -1,12 +1,13 @@
 package it.polimi.ingsw.Client.views.GUI;
 
 import it.polimi.ingsw.messages.AnsGameStartedMsg;
-import it.polimi.ingsw.messages.AnswerMsg;
+import it.polimi.ingsw.messages.AnsTurnDecidedMsg;
 import it.polimi.ingsw.messages.FirstPlayerTurnMsg;
+import it.polimi.ingsw.messages.TurnDecidedMsg;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class ShowPlayerScene {
+public class TurnDecideScene {
     @FXML
     private Label player1;
     @FXML
@@ -15,14 +16,12 @@ public class ShowPlayerScene {
     private Label player3;
     @FXML
     private Label player4;
-    private static AnsGameStartedMsg answerMsg;
-    public static void setAnswerMsg(AnsGameStartedMsg answerMsg) {
-        ShowPlayerScene.answerMsg = answerMsg;
+    private static AnsTurnDecidedMsg answerMsg;
+    public static void setAnswerMsg(AnsTurnDecidedMsg answerMsg) {
+        TurnDecideScene.answerMsg = answerMsg;
     }
-
-
-
     public void initialize(){
+
         for(int i=0; i<answerMsg.getNickname().size(); i++){
             if(i==0){
                 player1.setText(answerMsg.getNickname().get(i));
@@ -34,7 +33,7 @@ public class ShowPlayerScene {
                 player4.setText(answerMsg.getNickname().get(i));
             }
         }
-        FirstPlayerTurnMsg firstPlayerTurnMsg = new FirstPlayerTurnMsg();
-        JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(firstPlayerTurnMsg);
+        //FirstPlayerTurnMsg firstPlayerTurnMsg = new FirstPlayerTurnMsg();
+        //JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(firstPlayerTurnMsg);*/
     }
 }
