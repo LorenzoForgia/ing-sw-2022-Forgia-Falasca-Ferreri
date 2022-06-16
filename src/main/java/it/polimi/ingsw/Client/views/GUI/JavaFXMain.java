@@ -50,7 +50,7 @@ public class JavaFXMain extends Application {
                 }
             });
         });*/
-        switchToConnectionScene();
+        switchToIslandTitleScene();
         primaryStage.show();
     }
 
