@@ -203,4 +203,32 @@ public class JavaFXMain extends Application {
     public void setNplayers(int nplayers) {
         this.nplayers = nplayers;
     }
+    public void switchToMoveStudent1Scene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/MoveStudent1Scene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("CharacterCard");
+        primaryStage.sizeToScene();
+    }
+    public void switchToMS1DiningOrIslandScene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/MS1DiningOrIslandScene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("CharacterCard");
+        primaryStage.sizeToScene();
+    }
 }
