@@ -196,6 +196,21 @@ public class JavaFXMain extends Application {
         primaryStage.sizeToScene();
     }
 
+    public void switchToTurnDecideScene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/TurnDecidedScene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("orderofPlayers");
+        primaryStage.sizeToScene();
+    }
+
     public int getNplayers() {
         return nplayers;
     }
@@ -203,4 +218,75 @@ public class JavaFXMain extends Application {
     public void setNplayers(int nplayers) {
         this.nplayers = nplayers;
     }
+    public void switchToMoveStudent1Scene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/MoveStudent1Scene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("CharacterCard");
+        primaryStage.sizeToScene();
+    }
+    public void switchToMS1DiningOrIslandScene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/MS1DiningOrIslandScene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("Eryantis");
+        primaryStage.sizeToScene();
+    }
+    public void switchToMS2DiningOrIslandScene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/MS2DiningOrIslandScene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("Eryantis");
+        primaryStage.sizeToScene();
+    }
+    public void switchToMS3DiningOrIslandScene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/MS3DiningOrIslandScene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("Eryantis");
+        primaryStage.sizeToScene();
+    }
+    public void switchToMS4DiningOrIslandScene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/MS4DiningOrIslandScene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("Eryantis");
+        primaryStage.sizeToScene();
+    }
+
 }

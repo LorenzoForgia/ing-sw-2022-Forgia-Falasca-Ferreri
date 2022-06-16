@@ -2,6 +2,7 @@ package it.polimi.ingsw.messages;
 
 import it.polimi.ingsw.Client.ServerHandler;
 
+import it.polimi.ingsw.Client.views.GUI.MoveStudent1SceneView;
 import it.polimi.ingsw.Client.views.MoveStudent1View;
 import it.polimi.ingsw.Client.views.PlayCC1View;
 import it.polimi.ingsw.Model.CharacterCard;
@@ -33,7 +34,9 @@ public class AnsAskCAMsg extends AnswerMsg{
         if(modexp){
             serverHandler.getClient().transitionToView(new PlayCC1View(this));
         }else{
-            serverHandler.getClient().transitionToView(new MoveStudent1View(this));
+            MoveStudent1SceneView m=new MoveStudent1SceneView();
+            m.run();
+           // serverHandler.getClient().transitionToView(new MoveStudent1View(this)); CLI NON CANCELLARE
         }
     }
     public String GetPlayer(){
