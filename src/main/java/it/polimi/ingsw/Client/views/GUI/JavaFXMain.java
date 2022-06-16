@@ -243,7 +243,50 @@ public class JavaFXMain extends Application {
         }
         Scene sc = new Scene(root);
         primaryStage.setScene(sc);
-        primaryStage.setTitle("CharacterCard");
+        primaryStage.setTitle("Eryantis");
         primaryStage.sizeToScene();
     }
+    public void switchToMS2DiningOrIslandScene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/MS2DiningOrIslandScene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("Eryantis");
+        primaryStage.sizeToScene();
+    }
+    public void switchToMS3DiningOrIslandScene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/MS3DiningOrIslandScene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("Eryantis");
+        primaryStage.sizeToScene();
+    }
+    public void switchToMS4DiningOrIslandScene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/MS4DiningOrIslandScene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("Eryantis");
+        primaryStage.sizeToScene();
+    }
+
 }
