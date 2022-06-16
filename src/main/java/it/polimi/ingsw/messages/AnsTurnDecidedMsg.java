@@ -15,7 +15,9 @@ public class AnsTurnDecidedMsg extends AnswerMsg{
     }
     @Override
     public void processMessage(ServerHandler serverHandler)
-    {serverHandler.getClient().transitionToView(new TurnDecidedView(this));}
+    {
+        /**serverHandler.getClient().transitionToView(new TurnDecidedView(this));  CLI **/
+    }
     public ArrayList<String> getNickname() {
         return nickname;
     }

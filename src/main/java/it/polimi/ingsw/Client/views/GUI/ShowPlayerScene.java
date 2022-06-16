@@ -34,7 +34,7 @@ public class ShowPlayerScene {
                 player4.setText(answerMsg.getNickname().get(i));
             }
         }
-       // FirstPlayerTurnMsg firstPlayerTurnMsg = new FirstPlayerTurnMsg();
-       // JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(firstPlayerTurnMsg);
+        FirstPlayerTurnMsg firstPlayerTurnMsg = new FirstPlayerTurnMsg();
+        JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(firstPlayerTurnMsg);
     }
 }

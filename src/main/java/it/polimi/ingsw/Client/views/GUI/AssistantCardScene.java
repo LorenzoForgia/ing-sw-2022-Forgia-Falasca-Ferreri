@@ -3,6 +3,8 @@ package it.polimi.ingsw.Client.views.GUI;
 import it.polimi.ingsw.Exception.CardAssistantNotAvailableException;
 import it.polimi.ingsw.Model.CardAssistant;
 import it.polimi.ingsw.Model.DeckCardAssistant;
+import it.polimi.ingsw.messages.AnsFirstPlayerTurnMsg;
+import it.polimi.ingsw.messages.TurnDecidedMsg;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
@@ -24,11 +26,15 @@ public class AssistantCardScene {
     private DeckCardAssistant deckCardAssistant;
 
 
+
+    private static AnsFirstPlayerTurnMsg answerMsg;
+    public static void setAnswerMsg(AnsFirstPlayerTurnMsg answerMsg) {
+        AssistantCardScene.answerMsg = answerMsg;
+    }
+
     public void initialize()
     {
-        deckCardAssistant = new DeckCardAssistant();
-        deckCardAssistant.RemoveCard(CardAssistant.Cinque);
-        deckCardAssistant.RemoveCard(CardAssistant.Uno);
+        deckCardAssistant =answerMsg.getDca();
         if(deckCardAssistant.GetDeck().contains(CardAssistant.Uno)){
             Image imageAssCard1 = new Image("Assistente (1).png");
             assistantCard1.setImage(imageAssCard1);
@@ -93,34 +99,47 @@ public class AssistantCardScene {
     }
 
     public void chosenCard1(){
-        System.out.println("Ho giocato la carta Uno");
+        TurnDecidedMsg turnDecidedMsg= new TurnDecidedMsg(CardAssistant.Uno);
+        JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(turnDecidedMsg);
+
     }
     public void chosenCard2(){
-        System.out.println("Ho giocato la carta Due");
+        TurnDecidedMsg turnDecidedMsg= new TurnDecidedMsg(CardAssistant.Due);
+        JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(turnDecidedMsg);
     }
     public void chosenCard3(){
-        System.out.println("Ho giocato la carta Tre");
+        TurnDecidedMsg turnDecidedMsg= new TurnDecidedMsg(CardAssistant.Tre);
+        JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(turnDecidedMsg);
+
     }
     public void chosenCard4(){
-        System.out.println("Ho giocato la carta Quattro");
+        TurnDecidedMsg turnDecidedMsg= new TurnDecidedMsg(CardAssistant.Quattro);
+        JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(turnDecidedMsg);
+
     }
     public void chosenCard5(){
-        System.out.println("Ho giocato la carta 5");
+        TurnDecidedMsg turnDecidedMsg= new TurnDecidedMsg(CardAssistant.Cinque);
+        JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(turnDecidedMsg);
     }
     public void chosenCard6(){
-        System.out.println("Ho giocato la carta 6");
+        TurnDecidedMsg turnDecidedMsg= new TurnDecidedMsg(CardAssistant.Sei);
+        JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(turnDecidedMsg);
     }
     public void chosenCard7(){
-        System.out.println("Ho giocato la carta 7");
+        TurnDecidedMsg turnDecidedMsg= new TurnDecidedMsg(CardAssistant.Sette);
+        JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(turnDecidedMsg);
     }
     public void chosenCard8(){
-        System.out.println("Ho giocato la carta 8");
+        TurnDecidedMsg turnDecidedMsg= new TurnDecidedMsg(CardAssistant.Otto);
+        JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(turnDecidedMsg);
     }
     public void chosenCard9(){
-        System.out.println("Ho giocato la carta 9");
+        TurnDecidedMsg turnDecidedMsg= new TurnDecidedMsg(CardAssistant.Nove);
+        JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(turnDecidedMsg);
     }
     public void chosenCard10(){
-        System.out.println("Ho giocato la carta 10");
+        TurnDecidedMsg turnDecidedMsg= new TurnDecidedMsg(CardAssistant.Uno);
+        JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(turnDecidedMsg);
     }
 
 
