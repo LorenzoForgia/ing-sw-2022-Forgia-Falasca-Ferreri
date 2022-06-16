@@ -1,20 +1,16 @@
 package it.polimi.ingsw.Client.views.GUI;
 
-import it.polimi.ingsw.Model.CardAssistant;
-import it.polimi.ingsw.Model.DeckCardAssistant;
-import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-public class ChoiceCharacterCardScene {
-
+public class PlayCC1Scene {
     public ImageView imageFirstCharacterCard;
     public ImageView imageSecondCharacterCard;
     public ImageView imageThirdCharacterCard;
 
 
-    public void initialize()
-    {
+    public void initialize() {
         Image firstCharacterCard = new Image("CarteTOT_front.jpg");
         imageFirstCharacterCard.setImage(firstCharacterCard);
         Image secondCharacterCard = new Image("CarteTOT_front2.jpg");
@@ -22,5 +18,10 @@ public class ChoiceCharacterCardScene {
         Image thirdCharacterCard = new Image("CarteTOT_front3.jpg");
         imageThirdCharacterCard.setImage(thirdCharacterCard);
     }
-
+    public void noClicked(ActionEvent event){
+        JavaFXMain.getCurrentApplication().switchToMoveStudent1Scene();
+    }
+    public void siClicked(ActionEvent event){
+        JavaFXMain.getCurrentApplication().switchToChoiceCharacterCardScene();
+    }
 }

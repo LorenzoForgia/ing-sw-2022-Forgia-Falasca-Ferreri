@@ -232,6 +232,49 @@ public class JavaFXMain extends Application {
         primaryStage.setTitle("CharacterCard");
         primaryStage.sizeToScene();
     }
+    public void switchToMoveStudent2Scene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/MoveStudent2Scene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("Eryantis");
+        primaryStage.sizeToScene();
+    }
+    public void switchToMoveStudent3Scene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/MoveStudent3Scene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("Eryantis");
+        primaryStage.sizeToScene();
+    }
+    public void switchToMoveStudent4Scene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/MoveStudent4Scene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("Eryantis");
+        primaryStage.sizeToScene();
+    }
+
     public void switchToMS1DiningOrIslandScene()
     {
         Parent root;

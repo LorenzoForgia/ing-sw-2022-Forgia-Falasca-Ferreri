@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.Client.views.GUI.PlayCC2Scene">
+    <children>
+        <ImageView fx:id="imageFirstCharacterCard" fitHeight="183.0" fitWidth="143.0" layoutX="65.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true" />
+        <ImageView fx:id="imageSecondCharacterCard" fitHeight="183.0" fitWidth="143.0" layoutX="230.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true" />
+        <ImageView fx:id="imageThirdCharacterCard" fitHeight="183.0" fitWidth="143.0" layoutX="389.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true" />
+        <Label layoutX="164.0" layoutY="35.0" text="Vuoi giocare una carta personaggio?" textAlignment="CENTER">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Button fx:id="si" layoutX="208.0" layoutY="84.0" mnemonicParsing="false" onAction="#siClicked" text="Si">
+            <font>
+                <Font size="17.0" />
+            </font>
+        </Button>
+        <Button fx:id="no" layoutX="345.0" layoutY="84.0" mnemonicParsing="false" onAction="#noClicked" text="No">
+            <font>
+                <Font size="17.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>
