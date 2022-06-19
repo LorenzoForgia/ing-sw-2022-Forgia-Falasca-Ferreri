@@ -1,13 +1,15 @@
 package it.polimi.ingsw.Client.views.GUI;
 
-import it.polimi.ingsw.Model.ColorTower;
-import it.polimi.ingsw.Model.SchoolBoard;
+
+import it.polimi.ingsw.Model.*;
+import it.polimi.ingsw.messages.AnsAskCAMsg;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
-
 import java.util.ArrayList;
 
 
@@ -158,12 +160,38 @@ public class SchoolBoardScene {
     private ImageView teacher4;
     @FXML
     private ImageView teacher5;
+    @FXML
+    private Label playerSchoolBoardWritten;
 
-    SchoolBoard schoolBoardToShow;
+    private static int numberOfSceneToComeBack;
+    private SchoolBoard schoolBoardToShow;
+    private static Player player;
 
-    public void setSchoolBoardToShow(SchoolBoard schoolBoardToShow) {
-        this.schoolBoardToShow = schoolBoardToShow;
+
+    /** number to decide where to come back
+     * 0 is for AssistantCardScene
+     * 1 is for MoveStudentScene1
+     * 2 is for MoveStudentScene2
+     * **/
+    public static void setNumberOfSceneToComeBack(int numberOfSceneToComeBack) {
+        SchoolBoardScene.numberOfSceneToComeBack = numberOfSceneToComeBack;
     }
+
+    public static void setPlayer(Player player) {
+        SchoolBoardScene.player = player;
+    }
+
+
+    public void backToSceneButtonClicked(ActionEvent event){
+        if(numberOfSceneToComeBack==0){
+            JavaFXMain.getCurrentApplication().switchToCardAssistantScene();
+        }else if(numberOfSceneToComeBack==1){
+            JavaFXMain.getCurrentApplication().switchToMoveStudent1Scene();
+        }
+    }
+
+
+
 
     private void getTheRightColor(it.polimi.ingsw.Model.Color color, Circle circle){
         if(color.equals(it.polimi.ingsw.Model.Color.Green)){
@@ -180,6 +208,9 @@ public class SchoolBoardScene {
     }
 
     public void initialize() {
+
+        schoolBoardToShow= player.getMySchoolBoard();
+        playerSchoolBoardWritten.setText("Plancia di " + player.getNickName());
 
         ArrayList<Circle> entranceStudent = new ArrayList<>();
         entranceStudent.add(0, Entrance1);

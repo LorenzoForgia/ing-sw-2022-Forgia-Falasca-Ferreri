@@ -29,13 +29,5 @@ public class MoveStudent3Scene {
         color=Color.Pink;
         JavaFXMain.getCurrentApplication().switchToMS3DiningOrIslandScene();
     }
-    public void DiningClicked(ActionEvent event){
-        location=12;
-        MoveStudent3Msg moveStudent3Msg= new MoveStudent3Msg(color, location);
-        JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent3Msg);
-    }
-    public void IslandClicked(ActionEvent event){
-        JavaFXMain.getCurrentApplication().switchToIslandTitleScene();
-    }
 
 }

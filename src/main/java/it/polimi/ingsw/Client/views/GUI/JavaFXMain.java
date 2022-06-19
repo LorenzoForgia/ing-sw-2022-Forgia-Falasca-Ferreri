@@ -331,6 +331,20 @@ public class JavaFXMain extends Application {
         primaryStage.setTitle("Eryantis");
         primaryStage.sizeToScene();
     }
+    public void switchToSchoolBoardScene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/SchoolBoardScene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("Eryantis");
+        primaryStage.sizeToScene();
+    }
     public void switchToAskForMotherNatureScene()
     {
         Parent root;

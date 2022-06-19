@@ -34,7 +34,7 @@ public class AnsAskCAMsg extends AnswerMsg{
         if(modexp){
             serverHandler.getClient().transitionToView(new PlayCC1View(this));
         }else{
-            MoveStudent1SceneView m=new MoveStudent1SceneView();
+            MoveStudent1SceneView m=new MoveStudent1SceneView(this);
             m.run();
            // serverHandler.getClient().transitionToView(new MoveStudent1View(this)); CLI NON CANCELLARE
         }
