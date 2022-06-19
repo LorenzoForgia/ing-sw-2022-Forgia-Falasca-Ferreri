@@ -1,7 +1,7 @@
 package it.polimi.ingsw.Client.views.GUI;
 
-import it.polimi.ingsw.Model.ColorTower;
-import it.polimi.ingsw.Model.SchoolBoard;
+
+import it.polimi.ingsw.Model.*;
 import it.polimi.ingsw.messages.AnsAskCAMsg;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -160,9 +160,10 @@ public class SchoolBoardScene {
     private ImageView teacher4;
     @FXML
     private ImageView teacher5;
-    private static SchoolBoard schoolBoardToShow;
+
     private static int numberOfSceneToComeBack;
-    private static String namePlayer;
+    private SchoolBoard schoolBoardToShow;
+    private static Player player;
 
 
     /** number to decide where to come back
@@ -174,9 +175,10 @@ public class SchoolBoardScene {
         SchoolBoardScene.numberOfSceneToComeBack = numberOfSceneToComeBack;
     }
 
-    public static void setNamePlayer(String namePlayer) {
-        SchoolBoardScene.namePlayer = namePlayer;
+    public static void setPlayer(Player player) {
+        SchoolBoardScene.player = player;
     }
+
 
     public void backToSceneButtonClicked(ActionEvent event){
         if(numberOfSceneToComeBack==0){
@@ -188,9 +190,6 @@ public class SchoolBoardScene {
 
 
 
-    public static void setSchoolBoardToShow(SchoolBoard schoolBoardToShow) {
-        SchoolBoardScene.schoolBoardToShow = schoolBoardToShow;
-    }
 
     private void getTheRightColor(it.polimi.ingsw.Model.Color color, Circle circle){
         if(color.equals(it.polimi.ingsw.Model.Color.Green)){
@@ -207,6 +206,8 @@ public class SchoolBoardScene {
     }
 
     public void initialize() {
+
+        schoolBoardToShow= player.getMySchoolBoard();
 
         ArrayList<Circle> entranceStudent = new ArrayList<>();
         entranceStudent.add(0, Entrance1);

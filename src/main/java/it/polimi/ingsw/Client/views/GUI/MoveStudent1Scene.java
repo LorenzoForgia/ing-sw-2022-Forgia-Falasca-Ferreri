@@ -99,30 +99,33 @@ public class MoveStudent1Scene {
         IslandTilesScene.setOnlyObserv(true);
         IslandTilesScene.setNumberOfSceneToComeBack(1);
         IslandTilesScene.setIslands(answerMsg.GetGB().GetIslands());
-
+        JavaFXMain.getCurrentApplication().switchToIslandTitleScene();
     }
 
     public void showSchoolBoard1Selected(){
-        SchoolBoardScene.setSchoolBoardToShow(answerMsg.GetGB().getSchoolBoard().get(0));
+
         SchoolBoardScene.setNumberOfSceneToComeBack(1);
+        SchoolBoardScene.setPlayer(answerMsg.GetPlayers().get(0));
         JavaFXMain.getCurrentApplication().switchToSchoolBoardScene();
 
     }
     public void showSchoolBoard2Selected(){
-        SchoolBoardScene.setSchoolBoardToShow(answerMsg.GetGB().getSchoolBoard().get(1));
+
         SchoolBoardScene.setNumberOfSceneToComeBack(1);
+        SchoolBoardScene.setPlayer(answerMsg.GetPlayers().get(1));
         JavaFXMain.getCurrentApplication().switchToSchoolBoardScene();
 
     }
     public void showSchoolBoard3Selected(){
-        SchoolBoardScene.setSchoolBoardToShow(answerMsg.GetGB().getSchoolBoard().get(2));
+
         SchoolBoardScene.setNumberOfSceneToComeBack(1);
+        SchoolBoardScene.setPlayer(answerMsg.GetPlayers().get(2));
         JavaFXMain.getCurrentApplication().switchToSchoolBoardScene();
     }
 
     public void showSchoolBoard4Selected(){
-        SchoolBoardScene.setSchoolBoardToShow(answerMsg.GetGB().getSchoolBoard().get(3));
         SchoolBoardScene.setNumberOfSceneToComeBack(1);
+        SchoolBoardScene.setPlayer(answerMsg.GetPlayers().get(3));
         JavaFXMain.getCurrentApplication().switchToSchoolBoardScene();
     }
 
