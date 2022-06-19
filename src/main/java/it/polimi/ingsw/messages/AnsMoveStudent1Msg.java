@@ -33,7 +33,7 @@ public class AnsMoveStudent1Msg extends AnswerMsg{
         if(modexp){
             serverHandler.getClient().transitionToView(new PlayCC2View(this));
         }else{
-            MoveStudent2SceneView m=new MoveStudent2SceneView();
+            MoveStudent2SceneView m=new MoveStudent2SceneView(this);
             m.run();
            // serverHandler.getClient().transitionToView(new MoveStudent2View(this)); CLI
         }
