@@ -2,6 +2,7 @@ package it.polimi.ingsw.messages;
 
 import it.polimi.ingsw.Client.ServerHandler;
 import it.polimi.ingsw.Client.views.ColorExc1View;
+import it.polimi.ingsw.Client.views.GUI.ColorExc1Scene;
 
 public class AnsColorExc1Msg extends AnswerMsg{
     private String name;
@@ -13,7 +14,9 @@ public class AnsColorExc1Msg extends AnswerMsg{
     @Override
     public void processMessage(ServerHandler serverHandler)
     {
-        serverHandler.getClient().transitionToView(new ColorExc1View(this));
+        ColorExc1Scene c= new ColorExc1Scene(this);
+        c.run();
+        /*serverHandler.getClient().transitionToView(new ColorExc1View(this));*/
     }
     public String GetPlayer(){
         return name;
