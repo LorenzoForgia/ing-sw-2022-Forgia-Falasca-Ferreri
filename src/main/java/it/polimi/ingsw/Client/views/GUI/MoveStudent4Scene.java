@@ -29,13 +29,5 @@ public class MoveStudent4Scene {
         color=Color.Pink;
         JavaFXMain.getCurrentApplication().switchToMS4DiningOrIslandScene();
     }
-    public void DiningClicked(ActionEvent event){
-        location=12;
-        MoveStudent4Msg moveStudent4Msg= new MoveStudent4Msg(color, location);
-        JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent4Msg);
-    }
-    public void IslandClicked(ActionEvent event){
-        JavaFXMain.getCurrentApplication().switchToIslandTitleScene();
-    }
 
 }
