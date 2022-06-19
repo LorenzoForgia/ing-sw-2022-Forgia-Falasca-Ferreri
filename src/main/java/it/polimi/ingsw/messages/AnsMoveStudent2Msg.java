@@ -1,6 +1,7 @@
 package it.polimi.ingsw.messages;
 
 import it.polimi.ingsw.Client.ServerHandler;
+import it.polimi.ingsw.Client.views.GUI.MoveStudent3SceneView;
 import it.polimi.ingsw.Client.views.MoveStudent2View;
 import it.polimi.ingsw.Client.views.MoveStudent3View;
 import it.polimi.ingsw.Client.views.PlayCC3View;
@@ -31,7 +32,9 @@ public class AnsMoveStudent2Msg extends AnswerMsg{
         if(modexp){
             serverHandler.getClient().transitionToView(new PlayCC3View(this));
         }else{
-            serverHandler.getClient().transitionToView(new MoveStudent3View(this));
+            MoveStudent3SceneView m=new MoveStudent3SceneView();
+            m.run();
+            //serverHandler.getClient().transitionToView(new MoveStudent3View(this)); CLI
         }
 
     }
