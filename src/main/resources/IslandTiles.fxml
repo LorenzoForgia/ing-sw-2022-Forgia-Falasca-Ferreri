@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -776,5 +777,11 @@
             <Font size="14.0" />
          </font>
       </Label>
+      <Label fx:id="islandWritten" layoutX="504.0" layoutY="335.0" text="Scegli l'isola!">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="backToScene" layoutX="491.0" layoutY="371.0" mnemonicParsing="false" text="Ritorna alla scelta precedente" />
    </children>
 </AnchorPane>

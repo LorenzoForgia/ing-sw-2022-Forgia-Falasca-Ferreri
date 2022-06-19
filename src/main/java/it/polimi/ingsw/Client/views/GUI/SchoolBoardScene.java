@@ -2,6 +2,8 @@ package it.polimi.ingsw.Client.views.GUI;
 
 import it.polimi.ingsw.Model.ColorTower;
 import it.polimi.ingsw.Model.SchoolBoard;
+import it.polimi.ingsw.messages.AnsAskCAMsg;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -158,11 +160,36 @@ public class SchoolBoardScene {
     private ImageView teacher4;
     @FXML
     private ImageView teacher5;
+    private static SchoolBoard schoolBoardToShow;
+    private static int numberOfSceneToComeBack;
+    private static String namePlayer;
 
-    SchoolBoard schoolBoardToShow;
 
-    public void setSchoolBoardToShow(SchoolBoard schoolBoardToShow) {
-        this.schoolBoardToShow = schoolBoardToShow;
+    /** number to decide where to come back
+     * 0 is for AssistantCardScene
+     * 1 is for MoveStudentScene1
+     * 2 is for MoveStudentScene2
+     * **/
+    public static void setNumberOfSceneToComeBack(int numberOfSceneToComeBack) {
+        SchoolBoardScene.numberOfSceneToComeBack = numberOfSceneToComeBack;
+    }
+
+    public static void setNamePlayer(String namePlayer) {
+        SchoolBoardScene.namePlayer = namePlayer;
+    }
+
+    public void backToSceneButtonClicked(ActionEvent event){
+        if(numberOfSceneToComeBack==0){
+            JavaFXMain.getCurrentApplication().switchToCardAssistantScene();
+        }else if(numberOfSceneToComeBack==1){
+            JavaFXMain.getCurrentApplication().switchToMoveStudent1Scene();
+        }
+    }
+
+
+
+    public static void setSchoolBoardToShow(SchoolBoard schoolBoardToShow) {
+        SchoolBoardScene.schoolBoardToShow = schoolBoardToShow;
     }
 
     private void getTheRightColor(it.polimi.ingsw.Model.Color color, Circle circle){

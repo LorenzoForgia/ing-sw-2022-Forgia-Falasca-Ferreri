@@ -19,22 +19,22 @@
             <Font size="33.0" />
          </font>
       </Label>
-      <ImageView fx:id="imageIsland" fitHeight="105.0" fitWidth="139.0" layoutX="345.0" layoutY="291.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imageIsland" fitHeight="105.0" fitWidth="139.0" layoutX="345.0" layoutY="291.0" onMouseClicked="#showGeneralBoardSelected" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@island1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imageFirstSchoolBoard" fitHeight="87.0" fitWidth="153.0" layoutX="31.0" layoutY="466.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imageFirstSchoolBoard" fitHeight="87.0" fitWidth="153.0" layoutX="31.0" layoutY="466.0" onMouseClicked="#showSchoolBoard1Selected" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Plancia_DEF3.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imageSecondSchoolBoard" fitHeight="87.0" fitWidth="153.0" layoutX="230.0" layoutY="466.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imageSecondSchoolBoard" fitHeight="87.0" fitWidth="153.0" layoutX="230.0" layoutY="466.0" onMouseClicked="#showSchoolBoard2Selected" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Plancia_DEF3.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imageThirdSchoolBoard" fitHeight="87.0" fitWidth="153.0" layoutX="428.0" layoutY="466.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imageThirdSchoolBoard" fitHeight="87.0" fitWidth="153.0" layoutX="428.0" layoutY="466.0" onMouseClicked="#showSchoolBoard3Selected" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Plancia_DEF3.png" />
          </image>
@@ -47,7 +47,7 @@
       <Label fx:id="showSchoolBoard1" layoutX="31.0" layoutY="437.0" text="Label" />
       <Label fx:id="showSchoolBoard2" layoutX="230.0" layoutY="437.0" text="Label" />
       <Label fx:id="showSchoolBoard3" layoutX="428.0" layoutY="437.0" text="Label" />
-      <ImageView fx:id="imageFourthSchoolBoard" fitHeight="87.0" fitWidth="153.0" layoutX="616.0" layoutY="466.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imageFourthSchoolBoard" fitHeight="87.0" fitWidth="153.0" layoutX="616.0" layoutY="466.0" onMouseClicked="#showSchoolBoard4Selected" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Plancia_DEF3.png" />
          </image>

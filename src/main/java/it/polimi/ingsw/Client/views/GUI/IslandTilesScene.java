@@ -3,7 +3,9 @@ package it.polimi.ingsw.Client.views.GUI;
 import it.polimi.ingsw.Model.Color;
 import it.polimi.ingsw.Model.ColorTower;
 import it.polimi.ingsw.Model.IslandTiles;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -396,8 +398,35 @@ public class IslandTilesScene {
     private Label numberTower11;
     @FXML
     private Label numberTower12;
-    private ArrayList<IslandTiles> islands;
+    @FXML
+    private Label islandWritten;
+    @FXML
+    private Button backToScene;
+
     private static boolean onlyObserv;
+    private static ArrayList<IslandTiles> islands;
+    private static int numberOfSceneToComeBack;
+
+    /** number to decide where to come back
+     * 0 is for AssistantCardScene
+     * 1 is for MoveStudentScene1
+     * 2 is for MoveStudentScene2
+     * **/
+    public static void setNumberOfSceneToComeBack(int numberOfSceneToComeBack) {
+        IslandTilesScene.numberOfSceneToComeBack = numberOfSceneToComeBack;
+    }
+
+    public void backToSceneButtonClicked(ActionEvent event){
+        if(numberOfSceneToComeBack==0){
+            JavaFXMain.getCurrentApplication().switchToCardAssistantScene();
+        }else if(numberOfSceneToComeBack==1){
+            JavaFXMain.getCurrentApplication().switchToMoveStudent1Scene();
+        }
+    }
+
+    public static void setIslands(ArrayList<IslandTiles> islands) {
+        IslandTilesScene.islands = islands;
+    }
 
     public static void setOnlyObserv(boolean onlyObserv) {
         IslandTilesScene.onlyObserv = onlyObserv;
@@ -694,6 +723,9 @@ public class IslandTilesScene {
             for (int i = 0; i < 12; i++) {
                 islandImage.get(i).setOnMouseClicked(null);
             }
+            islandWritten.setVisible(false);
+        }else{
+            backToScene.setVisible(false);
         }
         for (int i = 0; i < 12; i++) {
             islandToShow = returnIsland(islands, i);

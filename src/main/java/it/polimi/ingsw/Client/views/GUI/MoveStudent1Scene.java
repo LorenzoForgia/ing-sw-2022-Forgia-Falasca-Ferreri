@@ -1,6 +1,7 @@
 package it.polimi.ingsw.Client.views.GUI;
 
 import it.polimi.ingsw.Model.Color;
+import it.polimi.ingsw.Model.IslandTiles;
 import it.polimi.ingsw.messages.AnsAskCAMsg;
 import it.polimi.ingsw.messages.AnsFirstPlayerTurnMsg;
 import it.polimi.ingsw.messages.MoveStudent1Msg;
@@ -42,10 +43,24 @@ public class MoveStudent1Scene {
         if(answerMsg.GetPlayers().size()==2){
             imageFourthSchoolBoard.setImage(null);
             imageThirdSchoolBoard.setImage(null);
+            imageFourthSchoolBoard.setOnMouseClicked(null);
+            imageThirdSchoolBoard.setOnMouseClicked(null);
+            showSchoolBoard4.setText("");
+            showSchoolBoard3.setText("");
+            showSchoolBoard1.setText("Plancia di" + answerMsg.GetPlayers().get(0));
+            showSchoolBoard2.setText("Plancia di" + answerMsg.GetPlayers().get(1));
         }else if(answerMsg.GetPlayers().size()==3){
-
+            imageFourthSchoolBoard.setImage(null);
+            imageFourthSchoolBoard.setOnMouseClicked(null);
+            showSchoolBoard4.setText("");
+            showSchoolBoard1.setText("Plancia di" + answerMsg.GetPlayers().get(0));
+            showSchoolBoard2.setText("Plancia di" + answerMsg.GetPlayers().get(1));
+            showSchoolBoard3.setText("Plancia di" + answerMsg.GetPlayers().get(2));
         }else{
-
+            showSchoolBoard1.setText("Plancia di" + answerMsg.GetPlayers().get(0));
+            showSchoolBoard2.setText("Plancia di" + answerMsg.GetPlayers().get(1));
+            showSchoolBoard3.setText("Plancia di" + answerMsg.GetPlayers().get(2));
+            showSchoolBoard4.setText("Plancia di" + answerMsg.GetPlayers().get(3));
         }
     }
 
@@ -76,25 +91,39 @@ public class MoveStudent1Scene {
         JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent1Msg);
     }
     public void IslandClicked(ActionEvent event){
+        IslandTilesScene.setOnlyObserv(false);
         JavaFXMain.getCurrentApplication().switchToIslandTitleScene();
     }
 
     public void showGeneralBoardSelected(){
+        IslandTilesScene.setOnlyObserv(true);
+        IslandTilesScene.setNumberOfSceneToComeBack(1);
+        IslandTilesScene.setIslands(answerMsg.GetGB().GetIslands());
 
     }
 
-    public void showShowSchoolBoard1Selected(){
+    public void showSchoolBoard1Selected(){
+        SchoolBoardScene.setSchoolBoardToShow(answerMsg.GetGB().getSchoolBoard().get(0));
+        SchoolBoardScene.setNumberOfSceneToComeBack(1);
+        JavaFXMain.getCurrentApplication().switchToSchoolBoardScene();
 
     }
-    public void showShowSchoolBoard2Selected(){
+    public void showSchoolBoard2Selected(){
+        SchoolBoardScene.setSchoolBoardToShow(answerMsg.GetGB().getSchoolBoard().get(1));
+        SchoolBoardScene.setNumberOfSceneToComeBack(1);
+        JavaFXMain.getCurrentApplication().switchToSchoolBoardScene();
 
     }
-    public void showShowSchoolBoard3Selected(){
-
+    public void showSchoolBoard3Selected(){
+        SchoolBoardScene.setSchoolBoardToShow(answerMsg.GetGB().getSchoolBoard().get(2));
+        SchoolBoardScene.setNumberOfSceneToComeBack(1);
+        JavaFXMain.getCurrentApplication().switchToSchoolBoardScene();
     }
 
-    public void showShowSchoolBoard4Selected(){
-
+    public void showSchoolBoard4Selected(){
+        SchoolBoardScene.setSchoolBoardToShow(answerMsg.GetGB().getSchoolBoard().get(3));
+        SchoolBoardScene.setNumberOfSceneToComeBack(1);
+        JavaFXMain.getCurrentApplication().switchToSchoolBoardScene();
     }
 
 
