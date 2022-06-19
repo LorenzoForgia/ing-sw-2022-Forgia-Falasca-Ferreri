@@ -39,6 +39,10 @@ public class MoveStudent1Scene {
         MoveStudent1Scene.answerMsg = answerMsg;
     }
 
+    public static AnsAskCAMsg getAnswerMsg() {
+        return answerMsg;
+    }
+
     public static Color getColor() {
         return color;
     }

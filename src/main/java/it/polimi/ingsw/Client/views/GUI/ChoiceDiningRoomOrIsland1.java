@@ -15,6 +15,7 @@ public class ChoiceDiningRoomOrIsland1 {
     }
     public void IslandClicked(ActionEvent event){
         IslandTilesScene.setOnlyObserv(false);
+        IslandTilesScene.setIslands(MoveStudent1Scene.getAnswerMsg().GetGB().GetIslands());
         JavaFXMain.getCurrentApplication().switchToIslandTitleScene();
     }
 }

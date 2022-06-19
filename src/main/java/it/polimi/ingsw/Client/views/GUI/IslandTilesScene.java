@@ -3,6 +3,7 @@ package it.polimi.ingsw.Client.views.GUI;
 import it.polimi.ingsw.Model.Color;
 import it.polimi.ingsw.Model.ColorTower;
 import it.polimi.ingsw.Model.IslandTiles;
+import it.polimi.ingsw.messages.MoveStudent1Msg;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -433,39 +434,63 @@ public class IslandTilesScene {
     }
 
     public void chosenIsland1(){
+        MoveStudent1Msg moveStudent1Msg= new MoveStudent1Msg(MoveStudent1Scene.getColor(), 0);
+        JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent1Msg);
         System.out.println("Ho scelto l'isola 1");
     }
     public void chosenIsland2(){
+        MoveStudent1Msg moveStudent1Msg= new MoveStudent1Msg(MoveStudent1Scene.getColor(), 1);
+        JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent1Msg);
         System.out.println("Ho scelto l'isola 2");
     }
     public void chosenIsland3(){
+        MoveStudent1Msg moveStudent1Msg= new MoveStudent1Msg(MoveStudent1Scene.getColor(), 2);
+        JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent1Msg);
         System.out.println("Ho scelto l'isola 3");
     }
     public void chosenIsland4(){
+        MoveStudent1Msg moveStudent1Msg= new MoveStudent1Msg(MoveStudent1Scene.getColor(), 3);
+        JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent1Msg);
         System.out.println("Ho scelto l'isola 4");
     }
     public void chosenIsland5(){
+        MoveStudent1Msg moveStudent1Msg= new MoveStudent1Msg(MoveStudent1Scene.getColor(), 4);
+        JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent1Msg);
         System.out.println("Ho scelto l'isola 5");
     }
     public void chosenIsland6(){
+        MoveStudent1Msg moveStudent1Msg= new MoveStudent1Msg(MoveStudent1Scene.getColor(), 5);
+        JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent1Msg);
         System.out.println("Ho scelto l'isola 6");
     }
     public void chosenIsland7(){
+        MoveStudent1Msg moveStudent1Msg= new MoveStudent1Msg(MoveStudent1Scene.getColor(), 6);
+        JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent1Msg);
         System.out.println("Ho scelto l'isola 7");
     }
     public void chosenIsland8(){
+        MoveStudent1Msg moveStudent1Msg= new MoveStudent1Msg(MoveStudent1Scene.getColor(), 7);
+        JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent1Msg);
         System.out.println("Ho scelto l'isola 8");
     }
     public void chosenIsland9(){
+        MoveStudent1Msg moveStudent1Msg= new MoveStudent1Msg(MoveStudent1Scene.getColor(), 8);
+        JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent1Msg);
         System.out.println("Ho scelto l'isola 9");
     }
     public void chosenIsland10(){
+        MoveStudent1Msg moveStudent1Msg= new MoveStudent1Msg(MoveStudent1Scene.getColor(), 9);
+        JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent1Msg);
         System.out.println("Ho scelto l'isola 10");
     }
     public void chosenIsland11(){
+        MoveStudent1Msg moveStudent1Msg= new MoveStudent1Msg(MoveStudent1Scene.getColor(), 10);
+        JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent1Msg);
         System.out.println("Ho scelto l'isola 11");
     }
     public void chosenIsland12(){
+        MoveStudent1Msg moveStudent1Msg= new MoveStudent1Msg(MoveStudent1Scene.getColor(), 11);
+        JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent1Msg);
         System.out.println("Ho scelto l'isola 12");
     }
 
