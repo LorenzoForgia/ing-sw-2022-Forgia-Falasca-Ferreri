@@ -453,7 +453,16 @@ public class IslandTilesScene {
     public void initialize() {
         IslandTiles islandToShow;
         islands = new ArrayList<>();
-        islands.add(new IslandTiles(1, false, 1, false, 0, false));
+        IslandTiles i1 = new IslandTiles(1, false, 1, false, 0, false);
+        IslandTiles i2 = new IslandTiles(2, true, 1, false, 0, false);
+        IslandTiles i3 = new IslandTiles(3, false, 1, true, 0, false);
+        IslandTiles i4= new IslandTiles(4, false, 4, true, 0, true);
+        i4.putTower(ColorTower.Black);
+        i4.PutStudent(Color.Blue);
+        islands.add(i1);
+        islands.add(i2);
+        islands.add(i3);
+        islands.add(i4);
         ArrayList<ImageView> islandImage = new ArrayList<>();
         ArrayList<ImageView> studentRedImage = new ArrayList<>();
         ArrayList<ImageView> studentGreenImage = new ArrayList<>();
@@ -728,7 +737,5 @@ public class IslandTilesScene {
             }
 
         }
-
-
     }
 }
