@@ -782,6 +782,6 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Button fx:id="backToScene" layoutX="491.0" layoutY="371.0" mnemonicParsing="false" text="Ritorna alla scelta precedente" />
+      <Button fx:id="backToScene" layoutX="491.0" layoutY="371.0" mnemonicParsing="false" onAction="#backToSceneButtonClicked" text="Ritorna alla scelta precedente" />
    </children>
 </AnchorPane>

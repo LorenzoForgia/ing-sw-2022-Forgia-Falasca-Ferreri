@@ -39,34 +39,39 @@ public class MoveStudent1Scene {
         MoveStudent1Scene.answerMsg = answerMsg;
     }
 
+    public static Color getColor() {
+        return color;
+    }
+
     public void initialize() {
         if(answerMsg.GetPlayers().size()==2){
-            imageFourthSchoolBoard.setImage(null);
-            imageThirdSchoolBoard.setImage(null);
+            imageFourthSchoolBoard.setVisible(false);
             imageFourthSchoolBoard.setOnMouseClicked(null);
             imageThirdSchoolBoard.setOnMouseClicked(null);
+            imageThirdSchoolBoard.setVisible(false);
             showSchoolBoard4.setText("");
             showSchoolBoard3.setText("");
-            showSchoolBoard1.setText("Plancia di" + answerMsg.GetPlayers().get(0));
-            showSchoolBoard2.setText("Plancia di" + answerMsg.GetPlayers().get(1));
+            showSchoolBoard1.setText("Plancia di " + answerMsg.GetPlayers().get(0).getNickName());
+            showSchoolBoard2.setText("Plancia di " + answerMsg.GetPlayers().get(1).getNickName());
         }else if(answerMsg.GetPlayers().size()==3){
-            imageFourthSchoolBoard.setImage(null);
+            imageFourthSchoolBoard.setVisible(false);
             imageFourthSchoolBoard.setOnMouseClicked(null);
             showSchoolBoard4.setText("");
-            showSchoolBoard1.setText("Plancia di" + answerMsg.GetPlayers().get(0));
-            showSchoolBoard2.setText("Plancia di" + answerMsg.GetPlayers().get(1));
-            showSchoolBoard3.setText("Plancia di" + answerMsg.GetPlayers().get(2));
+            showSchoolBoard1.setText("Plancia di " + answerMsg.GetPlayers().get(0));
+            showSchoolBoard2.setText("Plancia di " + answerMsg.GetPlayers().get(1));
+            showSchoolBoard3.setText("Plancia di " + answerMsg.GetPlayers().get(2));
         }else{
-            showSchoolBoard1.setText("Plancia di" + answerMsg.GetPlayers().get(0));
-            showSchoolBoard2.setText("Plancia di" + answerMsg.GetPlayers().get(1));
-            showSchoolBoard3.setText("Plancia di" + answerMsg.GetPlayers().get(2));
-            showSchoolBoard4.setText("Plancia di" + answerMsg.GetPlayers().get(3));
+            showSchoolBoard1.setText("Plancia di " + answerMsg.GetPlayers().get(0));
+            showSchoolBoard2.setText("Plancia di " + answerMsg.GetPlayers().get(1));
+            showSchoolBoard3.setText("Plancia di " + answerMsg.GetPlayers().get(2));
+            showSchoolBoard4.setText("Plancia di " + answerMsg.GetPlayers().get(3));
         }
     }
 
 
     public void BlueSelected(){
         color=Color.Blue;
+        System.out.println("Ci clicco");
         JavaFXMain.getCurrentApplication().switchToMS1DiningOrIslandScene();
     }
     public void YellowSelected(){
@@ -84,15 +89,6 @@ public class MoveStudent1Scene {
     public void PinkSelected(){
         color=Color.Pink;
         JavaFXMain.getCurrentApplication().switchToMS1DiningOrIslandScene();
-    }
-    public void DiningClicked(ActionEvent event){
-        location=12;
-        MoveStudent1Msg moveStudent1Msg= new MoveStudent1Msg(color, location);
-        JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent1Msg);
-    }
-    public void IslandClicked(ActionEvent event){
-        IslandTilesScene.setOnlyObserv(false);
-        JavaFXMain.getCurrentApplication().switchToIslandTitleScene();
     }
 
     public void showGeneralBoardSelected(){

@@ -5,11 +5,11 @@ import it.polimi.ingsw.Model.*;
 import it.polimi.ingsw.messages.AnsAskCAMsg;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
-
 import java.util.ArrayList;
 
 
@@ -160,6 +160,8 @@ public class SchoolBoardScene {
     private ImageView teacher4;
     @FXML
     private ImageView teacher5;
+    @FXML
+    private Label playerSchoolBoardWritten;
 
     private static int numberOfSceneToComeBack;
     private SchoolBoard schoolBoardToShow;
@@ -208,6 +210,7 @@ public class SchoolBoardScene {
     public void initialize() {
 
         schoolBoardToShow= player.getMySchoolBoard();
+        playerSchoolBoardWritten.setText("Plancia di " + player.getNickName());
 
         ArrayList<Circle> entranceStudent = new ArrayList<>();
         entranceStudent.add(0, Entrance1);
