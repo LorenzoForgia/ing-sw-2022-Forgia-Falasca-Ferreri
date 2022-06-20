@@ -75,7 +75,6 @@ public class MoveStudent1Scene {
 
     public void BlueSelected(){
         color=Color.Blue;
-        System.out.println("Ci clicco");
         JavaFXMain.getCurrentApplication().switchToMS1DiningOrIslandScene();
     }
     public void YellowSelected(){
