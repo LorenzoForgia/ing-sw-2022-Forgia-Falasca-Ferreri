@@ -1,18 +1,15 @@
 package it.polimi.ingsw.Client.views.GUI;
 
-import it.polimi.ingsw.Exception.CardAssistantNotAvailableException;
 import it.polimi.ingsw.Model.CardAssistant;
 import it.polimi.ingsw.Model.DeckCardAssistant;
 import it.polimi.ingsw.messages.AnsFirstPlayerTurnMsg;
+import it.polimi.ingsw.messages.AnsNewOrderMsg;
 import it.polimi.ingsw.messages.TurnDecidedMsg;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.shape.Circle;
 
-public class AssistantCardScene {
-
+public class AssistantCardSceneNewTurn {
     @FXML
     private ImageView assistantCard1;
     @FXML
@@ -35,11 +32,10 @@ public class AssistantCardScene {
     private ImageView assistantCard10;
     private DeckCardAssistant deckCardAssistant;
 
+    private static AnsNewOrderMsg answerMsg;
 
-
-    private static AnsFirstPlayerTurnMsg answerMsg;
-    public static void setAnswerMsg(AnsFirstPlayerTurnMsg answerMsg) {
-        AssistantCardScene.answerMsg = answerMsg;
+    public static void setAnswerMsg(AnsNewOrderMsg answerMsg) {
+        AssistantCardSceneNewTurn.answerMsg = answerMsg;
     }
 
     public void initialize()
@@ -159,6 +155,4 @@ public class AssistantCardScene {
         JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(turnDecidedMsg);
         JavaFXMain.getCurrentApplication().switchToWaitingScene();
     }
-
-
 }
