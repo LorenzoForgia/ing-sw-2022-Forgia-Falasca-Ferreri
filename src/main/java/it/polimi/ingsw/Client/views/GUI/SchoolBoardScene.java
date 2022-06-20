@@ -187,10 +187,14 @@ public class SchoolBoardScene {
             JavaFXMain.getCurrentApplication().switchToCardAssistantScene();
         }else if(numberOfSceneToComeBack==1){
             JavaFXMain.getCurrentApplication().switchToMoveStudent1Scene();
+        } else if(numberOfSceneToComeBack==2){
+        JavaFXMain.getCurrentApplication().switchToMoveStudent2Scene();
+        }else if(numberOfSceneToComeBack==3) {
+        JavaFXMain.getCurrentApplication().switchToMoveStudent3Scene();
+        }else if(numberOfSceneToComeBack==4) {
+        JavaFXMain.getCurrentApplication().switchToMoveStudent4Scene();
         }
     }
-
-
 
 
     private void getTheRightColor(it.polimi.ingsw.Model.Color color, Circle circle){
