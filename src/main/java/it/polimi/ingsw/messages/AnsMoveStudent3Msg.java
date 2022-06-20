@@ -2,7 +2,7 @@ package it.polimi.ingsw.messages;
 
 import it.polimi.ingsw.Client.ServerHandler;
 import it.polimi.ingsw.Client.views.*;
-import it.polimi.ingsw.Client.views.GUI.AskForMotherNatureScene;
+import it.polimi.ingsw.Client.views.GUI.AskForMotherNatureSceneView;
 import it.polimi.ingsw.Client.views.GUI.MoveStudent4SceneView;
 import it.polimi.ingsw.Model.CharacterCard;
 import it.polimi.ingsw.Model.GeneralBoard;
@@ -40,7 +40,7 @@ public class AnsMoveStudent3Msg extends AnswerMsg{
                 m.run();
                 /*serverHandler.getClient().transitionToView(new MoveStudent4View(this));*/
             }else{
-                AskForMotherNatureScene askForMotherNatureScene=new AskForMotherNatureScene(this);
+                AskForMotherNatureSceneView askForMotherNatureScene=new AskForMotherNatureSceneView(this);
                 askForMotherNatureScene.run();
                 /*serverHandler.getClient().transitionToView(new AskforMotherNatureView(this));*/
             }

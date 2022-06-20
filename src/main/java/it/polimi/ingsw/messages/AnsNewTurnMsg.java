@@ -1,9 +1,7 @@
 package it.polimi.ingsw.messages;
 
 import it.polimi.ingsw.Client.ServerHandler;
-import it.polimi.ingsw.Client.views.FirstPlayerTurnView;
-import it.polimi.ingsw.Client.views.GUI.NewTurnScene;
-import it.polimi.ingsw.Client.views.NewTurnView;
+import it.polimi.ingsw.Client.views.GUI.NewTurnSceneView;
 
 public class AnsNewTurnMsg extends AnswerMsg{
     private String name;
@@ -16,7 +14,7 @@ public class AnsNewTurnMsg extends AnswerMsg{
     @Override
     public void processMessage(ServerHandler serverHandler)
     {
-        NewTurnScene n=new NewTurnScene(this);
+        NewTurnSceneView n=new NewTurnSceneView(this);
         n.run();
         /*serverHandler.getClient().transitionToView(new NewTurnView(this));*/
     }

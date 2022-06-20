@@ -359,6 +359,48 @@ public class JavaFXMain extends Application {
         primaryStage.setTitle("Eryantis");
         primaryStage.sizeToScene();
     }
+    public void switchToAskForMN3PlayersScene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/AskForMN3PlayersScene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("Eryantis");
+        primaryStage.sizeToScene();
+    }
+    public void switchToTurnEndedScene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/TurnEndedScene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("Eryantis");
+        primaryStage.sizeToScene();
+    }
+    public void switchToNewTurnScene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/NewTurnScene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("Eryantis");
+        primaryStage.sizeToScene();
+    }
     public void switchToEndGameScene()
     {
         Parent root;

@@ -1,18 +1,14 @@
 package it.polimi.ingsw.Client.views.GUI;
 
-import it.polimi.ingsw.Client.views.View;
 import it.polimi.ingsw.messages.AnsCloudMsg;
 import it.polimi.ingsw.messages.CheckTurnEndedMsg;
 import javafx.event.ActionEvent;
 
-public class TurnEndedScene extends View {
+public class TurnEndedScene {
     private static AnsCloudMsg ansCloudMsg;
 
-    public TurnEndedScene(AnsCloudMsg ansCloudMsg) {
+    public static void setAnsCloudMsg(AnsCloudMsg ansCloudMsg) {
         TurnEndedScene.ansCloudMsg = ansCloudMsg;
-    }
-    @Override
-    public void run() {
     }
     public void okClicked(ActionEvent event){
         CheckTurnEndedMsg checkTurnEndedMsg= new CheckTurnEndedMsg();
