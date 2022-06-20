@@ -276,7 +276,7 @@ public class SchoolBoardScene {
         diningRoomStudentYellow.add(9, DiningRoom310);
 
         for (int i = 0; i < schoolBoardToShow.getDiningRoom().GetNumberStudent(2); i++) {
-            diningRoomStudentRed.get(i).setFill(Color.YELLOW);
+            diningRoomStudentYellow.get(i).setFill(Color.YELLOW);
         }
 
         ArrayList<Circle> diningRoomStudentPink = new ArrayList<>();
@@ -292,7 +292,7 @@ public class SchoolBoardScene {
         diningRoomStudentPink.add(9, DiningRoom410);
 
         for (int i = 0; i < schoolBoardToShow.getDiningRoom().GetNumberStudent(3); i++) {
-            diningRoomStudentRed.get(i).setFill(Color.PINK);
+            diningRoomStudentPink.get(i).setFill(Color.PINK);
         }
 
         ArrayList<Circle> diningRoomStudentBlue = new ArrayList<>();
@@ -308,7 +308,7 @@ public class SchoolBoardScene {
         diningRoomStudentBlue.add(9, DiningRoom510);
 
         for (int i = 0; i < schoolBoardToShow.getDiningRoom().GetNumberStudent(4); i++) {
-            diningRoomStudentRed.get(i).setFill(Color.BLUE);
+            diningRoomStudentBlue.get(i).setFill(Color.BLUE);
         }
 
         ArrayList<Circle> towerRoom = new ArrayList<>();
