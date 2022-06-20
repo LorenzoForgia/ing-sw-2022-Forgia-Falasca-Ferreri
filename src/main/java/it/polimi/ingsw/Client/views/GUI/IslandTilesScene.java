@@ -451,13 +451,13 @@ public class IslandTilesScene {
             MoveStudent1Msg moveStudent1Msg = new MoveStudent1Msg(MoveStudent1Scene.getColor(), 0);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent1Msg);
         }else if(numberOfSceneToComeBack==2){
-            MoveStudent2Msg moveStudent2Msg= new MoveStudent2Msg(MoveStudent1Scene.getColor(), 0);
+            MoveStudent2Msg moveStudent2Msg= new MoveStudent2Msg(MoveStudent2Scene.getColor(), 0);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent2Msg);
         }else if(numberOfSceneToComeBack==3){
-            MoveStudent3Msg moveStudent3Msg= new MoveStudent3Msg(MoveStudent1Scene.getColor(), 0);
+            MoveStudent3Msg moveStudent3Msg= new MoveStudent3Msg(MoveStudent3Scene.getColor(), 0);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent3Msg);
         }else if(numberOfSceneToComeBack== 4){
-            MoveStudent4Msg moveStudent4Msg= new MoveStudent4Msg(MoveStudent1Scene.getColor(), 0);
+            MoveStudent4Msg moveStudent4Msg= new MoveStudent4Msg(MoveStudent4Scene.getColor(), 0);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent4Msg);
         }
         System.out.println("Ho scelto l'isola 1");
@@ -467,13 +467,13 @@ public class IslandTilesScene {
             MoveStudent1Msg moveStudent1Msg = new MoveStudent1Msg(MoveStudent1Scene.getColor(), 1);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent1Msg);
         }else if(numberOfSceneToComeBack==2){
-            MoveStudent2Msg moveStudent2Msg= new MoveStudent2Msg(MoveStudent1Scene.getColor(), 1);
+            MoveStudent2Msg moveStudent2Msg= new MoveStudent2Msg(MoveStudent2Scene.getColor(), 1);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent2Msg);
         }else if(numberOfSceneToComeBack==3){
-            MoveStudent3Msg moveStudent3Msg= new MoveStudent3Msg(MoveStudent1Scene.getColor(), 1);
+            MoveStudent3Msg moveStudent3Msg= new MoveStudent3Msg(MoveStudent3Scene.getColor(), 1);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent3Msg);
         }else if(numberOfSceneToComeBack== 4){
-            MoveStudent4Msg moveStudent4Msg= new MoveStudent4Msg(MoveStudent1Scene.getColor(), 1);
+            MoveStudent4Msg moveStudent4Msg= new MoveStudent4Msg(MoveStudent4Scene.getColor(), 1);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent4Msg);
         }
         System.out.println("Ho scelto l'isola 2");
@@ -483,13 +483,13 @@ public class IslandTilesScene {
             MoveStudent1Msg moveStudent1Msg = new MoveStudent1Msg(MoveStudent1Scene.getColor(), 2);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent1Msg);
         }else if(numberOfSceneToComeBack==2){
-            MoveStudent2Msg moveStudent2Msg= new MoveStudent2Msg(MoveStudent1Scene.getColor(), 2);
+            MoveStudent2Msg moveStudent2Msg= new MoveStudent2Msg(MoveStudent2Scene.getColor(), 2);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent2Msg);
         }else if(numberOfSceneToComeBack==3){
-            MoveStudent3Msg moveStudent3Msg= new MoveStudent3Msg(MoveStudent1Scene.getColor(), 2);
+            MoveStudent3Msg moveStudent3Msg= new MoveStudent3Msg(MoveStudent3Scene.getColor(), 2);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent3Msg);
         }else if(numberOfSceneToComeBack== 4){
-            MoveStudent4Msg moveStudent4Msg= new MoveStudent4Msg(MoveStudent1Scene.getColor(), 2);
+            MoveStudent4Msg moveStudent4Msg= new MoveStudent4Msg(MoveStudent4Scene.getColor(), 2);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent4Msg);
         }
         System.out.println("Ho scelto l'isola 3");
@@ -499,13 +499,13 @@ public class IslandTilesScene {
             MoveStudent1Msg moveStudent1Msg = new MoveStudent1Msg(MoveStudent1Scene.getColor(), 3);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent1Msg);
         }else if(numberOfSceneToComeBack==2){
-            MoveStudent2Msg moveStudent2Msg= new MoveStudent2Msg(MoveStudent1Scene.getColor(), 3);
+            MoveStudent2Msg moveStudent2Msg= new MoveStudent2Msg(MoveStudent2Scene.getColor(), 3);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent2Msg);
         }else if(numberOfSceneToComeBack==3){
-            MoveStudent3Msg moveStudent3Msg= new MoveStudent3Msg(MoveStudent1Scene.getColor(), 3);
+            MoveStudent3Msg moveStudent3Msg= new MoveStudent3Msg(MoveStudent3Scene.getColor(), 3);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent3Msg);
         }else if(numberOfSceneToComeBack== 4){
-            MoveStudent4Msg moveStudent4Msg= new MoveStudent4Msg(MoveStudent1Scene.getColor(), 3);
+            MoveStudent4Msg moveStudent4Msg= new MoveStudent4Msg(MoveStudent4Scene.getColor(), 3);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent4Msg);
         }
         System.out.println("Ho scelto l'isola 4");
@@ -515,13 +515,13 @@ public class IslandTilesScene {
             MoveStudent1Msg moveStudent1Msg = new MoveStudent1Msg(MoveStudent1Scene.getColor(), 4);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent1Msg);
         }else if(numberOfSceneToComeBack==2){
-            MoveStudent2Msg moveStudent2Msg= new MoveStudent2Msg(MoveStudent1Scene.getColor(), 4);
+            MoveStudent2Msg moveStudent2Msg= new MoveStudent2Msg(MoveStudent2Scene.getColor(), 4);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent2Msg);
         }else if(numberOfSceneToComeBack==3){
-            MoveStudent3Msg moveStudent3Msg= new MoveStudent3Msg(MoveStudent1Scene.getColor(), 4);
+            MoveStudent3Msg moveStudent3Msg= new MoveStudent3Msg(MoveStudent3Scene.getColor(), 4);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent3Msg);
         }else if(numberOfSceneToComeBack== 4){
-            MoveStudent4Msg moveStudent4Msg= new MoveStudent4Msg(MoveStudent1Scene.getColor(), 4);
+            MoveStudent4Msg moveStudent4Msg= new MoveStudent4Msg(MoveStudent4Scene.getColor(), 4);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent4Msg);
         }
         System.out.println("Ho scelto l'isola 5");
@@ -531,13 +531,13 @@ public class IslandTilesScene {
             MoveStudent1Msg moveStudent1Msg = new MoveStudent1Msg(MoveStudent1Scene.getColor(), 5);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent1Msg);
         }else if(numberOfSceneToComeBack==2){
-            MoveStudent2Msg moveStudent2Msg= new MoveStudent2Msg(MoveStudent1Scene.getColor(), 5);
+            MoveStudent2Msg moveStudent2Msg= new MoveStudent2Msg(MoveStudent2Scene.getColor(), 5);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent2Msg);
         }else if(numberOfSceneToComeBack==3){
-            MoveStudent3Msg moveStudent3Msg= new MoveStudent3Msg(MoveStudent1Scene.getColor(), 5);
+            MoveStudent3Msg moveStudent3Msg= new MoveStudent3Msg(MoveStudent3Scene.getColor(), 5);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent3Msg);
         }else if(numberOfSceneToComeBack== 4){
-            MoveStudent4Msg moveStudent4Msg= new MoveStudent4Msg(MoveStudent1Scene.getColor(), 5);
+            MoveStudent4Msg moveStudent4Msg= new MoveStudent4Msg(MoveStudent4Scene.getColor(), 5);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent4Msg);
         }
         System.out.println("Ho scelto l'isola 6");
@@ -547,13 +547,13 @@ public class IslandTilesScene {
             MoveStudent1Msg moveStudent1Msg = new MoveStudent1Msg(MoveStudent1Scene.getColor(), 6);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent1Msg);
         }else if(numberOfSceneToComeBack==2){
-            MoveStudent2Msg moveStudent2Msg= new MoveStudent2Msg(MoveStudent1Scene.getColor(), 6);
+            MoveStudent2Msg moveStudent2Msg= new MoveStudent2Msg(MoveStudent2Scene.getColor(), 6);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent2Msg);
         }else if(numberOfSceneToComeBack==3){
-            MoveStudent3Msg moveStudent3Msg= new MoveStudent3Msg(MoveStudent1Scene.getColor(), 6);
+            MoveStudent3Msg moveStudent3Msg= new MoveStudent3Msg(MoveStudent3Scene.getColor(), 6);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent3Msg);
         }else if(numberOfSceneToComeBack== 4){
-            MoveStudent4Msg moveStudent4Msg= new MoveStudent4Msg(MoveStudent1Scene.getColor(), 6);
+            MoveStudent4Msg moveStudent4Msg= new MoveStudent4Msg(MoveStudent4Scene.getColor(), 6);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent4Msg);
         }
         System.out.println("Ho scelto l'isola 7");
@@ -563,13 +563,13 @@ public class IslandTilesScene {
             MoveStudent1Msg moveStudent1Msg = new MoveStudent1Msg(MoveStudent1Scene.getColor(), 7);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent1Msg);
         }else if(numberOfSceneToComeBack==2){
-            MoveStudent2Msg moveStudent2Msg= new MoveStudent2Msg(MoveStudent1Scene.getColor(), 7);
+            MoveStudent2Msg moveStudent2Msg= new MoveStudent2Msg(MoveStudent2Scene.getColor(), 7);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent2Msg);
         }else if(numberOfSceneToComeBack==3){
-            MoveStudent3Msg moveStudent3Msg= new MoveStudent3Msg(MoveStudent1Scene.getColor(), 7);
+            MoveStudent3Msg moveStudent3Msg= new MoveStudent3Msg(MoveStudent3Scene.getColor(), 7);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent3Msg);
         }else if(numberOfSceneToComeBack== 4){
-            MoveStudent4Msg moveStudent4Msg= new MoveStudent4Msg(MoveStudent1Scene.getColor(), 7);
+            MoveStudent4Msg moveStudent4Msg= new MoveStudent4Msg(MoveStudent4Scene.getColor(), 7);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent4Msg);
         }
         System.out.println("Ho scelto l'isola 8");
@@ -579,13 +579,13 @@ public class IslandTilesScene {
             MoveStudent1Msg moveStudent1Msg = new MoveStudent1Msg(MoveStudent1Scene.getColor(), 8);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent1Msg);
         }else if(numberOfSceneToComeBack==2){
-            MoveStudent2Msg moveStudent2Msg= new MoveStudent2Msg(MoveStudent1Scene.getColor(), 8);
+            MoveStudent2Msg moveStudent2Msg= new MoveStudent2Msg(MoveStudent2Scene.getColor(), 8);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent2Msg);
         }else if(numberOfSceneToComeBack==3){
-            MoveStudent3Msg moveStudent3Msg= new MoveStudent3Msg(MoveStudent1Scene.getColor(), 8);
+            MoveStudent3Msg moveStudent3Msg= new MoveStudent3Msg(MoveStudent3Scene.getColor(), 8);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent3Msg);
         }else if(numberOfSceneToComeBack== 4){
-            MoveStudent4Msg moveStudent4Msg= new MoveStudent4Msg(MoveStudent1Scene.getColor(), 8);
+            MoveStudent4Msg moveStudent4Msg= new MoveStudent4Msg(MoveStudent4Scene.getColor(), 8);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent4Msg);
         }
         System.out.println("Ho scelto l'isola 9");
@@ -595,13 +595,13 @@ public class IslandTilesScene {
             MoveStudent1Msg moveStudent1Msg = new MoveStudent1Msg(MoveStudent1Scene.getColor(), 9);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent1Msg);
         }else if(numberOfSceneToComeBack==2){
-            MoveStudent2Msg moveStudent2Msg= new MoveStudent2Msg(MoveStudent1Scene.getColor(), 9);
+            MoveStudent2Msg moveStudent2Msg= new MoveStudent2Msg(MoveStudent2Scene.getColor(), 9);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent2Msg);
         }else if(numberOfSceneToComeBack==3){
-            MoveStudent3Msg moveStudent3Msg= new MoveStudent3Msg(MoveStudent1Scene.getColor(), 9);
+            MoveStudent3Msg moveStudent3Msg= new MoveStudent3Msg(MoveStudent3Scene.getColor(), 9);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent3Msg);
         }else if(numberOfSceneToComeBack== 4){
-            MoveStudent4Msg moveStudent4Msg= new MoveStudent4Msg(MoveStudent1Scene.getColor(), 9);
+            MoveStudent4Msg moveStudent4Msg= new MoveStudent4Msg(MoveStudent4Scene.getColor(), 9);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent4Msg);
         }
         System.out.println("Ho scelto l'isola 10");
@@ -611,13 +611,13 @@ public class IslandTilesScene {
             MoveStudent1Msg moveStudent1Msg = new MoveStudent1Msg(MoveStudent1Scene.getColor(), 10);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent1Msg);
         }else if(numberOfSceneToComeBack==2){
-            MoveStudent2Msg moveStudent2Msg= new MoveStudent2Msg(MoveStudent1Scene.getColor(), 10);
+            MoveStudent2Msg moveStudent2Msg= new MoveStudent2Msg(MoveStudent2Scene.getColor(), 10);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent2Msg);
         }else if(numberOfSceneToComeBack==3){
-            MoveStudent3Msg moveStudent3Msg= new MoveStudent3Msg(MoveStudent1Scene.getColor(), 10);
+            MoveStudent3Msg moveStudent3Msg= new MoveStudent3Msg(MoveStudent3Scene.getColor(), 10);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent3Msg);
         }else if(numberOfSceneToComeBack== 4){
-            MoveStudent4Msg moveStudent4Msg= new MoveStudent4Msg(MoveStudent1Scene.getColor(), 10);
+            MoveStudent4Msg moveStudent4Msg= new MoveStudent4Msg(MoveStudent4Scene.getColor(), 10);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent4Msg);
         }
 
@@ -628,13 +628,13 @@ public class IslandTilesScene {
             MoveStudent1Msg moveStudent1Msg = new MoveStudent1Msg(MoveStudent1Scene.getColor(), 11);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent1Msg);
         } else if (numberOfSceneToComeBack == 2) {
-            MoveStudent2Msg moveStudent2Msg = new MoveStudent2Msg(MoveStudent1Scene.getColor(), 11);
+            MoveStudent2Msg moveStudent2Msg = new MoveStudent2Msg(MoveStudent2Scene.getColor(), 11);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent2Msg);
         } else if (numberOfSceneToComeBack == 3) {
-            MoveStudent3Msg moveStudent3Msg = new MoveStudent3Msg(MoveStudent1Scene.getColor(), 11);
+            MoveStudent3Msg moveStudent3Msg = new MoveStudent3Msg(MoveStudent3Scene.getColor(), 11);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent3Msg);
         } else if (numberOfSceneToComeBack == 4) {
-            MoveStudent4Msg moveStudent4Msg = new MoveStudent4Msg(MoveStudent1Scene.getColor(), 11);
+            MoveStudent4Msg moveStudent4Msg = new MoveStudent4Msg(MoveStudent4Scene.getColor(), 11);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent4Msg);
             System.out.println("Ho scelto l'isola 12");
         }

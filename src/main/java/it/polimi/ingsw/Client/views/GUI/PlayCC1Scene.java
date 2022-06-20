@@ -1,13 +1,18 @@
 package it.polimi.ingsw.Client.views.GUI;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class PlayCC1Scene {
-    public ImageView imageFirstCharacterCard;
-    public ImageView imageSecondCharacterCard;
-    public ImageView imageThirdCharacterCard;
+    @FXML
+    private ImageView imageFirstCharacterCard;
+    @FXML
+    private ImageView imageSecondCharacterCard;
+    @FXML
+    private ImageView imageThirdCharacterCard;
+
 
 
     public void initialize() {
