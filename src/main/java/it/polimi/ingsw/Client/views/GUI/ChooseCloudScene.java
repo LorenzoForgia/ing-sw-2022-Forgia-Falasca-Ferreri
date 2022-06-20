@@ -1,6 +1,8 @@
 package it.polimi.ingsw.Client.views.GUI;
 
 import it.polimi.ingsw.Model.CloudTiles;
+import it.polimi.ingsw.messages.AnsNumStepMNMsg;
+import it.polimi.ingsw.messages.CloudMsg;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -51,6 +53,11 @@ public class ChooseCloudScene {
     @FXML
     private Circle student44;
     private ArrayList<CloudTiles> clouds;
+    private static AnsNumStepMNMsg answerMsg;
+
+    public static void setAnswerMsg(AnsNumStepMNMsg answerMsg) {
+        ChooseCloudScene.answerMsg = answerMsg;
+    }
 
     private void getTheRightColor(it.polimi.ingsw.Model.Color color, Circle circle){
         if(color.equals(it.polimi.ingsw.Model.Color.Green)){
@@ -66,14 +73,15 @@ public class ChooseCloudScene {
         }
     }
 
-    public void initialize(){
-        ArrayList<ImageView> imageClouds= new ArrayList<>();
-        imageClouds.add(0,cloud1);
-        imageClouds.add(1,cloud2);
-        imageClouds.add(2,cloud3);
-        imageClouds.add(3,cloud4);
+    public void initialize() {
+        clouds = answerMsg.getCloudTiles();
+        ArrayList<ImageView> imageClouds = new ArrayList<>();
+        imageClouds.add(0, cloud1);
+        imageClouds.add(1, cloud2);
+        imageClouds.add(2, cloud3);
+        imageClouds.add(3, cloud4);
         Image cloudImage = new Image("cloud_card.png");
-        for(int i=0; i<clouds.size(); i++){
+        for (int i = 0; i < clouds.size(); i++) {
             imageClouds.get(i).setImage(cloudImage);
         }
 
@@ -83,7 +91,7 @@ public class ChooseCloudScene {
         studentsOnCloud1.add(student13);
         studentsOnCloud1.add(student14);
 
-        for(int i=0; i< clouds.get(0).getStud().size(); i++){
+        for (int i = 0; i < clouds.get(0).getStud().size(); i++) {
             getTheRightColor(clouds.get(0).getStud().get(i), studentsOnCloud1.get(i));
         }
 
@@ -93,7 +101,7 @@ public class ChooseCloudScene {
         studentsOnCloud2.add(student23);
         studentsOnCloud2.add(student24);
 
-        for(int i=0; i< clouds.get(1).getStud().size(); i++){
+        for (int i = 0; i < clouds.get(1).getStud().size(); i++) {
             getTheRightColor(clouds.get(1).getStud().get(i), studentsOnCloud2.get(i));
         }
         ArrayList<Circle> studentsOnCloud3 = new ArrayList<>();
@@ -102,8 +110,14 @@ public class ChooseCloudScene {
         studentsOnCloud3.add(student33);
         studentsOnCloud3.add(student34);
 
-        for(int i=0; i< clouds.get(2).getStud().size(); i++){
-            getTheRightColor(clouds.get(2).getStud().get(i), studentsOnCloud3.get(i));
+        if (clouds.size() > 2) {
+            for (int i = 0; i < clouds.get(2).getStud().size(); i++) {
+                getTheRightColor(clouds.get(2).getStud().get(i), studentsOnCloud3.get(i));
+            }
+        } else {
+            for (int i = 0; i < 4; i++) {
+                studentsOnCloud3.get(i).setVisible(false);
+            }
         }
         ArrayList<Circle> studentsOnCloud4 = new ArrayList<>();
         studentsOnCloud3.add(student41);
@@ -111,9 +125,31 @@ public class ChooseCloudScene {
         studentsOnCloud3.add(student43);
         studentsOnCloud3.add(student44);
 
-        for(int i=0; i< clouds.get(3).getStud().size(); i++){
-            getTheRightColor(clouds.get(3).getStud().get(i), studentsOnCloud4.get(i));
+        if (clouds.size() > 3) {
+            for (int i = 0; i < clouds.get(3).getStud().size(); i++) {
+                getTheRightColor(clouds.get(3).getStud().get(i), studentsOnCloud4.get(i));
+            }
+        } else {
+            for (int i = 0; i < 4; i++) {
+                studentsOnCloud4.get(i).setVisible(false);
+            }
         }
+    }
+
+    public void cloud1Selected(){
+        JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(new CloudMsg(0));
+    }
+
+    public void cloud2Selected(){
+        JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(new CloudMsg(1));
+    }
+
+    public void cloud3Selected(){
+        JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(new CloudMsg(2));
+    }
+
+    public void cloud4Selected(){
+        JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(new CloudMsg(3));
     }
 
 }

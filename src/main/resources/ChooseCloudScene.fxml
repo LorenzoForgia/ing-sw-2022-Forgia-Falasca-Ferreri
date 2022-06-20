@@ -6,13 +6,12 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="636.0" prefWidth="833.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.Client.views.GUI.ChooseCloudScene">
    <children>
-      <ImageView fx:id="cloud1" fitHeight="200.0" fitWidth="200.0" layoutX="125.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="cloud2" fitHeight="200.0" fitWidth="200.0" layoutX="540.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="cloud3" fitHeight="200.0" fitWidth="200.0" layoutX="125.0" layoutY="409.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="cloud4" fitHeight="200.0" fitWidth="200.0" layoutX="540.0" layoutY="409.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="cloud1" fitHeight="200.0" fitWidth="200.0" layoutX="125.0" layoutY="155.0" onMouseClicked="#cloud1Selected" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="cloud2" fitHeight="200.0" fitWidth="200.0" layoutX="540.0" layoutY="155.0" onMouseClicked="#cloud2Selected" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="cloud3" fitHeight="200.0" fitWidth="200.0" layoutX="125.0" layoutY="409.0" onMouseClicked="#cloud3Selected" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="cloud4" fitHeight="200.0" fitWidth="200.0" layoutX="540.0" layoutY="409.0" onMouseClicked="#cloud4Selected" pickOnBounds="true" preserveRatio="true" />
       <Circle fx:id="student11" fill="WHITE" layoutX="181.0" layoutY="218.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
       <Circle fx:id="student12" fill="WHITE" layoutX="263.0" layoutY="218.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
       <Circle fx:id="student13" fill="WHITE" layoutX="181.0" layoutY="279.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
