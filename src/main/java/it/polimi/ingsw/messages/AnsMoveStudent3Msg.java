@@ -2,6 +2,8 @@ package it.polimi.ingsw.messages;
 
 import it.polimi.ingsw.Client.ServerHandler;
 import it.polimi.ingsw.Client.views.*;
+import it.polimi.ingsw.Client.views.GUI.AskForMotherNatureScene;
+import it.polimi.ingsw.Client.views.GUI.MoveStudent4SceneView;
 import it.polimi.ingsw.Model.CharacterCard;
 import it.polimi.ingsw.Model.GeneralBoard;
 import it.polimi.ingsw.Model.Player;
@@ -34,9 +36,13 @@ public class AnsMoveStudent3Msg extends AnswerMsg{
             }
         }else{
             if(players.size()==3){
-                serverHandler.getClient().transitionToView(new MoveStudent4View(this));
+                MoveStudent4SceneView m= new MoveStudent4SceneView();
+                m.run();
+                /*serverHandler.getClient().transitionToView(new MoveStudent4View(this));*/
             }else{
-                serverHandler.getClient().transitionToView(new AskforMotherNatureView(this));
+                AskForMotherNatureScene askForMotherNatureScene=new AskForMotherNatureScene(this);
+                askForMotherNatureScene.run();
+                /*serverHandler.getClient().transitionToView(new AskforMotherNatureView(this));*/
             }
         }
 

@@ -2,6 +2,7 @@ package it.polimi.ingsw.messages;
 
 import it.polimi.ingsw.Client.ServerHandler;
 import it.polimi.ingsw.Client.views.EndGameView;
+import it.polimi.ingsw.Client.views.GUI.EndGameSceneView;
 import it.polimi.ingsw.Client.views.MoveStudent2View;
 import it.polimi.ingsw.Model.GeneralBoard;
 import it.polimi.ingsw.Model.Player;
@@ -17,7 +18,9 @@ public class AnsEndGameMsg extends AnswerMsg{
     @Override
     public void processMessage(ServerHandler serverHandler)
     {
-        serverHandler.getClient().transitionToView(new EndGameView(this));
+        EndGameSceneView e= new EndGameSceneView(this);
+        e.run();
+        /*serverHandler.getClient().transitionToView(new EndGameView(this));*/
     }
     public ArrayList<String> getWinner(){return winner;}
 }

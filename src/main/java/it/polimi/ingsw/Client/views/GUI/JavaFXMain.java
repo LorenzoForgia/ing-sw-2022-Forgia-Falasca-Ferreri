@@ -359,11 +359,11 @@ public class JavaFXMain extends Application {
         primaryStage.setTitle("Eryantis");
         primaryStage.sizeToScene();
     }
-    public void switchToAskForMN3PlayersScene()
+    public void switchToEndGameScene()
     {
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("/AskForMN3PlayersScene.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/EndGameScene.fxml"));
         } catch (IOException e) {
             e.printStackTrace();
             return;
@@ -373,6 +373,5 @@ public class JavaFXMain extends Application {
         primaryStage.setTitle("Eryantis");
         primaryStage.sizeToScene();
     }
-
 
 }
