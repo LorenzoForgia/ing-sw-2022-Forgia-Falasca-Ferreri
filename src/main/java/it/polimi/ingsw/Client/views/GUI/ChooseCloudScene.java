@@ -74,6 +74,7 @@ public class ChooseCloudScene {
     }
 
     public void initialize() {
+
         clouds = answerMsg.getCloudTiles();
         ArrayList<ImageView> imageClouds = new ArrayList<>();
         imageClouds.add(0, cloud1);
@@ -120,10 +121,10 @@ public class ChooseCloudScene {
             }
         }
         ArrayList<Circle> studentsOnCloud4 = new ArrayList<>();
-        studentsOnCloud3.add(student41);
-        studentsOnCloud3.add(student42);
-        studentsOnCloud3.add(student43);
-        studentsOnCloud3.add(student44);
+        studentsOnCloud4.add(student41);
+        studentsOnCloud4.add(student42);
+        studentsOnCloud4.add(student43);
+        studentsOnCloud4.add(student44);
 
         if (clouds.size() > 3) {
             for (int i = 0; i < clouds.get(3).getStud().size(); i++) {

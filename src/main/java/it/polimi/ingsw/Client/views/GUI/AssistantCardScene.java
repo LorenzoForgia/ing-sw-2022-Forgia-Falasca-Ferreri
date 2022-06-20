@@ -13,8 +13,10 @@ import javafx.scene.shape.Circle;
 
 public class AssistantCardScene {
 
-    public ImageView assistantCard1;
-    public ImageView assistantCard2;
+    @FXML
+    private ImageView assistantCard1;
+    @FXML
+    private ImageView assistantCard2;
     public ImageView assistantCard3;
     public ImageView assistantCard4;
     public ImageView assistantCard5;
