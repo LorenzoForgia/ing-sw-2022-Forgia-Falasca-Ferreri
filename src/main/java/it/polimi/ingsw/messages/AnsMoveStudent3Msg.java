@@ -36,7 +36,7 @@ public class AnsMoveStudent3Msg extends AnswerMsg{
             }
         }else{
             if(players.size()==3){
-                MoveStudent4SceneView m= new MoveStudent4SceneView();
+                MoveStudent4SceneView m= new MoveStudent4SceneView(this);
                 m.run();
                 /*serverHandler.getClient().transitionToView(new MoveStudent4View(this));*/
             }else{
