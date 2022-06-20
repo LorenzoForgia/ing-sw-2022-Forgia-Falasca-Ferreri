@@ -9,7 +9,6 @@ public class ChoiceDiningRoomOrIsland4 {
         JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent4Msg);
     }
     public void IslandClicked(ActionEvent event){
-        JavaFXMain.getCurrentApplication().switchToIslandTitleScene();
         IslandTilesScene.setOnlyObserv(false);
         IslandTilesScene.setIslands(MoveStudent4Scene.getAnswerMsg().GetGB().GetIslands());
         IslandTilesScene.setNumberOfSceneToComeBack(4);

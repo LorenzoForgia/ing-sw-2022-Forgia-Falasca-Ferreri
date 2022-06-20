@@ -1,6 +1,5 @@
 package it.polimi.ingsw.Client.views.GUI;
 
-import it.polimi.ingsw.Model.Location;
 import it.polimi.ingsw.messages.MoveStudent1Msg;
 import javafx.event.ActionEvent;
 
