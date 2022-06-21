@@ -406,6 +406,30 @@ public class IslandTilesScene {
     private Label islandWritten;
     @FXML
     private Button backToScene;
+    @FXML
+    private Button buttonIsland1;
+    @FXML
+    private Button buttonIsland2;
+    @FXML
+    private Button buttonIsland3;
+    @FXML
+    private Button buttonIsland4;
+    @FXML
+    private Button buttonIsland5;
+    @FXML
+    private Button buttonIsland6;
+    @FXML
+    private Button buttonIsland7;
+    @FXML
+    private Button buttonIsland8;
+    @FXML
+    private Button buttonIsland9;
+    @FXML
+    private Button buttonIsland10;
+    @FXML
+    private Button buttonIsland11;
+    @FXML
+    private Button buttonIsland12;
 
     private static boolean onlyObserv;
     private static ArrayList<IslandTiles> islands;
@@ -446,7 +470,7 @@ public class IslandTilesScene {
         IslandTilesScene.onlyObserv = onlyObserv;
     }
 
-    public void chosenIsland1(){
+    public void chosenIsland1(ActionEvent event){
         if(numberOfSceneToComeBack==1) {
             MoveStudent1Msg moveStudent1Msg = new MoveStudent1Msg(MoveStudent1Scene.getColor(), 0);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent1Msg);
@@ -462,7 +486,7 @@ public class IslandTilesScene {
         }
         System.out.println("Ho scelto l'isola 1");
     }
-    public void chosenIsland2(){
+    public void chosenIsland2(ActionEvent event){
         if(numberOfSceneToComeBack==1) {
             MoveStudent1Msg moveStudent1Msg = new MoveStudent1Msg(MoveStudent1Scene.getColor(), 1);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent1Msg);
@@ -478,7 +502,7 @@ public class IslandTilesScene {
         }
         System.out.println("Ho scelto l'isola 2");
     }
-    public void chosenIsland3(){
+    public void chosenIsland3(ActionEvent event){
         if(numberOfSceneToComeBack==1) {
             MoveStudent1Msg moveStudent1Msg = new MoveStudent1Msg(MoveStudent1Scene.getColor(), 2);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent1Msg);
@@ -494,7 +518,7 @@ public class IslandTilesScene {
         }
         System.out.println("Ho scelto l'isola 3");
     }
-    public void chosenIsland4(){
+    public void chosenIsland4(ActionEvent event){
         if(numberOfSceneToComeBack==1) {
             MoveStudent1Msg moveStudent1Msg = new MoveStudent1Msg(MoveStudent1Scene.getColor(), 3);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent1Msg);
@@ -510,7 +534,7 @@ public class IslandTilesScene {
         }
         System.out.println("Ho scelto l'isola 4");
     }
-    public void chosenIsland5(){
+    public void chosenIsland5(ActionEvent event){
         if(numberOfSceneToComeBack==1) {
             MoveStudent1Msg moveStudent1Msg = new MoveStudent1Msg(MoveStudent1Scene.getColor(), 4);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent1Msg);
@@ -526,7 +550,7 @@ public class IslandTilesScene {
         }
         System.out.println("Ho scelto l'isola 5");
     }
-    public void chosenIsland6(){
+    public void chosenIsland6(ActionEvent event){
         if(numberOfSceneToComeBack==1) {
             MoveStudent1Msg moveStudent1Msg = new MoveStudent1Msg(MoveStudent1Scene.getColor(), 5);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent1Msg);
@@ -542,7 +566,7 @@ public class IslandTilesScene {
         }
         System.out.println("Ho scelto l'isola 6");
     }
-    public void chosenIsland7(){
+    public void chosenIsland7(ActionEvent event){
         if(numberOfSceneToComeBack==1) {
             MoveStudent1Msg moveStudent1Msg = new MoveStudent1Msg(MoveStudent1Scene.getColor(), 6);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent1Msg);
@@ -558,7 +582,7 @@ public class IslandTilesScene {
         }
         System.out.println("Ho scelto l'isola 7");
     }
-    public void chosenIsland8(){
+    public void chosenIsland8(ActionEvent event){
         if(numberOfSceneToComeBack==1) {
             MoveStudent1Msg moveStudent1Msg = new MoveStudent1Msg(MoveStudent1Scene.getColor(), 7);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent1Msg);
@@ -574,7 +598,7 @@ public class IslandTilesScene {
         }
         System.out.println("Ho scelto l'isola 8");
     }
-    public void chosenIsland9(){
+    public void chosenIsland9(ActionEvent event){
         if(numberOfSceneToComeBack==1) {
             MoveStudent1Msg moveStudent1Msg = new MoveStudent1Msg(MoveStudent1Scene.getColor(), 8);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent1Msg);
@@ -590,7 +614,7 @@ public class IslandTilesScene {
         }
         System.out.println("Ho scelto l'isola 9");
     }
-    public void chosenIsland10(){
+    public void chosenIsland10(ActionEvent event){
         if(numberOfSceneToComeBack==1) {
             MoveStudent1Msg moveStudent1Msg = new MoveStudent1Msg(MoveStudent1Scene.getColor(), 9);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent1Msg);
@@ -606,7 +630,7 @@ public class IslandTilesScene {
         }
         System.out.println("Ho scelto l'isola 10");
     }
-    public void chosenIsland11(){
+    public void chosenIsland11(ActionEvent event){
         if(numberOfSceneToComeBack==1) {
             MoveStudent1Msg moveStudent1Msg = new MoveStudent1Msg(MoveStudent1Scene.getColor(), 10);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent1Msg);
@@ -623,7 +647,7 @@ public class IslandTilesScene {
 
         System.out.println("Ho scelto l'isola 11");
     }
-    public void chosenIsland12() {
+    public void chosenIsland12(ActionEvent event) {
         if (numberOfSceneToComeBack == 1) {
             MoveStudent1Msg moveStudent1Msg = new MoveStudent1Msg(MoveStudent1Scene.getColor(), 11);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent1Msg);
@@ -668,6 +692,7 @@ public class IslandTilesScene {
         ArrayList<ImageView> motherNature = new ArrayList<>();
         ArrayList<Label> numberTower = new ArrayList<>();
         ArrayList<Label> sizes = new ArrayList<>();
+        ArrayList<Button> buttonIslands = new ArrayList<>();
 
         islandImage.add(0,Island1);
         islandImage.add(1,Island2);
@@ -877,11 +902,24 @@ public class IslandTilesScene {
         sizes.add(10, size11);
         sizes.add(11, size12);
 
+        buttonIslands.add(0, buttonIsland1);
+        buttonIslands.add(1, buttonIsland2);
+        buttonIslands.add(2, buttonIsland3);
+        buttonIslands.add(3, buttonIsland4);
+        buttonIslands.add(4, buttonIsland5);
+        buttonIslands.add(5, buttonIsland6);
+        buttonIslands.add(6, buttonIsland7);
+        buttonIslands.add(7, buttonIsland8);
+        buttonIslands.add(8, buttonIsland9);
+        buttonIslands.add(9, buttonIsland10);
+        buttonIslands.add(10, buttonIsland11);
+        buttonIslands.add(11, buttonIsland12);
+
 
 
         if (onlyObserv) {
             for (int i = 0; i < 12; i++) {
-                islandImage.get(i).setOnMouseClicked(null);
+                buttonIslands.get(i).setVisible(false);
             }
             islandWritten.setVisible(false);
         }else{
@@ -914,7 +952,7 @@ public class IslandTilesScene {
                 sizes.get(i).setText("[" + Integer.toString(islandToShow.getSize()) + "]");
             } else {
                 islandImage.get(i).setImage(null);
-                islandImage.get(i).setOnMouseClicked(null);
+                buttonIslands.get(i).setVisible(false);
                 studentBlueImage.get(i).setImage(null);
                 studentGreenImage.get(i).setImage(null);
                 studentYellowImage.get(i).setImage(null);

@@ -9,62 +9,62 @@
 
 <AnchorPane prefHeight="680.0" prefWidth="1120.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.Client.views.GUI.IslandTilesScene">
    <children>
-      <ImageView fx:id="Island1" fitHeight="200.0" fitWidth="200.0" layoutX="60.0" layoutY="98.0" onMouseClicked="#chosenIsland1" opacity="0.64" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Island1" fitHeight="200.0" fitWidth="200.0" layoutX="60.0" layoutY="98.0" opacity="0.64" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@island1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="Island2" fitHeight="200.0" fitWidth="200.0" layoutX="252.0" layoutY="30.0" onMouseClicked="#chosenIsland2" opacity="0.64" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Island2" fitHeight="200.0" fitWidth="200.0" layoutX="252.0" layoutY="30.0" opacity="0.64" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@island1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="Island3" fitHeight="200.0" fitWidth="200.0" layoutX="465.0" layoutY="14.0" onMouseClicked="#chosenIsland3" opacity="0.64" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Island3" fitHeight="200.0" fitWidth="200.0" layoutX="465.0" layoutY="14.0" opacity="0.64" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@island1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="Island4" fitHeight="200.0" fitWidth="200.0" layoutX="667.0" layoutY="22.0" onMouseClicked="#chosenIsland4" opacity="0.64" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Island4" fitHeight="200.0" fitWidth="200.0" layoutX="667.0" layoutY="22.0" opacity="0.64" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@island1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="Island5" fitHeight="200.0" fitWidth="200.0" layoutX="867.0" layoutY="81.0" onMouseClicked="#chosenIsland5" opacity="0.64" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Island5" fitHeight="200.0" fitWidth="200.0" layoutX="867.0" layoutY="81.0" opacity="0.64" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@island1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="Island6" fitHeight="200.0" fitWidth="200.0" layoutX="931.0" layoutY="269.0" onMouseClicked="#chosenIsland6" opacity="0.64" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Island6" fitHeight="200.0" fitWidth="200.0" layoutX="931.0" layoutY="269.0" opacity="0.64" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@island1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="Island7" fitHeight="200.0" fitWidth="200.0" layoutX="907.0" layoutY="457.0" onMouseClicked="#chosenIsland7" opacity="0.64" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Island7" fitHeight="200.0" fitWidth="200.0" layoutX="907.0" layoutY="457.0" opacity="0.64" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@island1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="Island8" fitHeight="200.0" fitWidth="200.0" layoutX="711.0" layoutY="521.0" onMouseClicked="#chosenIsland8" opacity="0.64" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Island8" fitHeight="200.0" fitWidth="200.0" layoutX="711.0" layoutY="521.0" opacity="0.64" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@island1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="Island9" fitHeight="200.0" fitWidth="200.0" layoutX="489.0" layoutY="545.0" onMouseClicked="#chosenIsland9" opacity="0.64" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Island9" fitHeight="200.0" fitWidth="200.0" layoutX="489.0" layoutY="545.0" opacity="0.64" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@island1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="Island10" fitHeight="200.0" fitWidth="200.0" layoutX="264.0" layoutY="545.0" onMouseClicked="#chosenIsland10" opacity="0.64" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Island10" fitHeight="200.0" fitWidth="200.0" layoutX="264.0" layoutY="545.0" opacity="0.64" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@island1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="Island11" fitHeight="200.0" fitWidth="200.0" layoutX="79.0" layoutY="477.0" onMouseClicked="#chosenIsland11" opacity="0.64" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Island11" fitHeight="200.0" fitWidth="200.0" layoutX="79.0" layoutY="477.0" opacity="0.64" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@island1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="Island12" fitHeight="200.0" fitWidth="200.0" layoutY="281.0" onMouseClicked="#chosenIsland12" opacity="0.64" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Island12" fitHeight="200.0" fitWidth="200.0" layoutY="281.0" opacity="0.64" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@island1.png" />
          </image>
@@ -783,5 +783,17 @@
          </font>
       </Label>
       <Button fx:id="backToScene" layoutX="491.0" layoutY="371.0" mnemonicParsing="false" onAction="#backToSceneButtonClicked" text="Ritorna alla scelta precedente" />
+      <Button fx:id="buttonIsland1" layoutX="238.0" layoutY="255.0" mnemonicParsing="false" onAction="#chosenIsland1" text="1" />
+      <Button fx:id="buttonIsland2" layoutX="342.0" layoutY="206.0" mnemonicParsing="false" onAction="#chosenIsland2" text="2" />
+      <Button fx:id="buttonIsland3" layoutX="577.0" layoutY="197.0" mnemonicParsing="false" onAction="#chosenIsland3" text="3" />
+      <Button fx:id="buttonIsland4" layoutX="749.0" layoutY="206.0" mnemonicParsing="false" onAction="#chosenIsland4" text="4" />
+      <Button fx:id="buttonIsland5" layoutX="927.0" layoutY="255.0" mnemonicParsing="false" onAction="#chosenIsland5" text="5" />
+      <Button fx:id="buttonIsland6" layoutX="908.0" layoutY="394.0" mnemonicParsing="false" onAction="#chosenIsland6" text="6" />
+      <Button fx:id="buttonIsland7" layoutX="908.0" layoutY="493.0" mnemonicParsing="false" onAction="#chosenIsland7" text="7" />
+      <Button fx:id="buttonIsland8" layoutX="791.0" layoutY="511.0" mnemonicParsing="false" onAction="#chosenIsland8" text="8" />
+      <Button fx:id="buttonIsland9" layoutX="599.0" layoutY="528.0" mnemonicParsing="false" onAction="#chosenIsland9" text="9" />
+      <Button fx:id="buttonIsland10" layoutX="382.0" layoutY="534.0" mnemonicParsing="false" onAction="#chosenIsland10" text="10" />
+      <Button fx:id="buttonIsland11" layoutX="259.0" layoutY="498.0" mnemonicParsing="false" onAction="#chosenIsland11" text="11" />
+      <Button fx:id="buttonIsland12" layoutX="224.0" layoutY="358.0" mnemonicParsing="false" onAction="#chosenIsland12" text="12" />
    </children>
 </AnchorPane>
