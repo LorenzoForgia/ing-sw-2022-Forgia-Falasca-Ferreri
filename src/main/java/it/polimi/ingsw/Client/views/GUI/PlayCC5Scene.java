@@ -59,6 +59,8 @@ public class PlayCC5Scene {
         }
     }
     public void noClicked(ActionEvent event){
+        AskForMN3PlayersSceneView a= new AskForMN3PlayersSceneView(answerMsg);
+        a.run();
 
     }
     public void siClicked(ActionEvent event){

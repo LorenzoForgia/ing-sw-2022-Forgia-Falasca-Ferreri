@@ -3,6 +3,7 @@ package it.polimi.ingsw.messages;
 import it.polimi.ingsw.Client.ServerHandler;
 import it.polimi.ingsw.Client.views.*;
 import it.polimi.ingsw.Client.views.GUI.AskForMN3PlayersSceneView;
+import it.polimi.ingsw.Client.views.GUI.PlayCC5SceneView;
 import it.polimi.ingsw.Model.CharacterCard;
 import it.polimi.ingsw.Model.GeneralBoard;
 import it.polimi.ingsw.Model.Player;
@@ -28,7 +29,9 @@ public class AnsMoveStudent4Msg extends AnswerMsg{
     public void processMessage(ServerHandler serverHandler)
     {
         if(modexp){
-            serverHandler.getClient().transitionToView(new PlayCC5View(this));
+            PlayCC5SceneView p= new PlayCC5SceneView(this);
+            p.run();
+            //serverHandler.getClient().transitionToView(new PlayCC5View(this));
         }else{
             AskForMN3PlayersSceneView a= new AskForMN3PlayersSceneView(this);
             a.run();
