@@ -188,7 +188,7 @@ public class AssistantCardSceneNewTurn {
         JavaFXMain.getCurrentApplication().switchToWaitingScene();
     }
     public void chosenCard10(){
-        TurnDecidedMsg turnDecidedMsg= new TurnDecidedMsg(CardAssistant.Uno);
+        TurnDecidedMsg turnDecidedMsg= new TurnDecidedMsg(CardAssistant.Dieci);
         JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(turnDecidedMsg);
         JavaFXMain.getCurrentApplication().switchToWaitingScene();
     }
