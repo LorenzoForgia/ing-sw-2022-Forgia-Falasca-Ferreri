@@ -31,6 +31,8 @@ public class AskForMotherNatureScene {
     private Label showSchoolBoard3;
     @FXML
     private Label showSchoolBoard4;
+    @FXML
+    private ImageView playedCardAssistant;
     private static int numberOfMessage;
 
     /** is used to know which answerMessage has to use

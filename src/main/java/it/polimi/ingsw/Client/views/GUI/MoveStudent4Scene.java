@@ -134,23 +134,23 @@ public class MoveStudent4Scene {
 
     public void BlueSelected(){
         color=Color.Blue;
-        JavaFXMain.getCurrentApplication().switchToMS1DiningOrIslandScene();
+        JavaFXMain.getCurrentApplication().switchToMS4DiningOrIslandScene();
     }
     public void YellowSelected(){
         color=Color.Yellow;
-        JavaFXMain.getCurrentApplication().switchToMS1DiningOrIslandScene();
+        JavaFXMain.getCurrentApplication().switchToMS4DiningOrIslandScene();
     }
     public void GreenSelected(){
         color=Color.Green;
-        JavaFXMain.getCurrentApplication().switchToMS1DiningOrIslandScene();
+        JavaFXMain.getCurrentApplication().switchToMS4DiningOrIslandScene();
     }
     public void RedSelected(){
         color=Color.Red;
-        JavaFXMain.getCurrentApplication().switchToMS1DiningOrIslandScene();
+        JavaFXMain.getCurrentApplication().switchToMS4DiningOrIslandScene();
     }
     public void PinkSelected(){
         color=Color.Pink;
-        JavaFXMain.getCurrentApplication().switchToMS1DiningOrIslandScene();
+        JavaFXMain.getCurrentApplication().switchToMS4DiningOrIslandScene();
     }
 
     public void showGeneralBoardSelected(){
