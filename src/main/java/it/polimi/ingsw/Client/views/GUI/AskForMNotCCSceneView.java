@@ -14,6 +14,7 @@ public class AskForMNotCCSceneView extends View {
 
     @Override
     public void run() {
+        AskForMotherNatureScene.setNumberOfMessage(2);
         AskForMotherNatureScene.setAnsPlayAfterNotCCMsg(ansPlayAfterNotCCMsg);
         Platform.runLater(() -> {
             JavaFXMain.getCurrentApplication().switchToAskForMotherNatureScene();
