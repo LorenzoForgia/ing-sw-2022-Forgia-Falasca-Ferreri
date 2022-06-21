@@ -13,6 +13,7 @@ public class MoveStudent4SceneView extends View {
 
     @Override
     public void run() {
+        MoveStudent4Scene.setNumberOfMessage(0);
         MoveStudent4Scene.setAnswerMsg(this.ansMoveStudent3Msg);
         Platform.runLater(() -> {
             JavaFXMain.getCurrentApplication().switchToMoveStudent4Scene();
