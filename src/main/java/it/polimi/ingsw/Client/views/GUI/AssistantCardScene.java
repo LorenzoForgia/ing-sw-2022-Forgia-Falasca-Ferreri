@@ -195,7 +195,7 @@ public class AssistantCardScene {
 
     public void showGeneralBoardSelected(){
         IslandTilesScene.setOnlyObserv(true);
-        IslandTilesScene.setNumberOfSceneToComeBack(1);
+        IslandTilesScene.setNumberOfSceneToComeBack(0);
         IslandTilesScene.setIslands(answerMsg.getIs());
         JavaFXMain.getCurrentApplication().switchToIslandTitleScene();
     }
