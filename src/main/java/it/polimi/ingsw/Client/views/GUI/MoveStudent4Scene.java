@@ -53,14 +53,14 @@ public class MoveStudent4Scene {
             imageFourthSchoolBoard.setVisible(false);
             imageFourthSchoolBoard.setOnMouseClicked(null);
             showSchoolBoard4.setText("");
-            showSchoolBoard1.setText("Plancia di " + answerMsg.GetPlayers().get(0));
-            showSchoolBoard2.setText("Plancia di " + answerMsg.GetPlayers().get(1));
-            showSchoolBoard3.setText("Plancia di " + answerMsg.GetPlayers().get(2));
+            showSchoolBoard1.setText("Plancia di " + answerMsg.GetPlayers().get(0).getNickName());
+            showSchoolBoard2.setText("Plancia di " + answerMsg.GetPlayers().get(1).getNickName());
+            showSchoolBoard3.setText("Plancia di " + answerMsg.GetPlayers().get(2).getNickName());
         }else{
-            showSchoolBoard1.setText("Plancia di " + answerMsg.GetPlayers().get(0));
-            showSchoolBoard2.setText("Plancia di " + answerMsg.GetPlayers().get(1));
-            showSchoolBoard3.setText("Plancia di " + answerMsg.GetPlayers().get(2));
-            showSchoolBoard4.setText("Plancia di " + answerMsg.GetPlayers().get(3));
+            showSchoolBoard1.setText("Plancia di " + answerMsg.GetPlayers().get(0).getNickName());
+            showSchoolBoard2.setText("Plancia di " + answerMsg.GetPlayers().get(1).getNickName());
+            showSchoolBoard3.setText("Plancia di " + answerMsg.GetPlayers().get(2).getNickName());
+            showSchoolBoard4.setText("Plancia di " + answerMsg.GetPlayers().get(3).getNickName());
         }
     }
     public void BlueSelected(){
