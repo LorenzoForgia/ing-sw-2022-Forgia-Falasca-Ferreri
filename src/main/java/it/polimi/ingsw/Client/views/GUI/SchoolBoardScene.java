@@ -176,6 +176,7 @@ public class SchoolBoardScene {
      * 4 is for MoveStudentScene4
      * 5 is for AssistantCardSceneNewTurn
      * 6 is for AskForMotherNatureScene
+     * 7 is for AskForMN3PlayersScene
      * **/
     public static void setNumberOfSceneToComeBack(int numberOfSceneToComeBack) {
         SchoolBoardScene.numberOfSceneToComeBack = numberOfSceneToComeBack;
@@ -201,6 +202,8 @@ public class SchoolBoardScene {
             JavaFXMain.getCurrentApplication().switchToAssistantCardSceneNewTurn();
         }else if(numberOfSceneToComeBack==6){
             JavaFXMain.getCurrentApplication().switchToAskForMotherNatureScene();
+        }else if(numberOfSceneToComeBack==7){
+            JavaFXMain.getCurrentApplication().switchToAskForMN3PlayersScene();
         }
     }
 

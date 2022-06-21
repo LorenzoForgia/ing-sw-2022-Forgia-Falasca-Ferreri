@@ -443,7 +443,9 @@ public class IslandTilesScene {
      * 4 is for MoveStudentScene4
      * 5 is for AssistantCardSceneNewTurn
      * 6 is for AskForMotherNatureScene
-     *is used also for the message**/
+     *7 is for AskForMN3PlayersScene
+     * is used also for the message
+     * **/
     public static void setNumberOfSceneToComeBack(int numberOfSceneToComeBack) {
         IslandTilesScene.numberOfSceneToComeBack = numberOfSceneToComeBack;
     }
@@ -463,6 +465,8 @@ public class IslandTilesScene {
             JavaFXMain.getCurrentApplication().switchToAssistantCardSceneNewTurn();
         }else if(numberOfSceneToComeBack==6){
             JavaFXMain.getCurrentApplication().switchToAskForMotherNatureScene();
+        }else if(numberOfSceneToComeBack==7){
+            JavaFXMain.getCurrentApplication().switchToAskForMN3PlayersScene();
         }
     }
 
