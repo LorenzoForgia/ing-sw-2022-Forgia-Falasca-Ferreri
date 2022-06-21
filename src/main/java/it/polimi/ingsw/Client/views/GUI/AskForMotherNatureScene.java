@@ -142,34 +142,66 @@ public class AskForMotherNatureScene {
     public void showGeneralBoardSelected(){
         IslandTilesScene.setOnlyObserv(true);
         IslandTilesScene.setNumberOfSceneToComeBack(6);
-        IslandTilesScene.setIslands(answerMsg.GetGB().GetIslands());
+        if(numberOfMessage==0){
+            IslandTilesScene.setIslands(answerMsg.GetGB().GetIslands());
+        }else if(numberOfMessage==1){
+            IslandTilesScene.setIslands(ansPlayAfterCCMsg.GetGB().GetIslands());
+        }else if(numberOfMessage==2){
+            IslandTilesScene.setIslands(ansPlayAfterNotCCMsg.GetGB().GetIslands());
+        }
+
         JavaFXMain.getCurrentApplication().switchToIslandTitleScene();
     }
 
     public void showSchoolBoard1Selected(){
 
         SchoolBoardScene.setNumberOfSceneToComeBack(6);
-        SchoolBoardScene.setPlayer(answerMsg.GetPlayers().get(0));
+        if(numberOfMessage==0){
+            SchoolBoardScene.setPlayer(answerMsg.GetPlayers().get(0));
+        }else if(numberOfMessage==1){
+            SchoolBoardScene.setPlayer(ansPlayAfterCCMsg.GetPlayers().get(0));
+        }else if(numberOfMessage==2){
+            SchoolBoardScene.setPlayer(ansPlayAfterNotCCMsg.GetPlayers().get(0));
+        }
+
         JavaFXMain.getCurrentApplication().switchToSchoolBoardScene();
 
     }
     public void showSchoolBoard2Selected(){
 
         SchoolBoardScene.setNumberOfSceneToComeBack(6);
-        SchoolBoardScene.setPlayer(answerMsg.GetPlayers().get(1));
+        if(numberOfMessage==0){
+            SchoolBoardScene.setPlayer(answerMsg.GetPlayers().get(1));
+        }else if(numberOfMessage==1){
+            SchoolBoardScene.setPlayer(ansPlayAfterCCMsg.GetPlayers().get(1));
+        }else if(numberOfMessage==2){
+            SchoolBoardScene.setPlayer(ansPlayAfterNotCCMsg.GetPlayers().get(1));
+        }
         JavaFXMain.getCurrentApplication().switchToSchoolBoardScene();
 
     }
     public void showSchoolBoard3Selected(){
 
         SchoolBoardScene.setNumberOfSceneToComeBack(6);
-        SchoolBoardScene.setPlayer(answerMsg.GetPlayers().get(2));
+        if(numberOfMessage==0){
+            SchoolBoardScene.setPlayer(answerMsg.GetPlayers().get(2));
+        }else if(numberOfMessage==1){
+            SchoolBoardScene.setPlayer(ansPlayAfterCCMsg.GetPlayers().get(2));
+        }else if(numberOfMessage==2){
+            SchoolBoardScene.setPlayer(ansPlayAfterNotCCMsg.GetPlayers().get(2));
+        }
         JavaFXMain.getCurrentApplication().switchToSchoolBoardScene();
     }
 
     public void showSchoolBoard4Selected(){
         SchoolBoardScene.setNumberOfSceneToComeBack(6);
-        SchoolBoardScene.setPlayer(answerMsg.GetPlayers().get(3));
+        if(numberOfMessage==0){
+            SchoolBoardScene.setPlayer(answerMsg.GetPlayers().get(3));
+        }else if(numberOfMessage==1){
+            SchoolBoardScene.setPlayer(ansPlayAfterCCMsg.GetPlayers().get(3));
+        }else if(numberOfMessage==2){
+            SchoolBoardScene.setPlayer(ansPlayAfterNotCCMsg.GetPlayers().get(3));
+        }
         JavaFXMain.getCurrentApplication().switchToSchoolBoardScene();
     }
 
