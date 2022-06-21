@@ -15,9 +15,9 @@ public class AskForMNCCSceneView extends View {
 
     @Override
     public void run() {
-        AskForMNCCScene.setAnsPlayAfterCCMsg(ansPlayAfterCCMsg);
+        AskForMotherNatureScene.setAnsPlayAfterCCMsg(ansPlayAfterCCMsg);
         Platform.runLater(() -> {
-            JavaFXMain.getCurrentApplication().switchToAskForMNCCScene();
+            JavaFXMain.getCurrentApplication().switchToAskForMotherNatureScene();
         });
     }
 }

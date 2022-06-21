@@ -4,6 +4,7 @@ import it.polimi.ingsw.Model.Color;
 import it.polimi.ingsw.Model.IslandTiles;
 import it.polimi.ingsw.messages.AnsAskCAMsg;
 import it.polimi.ingsw.messages.AnsFirstPlayerTurnMsg;
+import it.polimi.ingsw.messages.AnsPlayAfterCCMsg;
 import it.polimi.ingsw.messages.MoveStudent1Msg;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -34,6 +35,11 @@ public class MoveStudent1Scene {
     private Label showSchoolBoard4;
 
     private static AnsAskCAMsg answerMsg;
+    private static AnsPlayAfterCCMsg ansPlayAfterCCMsg;
+
+    public static void setAnsPlayAfterCCMsg(AnsPlayAfterCCMsg ansPlayAfterCCMsg) {
+        MoveStudent1Scene.ansPlayAfterCCMsg = ansPlayAfterCCMsg;
+    }
 
     public static void setAnswerMsg(AnsAskCAMsg answerMsg) {
         MoveStudent1Scene.answerMsg = answerMsg;

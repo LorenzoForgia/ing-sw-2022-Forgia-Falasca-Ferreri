@@ -13,9 +13,9 @@ public class MS1CCSceneView extends View {
     }
     @Override
     public void run() {
-        MS1CCScene.setAnswerMsg(answerMsg);
+        MoveStudent1Scene.setAnsPlayAfterCCMsg(answerMsg);
         Platform.runLater(() -> {
-            JavaFXMain.getCurrentApplication().switchToMS1CCScene();
+            JavaFXMain.getCurrentApplication().switchToMoveStudent1Scene();
         });
     }
 }

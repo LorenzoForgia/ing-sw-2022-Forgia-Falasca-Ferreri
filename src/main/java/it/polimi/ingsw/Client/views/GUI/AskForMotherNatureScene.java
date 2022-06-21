@@ -1,6 +1,7 @@
 package it.polimi.ingsw.Client.views.GUI;
 
 import it.polimi.ingsw.messages.AnsMoveStudent3Msg;
+import it.polimi.ingsw.messages.AnsPlayAfterCCMsg;
 import it.polimi.ingsw.messages.NumStepMNMsg;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,6 +11,7 @@ import javafx.scene.control.TextField;
 
 public class AskForMotherNatureScene {
     private static AnsMoveStudent3Msg ansMoveStudent3Msg;
+    private static AnsPlayAfterCCMsg ansPlayAfterCCMsg;
     @FXML
     private TextField box;
     private int step;
@@ -17,6 +19,11 @@ public class AskForMotherNatureScene {
     public static void setAnsMoveStudent3Msg(AnsMoveStudent3Msg ansMoveStudent3Msg) {
         AskForMotherNatureScene.ansMoveStudent3Msg = ansMoveStudent3Msg;
     }
+
+    public static void setAnsPlayAfterCCMsg(AnsPlayAfterCCMsg ansPlayAfterCCMsg) {
+        AskForMotherNatureScene.ansPlayAfterCCMsg = ansPlayAfterCCMsg;
+    }
+
     public void okClicked(ActionEvent event){
         try{
             step=Integer.parseInt(box.getText());

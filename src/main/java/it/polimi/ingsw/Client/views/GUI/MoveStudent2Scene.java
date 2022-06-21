@@ -4,6 +4,7 @@ import it.polimi.ingsw.Model.Color;
 
 import it.polimi.ingsw.messages.AnsAskCAMsg;
 import it.polimi.ingsw.messages.AnsMoveStudent1Msg;
+import it.polimi.ingsw.messages.AnsPlayAfterCCMsg;
 import it.polimi.ingsw.messages.MoveStudent2Msg;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -25,6 +26,11 @@ public class MoveStudent2Scene {
     @FXML
     private ImageView imageFourthSchoolBoard;
     private static AnsMoveStudent1Msg answerMsg;
+    private static AnsPlayAfterCCMsg ansPlayAfterCCMsg;
+
+    public static void setAnsPlayAfterCCMsg(AnsPlayAfterCCMsg ansPlayAfterCCMsg) {
+        MoveStudent2Scene.ansPlayAfterCCMsg = ansPlayAfterCCMsg;
+    }
 
     public static void setAnswerMsg(AnsMoveStudent1Msg answerMsg) {
         MoveStudent2Scene.answerMsg = answerMsg;
