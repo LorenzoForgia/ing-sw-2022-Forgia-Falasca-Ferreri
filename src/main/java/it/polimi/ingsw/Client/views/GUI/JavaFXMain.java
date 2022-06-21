@@ -676,5 +676,8 @@ public class JavaFXMain extends Application {
         primaryStage.sizeToScene();
     }
 
+    public Stage getPrimaryStage() {
+        return primaryStage;
+    }
 
 }
