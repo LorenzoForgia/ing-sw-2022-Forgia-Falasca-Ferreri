@@ -1,6 +1,7 @@
 package it.polimi.ingsw.Client.views.GUI;
 
-import it.polimi.ingsw.messages.AnsMoveStudent3Msg;
+
+import it.polimi.ingsw.messages.AnsMoveStudent4Msg;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
@@ -8,7 +9,7 @@ import javafx.scene.image.ImageView;
 
 import java.util.ArrayList;
 
-public class PlayCC4Scene {
+public class PlayCC5Scene {
     @FXML
     public ImageView imageFirstCharacterCard;
     @FXML
@@ -16,10 +17,10 @@ public class PlayCC4Scene {
     @FXML
     public ImageView imageThirdCharacterCard;
 
-    public static AnsMoveStudent3Msg answerMsg;
+    public static AnsMoveStudent4Msg answerMsg;
 
-    public static void setAnsMoveStudent3Msg(AnsMoveStudent3Msg ansMoveStudent3Msg) {
-        PlayCC4Scene.answerMsg = ansMoveStudent3Msg;
+    public static void setAnsMoveStudent4Msg(AnsMoveStudent4Msg ansMoveStudent4Msg) {
+        PlayCC5Scene.answerMsg = ansMoveStudent4Msg;
     }
 
     public void initialize() {
@@ -58,8 +59,7 @@ public class PlayCC4Scene {
         }
     }
     public void noClicked(ActionEvent event){
-        AskForMotherNatureSceneView a= new AskForMotherNatureSceneView(answerMsg);
-        a.run();
+
     }
     public void siClicked(ActionEvent event){
         ChoiceCharacterCardScene.setCards(answerMsg.GetCharacterCards());

@@ -2,10 +2,7 @@ package it.polimi.ingsw.Client.views.GUI;
 
 import it.polimi.ingsw.Model.Color;
 import it.polimi.ingsw.Model.IslandTiles;
-import it.polimi.ingsw.messages.AnsAskCAMsg;
-import it.polimi.ingsw.messages.AnsFirstPlayerTurnMsg;
-import it.polimi.ingsw.messages.AnsPlayAfterCCMsg;
-import it.polimi.ingsw.messages.MoveStudent1Msg;
+import it.polimi.ingsw.messages.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -36,10 +33,15 @@ public class MoveStudent1Scene {
 
     private static AnsAskCAMsg answerMsg;
     private static AnsPlayAfterCCMsg ansPlayAfterCCMsg;
+    private static AnsPlayAfterNotCCMsg ansPlayAfterNotCCMsg;
     private static int numberOfMessage;
 
     public static void setAnsPlayAfterCCMsg(AnsPlayAfterCCMsg ansPlayAfterCCMsg) {
         MoveStudent1Scene.ansPlayAfterCCMsg = ansPlayAfterCCMsg;
+    }
+
+    public static void setAnsPlayAfterNotCCMsg(AnsPlayAfterNotCCMsg ansPlayAfterNotCCMsg) {
+        MoveStudent1Scene.ansPlayAfterNotCCMsg = ansPlayAfterNotCCMsg;
     }
 
     public static void setAnswerMsg(AnsAskCAMsg answerMsg) {

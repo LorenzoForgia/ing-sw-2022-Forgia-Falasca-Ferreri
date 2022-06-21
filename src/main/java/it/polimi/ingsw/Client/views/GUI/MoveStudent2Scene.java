@@ -2,10 +2,7 @@ package it.polimi.ingsw.Client.views.GUI;
 
 import it.polimi.ingsw.Model.Color;
 
-import it.polimi.ingsw.messages.AnsAskCAMsg;
-import it.polimi.ingsw.messages.AnsMoveStudent1Msg;
-import it.polimi.ingsw.messages.AnsPlayAfterCCMsg;
-import it.polimi.ingsw.messages.MoveStudent2Msg;
+import it.polimi.ingsw.messages.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -28,6 +25,7 @@ public class MoveStudent2Scene {
     private static int numberOfMessage;
     private static AnsMoveStudent1Msg answerMsg;
     private static AnsPlayAfterCCMsg ansPlayAfterCCMsg;
+    private static AnsPlayAfterNotCCMsg ansPlayAfterNotCCMsg;
 
     /** is used to know which answerMessage has to use
      * 0 is for answerMsg
@@ -39,6 +37,10 @@ public class MoveStudent2Scene {
 
     public static void setAnsPlayAfterCCMsg(AnsPlayAfterCCMsg ansPlayAfterCCMsg) {
         MoveStudent2Scene.ansPlayAfterCCMsg = ansPlayAfterCCMsg;
+    }
+
+    public static void setAnsPlayAfterNotCCMsg(AnsPlayAfterNotCCMsg ansPlayAfterNotCCMsg) {
+        MoveStudent2Scene.ansPlayAfterNotCCMsg = ansPlayAfterNotCCMsg;
     }
 
     public static void setAnswerMsg(AnsMoveStudent1Msg answerMsg) {

@@ -12,9 +12,9 @@ public class MS3NotCCSceneView extends View {
     }
     @Override
     public void run() {
-        MS3NotCCScene.setAnswerMsg(answerMsg);
+        MoveStudent3Scene.setAnsPlayAfterNotCCMsg(answerMsg);
         Platform.runLater(() -> {
-            JavaFXMain.getCurrentApplication().switchToMS3NotCCScene();
+            JavaFXMain.getCurrentApplication().switchToMoveStudent3Scene();
         });
     }
 }

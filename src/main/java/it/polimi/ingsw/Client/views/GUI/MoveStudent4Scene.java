@@ -2,10 +2,7 @@ package it.polimi.ingsw.Client.views.GUI;
 
 import it.polimi.ingsw.Model.Color;
 
-import it.polimi.ingsw.messages.AnsMoveStudent2Msg;
-import it.polimi.ingsw.messages.AnsMoveStudent3Msg;
-import it.polimi.ingsw.messages.AnsPlayAfterCCMsg;
-import it.polimi.ingsw.messages.MoveStudent4Msg;
+import it.polimi.ingsw.messages.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -28,9 +25,14 @@ public class MoveStudent4Scene {
     private ImageView imageFourthSchoolBoard;
     private static AnsMoveStudent3Msg answerMsg;
     private static AnsPlayAfterCCMsg ansPlayAfterCCMsg;
+    private static AnsPlayAfterNotCCMsg ansPlayAfterNotCCMsg;
 
     public static void setAnsPlayAfterCCMsg(AnsPlayAfterCCMsg ansPlayAfterCCMsg) {
         MoveStudent4Scene.ansPlayAfterCCMsg = ansPlayAfterCCMsg;
+    }
+
+    public static void setAnsPlayAfterNotCCMsg(AnsPlayAfterNotCCMsg ansPlayAfterNotCCMsg) {
+        MoveStudent4Scene.ansPlayAfterNotCCMsg = ansPlayAfterNotCCMsg;
     }
 
     public static void setAnswerMsg(AnsMoveStudent3Msg answerMsg) {

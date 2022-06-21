@@ -5,6 +5,7 @@ import it.polimi.ingsw.Client.views.*;
 import it.polimi.ingsw.Client.views.GUI.AskForMotherNatureSceneView;
 import it.polimi.ingsw.Client.views.GUI.MoveStudent4SceneView;
 import it.polimi.ingsw.Client.views.GUI.PlayCC4Players3SceneView;
+import it.polimi.ingsw.Client.views.GUI.PlayCC4SceneView;
 import it.polimi.ingsw.Model.CharacterCard;
 import it.polimi.ingsw.Model.GeneralBoard;
 import it.polimi.ingsw.Model.Player;
@@ -35,7 +36,9 @@ public class AnsMoveStudent3Msg extends AnswerMsg{
                 p.run();
                 /*serverHandler.getClient().transitionToView(new PlayCC4Players3View(this));*/
             }else{
-                serverHandler.getClient().transitionToView(new PlayCC4View(this));
+                PlayCC4SceneView p= new PlayCC4SceneView(this);
+                p.run();
+                //serverHandler.getClient().transitionToView(new PlayCC4View(this));
             }
         }else{
             if(players.size()==3){
