@@ -226,6 +226,9 @@ public class AssistantCardScene {
         SchoolBoardScene.setPlayer(answerMsg.getPl().get(3));
         JavaFXMain.getCurrentApplication().switchToSchoolBoardScene();
     }
+    public void showCardAssistantSelected(){
+
+    }
 
 
 }

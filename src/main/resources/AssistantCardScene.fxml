@@ -57,5 +57,11 @@
       <Label fx:id="showSchoolBoard2" layoutX="345.0" layoutY="580.0" text="Label" />
       <Label fx:id="showSchoolBoard3" layoutX="552.0" layoutY="580.0" text="Label" />
       <Label fx:id="showSchoolBoard4" layoutX="734.0" layoutY="580.0" text="Label" />
+      <ImageView fx:id="showCardAssistant" fitHeight="150.0" fitWidth="200.0" layoutX="946.0" layoutY="264.0" onMouseClicked="#showCardAssistantSelected" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@CarteTOT_back_1@3x.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="932.0" layoutY="240.0" text="Mostra le carte giocate!" />
    </children>
 </AnchorPane>

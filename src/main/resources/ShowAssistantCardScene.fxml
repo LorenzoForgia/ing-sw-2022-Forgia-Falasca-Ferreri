@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="536.0" prefWidth="678.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.Client.views.GUI.ShowCardAssistantPlayedScene">
+   <children>
+      <Label fx:id="Title" layoutX="252.0" layoutY="33.0" text="Le carte giocate sono:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="cardAssistant1" fitHeight="150.0" fitWidth="200.0" layoutX="35.0" layoutY="143.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="cardAssistant2" fitHeight="150.0" fitWidth="200.0" layoutX="323.0" layoutY="143.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="cardAssistant3" fitHeight="150.0" fitWidth="200.0" layoutX="35.0" layoutY="354.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="cardAssistant4" fitHeight="150.0" fitWidth="200.0" layoutX="323.0" layoutY="354.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="cardAssistantPlayer1" layoutX="35.0" layoutY="117.0" text="Label" />
+      <Label fx:id="cardAssistantPlayer2" layoutX="325.0" layoutY="117.0" text="Label" />
+      <Label fx:id="cardAssistantPlayer3" layoutX="35.0" layoutY="323.0" text="Label" />
+      <Label fx:id="cardAssistantPlayer4" layoutX="325.0" layoutY="323.0" text="Label" />
+      <Button fx:id="backButton" layoutX="596.0" layoutY="472.0" mnemonicParsing="false" text="Indietro" />
+   </children>
+</AnchorPane>
