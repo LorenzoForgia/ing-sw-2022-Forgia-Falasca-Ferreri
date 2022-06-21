@@ -20,6 +20,7 @@ public class AskForMotherNatureSceneView extends View {
 
     @Override
     public void run() {
+        AskForMotherNatureScene.setNumberOfMessage(0);
         AskForMotherNatureScene.setAnsMoveStudent3Msg(ansMoveStudent3Msg);
         Platform.runLater(() -> {
             JavaFXMain.getCurrentApplication().switchToAskForMotherNatureScene();

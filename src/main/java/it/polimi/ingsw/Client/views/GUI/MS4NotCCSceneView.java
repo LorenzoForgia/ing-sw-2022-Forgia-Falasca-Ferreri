@@ -12,6 +12,7 @@ public class MS4NotCCSceneView extends View {
     }
     @Override
     public void run() {
+        MoveStudent4Scene.setNumberOfMessage(2);
         MoveStudent4Scene.setAnsPlayAfterNotCCMsg(answerMsg);
         Platform.runLater(() -> {
             JavaFXMain.getCurrentApplication().switchToMoveStudent4Scene();
