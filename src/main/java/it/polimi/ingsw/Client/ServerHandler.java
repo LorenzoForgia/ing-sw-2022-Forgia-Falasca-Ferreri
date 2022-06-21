@@ -22,7 +22,9 @@ import javafx.scene.control.ButtonType;
 public class ServerHandler implements Runnable
 {
 
-    private boolean GUI=true;
+
+
+    private boolean GUI=Client.GUI;
     private Socket server;
     private ObjectOutputStream output;
     private ObjectInputStream input;
