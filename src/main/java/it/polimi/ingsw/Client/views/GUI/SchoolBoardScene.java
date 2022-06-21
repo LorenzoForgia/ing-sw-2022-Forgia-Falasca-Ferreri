@@ -172,6 +172,8 @@ public class SchoolBoardScene {
      * 0 is for AssistantCardScene
      * 1 is for MoveStudentScene1
      * 2 is for MoveStudentScene2
+     * 3 is for MoveStudentScene3
+     * 4 is for MoveStudentScene4
      * **/
     public static void setNumberOfSceneToComeBack(int numberOfSceneToComeBack) {
         SchoolBoardScene.numberOfSceneToComeBack = numberOfSceneToComeBack;
