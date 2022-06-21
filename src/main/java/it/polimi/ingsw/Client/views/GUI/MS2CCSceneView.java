@@ -12,6 +12,7 @@ public class MS2CCSceneView extends View {
     }
     @Override
     public void run() {
+        MoveStudent2Scene.setNumberOfMessage(1);
         MoveStudent2Scene.setAnsPlayAfterCCMsg(answerMsg);
         Platform.runLater(() -> {
             JavaFXMain.getCurrentApplication().switchToMoveStudent2Scene();
