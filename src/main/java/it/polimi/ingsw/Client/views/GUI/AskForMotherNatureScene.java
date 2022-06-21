@@ -13,6 +13,7 @@ import javafx.scene.image.ImageView;
 
 public class AskForMotherNatureScene {
     private static AnsMoveStudent3Msg answerMsg;
+    private static AnsPlayAfterCCMsg ansPlayAfterCCMsg;
     @FXML
     private TextField box;
     private int step;
