@@ -443,5 +443,61 @@ public class JavaFXMain extends Application {
         primaryStage.setTitle("Eryantis");
         primaryStage.sizeToScene();
     }
+    public void switchToPlayCC1Scene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/PlayCC1Scene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("Eryantis");
+        primaryStage.sizeToScene();
+    }
+    public void switchToPlayCC2Scene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/PlayCC2Scene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("Eryantis");
+        primaryStage.sizeToScene();
+    }
+    public void switchToPlayCC3Scene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/PlayCC3Scene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("Eryantis");
+        primaryStage.sizeToScene();
+    }
+    public void switchToPlayCC4Players3Scene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/PlayCC4Players3Scene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("Eryantis");
+        primaryStage.sizeToScene();
+    }
 
 }

@@ -7,9 +7,9 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.Client.views.GUI.ChoiceCharacterCardScene">
    <children>
-      <ImageView fx:id="imageFirstCharacterCard" fitHeight="183.0" fitWidth="143.0" layoutX="62.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="imageSecondCharacterCard" fitHeight="183.0" fitWidth="143.0" layoutX="229.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="imageThirdCharacterCard" fitHeight="183.0" fitWidth="143.0" layoutX="396.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imageFirstCharacterCard" fitHeight="183.0" fitWidth="143.0" layoutX="62.0" layoutY="115.0" onMouseClicked="#image1Clicked" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imageSecondCharacterCard" fitHeight="183.0" fitWidth="143.0" layoutX="229.0" layoutY="115.0" onMouseClicked="#image2Clicked" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imageThirdCharacterCard" fitHeight="183.0" fitWidth="143.0" layoutX="396.0" layoutY="115.0" onMouseClicked="#image3Clicked" pickOnBounds="true" preserveRatio="true" />
       <Label layoutX="125.0" layoutY="34.0" text="Scegli la carta personaggio che vuoi giocare" textAlignment="CENTER">
          <font>
             <Font size="18.0" />
