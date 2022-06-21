@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -50,6 +51,11 @@ public class JavaFXMain extends Application {
                 }
             });
         });*/
+        Image icon= new Image("logocraniocreation.jpg");
+        primaryStage.getIcons().add(icon);
+        primaryStage.setResizable(false);
+        primaryStage.setX(50);
+        primaryStage.setY(20);
         switchToConnectionScene();
         primaryStage.show();
     }
@@ -75,7 +81,7 @@ public class JavaFXMain extends Application {
         }
         Scene sc = new Scene(root);
         primaryStage.setScene(sc);
-        primaryStage.setTitle("Login");
+        primaryStage.setTitle("Eriantys");
         primaryStage.sizeToScene();
     }
 
@@ -119,7 +125,7 @@ public class JavaFXMain extends Application {
         }
         Scene sc = new Scene(root);
         primaryStage.setScene(sc);
-        primaryStage.setTitle("Login");
+        primaryStage.setTitle("Eriantys");
         primaryStage.sizeToScene();
     }
     public void switchToNumberOfPlayerScene()
@@ -133,7 +139,6 @@ public class JavaFXMain extends Application {
         }
         Scene sc = new Scene(root);
         primaryStage.setScene(sc);
-        primaryStage.setTitle("NumberOfPlayer");
         primaryStage.sizeToScene();
     }
 
@@ -163,7 +168,6 @@ public class JavaFXMain extends Application {
         }
         Scene sc = new Scene(root);
         primaryStage.setScene(sc);
-        primaryStage.setTitle("CharacterCard");
         primaryStage.sizeToScene();
     }
 
@@ -178,7 +182,6 @@ public class JavaFXMain extends Application {
         }
         Scene sc = new Scene(root);
         primaryStage.setScene(sc);
-        primaryStage.setTitle("CharacterCard");
         primaryStage.sizeToScene();
     }
     public void switchToShowPlayerScene()
@@ -192,7 +195,6 @@ public class JavaFXMain extends Application {
         }
         Scene sc = new Scene(root);
         primaryStage.setScene(sc);
-        primaryStage.setTitle("CharacterCard");
         primaryStage.sizeToScene();
     }
 
@@ -207,7 +209,6 @@ public class JavaFXMain extends Application {
         }
         Scene sc = new Scene(root);
         primaryStage.setScene(sc);
-        primaryStage.setTitle("orderofPlayers");
         primaryStage.sizeToScene();
     }
 
@@ -229,7 +230,6 @@ public class JavaFXMain extends Application {
         }
         Scene sc = new Scene(root);
         primaryStage.setScene(sc);
-        primaryStage.setTitle("CharacterCard");
         primaryStage.sizeToScene();
     }
     public void switchToMoveStudent2Scene()
@@ -243,7 +243,6 @@ public class JavaFXMain extends Application {
         }
         Scene sc = new Scene(root);
         primaryStage.setScene(sc);
-        primaryStage.setTitle("Eryantis");
         primaryStage.sizeToScene();
     }
     public void switchToMoveStudent3Scene()
@@ -257,7 +256,6 @@ public class JavaFXMain extends Application {
         }
         Scene sc = new Scene(root);
         primaryStage.setScene(sc);
-        primaryStage.setTitle("Eryantis");
         primaryStage.sizeToScene();
     }
     public void switchToMoveStudent4Scene()
@@ -271,7 +269,6 @@ public class JavaFXMain extends Application {
         }
         Scene sc = new Scene(root);
         primaryStage.setScene(sc);
-        primaryStage.setTitle("Eryantis");
         primaryStage.sizeToScene();
     }
 
@@ -286,7 +283,6 @@ public class JavaFXMain extends Application {
         }
         Scene sc = new Scene(root);
         primaryStage.setScene(sc);
-        primaryStage.setTitle("Eryantis");
         primaryStage.sizeToScene();
     }
     public void switchToMS2DiningOrIslandScene()
@@ -300,7 +296,6 @@ public class JavaFXMain extends Application {
         }
         Scene sc = new Scene(root);
         primaryStage.setScene(sc);
-        primaryStage.setTitle("Eryantis");
         primaryStage.sizeToScene();
     }
     public void switchToMS3DiningOrIslandScene()
@@ -314,7 +309,6 @@ public class JavaFXMain extends Application {
         }
         Scene sc = new Scene(root);
         primaryStage.setScene(sc);
-        primaryStage.setTitle("Eryantis");
         primaryStage.sizeToScene();
     }
     public void switchToMS4DiningOrIslandScene()
