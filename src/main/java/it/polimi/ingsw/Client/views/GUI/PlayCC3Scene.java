@@ -58,7 +58,8 @@ public class PlayCC3Scene {
         }
     }
     public void noClicked(ActionEvent event){
-        JavaFXMain.getCurrentApplication().switchToMoveStudent3Scene();
+        MoveStudent3SceneView m=new MoveStudent3SceneView(answerMsg);
+        m.run();
     }
     public void siClicked(ActionEvent event){
         ChoiceCharacterCardScene.setCards(answerMsg.GetCharacterCards());

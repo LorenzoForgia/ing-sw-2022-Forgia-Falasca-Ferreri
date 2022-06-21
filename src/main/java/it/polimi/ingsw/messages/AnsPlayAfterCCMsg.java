@@ -2,6 +2,7 @@ package it.polimi.ingsw.messages;
 
 import it.polimi.ingsw.Client.ServerHandler;
 import it.polimi.ingsw.Client.views.*;
+import it.polimi.ingsw.Client.views.GUI.PlayAfterCCSceneView;
 import it.polimi.ingsw.Model.GeneralBoard;
 import it.polimi.ingsw.Model.Player;
 
@@ -24,7 +25,7 @@ public class AnsPlayAfterCCMsg extends AnswerMsg{
     @Override
     public void processMessage(ServerHandler serverHandler)
     {
-        if(countmodexpview==1){
+        /*if(countmodexpview==1){
             serverHandler.getClient().transitionToView(new MoveStudent1AfterCCView(this));
         }else if(countmodexpview==2){
             serverHandler.getClient().transitionToView(new MoveStudent2AfterCCView(this));
@@ -36,7 +37,9 @@ public class AnsPlayAfterCCMsg extends AnswerMsg{
             serverHandler.getClient().transitionToView(new MoveStudent4AfterCCView(this));
         }else if(countmodexpview==5){
             serverHandler.getClient().transitionToView(new AskforMNafterCCView(this));
-        }
+        }*/
+        PlayAfterCCSceneView p= new PlayAfterCCSceneView(this);
+        p.run();
 
     }
     public String GetPlayer(){
@@ -44,4 +47,8 @@ public class AnsPlayAfterCCMsg extends AnswerMsg{
     }
     public GeneralBoard GetGB(){return generalBoard;}
     public ArrayList<Player> GetPlayers(){return players;}
+
+    public int getCountmodexpview() {
+        return countmodexpview;
+    }
 }

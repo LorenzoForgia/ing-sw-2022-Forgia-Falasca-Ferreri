@@ -499,5 +499,174 @@ public class JavaFXMain extends Application {
         primaryStage.setTitle("Eryantis");
         primaryStage.sizeToScene();
     }
+    public void switchToPlayAfterCCScene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/PlayAfterCCScene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("Eryantis");
+        primaryStage.sizeToScene();
+    }
+    public void switchToMS1CCScene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/MS1CCScene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("Eryantis");
+        primaryStage.sizeToScene();
+    }
+    public void switchToMS2CCScene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/MS2CCScene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("Eryantis");
+        primaryStage.sizeToScene();
+    }
+    public void switchToMS3CCScene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/MS3CCScene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("Eryantis");
+        primaryStage.sizeToScene();
+    }
+    public void switchToMS4CCScene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/MS4CCScene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("Eryantis");
+        primaryStage.sizeToScene();
+    }
+    public void switchToAskForMNCCScene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/AskForMNCCScene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("Eryantis");
+        primaryStage.sizeToScene();
+    }
+    public void switchToPlayAfterNotCCScene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/PlayAfterNotCCScene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("Eryantis");
+        primaryStage.sizeToScene();
+    }
+    public void switchToMS1NotCCScene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/MS1NotCCScene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("Eryantis");
+        primaryStage.sizeToScene();
+    }
+    public void switchToMS2NotCCScene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/MS2NotCCScene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("Eryantis");
+        primaryStage.sizeToScene();
+    }
+    public void switchToMS3NotCCScene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/MS3NotCCScene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("Eryantis");
+        primaryStage.sizeToScene();
+    }
+    public void switchToMS4NotCCScene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/MS4NotCCScene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("Eryantis");
+        primaryStage.sizeToScene();
+    }
+    public void switchToAskForMNotCCScene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/AskForMNotCCScene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("Eryantis");
+        primaryStage.sizeToScene();
+    }
+
 
 }

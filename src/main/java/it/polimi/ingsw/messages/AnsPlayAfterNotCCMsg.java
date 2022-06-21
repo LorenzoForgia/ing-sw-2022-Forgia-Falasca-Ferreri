@@ -44,4 +44,8 @@ public class AnsPlayAfterNotCCMsg extends AnswerMsg{
     }
     public GeneralBoard GetGB(){return generalBoard;}
     public ArrayList<Player> GetPlayers(){return players;}
+
+    public int getCountmoexpview() {
+        return countmoexpview;
+    }
 }
