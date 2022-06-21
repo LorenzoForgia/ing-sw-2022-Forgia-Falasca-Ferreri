@@ -1,15 +1,19 @@
 package it.polimi.ingsw.Client.views.GUI;
 
+
 import it.polimi.ingsw.Model.CardAssistant;
 import it.polimi.ingsw.Model.DeckCardAssistant;
 import it.polimi.ingsw.messages.AnsFirstPlayerTurnMsg;
 import it.polimi.ingsw.messages.AnsNewOrderMsg;
 import it.polimi.ingsw.messages.TurnDecidedMsg;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+
 public class AssistantCardSceneNewTurn {
+
     @FXML
     private ImageView assistantCard1;
     @FXML
@@ -30,16 +34,49 @@ public class AssistantCardSceneNewTurn {
     private ImageView assistantCard9;
     @FXML
     private ImageView assistantCard10;
+    @FXML
+    private ImageView imageThirdSchoolBoard;
+    @FXML
+    private ImageView imageFourthSchoolBoard;
+    @FXML
+    private Label showSchoolBoard1;
+    @FXML
+    private Label showSchoolBoard2;
+    @FXML
+    private Label showSchoolBoard3;
+    @FXML
+    private Label showSchoolBoard4;
     private DeckCardAssistant deckCardAssistant;
 
     private static AnsNewOrderMsg answerMsg;
-
     public static void setAnswerMsg(AnsNewOrderMsg answerMsg) {
         AssistantCardSceneNewTurn.answerMsg = answerMsg;
     }
 
     public void initialize()
     {
+        if(answerMsg.getPl().size()==2){
+            imageFourthSchoolBoard.setVisible(false);
+            imageFourthSchoolBoard.setOnMouseClicked(null);
+            imageThirdSchoolBoard.setOnMouseClicked(null);
+            imageThirdSchoolBoard.setVisible(false);
+            showSchoolBoard4.setText("");
+            showSchoolBoard3.setText("");
+            showSchoolBoard1.setText("Plancia di " + answerMsg.getPl().get(0).getNickName());
+            showSchoolBoard2.setText("Plancia di " + answerMsg.getPl().get(1).getNickName());
+        }else if(answerMsg.getPl().size()==3){
+            imageFourthSchoolBoard.setVisible(false);
+            imageFourthSchoolBoard.setOnMouseClicked(null);
+            showSchoolBoard4.setText("");
+            showSchoolBoard1.setText("Plancia di " + answerMsg.getPl().get(0));
+            showSchoolBoard2.setText("Plancia di " + answerMsg.getPl().get(1));
+            showSchoolBoard3.setText("Plancia di " + answerMsg.getPl().get(2));
+        }else{
+            showSchoolBoard1.setText("Plancia di " + answerMsg.getPl().get(0));
+            showSchoolBoard2.setText("Plancia di " + answerMsg.getPl().get(1));
+            showSchoolBoard3.setText("Plancia di " + answerMsg.getPl().get(2));
+            showSchoolBoard4.setText("Plancia di " + answerMsg.getPl().get(3));
+        }
         deckCardAssistant =answerMsg.getDca();
         if(deckCardAssistant.GetDeck().contains(CardAssistant.Uno)){
             Image imageAssCard1 = new Image("Assistente (1).png");
@@ -155,4 +192,45 @@ public class AssistantCardSceneNewTurn {
         JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(turnDecidedMsg);
         JavaFXMain.getCurrentApplication().switchToWaitingScene();
     }
+
+    public void showGeneralBoardSelected(){
+        IslandTilesScene.setOnlyObserv(true);
+        IslandTilesScene.setNumberOfSceneToComeBack(0);
+        IslandTilesScene.setIslands(answerMsg.getIs());
+        JavaFXMain.getCurrentApplication().switchToIslandTitleScene();
+    }
+
+    public void showSchoolBoard1Selected(){
+
+        SchoolBoardScene.setNumberOfSceneToComeBack(5);
+        SchoolBoardScene.setPlayer(answerMsg.getPl().get(0));
+        JavaFXMain.getCurrentApplication().switchToSchoolBoardScene();
+
+    }
+    public void showSchoolBoard2Selected(){
+
+        SchoolBoardScene.setNumberOfSceneToComeBack(5);
+        SchoolBoardScene.setPlayer(answerMsg.getPl().get(1));
+        JavaFXMain.getCurrentApplication().switchToSchoolBoardScene();
+
+    }
+    public void showSchoolBoard3Selected(){
+
+        SchoolBoardScene.setNumberOfSceneToComeBack(5);
+        SchoolBoardScene.setPlayer(answerMsg.getPl().get(2));
+        JavaFXMain.getCurrentApplication().switchToSchoolBoardScene();
+    }
+
+    public void showSchoolBoard4Selected(){
+        SchoolBoardScene.setNumberOfSceneToComeBack(5);
+        SchoolBoardScene.setPlayer(answerMsg.getPl().get(3));
+        JavaFXMain.getCurrentApplication().switchToSchoolBoardScene();
+    }
+    public void showCardAssistantSelected(){
+        ShowCardAssistantPlayedScene.setCards(answerMsg.getCAplayed());
+        ShowCardAssistantPlayedScene.setNumberOfSceneToComeBack(5);
+        JavaFXMain.getCurrentApplication().switchToShowCardAssistantScene();
+    }
+
+
 }

@@ -6,7 +6,7 @@ import java.io.Serializable;
  * @author Lorenzo Forgia
  */
 public enum ColorTower implements Serializable {
-    Black(0,"\u001B[30m"), White(1,"\u001B[97m"), Grey(2,"\u001B[90m");
+    Black(0,"\u001B[94m"), White(1,"\u001B[37m"), Grey(2,"\u001B[90m");
     private final int intTower;
     private String escape;
     public static final String Reset = "\u001B[0m";

@@ -24,41 +24,41 @@ public class Displayer {
         p.add(Color.Yellow);
         p.add(Color.Pink);
         p.add(Color.Blue);
-        System.out.println("Colore torri"+ct.getEscape()+" ●"+Color.Reset+"");
+        System.out.println("Colore torri"+ct.getEscape()+" @"+Color.Reset+"");
         for(int i=0,k=0,t=0;i<5;i++) {
              if(k<e.size()) {
-                 System.out.print("|" + e.get(k)+ "● ");
+                 System.out.print("|" + e.get(k)+ "@ ");
              }else{
                  System.out.print("|  ");
              }if(k+1<e.size()) {
-                System.out.print(e.get(k+1) + "●" + Color.Reset + "|");
+                System.out.print(e.get(k+1) + "@" + Color.Reset + "|");
                 for(int j=0;j<10;j++){
                     if(j<diningroom.get(i).size() && j<=8){
-                        System.out.print(diningroom.get(i).get(j) + "● ");
+                        System.out.print(diningroom.get(i).get(j) + "@ ");
                     }else if(j==9 && diningroom.get(i).size()==10){
-                        System.out.print(diningroom.get(i).get(j) + "●" + Color.Reset + "|");
+                        System.out.print(diningroom.get(i).get(j) + "@" + Color.Reset + "|");
                         if(prof.contains(p.get(i))){
-                            System.out.print(p.get(i) + "⬛" + Color.Reset + "|");
+                            System.out.print(p.get(i) + "@" + Color.Reset + "|");
                             if(t<ntorri){
-                                System.out.print(ct + "● ");
+                                System.out.print(ct + "@ ");
                             }else{
                                 System.out.print("  ");
                             }
                             if(t+1<ntorri){
-                                System.out.print(ct+ "●" + Color.Reset + "|\n");
+                                System.out.print(ct+ "@" + Color.Reset + "|\n");
                             }else{
                                 System.out.print(" " + Color.Reset + "|\n");
                             }
                             t=t+2;
                         }else{
-                            System.out.print(p.get(i)+"⬜" + Color.Reset + "|");
+                            System.out.print(p.get(i)+"!" + Color.Reset + "|");
                             if(t<ntorri){
-                                System.out.print(ct + "● ");
+                                System.out.print(ct + "@ ");
                             }else{
                                 System.out.print("  ");
                             }
                             if(t+1<ntorri){
-                                System.out.print(ct+ "●" + Color.Reset + "|\n");
+                                System.out.print(ct+ "@" + Color.Reset + "|\n");
                             }else{
                                 System.out.print(" " + Color.Reset + "|\n");
                             }
@@ -69,27 +69,27 @@ public class Displayer {
                     }else{
                         System.out.print( " " + Color.Reset + "|");
                         if(prof.contains(p.get(i))){
-                            System.out.print(p.get(i) + "⬛" + Color.Reset + "|");
+                            System.out.print(p.get(i) + "@" + Color.Reset + "|");
                             if(t<ntorri){
-                                System.out.print(ct + "● ");
+                                System.out.print(ct + "@ ");
                             }else{
                                 System.out.print("  ");
                             }
                             if(t+1<ntorri){
-                                System.out.print(ct+ "●" + Color.Reset + "|\n");
+                                System.out.print(ct+ "@" + Color.Reset + "|\n");
                             }else{
                                 System.out.print(" " + Color.Reset + "|\n");
                             }
                             t=t+2;
                         }else{
-                            System.out.print(p.get(i)+"⬜" + Color.Reset + "|");
+                            System.out.print(p.get(i)+"!" + Color.Reset + "|");
                             if(t<ntorri){
-                                System.out.print(ct + "● ");
+                                System.out.print(ct + "@ ");
                             }else{
                                 System.out.print("  ");
                             }
                             if(t+1<ntorri){
-                                System.out.print(ct+ "●" + Color.Reset + "|\n");
+                                System.out.print(ct+ "@" + Color.Reset + "|\n");
                             }else{
                                 System.out.print(" " + Color.Reset + "|\n");
                             }
@@ -104,31 +104,31 @@ public class Displayer {
                 System.out.print(Color.Reset+" |");
                 for(int j=0;j<10;j++){
                     if(j<diningroom.get(i).size() && j<=8){
-                        System.out.print(diningroom.get(i).get(j) + "● ");
+                        System.out.print(diningroom.get(i).get(j) + "@ ");
                     }else if(j==9 && diningroom.get(i).size()==10){
-                        System.out.print(diningroom.get(i).get(j) + "●" + Color.Reset + "|");
+                        System.out.print(diningroom.get(i).get(j) + "@" + Color.Reset + "|");
                         if(prof.contains(p.get(i))){
-                            System.out.print(p.get(i) + "⬛" + Color.Reset + "|");
+                            System.out.print(p.get(i) + "@" + Color.Reset + "|");
                             if(t<ntorri){
-                                System.out.print(ct + "● ");
+                                System.out.print(ct + "@ ");
                             }else{
                                 System.out.print("  ");
                             }
                             if(t+1<ntorri){
-                                System.out.print(ct+ "●" + Color.Reset + "|\n");
+                                System.out.print(ct+ "@" + Color.Reset + "|\n");
                             }else{
                                 System.out.print(" " + Color.Reset + "|\n");
                             }
                             t=t+2;
                         }else{
-                            System.out.print(p.get(i)+"⬜" + Color.Reset + "|");
+                            System.out.print(p.get(i)+"!" + Color.Reset + "|");
                             if(t<ntorri){
-                                System.out.print(ct + "● ");
+                                System.out.print(ct + "@ ");
                             }else{
                                 System.out.print("  ");
                             }
                             if(t+1<ntorri){
-                                System.out.print(ct+ "●" + Color.Reset + "|\n");
+                                System.out.print(ct+ "@" + Color.Reset + "|\n");
                             }else{
                                 System.out.print(" " + Color.Reset + "|\n");
                             }
@@ -139,27 +139,27 @@ public class Displayer {
                     }else{
                         System.out.print( " " + Color.Reset + "|");
                         if(prof.contains(p.get(i))){
-                            System.out.print(p.get(i) + "⬛" + Color.Reset + "|");
+                            System.out.print(p.get(i) + "@" + Color.Reset + "|");
                             if(t<ntorri){
-                                System.out.print(ct + "● ");
+                                System.out.print(ct + "@ ");
                             }else{
                                 System.out.print("  ");
                             }
                             if(t+1<ntorri){
-                                System.out.print(ct+ "●" + Color.Reset + "|\n");
+                                System.out.print(ct+ "@" + Color.Reset + "|\n");
                             }else{
                                 System.out.print(" " + Color.Reset + "|\n");
                             }
                             t=t+2;
                         }else{
-                            System.out.print(p.get(i)+"⬜" + Color.Reset + "|");
+                            System.out.print(p.get(i)+"!" + Color.Reset + "|");
                             if(t<ntorri){
-                                System.out.print(ct + "● ");
+                                System.out.print(ct + "@ ");
                             }else{
                                 System.out.print("  ");
                             }
                             if(t+1<ntorri){
-                                System.out.print(ct+ "●" + Color.Reset + "|\n");
+                                System.out.print(ct+ "@" + Color.Reset + "|\n");
                             }else{
                                 System.out.print(" " + Color.Reset + "|\n");
                             }
@@ -290,19 +290,19 @@ public class Displayer {
         System.out.println("|"+Color.Blue+"CARTA PERSONAGGIO:"+c.getName()+Color.Yellow+"  Costo:"+c.getCost()+Color.Green+"  Effetto:"+c.getDescriptionEffect()+Color.Reset+"|  ");
         if(c.getName()==1){
             for(int i=0;i<((CharacterCard1)c).GetchoosenStudent().size();i++){
-                System.out.print(((CharacterCard1)c).GetchoosenStudent().get(i).getEscape() + "● "+Color.Reset);
+                System.out.print(((CharacterCard1)c).GetchoosenStudent().get(i).getEscape() + "@ "+Color.Reset);
             }
             System.out.println();
         }
         if(c.getName()==7){
             for(int i=0;i<((CharacterCard7)c).getStudentOnCard().size();i++){
-                System.out.print(((CharacterCard7)c).getStudentOnCard().get(i).getEscape() + "● "+Color.Reset);
+                System.out.print(((CharacterCard7)c).getStudentOnCard().get(i).getEscape() + "@ "+Color.Reset);
             }
             System.out.println();
         }
         if(c.getName()==11){
             for(int i=0;i<((CharacterCard11)c).GetchoosenStudent().size();i++){
-                System.out.print(((CharacterCard11)c).GetchoosenStudent().get(i).getEscape() + "● "+Color.Reset);
+                System.out.print(((CharacterCard11)c).GetchoosenStudent().get(i).getEscape() + "@ "+Color.Reset);
             }
             System.out.println();
         }

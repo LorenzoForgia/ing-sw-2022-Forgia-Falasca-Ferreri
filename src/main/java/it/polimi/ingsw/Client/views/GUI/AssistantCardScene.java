@@ -1,16 +1,15 @@
 package it.polimi.ingsw.Client.views.GUI;
 
-import it.polimi.ingsw.Exception.CardAssistantNotAvailableException;
+
 import it.polimi.ingsw.Model.CardAssistant;
 import it.polimi.ingsw.Model.DeckCardAssistant;
 import it.polimi.ingsw.messages.AnsFirstPlayerTurnMsg;
 import it.polimi.ingsw.messages.TurnDecidedMsg;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.shape.Circle;
+
 
 public class AssistantCardScene {
 
@@ -68,14 +67,14 @@ public class AssistantCardScene {
             imageFourthSchoolBoard.setVisible(false);
             imageFourthSchoolBoard.setOnMouseClicked(null);
             showSchoolBoard4.setText("");
-            showSchoolBoard1.setText("Plancia di " + answerMsg.getPl().get(0));
-            showSchoolBoard2.setText("Plancia di " + answerMsg.getPl().get(1));
-            showSchoolBoard3.setText("Plancia di " + answerMsg.getPl().get(2));
+            showSchoolBoard1.setText("Plancia di " + answerMsg.getPl().get(0).getNickName());
+            showSchoolBoard2.setText("Plancia di " + answerMsg.getPl().get(1).getNickName());
+            showSchoolBoard3.setText("Plancia di " + answerMsg.getPl().get(2).getNickName());
         }else{
-            showSchoolBoard1.setText("Plancia di " + answerMsg.getPl().get(0));
-            showSchoolBoard2.setText("Plancia di " + answerMsg.getPl().get(1));
-            showSchoolBoard3.setText("Plancia di " + answerMsg.getPl().get(2));
-            showSchoolBoard4.setText("Plancia di " + answerMsg.getPl().get(3));
+            showSchoolBoard1.setText("Plancia di " + answerMsg.getPl().get(0).getNickName());
+            showSchoolBoard2.setText("Plancia di " + answerMsg.getPl().get(1).getNickName());
+            showSchoolBoard3.setText("Plancia di " + answerMsg.getPl().get(2).getNickName());
+            showSchoolBoard4.setText("Plancia di " + answerMsg.getPl().get(3).getNickName());
         }
         deckCardAssistant =answerMsg.getDca();
         if(deckCardAssistant.GetDeck().contains(CardAssistant.Uno)){
@@ -188,7 +187,7 @@ public class AssistantCardScene {
         JavaFXMain.getCurrentApplication().switchToWaitingScene();
     }
     public void chosenCard10(){
-        TurnDecidedMsg turnDecidedMsg= new TurnDecidedMsg(CardAssistant.Uno);
+        TurnDecidedMsg turnDecidedMsg= new TurnDecidedMsg(CardAssistant.Dieci);
         JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(turnDecidedMsg);
         JavaFXMain.getCurrentApplication().switchToWaitingScene();
     }
@@ -228,6 +227,7 @@ public class AssistantCardScene {
     }
     public void showCardAssistantSelected(){
         ShowCardAssistantPlayedScene.setCards(answerMsg.getCAplayed());
+        ShowCardAssistantPlayedScene.setNumberOfSceneToComeBack(0);
         JavaFXMain.getCurrentApplication().switchToShowCardAssistantScene();
     }
 
