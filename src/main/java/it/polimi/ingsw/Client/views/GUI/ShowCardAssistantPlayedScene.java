@@ -1,6 +1,7 @@
 package it.polimi.ingsw.Client.views.GUI;
 
 import it.polimi.ingsw.Model.CardAssistant;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -64,5 +65,9 @@ public class ShowCardAssistantPlayedScene {
         }
 
     }
+    public void backClicked(ActionEvent event){
+        JavaFXMain.getCurrentApplication().switchToCardAssistantScene();
+    }
+
 }
 

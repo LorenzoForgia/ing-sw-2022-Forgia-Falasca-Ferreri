@@ -17,6 +17,6 @@
       <ImageView fx:id="cardAssistant2" fitHeight="150.0" fitWidth="200.0" layoutX="323.0" layoutY="143.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="cardAssistant3" fitHeight="150.0" fitWidth="200.0" layoutX="35.0" layoutY="354.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="cardAssistant4" fitHeight="150.0" fitWidth="200.0" layoutX="323.0" layoutY="354.0" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="backButton" layoutX="596.0" layoutY="472.0" mnemonicParsing="false" text="Indietro" />
+      <Button fx:id="backButton" layoutX="596.0" layoutY="472.0" mnemonicParsing="false" onAction="#backClicked" text="Indietro" />
    </children>
 </AnchorPane>
