@@ -17,10 +17,6 @@
       <ImageView fx:id="cardAssistant2" fitHeight="150.0" fitWidth="200.0" layoutX="323.0" layoutY="143.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="cardAssistant3" fitHeight="150.0" fitWidth="200.0" layoutX="35.0" layoutY="354.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="cardAssistant4" fitHeight="150.0" fitWidth="200.0" layoutX="323.0" layoutY="354.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="cardAssistantPlayer1" layoutX="35.0" layoutY="117.0" text="Label" />
-      <Label fx:id="cardAssistantPlayer2" layoutX="325.0" layoutY="117.0" text="Label" />
-      <Label fx:id="cardAssistantPlayer3" layoutX="35.0" layoutY="323.0" text="Label" />
-      <Label fx:id="cardAssistantPlayer4" layoutX="325.0" layoutY="323.0" text="Label" />
       <Button fx:id="backButton" layoutX="596.0" layoutY="472.0" mnemonicParsing="false" text="Indietro" />
    </children>
 </AnchorPane>
