@@ -16,26 +16,33 @@ import java.util.*;
 public class Client implements Runnable
 {
 
-
+    public static boolean GUI;
     private ServerHandler serverHandler;
     private boolean shallTerminate;
     private View nextView;
     private View currentView;
 
 
-    /**
+
     public static void main(String[] args)
     {
         /* Instantiate a new Client. The main thread will become the
          * thread where user interaction is handled. */
-    /**
-        Client client = new Client();
-        client.run();
+
+        String simulazioneargs ="GUI";  //solo per simulare la scelta dell'utente
+        if(simulazioneargs.equals("GUI")){
+            Client.GUI=true;
+        }else{
+            Client.GUI=false;
+        }
+        if(GUI){
+            JavaFXMain.main(args);
+        }else{
+            Client client = new Client();
+            client.run();
+        }
+
     }
-    **/
-    public static void main(String[] args)
-    {
-        JavaFXMain.main(args);}
 
 
 @Override
