@@ -1,7 +1,7 @@
 package it.polimi.ingsw.Client.views.GUI;
 
 import it.polimi.ingsw.Client.views.View;
-import it.polimi.ingsw.messages.AnsCCNotInTableExcMsg;
+
 import it.polimi.ingsw.messages.AnsNotEnoughCoinsExcMsg;
 import javafx.application.Platform;
 import javafx.scene.control.Alert;
