@@ -7,6 +7,8 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
 import java.util.concurrent.atomic.AtomicBoolean;
+
+import it.polimi.ingsw.Client.views.GUI.ConnectionScene;
 import it.polimi.ingsw.messages.*;
 
 /**
@@ -16,7 +18,7 @@ import it.polimi.ingsw.messages.*;
 public class ServerHandler implements Runnable
 {
 
-
+    private boolean GUI=true;
     private Socket server;
     private ObjectOutputStream output;
     private ObjectInputStream input;
@@ -67,7 +69,9 @@ public class ServerHandler implements Runnable
         try {
             server.close();
         } catch (IOException e) { }
-        owner.terminate();
+        if(!GUI) {
+            owner.terminate();
+        }
     }
 
 
@@ -157,4 +161,11 @@ public class ServerHandler implements Runnable
     public Socket getServer() {
         return server;
     }
+
+    /** cambiamento per chiusura finestre**/
+    synchronized public boolean isConnected()
+    {
+        return ConnectionScene.serverHandlerThread != null;
+    }
+
 }

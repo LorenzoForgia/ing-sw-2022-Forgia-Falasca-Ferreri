@@ -18,6 +18,7 @@ public class ConnectionScene {
     public TextField ipServerBox;
     public TextField portBox;
     public Button connectBtn;
+    public static Thread serverHandlerThread;
 
 
 
@@ -41,11 +42,18 @@ public class ConnectionScene {
             return;
         }
 
+        JavaFXMain.getCurrentApplication().getPrimaryStage().setOnCloseRequest((event1) -> {
+            if (JavaFXMain.getCurrentApplication().getClient().getServerHandler().isConnected())
+                JavaFXMain.getCurrentApplication().getClient().getServerHandler().stop();
+        });
         ServerHandler serverHandler = new ServerHandler(server,JavaFXMain.getCurrentApplication().getClient() );
         JavaFXMain.getCurrentApplication().getClient().setServerHandler(serverHandler);
-        Thread serverHandlerThread = new Thread(serverHandler, "server_" + server.getInetAddress().getHostAddress());
+        this.serverHandlerThread = new Thread(serverHandler, "server_" + server.getInetAddress().getHostAddress());
         serverHandlerThread.start();
         JavaFXMain.getCurrentApplication().switchToLoginScene();
 
+    }
+    public Thread getServerHandlerThread() {
+        return serverHandlerThread;
     }
 }
