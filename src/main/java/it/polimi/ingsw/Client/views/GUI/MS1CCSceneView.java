@@ -13,6 +13,7 @@ public class MS1CCSceneView extends View {
     }
     @Override
     public void run() {
+        MoveStudent1Scene.setNumberOfMessage(1);
         MoveStudent1Scene.setAnsPlayAfterCCMsg(answerMsg);
         Platform.runLater(() -> {
             JavaFXMain.getCurrentApplication().switchToMoveStudent1Scene();
