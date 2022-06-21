@@ -1,6 +1,7 @@
 package it.polimi.ingsw.messages;
 
 import it.polimi.ingsw.Client.ServerHandler;
+import it.polimi.ingsw.Client.views.GUI.NumCloudExcScene;
 import it.polimi.ingsw.Client.views.NumCloudExcView;
 import it.polimi.ingsw.Client.views.NumStepExcView;
 
@@ -14,7 +15,9 @@ public class AnsNumCloudExcMsg extends AnswerMsg{
     @Override
     public void processMessage(ServerHandler serverHandler)
     {
-        serverHandler.getClient().transitionToView(new NumCloudExcView(this));
+        NumCloudExcScene n= new NumCloudExcScene(this);
+        n.run();
+        //serverHandler.getClient().transitionToView(new NumCloudExcView(this));
     }
     public String GetPlayer(){
         return name;
