@@ -9,7 +9,11 @@ import java.net.SocketTimeoutException;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import it.polimi.ingsw.Client.views.GUI.ConnectionScene;
+import it.polimi.ingsw.Client.views.GUI.JavaFXMain;
 import it.polimi.ingsw.messages.*;
+import javafx.application.Platform;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 
 /**
  * A class that represents the server inside the client.
@@ -24,6 +28,7 @@ public class ServerHandler implements Runnable
     private ObjectInputStream input;
     private Client owner;
     private AtomicBoolean shouldStop = new AtomicBoolean(false);
+    private Runnable connectionClosedObserver;
 
 
     /**
@@ -62,8 +67,22 @@ public class ServerHandler implements Runnable
             handleClientConnection();
         }catch(SocketTimeoutException e){
             System.out.println("Server offline" + server.getInetAddress() + " connection dropped,partita finita");
+            if(GUI){
+                Platform.runLater(()->{
+                    Alert alert = new Alert(Alert.AlertType.ERROR, "Partita finita,per una disconnesione", ButtonType.OK);
+                    alert.showAndWait();
+
+                });
+            }
         }catch (IOException e) {
             System.out.println("server " + server.getInetAddress() + " connection dropped,partita finita");
+            if(GUI){
+                Platform.runLater(()->{
+                    Alert alert = new Alert(Alert.AlertType.ERROR, "Partita finita,per una disconnesione", ButtonType.OK);
+                    alert.showAndWait();
+
+                });
+            }
         }
 
         try {
@@ -167,5 +186,7 @@ public class ServerHandler implements Runnable
     {
         return ConnectionScene.serverHandlerThread != null;
     }
+
+
 
 }
