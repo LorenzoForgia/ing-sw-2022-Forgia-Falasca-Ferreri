@@ -5,7 +5,7 @@ import java.io.Serializable;
  * @author Lorenzo Forgia
  */
 public enum Color implements Serializable {
-    Green(0,"\u001B[32m","Green"), Red(1,"\u001B[31m","Red"), Yellow(2,"\u001B[93m","Yellow"), Pink(3,"\u001B[35m","Pink"), Blue(4,"\u001B[34m","Blue");
+    Green(0,"\u001B[32m","Green"), Red(1,"\u001B[31m","Red"), Yellow(2,"\u001B[33m","Yellow"), Pink(3,"\u001B[35m","Pink"), Blue(4,"\u001B[34m","Blue");
     private final int intcolor;
     private String escape;
 
