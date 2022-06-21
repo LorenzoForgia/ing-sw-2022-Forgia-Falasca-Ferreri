@@ -19,6 +19,15 @@ public class ShowCardAssistantPlayedScene {
     @FXML
     private Label Title;
     private static ArrayList<CardAssistant> cards;
+    private static int numberOfSceneToComeBack;
+
+    /**number to decide where to come back
+     * 0 is for AssistantCardScene
+     * 5 is for AssistantCardSceneNewTurn
+     * **/
+    public static void setNumberOfSceneToComeBack(int numberOfSceneToComeBack) {
+        ShowCardAssistantPlayedScene.numberOfSceneToComeBack = numberOfSceneToComeBack;
+    }
 
     public static void setCards(ArrayList<CardAssistant> cards) {
         ShowCardAssistantPlayedScene.cards = cards;
@@ -65,8 +74,12 @@ public class ShowCardAssistantPlayedScene {
         }
 
     }
-    public void backClicked(ActionEvent event){
-        JavaFXMain.getCurrentApplication().switchToCardAssistantScene();
+    public void backClicked(ActionEvent event) {
+        if (numberOfSceneToComeBack == 0) {
+            JavaFXMain.getCurrentApplication().switchToCardAssistantScene();
+        } else if (numberOfSceneToComeBack == 5) {
+            JavaFXMain.getCurrentApplication().switchToAssistantCardSceneNewTurn();
+        }
     }
 
 }

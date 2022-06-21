@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="657.0" prefWidth="927.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.Client.views.GUI.AssistantCardSceneNewTurn">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="737.0" prefWidth="1071.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.Client.views.GUI.AssistantCardSceneNewTurn">
     <children>
         <ImageView fx:id="assistantCard1" fitHeight="200.0" fitWidth="150.0" layoutX="20.0" layoutY="115.0" onMouseClicked="#chosenCard1" pickOnBounds="true" preserveRatio="true" />
         <ImageView fx:id="assistantCard2" fitHeight="200.0" fitWidth="150.0" layoutX="195.0" layoutY="115.0" onMouseClicked="#chosenCard2" pickOnBounds="true" preserveRatio="true" />
@@ -22,5 +23,45 @@
                 <Font size="18.0" />
             </font>
         </Label>
+        <ImageView fx:id="imageIsland" fitHeight="105.0" fitWidth="139.0" layoutX="14.0" layoutY="589.0" onMouseClicked="#showGeneralBoardSelected" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@island1.png" />
+            </image>
+        </ImageView>
+        <Label layoutX="21.0" layoutY="579.0" text="Mostra le isole">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <ImageView fx:id="imageFirstSchoolBoard" fitHeight="87.0" fitWidth="153.0" layoutX="142.0" layoutY="608.0" onMouseClicked="#showSchoolBoard1Selected" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@Plancia_DEF3.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="imageSecondSchoolBoard" fitHeight="87.0" fitWidth="153.0" layoutX="345.0" layoutY="608.0" onMouseClicked="#showSchoolBoard2Selected" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@Plancia_DEF3.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="imageThirdSchoolBoard" fitHeight="87.0" fitWidth="153.0" layoutX="544.0" layoutY="608.0" onMouseClicked="#showSchoolBoard3Selected" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@Plancia_DEF3.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="imageFourthSchoolBoard" fitHeight="87.0" fitWidth="153.0" layoutX="734.0" layoutY="608.0" onMouseClicked="#showSchoolBoard4Selected" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@Plancia_DEF3.png" />
+            </image>
+        </ImageView>
+        <Label fx:id="showSchoolBoard1" layoutX="142.0" layoutY="580.0" text="Label" />
+        <Label fx:id="showSchoolBoard2" layoutX="345.0" layoutY="580.0" text="Label" />
+        <Label fx:id="showSchoolBoard3" layoutX="552.0" layoutY="580.0" text="Label" />
+        <Label fx:id="showSchoolBoard4" layoutX="734.0" layoutY="580.0" text="Label" />
+        <ImageView fx:id="showCardAssistant" fitHeight="150.0" fitWidth="200.0" layoutX="946.0" layoutY="264.0" onMouseClicked="#showCardAssistantSelected" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@CarteTOT_back_1@3x.png" />
+            </image>
+        </ImageView>
+        <Label layoutX="932.0" layoutY="240.0" text="Mostra le carte giocate!" />
     </children>
 </AnchorPane>

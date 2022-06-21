@@ -1,16 +1,15 @@
 package it.polimi.ingsw.Client.views.GUI;
 
-import it.polimi.ingsw.Exception.CardAssistantNotAvailableException;
+
 import it.polimi.ingsw.Model.CardAssistant;
 import it.polimi.ingsw.Model.DeckCardAssistant;
 import it.polimi.ingsw.messages.AnsFirstPlayerTurnMsg;
 import it.polimi.ingsw.messages.TurnDecidedMsg;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.shape.Circle;
+
 
 public class AssistantCardScene {
 
@@ -228,6 +227,7 @@ public class AssistantCardScene {
     }
     public void showCardAssistantSelected(){
         ShowCardAssistantPlayedScene.setCards(answerMsg.getCAplayed());
+        ShowCardAssistantPlayedScene.setNumberOfSceneToComeBack(0);
         JavaFXMain.getCurrentApplication().switchToShowCardAssistantScene();
     }
 

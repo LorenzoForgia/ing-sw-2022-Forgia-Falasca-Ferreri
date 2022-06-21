@@ -174,6 +174,7 @@ public class SchoolBoardScene {
      * 2 is for MoveStudentScene2
      * 3 is for MoveStudentScene3
      * 4 is for MoveStudentScene4
+     * 5 is for AssistantCardSceneNewTurn
      * **/
     public static void setNumberOfSceneToComeBack(int numberOfSceneToComeBack) {
         SchoolBoardScene.numberOfSceneToComeBack = numberOfSceneToComeBack;
@@ -195,6 +196,8 @@ public class SchoolBoardScene {
         JavaFXMain.getCurrentApplication().switchToMoveStudent3Scene();
         }else if(numberOfSceneToComeBack==4) {
         JavaFXMain.getCurrentApplication().switchToMoveStudent4Scene();
+        }else if(numberOfSceneToComeBack==5) {
+            JavaFXMain.getCurrentApplication().switchToAssistantCardSceneNewTurn();
         }
     }
 
