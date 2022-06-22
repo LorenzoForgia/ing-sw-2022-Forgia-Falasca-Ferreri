@@ -1,5 +1,6 @@
 package it.polimi.ingsw.messages;
 
+import it.polimi.ingsw.Client.Client;
 import it.polimi.ingsw.Client.ServerHandler;
 
 import it.polimi.ingsw.Client.views.GUI.MoveStudent1SceneView;
@@ -32,14 +33,23 @@ public class AnsAskCAMsg extends AnswerMsg{
     @Override
     public void processMessage(ServerHandler serverHandler)
     {
-        if(modexp){
-            PlayCC1SceneView p= new PlayCC1SceneView(this);
-            p.run();
-            /*serverHandler.getClient().transitionToView(new PlayCC1View(this));*/
+        if(Client.GUI){
+            if(modexp){
+                PlayCC1SceneView p= new PlayCC1SceneView(this);
+                p.run();
+            }else{
+                MoveStudent1SceneView m=new MoveStudent1SceneView(this);
+                m.run();
+            }
+
+
         }else{
-            MoveStudent1SceneView m=new MoveStudent1SceneView(this);
-            m.run();
-           // serverHandler.getClient().transitionToView(new MoveStudent1View(this)); CLI NON CANCELLARE
+            if(modexp){
+                serverHandler.getClient().transitionToView(new PlayCC1View(this));
+            }else{
+                 serverHandler.getClient().transitionToView(new MoveStudent1View(this));
+            }
+
         }
     }
     public String GetPlayer(){

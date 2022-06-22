@@ -1,5 +1,6 @@
 package it.polimi.ingsw.messages;
 
+import it.polimi.ingsw.Client.Client;
 import it.polimi.ingsw.Client.ServerHandler;
 import it.polimi.ingsw.Client.views.GUI.GameStartedSceneView;
 import it.polimi.ingsw.Client.views.GameCreatedView;
@@ -30,9 +31,13 @@ public class AnsGameStartedMsg extends AnswerMsg{
     @Override
     public void processMessage(ServerHandler serverHandler)
     {
-        GameStartedSceneView g=new GameStartedSceneView(this);
-        g.run();
-       /** serverHandler.getClient().transitionToView(new GameStartedView(this)); CLI NON CANCELLARE*/
+        if(Client.GUI){
+            GameStartedSceneView g=new GameStartedSceneView(this);
+            g.run();
+        }else{
+            serverHandler.getClient().transitionToView(new GameStartedView(this));
+        }
+
     }
     public ArrayList<String> getNickname() {
         return nickname;

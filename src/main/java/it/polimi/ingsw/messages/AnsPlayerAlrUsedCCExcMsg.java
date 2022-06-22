@@ -1,5 +1,6 @@
 package it.polimi.ingsw.messages;
 
+import it.polimi.ingsw.Client.Client;
 import it.polimi.ingsw.Client.ServerHandler;
 import it.polimi.ingsw.Client.views.CCNotInTableExcView;
 import it.polimi.ingsw.Client.views.GUI.PlayerAlrUsedCCExcScene;
@@ -12,8 +13,13 @@ public class AnsPlayerAlrUsedCCExcMsg extends AnswerMsg{
     @Override
     public void processMessage(ServerHandler serverHandler)
     {
-        PlayerAlrUsedCCExcScene p= new PlayerAlrUsedCCExcScene(this);
-        p.run();
-        //serverHandler.getClient().transitionToView(new PlayerAlrUsedCCExcView(this));
+        if(Client.GUI){
+            PlayerAlrUsedCCExcScene p= new PlayerAlrUsedCCExcScene(this);
+            p.run();
+        }else{
+           serverHandler.getClient().transitionToView(new PlayerAlrUsedCCExcView(this));
+        }
+
+
     }
 }

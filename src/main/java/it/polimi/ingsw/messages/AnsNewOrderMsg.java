@@ -1,5 +1,6 @@
 package it.polimi.ingsw.messages;
 
+import it.polimi.ingsw.Client.Client;
 import it.polimi.ingsw.Client.ServerHandler;
 import it.polimi.ingsw.Client.views.ColorExc2View;
 import it.polimi.ingsw.Client.views.GUI.AssistantCardSceneNewTurnView;
@@ -28,9 +29,14 @@ public class AnsNewOrderMsg extends AnswerMsg{
     @Override
     public void processMessage(ServerHandler serverHandler)
     {
-        AssistantCardSceneNewTurnView a= new AssistantCardSceneNewTurnView(this);
-        a.run();
-        /*serverHandler.getClient().transitionToView(new PlayCardNewTurnView(this));*/
+        if(Client.GUI){
+            AssistantCardSceneNewTurnView a= new AssistantCardSceneNewTurnView(this);
+            a.run();
+        }else{
+            serverHandler.getClient().transitionToView(new PlayCardNewTurnView(this));
+        }
+
+
     }
     public String GetPlayer(){
         return name;

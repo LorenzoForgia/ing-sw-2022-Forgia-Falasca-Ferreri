@@ -1,5 +1,6 @@
 package it.polimi.ingsw.messages;
 
+import it.polimi.ingsw.Client.Client;
 import it.polimi.ingsw.Client.ServerHandler;
 import it.polimi.ingsw.Client.views.GUI.GameCreatedSceneView;
 import it.polimi.ingsw.Client.views.GUI.GameStartedSceneView;
@@ -24,9 +25,14 @@ public class BooleanCheckMsg extends AnswerMsg{
     @Override
     public void processMessage(ServerHandler serverHandler)
     {
-        GameCreatedSceneView g=new GameCreatedSceneView(this);
-        g.run();
-        //serverHandler.getClient().transitionToView(new GameCreatedView(this)); CLI
+        if(Client.GUI){
+            GameCreatedSceneView g=new GameCreatedSceneView(this);
+            g.run();
+        }else{
+            serverHandler.getClient().transitionToView(new GameCreatedView(this));
+        }
+
+
     }
     public BooleanCheckMsg.Status getMoveStatus() {
         return MoveStatus;

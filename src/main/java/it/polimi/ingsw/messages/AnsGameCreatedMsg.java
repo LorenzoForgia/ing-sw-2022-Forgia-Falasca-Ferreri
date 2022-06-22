@@ -1,5 +1,6 @@
 package it.polimi.ingsw.messages;
 
+import it.polimi.ingsw.Client.Client;
 import it.polimi.ingsw.Client.ServerHandler;
 import it.polimi.ingsw.Client.views.GUI.SettingGameScene;
 import it.polimi.ingsw.Client.views.GUI.SettingSceneView;
@@ -25,9 +26,14 @@ public class AnsGameCreatedMsg extends AnswerMsg{
     @Override
     public void processMessage(ServerHandler serverHandler)
     {
-        SettingSceneView s=new SettingSceneView(this);
-        s.run();
-       /** serverHandler.getClient().transitionToView(new LobbyView(this)); CLI NON CANCELLARE*/
+        if(Client.GUI){
+            SettingSceneView s=new SettingSceneView(this);
+            s.run();
+        }else{
+            serverHandler.getClient().transitionToView(new LobbyView(this));
+        }
+
+
     }
 
     public AnsGameCreatedMsg.Status getMoveStatus() {
