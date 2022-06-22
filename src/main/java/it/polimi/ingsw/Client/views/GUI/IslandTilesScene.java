@@ -470,10 +470,14 @@ public class IslandTilesScene {
             JavaFXMain.getCurrentApplication().switchToAskForMN3PlayersScene();
         }else if(numberOfSceneToComeBack==8){
             JavaFXMain.getCurrentApplication().switchToPlayCC1Scene();
-        }else if(numberOfSceneToComeBack==9){
+        }else if(numberOfSceneToComeBack==9) {
             JavaFXMain.getCurrentApplication().switchToChoiceCharacterCardScene();
-        }else if(numberOfSceneToComeBack==11){
+        }else if(numberOfSceneToComeBack==10){
+            JavaFXMain.getCurrentApplication().switchToCC3Scene();
+        } else if(numberOfSceneToComeBack==11){
             JavaFXMain.getCurrentApplication().switchToCC9Scene();
+        }else if(numberOfSceneToComeBack==12){
+            JavaFXMain.getCurrentApplication().switchToCC5Scene();
         }
     }
 
@@ -502,6 +506,9 @@ public class IslandTilesScene {
         } else if (numberOfSceneToComeBack == 10) {
             CC3Msg cc3Msg= new CC3Msg(0);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(cc3Msg);
+        }else if (numberOfSceneToComeBack == 12) {
+            CC5Msg cc5Msg= new CC5Msg(0);
+            JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(cc5Msg);
         }
         System.out.println("Ho scelto l'isola 1");
     }
@@ -521,6 +528,9 @@ public class IslandTilesScene {
         }else if (numberOfSceneToComeBack == 10) {
             CC3Msg cc3Msg= new CC3Msg(1);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(cc3Msg);
+        }else if (numberOfSceneToComeBack == 12) {
+            CC5Msg cc5Msg= new CC5Msg(1);
+            JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(cc5Msg);
         }
         System.out.println("Ho scelto l'isola 2");
     }
@@ -540,6 +550,9 @@ public class IslandTilesScene {
         }else if (numberOfSceneToComeBack == 10) {
             CC3Msg cc3Msg= new CC3Msg(2);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(cc3Msg);
+        }else if (numberOfSceneToComeBack == 12) {
+            CC5Msg cc5Msg= new CC5Msg(2);
+            JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(cc5Msg);
         }
         System.out.println("Ho scelto l'isola 3");
     }
@@ -559,6 +572,9 @@ public class IslandTilesScene {
         }else if (numberOfSceneToComeBack == 10) {
             CC3Msg cc3Msg= new CC3Msg(3);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(cc3Msg);
+        }else if (numberOfSceneToComeBack == 12) {
+            CC5Msg cc5Msg= new CC5Msg(3);
+            JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(cc5Msg);
         }
         System.out.println("Ho scelto l'isola 4");
     }
@@ -578,6 +594,9 @@ public class IslandTilesScene {
         }else if (numberOfSceneToComeBack == 10) {
             CC3Msg cc3Msg= new CC3Msg(4);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(cc3Msg);
+        }else if (numberOfSceneToComeBack == 12) {
+            CC5Msg cc5Msg= new CC5Msg(4);
+            JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(cc5Msg);
         }
         System.out.println("Ho scelto l'isola 5");
     }
@@ -597,6 +616,9 @@ public class IslandTilesScene {
         }else if (numberOfSceneToComeBack == 10) {
             CC3Msg cc3Msg= new CC3Msg(5);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(cc3Msg);
+        }else if (numberOfSceneToComeBack == 12) {
+            CC5Msg cc5Msg= new CC5Msg(5);
+            JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(cc5Msg);
         }
         System.out.println("Ho scelto l'isola 6");
     }
@@ -616,6 +638,9 @@ public class IslandTilesScene {
         }else if (numberOfSceneToComeBack == 10) {
             CC3Msg cc3Msg= new CC3Msg(6);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(cc3Msg);
+        }else if (numberOfSceneToComeBack == 12) {
+            CC5Msg cc5Msg= new CC5Msg(6);
+            JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(cc5Msg);
         }
         System.out.println("Ho scelto l'isola 7");
     }
@@ -635,6 +660,9 @@ public class IslandTilesScene {
         }else if (numberOfSceneToComeBack == 10) {
             CC3Msg cc3Msg= new CC3Msg(7);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(cc3Msg);
+        }else if (numberOfSceneToComeBack == 12) {
+            CC5Msg cc5Msg= new CC5Msg(7);
+            JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(cc5Msg);
         }
         System.out.println("Ho scelto l'isola 8");
     }
@@ -654,6 +682,9 @@ public class IslandTilesScene {
         }else if (numberOfSceneToComeBack == 10) {
             CC3Msg cc3Msg= new CC3Msg(8);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(cc3Msg);
+        }else if (numberOfSceneToComeBack == 12) {
+            CC5Msg cc5Msg= new CC5Msg(8);
+            JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(cc5Msg);
         }
         System.out.println("Ho scelto l'isola 9");
     }
@@ -673,6 +704,9 @@ public class IslandTilesScene {
         }else if (numberOfSceneToComeBack == 10) {
             CC3Msg cc3Msg= new CC3Msg(9);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(cc3Msg);
+        }else if (numberOfSceneToComeBack == 12) {
+            CC5Msg cc5Msg= new CC5Msg(9);
+            JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(cc5Msg);
         }
         System.out.println("Ho scelto l'isola 10");
     }
@@ -692,6 +726,9 @@ public class IslandTilesScene {
         }else if (numberOfSceneToComeBack == 10) {
             CC3Msg cc3Msg= new CC3Msg(10);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(cc3Msg);
+        }else if (numberOfSceneToComeBack == 12) {
+            CC5Msg cc5Msg= new CC5Msg(10);
+            JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(cc5Msg);
         }
 
         System.out.println("Ho scelto l'isola 11");
@@ -713,6 +750,9 @@ public class IslandTilesScene {
         }else if (numberOfSceneToComeBack == 10) {
             CC3Msg cc3Msg= new CC3Msg(11);
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(cc3Msg);
+        }else if (numberOfSceneToComeBack == 12) {
+            CC5Msg cc5Msg= new CC5Msg(11);
+            JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(cc5Msg);
         }
     }
 

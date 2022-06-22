@@ -19,7 +19,7 @@ public class CC5ExcView extends View{
         Scanner scanner = new Scanner(System.in);
         Displayer displayer= new Displayer();
         displayer.showAllIsland(answerMsg.GetGB().GetIslands());
-        System.out.println("sceltanon valida! Riprova");
+        System.out.println("scelta non valida! Riprova");
         System.out.println("Scegli il numero dell'isola su cui vuoi mettere la tessera divieto");
         int isl;
         boolean b=false;
