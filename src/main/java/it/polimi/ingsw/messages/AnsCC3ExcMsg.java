@@ -3,6 +3,7 @@ package it.polimi.ingsw.messages;
 import it.polimi.ingsw.Client.ServerHandler;
 import it.polimi.ingsw.Client.views.CC3ExcView;
 import it.polimi.ingsw.Client.views.CC3View;
+import it.polimi.ingsw.Client.views.GUI.CC3ExcScene;
 import it.polimi.ingsw.Model.GeneralBoard;
 import it.polimi.ingsw.Model.Player;
 
@@ -20,7 +21,9 @@ public class AnsCC3ExcMsg extends AnswerMsg{
     @Override
     public void processMessage(ServerHandler serverHandler)
     {
-        serverHandler.getClient().transitionToView(new CC3ExcView(this));
+        CC3ExcScene c= new CC3ExcScene(this);
+        c.run();
+        //serverHandler.getClient().transitionToView(new CC3ExcView(this));
     }
     public GeneralBoard GetGB(){return generalBoard;}
     public ArrayList<Player> GetPlayers(){return players;}

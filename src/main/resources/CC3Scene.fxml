@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="517.0" prefWidth="684.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.Client.views.GUI.CC3Scene">
+    <children>
+        <ImageView fx:id="imageIsland" fitHeight="179.0" fitWidth="176.0" layoutX="257.0" layoutY="217.0" onMouseClicked="#IslandClicked" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@island1.png" />
+            </image>
+        </ImageView>
+      <Label layoutX="42.0" layoutY="108.0" prefHeight="40.0" prefWidth="609.0" text="Scegli l'isola su cui vuoi calolare la maggioranza">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>
