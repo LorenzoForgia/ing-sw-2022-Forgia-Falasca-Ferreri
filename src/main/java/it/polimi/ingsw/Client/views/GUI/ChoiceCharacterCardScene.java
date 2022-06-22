@@ -1,12 +1,14 @@
 package it.polimi.ingsw.Client.views.GUI;
 
-import it.polimi.ingsw.Model.CharacterCard;
+import it.polimi.ingsw.Model.*;
 import it.polimi.ingsw.messages.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 
 import java.util.ArrayList;
 
@@ -29,6 +31,43 @@ public class ChoiceCharacterCardScene {
     private Label showSchoolBoard3;
     @FXML
     private Label showSchoolBoard4;
+    @FXML
+    private Circle color1;
+    @FXML
+    private Circle color2;
+    @FXML
+    private Circle color3;
+    @FXML
+    private Circle color4;
+    @FXML
+    private Circle color5;
+    @FXML
+    private Circle color6;
+    @FXML
+    private Circle color11;
+    @FXML
+    private Circle color21;
+    @FXML
+    private Circle color31;
+    @FXML
+    private Circle color41;
+    @FXML
+    private Circle color51;
+    @FXML
+    private Circle color61;
+    @FXML
+    private Circle color12;
+    @FXML
+    private Circle color22;
+    @FXML
+    private Circle color32;
+    @FXML
+    private Circle color42;
+    @FXML
+    private Circle color52;
+    @FXML
+    private Circle color62;
+
     private static AnsAskCAMsg answerMsg;
     private static AnsMoveStudent1Msg ansMoveStudent1Msg;
     private static AnsMoveStudent2Msg ansMoveStudent2Msg;
@@ -68,12 +107,46 @@ public class ChoiceCharacterCardScene {
 
     public void initialize() {
         ArrayList<ImageView> imageCharacterCard = new ArrayList<>();
+        ArrayList<ArrayList<Circle>> students = new ArrayList<>(3);
+        ArrayList<Circle> student1 = new ArrayList<>();
+        student1.add(0,color1);
+        student1.add(1,color2);
+        student1.add(2,color3);
+        student1.add(3,color4);
+        student1.add(4,color5);
+        student1.add(5,color6);
+        ArrayList<Circle> student2 = new ArrayList<>();
+        student2.add(0,color11);
+        student2.add(1,color21);
+        student2.add(2,color31);
+        student2.add(3,color41);
+        student2.add(4,color51);
+        student2.add(5,color61);
+        ArrayList<Circle> student3 = new ArrayList<>();
+        student3.add(0,color12);
+        student3.add(1,color22);
+        student3.add(2,color32);
+        student3.add(3,color42);
+        student3.add(4,color52);
+        student3.add(5,color62);
+        students.add(0,student1);
+        students.add(1, student2);
+        students.add(2,student3);
+        for(int i=0; i< 3; i++){
+            for(int j=0; j<6; j++){
+                students.get(i).get(j).setVisible(false);
+            }
+        }
         imageCharacterCard.add(0, imageFirstCharacterCard);
         imageCharacterCard.add(1, imageSecondCharacterCard);
         imageCharacterCard.add(2, imageThirdCharacterCard);
         for (int i = 0; i < 3; i++) {
             if (answerMsg.GetCharacterCards().get(i).getName() == 1) {
                 imageCharacterCard.get(i).setImage(new Image("CarteTOT_front.jpg"));
+                for(int j=0; j < 4; j++){
+                    students.get(i).get(j).setVisible(true);
+                    getTheRightColor(((CharacterCard1)answerMsg.GetCharacterCards().get(i)).GetchoosenStudent().get(j), students.get(i).get(j));
+                }
             } else if (answerMsg.GetCharacterCards().get(i).getName() == 2) {
                 imageCharacterCard.get(i).setImage(new Image("CarteTOT_front2.jpg"));
             } else if (answerMsg.GetCharacterCards().get(i).getName() == 3) {
@@ -86,6 +159,10 @@ public class ChoiceCharacterCardScene {
                 imageCharacterCard.get(i).setImage(new Image("CarteTOT_front6.jpg"));
             } else if (answerMsg.GetCharacterCards().get(i).getName() == 7) {
                 imageCharacterCard.get(i).setImage(new Image("CarteTOT_front7.jpg"));
+                for(int j=0; j < 6; j++){
+                    students.get(i).get(j).setVisible(true);
+                    getTheRightColor(((CharacterCard7)answerMsg.GetCharacterCards().get(i)).getStudentOnCard().get(j), students.get(i).get(j));
+                }
             } else if (answerMsg.GetCharacterCards().get(i).getName() == 8) {
                 imageCharacterCard.get(i).setImage(new Image("CarteTOT_front8.jpg"));
             } else if (answerMsg.GetCharacterCards().get(i).getName() == 9) {
@@ -94,6 +171,10 @@ public class ChoiceCharacterCardScene {
                 imageCharacterCard.get(i).setImage(new Image("CarteTOT_front10.jpg"));
             } else if (answerMsg.GetCharacterCards().get(i).getName() == 11) {
                 imageCharacterCard.get(i).setImage(new Image("CarteTOT_front11.jpg"));
+                for(int j=0; j < 4; j++){
+                    students.get(i).get(j).setVisible(true);
+                    getTheRightColor(((CharacterCard11)answerMsg.GetCharacterCards().get(i)).GetchoosenStudent().get(j), students.get(i).get(j));
+                }
             } else if (answerMsg.GetCharacterCards().get(i).getName() == 12) {
                 imageCharacterCard.get(i).setImage(new Image("CarteTOT_front12.jpg"));
             }
@@ -311,5 +392,19 @@ public class ChoiceCharacterCardScene {
             SchoolBoardScene.setPlayer(ansMoveStudent4Msg.GetPlayers().get(3));
         }
         JavaFXMain.getCurrentApplication().switchToSchoolBoardScene();
+    }
+
+    private void getTheRightColor(it.polimi.ingsw.Model.Color color, Circle circle){
+        if(color.equals(it.polimi.ingsw.Model.Color.Green)){
+            circle.setFill(Color.GREEN);
+        }else if(color.equals(it.polimi.ingsw.Model.Color.Red)){
+            circle.setFill(Color.RED);
+        }else if(color.equals(it.polimi.ingsw.Model.Color.Yellow)){
+            circle.setFill(Color.YELLOW);
+        }else if(color.equals(it.polimi.ingsw.Model.Color.Pink)){
+            circle.setFill(Color.PINK);
+        }else if(color.equals(it.polimi.ingsw.Model.Color.Blue)){
+            circle.setFill(Color.BLUE);
+        }
     }
 }
