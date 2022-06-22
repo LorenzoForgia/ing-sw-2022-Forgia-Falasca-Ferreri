@@ -162,6 +162,8 @@ public class SchoolBoardScene {
     private ImageView teacher5;
     @FXML
     private Label playerSchoolBoardWritten;
+    @FXML
+    private Circle colorSquad;
 
     private static int numberOfSceneToComeBack;
     private SchoolBoard schoolBoardToShow;
@@ -356,10 +358,13 @@ public class SchoolBoardScene {
         Color color;
         if (ct.equals(ColorTower.Black)) {
             color = Color.BLACK;
+            colorSquad.setFill(Color.BLACK);
         } else if (ct.equals(ColorTower.White)) {
             color = Color.WHITE;
+            colorSquad.setFill(Color.WHITE);
         } else {
             color = Color.GREY;
+            colorSquad.setFill(Color.GREY);
         }
         for (int i = 0; i < schoolBoardToShow.getNumberOfTower(); i++) {
             towerRoom.get(i).setFill(color);
