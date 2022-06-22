@@ -12,6 +12,7 @@ public class PlayCC1SceneView extends View {
     }
     @Override
     public void run() {
+        PlayCC1Scene.setNumberOfMessage(0);
         PlayCC1Scene.setAnsAskCAMsg(this.answerMsg);
         Platform.runLater(() -> {
             JavaFXMain.getCurrentApplication().switchToPlayCC1Scene();

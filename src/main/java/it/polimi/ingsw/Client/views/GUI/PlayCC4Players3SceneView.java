@@ -13,6 +13,7 @@ public class PlayCC4Players3SceneView extends View {
     }
     @Override
     public void run() {
+        PlayCC1Scene.setNumberOfMessage(3);
         PlayCC1Scene.setAnsMoveStudent3Msg(this.answerMsg);
         Platform.runLater(() -> {
             JavaFXMain.getCurrentApplication().switchToPlayCC1Scene();

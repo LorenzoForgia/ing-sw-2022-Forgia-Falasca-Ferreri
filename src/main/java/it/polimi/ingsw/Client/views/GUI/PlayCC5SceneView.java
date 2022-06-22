@@ -12,6 +12,7 @@ public class PlayCC5SceneView extends View {
     }
     @Override
     public void run() {
+        PlayCC1Scene.setNumberOfMessage(4);
         PlayCC1Scene.setAnsMoveStudent4Msg(ansMoveStudent4Msg);
         Platform.runLater(() -> {
             JavaFXMain.getCurrentApplication().switchToPlayCC1Scene();

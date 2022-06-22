@@ -2,29 +2,64 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.Client.views.GUI.PlayCC1Scene">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="605.0" prefWidth="731.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.Client.views.GUI.PlayCC1Scene">
     <children>
-        <ImageView fx:id="imageFirstCharacterCard" fitHeight="183.0" fitWidth="143.0" layoutX="65.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true" />
-        <ImageView fx:id="imageSecondCharacterCard" fitHeight="183.0" fitWidth="143.0" layoutX="230.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true" />
-        <ImageView fx:id="imageThirdCharacterCard" fitHeight="183.0" fitWidth="143.0" layoutX="389.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true" />
-        <Label layoutX="164.0" layoutY="35.0" text="Vuoi giocare una carta personaggio?" textAlignment="CENTER">
+        <ImageView fx:id="imageFirstCharacterCard" fitHeight="183.0" fitWidth="143.0" layoutX="93.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true" />
+        <ImageView fx:id="imageSecondCharacterCard" fitHeight="183.0" fitWidth="143.0" layoutX="310.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true" />
+        <ImageView fx:id="imageThirdCharacterCard" fitHeight="183.0" fitWidth="143.0" layoutX="514.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true" />
+        <Label layoutX="236.0" layoutY="41.0" text="Vuoi giocare una carta personaggio?" textAlignment="CENTER">
             <font>
                 <Font size="18.0" />
             </font>
         </Label>
-      <Button fx:id="si" layoutX="208.0" layoutY="84.0" mnemonicParsing="false" onAction="#siClicked" text="Si">
+      <Button fx:id="si" layoutX="254.0" layoutY="84.0" mnemonicParsing="false" onAction="#siClicked" text="Si">
          <font>
             <Font size="17.0" />
          </font>
       </Button>
-      <Button fx:id="no" layoutX="345.0" layoutY="84.0" mnemonicParsing="false" onAction="#noClicked" text="No">
+      <Button fx:id="no" layoutX="443.0" layoutY="84.0" mnemonicParsing="false" onAction="#noClicked" text="No">
          <font>
             <Font size="17.0" />
          </font>
       </Button>
+      <ImageView fx:id="imageIsland" fitHeight="105.0" fitWidth="139.0" layoutX="14.0" layoutY="432.0" onMouseClicked="#showGeneralBoardSelected" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@island1.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="21.0" layoutY="412.0" text="Mostra le isole">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="imageFirstSchoolBoard" fitHeight="87.0" fitWidth="153.0" layoutX="206.0" layoutY="412.0" onMouseClicked="#showSchoolBoard1Selected" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Plancia_DEF3.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="showSchoolBoard1" layoutX="206.0" layoutY="384.0" text="Label" />
+      <ImageView fx:id="imageSecondSchoolBoard" fitHeight="87.0" fitWidth="153.0" layoutX="206.0" layoutY="515.0" onMouseClicked="#showSchoolBoard2Selected" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Plancia_DEF3.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="showSchoolBoard2" layoutX="206.0" layoutY="497.0" text="Label" />
+      <ImageView fx:id="imageThirdSchoolBoard" fitHeight="87.0" fitWidth="153.0" layoutX="466.0" layoutY="412.0" onMouseClicked="#showSchoolBoard3Selected" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Plancia_DEF3.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="showSchoolBoard3" layoutX="466.0" layoutY="384.0" text="Label" />
+      <ImageView fx:id="imageFourthSchoolBoard" fitHeight="87.0" fitWidth="153.0" layoutX="466.0" layoutY="515.0" onMouseClicked="#showSchoolBoard4Selected" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Plancia_DEF3.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="showSchoolBoard4" layoutX="466.0" layoutY="497.0" text="Label" />
     </children>
 </AnchorPane>
