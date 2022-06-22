@@ -9,9 +9,7 @@ import java.io.*;
 import java.net.Socket;
 import java.util.*;
 
-/**
- * Client for the Mastermind game.
- */
+
 
 public class Client implements Runnable
 {
