@@ -15,7 +15,7 @@ public class PlayAfterCCSceneView extends View {
     public void run() {
         PlayAfterCCScene.setAnsPlayAfterCCMsg(answerMsg);
         Platform.runLater(() -> {
-            JavaFXMain.getCurrentApplication().switchToPlayAfterNotCCScene();
+            JavaFXMain.getCurrentApplication().switchToPlayAfterCCScene();
         });
     }
 }
