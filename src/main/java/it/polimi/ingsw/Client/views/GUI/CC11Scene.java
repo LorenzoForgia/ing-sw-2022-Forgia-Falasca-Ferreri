@@ -98,27 +98,27 @@ public class CC11Scene {
     }
     public void showSchoolBoard1Selected(){
 
-        SchoolBoardScene.setNumberOfSceneToComeBack(14);
+        SchoolBoardScene.setNumberOfSceneToComeBack(15);
         SchoolBoardScene.setPlayer(answerMsg.GetPlayers().get(0));
         JavaFXMain.getCurrentApplication().switchToSchoolBoardScene();
 
     }
     public void showSchoolBoard2Selected(){
 
-        SchoolBoardScene.setNumberOfSceneToComeBack(14);
+        SchoolBoardScene.setNumberOfSceneToComeBack(15);
         SchoolBoardScene.setPlayer(answerMsg.GetPlayers().get(1));
         JavaFXMain.getCurrentApplication().switchToSchoolBoardScene();
 
     }
     public void showSchoolBoard3Selected(){
 
-        SchoolBoardScene.setNumberOfSceneToComeBack(14);
+        SchoolBoardScene.setNumberOfSceneToComeBack(15);
         SchoolBoardScene.setPlayer(answerMsg.GetPlayers().get(2));
         JavaFXMain.getCurrentApplication().switchToSchoolBoardScene();
     }
 
     public void showSchoolBoard4Selected(){
-        SchoolBoardScene.setNumberOfSceneToComeBack(14);
+        SchoolBoardScene.setNumberOfSceneToComeBack(15);
         SchoolBoardScene.setPlayer(answerMsg.GetPlayers().get(3));
         JavaFXMain.getCurrentApplication().switchToSchoolBoardScene();
     }

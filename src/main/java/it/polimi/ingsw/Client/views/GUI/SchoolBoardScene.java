@@ -180,6 +180,8 @@ public class SchoolBoardScene {
      * 8 is for PlayCC1Scene
      * 9 is for ChoiceCharacterCardScene
      * 11 is for CC9Scene
+     * 14 is for CC12Scene
+     * 15 is for CC11Scene
      * **/
     public static void setNumberOfSceneToComeBack(int numberOfSceneToComeBack) {
         SchoolBoardScene.numberOfSceneToComeBack = numberOfSceneToComeBack;
@@ -215,6 +217,8 @@ public class SchoolBoardScene {
             JavaFXMain.getCurrentApplication().switchToCC9Scene();
         }else if(numberOfSceneToComeBack==14){
             JavaFXMain.getCurrentApplication().switchToCC12Scene();
+        }else if(numberOfSceneToComeBack==15){
+            JavaFXMain.getCurrentApplication().switchToCC11Scene();
         }
     }
 
