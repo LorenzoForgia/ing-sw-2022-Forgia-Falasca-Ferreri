@@ -7,7 +7,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="581.0" prefWidth="803.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.Client.views.GUI.MoveStudent1Scene">
+<AnchorPane prefHeight="581.0" prefWidth="803.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.Client.views.GUI.CC9Scene">
     <children>
         <Circle fx:id="Blue" fill="DODGERBLUE" layoutX="117.0" layoutY="205.0" onMouseClicked="#BlueSelected" radius="37.0" stroke="BLACK" strokeType="INSIDE" />
         <Circle fx:id="Red" fill="#ff2915" layoutX="256.0" layoutY="205.0" onMouseClicked="#RedSelected" radius="37.0" stroke="BLACK" strokeType="INSIDE" />
