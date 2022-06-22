@@ -62,7 +62,9 @@ public class PlayCC2Scene {
         m.run();
     }
     public void siClicked(ActionEvent event){
+        /*
         ChoiceCharacterCardScene.setCards(answerMsg.GetCharacterCards());
         JavaFXMain.getCurrentApplication().switchToChoiceCharacterCardScene();
+         */
     }
 }
