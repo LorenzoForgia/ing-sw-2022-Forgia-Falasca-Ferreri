@@ -213,6 +213,8 @@ public class SchoolBoardScene {
             JavaFXMain.getCurrentApplication().switchToChoiceCharacterCardScene();
         }else if(numberOfSceneToComeBack==11){
             JavaFXMain.getCurrentApplication().switchToCC9Scene();
+        }else if(numberOfSceneToComeBack==14){
+            JavaFXMain.getCurrentApplication().switchToCC12Scene();
         }
     }
 
