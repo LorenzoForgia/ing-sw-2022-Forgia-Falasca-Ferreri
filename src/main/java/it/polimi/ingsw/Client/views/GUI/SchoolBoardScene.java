@@ -182,6 +182,7 @@ public class SchoolBoardScene {
      * 11 is for CC9Scene
      * 14 is for CC12Scene
      * 15 is for CC11Scene
+     * 16 is for CC10Scene
      * **/
     public static void setNumberOfSceneToComeBack(int numberOfSceneToComeBack) {
         SchoolBoardScene.numberOfSceneToComeBack = numberOfSceneToComeBack;
@@ -219,6 +220,8 @@ public class SchoolBoardScene {
             JavaFXMain.getCurrentApplication().switchToCC12Scene();
         }else if(numberOfSceneToComeBack==15){
             JavaFXMain.getCurrentApplication().switchToCC11Scene();
+        }else if(numberOfSceneToComeBack==16){
+            JavaFXMain.getCurrentApplication().switchToCC10Scene();
         }
     }
 
