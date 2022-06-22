@@ -55,34 +55,34 @@ public class CC9Scene {
     }
     public void showGeneralBoardSelected(){
         IslandTilesScene.setOnlyObserv(true);
-        IslandTilesScene.setNumberOfSceneToComeBack(0);
+        IslandTilesScene.setNumberOfSceneToComeBack(10);
         IslandTilesScene.setIslands(answerMsg.GetGB().GetIslands());
         JavaFXMain.getCurrentApplication().switchToIslandTitleScene();
     }
 
     public void showSchoolBoard1Selected(){
 
-        SchoolBoardScene.setNumberOfSceneToComeBack(0);
+        SchoolBoardScene.setNumberOfSceneToComeBack(10);
         SchoolBoardScene.setPlayer(answerMsg.GetPlayers().get(0));
         JavaFXMain.getCurrentApplication().switchToSchoolBoardScene();
 
     }
     public void showSchoolBoard2Selected(){
 
-        SchoolBoardScene.setNumberOfSceneToComeBack(0);
+        SchoolBoardScene.setNumberOfSceneToComeBack(10);
         SchoolBoardScene.setPlayer(answerMsg.GetPlayers().get(1));
         JavaFXMain.getCurrentApplication().switchToSchoolBoardScene();
 
     }
     public void showSchoolBoard3Selected(){
 
-        SchoolBoardScene.setNumberOfSceneToComeBack(0);
+        SchoolBoardScene.setNumberOfSceneToComeBack(10);
         SchoolBoardScene.setPlayer(answerMsg.GetPlayers().get(2));
         JavaFXMain.getCurrentApplication().switchToSchoolBoardScene();
     }
 
     public void showSchoolBoard4Selected(){
-        SchoolBoardScene.setNumberOfSceneToComeBack(0);
+        SchoolBoardScene.setNumberOfSceneToComeBack(10);
         SchoolBoardScene.setPlayer(answerMsg.GetPlayers().get(3));
         JavaFXMain.getCurrentApplication().switchToSchoolBoardScene();
     }
