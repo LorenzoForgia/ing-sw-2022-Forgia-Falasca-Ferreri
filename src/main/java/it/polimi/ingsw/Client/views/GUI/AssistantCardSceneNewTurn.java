@@ -68,14 +68,14 @@ public class AssistantCardSceneNewTurn {
             imageFourthSchoolBoard.setVisible(false);
             imageFourthSchoolBoard.setOnMouseClicked(null);
             showSchoolBoard4.setText("");
-            showSchoolBoard1.setText("Plancia di " + answerMsg.getPl().get(0));
-            showSchoolBoard2.setText("Plancia di " + answerMsg.getPl().get(1));
-            showSchoolBoard3.setText("Plancia di " + answerMsg.getPl().get(2));
+            showSchoolBoard1.setText("Plancia di " + answerMsg.getPl().get(0).getNickName());
+            showSchoolBoard2.setText("Plancia di " + answerMsg.getPl().get(1).getNickName());
+            showSchoolBoard3.setText("Plancia di " + answerMsg.getPl().get(2).getNickName());
         }else{
-            showSchoolBoard1.setText("Plancia di " + answerMsg.getPl().get(0));
-            showSchoolBoard2.setText("Plancia di " + answerMsg.getPl().get(1));
-            showSchoolBoard3.setText("Plancia di " + answerMsg.getPl().get(2));
-            showSchoolBoard4.setText("Plancia di " + answerMsg.getPl().get(3));
+            showSchoolBoard1.setText("Plancia di " + answerMsg.getPl().get(0).getNickName());
+            showSchoolBoard2.setText("Plancia di " + answerMsg.getPl().get(1).getNickName());
+            showSchoolBoard3.setText("Plancia di " + answerMsg.getPl().get(2).getNickName());
+            showSchoolBoard4.setText("Plancia di " + answerMsg.getPl().get(3).getNickName());
         }
         deckCardAssistant =answerMsg.getDca();
         if(deckCardAssistant.GetDeck().contains(CardAssistant.Uno)){
