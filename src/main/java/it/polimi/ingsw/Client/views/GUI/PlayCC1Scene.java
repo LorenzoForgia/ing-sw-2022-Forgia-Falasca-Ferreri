@@ -243,15 +243,20 @@ public class PlayCC1Scene {
     }
     public void siClicked(ActionEvent event){
         if(numberOfMessage==0) {
-            ChoiceCharacterCardScene.setCards(answerMsg.GetCharacterCards());
+            ChoiceCharacterCardScene.setNumberOfMessage(0);
+            ChoiceCharacterCardScene.setAnswerMsg(answerMsg);
         }else if(numberOfMessage==1){
-
+            ChoiceCharacterCardScene.setNumberOfMessage(1);
+            ChoiceCharacterCardScene.setAnsMoveStudent1Msg(ansMoveStudent1Msg);
         }else if(numberOfMessage==2){
-
+            ChoiceCharacterCardScene.setNumberOfMessage(2);
+            ChoiceCharacterCardScene.setAnsMoveStudent2Msg(ansMoveStudent2Msg);
         }else if (numberOfMessage==3){
-
+            ChoiceCharacterCardScene.setNumberOfMessage(3);
+            ChoiceCharacterCardScene.setAnsMoveStudent3Msg(ansMoveStudent3Msg);
         }else if(numberOfMessage==4){
-
+            ChoiceCharacterCardScene.setNumberOfMessage(4);
+            ChoiceCharacterCardScene.setAnsMoveStudent4Msg(ansMoveStudent4Msg);
         }
         JavaFXMain.getCurrentApplication().switchToChoiceCharacterCardScene();
     }
