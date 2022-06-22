@@ -5,10 +5,10 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<?import javafx.scene.shape.Circle?>
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="605.0" prefWidth="731.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.Client.views.GUI.PlayCC1Scene">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="605.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.Client.views.GUI.PlayCC1Scene">
     <children>
         <ImageView fx:id="imageFirstCharacterCard" fitHeight="183.0" fitWidth="143.0" layoutX="93.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true" />
         <ImageView fx:id="imageSecondCharacterCard" fitHeight="183.0" fitWidth="143.0" layoutX="310.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true" />
@@ -80,5 +80,15 @@
         <Circle fx:id="color42" fill="WHITE" layoutX="602.0" layoutY="328.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
         <Circle fx:id="color52" fill="WHITE" layoutX="625.0" layoutY="328.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
         <Circle fx:id="color62" fill="WHITE" layoutX="646.0" layoutY="328.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <ImageView fitHeight="56.0" fitWidth="46.0" layoutX="684.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Moneta_base.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="numberOfMoney" layoutX="669.0" layoutY="45.0" text="1">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

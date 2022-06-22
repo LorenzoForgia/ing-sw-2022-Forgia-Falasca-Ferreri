@@ -17,6 +17,8 @@ public class PlayCC1SceneView extends View {
         PlayCC1Scene.setPlayers(this.answerMsg.GetPlayers());
         PlayCC1Scene.setCards(this.answerMsg.GetCharacterCards());
         PlayCC1Scene.setIslands(this.answerMsg.GetGB().GetIslands());
+        PlayCC1Scene.setPlayer(this.answerMsg.GetPlayer());
+
         Platform.runLater(() -> {
             JavaFXMain.getCurrentApplication().switchToPlayCC1Scene();
         });

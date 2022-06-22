@@ -66,10 +66,13 @@ public class PlayCC1Scene {
     private Circle color52;
     @FXML
     private Circle color62;
+    @FXML
+    private Label numberOfMoney;
 
     private static ArrayList<CharacterCard> cards;
     private static ArrayList<Player> players;
     private static ArrayList<IslandTiles> islands;
+    private static String player;
 
     private static AnsAskCAMsg answerMsg;
     private static AnsMoveStudent1Msg ansMoveStudent1Msg;
@@ -78,6 +81,10 @@ public class PlayCC1Scene {
     private static AnsMoveStudent4Msg ansMoveStudent4Msg;
     private static int numberOfMessage;
 
+
+    public static void setPlayer(String player) {
+        PlayCC1Scene.player = player;
+    }
 
     public void setImageFirstCharacterCard(ImageView imageFirstCharacterCard) {
         this.imageFirstCharacterCard = imageFirstCharacterCard;
@@ -126,7 +133,16 @@ public class PlayCC1Scene {
         PlayCC1Scene.ansMoveStudent4Msg = ansMoveStudent4Msg;
     }
 
+    private int getCoinOfPlayer(ArrayList<Player> allPlayers, String nickNamePlayer){
+        for(int i=0; i< allPlayers.size(); i++){
+            if(allPlayers.get(i).getNickName().equals(nickNamePlayer)){
+                return allPlayers.get(i).getNumberCoins();
+            }
+        }
+        return 0;
+    }
     public void initialize() {
+        numberOfMoney.setText(Integer.toString(getCoinOfPlayer(players, player)));
         ArrayList<ImageView> imageCharacterCard = new ArrayList<>();
         ArrayList<ArrayList<Circle>> students = new ArrayList<>(3);
         ArrayList<Circle> student1 = new ArrayList<>();
@@ -252,6 +268,7 @@ public class PlayCC1Scene {
         ChoiceCharacterCardScene.setCards(cards);
         ChoiceCharacterCardScene.setPlayers(players);
         ChoiceCharacterCardScene.setIslands(islands);
+        ChoiceCharacterCardScene.setPlayer(player);
         if(numberOfMessage==0) {
             ChoiceCharacterCardScene.setNumberOfMessage(0);
         }else if(numberOfMessage==1){

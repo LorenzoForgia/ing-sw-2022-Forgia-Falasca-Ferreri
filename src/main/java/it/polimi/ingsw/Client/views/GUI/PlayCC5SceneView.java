@@ -17,6 +17,7 @@ public class PlayCC5SceneView extends View {
         PlayCC1Scene.setCards(this.ansMoveStudent4Msg.GetCharacterCards());
         PlayCC1Scene.setIslands(this.ansMoveStudent4Msg.GetGB().GetIslands());
         PlayCC1Scene.setAnsMoveStudent4Msg(ansMoveStudent4Msg);
+        PlayCC1Scene.setPlayer(this.ansMoveStudent4Msg.GetPlayer());
         Platform.runLater(() -> {
             JavaFXMain.getCurrentApplication().switchToPlayCC1Scene();
         });

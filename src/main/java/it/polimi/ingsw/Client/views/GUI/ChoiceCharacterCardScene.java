@@ -67,7 +67,10 @@ public class ChoiceCharacterCardScene {
     private Circle color52;
     @FXML
     private Circle color62;
+    @FXML
+    private Label numberOfMoney;
 
+    private static String player;
     private static ArrayList<CharacterCard> cards;
     private static ArrayList<Player> players;
     private static ArrayList<IslandTiles> islands;
@@ -76,6 +79,10 @@ public class ChoiceCharacterCardScene {
 
     public void setImageFirstCharacterCard(ImageView imageFirstCharacterCard) {
         this.imageFirstCharacterCard = imageFirstCharacterCard;
+    }
+
+    public static void setPlayer(String player) {
+        ChoiceCharacterCardScene.player = player;
     }
 
     public static void setCards(ArrayList<CharacterCard> cards) {
@@ -101,8 +108,17 @@ public class ChoiceCharacterCardScene {
         ChoiceCharacterCardScene.numberOfMessage = numberOfMessage;
     }
 
+    private int getCoinOfPlayer(ArrayList<Player> allPlayers, String nickNamePlayer){
+        for(int i=0; i< allPlayers.size(); i++){
+            if(allPlayers.get(i).getNickName().equals(nickNamePlayer)){
+                return allPlayers.get(i).getNumberCoins();
+            }
+        }
+        return 0;
+    }
 
     public void initialize() {
+        numberOfMoney.setText(Integer.toString(getCoinOfPlayer(players, player)));
         ArrayList<ImageView> imageCharacterCard = new ArrayList<>();
         ArrayList<ArrayList<Circle>> students = new ArrayList<>(3);
         ArrayList<Circle> student1 = new ArrayList<>();
