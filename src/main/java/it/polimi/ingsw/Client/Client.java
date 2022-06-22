@@ -29,7 +29,8 @@ public class Client implements Runnable
         /* Instantiate a new Client. The main thread will become the
          * thread where user interaction is handled. */
 
-        String simulazioneargs ="GUI";  //solo per simulare la scelta dell'utente
+        Scanner in =new Scanner(System.in);
+        String simulazioneargs =in.nextLine();  //solo per simulare la scelta dell'utente
         if(simulazioneargs.equals("GUI")){
             Client.GUI=true;
         }else{
