@@ -178,6 +178,8 @@ public class SchoolBoardScene {
      * 6 is for AskForMotherNatureScene
      * 7 is for AskForMN3PlayersScene
      * 8 is for PlayCC1Scene
+     * 9 is for ChoiceCharacterCardScene
+     * 10 is for CC9Scene
      * **/
     public static void setNumberOfSceneToComeBack(int numberOfSceneToComeBack) {
         SchoolBoardScene.numberOfSceneToComeBack = numberOfSceneToComeBack;
@@ -209,6 +211,8 @@ public class SchoolBoardScene {
             JavaFXMain.getCurrentApplication().switchToPlayCC1Scene();
         }else if(numberOfSceneToComeBack==9){
             JavaFXMain.getCurrentApplication().switchToChoiceCharacterCardScene();
+        }else if(numberOfSceneToComeBack==10){
+            JavaFXMain.getCurrentApplication().switchToCC9Scene();
         }
     }
 

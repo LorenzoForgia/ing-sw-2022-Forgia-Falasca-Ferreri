@@ -14,6 +14,9 @@ public class PlayCC1SceneView extends View {
     public void run() {
         PlayCC1Scene.setNumberOfMessage(0);
         PlayCC1Scene.setAnsAskCAMsg(this.answerMsg);
+        PlayCC1Scene.setPlayers(this.answerMsg.GetPlayers());
+        PlayCC1Scene.setCards(this.answerMsg.GetCharacterCards());
+        PlayCC1Scene.setIslands(this.answerMsg.GetGB().GetIslands());
         Platform.runLater(() -> {
             JavaFXMain.getCurrentApplication().switchToPlayCC1Scene();
         });
