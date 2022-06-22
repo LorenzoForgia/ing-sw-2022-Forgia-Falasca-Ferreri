@@ -1,21 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Circle?>
 
-
-<AnchorPane prefHeight="320.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="321.0" prefWidth="714.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.Client.views.GUI.CC11Scene">
     <children>
         <ImageView fx:id="CC1" fitHeight="150.0" fitWidth="200.0" layoutX="76.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@CarteTOT_front11.jpg" />
             </image>
         </ImageView>
-        <Circle fx:id="student1" fill="WHITE" layoutX="100.0" layoutY="236.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
-        <Circle fx:id="student2" fill="WHITE" layoutX="146.0" layoutY="236.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
-        <Circle fx:id="student3" fill="WHITE" layoutX="100.0" layoutY="266.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
-        <Circle fx:id="student4" fill="WHITE" layoutX="146.0" layoutY="266.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+        <Circle fx:id="student1" fill="WHITE" layoutX="100.0" layoutY="236.0" onMouseClicked="#chosenStudent1" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+        <Circle fx:id="student2" fill="WHITE" layoutX="146.0" layoutY="236.0" onMouseClicked="#chosenStudent2" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+        <Circle fx:id="student3" fill="WHITE" layoutX="100.0" layoutY="266.0" onMouseClicked="#chosenStudent3" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+        <Circle fx:id="student4" fill="WHITE" layoutX="146.0" layoutY="266.0" onMouseClicked="#chosenStudent4" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+      <ImageView fx:id="imageFirstSchoolBoard" fitHeight="87.0" fitWidth="153.0" layoutX="282.0" layoutY="46.0" onMouseClicked="#showSchoolBoard1Selected" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Plancia_DEF3.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="showSchoolBoard1" layoutX="282.0" layoutY="28.0" text="Label" />
+      <Label fx:id="showSchoolBoard2" layoutX="282.0" layoutY="124.0" text="Label" />
+      <ImageView fx:id="imageSecondSchoolBoard" fitHeight="87.0" fitWidth="153.0" layoutX="282.0" layoutY="142.0" onMouseClicked="#showSchoolBoard2Selected" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Plancia_DEF3.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imageThirdSchoolBoard" fitHeight="87.0" fitWidth="153.0" layoutX="493.0" layoutY="46.0" onMouseClicked="#showSchoolBoard3Selected" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Plancia_DEF3.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="showSchoolBoard3" layoutX="493.0" layoutY="28.0" text="Label" />
+      <ImageView fx:id="imageFourthSchoolBoard" fitHeight="87.0" fitWidth="153.0" layoutX="493.0" layoutY="142.0" onMouseClicked="#showSchoolBoard4Selected" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Plancia_DEF3.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="showSchoolBoard4" layoutX="493.0" layoutY="124.0" text="Label" />
     </children>
 </AnchorPane>
