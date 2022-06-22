@@ -13,9 +13,7 @@ import java.net.Socket;
 import java.util.Scanner;
 
 
-/**
- * Server for the Mastermind game.
- */
+
 
 public class Server
 {
