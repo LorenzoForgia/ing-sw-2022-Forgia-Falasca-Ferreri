@@ -1,6 +1,6 @@
 package it.polimi.ingsw.Client.views.GUI;
 
-import it.polimi.ingsw.messages.AnsAskCAMsg;
+import it.polimi.ingsw.messages.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
@@ -17,9 +17,29 @@ public class PlayCC1Scene {
     private ImageView imageThirdCharacterCard;
 
     private static AnsAskCAMsg answerMsg;
+    private static AnsMoveStudent1Msg ansMoveStudent1Msg;
+    private static AnsMoveStudent2Msg ansMoveStudent2Msg;
+    private static AnsMoveStudent3Msg ansMoveStudent3Msg;
+    private static AnsMoveStudent4Msg ansMoveStudent4Msg;
 
     public static void setAnsAskCAMsg(AnsAskCAMsg ansAskCAMsg) {
         PlayCC1Scene.answerMsg = ansAskCAMsg;
+    }
+
+    public static void setAnsMoveStudent1Msg(AnsMoveStudent1Msg ansMoveStudent1Msg) {
+        PlayCC1Scene.ansMoveStudent1Msg = ansMoveStudent1Msg;
+    }
+
+    public static void setAnsMoveStudent2Msg(AnsMoveStudent2Msg ansMoveStudent2Msg) {
+        PlayCC1Scene.ansMoveStudent2Msg = ansMoveStudent2Msg;
+    }
+
+    public static void setAnsMoveStudent3Msg(AnsMoveStudent3Msg ansMoveStudent3Msg) {
+        PlayCC1Scene.ansMoveStudent3Msg = ansMoveStudent3Msg;
+    }
+
+    public static void setAnsMoveStudent4Msg(AnsMoveStudent4Msg ansMoveStudent4Msg) {
+        PlayCC1Scene.ansMoveStudent4Msg = ansMoveStudent4Msg;
     }
 
     public void initialize() {

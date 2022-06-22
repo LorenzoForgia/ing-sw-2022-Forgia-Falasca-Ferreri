@@ -14,9 +14,9 @@ public class PlayCC2SceneView extends View {
 
     @Override
     public void run() {
-        PlayCC2Scene.setAnsMoveStudent1Msg(this.answerMsg);
+        PlayCC1Scene.setAnsMoveStudent1Msg(this.answerMsg);
         Platform.runLater(() -> {
-            JavaFXMain.getCurrentApplication().switchToPlayCC2Scene();
+            JavaFXMain.getCurrentApplication().switchToPlayCC1Scene();
         });
     }
 }
