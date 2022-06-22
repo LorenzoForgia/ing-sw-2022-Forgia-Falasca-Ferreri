@@ -10,7 +10,13 @@ public class ChoiceDiningRoomOrIsland4 {
     }
     public void IslandClicked(ActionEvent event){
         IslandTilesScene.setOnlyObserv(false);
-        IslandTilesScene.setIslands(MoveStudent4Scene.getAnswerMsg().GetGB().GetIslands());
+        if(MoveStudent4Scene.getNumberOfMessage()==0) {
+            IslandTilesScene.setIslands(MoveStudent4Scene.getAnswerMsg().GetGB().GetIslands());
+        }else if(MoveStudent4Scene.getNumberOfMessage()==1){
+            IslandTilesScene.setIslands(MoveStudent4Scene.getAnsPlayAfterCCMsg().GetGB().GetIslands());
+        }else if(MoveStudent4Scene.getNumberOfMessage()==2){
+            IslandTilesScene.setIslands(MoveStudent4Scene.getAnsPlayAfterNotCCMsg().GetGB().GetIslands());
+        }
         IslandTilesScene.setNumberOfSceneToComeBack(4);
         JavaFXMain.getCurrentApplication().switchToIslandTitleScene();
     }

@@ -36,6 +36,18 @@ public class MoveStudent3Scene {
         MoveStudent3Scene.numberOfMessage = numberOfMessage;
     }
 
+    public static AnsPlayAfterCCMsg getAnsPlayAfterCCMsg() {
+        return ansPlayAfterCCMsg;
+    }
+
+    public static AnsPlayAfterNotCCMsg getAnsPlayAfterNotCCMsg() {
+        return ansPlayAfterNotCCMsg;
+    }
+
+    public static int getNumberOfMessage() {
+        return numberOfMessage;
+    }
+
     public static void setAnsPlayAfterCCMsg(AnsPlayAfterCCMsg ansPlayAfterCCMsg) {
         MoveStudent3Scene.ansPlayAfterCCMsg = ansPlayAfterCCMsg;
     }
