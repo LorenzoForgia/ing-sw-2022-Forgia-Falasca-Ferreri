@@ -147,7 +147,7 @@ public class CC10Scene {
                 JavaFXMain.getCurrentApplication().switchToCC10Scene();
             }else{
                 studentsEntrance.add(Color.Blue);
-                CC10Msg cc10Msg= new CC10Msg(studentsDining, studentsDining);
+                CC10Msg cc10Msg= new CC10Msg(studentsEntrance, studentsDining);
                 JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(cc10Msg);
             }
         }
@@ -165,7 +165,7 @@ public class CC10Scene {
                 JavaFXMain.getCurrentApplication().switchToCC10Scene();
             }else{
                 studentsEntrance.add(Color.Yellow);
-                CC10Msg cc10Msg= new CC10Msg(studentsDining, studentsDining);
+                CC10Msg cc10Msg= new CC10Msg(studentsEntrance, studentsDining);
                 JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(cc10Msg);
             }
         }
@@ -182,7 +182,7 @@ public class CC10Scene {
                 JavaFXMain.getCurrentApplication().switchToCC10Scene();
             }else{
                 studentsEntrance.add(Color.Green);
-                CC10Msg cc10Msg= new CC10Msg(studentsDining, studentsDining);
+                CC10Msg cc10Msg= new CC10Msg(studentsEntrance, studentsDining);
                 JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(cc10Msg);
             }
         }
@@ -200,7 +200,7 @@ public class CC10Scene {
                 JavaFXMain.getCurrentApplication().switchToCC10Scene();
             }else{
                 studentsEntrance.add(Color.Red);
-                CC10Msg cc10Msg= new CC10Msg(studentsDining, studentsDining);
+                CC10Msg cc10Msg= new CC10Msg(studentsEntrance, studentsDining);
                 JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(cc10Msg);
             }
         }
@@ -217,7 +217,7 @@ public class CC10Scene {
                 JavaFXMain.getCurrentApplication().switchToCC10Scene();
             }else{
                 studentsEntrance.add(Color.Pink);
-                CC10Msg cc10Msg= new CC10Msg(studentsDining, studentsDining);
+                CC10Msg cc10Msg= new CC10Msg(studentsEntrance, studentsDining);
                 JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(cc10Msg);
             }
         }
