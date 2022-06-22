@@ -123,19 +123,19 @@ public class CC7Scene {
         numberOfCard=1;
         numberOfEntrance=1;
         choseNumber=true;
-        JavaFXMain.getCurrentApplication().switchToCC10Scene();
+        JavaFXMain.getCurrentApplication().switchToCC7Scene();
     }
     public void button2Clicked(ActionEvent event){
         numberOfCard=2;
         numberOfEntrance=2;
         choseNumber=true;
-        JavaFXMain.getCurrentApplication().switchToCC10Scene();
+        JavaFXMain.getCurrentApplication().switchToCC7Scene();
     }
     public void button3Clicked(ActionEvent event){
         numberOfCard=3;
         numberOfEntrance=3;
         choseNumber=true;
-        JavaFXMain.getCurrentApplication().switchToCC10Scene();
+        JavaFXMain.getCurrentApplication().switchToCC7Scene();
     }
 
     public void showSchoolBoard1Selected(){
@@ -168,12 +168,12 @@ public class CC7Scene {
         if(numberOfCard!=0){
             studentsCard.add(Color.Blue);
             numberOfCard= numberOfCard-1;
-            JavaFXMain.getCurrentApplication().switchToCC10Scene();
+            JavaFXMain.getCurrentApplication().switchToCC7Scene();
         }else{
             if(numberOfEntrance!=0){
                 studentsEntrance.add(Color.Blue);
                 numberOfEntrance= numberOfEntrance-1;
-                JavaFXMain.getCurrentApplication().switchToCC10Scene();
+                JavaFXMain.getCurrentApplication().switchToCC7Scene();
             }else{
                 CC7Msg cc7Msg= new CC7Msg(studentsCard, studentsEntrance);
                 JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(cc7Msg);
@@ -185,12 +185,12 @@ public class CC7Scene {
         if(numberOfCard!=0){
             studentsCard.add(Color.Yellow);
             numberOfCard= numberOfCard-1;
-            JavaFXMain.getCurrentApplication().switchToCC10Scene();
+            JavaFXMain.getCurrentApplication().switchToCC7Scene();
         }else{
             if(numberOfEntrance!=0){
                 studentsEntrance.add(Color.Yellow);
                 numberOfEntrance= numberOfEntrance-1;
-                JavaFXMain.getCurrentApplication().switchToCC10Scene();
+                JavaFXMain.getCurrentApplication().switchToCC7Scene();
             }else{
                 CC7Msg cc7Msg= new CC7Msg(studentsCard, studentsEntrance);
                 JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(cc7Msg);
@@ -201,12 +201,12 @@ public class CC7Scene {
         if(numberOfCard!=0){
             studentsCard.add(Color.Green);
             numberOfCard= numberOfCard-1;
-            JavaFXMain.getCurrentApplication().switchToCC10Scene();
+            JavaFXMain.getCurrentApplication().switchToCC7Scene();
         }else{
             if(numberOfEntrance!=0){
                 studentsEntrance.add(Color.Green);
                 numberOfEntrance= numberOfEntrance-1;
-                JavaFXMain.getCurrentApplication().switchToCC10Scene();
+                JavaFXMain.getCurrentApplication().switchToCC7Scene();
             }else{
                 CC7Msg cc7Msg= new CC7Msg(studentsCard, studentsEntrance);
                 JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(cc7Msg);
@@ -218,12 +218,12 @@ public class CC7Scene {
         if(numberOfCard!=0){
             studentsCard.add(Color.Red);
             numberOfCard= numberOfCard-1;
-            JavaFXMain.getCurrentApplication().switchToCC10Scene();
+            JavaFXMain.getCurrentApplication().switchToCC7Scene();
         }else{
             if(numberOfEntrance!=0){
                 studentsEntrance.add(Color.Red);
                 numberOfEntrance= numberOfEntrance-1;
-                JavaFXMain.getCurrentApplication().switchToCC10Scene();
+                JavaFXMain.getCurrentApplication().switchToCC7Scene();
             }else{
                 CC7Msg cc7Msg= new CC7Msg(studentsCard, studentsEntrance);
                 JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(cc7Msg);
@@ -234,12 +234,12 @@ public class CC7Scene {
         if(numberOfCard!=0){
             studentsCard.add(Color.Pink);
             numberOfCard= numberOfCard-1;
-            JavaFXMain.getCurrentApplication().switchToCC10Scene();
+            JavaFXMain.getCurrentApplication().switchToCC7Scene();
         }else{
             if(numberOfEntrance!=0){
                 studentsEntrance.add(Color.Pink);
                 numberOfEntrance= numberOfEntrance-1;
-                JavaFXMain.getCurrentApplication().switchToCC10Scene();
+                JavaFXMain.getCurrentApplication().switchToCC7Scene();
             }else{
                 CC7Msg cc7Msg= new CC7Msg(studentsCard, studentsEntrance);
                 JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(cc7Msg);
