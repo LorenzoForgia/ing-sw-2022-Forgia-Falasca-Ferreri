@@ -141,11 +141,12 @@ public class CC10Scene {
             numberOfDiningRoom= numberOfDiningRoom-1;
             JavaFXMain.getCurrentApplication().switchToCC10Scene();
         }else{
-            if(numberOfEntrance!=0){
+            if(numberOfEntrance!=1){
                 studentsEntrance.add(Color.Blue);
                 numberOfEntrance= numberOfEntrance-1;
                 JavaFXMain.getCurrentApplication().switchToCC10Scene();
             }else{
+                studentsEntrance.add(Color.Blue);
                 CC10Msg cc10Msg= new CC10Msg(studentsDining, studentsDining);
                 JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(cc10Msg);
             }
@@ -158,11 +159,12 @@ public class CC10Scene {
             numberOfDiningRoom= numberOfDiningRoom-1;
             JavaFXMain.getCurrentApplication().switchToCC10Scene();
         }else{
-            if(numberOfEntrance!=0){
+            if(numberOfEntrance!=1){
                 studentsEntrance.add(Color.Yellow);
                 numberOfEntrance= numberOfEntrance-1;
                 JavaFXMain.getCurrentApplication().switchToCC10Scene();
             }else{
+                studentsEntrance.add(Color.Yellow);
                 CC10Msg cc10Msg= new CC10Msg(studentsDining, studentsDining);
                 JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(cc10Msg);
             }
@@ -174,11 +176,12 @@ public class CC10Scene {
             numberOfDiningRoom= numberOfDiningRoom-1;
             JavaFXMain.getCurrentApplication().switchToCC10Scene();
         }else{
-            if(numberOfEntrance!=0){
+            if(numberOfEntrance!=1){
                 studentsEntrance.add(Color.Green);
                 numberOfEntrance= numberOfEntrance-1;
                 JavaFXMain.getCurrentApplication().switchToCC10Scene();
             }else{
+                studentsEntrance.add(Color.Green);
                 CC10Msg cc10Msg= new CC10Msg(studentsDining, studentsDining);
                 JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(cc10Msg);
             }
@@ -191,11 +194,12 @@ public class CC10Scene {
             numberOfDiningRoom= numberOfDiningRoom-1;
             JavaFXMain.getCurrentApplication().switchToCC10Scene();
         }else{
-            if(numberOfEntrance!=0){
+            if(numberOfEntrance!=1){
                 studentsEntrance.add(Color.Red);
                 numberOfEntrance= numberOfEntrance-1;
                 JavaFXMain.getCurrentApplication().switchToCC10Scene();
             }else{
+                studentsEntrance.add(Color.Red);
                 CC10Msg cc10Msg= new CC10Msg(studentsDining, studentsDining);
                 JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(cc10Msg);
             }
@@ -207,11 +211,12 @@ public class CC10Scene {
             numberOfDiningRoom= numberOfDiningRoom-1;
             JavaFXMain.getCurrentApplication().switchToCC10Scene();
         }else{
-            if(numberOfEntrance!=0){
+            if(numberOfEntrance!=1){
                 studentsEntrance.add(Color.Pink);
                 numberOfEntrance= numberOfEntrance-1;
                 JavaFXMain.getCurrentApplication().switchToCC10Scene();
             }else{
+                studentsEntrance.add(Color.Pink);
                 CC10Msg cc10Msg= new CC10Msg(studentsDining, studentsDining);
                 JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(cc10Msg);
             }
