@@ -2,6 +2,7 @@ package it.polimi.ingsw.messages;
 
 import it.polimi.ingsw.Client.ServerHandler;
 import it.polimi.ingsw.Client.views.CC1View;
+import it.polimi.ingsw.Client.views.GUI.CC1SceneView;
 import it.polimi.ingsw.Client.views.NotEnoughCoinsExcView;
 import it.polimi.ingsw.Model.CharacterCard;
 import it.polimi.ingsw.Model.GeneralBoard;
@@ -23,7 +24,9 @@ public class AnsCC1Msg extends AnswerMsg{
     @Override
     public void processMessage(ServerHandler serverHandler)
     {
-        serverHandler.getClient().transitionToView(new CC1View(this));
+        CC1SceneView c= new CC1SceneView(this);
+        c.run();
+        //serverHandler.getClient().transitionToView(new CC1View(this));
     }
     public GeneralBoard GetGB(){return generalBoard;}
     public ArrayList<Player> GetPlayers(){return players;}

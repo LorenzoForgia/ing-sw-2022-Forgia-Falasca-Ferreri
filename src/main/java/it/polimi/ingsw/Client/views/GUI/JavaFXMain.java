@@ -750,5 +750,33 @@ public class JavaFXMain extends Application {
         primaryStage.setTitle("Eryantis");
         primaryStage.sizeToScene();
     }
+    public void switchToCC12Scene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/CC12Scene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("Eryantis");
+        primaryStage.sizeToScene();
+    }
+    public void switchToCC1Scene()
+    {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/CC1.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene sc = new Scene(root);
+        primaryStage.setScene(sc);
+        primaryStage.setTitle("Eryantis");
+        primaryStage.sizeToScene();
+    }
 
 }

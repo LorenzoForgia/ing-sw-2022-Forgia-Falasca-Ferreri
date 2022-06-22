@@ -480,6 +480,8 @@ public class IslandTilesScene {
             JavaFXMain.getCurrentApplication().switchToCC9Scene();
         }else if(numberOfSceneToComeBack==12){
             JavaFXMain.getCurrentApplication().switchToCC5Scene();
+        }else if(numberOfSceneToComeBack==14){
+            JavaFXMain.getCurrentApplication().switchToCC12Scene();
         }
     }
 
