@@ -445,6 +445,7 @@ public class IslandTilesScene {
      * 9 is for ChoiceCharacterCardScene
      * 10 is for CC3
      * 11 is for CC9
+     * 12 is used for CC5
      * 13 is for CC1
      * is used also for the message
      * **/
