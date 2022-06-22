@@ -150,10 +150,11 @@ public class ServerHandler implements Runnable
      * @param commandMsg The message to be sent.
      */
 
-    public void sendCommandMessage(CommandMsg commandMsg)
+    public synchronized void sendCommandMessage(CommandMsg commandMsg)
     {
         try {
             output.writeObject(commandMsg);
+            output.flush();
             output.reset();
         } catch (IOException e) {
             System.out.println("Communication error");

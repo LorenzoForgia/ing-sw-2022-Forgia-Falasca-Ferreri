@@ -39,9 +39,12 @@ public class PingServer implements Runnable{
     }
 
    private void sendPing()throws IOException{
-       PingSMSG ping=new PingSMSG(new PingCMSG());
-       this.clientHandler.getOutput().writeObject((Object)ping);
-       this.clientHandler.getOutput().reset();
+        synchronized (this.clientHandler) {
+            PingSMSG ping = new PingSMSG(new PingCMSG());
+            this.clientHandler.getOutput().writeObject((Object) ping);
+            this.clientHandler.getOutput().flush();
+            this.clientHandler.getOutput().reset();
+        }
 
    }
 }
