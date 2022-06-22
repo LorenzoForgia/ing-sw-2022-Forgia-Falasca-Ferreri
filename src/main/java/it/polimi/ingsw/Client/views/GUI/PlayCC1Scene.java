@@ -268,34 +268,34 @@ public class PlayCC1Scene {
 
     public void showGeneralBoardSelected(){
         IslandTilesScene.setOnlyObserv(true);
-        IslandTilesScene.setNumberOfSceneToComeBack(9);
+        IslandTilesScene.setNumberOfSceneToComeBack(8);
         IslandTilesScene.setIslands(islands);
         JavaFXMain.getCurrentApplication().switchToIslandTitleScene();
     }
 
     public void showSchoolBoard1Selected(){
 
-        SchoolBoardScene.setNumberOfSceneToComeBack(9);
+        SchoolBoardScene.setNumberOfSceneToComeBack(8);
         SchoolBoardScene.setPlayer(players.get(0));
         JavaFXMain.getCurrentApplication().switchToSchoolBoardScene();
 
     }
     public void showSchoolBoard2Selected(){
 
-        SchoolBoardScene.setNumberOfSceneToComeBack(9);
+        SchoolBoardScene.setNumberOfSceneToComeBack(8);
         SchoolBoardScene.setPlayer(players.get(1));
         JavaFXMain.getCurrentApplication().switchToSchoolBoardScene();
 
     }
     public void showSchoolBoard3Selected(){
 
-        SchoolBoardScene.setNumberOfSceneToComeBack(9);
+        SchoolBoardScene.setNumberOfSceneToComeBack(8);
         SchoolBoardScene.setPlayer(players.get(2));
         JavaFXMain.getCurrentApplication().switchToSchoolBoardScene();
     }
 
     public void showSchoolBoard4Selected(){
-        SchoolBoardScene.setNumberOfSceneToComeBack(9);
+        SchoolBoardScene.setNumberOfSceneToComeBack(8);
         SchoolBoardScene.setPlayer(players.get(3));
         JavaFXMain.getCurrentApplication().switchToSchoolBoardScene();
     }
