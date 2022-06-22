@@ -14,11 +14,11 @@ public class CC1Scene {
     private Circle student3;
     @FXML
     private Circle student4;
-    private AnsCC1Msg answerMsg;
+    private static AnsCC1Msg answerMsg;
     private static Color colorChosen;
 
-    public void setAnswerMsg(AnsCC1Msg answerMsg) {
-        this.answerMsg = answerMsg;
+    public static void setAnswerMsg(AnsCC1Msg answerMsg) {
+        CC1Scene.answerMsg = answerMsg;
     }
 
     public static Color getColorChosen() {
