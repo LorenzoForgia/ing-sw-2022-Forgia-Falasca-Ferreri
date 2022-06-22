@@ -184,9 +184,9 @@ public class MoveStudent2Scene {
         if(numberOfMessage==0) {
             SchoolBoardScene.setPlayer(answerMsg.GetPlayers().get(0));
         }else if(numberOfMessage==1){
-            IslandTilesScene.setIslands(ansPlayAfterCCMsg.GetGB().GetIslands());
+            SchoolBoardScene.setPlayer(ansPlayAfterCCMsg.GetPlayers().get(0));
         }else if(numberOfMessage==2){
-            IslandTilesScene.setIslands(ansPlayAfterNotCCMsg.GetGB().GetIslands());
+            SchoolBoardScene.setPlayer(ansPlayAfterNotCCMsg.GetPlayers().get(0));
         }
         JavaFXMain.getCurrentApplication().switchToSchoolBoardScene();
 
@@ -197,9 +197,9 @@ public class MoveStudent2Scene {
         if(numberOfMessage==0) {
             SchoolBoardScene.setPlayer(answerMsg.GetPlayers().get(1));
         }else if(numberOfMessage==1){
-            IslandTilesScene.setIslands(ansPlayAfterCCMsg.GetGB().GetIslands());
+            SchoolBoardScene.setPlayer(ansPlayAfterCCMsg.GetPlayers().get(1));
         }else if(numberOfMessage==2){
-            IslandTilesScene.setIslands(ansPlayAfterNotCCMsg.GetGB().GetIslands());
+            SchoolBoardScene.setPlayer(ansPlayAfterNotCCMsg.GetPlayers().get(1));
         }
         JavaFXMain.getCurrentApplication().switchToSchoolBoardScene();
 
@@ -210,9 +210,9 @@ public class MoveStudent2Scene {
         if(numberOfMessage==0) {
             SchoolBoardScene.setPlayer(answerMsg.GetPlayers().get(2));
         }else if(numberOfMessage==1){
-            IslandTilesScene.setIslands(ansPlayAfterCCMsg.GetGB().GetIslands());
+            SchoolBoardScene.setPlayer(ansPlayAfterCCMsg.GetPlayers().get(2));
         }else if(numberOfMessage==2){
-            IslandTilesScene.setIslands(ansPlayAfterNotCCMsg.GetGB().GetIslands());
+            SchoolBoardScene.setPlayer(ansPlayAfterNotCCMsg.GetPlayers().get(2));
         }
         JavaFXMain.getCurrentApplication().switchToSchoolBoardScene();
     }
@@ -222,9 +222,9 @@ public class MoveStudent2Scene {
         if(numberOfMessage==0) {
             SchoolBoardScene.setPlayer(answerMsg.GetPlayers().get(3));
         }else if(numberOfMessage==1){
-            IslandTilesScene.setIslands(ansPlayAfterCCMsg.GetGB().GetIslands());
+            SchoolBoardScene.setPlayer(ansPlayAfterCCMsg.GetPlayers().get(3));
         }else if(numberOfMessage==2){
-            IslandTilesScene.setIslands(ansPlayAfterNotCCMsg.GetGB().GetIslands());
+            SchoolBoardScene.setPlayer(ansPlayAfterNotCCMsg.GetPlayers().get(3));
         }
         JavaFXMain.getCurrentApplication().switchToSchoolBoardScene();
     }
