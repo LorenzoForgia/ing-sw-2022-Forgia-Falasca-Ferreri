@@ -92,7 +92,7 @@
          </font>
       </Label>
       <Button fx:id="backToPreviewScene" layoutX="692.0" layoutY="550.0" mnemonicParsing="false" onAction="#backToSceneButtonClicked" text="Torna alla scena precedente" />
-      <Label layoutX="121.0" layoutY="542.0" text="Fai parte della squadra: ">
+      <Label layoutX="121.0" layoutY="542.0" text="Fa parte della squadra: ">
          <font>
             <Font size="24.0" />
          </font>
