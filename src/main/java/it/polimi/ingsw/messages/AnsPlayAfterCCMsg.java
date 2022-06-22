@@ -1,5 +1,6 @@
 package it.polimi.ingsw.messages;
 
+import it.polimi.ingsw.Client.Client;
 import it.polimi.ingsw.Client.ServerHandler;
 import it.polimi.ingsw.Client.views.*;
 import it.polimi.ingsw.Client.views.GUI.PlayAfterCCSceneView;
@@ -25,21 +26,25 @@ public class AnsPlayAfterCCMsg extends AnswerMsg{
     @Override
     public void processMessage(ServerHandler serverHandler)
     {
-        /*if(countmodexpview==1){
-            serverHandler.getClient().transitionToView(new MoveStudent1AfterCCView(this));
-        }else if(countmodexpview==2){
-            serverHandler.getClient().transitionToView(new MoveStudent2AfterCCView(this));
-        }else if(countmodexpview==3){
-            serverHandler.getClient().transitionToView(new MoveStudent3AfterCCView(this));
-        }else if(players.size()!=3 && countmodexpview==4){
-            serverHandler.getClient().transitionToView(new AskforMNafterCCView(this));
-        }else if(players.size()==3 && countmodexpview==4){
-            serverHandler.getClient().transitionToView(new MoveStudent4AfterCCView(this));
-        }else if(countmodexpview==5){
-            serverHandler.getClient().transitionToView(new AskforMNafterCCView(this));
-        }*/
-        PlayAfterCCSceneView p= new PlayAfterCCSceneView(this);
-        p.run();
+        if(!Client.GUI) {
+            if(countmodexpview==1){
+               serverHandler.getClient().transitionToView(new MoveStudent1AfterCCView(this));
+            }else if(countmodexpview==2){
+               serverHandler.getClient().transitionToView(new MoveStudent2AfterCCView(this));
+            }else if(countmodexpview==3){
+               serverHandler.getClient().transitionToView(new MoveStudent3AfterCCView(this));
+            }else if(players.size()!=3 && countmodexpview==4){
+               serverHandler.getClient().transitionToView(new AskforMNafterCCView(this));
+            }else if(players.size()==3 && countmodexpview==4){
+               serverHandler.getClient().transitionToView(new MoveStudent4AfterCCView(this));
+            }else if(countmodexpview==5){
+               serverHandler.getClient().transitionToView(new AskforMNafterCCView(this));
+            }
+        }else{
+            PlayAfterCCSceneView p= new PlayAfterCCSceneView(this);
+            p.run();
+        }
+
 
     }
     public String GetPlayer(){

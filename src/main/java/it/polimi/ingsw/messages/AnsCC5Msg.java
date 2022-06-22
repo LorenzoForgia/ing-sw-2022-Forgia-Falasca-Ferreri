@@ -1,5 +1,6 @@
 package it.polimi.ingsw.messages;
 
+import it.polimi.ingsw.Client.Client;
 import it.polimi.ingsw.Client.ServerHandler;
 import it.polimi.ingsw.Client.views.CC1View;
 import it.polimi.ingsw.Client.views.CC3View;
@@ -23,9 +24,14 @@ public class AnsCC5Msg extends AnswerMsg{
     @Override
     public void processMessage(ServerHandler serverHandler)
     {
-        CC5SceneView c= new CC5SceneView(this);
-        c.run();
-        //serverHandler.getClient().transitionToView(new CC5View(this));
+        if(Client.GUI){
+            CC5SceneView c= new CC5SceneView(this);
+            c.run();
+        }else{
+            serverHandler.getClient().transitionToView(new CC5View(this));
+        }
+
+
     }
     public GeneralBoard GetGB(){return generalBoard;}
     public ArrayList<Player> GetPlayers(){return players;}

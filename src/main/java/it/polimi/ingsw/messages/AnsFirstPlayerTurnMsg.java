@@ -1,5 +1,6 @@
 package it.polimi.ingsw.messages;
 
+import it.polimi.ingsw.Client.Client;
 import it.polimi.ingsw.Client.ServerHandler;
 import it.polimi.ingsw.Client.views.FirstPlayerTurnView;
 import it.polimi.ingsw.Client.views.GUI.FirstPlayerTurnSceneView;
@@ -34,9 +35,14 @@ public class AnsFirstPlayerTurnMsg extends AnswerMsg{
     @Override
     public void processMessage(ServerHandler serverHandler)
     {
-        FirstPlayerTurnSceneView g=new FirstPlayerTurnSceneView(this);
-        g.run();
-       /** serverHandler.getClient().transitionToView(new FirstPlayerTurnView(this));CLI NON CANCELLARE*/
+        if(Client.GUI){
+            FirstPlayerTurnSceneView g=new FirstPlayerTurnSceneView(this);
+            g.run();
+        }else{
+            serverHandler.getClient().transitionToView(new FirstPlayerTurnView(this));
+        }
+
+
     }
     public String GetPlayer(){
         return name;

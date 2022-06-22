@@ -1,5 +1,6 @@
 package it.polimi.ingsw.messages;
 
+import it.polimi.ingsw.Client.Client;
 import it.polimi.ingsw.Client.ServerHandler;
 import it.polimi.ingsw.Client.views.EndGameView;
 import it.polimi.ingsw.Client.views.GUI.EndGameSceneView;
@@ -18,9 +19,14 @@ public class AnsEndGameMsg extends AnswerMsg{
     @Override
     public void processMessage(ServerHandler serverHandler)
     {
-        EndGameSceneView e= new EndGameSceneView(this);
-        e.run();
-        /*serverHandler.getClient().transitionToView(new EndGameView(this));*/
+        if(Client.GUI){
+            EndGameSceneView e= new EndGameSceneView(this);
+            e.run();
+        }else{
+            serverHandler.getClient().transitionToView(new EndGameView(this));
+        }
+
+
     }
     public ArrayList<String> getWinner(){return winner;}
 }

@@ -1,5 +1,6 @@
 package it.polimi.ingsw.messages;
 
+import it.polimi.ingsw.Client.Client;
 import it.polimi.ingsw.Client.ServerHandler;
 import it.polimi.ingsw.Client.views.CannotPlayCCView;
 import it.polimi.ingsw.Client.views.ColorExc1View;
@@ -15,9 +16,14 @@ public class AnsCannotPlayCCMsg extends AnswerMsg{
     @Override
     public void processMessage(ServerHandler serverHandler)
     {
-        CannotPlayCCScene c= new CannotPlayCCScene(this);
-        c.run();
-        //serverHandler.getClient().transitionToView(new CannotPlayCCView(this));
+        if(Client.GUI){
+            CannotPlayCCScene c= new CannotPlayCCScene(this);
+            c.run();
+        }else{
+            serverHandler.getClient().transitionToView(new CannotPlayCCView(this));
+        }
+
+
     }
     public String GetPlayer(){
         return name;

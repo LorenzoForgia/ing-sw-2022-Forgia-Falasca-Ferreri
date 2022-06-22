@@ -1,5 +1,6 @@
 package it.polimi.ingsw.messages;
 
+import it.polimi.ingsw.Client.Client;
 import it.polimi.ingsw.Client.ServerHandler;
 import it.polimi.ingsw.Client.views.CC10ExcView;
 import it.polimi.ingsw.Client.views.CC10View;
@@ -23,9 +24,14 @@ public class AnsCC10ExcMsg extends AnswerMsg{
     @Override
     public void processMessage(ServerHandler serverHandler)
     {
-        CC10ExcScene c= new CC10ExcScene(this);
-        c.run();
-        //serverHandler.getClient().transitionToView(new CC10ExcView(this));
+        if(Client.GUI){
+            CC10ExcScene c= new CC10ExcScene(this);
+            c.run();
+        }else{
+            serverHandler.getClient().transitionToView(new CC10ExcView(this));
+        }
+
+
     }
     public GeneralBoard GetGB(){return generalBoard;}
     public ArrayList<Player> GetPlayers(){return players;}

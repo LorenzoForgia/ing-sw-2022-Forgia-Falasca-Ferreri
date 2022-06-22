@@ -1,5 +1,6 @@
 package it.polimi.ingsw.messages;
 
+import it.polimi.ingsw.Client.Client;
 import it.polimi.ingsw.Client.ServerHandler;
 import it.polimi.ingsw.Client.views.*;
 import it.polimi.ingsw.Client.views.GUI.AskForMotherNatureSceneView;
@@ -32,23 +33,39 @@ public class AnsMoveStudent3Msg extends AnswerMsg{
     {
         if(modexp){
             if(players.size()==3){
-                PlayCC4Players3SceneView p= new PlayCC4Players3SceneView(this);
-                p.run();
-                /*serverHandler.getClient().transitionToView(new PlayCC4Players3View(this));*/
+                if(Client.GUI){
+                    PlayCC4Players3SceneView p= new PlayCC4Players3SceneView(this);
+                    p.run();
+                }else{
+                    serverHandler.getClient().transitionToView(new PlayCC4Players3View(this));
+                }
+
             }else{
-                PlayCC4SceneView p= new PlayCC4SceneView(this);
-                p.run();
-                //serverHandler.getClient().transitionToView(new PlayCC4View(this));
+                if(Client.GUI){
+                    PlayCC4SceneView p= new PlayCC4SceneView(this);
+                    p.run();
+                }else{
+                    serverHandler.getClient().transitionToView(new PlayCC4View(this));
+                }
+
             }
         }else{
             if(players.size()==3){
-                MoveStudent4SceneView m= new MoveStudent4SceneView(this);
-                m.run();
-                /*serverHandler.getClient().transitionToView(new MoveStudent4View(this));*/
+                if(Client.GUI){
+                    MoveStudent4SceneView m= new MoveStudent4SceneView(this);
+                    m.run();
+                }else{
+                    serverHandler.getClient().transitionToView(new MoveStudent4View(this));
+                }
             }else{
-                AskForMotherNatureSceneView askForMotherNatureScene=new AskForMotherNatureSceneView(this);
-                askForMotherNatureScene.run();
-                /*serverHandler.getClient().transitionToView(new AskforMotherNatureView(this));*/
+                if(Client.GUI){
+                    AskForMotherNatureSceneView askForMotherNatureScene=new AskForMotherNatureSceneView(this);
+                    askForMotherNatureScene.run();
+                }else{
+                    serverHandler.getClient().transitionToView(new AskforMotherNatureView(this));
+                }
+
+
             }
         }
 

@@ -1,5 +1,6 @@
 package it.polimi.ingsw.messages;
 
+import it.polimi.ingsw.Client.Client;
 import it.polimi.ingsw.Client.ServerHandler;
 import it.polimi.ingsw.Client.views.AskForCloudView;
 import it.polimi.ingsw.Client.views.GUI.ChooseCloudSceneView;
@@ -21,9 +22,14 @@ public class AnsNumStepMNMsg extends AnswerMsg{
     @Override
     public void processMessage(ServerHandler serverHandler)
     {
-        ChooseCloudSceneView c= new ChooseCloudSceneView(this);
-        c.run();
-        /*serverHandler.getClient().transitionToView(new AskForCloudView(this));*/
+        if(Client.GUI){
+            ChooseCloudSceneView c= new ChooseCloudSceneView(this);
+            c.run();
+        }else{
+            serverHandler.getClient().transitionToView(new AskForCloudView(this));
+        }
+
+
     }
     public String GetPlayer(){
         return name;
