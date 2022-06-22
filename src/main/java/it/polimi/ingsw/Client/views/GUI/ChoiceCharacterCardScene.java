@@ -215,22 +215,22 @@ public class ChoiceCharacterCardScene {
             }
         }
     }
-    public void image1Clicked(ActionEvent event){
+    public void image1Clicked(){
         CCMsg ccMsg= new CCMsg(answerMsg.GetCharacterCards().get(0).getName());
         JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(ccMsg);
     }
-    public void image2Clicked(ActionEvent event){
+    public void image2Clicked(){
         CCMsg ccMsg= new CCMsg(answerMsg.GetCharacterCards().get(1).getName());
         JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(ccMsg);
     }
-    public void image3Clicked(ActionEvent event){
+    public void image3Clicked(){
         CCMsg ccMsg= new CCMsg(answerMsg.GetCharacterCards().get(2).getName());
         JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(ccMsg);
     }
 
     public void showGeneralBoardSelected(){
         IslandTilesScene.setOnlyObserv(true);
-        IslandTilesScene.setNumberOfSceneToComeBack(8);
+        IslandTilesScene.setNumberOfSceneToComeBack(9);
         if(numberOfMessage==0) {
             IslandTilesScene.setIslands(answerMsg.GetGB().GetIslands());
         }else if(numberOfMessage==1){
@@ -247,7 +247,7 @@ public class ChoiceCharacterCardScene {
 
     public void showSchoolBoard1Selected(){
 
-        SchoolBoardScene.setNumberOfSceneToComeBack(8);
+        SchoolBoardScene.setNumberOfSceneToComeBack(9);
         if(numberOfMessage==0) {
             SchoolBoardScene.setPlayer(answerMsg.GetPlayers().get(0));
         }else if(numberOfMessage==1){
@@ -264,7 +264,7 @@ public class ChoiceCharacterCardScene {
     }
     public void showSchoolBoard2Selected(){
 
-        SchoolBoardScene.setNumberOfSceneToComeBack(8);
+        SchoolBoardScene.setNumberOfSceneToComeBack(9);
         if(numberOfMessage==0) {
             SchoolBoardScene.setPlayer(answerMsg.GetPlayers().get(1));
         }else if(numberOfMessage==1){
@@ -281,7 +281,7 @@ public class ChoiceCharacterCardScene {
     }
     public void showSchoolBoard3Selected(){
 
-        SchoolBoardScene.setNumberOfSceneToComeBack(8);
+        SchoolBoardScene.setNumberOfSceneToComeBack(9);
         if(numberOfMessage==0){
             SchoolBoardScene.setPlayer(answerMsg.GetPlayers().get(2));
         }else if(numberOfMessage==1){
@@ -298,7 +298,7 @@ public class ChoiceCharacterCardScene {
     }
 
     public void showSchoolBoard4Selected(){
-        SchoolBoardScene.setNumberOfSceneToComeBack(0);
+        SchoolBoardScene.setNumberOfSceneToComeBack(9);
         if(numberOfMessage==0) {
             SchoolBoardScene.setPlayer(answerMsg.GetPlayers().get(3));
         }else if(numberOfMessage==1){

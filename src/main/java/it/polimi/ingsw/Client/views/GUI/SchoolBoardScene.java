@@ -207,6 +207,8 @@ public class SchoolBoardScene {
             JavaFXMain.getCurrentApplication().switchToAskForMN3PlayersScene();
         }else if(numberOfSceneToComeBack==8){
             JavaFXMain.getCurrentApplication().switchToPlayCC1Scene();
+        }else if(numberOfSceneToComeBack==9){
+            JavaFXMain.getCurrentApplication().switchToChoiceCharacterCardScene();
         }
     }
 
