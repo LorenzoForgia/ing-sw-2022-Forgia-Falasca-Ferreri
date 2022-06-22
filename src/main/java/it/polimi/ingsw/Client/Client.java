@@ -4,6 +4,7 @@ import it.polimi.ingsw.Client.views.GUI.JavaFXMain;
 import it.polimi.ingsw.Client.views.IdleView;
 import it.polimi.ingsw.Client.views.TitleView;
 import it.polimi.ingsw.Client.views.View;
+import it.polimi.ingsw.Model.Color;
 
 import java.io.*;
 import java.net.Socket;
@@ -26,7 +27,7 @@ public class Client implements Runnable
     {
         /* Instantiate a new Client. The main thread will become the
          * thread where user interaction is handled. */
-
+        System.out.println(Color.Blue+"digitare GUI per l'interfaccia grafica altrimenti altro per la CLI"+Color.Reset);
         Scanner in =new Scanner(System.in);
         String simulazioneargs =in.nextLine();  //solo per simulare la scelta dell'utente
         if(simulazioneargs.equals("GUI")){
