@@ -1,5 +1,7 @@
 package it.polimi.ingsw.Client.views.GUI;
 
+import it.polimi.ingsw.Model.CardAssistant;
+import it.polimi.ingsw.Model.Player;
 import it.polimi.ingsw.messages.AnsMoveStudent3Msg;
 import it.polimi.ingsw.messages.AnsPlayAfterCCMsg;
 import it.polimi.ingsw.messages.AnsPlayAfterNotCCMsg;
@@ -10,7 +12,10 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+
+import java.util.ArrayList;
 
 public class AskForMotherNatureScene {
     private static AnsMoveStudent3Msg answerMsg;
@@ -52,8 +57,46 @@ public class AskForMotherNatureScene {
         AskForMotherNatureScene.ansPlayAfterNotCCMsg = ansPlayAfterNotCCMsg;
     }
 
+    private CardAssistant getPlayedCard(String nickNamePlayer, ArrayList<Player> players){
+        for(int i=0; i< players.size(); i++){
+            if(nickNamePlayer.equals(players.get(i).getNickName())){
+                return players.get(i).getCA();
+            }
+        }
+        return null;
+    }
+
+    private Image shoWImageCA(String nickNamePlayer, ArrayList<Player> players){
+        CardAssistant ca=getPlayedCard(nickNamePlayer,players);
+        if(ca!=null){
+            if(ca.equals(CardAssistant.Uno)){
+                return new Image("Assistente (1).png");
+            }else if(ca.equals(CardAssistant.Due)){
+                return new Image("Assistente (2).png");
+            }else if(ca.equals(CardAssistant.Tre)){
+                return new Image("Assistente (3).png");
+            }else if(ca.equals(CardAssistant.Quattro)){
+                return new Image("Assistente (4).png");
+            }else if(ca.equals(CardAssistant.Cinque)){
+                return new Image("Assistente (5).png");
+            }else if(ca.equals(CardAssistant.Sei)){
+                return new Image("Assistente (6).png");
+            }else if(ca.equals(CardAssistant.Sette)){
+                return new Image("Assistente (7).png");
+            }else if(ca.equals(CardAssistant.Otto)){
+                return new Image("Assistente (8).png");
+            }else if(ca.equals(CardAssistant.Nove)){
+                return new Image("Assistente (9).png");
+            }else {
+                return new Image("Assistente 10).png");
+            }
+        }else{
+            return null;
+        }
+    }
     public void initialize() {
         if(numberOfMessage==0) {
+            playedCardAssistant.setImage(shoWImageCA(answerMsg.GetPlayer(), answerMsg.GetPlayers()));
             if (answerMsg.GetPlayers().size() == 2) {
                 imageFourthSchoolBoard.setVisible(false);
                 imageFourthSchoolBoard.setOnMouseClicked(null);
@@ -77,6 +120,7 @@ public class AskForMotherNatureScene {
                 showSchoolBoard4.setText("Plancia di " + answerMsg.GetPlayers().get(3).getNickName());
             }
         }else if(numberOfMessage==1){
+            playedCardAssistant.setImage(shoWImageCA(ansPlayAfterCCMsg.GetPlayer(), ansPlayAfterCCMsg.GetPlayers()));
             if (ansPlayAfterCCMsg.GetPlayers().size() == 2) {
                 imageFourthSchoolBoard.setVisible(false);
                 imageFourthSchoolBoard.setOnMouseClicked(null);
@@ -100,6 +144,7 @@ public class AskForMotherNatureScene {
                 showSchoolBoard4.setText("Plancia di " + ansPlayAfterCCMsg.GetPlayers().get(3).getNickName());
             }
         }else if(numberOfMessage==2) {
+            playedCardAssistant.setImage(shoWImageCA(ansPlayAfterNotCCMsg.GetPlayer(), ansPlayAfterNotCCMsg.GetPlayers()));
             if (ansPlayAfterNotCCMsg.GetPlayers().size() == 2) {
                 imageFourthSchoolBoard.setVisible(false);
                 imageFourthSchoolBoard.setOnMouseClicked(null);
