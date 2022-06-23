@@ -1,12 +1,15 @@
 package it.polimi.ingsw.Controller;
 import it.polimi.ingsw.Model.*;
 
+import java.util.ArrayList;
+
 /**
  *  @author Luigia Falasca
  *  **/
 
 public class InfluenceProfessorTable {
-
+    private boolean alreadyUsedEffect2= false;
+    private ArrayList<ArrayList<Color>> oldProfessor= new ArrayList();
 
     /** Return the color from the index
      * **/
@@ -60,7 +63,6 @@ public class InfluenceProfessorTable {
         int max;
         int schoolBoardWithInfluence=0;
         boolean isInfluence = false;
-
         for (int j = 0; j < 5; j++) {
             max = 0;
             for (int i = 0; i < numPlayer; i++) {
@@ -91,6 +93,12 @@ public class InfluenceProfessorTable {
         int max;
         int schoolBoardWithInfluence=0;
         boolean isInfluence = false;
+        if(!alreadyUsedEffect2){
+            alreadyUsedEffect2= true;
+            for(int i=0; i <numPlayer; i++){
+                oldProfessor.add(GB.getSchoolBoard().get(i).getProfessorTable());
+            }
+        }
 
         for (int j = 0; j < 5; j++) {
             max = 0;
@@ -122,5 +130,23 @@ public class InfluenceProfessorTable {
             }
         }
         RemoveProfessorWhenNoStudentInDining(GB, numPlayer);
+    }
+
+    public void comeBackAfterUsingCharacterCard2(GeneralBoard GB, int numPlayer){
+        if(alreadyUsedEffect2){
+            alreadyUsedEffect2= false;
+            for(int i=0; i< 5; i++){
+                RemoveProfessorFromTable(GB,numPlayer, GetRightColor(i));
+            }
+            for(int i=0; i< numPlayer; i++){
+                for(int j=0; j< oldProfessor.get(i).size(); i++){
+                    try{
+                        GB.getSchoolBoard().get(i).PutProfessor(oldProfessor.get(i).get(j));
+                    }catch(IllegalMoveException e){
+
+                    }
+                }
+            }
+        }
     }
 }

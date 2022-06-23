@@ -350,6 +350,13 @@ public class GameController {
             throw new CloudEmptyException(c);
         }else{
             chooseCloudTiles.ChoosenCloud(player, c);
+            if(player.isUsedCharacterCard()){
+                if(player.getNameCharacterCard()==2){
+                    influenceProfessorTable.comeBackAfterUsingCharacterCard2(gameModel.getGeneralBoard(), gameModel.getNumplayers());
+                }
+                player.setNameCharacterCard(13);
+            }
+            influenceProfessorTable.RightProfessorTable(gameModel.getGeneralBoard(), gameModel.getNumplayers());
             choosenPlayer.incrementTurn();
         }
     }
