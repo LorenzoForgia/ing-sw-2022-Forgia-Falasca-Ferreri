@@ -8,7 +8,7 @@ public class ChoiceDiningRoomOrIsland1 {
     public static int location;
 
     public void DiningClicked(ActionEvent event){
-        location=12;
+        location=123;
         MoveStudent1Msg moveStudent1Msg= new MoveStudent1Msg(MoveStudent1Scene.getColor(), location);
         JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent1Msg);
     }

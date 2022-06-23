@@ -28,7 +28,7 @@ public class MoveStudent1Msg extends CommandMsg{
                 e.printStackTrace();
             }*/
 
-            if (l == 12) {
+            if (l == 123) {
                 try {
                     game.CheckColor(s, game.getChoosenPlayer().GetPlayerTurn());
                     game.PutStudentInLocation(s, game.getChoosenPlayer().GetPlayerTurn().getMySchoolBoard().getDiningRoom(), game.getChoosenPlayer().GetPlayerTurn());

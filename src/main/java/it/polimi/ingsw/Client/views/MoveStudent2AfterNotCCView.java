@@ -48,7 +48,7 @@ public class MoveStudent2AfterNotCCView extends View{
         int isl=0;
         while(!flag) {
             if (ris.equals("sala")) {
-                isl = 12;
+                isl = 123;
                 MoveStudent2Msg moveStudentMsg = new MoveStudent2Msg(student, isl);
                 getOwner().getServerHandler().sendCommandMessage(moveStudentMsg);
                 flag=true;

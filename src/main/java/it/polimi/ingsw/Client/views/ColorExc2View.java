@@ -24,7 +24,7 @@ public class ColorExc2View extends View{
         boolean flag=false;
         while(!flag) {
             if (ris.equals("sala")) {
-                isl = 12;
+                isl = 123;
                 MoveStudent2Msg moveStudentMsg = new MoveStudent2Msg(student, isl);
                 getOwner().getServerHandler().sendCommandMessage(moveStudentMsg);
                 flag=true;

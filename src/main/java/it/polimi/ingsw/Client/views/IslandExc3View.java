@@ -45,7 +45,7 @@ public class IslandExc3View extends View {
         flag=false;
         while(!flag) {
             if (ris.equals("sala")) {
-                isl = 12;
+                isl = 123;
                 MoveStudent3Msg moveStudentMsg = new MoveStudent3Msg(student, isl);
                 getOwner().getServerHandler().sendCommandMessage(moveStudentMsg);
                 flag=true;

@@ -50,7 +50,7 @@ public class MoveStudent4View extends View{
         flag=false;
         while(!flag) {
             if (ris.equals("sala")) {
-                isl = 12;
+                isl = 123;
                 MoveStudent4Msg moveStudentMsg = new MoveStudent4Msg(student, isl);
                 getOwner().getServerHandler().sendCommandMessage(moveStudentMsg);
                 flag=true;

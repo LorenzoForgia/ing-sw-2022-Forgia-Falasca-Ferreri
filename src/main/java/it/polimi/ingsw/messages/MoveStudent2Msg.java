@@ -20,7 +20,7 @@ public class MoveStudent2Msg extends CommandMsg{
     {
         GameController game = clientHandler.getGame();
         synchronized (game) {
-            if (l == 12) {
+            if (l == 123) {
                 try {
                     game.CheckColor(s, game.getChoosenPlayer().GetPlayerTurn());
                     game.PutStudentInLocation(s, game.getChoosenPlayer().GetPlayerTurn().getMySchoolBoard().getDiningRoom(), game.getChoosenPlayer().GetPlayerTurn());

@@ -5,7 +5,7 @@ import javafx.event.ActionEvent;
 
 public class ChoiceDiningRoomOrIsland4 {
     public void DiningClicked(ActionEvent event){
-        MoveStudent4Msg moveStudent4Msg= new MoveStudent4Msg(MoveStudent4Scene.getColor(), 12);
+        MoveStudent4Msg moveStudent4Msg= new MoveStudent4Msg(MoveStudent4Scene.getColor(), 123);
         JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(moveStudent4Msg);
     }
     public void IslandClicked(ActionEvent event){
