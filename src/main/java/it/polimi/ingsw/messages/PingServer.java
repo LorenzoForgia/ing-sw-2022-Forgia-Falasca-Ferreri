@@ -20,6 +20,7 @@ public class PingServer implements Runnable{
             handleClientDisconnection();
         } catch (IOException e) {
             System.out.println("IOexception partita finita" + this.clientHandler.getClient().getInetAddress() + " connection dropped");
+            System.exit(130);
         }
 
     }
