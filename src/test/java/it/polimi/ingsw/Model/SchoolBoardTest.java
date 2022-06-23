@@ -15,6 +15,24 @@ class SchoolBoardTest {
         }
         assertEquals(Color.Red, s.getProfessorTable().get(0));
     }
+
+    @Test
+    public void PutProfessorTes2t(){
+        SchoolBoard s= new SchoolBoard(1, 7);
+        boolean thrown= false;
+        try {
+            s.PutProfessor(Color.Red);
+        }catch (IllegalMoveException e){
+            fail();
+        }
+        try {
+            s.PutProfessor(Color.Red);
+        }catch (IllegalMoveException e){
+            thrown= true;
+        }
+        assertEquals(Color.Red, s.getProfessorTable().get(0));
+        assertTrue(thrown);
+    }
     @Test
     public void RemoveProfessorTest(){
         SchoolBoard s= new SchoolBoard(1, 7);
