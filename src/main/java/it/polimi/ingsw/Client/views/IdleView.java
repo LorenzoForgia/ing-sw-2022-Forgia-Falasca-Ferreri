@@ -25,7 +25,7 @@ public class IdleView extends View
 
       int spinnerIdx = 0;
       while (!shouldStopInteraction()) {
-        String lastWaitMessage = SPINNER.charAt(spinnerIdx) + " Please wait...";
+        String lastWaitMessage = SPINNER.charAt(spinnerIdx) + " Attendi...";
         System.out.print(lastWaitMessage);
         spinnerIdx = (spinnerIdx + 1) % SPINNER.length();
 

@@ -18,7 +18,7 @@ public class TitleView extends View {
     Scanner scanner = new Scanner(System.in);
 
 
-    System.out.println("Welcome to:");
+    System.out.println("Benvenuto in:");
     Displayer d=new Displayer();
     d.displayLogo();
     System.out.println("Inserisci il tuo nickname:");

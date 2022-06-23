@@ -19,7 +19,7 @@ public class ColorExc2View extends View{
         System.out.println("Scelta non consentita! Scegli di nuovo il colore di uno studente:");
         Scanner scanner = new Scanner(System.in);
         Color student= Color.valueOf(scanner.nextLine());
-        System.out.println("Vuoi spostarlo nella sala a su un'isola? sala/isola");
+        System.out.println("Vuoi spostarlo nella sala o su un'isola? sala/isola");
         String ris= scanner.nextLine();
         boolean flag=false;
         while(!flag) {
