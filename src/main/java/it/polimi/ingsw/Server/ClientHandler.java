@@ -75,6 +75,7 @@ public class ClientHandler implements Runnable
             System.exit(130);
         }catch (IOException e) {
             System.out.println("IOException " + client.getInetAddress() + " connection dropped\n la partita è finita");
+            e.printStackTrace();
             System.exit(130);
 
         }
