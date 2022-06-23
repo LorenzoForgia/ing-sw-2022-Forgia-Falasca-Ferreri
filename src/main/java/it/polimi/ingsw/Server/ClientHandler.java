@@ -125,9 +125,10 @@ public class ClientHandler implements Runnable
      * @throws IOException If a communication error occurs.
      **/
 
-    public void sendAnswerMessage(AnswerMsg answerMsg) throws IOException
+    public synchronized void sendAnswerMessage(AnswerMsg answerMsg) throws IOException
     {
         output.writeObject((Object)answerMsg);
+        output.flush();
         output.reset();
     }
     public String getNickname(){return nickname;}
