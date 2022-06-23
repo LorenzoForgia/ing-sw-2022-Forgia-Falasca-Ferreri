@@ -19,7 +19,7 @@ public class LoginScene extends View {
     public void loginButtonClicked(ActionEvent event){
 
         if (usernameBox.getText().length() == 0) {
-            Alert alert = new Alert(Alert.AlertType.ERROR, "Insert a valid username!", ButtonType.OK);
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Inserisci un username valido!", ButtonType.OK);
             alert.showAndWait();
             return;
         }

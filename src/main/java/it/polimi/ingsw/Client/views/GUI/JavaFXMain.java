@@ -96,7 +96,7 @@ public class JavaFXMain extends Application {
         }
         Scene sc = new Scene(root);
         primaryStage.setScene(sc);
-        primaryStage.setTitle("Connection");
+        primaryStage.setTitle("Connessione");
         primaryStage.sizeToScene();
     }
 
@@ -153,7 +153,7 @@ public class JavaFXMain extends Application {
         }
         Scene sc = new Scene(root);
         primaryStage.setScene(sc);
-        primaryStage.setTitle("CharacterCard");
+        primaryStage.setTitle("Carte Personaggio");
         primaryStage.sizeToScene();
     }
 
@@ -322,7 +322,7 @@ public class JavaFXMain extends Application {
         }
         Scene sc = new Scene(root);
         primaryStage.setScene(sc);
-        primaryStage.setTitle("Eryantis");
+        primaryStage.setTitle("Eriantys");
         primaryStage.sizeToScene();
     }
     public void switchToSchoolBoardScene()
@@ -336,7 +336,7 @@ public class JavaFXMain extends Application {
         }
         Scene sc = new Scene(root);
         primaryStage.setScene(sc);
-        primaryStage.setTitle("Eryantis");
+        primaryStage.setTitle("Eriantys");
         primaryStage.sizeToScene();
     }
     public void switchToAskForMotherNatureScene()
@@ -350,7 +350,7 @@ public class JavaFXMain extends Application {
         }
         Scene sc = new Scene(root);
         primaryStage.setScene(sc);
-        primaryStage.setTitle("Eryantis");
+        primaryStage.setTitle("Eriantys");
         primaryStage.sizeToScene();
     }
     public void switchToAskForMN3PlayersScene()
@@ -364,7 +364,7 @@ public class JavaFXMain extends Application {
         }
         Scene sc = new Scene(root);
         primaryStage.setScene(sc);
-        primaryStage.setTitle("Eryantis");
+        primaryStage.setTitle("Eriantys");
         primaryStage.sizeToScene();
     }
     public void switchToChooseCloudScene()
@@ -378,7 +378,7 @@ public class JavaFXMain extends Application {
         }
         Scene sc = new Scene(root);
         primaryStage.setScene(sc);
-        primaryStage.setTitle("Eryantis");
+        primaryStage.setTitle("Eriantys");
         primaryStage.sizeToScene();
     }
     public void switchToTurnEndedScene()
@@ -392,7 +392,7 @@ public class JavaFXMain extends Application {
         }
         Scene sc = new Scene(root);
         primaryStage.setScene(sc);
-        primaryStage.setTitle("Eryantis");
+        primaryStage.setTitle("Eriantys");
         primaryStage.sizeToScene();
     }
     public void switchToNewTurnScene()
@@ -406,7 +406,7 @@ public class JavaFXMain extends Application {
         }
         Scene sc = new Scene(root);
         primaryStage.setScene(sc);
-        primaryStage.setTitle("Eryantis");
+        primaryStage.setTitle("Eriantys");
         primaryStage.sizeToScene();
     }
     public void switchToAssistantCardSceneNewTurn()
@@ -420,7 +420,7 @@ public class JavaFXMain extends Application {
         }
         Scene sc = new Scene(root);
         primaryStage.setScene(sc);
-        primaryStage.setTitle("Eryantis");
+        primaryStage.setTitle("Eriantys");
         primaryStage.sizeToScene();
     }
     public void switchToEndGameScene()
@@ -434,7 +434,7 @@ public class JavaFXMain extends Application {
         }
         Scene sc = new Scene(root);
         primaryStage.setScene(sc);
-        primaryStage.setTitle("Eryantis");
+        primaryStage.setTitle("Eriantys");
         primaryStage.sizeToScene();
     }
     public void switchToPlayCC1Scene()
@@ -448,7 +448,7 @@ public class JavaFXMain extends Application {
         }
         Scene sc = new Scene(root);
         primaryStage.setScene(sc);
-        primaryStage.setTitle("Eryantis");
+        primaryStage.setTitle("Eriantys");
         primaryStage.sizeToScene();
     }
     public void switchToPlayAfterCCScene()
@@ -462,7 +462,7 @@ public class JavaFXMain extends Application {
         }
         Scene sc = new Scene(root);
         primaryStage.setScene(sc);
-        primaryStage.setTitle("Eryantis");
+        primaryStage.setTitle("Eriantys");
         primaryStage.sizeToScene();
     }
     public void switchToPlayAfterNotCCScene()
@@ -476,7 +476,7 @@ public class JavaFXMain extends Application {
         }
         Scene sc = new Scene(root);
         primaryStage.setScene(sc);
-        primaryStage.setTitle("Eryantis");
+        primaryStage.setTitle("Eriantys");
         primaryStage.sizeToScene();
     }
     public void switchToShowCardAssistantScene()
@@ -490,7 +490,7 @@ public class JavaFXMain extends Application {
         }
         Scene sc = new Scene(root);
         primaryStage.setScene(sc);
-        primaryStage.setTitle("Eryantis");
+        primaryStage.setTitle("Eriantys");
         primaryStage.sizeToScene();
     }
 
@@ -509,7 +509,7 @@ public class JavaFXMain extends Application {
         }
         Scene sc = new Scene(root);
         primaryStage.setScene(sc);
-        primaryStage.setTitle("Eryantis");
+        primaryStage.setTitle("Eriantys");
         primaryStage.sizeToScene();
     }
     public void switchToCC3Scene()
@@ -523,7 +523,7 @@ public class JavaFXMain extends Application {
         }
         Scene sc = new Scene(root);
         primaryStage.setScene(sc);
-        primaryStage.setTitle("Eryantis");
+        primaryStage.setTitle("Eriantys");
         primaryStage.sizeToScene();
     }
     public void switchToCC5Scene()
@@ -537,7 +537,7 @@ public class JavaFXMain extends Application {
         }
         Scene sc = new Scene(root);
         primaryStage.setScene(sc);
-        primaryStage.setTitle("Eryantis");
+        primaryStage.setTitle("Eriantys");
         primaryStage.sizeToScene();
     }
     public void switchToCC12Scene()
@@ -551,7 +551,7 @@ public class JavaFXMain extends Application {
         }
         Scene sc = new Scene(root);
         primaryStage.setScene(sc);
-        primaryStage.setTitle("Eryantis");
+        primaryStage.setTitle("Eriantys");
         primaryStage.sizeToScene();
     }
     public void switchToCC1Scene()
@@ -565,7 +565,7 @@ public class JavaFXMain extends Application {
         }
         Scene sc = new Scene(root);
         primaryStage.setScene(sc);
-        primaryStage.setTitle("Eryantis");
+        primaryStage.setTitle("Eriantys");
         primaryStage.sizeToScene();
     }
     public void switchToCC11Scene()
@@ -579,7 +579,7 @@ public class JavaFXMain extends Application {
         }
         Scene sc = new Scene(root);
         primaryStage.setScene(sc);
-        primaryStage.setTitle("Eryantis");
+        primaryStage.setTitle("Eriantys");
         primaryStage.sizeToScene();
     }
     public void switchToCC10Scene()
@@ -593,7 +593,7 @@ public class JavaFXMain extends Application {
         }
         Scene sc = new Scene(root);
         primaryStage.setScene(sc);
-        primaryStage.setTitle("Eryantis");
+        primaryStage.setTitle("Eriantys");
         primaryStage.sizeToScene();
     }
 
@@ -608,7 +608,7 @@ public class JavaFXMain extends Application {
         }
         Scene sc = new Scene(root);
         primaryStage.setScene(sc);
-        primaryStage.setTitle("Eryantis");
+        primaryStage.setTitle("Eriantys");
         primaryStage.sizeToScene();
     }
 

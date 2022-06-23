@@ -7,7 +7,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.Client.views.GUI.SettingGameScene">
    <children>
-      <Button fx:id="TrueBotton" layoutX="179.0" layoutY="229.0" mnemonicParsing="false" onAction="#expModeButtonClicked" text="Yes" />
+      <Button fx:id="TrueBotton" layoutX="179.0" layoutY="229.0" mnemonicParsing="false" onAction="#expModeButtonClicked" text="Si" />
       <Button fx:id="FalseBotton" layoutX="382.0" layoutY="229.0" mnemonicParsing="false" onAction="#noExpModeButtonClicked" text="No" />
       <Label layoutX="169.0" layoutY="128.0" text="Vuoi giocare in modlità esperta? ">
          <font>
