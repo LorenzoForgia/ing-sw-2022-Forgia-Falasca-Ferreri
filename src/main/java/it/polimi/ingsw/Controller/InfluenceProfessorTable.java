@@ -90,13 +90,15 @@ public class InfluenceProfessorTable {
 
     /**Professor Table with the effect of CharacterCard2**/
     public void RightProfessorTable(GeneralBoard GB, int numPlayer, Player playerUseEffect) {
+        oldProfessor.add(new ArrayList<>());
         int max;
         int schoolBoardWithInfluence=0;
         boolean isInfluence = false;
         if(!alreadyUsedEffect2){
             alreadyUsedEffect2= true;
             for(int i=0; i <numPlayer; i++){
-                oldProfessor.add(GB.getSchoolBoard().get(i).getProfessorTable());
+                oldProfessor.add(new ArrayList<>());
+                oldProfessor.get(i).addAll(GB.getSchoolBoard().get(i).getProfessorTable());
             }
         }
 
@@ -130,6 +132,14 @@ public class InfluenceProfessorTable {
             }
         }
         RemoveProfessorWhenNoStudentInDining(GB, numPlayer);
+    }
+
+    public ArrayList<ArrayList<Color>> getOldProfessor() {
+        return oldProfessor;
+    }
+
+    public boolean isAlreadyUsedEffect2() {
+        return alreadyUsedEffect2;
     }
 
     public void comeBackAfterUsingCharacterCard2(GeneralBoard GB, int numPlayer){

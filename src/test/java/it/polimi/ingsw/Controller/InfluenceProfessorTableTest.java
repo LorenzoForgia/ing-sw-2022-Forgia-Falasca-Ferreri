@@ -117,6 +117,49 @@ class InfluenceProfessorTableTest {
         assertTrue(GB.getSchoolBoard().get(1).getProfessorTable().contains(Color.Yellow) );
         assertFalse(GB.getSchoolBoard().get(1).getProfessorTable().contains(Color.Green) );
     }
+
+
+    @Test
+    public void testRightProfessorTable6() {
+        Player p1= new Player("A");
+        Player p2= new Player("B");
+        GB.CreateSchoolBoards(2);
+        p1.setMySchoolBoard(GB.getSchoolBoard().get(0));
+        p2.setMySchoolBoard(GB.getSchoolBoard().get(1));
+        GB.getSchoolBoard().get(0).getDiningRoom().PutStudent(Color.Pink);
+        GB.getSchoolBoard().get(1).getDiningRoom().PutStudent(Color.Yellow);
+        try{
+            GB.getSchoolBoard().get(0).PutProfessor(Color.Pink);
+        }catch(IllegalMoveException e){
+            fail();
+        }
+        GB.getSchoolBoard().get(1).getDiningRoom().PutStudent(Color.Pink);
+        IPT.RightProfessorTable(GB, 2, p2);
+        assertFalse(GB.getSchoolBoard().get(0).getProfessorTable().contains(Color.Blue) );
+        assertFalse(GB.getSchoolBoard().get(0).getProfessorTable().contains(Color.Red) );
+        assertFalse(GB.getSchoolBoard().get(0).getProfessorTable().contains(Color.Pink) );
+        assertFalse(GB.getSchoolBoard().get(0).getProfessorTable().contains(Color.Yellow) );
+        assertFalse(GB.getSchoolBoard().get(0).getProfessorTable().contains(Color.Green) );
+        assertFalse(GB.getSchoolBoard().get(1).getProfessorTable().contains(Color.Red) );
+        assertFalse(GB.getSchoolBoard().get(1).getProfessorTable().contains(Color.Blue) );
+        assertTrue(GB.getSchoolBoard().get(1).getProfessorTable().contains(Color.Pink) );
+        assertTrue(GB.getSchoolBoard().get(1).getProfessorTable().contains(Color.Yellow) );
+        assertFalse(GB.getSchoolBoard().get(1).getProfessorTable().contains(Color.Green) );
+        assertTrue(IPT.isAlreadyUsedEffect2());
+        assertTrue(IPT.getOldProfessor().get(0).contains(Color.Pink));
+        IPT.comeBackAfterUsingCharacterCard2(GB, 2);
+        assertFalse(GB.getSchoolBoard().get(0).getProfessorTable().contains(Color.Blue) );
+        assertFalse(GB.getSchoolBoard().get(0).getProfessorTable().contains(Color.Red) );
+        assertTrue(GB.getSchoolBoard().get(0).getProfessorTable().contains(Color.Pink) );
+        assertFalse(GB.getSchoolBoard().get(0).getProfessorTable().contains(Color.Yellow) );
+        assertFalse(GB.getSchoolBoard().get(0).getProfessorTable().contains(Color.Green) );
+        assertFalse(GB.getSchoolBoard().get(1).getProfessorTable().contains(Color.Red) );
+        assertFalse(GB.getSchoolBoard().get(1).getProfessorTable().contains(Color.Blue) );
+        assertFalse(GB.getSchoolBoard().get(1).getProfessorTable().contains(Color.Pink) );
+        assertFalse(GB.getSchoolBoard().get(1).getProfessorTable().contains(Color.Yellow) );
+        assertFalse(GB.getSchoolBoard().get(1).getProfessorTable().contains(Color.Green) );
+
+    }
     @Test
     public void testRightProfessorTable5() {
         GB.CreateSchoolBoards(2);
