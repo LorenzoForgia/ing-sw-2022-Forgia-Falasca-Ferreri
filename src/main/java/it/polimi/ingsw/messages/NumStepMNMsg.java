@@ -32,7 +32,7 @@ public class NumStepMNMsg extends CommandMsg{
                     clientHandler.sendAnswerMessage(answerMsg);
                 }
             }catch (IllegalNumberOfStepException e){
-                AnsNumStepExcMsg ansNumStepExcMsg= new AnsNumStepExcMsg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName());
+                AnsNumStepExcMsg ansNumStepExcMsg= new AnsNumStepExcMsg(this, game.getChoosenPlayer().GetPlayerTurn().getNickName(), game.getGameModel().getPlayers());
                 clientHandler.sendAnswerMessage(ansNumStepExcMsg);
             }
         }
