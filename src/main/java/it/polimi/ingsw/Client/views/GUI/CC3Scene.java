@@ -14,7 +14,7 @@ public class CC3Scene {
         return answerMsg;
     }
 
-    public void IslandClicked(ActionEvent event){
+    public void IslandClicked(){
         IslandTilesScene.setOnlyObserv(false);
         IslandTilesScene.setIslands(CC3Scene.getAnswerMsg().GetGB().GetIslands());
         IslandTilesScene.setNumberOfSceneToComeBack(10);

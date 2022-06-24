@@ -13,7 +13,7 @@ public class CC5Scene {
     public static AnsCC5Msg getAnswerMsg() {
         return answerMsg;
     }
-    public void IslandClicked(ActionEvent event){
+    public void IslandClicked(){
         IslandTilesScene.setOnlyObserv(false);
         IslandTilesScene.setIslands(CC5Scene.getAnswerMsg().GetGB().GetIslands());
         IslandTilesScene.setNumberOfSceneToComeBack(12);
