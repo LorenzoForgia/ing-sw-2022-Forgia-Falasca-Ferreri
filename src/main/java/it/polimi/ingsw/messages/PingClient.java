@@ -45,7 +45,7 @@ public class PingClient implements Runnable {
     {
         synchronized (this.serverHandler) {
             PingCMSG ping = new PingCMSG();
-            this.serverHandler.getOutput().writeObject((Object) ping);
+            this.serverHandler.getOutput().writeObject(ping);
             this.serverHandler.getOutput().flush();
             this.serverHandler.getOutput().reset();
         }
