@@ -2,6 +2,7 @@ package it.polimi.ingsw.Controller;
 
 import it.polimi.ingsw.Model.*;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -9,7 +10,7 @@ import java.util.Random;
 /**
  * @author Luigia Falasca
  * **/
-public class MoveMotherNature {
+public class MoveMotherNature implements Serializable {
     private IslandTiles I1;
     private ColorTower colorT;
     private List<ColorTower> colorTowerList = new ArrayList<>();
