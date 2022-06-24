@@ -128,7 +128,7 @@ public class ClientHandler implements Runnable
 
     public synchronized void sendAnswerMessage(AnswerMsg answerMsg) throws IOException
     {
-        output.writeObject((Object)answerMsg);
+        output.writeObject(answerMsg);
         output.flush();
         output.reset();
     }
