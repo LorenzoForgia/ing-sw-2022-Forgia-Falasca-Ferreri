@@ -53,7 +53,6 @@ public class JavaFXMain extends Application {
         });*/
         Image icon= new Image("logocraniocreation.jpg");
         primaryStage.getIcons().add(icon);
-        primaryStage.setResizable(false);
         primaryStage.setX(50);
         primaryStage.setY(20);
         switchToConnectionScene();
