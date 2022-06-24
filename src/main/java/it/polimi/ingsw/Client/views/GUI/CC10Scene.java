@@ -71,6 +71,8 @@ public class CC10Scene {
             Yellow.setVisible(false);
             Pink.setVisible(false);
             Green.setVisible(false);
+            studentsDining= new ArrayList<>();
+            studentsEntrance= new ArrayList<>();
         }
         if (answerMsg.GetPlayers().size() == 2) {
             imageFourthSchoolBoard.setVisible(false);

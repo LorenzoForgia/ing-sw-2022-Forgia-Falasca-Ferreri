@@ -68,7 +68,7 @@ public class CC7Scene {
         CC7Scene.answerMsg = answerMsg;
     }
 
-    public static void setChoseNumber(boolean choseNumber) {
+    public static void setChoseNumber(boolean choseNumber){
         CC7Scene.choseNumber = choseNumber;
     }
 
@@ -89,6 +89,8 @@ public class CC7Scene {
                 Title.setText("Scegli lo studente dal tuo ingresso!");
             }
         }else{
+            studentsCard= new ArrayList<>();
+            studentsEntrance= new ArrayList<>();
             Blue.setVisible(false);
             Red.setVisible(false);
             Yellow.setVisible(false);
