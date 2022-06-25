@@ -21,6 +21,7 @@ public class NewOrderMsg extends CommandMsg{
                 e.printStackTrace();
             }
             nickname= game.getChoosenPlayer().GetPlayerTurn().getNickName();
+            game.setAsscardgui(1);
             answerMsg = new AnsNewOrderMsg(this, nickname,game.getChoosenPlayer().GetPlayerTurn().getMyDeck(),game.getGameModel().getGeneralBoard().getSchoolBoard(),game.getGameModel().getGeneralBoard().GetIslands(),game.getGameModel().getPlayers(),game.getPlayAssCard().GetAssCardPlayed());
             clientHandler.sendAnswerMessage(answerMsg);
             game.notifyAll();

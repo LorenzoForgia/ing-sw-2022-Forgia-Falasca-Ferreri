@@ -6,6 +6,8 @@ import it.polimi.ingsw.messages.FirstPlayerTurnMsg;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
+import java.io.IOException;
+
 public class EndGameScene {
     @FXML
     private Label player1;
@@ -26,6 +28,5 @@ public class EndGameScene {
                 player2.setText(answerMsg.getWinner().get(i));
             }
         }
-        JavaFXMain.getCurrentApplication().getClient().terminate();
     }
 }

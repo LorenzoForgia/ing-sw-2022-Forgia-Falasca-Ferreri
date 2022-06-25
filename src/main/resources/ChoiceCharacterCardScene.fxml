@@ -9,9 +9,9 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="605.0" prefWidth="722.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.Client.views.GUI.ChoiceCharacterCardScene">
    <children>
-      <ImageView fx:id="imageFirstCharacterCard" fitHeight="183.0" fitWidth="143.0" layoutX="93.0" layoutY="165.0" onMouseClicked="#image1Clicked" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="imageSecondCharacterCard" fitHeight="183.0" fitWidth="143.0" layoutX="310.0" layoutY="165.0" onMouseClicked="#image2Clicked" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="imageThirdCharacterCard" fitHeight="183.0" fitWidth="143.0" layoutX="514.0" layoutY="165.0" onMouseClicked="#image3Clicked" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imageFirstCharacterCard" fitHeight="183.0" fitWidth="143.0" layoutX="79.0" layoutY="120.0" onMouseClicked="#image1Clicked" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imageSecondCharacterCard" fitHeight="183.0" fitWidth="143.0" layoutX="296.0" layoutY="120.0" onMouseClicked="#image2Clicked" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imageThirdCharacterCard" fitHeight="183.0" fitWidth="143.0" layoutX="500.0" layoutY="120.0" onMouseClicked="#image3Clicked" pickOnBounds="true" preserveRatio="true" />
       <Label layoutX="249.0" layoutY="43.0" text="Scegli la carta personaggio!" textAlignment="CENTER">
          <font>
             <Font size="18.0" />
@@ -51,24 +51,24 @@
          </image>
       </ImageView>
       <Label fx:id="showSchoolBoard4" layoutX="466.0" layoutY="497.0" text="Label" />
-      <Circle fx:id="color3" fill="WHITE" layoutX="111.0" layoutY="328.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="color1" fill="WHITE" layoutX="132.0" layoutY="328.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="color2" fill="WHITE" layoutX="153.0" layoutY="328.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="color4" fill="WHITE" layoutX="174.0" layoutY="328.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="color5" fill="WHITE" layoutX="196.0" layoutY="328.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="color6" fill="WHITE" layoutX="218.0" layoutY="328.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="color31" fill="WHITE" layoutX="326.0" layoutY="328.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="color11" fill="WHITE" layoutX="347.0" layoutY="328.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="color21" fill="WHITE" layoutX="368.0" layoutY="328.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="color41" fill="WHITE" layoutX="389.0" layoutY="328.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="color51" fill="WHITE" layoutX="410.0" layoutY="328.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="color61" fill="WHITE" layoutX="430.0" layoutY="328.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="color32" fill="WHITE" layoutX="534.0" layoutY="328.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="color12" fill="WHITE" layoutX="556.0" layoutY="328.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="color22" fill="WHITE" layoutX="579.0" layoutY="328.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="color42" fill="WHITE" layoutX="602.0" layoutY="328.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="color52" fill="WHITE" layoutX="625.0" layoutY="328.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="color62" fill="WHITE" layoutX="646.0" layoutY="328.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="color3" fill="WHITE" layoutX="97.0" layoutY="283.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="color1" fill="WHITE" layoutX="118.0" layoutY="283.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="color2" fill="WHITE" layoutX="139.0" layoutY="283.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="color4" fill="WHITE" layoutX="160.0" layoutY="283.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="color5" fill="WHITE" layoutX="182.0" layoutY="283.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="color6" fill="WHITE" layoutX="204.0" layoutY="283.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="color31" fill="WHITE" layoutX="312.0" layoutY="283.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="color11" fill="WHITE" layoutX="333.0" layoutY="283.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="color21" fill="WHITE" layoutX="354.0" layoutY="283.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="color41" fill="WHITE" layoutX="375.0" layoutY="283.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="color51" fill="WHITE" layoutX="396.0" layoutY="283.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="color61" fill="WHITE" layoutX="416.0" layoutY="283.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="color32" fill="WHITE" layoutX="520.0" layoutY="283.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="color12" fill="WHITE" layoutX="542.0" layoutY="283.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="color22" fill="WHITE" layoutX="565.0" layoutY="283.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="color42" fill="WHITE" layoutX="588.0" layoutY="283.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="color52" fill="WHITE" layoutX="611.0" layoutY="283.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="color62" fill="WHITE" layoutX="632.0" layoutY="283.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
       <ImageView fitHeight="54.0" fitWidth="46.0" layoutX="623.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Moneta_base.png" />
@@ -79,5 +79,23 @@
             <Font size="14.0" />
          </font>
       </Label>
+      <ImageView fitHeight="43.0" fitWidth="34.0" layoutX="143.0" layoutY="303.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Moneta_base.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="34.0" layoutX="358.0" layoutY="303.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Moneta_base.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="34.0" layoutX="548.0" layoutY="303.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Moneta_base.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="coinsCC1" layoutX="124.0" layoutY="313.0" text="0x" />
+      <Label fx:id="coinsCC2" layoutX="339.0" layoutY="313.0" text="0x" />
+      <Label fx:id="coinsCC3" layoutX="527.0" layoutY="313.0" text="0x" />
    </children>
 </AnchorPane>

@@ -316,7 +316,7 @@ public class MoveMotherNature implements Serializable {
                     notFound = false;
                 }
             }
-            I1.putTower(colorT);
+            I.putTower(colorT);
             GB.CheckNearTower(I);
         }
 

@@ -68,6 +68,13 @@ public class PlayCC1Scene {
     private Circle color62;
     @FXML
     private Label numberOfMoney;
+    @FXML
+    private Label coinsCC1;
+    @FXML
+    private Label coinsCC2;
+    @FXML
+    private Label coinsCC3;
+
 
     private static ArrayList<CharacterCard> cards;
     private static ArrayList<Player> players;
@@ -82,13 +89,11 @@ public class PlayCC1Scene {
     private static int numberOfMessage;
 
 
+
     public static void setPlayer(String player) {
         PlayCC1Scene.player = player;
     }
 
-    public void setImageFirstCharacterCard(ImageView imageFirstCharacterCard) {
-        this.imageFirstCharacterCard = imageFirstCharacterCard;
-    }
 
     public static void setCards(ArrayList<CharacterCard> cards) {
         PlayCC1Scene.cards = cards;
@@ -146,6 +151,7 @@ public class PlayCC1Scene {
         ArrayList<ImageView> imageCharacterCard = new ArrayList<>();
         ArrayList<ArrayList<Circle>> students = new ArrayList<>(3);
         ArrayList<Circle> student1 = new ArrayList<>();
+        ArrayList<Label> coins= new ArrayList<>();
         student1.add(0,color1);
         student1.add(1,color2);
         student1.add(2,color3);
@@ -177,6 +183,10 @@ public class PlayCC1Scene {
         imageCharacterCard.add(0, imageFirstCharacterCard);
         imageCharacterCard.add(1, imageSecondCharacterCard);
         imageCharacterCard.add(2, imageThirdCharacterCard);
+        coins.add(0,coinsCC1);
+        coins.add(1,coinsCC2);
+        coins.add(2,coinsCC3);
+
 
         for (int i = 0; i < 3; i++) {
             if (cards.get(i).getName() == 1) {
@@ -185,36 +195,48 @@ public class PlayCC1Scene {
                     students.get(i).get(j).setVisible(true);
                     getTheRightColor(((CharacterCard1)cards.get(i)).GetchoosenStudent().get(j), students.get(i).get(j));
                 }
+                coins.get(i).setText(Integer.toString(cards.get(i).getCountUse()));
             } else if (cards.get(i).getName() == 2) {
                 imageCharacterCard.get(i).setImage(new Image("CarteTOT_front2.jpg"));
+                coins.get(i).setText(Integer.toString(cards.get(i).getCountUse()));
             } else if (cards.get(i).getName() == 3) {
                 imageCharacterCard.get(i).setImage(new Image("CarteTOT_front3.jpg"));
+                coins.get(i).setText(Integer.toString(cards.get(i).getCountUse()));
             } else if (cards.get(i).getName() == 4) {
                 imageCharacterCard.get(i).setImage(new Image("CarteTOT_front4.jpg"));
+                coins.get(i).setText(Integer.toString(cards.get(i).getCountUse()));
             } else if (cards.get(i).getName() == 5) {
                 imageCharacterCard.get(i).setImage(new Image("CarteTOT_front5.jpg"));
+                coins.get(i).setText(Integer.toString(cards.get(i).getCountUse()));
             } else if (cards.get(i).getName() == 6) {
                 imageCharacterCard.get(i).setImage(new Image("CarteTOT_front6.jpg"));
+                coins.get(i).setText(Integer.toString(cards.get(i).getCountUse()));
             } else if (cards.get(i).getName() == 7) {
                 imageCharacterCard.get(i).setImage(new Image("CarteTOT_front7.jpg"));
+                coins.get(i).setText(Integer.toString(cards.get(i).getCountUse()));
                 for(int j=0; j < 6; j++){
                     students.get(i).get(j).setVisible(true);
                     getTheRightColor(((CharacterCard7)cards.get(i)).getStudentOnCard().get(j), students.get(i).get(j));
                 }
             } else if (cards.get(i).getName() == 8) {
                 imageCharacterCard.get(i).setImage(new Image("CarteTOT_front8.jpg"));
+                coins.get(i).setText(Integer.toString(cards.get(i).getCountUse()));
             } else if (cards.get(i).getName() == 9) {
                 imageCharacterCard.get(i).setImage(new Image("CarteTOT_front9.jpg"));
+                coins.get(i).setText(Integer.toString(cards.get(i).getCountUse()));
             } else if (cards.get(i).getName() == 10) {
                 imageCharacterCard.get(i).setImage(new Image("CarteTOT_front10.jpg"));
+                coins.get(i).setText(Integer.toString(cards.get(i).getCountUse()));
             } else if (cards.get(i).getName() == 11) {
                 imageCharacterCard.get(i).setImage(new Image("CarteTOT_front11.jpg"));
+                coins.get(i).setText(Integer.toString(cards.get(i).getCountUse()));
                 for(int j=0; j < 4; j++){
                     students.get(i).get(j).setVisible(true);
                     getTheRightColor(((CharacterCard11)cards.get(i)).GetchoosenStudent().get(j), students.get(i).get(j));
                 }
             } else if (cards.get(i).getName() == 12) {
                 imageCharacterCard.get(i).setImage(new Image("CarteTOT_front12.jpg"));
+                coins.get(i).setText(Integer.toString(cards.get(i).getCountUse()));
             }
         }
         if (players.size() == 2) {
