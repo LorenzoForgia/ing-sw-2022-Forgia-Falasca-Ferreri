@@ -88,7 +88,7 @@ public class AskForMotherNatureScene {
             }else if(ca.equals(CardAssistant.Nove)){
                 return new Image("Assistente (9).png");
             }else {
-                return new Image("Assistente 10).png");
+                return new Image("Assistente (10).png");
             }
         }else{
             return null;

@@ -27,6 +27,15 @@ public class GameController {
     private boolean flagturn= false;
     private CharacterCard characterCardChosen=null;
     private int countmodexpview=1;
+    private int asscardgui=0;
+
+    public void setAsscardgui(int asscardgui) {
+        this.asscardgui = asscardgui;
+    }
+
+    public int getAsscardgui() {
+        return asscardgui;
+    }
 
     public void incrementview(){
         if(countmodexpview<5){

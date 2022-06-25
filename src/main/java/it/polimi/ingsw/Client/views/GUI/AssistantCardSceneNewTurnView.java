@@ -12,10 +12,9 @@ public class AssistantCardSceneNewTurnView extends View {
     }
     @Override
     public void run() {
-        AssistantCardSceneNewTurn.setAnswerMsg(this.ansNewOrderMsg);
+        AssistantCardSceneNewTurn.setAnswerMsg(ansNewOrderMsg);
         Platform.runLater(() -> {
             JavaFXMain.getCurrentApplication().switchToAssistantCardSceneNewTurn();
-
         });
 
     }
