@@ -30,7 +30,7 @@ public class CheckTurnEndedMsg extends CommandMsg{
             }
             game.notifyAll();
             System.out.println("risveglio ancora tutti"+ clientHandler.getNickname());
-            if(game.getGameEndState().isFlagNotImmediately()){
+            if(game.getGameEndState().isFlagNotImmediately() || game.getGameEndState().isFlagImmediately()){
                 AnsEndGameMsg ansEndGameMsg= new AnsEndGameMsg(this, game.showWinner());
                 clientHandler.sendAnswerMessage(ansEndGameMsg);
             }else{
