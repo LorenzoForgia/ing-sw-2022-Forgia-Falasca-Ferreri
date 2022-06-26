@@ -25,7 +25,6 @@ public class TurnDecidedMsg extends CommandMsg{
             Boolean flag=game.CheckIfAllPlayedCardAssistant();
             try{
                 while(!clientHandler.getNickname().equals(game.getChoosenPlayer().GetPlayerTurn().getNickName())) {
-                    System.out.println("addormento" + clientHandler.getNickname());
                     game.wait();
                 }
             }catch (InterruptedException e) {
@@ -36,9 +35,7 @@ public class TurnDecidedMsg extends CommandMsg{
                 game.notifyAll();
                 while(!flag){
                     try{
-                        System.out.println("TURNDCDMSG mi addormento"+clientHandler.getNickname());
                         game.wait();
-                        System.out.println("TURNDCDMSG mi sveglio"+clientHandler.getNickname());
                         flag=game.CheckIfAllPlayedCardAssistant();
                     }catch (InterruptedException e){
                         e.printStackTrace();

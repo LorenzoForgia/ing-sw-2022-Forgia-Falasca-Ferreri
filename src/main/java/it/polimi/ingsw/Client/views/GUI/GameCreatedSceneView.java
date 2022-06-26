@@ -21,22 +21,15 @@ public class GameCreatedSceneView {
 
     public void run() {
 
-    /**    BooleanCheckMsg.Status moveStatus = answerMsg.getMoveStatus();
-        System.out.println("aoooo");
-        Platform.runLater(() -> {
-            JavaFXMain.getCurrentApplication().switchToWaitingScene();
-        });
-        GameStartedMsg gameStartedMsg= new GameStartedMsg();
-        JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(gameStartedMsg);
-    **/
+
 
         BooleanCheckMsg.Status moveStatus = answerMsg.getMoveStatus();
 
-        System.out.println("Game created");
+
         Platform.runLater(() -> {
             GameStartedMsg gameStartedMsg= new GameStartedMsg();
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(gameStartedMsg);
-            System.out.println("aoooo");
+
         });
 
 

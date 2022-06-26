@@ -31,15 +31,12 @@ public class LoginSceneCheck extends View {
                 alert.showAndWait();
             });
         } else {
-            System.out.println("loggato correttamente");
             /* answer if a game is already created*/
             Platform.runLater(() -> {
                 JavaFXMain.getCurrentApplication().switchToWaitingScene();
             });
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(new AskIfGameCreatedMsg());
-
-        /*getOwner().terminate();
-        nextView = null;*/
+            
 
         }
     }
