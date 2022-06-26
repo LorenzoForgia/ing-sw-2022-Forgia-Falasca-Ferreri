@@ -19,20 +19,11 @@ public class GameEndState {
      * **/
     public boolean CheckEndGameImmediately(Player p, GeneralBoard g, List<SchoolBoard> SBWithTowers, int nPlayers) {
         boolean notFound= true;
-        if(nPlayers==4){
-            for(int i=0; i< SBWithTowers.size() && notFound; i++){
-                if(p.getMySchoolBoard().ColorTower().equals(SBWithTowers.get(i).ColorTower())){
-                    notFound= false;
-                    if(SBWithTowers.get(i).getNumberOfTower()==0){
-                        flagImmediately = true;
-                    }
-                }
-            }
-        }else {
-            if (p.getMySchoolBoard().getNumberOfTower() == 0) {
-                flagImmediately = true;
-            }
-        }
+       for(int i=0; i < SBWithTowers.size(); i++){
+           if(SBWithTowers.get(i).getNumberOfTower()<=0){
+               flagImmediately = true;
+           }
+       }
 
         if (g.GetIslands().size() <= 3) {
                 flagImmediately = true;
