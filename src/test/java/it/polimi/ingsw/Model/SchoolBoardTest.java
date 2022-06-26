@@ -33,8 +33,7 @@ class SchoolBoardTest {
         assertEquals(Color.Red, s.getProfessorTable().get(0));
         assertTrue(thrown);
     }
-    /** Remove professor from SchoolBoard
-     * **/
+
     @Test
     public void RemoveProfessorTest(){
         SchoolBoard s= new SchoolBoard(1, 7);
