@@ -397,7 +397,6 @@ public class GameController {
                     gameEndState.CheckEndGameRoundEndedForBag(gameModel.getBag());
                     playAssCard.ResetCardPlayed();
                     choosenPlayer.ChooseTurnPlayerForCardAssistant(gameModel.getPlayers());
-                    System.out.println(choosenPlayer.getNumPlayerTurn());
                     if (gameModel.getModExpert()) {
                         influenceProfessorTable.RightProfessorTable(gameModel.getGeneralBoard(), gameModel.getNumplayers());
                         for (int i = 0; i < gameModel.getNumplayers(); i++) {
