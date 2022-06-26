@@ -10,6 +10,7 @@ public abstract class CharacterCard implements Serializable {
     private int Name;
     private int Coins;
     private int CountUse;
+    private String DescriptionEffect;
 
     public int getCoins() {
         return Coins;
@@ -18,8 +19,6 @@ public abstract class CharacterCard implements Serializable {
     public String getDescriptionEffect() {
         return DescriptionEffect;
     }
-
-    private String DescriptionEffect;
 
     public CharacterCard(int name, int coins, int countUse,String descriptionEffect) {
         Name= name;
@@ -31,16 +30,25 @@ public abstract class CharacterCard implements Serializable {
     public int getName(){      /* return the character's name*/
         return Name;
     }
-    public int getCountUse() {    /*how much the card is used*/
+
+    /***
+     how many times the card has been used
+     **/
+    public int getCountUse() {
         return CountUse;
     }
-    public int getCost(){       /*card's cost*/
+    /***
+     card's cost
+     **/
+    public int getCost(){
         return Coins+CountUse;
     }
-
-    public void setCountUse() {     /*card is used so the cost++ */
+    /**card is used so the cost++ **/
+    public void setCountUse() {
         CountUse = CountUse +1;
     }
+
+    /** abstract methods**/
     public abstract void SetCard(Bag b, GeneralBoard GB);
     public abstract void UseEffect(Player p);
 }

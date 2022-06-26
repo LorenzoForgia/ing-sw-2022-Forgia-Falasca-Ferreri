@@ -38,17 +38,17 @@ public class GameModel implements Serializable {
     public void setBag(Bag b) {
         this.b = b;
     }
+    /** return the mode of the game**/
     public Boolean getModExpert() {
         return modExpert;
     }
+    /** return the number of players **/
     public int getNumplayers() {
         return numplayers;
     }
     public void setModExpert(Boolean modExpert) {
         this.modExpert = modExpert;
     }
-
-
 
     public void setNumplayers(int numplayers) {
         this.numplayers = numplayers;

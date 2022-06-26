@@ -50,7 +50,7 @@ public class Player implements Serializable {
         MyDeck = myDeck;
     }
 
-    /* remove used Card from MyDeck*/
+    /**remove used Card from MyDeck**/
     public void usedCard( CardAssistant c){
         getMyDeck().RemoveCard(c);
     }
@@ -76,6 +76,7 @@ public class Player implements Serializable {
         NumberCoins = NumberCoins + n;
     }
 
+    /** return the turn before playing CardAssistant**/
     public int getTurnToPlayCardAssistant() {
         return turnToPlayCardAssistant;
     }
@@ -83,6 +84,7 @@ public class Player implements Serializable {
     public void SetNumTurn(){
         Turn=Turn+1;
     }
+    /** return the turn after playing CardAssistant**/
     public int GetNumTurn(){
         return Turn;
     }

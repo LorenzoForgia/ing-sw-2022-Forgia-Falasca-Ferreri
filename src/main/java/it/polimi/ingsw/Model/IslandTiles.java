@@ -121,7 +121,7 @@ public class IslandTiles implements Location, Serializable {
        return StudentsInIsland.get(n);
     }
 
-    /** Count "Color" students in the Island
+    /** Count "Color c" students in the Island
      * **/
     public int CountInfluence(Color c){
         int count=0;

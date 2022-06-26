@@ -35,7 +35,7 @@ import java.io.*;
         return NoEntryTiles;
         }
 
-        /* create twelve islands for the beginning of the game  */
+        /** create twelve islands for the beginning of the game  **/
     public void CreateTwelveIslands() {
         for (int i = 0; i < 12; i++) {
             Islands.add(i, new IslandTiles(i, false, 1, false, 0,false));
@@ -46,7 +46,7 @@ import java.io.*;
         return Islands;
     }
 
-    /* create n clouds for the beginning of the game  */
+    /** create n clouds for the beginning of the game  **/
     public void CreateClouds( int n){
         for(int i=0; i<n; i++){
             Clouds.add(i, new CloudTiles(i));
@@ -57,7 +57,7 @@ import java.io.*;
         return Clouds;
         }
 
-    /* create n SchoolBoards for the beginning of the game  */
+    /**create n SchoolBoards for the beginning of the game  **/
     public void CreateSchoolBoards( int n) {
         if (n == 2 || n == 4) {
             for (int i = 0; i < n; i++) {
@@ -105,6 +105,8 @@ import java.io.*;
             NoEntryTiles = NoEntryTiles - 1;
         }
 
+    /** Put island together
+     * **/
     private void SetNewGroup(IslandTiles I1, IslandTiles I2 ){
         boolean flag = false;
      /* put I2 students in I1*/
@@ -133,11 +135,13 @@ import java.io.*;
 
     }
 
+    /** return the number of islands that are left**/
     public int CheckNumberOfGroup(){
         return Islands.size();
     }
 
-
+    /** move mother nature, n are the steps to take, I is the island where was mother nature
+     * **/
     public IslandTiles moveMotherNature(IslandTiles I, int n){
 
         int j = 0;
@@ -161,7 +165,8 @@ import java.io.*;
 
         return Islands.get(j);
     }
-    /* Check if there are near towers of the same color and create new group of islands*/
+
+    /**Check if there are near towers of the same color and create new group of islands**/
     public void CheckNearTower(IslandTiles I) {
         int j = 0;
         int k = 0;

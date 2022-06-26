@@ -20,7 +20,9 @@ public class SchoolBoard implements Serializable {
     public int GetId(){      /* giving an id to the school_board*/
         return NumberId;
     }
-    public void PutProfessor(Color p) throws  IllegalMoveException{    /* putting professor p in the professor table*/
+    /**putting professor p in the professor table
+     * throws IllegalArgumentException when the professor is already in the table**/
+    public void PutProfessor(Color p) throws  IllegalMoveException{
         for(int i =0; i < ProfessorTable.size(); i ++){
             if(p.equals(ProfessorTable.get(i))){
                 throw new IllegalMoveException();
@@ -59,8 +61,8 @@ public class SchoolBoard implements Serializable {
     public void setColorTower(ColorTower colorTower) {  /* set color tower in the school board*/
         this.colorTower = colorTower;
     }
-
-    public void PutStudent(int NumPlayers, Bag bag){     /*putting students in the entrance from the bag*/
+    /**putting students in the entrance from the bag**/
+    public void PutStudent(int NumPlayers, Bag bag){
         if(NumPlayers==3){
             for(int i=0;i<9;i++){       /* case 3 players*/
                 this.Entrance.add(bag.CatchStudent());

@@ -25,6 +25,9 @@ public class DeckCC implements Serializable {
       characterCards.add(new CharacterCard11(11,2,0 ,"Prendi uno studente dalla carta e piazzalo nella tua sala.Poi pesca uno studente dal sacchetto e mettilo su questa carta"));
       characterCards.add(new CharacterCard12(12,3,0 ,"Scegli un colore di studente,ogni giocatore incluso te deve rimettere nel sacchetto 3 studenti di quel colore presenti nella sua sala.Chi avesse meno di 3 studenti di quel colore,rimetterà tutti quelli che ha."));
     }
+
+    /** draw random card
+     * **/
     public CharacterCard DrawCard(){
         Random random = new Random();
         int draftedindex = random.nextInt(this.characterCards.size());
@@ -33,7 +36,7 @@ public class DeckCC implements Serializable {
         return draftedcard;
     }
 
-    public ArrayList<CharacterCard> getCharacterCards() {  /**only for test**/
+    public ArrayList<CharacterCard> getCharacterCards() {
         return characterCards;
     }
 }

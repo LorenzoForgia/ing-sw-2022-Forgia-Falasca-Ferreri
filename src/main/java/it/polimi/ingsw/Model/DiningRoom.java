@@ -23,22 +23,25 @@ public class DiningRoom implements Location, Serializable {
     public void RemoveStudent(Color s) {     /*removing student s from the dining room*/
         DiningRoom.get(s.getIndex()).remove(s);
     }
-    public int GetNumberStudent(){       /*getting number of students in the dining room*/
+    /**getting number of students in the dining room**/
+    public int GetNumberStudent(){
         int numberStudentTOT=0;
         for(int i=0;i<5;i++){
             numberStudentTOT=numberStudentTOT+DiningRoom.get(i).size();
         }
         return numberStudentTOT;
     }
-
-    public int GetNumberStudent(int i){       /*getting number of students in the dining room of one color*/
+    /**getting number of students in the dining room by index**/
+    public int GetNumberStudent(int i){
         return DiningRoom.get(i).size();
     }
-    public int GetNumberStudent(Color c){       /*getting number of students in the dining room of one color*/
+    /**getting number of students in the dining room by color**/
+    public int GetNumberStudent(Color c){
         return DiningRoom.get(c.getIndex()).size();
     }
 
-    public boolean GetCoin(Color s){     /* expert game: if student's place is the third, sixth or ninth the student has to get a coin*/
+    /** expert game: if student's place is the third, sixth or ninth the student has to get a coin**/
+    public boolean GetCoin(Color s){
         if(DiningRoom.get(s.getIndex()).size()==3 || DiningRoom.get(s.getIndex()).size()==6 || DiningRoom.get(s.getIndex()).size()==9 ){
             return true;
         }else{

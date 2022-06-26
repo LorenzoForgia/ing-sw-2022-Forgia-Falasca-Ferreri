@@ -18,6 +18,8 @@ public class DeckCardAssistant implements Serializable {
         }
     }
 
+    /** remove the card from the deck when the card is been used
+     * **/
     public void RemoveCard( CardAssistant c){
 
         Cards.remove(Cards.indexOf(c));
