@@ -36,7 +36,7 @@ public class LoginSceneCheck extends View {
                 JavaFXMain.getCurrentApplication().switchToWaitingScene();
             });
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(new AskIfGameCreatedMsg());
-            
+
 
         }
     }
