@@ -27,7 +27,7 @@ class GameEndStateTest {
           gb.getSchoolBoard().get(0).RemoveTower();
       }
       GameEndState GE=new GameEndState();
-      GE.CheckEndGameImmediately(p1,gb, sb, 2);
+      GE.CheckEndGameImmediately(gb, sb);
       assertTrue(GE.isFlagImmediately());
   }
     @Test
@@ -59,7 +59,7 @@ class GameEndStateTest {
             gb.getSchoolBoard().get(0).RemoveTower();
         }
         GameEndState GE=new GameEndState();
-        GE.CheckEndGameImmediately(p3,gb, sb, 4);
+        GE.CheckEndGameImmediately(gb, sb);
         assertTrue(GE.isFlagImmediately());
     }
 
@@ -90,7 +90,7 @@ class GameEndStateTest {
         s.SetTowers(4,sb);
 
         GameEndState GE=new GameEndState();
-        GE.CheckEndGameImmediately(p3,gb, sb, 4);
+        GE.CheckEndGameImmediately(gb, sb);
         assertFalse(GE.isFlagImmediately());
     }
 
@@ -114,7 +114,7 @@ class GameEndStateTest {
             gb.GetIslands().remove(0);
         }
         GameEndState GE=new GameEndState();
-        GE.CheckEndGameImmediately(p1,gb,sb, 2);
+        GE.CheckEndGameImmediately(gb,sb);
         assertTrue(GE.isFlagImmediately());
     }
     @Test
@@ -134,7 +134,7 @@ class GameEndStateTest {
         sb.add(gb.getSchoolBoard().get(1));
         s.SetTowers(2,sb);
         GameEndState GE=new GameEndState();
-        GE.CheckEndGameImmediately(p1,gb, sb, 2);
+        GE.CheckEndGameImmediately(gb, sb);
         assertFalse(GE.isFlagImmediately());
     }
 

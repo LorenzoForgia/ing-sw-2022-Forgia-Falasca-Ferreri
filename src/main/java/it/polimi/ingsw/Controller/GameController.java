@@ -320,7 +320,7 @@ public class GameController {
             if (p.isUsedCharacterCard() && (p.getNameCharacterCard() == 6 || p.getNameCharacterCard() ==8)) {
                     if (moveMotherNature.CheckIfIslandGetControlled(gameModel.getNumplayers(), gameModel.getGeneralBoard(), moveMotherNature.getI1(),p.getNameCharacterCard(),p.getMySchoolBoard())){
                         moveMotherNature.GetRightTowerOnIsland(gameModel.getGeneralBoard(), moveMotherNature.getI1(), setup.getSBWithTowers());
-                        gameEndState.CheckEndGameImmediately(p, gameModel.getGeneralBoard(),setup.getSBWithTowers(), gameModel.getNumplayers());
+                        gameEndState.CheckEndGameImmediately(gameModel.getGeneralBoard(),setup.getSBWithTowers());
                     }
                 }else if(p.isUsedCharacterCard() && p.getNameCharacterCard() == 9){
                     boolean flag = true;
@@ -329,14 +329,14 @@ public class GameController {
                             flag = false;
                             if (moveMotherNature.CheckIfIslandGetControlled(gameModel.getNumplayers(), gameModel.getGeneralBoard(), moveMotherNature.getI1(), 9,((CharacterCard9)gameModel.getGeneralBoard().getChoosenCard().get(i)).getChosenColor())){
                                 moveMotherNature.GetRightTowerOnIsland(gameModel.getGeneralBoard(), moveMotherNature.getI1(), setup.getSBWithTowers());
-                                gameEndState.CheckEndGameImmediately(p, gameModel.getGeneralBoard(),setup.getSBWithTowers(), gameModel.getNumplayers());
+                                gameEndState.CheckEndGameImmediately(gameModel.getGeneralBoard(),setup.getSBWithTowers());
                             }
                         }
                     }
                 } else {
                 if (moveMotherNature.CheckIfIslandGetControlled(gameModel.getNumplayers(), gameModel.getGeneralBoard(), moveMotherNature.getI1())) {
                     moveMotherNature.GetRightTowerOnIsland(gameModel.getGeneralBoard(), moveMotherNature.getI1(), setup.getSBWithTowers());
-                    gameEndState.CheckEndGameImmediately(p, gameModel.getGeneralBoard(),setup.getSBWithTowers(), gameModel.getNumplayers());
+                    gameEndState.CheckEndGameImmediately(gameModel.getGeneralBoard(),setup.getSBWithTowers());
                 }
             }
         }
@@ -474,7 +474,7 @@ public class GameController {
           p.setNumberCoins(p.getNumberCoins()-c.getCost());
           gameModel.getGeneralBoard().addCoin(c.getCost());
           c.setCountUse();
-          gameEndState.CheckEndGameImmediately(p,gameModel.getGeneralBoard(), setup.getSBWithTowers(), gameModel.getNumplayers());
+          gameEndState.CheckEndGameImmediately(gameModel.getGeneralBoard(), setup.getSBWithTowers());
           gameEndState.CheckEndGameRoundEndedForBag(gameModel.getBag());
     }
 

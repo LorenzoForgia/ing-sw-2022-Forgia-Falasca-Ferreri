@@ -17,8 +17,8 @@ public class GameEndState {
     /** Check if the game has to end immediately because all the towers where placed or because there are three or
      * fewer groups of Islands
      * **/
-    public boolean CheckEndGameImmediately(Player p, GeneralBoard g, List<SchoolBoard> SBWithTowers, int nPlayers) {
-        boolean notFound= true;
+    public boolean CheckEndGameImmediately(GeneralBoard g, List<SchoolBoard> SBWithTowers) {
+
        for(int i=0; i < SBWithTowers.size(); i++){
            if(SBWithTowers.get(i).getNumberOfTower()<=0){
                flagImmediately = true;
