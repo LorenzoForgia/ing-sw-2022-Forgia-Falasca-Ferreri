@@ -20,13 +20,7 @@ public class MoveStudent1Msg extends CommandMsg{
     {
         GameController game = clientHandler.getGame();
         synchronized (game) {
-            /*try {
-                while (!clientHandler.getNickname().equals(game.getChoosenPlayer().GetPlayerTurn().getNickName())) {
-                    game.wait();
-                }
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }*/
+
 
             if (l == 123) {
                 try {
