@@ -632,7 +632,7 @@ public class GameController {
         for(int i=0; notCorrectColor && i< ((CharacterCard11)c11).GetchoosenStudent().size(); i++){
             if(((CharacterCard11)c11).GetchoosenStudent().get(i).equals(color)){
                 notCorrectColor= false;
-                ((CharacterCard1)c11).setChoosenColor(color);
+                ((CharacterCard11)c11).setChoosenColor(color);
             }
         }
 
