@@ -26,6 +26,7 @@ public class AnsCC9Msg extends AnswerMsg{
     {
         if(Client.GUI){
             CC9SceneView c= new CC9SceneView(this);
+            c.run();
         }else{
             serverHandler.getClient().transitionToView(new CC9View(this));
         }
