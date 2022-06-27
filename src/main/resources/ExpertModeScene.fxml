@@ -9,7 +9,7 @@
    <children>
       <Button fx:id="TrueBotton" layoutX="179.0" layoutY="229.0" mnemonicParsing="false" onAction="#expModeButtonClicked" text="Si" />
       <Button fx:id="FalseBotton" layoutX="382.0" layoutY="229.0" mnemonicParsing="false" onAction="#noExpModeButtonClicked" text="No" />
-      <Label layoutX="169.0" layoutY="128.0" text="Vuoi giocare in modlità esperta? ">
+      <Label layoutX="169.0" layoutY="128.0" text="Vuoi giocare in modalità esperta? ">
          <font>
             <Font size="18.0" />
          </font>
