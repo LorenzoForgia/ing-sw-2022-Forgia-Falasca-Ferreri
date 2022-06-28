@@ -29,15 +29,19 @@ public class ConnectionScene {
         try {
             port = Integer.parseInt(portBox.getText());
         } catch (NumberFormatException e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR, "The port number is not valid!", ButtonType.OK);
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Numero di porta non valido!", ButtonType.OK);
             alert.showAndWait();
             return;
         }
         Socket server;
         try {
             server = new Socket(ip, port);
+        }catch(IllegalArgumentException e){
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Numero di porta non valido!", ButtonType.OK);
+            alert.showAndWait();
+            return;
         } catch (IOException e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR, "Server is unreachble!", ButtonType.OK);
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Server non raggiugibile!", ButtonType.OK);
             alert.showAndWait();
             return;
         }

@@ -51,7 +51,7 @@ public class Client implements Runnable
         Scanner scanner = new Scanner(System.in);
         System.out.println("Digitare indirizzo IP server");
         String ip = scanner.nextLine();
-        System.out.println("Digitare numero di porta");
+        System.out.println("Digitare numero di porta (4567)");
         int socketPort=4567;
         try{
             socketPort = Integer.parseInt(scanner.nextLine());
@@ -65,10 +65,15 @@ public class Client implements Runnable
 
         Socket server;
         try {
+            if(socketPort<=1024 || socketPort>65535){
+                System.out.println("numero di porta non valido!,inserito automaticamente numero di porta 4567");
+                socketPort=4567;
+            }
+
             server = new Socket(ip, socketPort);
             System.out.println("Connesso al Server: IP="+ip+", Port=4567");
         } catch (IOException e) {
-            System.out.println("server non raggiungibile ");
+            System.out.println("server non raggiungibile ,riavviare l'applicazione");
             return;
         }
         serverHandler = new ServerHandler(server, this);
