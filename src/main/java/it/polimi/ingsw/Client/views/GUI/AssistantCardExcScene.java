@@ -15,7 +15,7 @@ public class AssistantCardExcScene extends View {
     public void run(){
         if(this.ansTurnDecidedExcMsg.getAsscardgui()==0){
             Platform.runLater(() -> {
-                JavaFXMain.getCurrentApplication().switchToChoiceCharacterCardScene();
+                JavaFXMain.getCurrentApplication().switchToCardAssistantScene();
                 Alert alert = new Alert(Alert.AlertType.ERROR, "Scelta invalida! Riprova", ButtonType.OK);
                 alert.showAndWait();
             });
