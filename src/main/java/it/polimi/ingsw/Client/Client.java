@@ -49,10 +49,16 @@ public class Client implements Runnable
     public void run()
     {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Digitare indirizzo IP server?");
+        System.out.println("Digitare indirizzo IP server");
         String ip = scanner.nextLine();
-        System.out.println("Digitare numero di porta?");
-        int socketPort = Integer.parseInt(scanner.nextLine());
+        System.out.println("Digitare numero di porta");
+        int socketPort=4567;
+        try{
+            socketPort = Integer.parseInt(scanner.nextLine());
+        }catch (NumberFormatException e){
+            System.out.println("numero di porta non valido!,inserito automaticamente numero di porta 4567");
+        }
+
 
         /* Open connection to the server and start a thread for handling
          * communication. */
@@ -62,7 +68,7 @@ public class Client implements Runnable
             server = new Socket(ip, socketPort);
             System.out.println("Connesso al Server: IP="+ip+", Port=4567");
         } catch (IOException e) {
-            System.out.println("server unreachable");
+            System.out.println("server non raggiungibile ");
             return;
         }
         serverHandler = new ServerHandler(server, this);
