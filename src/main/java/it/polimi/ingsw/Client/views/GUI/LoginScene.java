@@ -25,7 +25,6 @@ public class LoginScene extends View {
         }
         testo=usernameBox.getText();
         LoginMsg login=new LoginMsg(testo);
-        System.out.println(testo);
         JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(login);
 
     }

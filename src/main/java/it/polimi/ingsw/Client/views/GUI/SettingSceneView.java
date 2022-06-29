@@ -19,7 +19,7 @@ public class SettingSceneView extends View {
             });
 
         }else{
-            System.out.println("Ti stai unendo a una partita:");
+
             GameStartedMsg gameStartedMsg= new GameStartedMsg();
             JavaFXMain.getCurrentApplication().getClient().getServerHandler().sendCommandMessage(gameStartedMsg);
         }
