@@ -1,4 +1,9 @@
 # ing-sw-2022-Forgia-Falasca-Ferreri
+Group members: Lorenzo Forgia,Luigia Falasca,Federico Angelo Luigi Ferreri.
+Implemented:
+Complete Rules.
+CLI and GUI.
+Advanced Functionalities: 4 players game,12 character cards.
 To launch Server insert in prompt: java -jar server.jar
 To launch Client insert in prompt: java -jar client.jar
 Once you launch the server.jar you can choose the port number of the server.
