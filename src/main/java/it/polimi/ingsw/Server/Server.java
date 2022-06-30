@@ -19,24 +19,28 @@ public class Server
 {
     public static void main(String[] args)
     {
-        /* Read the port number from System.in. In your project you
-         * could also use a configuration file for the same purpose.
-         *   For simplicity we are not doing any error checking when
-         * parsing the port number, but in a real project you need to
-         * always handle invalid inputs! */
 
-        /*  A FINE IMPLEMENTAZIONE
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Server port?");
-        int socketPort = Integer.parseInt(scanner.nextLine());*/
+        System.out.println("Specificare numero di porta del Server: ");
+        int socketPort = 4567;
+        try{
+            socketPort=Integer.parseInt(scanner.nextLine());
+        }catch (NumberFormatException e){
+            System.out.println("numero di porta non valido!,inserito automaticamente numero di porta 4567");
+        }
+
 
         ServerSocket socket;
         GameController gamecontroller=new GameController();
         try {
-            socket = new ServerSocket(4567);
-            System.out.println("Server In Ascolto Sulla Porta 4567 ...");
+            if(socketPort<=1024 || socketPort>65535){
+                System.out.println("numero di porta non valido!,inserito automaticamente numero di porta 4567");
+                socketPort=4567;
+            }
+            socket = new ServerSocket(socketPort);
+            System.out.println("Server In Ascolto Sulla Porta "+socketPort+"...");
         } catch (IOException e) {
-            System.out.println("cannot open server socket");
+            System.out.println("Non è stato possibile aprire il socket del Server,riavviare l'applicazione");
             System.exit(1);
             return;
         }

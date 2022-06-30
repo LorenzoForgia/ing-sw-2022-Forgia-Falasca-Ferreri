@@ -29,7 +29,7 @@ public class Client implements Runnable
          * thread where user interaction is handled. */
         System.out.println(Color.Blue+"digitare GUI per l'interfaccia grafica altrimenti altro per la CLI"+Color.Reset);
         Scanner in =new Scanner(System.in);
-        String simulazioneargs =in.nextLine();  //solo per simulare la scelta dell'utente
+        String simulazioneargs =in.nextLine();  
         if(simulazioneargs.equals("GUI")){
             Client.GUI=true;
         }else{
@@ -51,7 +51,7 @@ public class Client implements Runnable
         Scanner scanner = new Scanner(System.in);
         System.out.println("Digitare indirizzo IP server");
         String ip = scanner.nextLine();
-        System.out.println("Digitare numero di porta (4567)");
+        System.out.println("Digitare numero di porta ");
         int socketPort=4567;
         try{
             socketPort = Integer.parseInt(scanner.nextLine());
@@ -71,7 +71,7 @@ public class Client implements Runnable
             }
 
             server = new Socket(ip, socketPort);
-            System.out.println("Connesso al Server: IP="+ip+", Port=4567");
+            System.out.println("Connesso al Server: IP="+ip+", Port="+socketPort);
         } catch (IOException e) {
             System.out.println("server non raggiungibile ,riavviare l'applicazione");
             return;
