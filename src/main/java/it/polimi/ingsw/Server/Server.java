@@ -21,7 +21,7 @@ public class Server
     {
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Specificare numero di porta del Server: ");
+        System.out.println("Specificare numero di porta del server: ");
         int socketPort = 4567;
         try{
             socketPort=Integer.parseInt(scanner.nextLine());

@@ -51,7 +51,7 @@ public class Client implements Runnable
         Scanner scanner = new Scanner(System.in);
         System.out.println("Digitare indirizzo IP server");
         String ip = scanner.nextLine();
-        System.out.println("Digitare numero di porta ");
+        System.out.println("Digitare numero di Porta ");
         int socketPort=4567;
         try{
             socketPort = Integer.parseInt(scanner.nextLine());
